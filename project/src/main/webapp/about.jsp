@@ -50,17 +50,17 @@ https://templatemo.com/tm-580-woox-travel
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
+                    <a href="index.jsp" class="logo">
                         <img src="assets/images/logo.png" alt="">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html" class="active">About</a></li>
-                        <li><a href="deals.html">Deals</a></li>
-                        <li><a href="reservation.html">Reservation</a></li>
-                        <li><a href="reservation.html">Book Yours</a></li>
+                        <li><a href="index.jsp">Home</a></li>
+                        <li><a href="about.jsp" class="active">About</a></li>
+                        <li><a href="deals.jsp">Deals</a></li>
+                        <li><a href="reservation.jsp">Reservation</a></li>
+                        <li><a href="reservation.jsp">Book Yours</a></li>
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -85,7 +85,7 @@ https://templatemo.com/tm-580-woox-travel
             <h2>Welcome To Caribbean</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt uttersi labore et dolore magna aliqua is ipsum suspendisse ultrices gravida</p>
             <div class="main-button">
-              <a href="reservation.html">Discover More</a>
+              <a href="reservation.jsp">Discover More</a>
             </div>
           </div>
         </div>
@@ -189,7 +189,7 @@ https://templatemo.com/tm-580-woox-travel
                     <li><i class="fa fa-building"></i> Daily Places Visit</li>
                   </ul>
                   <div class="main-button">
-                    <a href="reservation.html">Make a Reservation</a>
+                    <a href="reservation.jsp">Make a Reservation</a>
                   </div>
                 </div>
               </div>
@@ -208,7 +208,7 @@ https://templatemo.com/tm-580-woox-travel
                     <li><i class="fa fa-building"></i> Daily Places Visit</li>
                   </ul>
                   <div class="main-button">
-                    <a href="reservation.html">Make a Reservation</a>
+                    <a href="reservation.jsp">Make a Reservation</a>
                   </div>
                 </div>
               </div>
@@ -227,7 +227,7 @@ https://templatemo.com/tm-580-woox-travel
                     <li><i class="fa fa-building"></i> Daily Places Visit</li>
                   </ul>
                   <div class="main-button">
-                    <a href="reservation.html">Make a Reservation</a>
+                    <a href="reservation.jsp">Make a Reservation</a>
                   </div>
                 </div>
               </div>
@@ -246,7 +246,7 @@ https://templatemo.com/tm-580-woox-travel
                     <li><i class="fa fa-building"></i> Daily Places Visit</li>
                   </ul>
                   <div class="main-button">
-                    <a href="reservation.html">Make a Reservation</a>
+                    <a href="reservation.jsp">Make a Reservation</a>
                   </div>
                 </div>
               </div>
@@ -265,7 +265,7 @@ https://templatemo.com/tm-580-woox-travel
                     <li><i class="fa fa-building"></i> Daily Places Visit</li>
                   </ul>
                   <div class="main-button">
-                    <a href="reservation.html">Make a Reservation</a>
+                    <a href="reservation.jsp">Make a Reservation</a>
                   </div>
                 </div>
               </div>
@@ -284,7 +284,7 @@ https://templatemo.com/tm-580-woox-travel
                     <li><i class="fa fa-building"></i> Daily Places Visit</li>
                   </ul>
                   <div class="main-button">
-                    <a href="reservation.html">Make a Reservation</a>
+                    <a href="reservation.jsp">Make a Reservation</a>
                   </div>
                 </div>
               </div>
@@ -338,7 +338,7 @@ https://templatemo.com/tm-580-woox-travel
           </div>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
           <div class="main-button">
-            <a href="reservation.html">Discover More</a>
+            <a href="reservation.jsp">Discover More</a>
           </div>
         </div>
       </div>
@@ -420,7 +420,7 @@ https://templatemo.com/tm-580-woox-travel
         </div>
         <div class="col-lg-12">
           <div class="main-button text-center">
-            <a href="deals.html">Discover All Places</a>
+            <a href="deals.jsp">Discover All Places</a>
           </div>
         </div>
       </div>
@@ -436,7 +436,7 @@ https://templatemo.com/tm-580-woox-travel
         </div>
         <div class="col-lg-4">
           <div class="border-button">
-            <a href="reservation.html">Book Yours Now</a>
+            <a href="reservation.jsp">Book Yours Now</a>
           </div>
         </div>
       </div>

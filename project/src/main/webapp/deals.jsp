@@ -50,17 +50,17 @@ https://templatemo.com/tm-580-woox-travel
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
+                    <a href="index.jsp" class="logo">
                         <img src="assets/images/logo.png" alt="">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="deals.html" class="active">Deals</a></li>
-                        <li><a href="reservation.html">Reservation</a></li>
-                        <li><a href="reservation.html">Book Yours</a></li>
+                        <li><a href="index.jsp">Home</a></li>
+                        <li><a href="about.jsp">About</a></li>
+                        <li><a href="deals.jsp" class="active">Deals</a></li>
+                        <li><a href="reservation.jsp">Reservation</a></li>
+                        <li><a href="reservation.jsp">Book Yours</a></li>
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -79,7 +79,7 @@ https://templatemo.com/tm-580-woox-travel
         <div class="col-lg-12">
           <h4>Discover Our Weekly Offers</h4>
           <h2>Amazing Prices &amp; More</h2>
-          <div class="border-button"><a href="about.html">Discover More</a></div>
+          <div class="border-button"><a href="about.jsp">Discover More</a></div>
         </div>
       </div>
     </div>
@@ -167,7 +167,7 @@ https://templatemo.com/tm-580-woox-travel
                   </div>
                   <p>Lorem ipsum dolor sit amet dire consectetur adipiscing elit.</p>
                   <div class="main-button">
-                    <a href="reservation.html">Make a Reservation</a>
+                    <a href="reservation.jsp">Make a Reservation</a>
                   </div>
                 </div>
               </div>
@@ -198,7 +198,7 @@ https://templatemo.com/tm-580-woox-travel
                   </div>
                   <p>Lorem ipsum dolor sit amet dire consectetur adipiscing elit.</p>
                   <div class="main-button">
-                    <a href="reservation.html">Make a Reservation</a>
+                    <a href="reservation.jsp">Make a Reservation</a>
                   </div>
                 </div>
               </div>
@@ -229,7 +229,7 @@ https://templatemo.com/tm-580-woox-travel
                   </div>
                   <p>Lorem ipsum dolor sit amet dire consectetur adipiscing elit.</p>
                   <div class="main-button">
-                    <a href="reservation.html">Make a Reservation</a>
+                    <a href="reservation.jsp">Make a Reservation</a>
                   </div>
                 </div>
               </div>
@@ -260,7 +260,7 @@ https://templatemo.com/tm-580-woox-travel
                   </div>
                   <p>This free CSS template is provided by Template Mo website.</p>
                   <div class="main-button">
-                    <a href="reservation.html">Make a Reservation</a>
+                    <a href="reservation.jsp">Make a Reservation</a>
                   </div>
                 </div>
               </div>
@@ -289,7 +289,7 @@ https://templatemo.com/tm-580-woox-travel
         </div>
         <div class="col-lg-4">
           <div class="border-button">
-            <a href="reservation.html">Book Yours Now</a>
+            <a href="reservation.jsp">Book Yours Now</a>
           </div>
         </div>
       </div>

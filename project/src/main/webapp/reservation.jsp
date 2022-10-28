@@ -50,17 +50,17 @@ https://templatemo.com/tm-580-woox-travel
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
+                    <a href="index.jsp" class="logo">
                         <img src="assets/images/logo.png" alt="">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="deals.html">Deals</a></li>
-                        <li><a href="reservation.html" class="active">Reservation</a></li>
-                        <li><a href="reservation.html">Book Yours</a></li>
+                        <li><a href="index.jsp">Home</a></li>
+                        <li><a href="about.jsp">About</a></li>
+                        <li><a href="deals.jsp">Deals</a></li>
+                        <li><a href="reservation.jsp" class="active">Reservation</a></li>
+                        <li><a href="reservation.jsp">Book Yours</a></li>
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -80,7 +80,7 @@ https://templatemo.com/tm-580-woox-travel
           <h4>Book Prefered Deal Here</h4>
           <h2>Make Your Reservation</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt uttersi labore et dolore magna aliqua is ipsum suspendisse ultrices gravida</p>
-          <div class="main-button"><a href="about.html">Discover More</a></div>
+          <div class="main-button"><a href="about.jsp">Discover More</a></div>
         </div>
       </div>
     </div>
