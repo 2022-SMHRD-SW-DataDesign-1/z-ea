@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="JoinService" method="post">
+	<form action="JoinService" method="post"> 
 		<li><input type="text" name="email" placeholder="Email을 입력하세요"></li>
 		<li><input type="password" name="pw" placeholder="PW를 입력하세요"></li>
 		<li><input type="text" name="birth" placeholder="birth를 입력하세요"></li>
