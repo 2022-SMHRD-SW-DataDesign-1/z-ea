@@ -1,7 +1,9 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=branch 'master' of https\://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
+encoding//src/main/webapp/MemberUpdate.jsp=UTF-8
 encoding//src/main/webapp/MyPage.jsp=UTF-8
 encoding//src/main/webapp/index.jsp=UTF-8
-encoding//src/main/webapp/\uD68C\uC6D0\uC815\uBCF4\uC218\uC815.jsp=UTF-8
 encoding//src/test/java=UTF-8
-encoding/<project>=UTF-8

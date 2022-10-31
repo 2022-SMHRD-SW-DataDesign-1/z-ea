@@ -488,14 +488,17 @@ https://templatemo.com/tm-580-woox-travel
       console.log("외않되");
       let modal = document.querySelector(".modalPopup");
       let modalBtn = document.querySelector(".modalBtn");
+      let mainCaption = document.querySelector(".main-caption")
       console.log("실행도미");
       if (modal.style.opacity == "0") {
+    	mainCaption.style.opacity ="0";
         modal.style.opacity = "1";
         modal.style.display = "block"
         modalBtn.textContent = "닫기"
       }
 
       else {
+    	  mainCaption.style.opacity ="1";
         modal.style.opacity = "0";
         modal.style.display = "none";
         modalBtn.textContent = "로그인";
@@ -506,4 +509,3 @@ https://templatemo.com/tm-580-woox-travel
 </body>
 
 </html>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
