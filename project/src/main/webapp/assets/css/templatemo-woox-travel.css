@@ -2338,5 +2338,6 @@ body {
   }
   .weekly-offers .container-fluid {
     padding: 0px;
+    padding: 1px;
   }
 }
