@@ -723,7 +723,7 @@ Banner Style
   height: 100%;
 }
 #section-1 .content-slider input {
-  display: none;
+/*   display: none; */
 }
 #section-1 .content-slider .slider {
   position: relative;
