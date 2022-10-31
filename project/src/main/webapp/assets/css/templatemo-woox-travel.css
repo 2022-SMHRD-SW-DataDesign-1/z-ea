@@ -193,7 +193,7 @@ body {
 }
 
 section {
-  margin-top: 30px;
+  margin-top: 120px;
 }
 
 .section-heading {
@@ -392,9 +392,6 @@ Header Style
   z-index: 999;
 }
 
-.menu > .sub_menu{ display: none; color: #fff;  }
-.menu:hover >.sub_menu{display: inline-block; font-size: 40px;}
-.menu_sub >p >a{ color: #fff;}
 .header-area .main-nav .nav li {
   padding-left: 10px;
   padding-right: 10px;
@@ -455,9 +452,9 @@ Header Style
   width: 32px;
   height: 40px;
   text-indent: -9999em;
-  
+  z-index: 99;
   right: 20px;
-  
+  display: none;
 }
 
 .background-header .main-nav .menu-trigger {
@@ -722,7 +719,8 @@ Banner Style
 }
 #section-1 .content-slider {
   position: relative;
-  
+  width: 100%;
+  height: 100%;
 }
 #section-1 .content-slider input {
   /* display: none; */
@@ -730,7 +728,7 @@ Banner Style
 
 #section-1 .content-slider .slider {
   position: relative;
-  
+  width: inherit;
   height: inherit;
   overflow: hidden;
 }
@@ -740,7 +738,7 @@ Banner Style
   left: 0;
   opacity: 0;
   z-index: 0;
-  
+  width: inherit;
   height: inherit;
   text-align: center;
   background-repeat: no-repeat;
@@ -753,7 +751,7 @@ Banner Style
   padding: 30px 60px;
   border-radius: 61px;
   position: absolute;
-  
+  width: 80%;
   left: 10%;
   bottom: 130px;
   display: inline-block;
@@ -865,7 +863,7 @@ Banner Style
 #section-1 .content-slider nav .controls label {
   position: relative;
   display: inline-block;
-  
+  width: 19.5%;
   height: 3.1em;
   overflow: hidden;
   margin: 0 1em;
@@ -884,13 +882,13 @@ Banner Style
   top: 0;
   left: 0;
   height: 2px;
-  
+  width: 100%;
   background: #f6eac5;
   z-index: 100;
 }
 #section-1 .content-slider nav .controls label .progressbar .progressbar-fill {
   position: inherit;
-  
+  width: inherit;
   height: inherit;
   margin-left: -100%;
   background: #22b3c1;
@@ -1122,39 +1120,24 @@ Footer Style
 */
 
 footer {
-  background-color: #777;
-  text-align: left;
-  width: 100%;
-  height: 120px;
- 
-}
-
-footer  p {
-  color: #fff;
-  font-size: 13px;
- 
-}
-
-.fc {width: 370px;
-  margin-top: 20px;
-}
-.fc >p{
-  display: inline;
- 
-}
-
-.footer_row{
- 
-  width: 350px;
-  margin-top: 37px;  
-  margin-left: 45px;
-}
-.footer_row >p {
- display: inline;
+  background-color: #22b3c1;
   text-align: center;
+  padding: 25px 0px;
 }
-.footer_row > p > a {
+
+footer p {
   color: #fff;
+}
+
+footer p a {
+  color: #fff;
+  font-weight: 500;
+  transition: all .3s;
+}
+
+footer p a:hover {
+  color: #fff;
+  opacity: 0.75;
 }
 
 
@@ -2054,11 +2037,11 @@ Reservation Page Style
 */
 
 .second-page-heading {
-  background-image: url(../images/img.jpg);
+  background-image: url(../images/heading-bg-02.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 130px 0px 130px 0px;
+  padding: 260px 0px 190px 0px;
   text-align: center;
 }
 
@@ -2081,16 +2064,30 @@ Reservation Page Style
   bottom: 0;
   transform: translateX(-50px);
 }
-.second-page-heading >.menu_sub{
-   height: 100px;  float: left; display: inline; margin-left: 245px;
-}
 
-.second-page-heading >.menu_sub > p {
-   padding-left: 200px;
+.second-page-heading h2 {
+  font-size: 50px;
+  font-weight: 700;
   color: #fff;
   margin-bottom: 30px;
-  float: left;
-  
+}
+
+.second-page-heading p {
+  padding: 0px 15%;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.second-page-heading .main-button a {
+  border-color: #fff;
+  color: #22b3c1;
+  background-color: #fff;
+}
+
+.second-page-heading .main-button a:hover {
+  border-color: #22b3c1;
+  background-color: #22b3c1;
+  color: #fff;
 }
 
 .reservation-info {
@@ -2128,14 +2125,10 @@ Reservation Page Style
   font-size: 15px;
   color: #22b3c1;
 }
-.section_main { width: 90%; height: 600px; overflow: hidden; margin-top: 50px;  }
-.section_main > .comm >a > img {margin-left: 150px;  margin-bottom: 10px;  width: 350px; height: 150px;  }
-.section_main > .comm { display: inline; margin-right: 5px;padding: 10px; }
-.reservation-form {
-  width: 1200px; height: 200px;
-  padding: 120px;
-}
 
+.reservation-form {
+  margin: 120px 0px;
+}
 
 .reservation-form #map {
   margin-bottom: -6px;
@@ -2212,7 +2205,6 @@ Responsive Style
 
 body {
   overflow-x: hidden;
-  background-color: #22b3c1;
 }
 
 @media (max-width: 575px) {
