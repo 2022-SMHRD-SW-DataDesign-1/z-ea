@@ -92,8 +92,8 @@ https://templatemo.com/tm-580-woox-travel
       <input type="radio" id="banner4" class="sec-1-input" name="banner">
 
       <div class="slider">
-        <div class="main-caption">
-          검색어를 입력하세요
+        <div class="main-caption" style="font-size: 20px; ">
+          <div style="margin-left: 10%;">검색어를 입력하세요</div>
           <form action="get">
             <input type="text" placeholder="#여행" style="width: 30%; height: 40px;" />
             <input type="submit" value="검색" />
@@ -112,7 +112,7 @@ https://templatemo.com/tm-580-woox-travel
             style="text-align: center; background-color: white; width: 540px; height: 600px; margin-top: 10%; margin-left: 36%; position: fixed; align-content: center;">
             <!-- 로그인 -->
             <table style="margin: auto; margin-top: 10%;">
-              <th colspan="2" style="font-size: 20px; padding: 10px;">로그인</th>
+              <th colspan="2" style="font-size: 20px; padding: 10px; text-align: center;">로그인</th>
               <tr>
                 <td>
                   <div style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이메일 </div>
@@ -125,11 +125,11 @@ https://templatemo.com/tm-580-woox-travel
                 </td>
                 <td><input type="password" name="password" style="width: 180px;" /></td>
               </tr>
-              <td colspan="2"><input type="submit" value="로그인" style="width: 80px;"></td>
+              <td colspan="2" style="text-align: center;"><input type="submit" value="로그인" style="width: 80px;"></td>
             </table>
             <!-- 회원가입-->
             <table style="margin: auto; margin-top: 10%;">
-              <th colspan="2" style="font-size: 20px; padding: 10px;">회원가입</th>
+              <th colspan="2" style="font-size: 20px; padding: 10px; text-align: center;">회원가입</th>
               <tr>
                 <td>
                   <div style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이름 </div>
@@ -148,7 +148,7 @@ https://templatemo.com/tm-580-woox-travel
                 </td>
                 <td><input type="password" name="password" style="width: 180px;" /></td>
               </tr>
-              <td colspan="2"><input type="submit" value="회원가입" style="width: 80px;"></td>
+              <td colspan="2" style="text-align: center;"><input type="submit" value="회원가입" style="width: 80px;"></td>
             </table>
           </div>
         </div>
@@ -299,7 +299,8 @@ https://templatemo.com/tm-580-woox-travel
       <div class="row">
         <div class="col-lg-5">
           <div class="section-heading">
-            <h2>Visit One Of Our Countries Now</h2>
+            <h2>사용자 맞춤 장소 제공
+            </h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
           </div>
         </div>
