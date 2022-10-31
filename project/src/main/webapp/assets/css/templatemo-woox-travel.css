@@ -723,8 +723,9 @@ Banner Style
   height: 100%;
 }
 #section-1 .content-slider input {
-/*   display: none; */
+  /* display: none; */
 }
+
 #section-1 .content-slider .slider {
   position: relative;
   width: inherit;
@@ -794,12 +795,24 @@ Banner Style
   height: 100%;
   box-sizing: border-box;
 }
-#section-1 .content-slider .slider .banner .banner-inner-wrapper .main-caption {
+#section-1 .content-slider .slider .main-caption {
   position: absolute;
   width: 100%;
   top: 40%;
   transform: translateY(-50%);
+  margin-left: 35%;
+  z-index: 4;
 }
+#section-1 .content-slider .slider .modalPopup {
+  position: absolute;
+  z-index: 2;
+}
+#section-1 .content-slider .slider .modalPopup .LoginModal {
+  color: black;
+  position: absolute;
+  z-index: 3;
+}
+
 #section-1 .content-slider .slider .banner .banner-inner-wrapper h2 {
   font-weight: 500;
   font-size: 20px;
