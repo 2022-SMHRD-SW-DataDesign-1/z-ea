@@ -82,8 +82,23 @@ https://templatemo.com/tm-580-woox-travel
       <input type="radio" id="banner3" class="sec-1-input" name="banner">
       <input type="radio" id="banner4" class="sec-1-input" name="banner">
       <div class="slider">
-        <div id="search" style="display:inline-block;position: absolute; z-index: 1000; width: 100%; top: 40%; margin-left: 45%;" >
-        <input type="text">
+          <div id="search" style= "height: 800px; z-index: 250;">
+   
+    <div class="container" style="text-align: center;">
+       
+      <div style="font-size: 25px; padding-top: 20%; padding-bottom:20%;">watch out<form action="get" >
+        <input type="text" placeholder="#여행" style="width: 50%; height: 40px;"/>
+        <input type="submit" value="검색" />
+      </form><p>
+        #여행 #먹방 기타등등
+
+      </p></div>
+      
+        
+      
+    </div>
+      
+  </div>
       </div>
         <div id="top-banner-1" class="banner">
           <div class="banner-inner-wrapper header-text">
