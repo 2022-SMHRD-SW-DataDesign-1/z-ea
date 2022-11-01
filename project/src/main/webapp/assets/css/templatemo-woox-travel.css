@@ -86,7 +86,9 @@ html, body {
 }
 
 a {
-	color: #22b3c1;
+
+	color: #6A5ACD;
+
   text-decoration: none !important;
 }
 
@@ -124,18 +126,23 @@ body {
 }
 
 ::selection {
-  background: #22b3c1;
+
+  background: #6A5ACD;
+
   color: #fff;
 }
 
 ::-moz-selection {
-  background: #22b3c1;
+
+  background: #6A5ACD;
   color: #fff;
 }
 
 .text-button a {
   font-size: 14px;
-  color: #22b3c1;
+
+  color: #6A5ACD;
+
   font-weight: 500;
   transition: all .3s;
 }
@@ -151,9 +158,12 @@ body {
 
 .border-button a {
   font-size: 14px;
-  color: #22b3c1;
+
+  color: #6A5ACD;
   background-color: transparent;
-  border: 1px solid #22b3c1;
+
+  border: 1px solid #6A5ACD;
+
   padding: 12px 30px;
   display: inline-block;
   border-radius: 25px;
@@ -166,15 +176,19 @@ body {
 }
 
 .border-button a:hover {
-  background-color: #22b3c1;
+
+  background-color: #6A5ACD;
+
   color: #fff;
 }
 
 .main-button a {
   font-size: 14px;
   color: #fff;
-  background-color: #22b3c1;
-  border: 1px solid #22b3c1;
+
+  background-color: #6A5ACD;
+  border: 1px solid #6A5ACD;
+
   padding: 12px 30px;
   display: inline-block;
   border-radius: 25px;
@@ -188,12 +202,16 @@ body {
 
 .main-button a:hover {
   background-color: #fff;
-  color: #22b3c1;
+
+  
+
+  color: #6A5ACD;
+
   border: 1px solid #fff;
 }
 
 section {
-  margin-top: 30px;
+  margin-top: 120px;
 }
 
 .section-heading {
@@ -287,7 +305,9 @@ Pre-loader Style
   height: 16px;
   top: 12px;
   left: 15px;
-  background: #22b3c1;
+
+  background: #6A5ACD;
+
   border-radius: 50%;
   -webkit-transform: translateX(0);
   transform: translateX(0);
@@ -310,7 +330,9 @@ Pre-loader Style
   width: 16px;
   height: 16px;
   margin-left: 16px;
-  background: #22b3c1;
+
+  background: #6A5ACD;
+
   border-radius: 50%;
 }
 
@@ -323,7 +345,9 @@ Header Style
 */
 
 .background-header {
-  background-color: #22b3c1 !important;
+
+  background-color: #6A5ACD !important;
+
   height: 70px!important;
   position: fixed!important;
   top: 0!important;
@@ -337,7 +361,8 @@ Header Style
 }
 
 .header-area {
-  background-color: #22b3c1;
+
+  background-color: #6A5ACD;
   position: absolute;
   height: 70px;
   top: 0;
@@ -392,9 +417,6 @@ Header Style
   z-index: 999;
 }
 
-.menu > .sub_menu{ display: none; color: #fff;  }
-.menu:hover >.sub_menu{display: inline-block; font-size: 40px;}
-.menu_sub >p >a{ color: #fff;}
 .header-area .main-nav .nav li {
   padding-left: 10px;
   padding-right: 10px;
@@ -455,9 +477,9 @@ Header Style
   width: 32px;
   height: 40px;
   text-indent: -9999em;
-  
+  z-index: 99;
   right: 20px;
-  
+  display: none;
 }
 
 .background-header .main-nav .menu-trigger {
@@ -610,14 +632,18 @@ Header Style
   }
   .header-area.header-sticky .nav li a:hover,
   .header-area.header-sticky .nav li a.active {
-    color: #22b3c1!important;
+
+    color: #6A5ACD!important;
+
     opacity: 1;
   }
   .header-area.header-sticky .nav li.search-icon a {
     width: 100%;
   }
   .header-area {
-    background-color: #22b3c1;
+
+    background-color: #6A5ACD;
+
     padding: 0px 15px;
     height: 100px;
     box-shadow: none;
@@ -671,7 +697,8 @@ Header Style
   }
   .header-area .main-nav .nav li a:hover {
     background: #f7f7f7 !important;
-    color: #22b3c1!important;
+
+    color: #6A5ACD!important;
   }
   .header-area .main-nav .nav li.has-sub ul.sub-menu {
     position: relative;
@@ -722,14 +749,16 @@ Banner Style
 }
 #section-1 .content-slider {
   position: relative;
-  
+  width: 100%;
+  height: 100%;
 }
 #section-1 .content-slider input {
-  display: none;
+  /* display: none; */
 }
+
 #section-1 .content-slider .slider {
   position: relative;
-  
+  width: inherit;
   height: inherit;
   overflow: hidden;
 }
@@ -739,7 +768,7 @@ Banner Style
   left: 0;
   opacity: 0;
   z-index: 0;
-  
+  width: inherit;
   height: inherit;
   text-align: center;
   background-repeat: no-repeat;
@@ -752,20 +781,22 @@ Banner Style
   padding: 30px 60px;
   border-radius: 61px;
   position: absolute;
-  
+  width: 80%;
   left: 10%;
   bottom: 130px;
   display: inline-block;
 }
 #section-1 .more-info i {
-  color: #22b3c1;
+
+  color: #6A5ACD;
   font-size: 24px;
   width: 60px;
   height: 60px;
   display: inline-block;
   text-align: center;
   line-height: 58px;
-  border: 1px solid #22b3c1;
+
+  border: 1px solid #6A5ACD;
   border-radius: 50%;
   float: left;
   margin-right: 20px;
@@ -773,7 +804,8 @@ Banner Style
 #section-1 .more-info h4 {
   text-align: left;
   font-size: 20px;
-  color: #22b3c1;
+
+  color: #6A5ACD;
   font-weight: 700;
   line-height: 28px;
 }
@@ -787,8 +819,9 @@ Banner Style
   text-align: right;
 }
 #section-1 .main-button a:hover {
-  background-color: #22b3c1;
-  border-color: #22b3c1;
+
+  background-color: #6A5ACD;
+  border-color: #6A5ACD;
   color: #fff;
   opacity: 0.8;
 }
@@ -796,12 +829,24 @@ Banner Style
   height: 100%;
   box-sizing: border-box;
 }
-#section-1 .content-slider .slider .banner .banner-inner-wrapper .main-caption {
+#section-1 .content-slider .slider .main-caption {
   position: absolute;
   width: 100%;
   top: 40%;
   transform: translateY(-50%);
+  margin-left: 35%;
+  z-index: 4;
 }
+#section-1 .content-slider .slider .modalPopup {
+  position: absolute;
+  z-index: 2;
+}
+#section-1 .content-slider .slider .modalPopup .LoginModal {
+  color: black;
+  position: absolute;
+  z-index: 3;
+}
+
 #section-1 .content-slider .slider .banner .banner-inner-wrapper h2 {
   font-weight: 500;
   font-size: 20px;
@@ -815,8 +860,9 @@ Banner Style
   margin-bottom: 30px;
 }
 #section-1 .content-slider .slider .banner .banner-inner-wrapper .learn-more-button a:hover {
-  color: #22b3c1;
-  border-color: #22b3c1;
+
+  color: #6A5ACD;
+  border-color: #6A5ACD;
   transition: 0.3s;
 }
 #section-1 .content-slider .slider #top-banner-1 {
@@ -852,7 +898,7 @@ Banner Style
 #section-1 .content-slider nav .controls label {
   position: relative;
   display: inline-block;
-  
+  width: 19.5%;
   height: 3.1em;
   overflow: hidden;
   margin: 0 1em;
@@ -871,16 +917,18 @@ Banner Style
   top: 0;
   left: 0;
   height: 2px;
-  
+  width: 100%;
   background: #f6eac5;
   z-index: 100;
 }
 #section-1 .content-slider nav .controls label .progressbar .progressbar-fill {
   position: inherit;
-  
+  width: inherit;
   height: inherit;
   margin-left: -100%;
-  background: #22b3c1;
+
+  background: #6A5ACD;
+
 }
 #section-1 .content-slider nav .controls label span.text {
   font-size: 20px;
@@ -890,7 +938,8 @@ Banner Style
   width: 100%;
 }
 #section-1 .content-slider nav .controls label:hover {
-  color: #22b3c1;
+
+  color: #6A5ACD;
 }
 #section-1 .content-slider #banner1:checked ~ .slider #top-banner-1,
 #section-1 .content-slider #banner2:checked ~ .slider #top-banner-2,
@@ -977,8 +1026,9 @@ Visit Country Style
 }
 
 .visit-country .item .right-content .main-button a:hover {
-  background-color: #22b3c1;
-  border-color: #22b3c1;
+
+  background-color: #6A5ACD;
+  border-color: #6A5ACD;
   color: #fff;
   opacity: 0.8;
 }
@@ -1030,9 +1080,11 @@ Visit Country Style
   display: inline-block;
   width: 46px;
   height: 46px;
-  border: 1px solid #22b3c1;
+
+  border: 1px solid #6A5ACD;
   line-height: 44px;
-  color: #22b3c1;
+
+  color: #6A5ACD;
   text-align: center;
   font-size: 18px;
   font-weight: 500;
@@ -1041,12 +1093,14 @@ Visit Country Style
 }
 
 .visit-country ul.page-numbers li a:hover {
-  background-color: #22b3c1;
+
+  background-color: #6A5ACD;
   color: #fff;
 }
 
 .visit-country ul.page-numbers li.active a {
-  background-color: #22b3c1;
+
+  background-color: #6A5ACD;
   color: #fff;
 }
 
@@ -1098,7 +1152,8 @@ Call To Action Style
 
 .call-to-action .border-button a:hover {
   background-color: #fff;
-  color: #22b3c1;
+
+  color: #6A5ACD;
 }
 
 
@@ -1109,39 +1164,25 @@ Footer Style
 */
 
 footer {
-  background-color: #777;
-  text-align: left;
-  width: 100%;
-  height: 120px;
- 
-}
 
-footer  p {
-  color: #fff;
-  font-size: 13px;
- 
-}
-
-.fc {width: 370px;
-  margin-top: 20px;
-}
-.fc >p{
-  display: inline;
- 
-}
-
-.footer_row{
- 
-  width: 350px;
-  margin-top: 37px;  
-  margin-left: 45px;
-}
-.footer_row >p {
- display: inline;
+  background-color: #6A5ACD;
   text-align: center;
+  padding: 25px 0px;
 }
-.footer_row > p > a {
+
+footer p {
   color: #fff;
+}
+
+footer p a {
+  color: #fff;
+  font-weight: 500;
+  transition: all .3s;
+}
+
+footer p a:hover {
+  color: #fff;
+  opacity: 0.75;
 }
 
 
@@ -1223,7 +1264,8 @@ About Page Style
 
 .about-main-content .content .main-button a {
   background-color: #fff;
-  color: #22b3c1;
+
+  color: #6A5ACD;
   border-color: #fff;
 }
 
@@ -1249,7 +1291,8 @@ About Page Style
 
 .cities-town .slider-content h2 em {
   font-style: normal;
-  color: #22b3c1;
+
+  color: #6A5ACD;
 }
 
 .cities-town .slider-content .item .thumb {
@@ -1299,7 +1342,8 @@ About Page Style
 
 .cities-town .owl-nav .owl-prev:hover::after,
 .cities-town .owl-nav .owl-next:hover::after {
-  color: #22b3c1;
+
+  color: #6A5ACD;
 }
 
 .weekly-offers {
@@ -1344,7 +1388,8 @@ About Page Style
   float: right;
   text-align: right;
   font-size: 20px;
-  color: #22b3c1;
+
+  color: #6A5ACD;
 }
 
 .weekly-offers .item .thumb .text h4 span,
@@ -1376,8 +1421,9 @@ About Page Style
 }
 
 .weekly-offers .item .thumb .text .main-button a:hover {
-  background-color: #22b3c1;
-  border-color: #22b3c1;
+
+  background-color: #6A5ACD;
+  border-color: #6A5ACD;
   color: #fff;
   opacity: 0.85;
 }
@@ -1394,12 +1440,14 @@ About Page Style
 .weekly-offers .owl-nav .owl-next::after {
   font-family: "FontAwesome";
   content: '\f061'; 
-  color: #22b3c1;
+
+  color: #6A5ACD;
   font-size: 20px;
   width: 46px;
   height: 46px;
   text-align: center;
-  border: 1px solid #22b3c1;
+
+  border: 1px solid #6A5ACD;
   display: inline-block;
   line-height: 44px;
   border-radius: 50%;
@@ -1414,12 +1462,14 @@ About Page Style
 .weekly-offers .owl-nav .owl-prev::after {
   font-family: "FontAwesome";
   content: '\f060'; 
-  color: #22b3c1;
+
+  color: #6A5ACD;
   font-size: 20px;
   width: 46px;
   height: 46px;
   text-align: center;
-  border: 1px solid #22b3c1;
+
+  border: 1px solid #6A5ACD;
   display: inline-block;
   line-height: 44px;
   border-radius: 50%;
@@ -1430,7 +1480,8 @@ About Page Style
 .weekly-offers .owl-nav .owl-prev:hover::after,
 .weekly-offers .owl-nav .owl-next:hover::after {
   color: #fff;
-  background-color: #22b3c1;
+
+  background-color: #6A5ACD;
 }
 
 .more-about {
@@ -1459,7 +1510,8 @@ About Page Style
 }
 
 .more-about .info-item span {
-  color: #22b3c1;
+
+  color: #6A5ACD;
   font-size: 15px;
 }
 
@@ -1468,8 +1520,9 @@ About Page Style
 }
 
 .more-about .main-button a:hover {
-  background-color: #22b3c1;
-  border-color: #22b3c1;
+
+  background-color: #6A5ACD;
+  border-color: #6A5ACD;
   color: #fff;
   opacity: 0.85;
 }
@@ -1748,7 +1801,8 @@ body .options .option {
   transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 body .options .option {
-  --defaultBackground:#22b3c1;
+
+  --defaultBackground:#6A5ACD;
 }
 body .options .option.active {
   flex-grow: 10000;
@@ -1842,9 +1896,11 @@ body .options .option .label .info .sub {
 }
 
 .best-locations .main-button a:hover {
-  background-color: #22b3c1;
+
+  background-color: #6A5ACD;
   color: #fff;
-  border-color: #22b3c1;
+
+  border-color: #6A5ACD;
   opacity: 0.85;
 }
 
@@ -1886,11 +1942,13 @@ Deals Page Style
 }
 
 .page-heading .border-button a:hover {
-  border-color: #22b3c1;
+
+  border-color: #6A5ACD;
 }
 
 .search-form #search-form {
-  background-color: #22b3c1;
+
+  background-color: #6A5ACD;
   border-bottom-left-radius: 23px;
   border-bottom-right-radius: 23px;
   padding: 35px 60px;
@@ -1941,7 +1999,8 @@ Deals Page Style
 
 .search-form #search-form button:hover {
   background-color: #fff;
-  color: #22b3c1;
+
+  color: #6A5ACD;
 }
 
 .amazing-deals {
@@ -1962,7 +2021,8 @@ Deals Page Style
 }
 
 .amazing-deals .item span.info {
-  color: #22b3c1;
+
+  color: #6A5ACD;
   font-size: 15px;
   margin-bottom: 20px;
   display: block;
@@ -2012,9 +2072,11 @@ Deals Page Style
   display: inline-block;
   width: 46px;
   height: 46px;
-  border: 1px solid #22b3c1;
+
+  border: 1px solid #6A5ACD;
   line-height: 44px;
-  color: #22b3c1;
+
+  color: #6A5ACD;
   text-align: center;
   font-size: 18px;
   font-weight: 500;
@@ -2024,7 +2086,7 @@ Deals Page Style
 
 .amazing-deals ul.page-numbers li.active a,
 .amazing-deals ul.page-numbers li a:hover {
-  background-color: #22b3c1;
+  background-color: #6A5ACD;
   color: #fff;
 }
 
@@ -2041,11 +2103,11 @@ Reservation Page Style
 */
 
 .second-page-heading {
-  background-image: url(../images/img.jpg);
+  background-image: url(../images/heading-bg-02.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 130px 0px 130px 0px;
+  padding: 260px 0px 190px 0px;
   text-align: center;
 }
 
@@ -2068,16 +2130,31 @@ Reservation Page Style
   bottom: 0;
   transform: translateX(-50px);
 }
-.second-page-heading >.menu_sub{
-   height: 100px;  float: left; display: inline; margin-left: 245px;
-}
 
-.second-page-heading >.menu_sub > p {
-   padding-left: 200px;
+.second-page-heading h2 {
+  font-size: 50px;
+  font-weight: 700;
   color: #fff;
   margin-bottom: 30px;
-  float: left;
-  
+}
+
+.second-page-heading p {
+  padding: 0px 15%;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.second-page-heading .main-button a {
+  border-color: #fff;
+  color: #6A5ACD;
+  background-color: #fff;
+}
+
+.second-page-heading .main-button a:hover {
+
+  border-color: #6A5ACD;
+  background-color: #6A5ACD;
+  color: #fff;
 }
 
 .reservation-info {
@@ -2100,7 +2177,8 @@ Reservation Page Style
   text-align: center;
   line-height: 60px;
   border-radius: 50px;
-  color: #22b3c1;
+
+  color: #6A5ACD;
   font-size: 20px;
   margin-bottom: 20px;
 }
@@ -2113,16 +2191,13 @@ Reservation Page Style
 
 .more-info .info-item a {
   font-size: 15px;
-  color: #22b3c1;
-}
-.section_main { width: 90%; height: 600px; overflow: hidden; margin-top: 50px;  }
-.section_main > .comm >a > img {margin-left: 150px;  margin-bottom: 10px;  width: 350px; height: 150px;  }
-.section_main > .comm { display: inline; margin-right: 5px;padding: 10px; }
-.reservation-form {
-  width: 1200px; height: 200px;
-  padding: 120px;
+
+  color: #6A5ACD;
 }
 
+.reservation-form {
+  margin: 120px 0px;
+}
 
 .reservation-form #map {
   margin-bottom: -6px;
@@ -2136,7 +2211,8 @@ Reservation Page Style
 
 .reservation-form #reservation-form h4 em {
   font-style: normal;
-  color: #22b3c1;
+
+  color: #6A5ACD;
 }
 
 .reservation-form #reservation-form {
@@ -2170,8 +2246,9 @@ Reservation Page Style
 .reservation-form #reservation-form button {
   font-size: 14px;
   color: #fff;
-  background-color: #22b3c1;
-  border: 1px solid #22b3c1;
+
+  background-color: #6A5ACD;
+  border: 1px solid #6A5ACD;
   padding: 12px 30px;
   width: 100%;
   text-align: center;
@@ -2199,7 +2276,6 @@ Responsive Style
 
 body {
   overflow-x: hidden;
-  background-color: #22b3c1;
 }
 
 @media (max-width: 575px) {
@@ -2333,5 +2409,6 @@ body {
   }
   .weekly-offers .container-fluid {
     padding: 0px;
+ 
   }
 }

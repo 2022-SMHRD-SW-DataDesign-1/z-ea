@@ -1,4 +1,5 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,13 +60,13 @@ https://templatemo.com/tm-580-woox-travel
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li><a href="index.jsp" class="active">Home</a></li>
-              <li><a href="about.jsp">About</a></li>
-              <li><a href="deals.jsp">Deals</a></li>
-              <li><a href="reservation.jsp">Reservation</a></li>
-              <li><a href="reservation.jsp">Book Yours</a></li>
+              <li><a href="index.jsp" class="active">홈</a></li>
+							<li><a href="about.jsp">테마</a></li>
+							<li><a href="deals.jsp">예약</a></li>
+							<li><a href="reservation.jsp">양도</a></li>
+							<li><a href="reservation.jsp">커뮤니티</a></li>
               <li>
-                <button class="modalBtn" onclick="show()" style="background-color: #22B3C1; padding: 8px 14px; border: none;
+                <button class="modalBtn" onclick="show()" style="background-color:  #6A5ACD; padding: 8px 14px; border: none;
                           color: #fff;
                          ">로그인</button>
               </li>
@@ -91,7 +92,7 @@ https://templatemo.com/tm-580-woox-travel
 
       <div class="slider">
         <div class="main-caption" style="font-size: 20px; ">
-          <div style="text-align: center;">검색어를 입력하세요</div>
+          <div style="margin-left: 10%;">검색어를 입력하세요</div>
           <form action="get">
             <input type="text" placeholder="#여행" style="width: 30%; height: 40px;" />
             <input type="submit" value="검색" />
@@ -295,12 +296,7 @@ https://templatemo.com/tm-580-woox-travel
   <div class="visit-country">
     <div class="container">
       <div class="row">
-        <div class="col-lg-5">
-          <div class="section-heading">
-            <h2>Visit One Of Our Countries Now</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-          </div>
-        </div>
+       
       </div>
       <div class="row">
         <div class="col-lg-8">
@@ -487,15 +483,19 @@ https://templatemo.com/tm-580-woox-travel
       let modal = document.querySelector(".modalPopup");
       let modalBtn = document.querySelector(".modalBtn");
       let mainCaption = document.querySelector(".main-caption")
+      let dark = document.querySelector(".controls")
+
       console.log("실행도미");
       if (modal.style.opacity == "0") {
     	mainCaption.style.opacity ="0";
+      dark.style.opacity = "0"
         modal.style.opacity = "1";
         modal.style.display = "block"
         modalBtn.textContent = "닫기"
       }
 
       else {
+        dark.style.opacity ="1";
     	  mainCaption.style.opacity ="1";
         modal.style.opacity = "0";
         modal.style.display = "none";

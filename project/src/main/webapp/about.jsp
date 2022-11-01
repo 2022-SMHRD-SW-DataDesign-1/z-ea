@@ -67,9 +67,10 @@ https://templatemo.com/tm-580-woox-travel
 							<li><a href="reservation.jsp">양도</a></li>
 							<li><a href="reservation.jsp">커뮤니티</a></li>
 							<li>
-								<button class="modalBtn" onclick="show()"
-									style="background-color: #6a5acd; padding: 8px 14px; border: none; color: #fff;">로그인</button>
-							</li>
+						
+              <button class="modalBtn" onclick="show()" style="background-color: #6A5ACD; padding: 8px 14px; border: none;
+                          color: #fff;
+                         ">로그인</button>
 						</ul>
 						<a class='menu-trigger'> <span>Menu</span>
 						</a>
@@ -128,23 +129,15 @@ https://templatemo.com/tm-580-woox-travel
             </table>
           </div>
         </div>
-
+        <div class="dark">
 	<!-- ***** Main Banner Area Start ***** -->
 	<div class="about-main-content">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="content">
-						<div class="blur-bg"></div>
-						<h4>EXPLORE OUR COUNTRY</h4>
-						<div class="line-dec"></div>
-						<h2>Welcome To Caribbean</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-							sed do eiusmod tempor incididunt uttersi labore et dolore magna
-							aliqua is ipsum suspendisse ultrices gravida</p>
-						<div class="main-button">
-							<a href="reservation.jsp">Discover More</a>
-						</div>
+						
+						
 					</div>
 				</div>
 			</div>
@@ -159,7 +152,7 @@ https://templatemo.com/tm-580-woox-travel
 					<div class="row">
 						<div class="col-lg-12">
 							<h2>
-								Caribbeanâs <em>Cities &amp; Towns</em>
+							카테고리 <em>Cities &amp; Towns</em>
 							</h2>
 						</div>
 						<div class="col-lg-12">
@@ -550,7 +543,7 @@ https://templatemo.com/tm-580-woox-travel
 			</div>
 		</div>
 	</div>
-
+  </div>
 	<footer>
 		<div class="container">
 			<div class="row">
@@ -584,21 +577,25 @@ https://templatemo.com/tm-580-woox-travel
 			$(".option").removeClass("active");
 			$(this).addClass("active");
 		});
+    </script>
+    <script>
 		 function show() {
-			 
+			 console.log("실행");
 		      let modal = document.querySelector(".modalPopup");
 		      let modalBtn = document.querySelector(".modalBtn");
-		      let mainCaption = document.querySelector(".main-caption")
-
+		      // let mainCaption = document.querySelector(".main-caption")
+          let slidercon = document.querySelector(".dark")
 		      if (modal.style.opacity == "0") {
-		    	mainCaption.style.opacity ="0";
+		    	// mainCaption.style.opacity ="0";
+          slidercon.style.opacity ="0";
 		        modal.style.opacity = "1";
 		        modal.style.display = "block"
 		        modalBtn.textContent = "닫기"
 		      }
 
 		      else {
-		    	  mainCaption.style.opacity ="1";
+		    	  // mainCaption.style.opacity ="1";
+            slidercon.style.opacity="1";
 		        modal.style.opacity = "0";
 		        modal.style.display = "none";
 		        modalBtn.textContent = "로그인";
