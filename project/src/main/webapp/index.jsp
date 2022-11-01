@@ -63,6 +63,12 @@ https://templatemo.com/tm-580-woox-travel
                         <li><a href="deals.html">Deals</a></li>
                         <li><a href="reservation.html">Reservation</a></li>
                         <li><a href="reservation.html">Book Yours</a></li>
+                        <li><a href="reservation.html">ABCDEFG</a></li>
+                        <!--
+
+히갱이가 수정한거 여기부분 이댜 
+
+-->
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -377,7 +383,7 @@ https://templatemo.com/tm-580-woox-travel
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <p>Copyright � 2036 <a href="#">WoOx Travel</a> Company. All rights reserved. 
+          <p>Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights reserved. 
           <br>Design: <a href="https://templatemo.com" target="_blank" title="free CSS templates">TemplateMo</a> Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a></p>
         </div>
       </div>
