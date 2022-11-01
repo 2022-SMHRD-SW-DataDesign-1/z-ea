@@ -1,27 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<<<<<<< HEAD
+=======
+    
+<!DOCTYPE html>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 <html lang="en">
 
+<head>
 
-  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <title>WoOx Travel Bootstrap 5 Theme</title>
 
-    <title>WoOx Travel Bootstrap 5 Theme</title>
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-woox-travel.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-<!--
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-woox-travel.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <!--
 
 TemplateMo 580 Woox Travel
 
@@ -29,7 +34,7 @@ https://templatemo.com/tm-580-woox-travel
 
 -->
 
-  </head>
+</head>
 
 <body>
 
@@ -49,6 +54,7 @@ https://templatemo.com/tm-580-woox-travel
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
     <div class="container">
+<<<<<<< HEAD
         <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
@@ -71,7 +77,41 @@ https://templatemo.com/tm-580-woox-travel
                     <!-- ***** Menu End ***** -->
                 </nav>
             </div>
+=======
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.jsp" class="logo">
+              <img src="assets/images/logo.png" alt="">
+            </a>
+            <!-- ***** Logo End ***** -->
+
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+
+              <li><a href="index.jsp" class="active">홈</a></li>
+              <li><a href="about.jsp">테마</a></li>
+              <li><a href="deals.jsp">예약</a></li>
+              <li><a href="reservation.jsp">양도</a></li>
+              <li><a href="reservation.jsp">커뮤니티</a></li>
+
+              <li>
+
+                <button class="modalBtn" onclick="show()" style="background-color: #6A5ACD; padding: 8px 14px; border: none;
+
+                          color: #fff;
+                         ">로그인</button>
+              </li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
         </div>
+      </div>
     </div>
   </header>
   <!-- ***** Header Area End ***** -->
@@ -83,14 +123,71 @@ https://templatemo.com/tm-580-woox-travel
       <input type="radio" id="banner2" class="sec-1-input" name="banner">
       <input type="radio" id="banner3" class="sec-1-input" name="banner">
       <input type="radio" id="banner4" class="sec-1-input" name="banner">
+
       <div class="slider">
-        <div id="search" style="display:inline-block;position: absolute; z-index: 1000; width: 100%; top: 40%; margin-left: 45%;" >
-        <input type="text">
-      </div>
+        <div class="main-caption" style="font-size: 20px; ">
+          <div style="margin-left: 10%;">검색어를 입력하세요</div>
+          <form action="get">
+            <input type="text" placeholder="#여행" style="width: 30%; height: 40px;" />
+            <input type="submit" value="검색" />
+          </form>
+          <p>
+            #여행 #먹방 기타등등
+          </p>
+        </div>
+
+        <!-- 모달 -->
+        <div class="modalPopup" style="display: none;">
+          <div class="ModalBack" onclick
+            style="position : fixed; background-color : black; width: 100%; height: 100%; opacity: 0.9; ">
+          </div>
+          <div class="LoginModal"
+            style="text-align: center; background-color: white; width: 540px; height: 600px; margin-top: 10%; margin-left: 36%; position: fixed; align-content: center;">
+            <!-- 로그인 -->
+            <table style="margin: auto; margin-top: 10%;">
+              <th colspan="2" style="font-size: 20px; padding: 10px; text-align: center;">로그인</th>
+              <tr>
+                <td>
+                  <div style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이메일 </div>
+                </td>
+                <td><input type="email" name="email" style="width: 180px;" /></td>
+              </tr>
+              <tr>
+                <td>
+                  <div style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">비밀번호 </div>
+                </td>
+                <td><input type="password" name="password" style="width: 180px;" /></td>
+              </tr>
+              <td colspan="2" style="text-align: center;"><input type="submit" value="로그인" style="width: 80px;"></td>
+            </table>
+            <!-- 회원가입-->
+            <table style="margin: auto; margin-top: 10%;">
+              <th colspan="2" style="font-size: 20px; padding: 10px; text-align: center;">회원가입</th>
+              <tr>
+                <td>
+                  <div style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이름 </div>
+                </td>
+                <td><input type="text" name="name" style="width: 180px;" /></td>
+              </tr>
+              <tr>
+                <td>
+                  <div style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이메일 </div>
+                </td>
+                <td><input type="email" name="email" style="width: 180px;" /></td>
+              </tr>
+              <tr>
+                <td>
+                  <div style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">비밀번호 </div>
+                </td>
+                <td><input type="password" name="password" style="width: 180px;" /></td>
+              </tr>
+              <td colspan="2" style="text-align: center;"><input type="submit" value="회원가입" style="width: 80px;"></td>
+            </table>
+          </div>
+        </div>
+
         <div id="top-banner-1" class="banner">
           <div class="banner-inner-wrapper header-text">
-            <div class="main-caption">
-            </div>
             <div class="container">
               <div class="row">
                 <div class="col-lg-12">
@@ -110,7 +207,7 @@ https://templatemo.com/tm-580-woox-travel
                       </div>
                       <div class="col-lg-3 col-sm-6 col-6">
                         <div class="main-button">
-                          <a href="about.html">Explore More</a>
+                          <a href="about.jsp">Explore More</a>
                         </div>
                       </div>
                     </div>
@@ -122,8 +219,6 @@ https://templatemo.com/tm-580-woox-travel
         </div>
         <div id="top-banner-2" class="banner">
           <div class="banner-inner-wrapper header-text">
-            <div class="main-caption">
-            </div>
             <div class="container">
               <div class="row">
                 <div class="col-lg-12">
@@ -143,7 +238,7 @@ https://templatemo.com/tm-580-woox-travel
                       </div>
                       <div class="col-lg-3 col-sm-6 col-6">
                         <div class="main-button">
-                          <a href="about.html">Explore More</a>
+                          <a href="about.jsp">Explore More</a>
                         </div>
                       </div>
                     </div>
@@ -155,7 +250,6 @@ https://templatemo.com/tm-580-woox-travel
         </div>
         <div id="top-banner-3" class="banner">
           <div class="banner-inner-wrapper header-text">
-            <div class="main-caption"></div>
             <div class="container">
               <div class="row">
                 <div class="col-lg-12">
@@ -175,7 +269,7 @@ https://templatemo.com/tm-580-woox-travel
                       </div>
                       <div class="col-lg-3 col-sm-6 col-6">
                         <div class="main-button">
-                          <a href="about.html">Explore More</a>
+                          <a href="about.jsp">Explore More</a>
                         </div>
                       </div>
                     </div>
@@ -187,7 +281,6 @@ https://templatemo.com/tm-580-woox-travel
         </div>
         <div id="top-banner-4" class="banner">
           <div class="banner-inner-wrapper header-text">
-            <div class="main-caption"></div>
             <div class="container">
               <div class="row">
                 <div class="col-lg-12">
@@ -207,7 +300,7 @@ https://templatemo.com/tm-580-woox-travel
                       </div>
                       <div class="col-lg-3 col-sm-6 col-6">
                         <div class="main-button">
-                          <a href="about.html">Explore More</a>
+                          <a href="about.jsp">Explore More</a>
                         </div>
                       </div>
                     </div>
@@ -220,22 +313,27 @@ https://templatemo.com/tm-580-woox-travel
       </div>
       <nav>
         <div class="controls">
-          <label for="banner1"><span class="progressbar"><span class="progressbar-fill"></span></span><span class="text">1</span></label>
-          <label for="banner2"><span class="progressbar"><span class="progressbar-fill"></span></span><span class="text">2</span></label>
-          <label for="banner3"><span class="progressbar"><span class="progressbar-fill"></span></span><span class="text">3</span></label>
-          <label for="banner4"><span class="progressbar"><span class="progressbar-fill"></span></span><span class="text">4</span></label>
+          <label for="banner1"><span class="progressbar"><span class="progressbar-fill"></span></span><span
+              class="text">1</span></label>
+          <label for="banner2"><span class="progressbar"><span class="progressbar-fill"></span></span><span
+              class="text">2</span></label>
+          <label for="banner3"><span class="progressbar"><span class="progressbar-fill"></span></span><span
+              class="text">3</span></label>
+          <label for="banner4"><span class="progressbar"><span class="progressbar-fill"></span></span><span
+              class="text">4</span></label>
         </div>
       </nav>
     </div>
   </section>
   <!-- ***** Main Banner Area End ***** -->
-  
+
   <div class="visit-country">
     <div class="container">
       <div class="row">
         <div class="col-lg-5">
           <div class="section-heading">
-            <h2>Visit One Of Our Countries Now</h2>
+            <h2>사용자 맞춤 장소 제공
+            </h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
           </div>
         </div>
@@ -257,16 +355,17 @@ https://templatemo.com/tm-580-woox-travel
                         <h4>SWITZERLAND</h4>
                         <span>Europe</span>
                         <div class="main-button">
-                          <a href="about.html">Explore More</a>
+                          <a href="about.jsp">Explore More</a>
                         </div>
-                        <p>Woox Travel is a professional Bootstrap 5 theme HTML CSS layout for your website. You can use this layout for your commercial work.</p>
+                        <p>Woox Travel is a professional Bootstrap 5 theme HTML CSS layout for your website. You can use
+                          this layout for your commercial work.</p>
                         <ul class="info">
                           <li><i class="fa fa-user"></i> 8.66 Mil People</li>
                           <li><i class="fa fa-globe"></i> 41.290 km2</li>
                           <li><i class="fa fa-home"></i> $1.100.200</li>
                         </ul>
                         <div class="text-button">
-                          <a href="about.html">Need Directions ? <i class="fa fa-arrow-right"></i></a>
+                          <a href="about.jsp">Need Directions ? <i class="fa fa-arrow-right"></i></a>
                         </div>
                       </div>
                     </div>
@@ -286,16 +385,17 @@ https://templatemo.com/tm-580-woox-travel
                         <h4>CARIBBEAN</h4>
                         <span>North America</span>
                         <div class="main-button">
-                          <a href="about.html">Explore More</a>
+                          <a href="about.jsp">Explore More</a>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                          labore dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
                         <ul class="info">
                           <li><i class="fa fa-user"></i> 44.48 Mil People</li>
                           <li><i class="fa fa-globe"></i> 275.400 km2</li>
                           <li><i class="fa fa-home"></i> $946.000</li>
                         </ul>
                         <div class="text-button">
-                          <a href="about.html">Need Directions ? <i class="fa fa-arrow-right"></i></a>
+                          <a href="about.jsp">Need Directions ? <i class="fa fa-arrow-right"></i></a>
                         </div>
                       </div>
                     </div>
@@ -315,16 +415,18 @@ https://templatemo.com/tm-580-woox-travel
                         <h4>FRANCE</h4>
                         <span>Europe</span>
                         <div class="main-button">
-                          <a href="about.html">Explore More</a>
+                          <a href="about.jsp">Explore More</a>
                         </div>
-                        <p>We hope this WoOx template is useful for you, please support us a <a href="https://paypal.me/templatemo" target="_blank">small amount of PayPal</a> to info [at] templatemo.com for our survival. We really appreciate your contribution.</p>
+                        <p>We hope this WoOx template is useful for you, please support us a <a
+                            href="https://paypal.me/templatemo" target="_blank">small amount of PayPal</a> to info [at]
+                          templatemo.com for our survival. We really appreciate your contribution.</p>
                         <ul class="info">
                           <li><i class="fa fa-user"></i> 67.41 Mil People</li>
                           <li><i class="fa fa-globe"></i> 551.500 km2</li>
                           <li><i class="fa fa-home"></i> $425.600</li>
                         </ul>
                         <div class="text-button">
-                          <a href="about.html">Need Directions ? <i class="fa fa-arrow-right"></i></a>
+                          <a href="about.jsp">Need Directions ? <i class="fa fa-arrow-right"></i></a>
                         </div>
                       </div>
                     </div>
@@ -348,7 +450,10 @@ https://templatemo.com/tm-580-woox-travel
             <div class="row">
               <div class="col-lg-12">
                 <div id="map">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12469.776493332698!2d-80.14036379941481!3d25.907788681148624!2m3!1f357.26927939317244!2f20.870722720054623!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x88d9add4b4ac788f%3A0xe77469d09480fcdb!2sSunny%20Isles%20Beach!5e1!3m2!1sen!2sth!4v1642869952544!5m2!1sen!2sth" width="100%" height="550px" frameborder="0" style="border:0; border-radius: 23px; " allowfullscreen=""></iframe>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12469.776493332698!2d-80.14036379941481!3d25.907788681148624!2m3!1f357.26927939317244!2f20.870722720054623!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x88d9add4b4ac788f%3A0xe77469d09480fcdb!2sSunny%20Isles%20Beach!5e1!3m2!1sen!2sth!4v1642869952544!5m2!1sen!2sth"
+                    width="100%" height="550px" frameborder="0" style="border:0; border-radius: 23px; "
+                    allowfullscreen=""></iframe>
                 </div>
               </div>
             </div>
@@ -358,33 +463,25 @@ https://templatemo.com/tm-580-woox-travel
     </div>
   </div>
 
-  <div class="call-to-action">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8">
-          <h2>Are You Looking To Travel ?</h2>
-          <h4>Make A Reservation By Clicking The Button</h4>
-        </div>
-        <div class="col-lg-4">
-          <div class="border-button">
-            <a href="reservation.html">Book Yours Now</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  
 
   <footer>
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
+<<<<<<< HEAD
           <p>Copyright � 2036 <a href="#">WoOx Travel</a> Company. All rights reserved. 
           <br>Design: <a href="https://templatemo.com" target="_blank" title="free CSS templates">TemplateMo</a> Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a></p>
+=======
+          <p>Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights reserved.
+            <br>Design: <a href="https://templatemo.com" target="_blank" title="free CSS templates">TemplateMo</a>
+            Distribution: <a href="https://themewagon.com target=" _blank">ThemeWagon</a>
+          </p>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
         </div>
       </div>
     </div>
   </footer>
-
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
@@ -407,13 +504,33 @@ https://templatemo.com/tm-580-woox-travel
 
     var bannerTimer = setInterval(bannerSwitcher, 5000);
 
-    $('nav .controls label').click(function() {
+    $('nav .controls label').click(function () {
       clearInterval(bannerTimer);
       bannerTimer = setInterval(bannerSwitcher, 5000)
     });
+
+    function show() {
+ 
+      let modal = document.querySelector(".modalPopup");
+      let modalBtn = document.querySelector(".modalBtn");
+      let mainCaption = document.querySelector(".main-caption")
+
+      if (modal.style.opacity == "0") {
+    	mainCaption.style.opacity ="0";
+        modal.style.opacity = "1";
+        modal.style.display = "block"
+        modalBtn.textContent = "닫기"
+      }
+
+      else {
+    	  mainCaption.style.opacity ="1";
+        modal.style.opacity = "0";
+        modal.style.display = "none";
+        modalBtn.textContent = "로그인";
+      }
+    }
   </script>
 
-  </body>
-
+</body>
 
 </html>
