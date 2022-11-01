@@ -59,15 +59,20 @@ https://templatemo.com/tm-580-woox-travel
               <img src="assets/images/logo.png" alt="">
             </a>
             <!-- ***** Logo End ***** -->
+
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li><a href="index.jsp" class="active">Home</a></li>
-              <li><a href="about.jsp">About</a></li>
-              <li><a href="deals.jsp">Deals</a></li>
-              <li><a href="reservation.jsp">Reservation</a></li>
-              <li><a href="reservation.jsp">Book Yours</a></li>
+
+              <li><a href="index.jsp" class="active">홈</a></li>
+              <li><a href="about.jsp">테마</a></li>
+              <li><a href="deals.jsp">예약</a></li>
+              <li><a href="reservation.jsp">양도</a></li>
+              <li><a href="reservation.jsp">커뮤니티</a></li>
+
               <li>
-                <button class="modalBtn" onclick="show()" style="background-color: #6a5acd; padding: 8px 14px; border: none;
+
+                <button class="modalBtn" onclick="show()" style="background-color: #6A5ACD; padding: 8px 14px; border: none;
+
                           color: #fff;
                          ">로그인</button>
               </li>
@@ -496,4 +501,3 @@ https://templatemo.com/tm-580-woox-travel
 </body>
 
 </html>
-

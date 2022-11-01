@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,11 +61,11 @@ https://templatemo.com/tm-580-woox-travel
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
-							<li><a href="index.jsp">Home</a></li>
-							<li><a href="about.jsp" class="active">About</a></li>
-							<li><a href="deals.jsp">Deals</a></li>
-							<li><a href="reservation.jsp">Reservation</a></li>
-							<li><a href="reservation.jsp">Book Yours</a></li>
+							<li><a href="index.jsp" class="active">홈</a></li>
+							<li><a href="about.jsp">테마</a></li>
+							<li><a href="deals.jsp">예약</a></li>
+							<li><a href="reservation.jsp">양도</a></li>
+							<li><a href="reservation.jsp">커뮤니티</a></li>
 							<li>
 								<button class="modalBtn" onclick="show()"
 									style="background-color: #6a5acd; padding: 8px 14px; border: none; color: #fff;">로그인</button>
@@ -193,12 +193,11 @@ https://templatemo.com/tm-580-woox-travel
 								<img src="assets/images/offers-01.jpg" alt="">
 								<div class="text">
 									<h4>
-										Havana<br>
-										<span><i class="fa fa-users"></i> 234 Check Ins</span>
+										Havana<br> <span><i class="fa fa-users"></i> 234
+											Check Ins</span>
 									</h4>
 									<h6>
-										$420<br>
-										<span>/person</span>
+										$420<br> <span>/person</span>
 									</h6>
 									<div class="line-dec"></div>
 									<ul>
@@ -219,12 +218,11 @@ https://templatemo.com/tm-580-woox-travel
 								<img src="assets/images/offers-02.jpg" alt="">
 								<div class="text">
 									<h4>
-										Kingston<br>
-										<span><i class="fa fa-users"></i> 234 Check Ins</span>
+										Kingston<br> <span><i class="fa fa-users"></i> 234
+											Check Ins</span>
 									</h4>
 									<h6>
-										$420<br>
-										<span>/person</span>
+										$420<br> <span>/person</span>
 									</h6>
 									<div class="line-dec"></div>
 									<ul>
@@ -245,12 +243,11 @@ https://templatemo.com/tm-580-woox-travel
 								<img src="assets/images/offers-03.jpg" alt="">
 								<div class="text">
 									<h4>
-										George Town<br>
-										<span><i class="fa fa-users"></i> 234 Check Ins</span>
+										George Town<br> <span><i class="fa fa-users"></i>
+											234 Check Ins</span>
 									</h4>
 									<h6>
-										$420<br>
-										<span>/person</span>
+										$420<br> <span>/person</span>
 									</h6>
 									<div class="line-dec"></div>
 									<ul>
@@ -271,12 +268,11 @@ https://templatemo.com/tm-580-woox-travel
 								<img src="assets/images/offers-01.jpg" alt="">
 								<div class="text">
 									<h4>
-										Havana<br>
-										<span><i class="fa fa-users"></i> 234 Check Ins</span>
+										Havana<br> <span><i class="fa fa-users"></i> 234
+											Check Ins</span>
 									</h4>
 									<h6>
-										$420<br>
-										<span>/person</span>
+										$420<br> <span>/person</span>
 									</h6>
 									<div class="line-dec"></div>
 									<ul>
@@ -297,12 +293,11 @@ https://templatemo.com/tm-580-woox-travel
 								<img src="assets/images/offers-02.jpg" alt="">
 								<div class="text">
 									<h4>
-										Kingston<br>
-										<span><i class="fa fa-users"></i> 234 Check Ins</span>
+										Kingston<br> <span><i class="fa fa-users"></i> 234
+											Check Ins</span>
 									</h4>
 									<h6>
-										$420<br>
-										<span>/person</span>
+										$420<br> <span>/person</span>
 									</h6>
 									<div class="line-dec"></div>
 									<ul>
@@ -323,12 +318,11 @@ https://templatemo.com/tm-580-woox-travel
 								<img src="assets/images/offers-03.jpg" alt="">
 								<div class="text">
 									<h4>
-										George Town<br>
-										<span><i class="fa fa-users"></i> 234 Check Ins</span>
+										George Town<br> <span><i class="fa fa-users"></i>
+											234 Check Ins</span>
 									</h4>
 									<h6>
-										$420<br>
-										<span>/person</span>
+										$420<br> <span>/person</span>
 									</h6>
 									<div class="line-dec"></div>
 									<ul>
