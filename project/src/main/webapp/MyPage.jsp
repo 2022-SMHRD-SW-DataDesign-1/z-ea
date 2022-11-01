@@ -50,17 +50,17 @@ https://templatemo.com/tm-580-woox-travel
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
+                    <a href="index.jsp" class="logo">
                         <img src="assets/images/logo.png" alt="">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="deals.html">Deals</a></li>
-                        <li><a href="reservation.html" class="active">Reservation</a></li>
-                        <li><a href="my page.html">Book Yours</a></li>
+                        <li><a href="index.jsp">Home</a></li>
+                        <li><a href="about.jsp">About</a></li>
+                        <li><a href="deals.jsp">Deals</a></li>
+                        <li><a href="reservation.jsp" class="active">Reservation</a></li>
+                        <li><a href="my page.jsp">Book Yours</a></li>
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -80,7 +80,7 @@ https://templatemo.com/tm-580-woox-travel
           <h4>내 여행관리는 여기에서</h4>
           <h2>My Page</h2>
           <p>내 여행일정 관리부터 소통까지 ! </p>
-          <div><a href="about.html">자세히 알아보기</a></div>
+          <div><a href="about.jsp">자세히 알아보기</a></div>
         </div>
     </div>
     </div>
@@ -93,7 +93,7 @@ https://templatemo.com/tm-580-woox-travel
           <div class="info-item">
             <i class="fa fa-envelope"></i>
             <h4>회원정보</h4>
-            <a href="회원정보수정.html">회원정보 수정하기</a>
+            <a href="회원정보수정.jsp">회원정보 수정하기</a>
           </div>
         </div>
         <div class="col-lg-4 col-sm-6">

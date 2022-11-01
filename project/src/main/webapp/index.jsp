@@ -55,17 +55,17 @@ https://templatemo.com/tm-580-woox-travel
         <div class="col-12">
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
-            <a href="index.html" class="logo">
+            <a href="index.jsp" class="logo">
               <img src="assets/images/logo.png" alt="">
             </a>
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li><a href="index.html" class="active">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="deals.html">Deals</a></li>
-              <li><a href="reservation.html">Reservation</a></li>
-              <li><a href="reservation.html">Book Yours</a></li>
+              <li><a href="index.jsp" class="active">Home</a></li>
+              <li><a href="about.jsp">About</a></li>
+              <li><a href="deals.jsp">Deals</a></li>
+              <li><a href="reservation.jsp">Reservation</a></li>
+              <li><a href="reservation.jsp">Book Yours</a></li>
               <li>
                 <button class="modalBtn" onclick="show()" style="background-color: #22B3C1; padding: 8px 14px; border: none;
                           color: #fff;
@@ -174,7 +174,7 @@ https://templatemo.com/tm-580-woox-travel
                       </div>
                       <div class="col-lg-3 col-sm-6 col-6">
                         <div class="main-button">
-                          <a href="about.html">Explore More</a>
+                          <a href="about.jsp">Explore More</a>
                         </div>
                       </div>
                     </div>
@@ -205,7 +205,7 @@ https://templatemo.com/tm-580-woox-travel
                       </div>
                       <div class="col-lg-3 col-sm-6 col-6">
                         <div class="main-button">
-                          <a href="about.html">Explore More</a>
+                          <a href="about.jsp">Explore More</a>
                         </div>
                       </div>
                     </div>
@@ -236,7 +236,7 @@ https://templatemo.com/tm-580-woox-travel
                       </div>
                       <div class="col-lg-3 col-sm-6 col-6">
                         <div class="main-button">
-                          <a href="about.html">Explore More</a>
+                          <a href="about.jsp">Explore More</a>
                         </div>
                       </div>
                     </div>
@@ -267,7 +267,7 @@ https://templatemo.com/tm-580-woox-travel
                       </div>
                       <div class="col-lg-3 col-sm-6 col-6">
                         <div class="main-button">
-                          <a href="about.html">Explore More</a>
+                          <a href="about.jsp">Explore More</a>
                         </div>
                       </div>
                     </div>
@@ -322,7 +322,7 @@ https://templatemo.com/tm-580-woox-travel
                         <h4>SWITZERLAND</h4>
                         <span>Europe</span>
                         <div class="main-button">
-                          <a href="about.html">Explore More</a>
+                          <a href="about.jsp">Explore More</a>
                         </div>
                         <p>Woox Travel is a professional Bootstrap 5 theme HTML CSS layout for your website. You can use
                           this layout for your commercial work.</p>
@@ -332,7 +332,7 @@ https://templatemo.com/tm-580-woox-travel
                           <li><i class="fa fa-home"></i> $1.100.200</li>
                         </ul>
                         <div class="text-button">
-                          <a href="about.html">Need Directions ? <i class="fa fa-arrow-right"></i></a>
+                          <a href="about.jsp">Need Directions ? <i class="fa fa-arrow-right"></i></a>
                         </div>
                       </div>
                     </div>
@@ -352,7 +352,7 @@ https://templatemo.com/tm-580-woox-travel
                         <h4>CARIBBEAN</h4>
                         <span>North America</span>
                         <div class="main-button">
-                          <a href="about.html">Explore More</a>
+                          <a href="about.jsp">Explore More</a>
                         </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                           labore dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
@@ -362,7 +362,7 @@ https://templatemo.com/tm-580-woox-travel
                           <li><i class="fa fa-home"></i> $946.000</li>
                         </ul>
                         <div class="text-button">
-                          <a href="about.html">Need Directions ? <i class="fa fa-arrow-right"></i></a>
+                          <a href="about.jsp">Need Directions ? <i class="fa fa-arrow-right"></i></a>
                         </div>
                       </div>
                     </div>
@@ -382,7 +382,7 @@ https://templatemo.com/tm-580-woox-travel
                         <h4>FRANCE</h4>
                         <span>Europe</span>
                         <div class="main-button">
-                          <a href="about.html">Explore More</a>
+                          <a href="about.jsp">Explore More</a>
                         </div>
                         <p>We hope this WoOx template is useful for you, please support us a <a
                             href="https://paypal.me/templatemo" target="_blank">small amount of PayPal</a> to info [at]
@@ -393,7 +393,7 @@ https://templatemo.com/tm-580-woox-travel
                           <li><i class="fa fa-home"></i> $425.600</li>
                         </ul>
                         <div class="text-button">
-                          <a href="about.html">Need Directions ? <i class="fa fa-arrow-right"></i></a>
+                          <a href="about.jsp">Need Directions ? <i class="fa fa-arrow-right"></i></a>
                         </div>
                       </div>
                     </div>
@@ -439,7 +439,7 @@ https://templatemo.com/tm-580-woox-travel
         </div>
         <div class="col-lg-4">
           <div class="border-button">
-            <a href="reservation.html">Book Yours Now</a>
+            <a href="reservation.jsp">Book Yours Now</a>
           </div>
         </div>
       </div>
@@ -486,11 +486,11 @@ https://templatemo.com/tm-580-woox-travel
     });
 
     function show() {
-      console.log("외않되");
+ 
       let modal = document.querySelector(".modalPopup");
       let modalBtn = document.querySelector(".modalBtn");
       let mainCaption = document.querySelector(".main-caption")
-      console.log("실행도미");
+
       if (modal.style.opacity == "0") {
     	mainCaption.style.opacity ="0";
         modal.style.opacity = "1";
