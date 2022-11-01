@@ -68,7 +68,7 @@ https://templatemo.com/tm-580-woox-travel
 							<li><a href="reservation.jsp">Book Yours</a></li>
 							<li>
 								<button class="modalBtn" onclick="show()"
-									style="background-color: #22B3C1; padding: 8px 14px; border: none; color: #fff;">로그인</button>
+									style="background-color: #6a5acd; padding: 8px 14px; border: none; color: #fff;">로그인</button>
 							</li>
 						</ul>
 						<a class='menu-trigger'> <span>Menu</span>

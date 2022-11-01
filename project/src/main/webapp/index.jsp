@@ -67,7 +67,7 @@ https://templatemo.com/tm-580-woox-travel
               <li><a href="reservation.jsp">Reservation</a></li>
               <li><a href="reservation.jsp">Book Yours</a></li>
               <li>
-                <button class="modalBtn" onclick="show()" style="background-color: #22B3C1; padding: 8px 14px; border: none;
+                <button class="modalBtn" onclick="show()" style="background-color: #6a5acd; padding: 8px 14px; border: none;
                           color: #fff;
                          ">로그인</button>
               </li>
@@ -430,21 +430,7 @@ https://templatemo.com/tm-580-woox-travel
     </div>
   </div>
 
-  <div class="call-to-action">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8">
-          <h2>Are You Looking To Travel ?</h2>
-          <h4>Make A Reservation By Clicking The Button</h4>
-        </div>
-        <div class="col-lg-4">
-          <div class="border-button">
-            <a href="reservation.jsp">Book Yours Now</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  
 
   <footer>
     <div class="container">
