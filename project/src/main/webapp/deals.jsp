@@ -59,7 +59,7 @@ https://templatemo.com/tm-580-woox-travel
                         <li><a href="index.jsp">Home</a></li>
                         <li><a href="about.jsp">About</a></li>
                         <li><a href="deals.jsp" class="active">Deals</a></li>
-                        <li><a href="reservation.jsp">Reservation</a></li>
+                        <li><a href="community.jsp">Reservation</a></li>
                         <li><a href="reservation.jsp">Book Yours</a></li>
                     </ul>   
                     <a class='menu-trigger'>

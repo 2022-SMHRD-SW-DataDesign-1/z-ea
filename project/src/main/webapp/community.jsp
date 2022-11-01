@@ -52,15 +52,15 @@ https://templatemo.com/tm-580-woox-travel
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
-                        
+                    <a href="index.jsp" class="logo">
+                        <img src="assets/images/logo.png" alt="">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">글램핑&카라반</a></li>
-                        <li><a href="deals.html">테마</a></li>
+                        <li><a href="index.jsp">Home</a></li>
+                        <li><a href="about.jsp">글램핑&카라반</a></li>
+                        <li><a href="deals.jsp">테마</a></li>
                         <li><a href="reservation.html" class="active">양도하기</a></li>
                         <li class="menu"><a href="#">커뮤니티</a>
                           <ul class="sub_menu">
