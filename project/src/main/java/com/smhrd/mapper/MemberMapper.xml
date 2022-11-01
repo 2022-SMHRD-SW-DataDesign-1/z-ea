@@ -4,6 +4,12 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smhrd.mapper.MemberMapper">
 	<insert id="join" parameterType="MemberDTO">
-	insert into member_tb values(member_num.nextval, #{email},#{pw},#{birth},#{username},#{tel})
+	insert into member_tb values(#{mb_email},#{mb_pw},#{mb_birthdate},#{mb_name},#{mb_phone},sysdate,1)
 	</insert>
+	<select id="login" parameterType="MemberDTO" resultType="MemberDTO">
+	select * from member_tb where mb_email = #{mb_email} and mb_pw = #{mb_pw} 
+	</select>
+	<select id="login_info" parameterType="String" resultType="MemberDTO">
+	select * from member_tb where mb_email = #{mb_email}
+	</select>
 </mapper>

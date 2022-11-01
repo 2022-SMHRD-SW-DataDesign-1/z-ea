@@ -19,4 +19,18 @@ public class MemberDAO {
 		
 		return row;
 	}
+	public MemberDTO login(MemberDTO dto) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		MemberDTO check = session.selectOne("login", dto);
+		session.close();
+		
+		return check;
+	}
+	public MemberDTO login_info(String dto) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		MemberDTO info = session.selectOne("login_info", dto);
+		session.close();
+		
+		return info;
+	}
 }
