@@ -54,17 +54,17 @@ https://templatemo.com/tm-580-woox-travel
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
+                    <a href="index.jsp" class="logo">
                         <img src="assets/images/logo.png" alt="">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="deals.html">Deals</a></li>
-                        <li><a href="reservation.html" class="active">Reservation</a></li>
-                        <li><a href="reservation.html">Book Yours</a></li>
+                        <li><a href="index.jsp">Home</a></li>
+                        <li><a href="about.jsp">About</a></li>
+                        <li><a href="deals.jsp">Deals</a></li>
+                        <li><a href="reservation.jsp" class="active">Reservation</a></li>
+                        <li><a href="reservation.jsp">Book Yours</a></li>
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -82,7 +82,7 @@ https://templatemo.com/tm-580-woox-travel
       <div class="row">
         <div class="col-lg-12">
           <h2>회원 정보 수정</h2>
-          <div class="main-button"><a href="index.html">BACK</a></div>
+          <div class="main-button"><a href="index.jsp">BACK</a></div>
         </div>
       </div>
     </div>

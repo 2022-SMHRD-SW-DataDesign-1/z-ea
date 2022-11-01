@@ -2,11 +2,12 @@
 	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang=en>
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -26,9 +27,12 @@
 <link rel="stylesheet" href="assets/css/animate.css">
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-<!--TemplateMo 580 Woox Travel
+<!--
+
+TemplateMo 580 Woox Travel
 
 https://templatemo.com/tm-580-woox-travel
+
 -->
 </head>
 
@@ -63,6 +67,10 @@ https://templatemo.com/tm-580-woox-travel
 							<li><a href="deals.jsp">예약</a></li>
 							<li><a href="reservation.jsp">양도</a></li>
 							<li><a href="reservation.jsp">커뮤니티</a></li>
+							<li>
+								<button class="modalBtn" onclick="show()"
+									style="background-color: #6a5acd; padding: 8px 14px; border: none; color: #fff;">로그인</button>
+							</li>
 						</ul>
 						<a class='menu-trigger'> <span>Menu</span>
 						</a>
@@ -74,58 +82,88 @@ https://templatemo.com/tm-580-woox-travel
 	</header>
 	<!-- ***** Header Area End ***** -->
 
-	<div class=se style="background-color: blanchedalmond; height: 300px;">
+	<div class="second-page-heading">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<h4>내 여행관리는 여기에서</h4>
-					<h2>My Page</h2>
-					<p>내 여행일정 관리부터 소통까지 !</p>
-					<div>
-						<a href="about.jsp">자세히 알아보기</a>
+					<h2>회원 정보 수정</h2>
+					<div class="main-button">
+						<a href="index.jsp">BACK</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="more-info reservation-info" style="margin: 10%;">
+	<div class="reservation-form">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-4 col-sm-6">
-					<div class="info-item">
-						<i class="fa fa-envelope"></i>
-						<h4>회원정보</h4>
-						<a href="회원정보수정.jsp">회원정보 수정하기</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-sm-6">
-					<div class="info-item">
-						<i class="fa fa-phone"></i>
-						<h4>예약 내역</h4>
-						<a href="#">내 예약 확인하기</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-sm-6">
-					<div class="info-item">
-						<i class="fa fa-map-marker"></i>
-						<h4>나의 후기</h4>
-						<a href="#">내가 작성한 리뷰/ 게시글</a>
-					</div>
+				<div class="col-lg-12">
+					<form id="reservation-form" name="gs" method="submit" role="search"
+						action="#">
+						<div class="row">
+							<div class="col-lg-12">
+								<h4>회원정보</h4>
+							</div>
+							<!-- 이름 -->
+							<div class="col-lg-6">
+								<fieldset>
+									<label for="Name" class="form-label">Name</label><br> <input
+										type="text" name="Name" class="Name"
+										placeholder="로그인 했을 때 이름 바뀌지 않게 넣기" autocomplete="on" required>
+								</fieldset>
+							</div>
+							<!-- 전화번호 -->
+							<div class="col-lg-6">
+								<fieldset>
+									<label for="Number" class="form-label">Phone Number</label> <input
+										type="text" name="Number" class="Number"
+										placeholder="Ex. +xxx xxx xxx">
+								</fieldset>
+							</div>
+							<!-- 패스워드 -->
+							<div class="col-lg-6">
+								<fieldset>
+									<label for="password" class="form-label">Password</label> <input
+										type="text" name="Number" class="Number"
+										placeholder="password">
+								</fieldset>
+							</div>
+							<!-- 이메일 -->
+							<div class="col-lg-6">
+								<fieldset>
+									<label for="email" class="form-label">Email</label> <input
+										type="text" name="Name" class="Name" autocomplete="on"
+										required>
+								</fieldset>
+							</div>
+							<!-- 생년월일 -->
+							<div class="col-lg-12">
+								<fieldset>
+									<label for="Number" class="form-label">Birth</label> <input
+										type="date" name="date" class="date" required>
+								</fieldset>
+							</div>
+
+							<div class="col-lg-12">
+								<fieldset>
+									<button class="main-button">Save</button>
+								</fieldset>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-	</div>
-
 
 	<footer>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<p>
-						Copyright © 2036 <a href="#">WoOx Travel//ze-a</a> Company. All
-						rights reserved. <br>Design: <a href="https://templatemo.com"
+						Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights
+						reserved. <br>Design: <a href="https://templatemo.com"
 							target="_blank" title="free CSS templates">TemplateMo</a>
 						Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
 					</p>
@@ -157,4 +195,3 @@ https://templatemo.com/tm-580-woox-travel
 </body>
 
 </html>
-
