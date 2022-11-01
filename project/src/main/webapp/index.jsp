@@ -59,15 +59,16 @@ https://templatemo.com/tm-580-woox-travel
               <img src="assets/images/logo.png" alt="">
             </a>
             <!-- ***** Logo End ***** -->
+
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li><a href="index.html" class="active">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="deals.html">Deals</a></li>
-              <li><a href="reservation.html">Reservation</a></li>
-              <li><a href="reservation.html">Book Yours</a></li>
+              <li><a href="index.html" class="active">홈</a></li>
+              <li><a href="about.html">테마</a></li>
+              <li><a href="deals.html">예약</a></li>
+              <li><a href="reservation.html">양도</a></li>
+              <li><a href="reservation.html">커뮤니티</a></li>
               <li>
-                <button class="modalBtn" onclick="show()" style="background-color: #22B3C1; padding: 8px 14px; border: none;
+                <button class="modalBtn" onclick="show()" style="background-color: #6A5ACD; padding: 8px 14px; border: none;
                           color: #fff;
                          ">로그인</button>
               </li>
