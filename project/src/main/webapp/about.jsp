@@ -159,48 +159,50 @@ https://templatemo.com/tm-580-woox-travel
 							<div class="owl-cites-town owl-carousel">
 								<div class="item">
 									<div class="thumb">
-										<img src="assets/images/cities-01.jpg" alt="">
+										<img src="assets/images/cities-01.jpg" alt="" onclick="showDetail()">
 										<h4>Havana</h4>
+										
 									</div>
 								</div>
+	
 								<div class="item">
-									<div class="thumb">
-										<img src="assets/images/cities-02.jpg" alt="">
+									<div class="thumb" onclick="showDetail()">
+										<img src="assets/images/cities-02.jpg" alt="" >
 										<h4>Kingston</h4>
 									</div>
 								</div>
 								<div class="item">
-									<div class="thumb">
-										<img src="assets/images/cities-03.jpg" alt="">
+									<div class="thumb" onclick="showDetail()">
+										<img src="assets/images/cities-03.jpg" alt="" >
 										<h4>George Town</h4>
 									</div>
 								</div>
 								<div class="item">
-									<div class="thumb">
+									<div class="thumb" onclick="showDetail()">
 										<img src="assets/images/cities-04.jpg" alt="">
 										<h4>Santo Domingo</h4>
 									</div>
 								</div>
 								<div class="item">
-									<div class="thumb">
+									<div class="thumb" onclick="showDetail()">
 										<img src="assets/images/cities-01.jpg" alt="">
 										<h4>Havana</h4>
 									</div>
 								</div>
 								<div class="item">
-									<div class="thumb">
+									<div class="thumb" onclick="showDetail()">
 										<img src="assets/images/cities-02.jpg" alt="">
 										<h4>Kingston</h4>
 									</div>
 								</div>
 								<div class="item">
-									<div class="thumb">
+									<div class="thumb" onclick="showDetail()">
 										<img src="assets/images/cities-03.jpg" alt="">
 										<h4>George Town</h4>
 									</div>
 								</div>
 								<div class="item">
-									<div class="thumb">
+									<div class="thumb" onclick="showDetail()">
 										<img src="assets/images/cities-04.jpg" alt="">
 										<h4>Santo Domingo</h4>
 									</div>
@@ -213,6 +215,7 @@ https://templatemo.com/tm-580-woox-travel
 		</div>
 	</div>
 
+</script>
 	<div class="weekly-offers">
 		<div class="container">
 			<div class="row">
