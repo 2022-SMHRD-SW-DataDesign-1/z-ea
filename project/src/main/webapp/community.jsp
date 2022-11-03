@@ -102,7 +102,7 @@
 					</a>
 					<figcaption class="mask">
 						<a href="community_detail.jsp?board_num=<%=list.get(i).getBoard_num()%>">
-							<i class="glyphicon glyphicon-plus"><%=list.get(i).getBoard_title() %></i>
+							<p><%=list.get(i).getBoard_title() %></p>
 						</a>
 					</figcaption>
 				</figure>

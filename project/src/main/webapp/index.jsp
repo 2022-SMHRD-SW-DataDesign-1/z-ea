@@ -58,7 +58,7 @@ https://templatemo.com/tm-580-woox-travel
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
             <a href="index.jsp" class="logo">
-              <img src="assets/images/logo.png" alt="">
+              <img src="assets/images/짱구2.jpg" alt="">
             </a>
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
@@ -107,14 +107,14 @@ https://templatemo.com/tm-580-woox-travel
       <input type="radio" id="banner4" class="sec-1-input" name="banner">
 
       <div class="slider">
-        <div class="main-caption" style="font-size: 20px; ">
+        <div class="main-caption" style="font-size: 20px;">
           <div style="margin-left: 10%;">검색어를 입력하세요</div>
           <form action="get">
-            <input type="text" placeholder="#여행" style="width: 30%; height: 40px;" />
+            <input type="text" placeholder="#여행" style="width: 30%; height: 40px; border-radius:20px;" />
             <input type="submit" value="검색" />
           </form>
           <p>
-            #여행 #먹방 기타등등
+            #여행 #먹방 #힐링 #키즈 
           </p>
         </div>
 
