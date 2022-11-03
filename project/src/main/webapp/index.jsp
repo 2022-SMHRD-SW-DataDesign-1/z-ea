@@ -66,21 +66,21 @@ https://templatemo.com/tm-580-woox-travel
 							<li><a href="about.jsp">테마</a></li>
 							<li><a href="deals.jsp">예약</a></li>
 							<li><a href="reservation.jsp">양도</a></li>
-							<li><a href="reservation.jsp">커뮤니티</a></li>
+							<li><a href="community.jsp">커뮤니티</a></li>
               <%if(info == null){ %>
               <li>
-                <button class="modalBtn" onclick="show()" style="background-color: #22B3C1; padding: 8px 14px; border: none;
+                <button class="modalBtn" onclick="show()" style="background-color: #6A5ACD; padding: 8px 14px; border: none;
                           color: #fff;
                          ">로그인</button>
               </li>
                <%}else{ %>
                <li>
-                <a href="MyPage.jsp" class="modalBtn"  style="background-color: #22B3C1; padding: 8px 14px; border: none;
+                <a href="MyPage.jsp" class="modalBtn"  style="background-color: #6A5ACD; padding: 8px 14px; border: none;
                           color: #fff;
                          ">마이페이지</a>
                </li>
                <li>
-                <a href="LogoutService" class="modalBtn"  style="background-color: #22B3C1; padding: 8px 14px; border: none;
+                <a href="LogoutService" class="modalBtn"  style="background-color: #6A5ACD; padding: 8px 14px; border: none;
                           color: #fff;
                          ">로그아웃</a>
                </li>
