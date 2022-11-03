@@ -216,7 +216,7 @@ https://templatemo.com/tm-580-woox-travel
 								<fieldset>
 								<p>content</p>
 									<label for="name" class="form-label"></label><br><textarea
-										type="text" name="borad_content" class="Name"
+										type="text" name="board_content" class="Name"
 										placeholder="content" autocomplete="on" required
 										style="resize: none;" rows="10">
 										</textarea>

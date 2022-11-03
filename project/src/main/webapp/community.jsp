@@ -1,3 +1,6 @@
+<%@page import="com.smhrd.model.BoardDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.smhrd.model.BoardDAO"%>
 <%@page import="com.smhrd.model.MemberDTO"%>
 <%@page import="com.smhrd.model.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -86,57 +89,27 @@
 			<header>
 				<h2>커뮤니티</h2>
 				<a href="community_input.jsp">작성하기</a>
+				<% ArrayList<BoardDTO> list = new BoardDAO().select(); %>
 			</header>
+			
 			<div id="single-project"></div>
+			
 			<div class="row">
+				<%for(int i = 0; i < list.size(); i++){ %>
 				<figure class="portfolio-item col-md-4 col-sm-6">
-					<img class="img-responsive" src="assets/images/cities-01.jpg" alt="Adena icons pack" />
+					<a href="community_detail.jsp?board_num=<%=list.get(i).getBoard_num()%>">
+					<img class="img-responsive" src="./file/<%=list.get(i).getBoard_file()%>" alt="Adena icons pack" />
+					</a>
 					<figcaption class="mask">
-						<a href="projects/project-1.html">
-							<i class="glyphicon glyphicon-plus"></i>
+						<a href="community_detail.jsp?board_num=<%=list.get(i).getBoard_num()%>">
+							<i class="glyphicon glyphicon-plus"><%=list.get(i).getBoard_title() %></i>
 						</a>
 					</figcaption>
 				</figure>
-				<figure class="portfolio-item col-md-4 col-sm-6">
-					<img class="img-responsive" src="assets/images/cities-02.jpg" alt="Adena icons pack" />
-					<figcaption class="mask">
-						<a href="projects/project-1.html">
-							<i class="glyphicon glyphicon-plus"></i>
-						</a>
-					</figcaption>
-				</figure>
-				<figure class="portfolio-item col-md-4 col-sm-6">
-					<img class="img-responsive" src="assets/images/cities-03.jpg" alt="Adena icons pack" />
-					<figcaption class="mask">
-						<a href="projects/project-1.html">
-							<i class="glyphicon glyphicon-plus"></i>
-						</a>
-					</figcaption>
-				</figure>
-				<figure class="portfolio-item col-md-4 col-sm-6">
-					<img class="img-responsive" src="assets/images/cities-04.jpg" alt="Adena icons pack" />
-					<figcaption class="mask">
-						<a href="projects/project-1.html">
-							<i class="glyphicon glyphicon-plus"></i>
-						</a>
-					</figcaption>
-				</figure>
-				<figure class="portfolio-item col-md-4 col-sm-6">
-					<img class="img-responsive" src="assets/images/cities-01.jpg" alt="Adena icons pack" />
-					<figcaption class="mask">
-						<a href="projects/project-1.html">
-							<i class="glyphicon glyphicon-plus"></i>
-						</a>
-					</figcaption>
-				</figure>
-				<figure class="portfolio-item col-md-4 col-sm-6">
-					<img class="img-responsive" src="assets/images/cities-02.jpg" alt="Adena icons pack" />
-					<figcaption class="mask">
-						<a href="projects/project-1.html">
-							<i class="glyphicon glyphicon-plus"></i>
-						</a>
-					</figcaption>
-				</figure>
+				<%} %>
+				
+			
+				
 			</div>
 		</div>
 	</section>
