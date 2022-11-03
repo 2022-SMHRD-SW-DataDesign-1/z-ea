@@ -106,14 +106,14 @@ https://templatemo.com/tm-580-woox-travel
       <input type="radio" id="banner4" class="sec-1-input" name="banner">
 
       <div class="slider">
-        <div class="main-caption" style="font-size: 20px;">
-          <div style="margin-left: 10%;">검색어를 입력하세요</div>
+        <div class="main-caption">
+          <div style="margin-left: 10%; font-size:25px">검색어를 입력하세요</div>
           <form action="get">
-            <input type="text" placeholder="#여행" style="width: 30%; height: 40px; border-radius:20px;" />
+            <input type="text" placeholder="#여행" style="width: 30%; height: 50px; border-radius:20px; padding:10px; margin : 5px;" />
             <input type="submit" value="검색" />
           </form>
-          <p>
-            #여행 #먹방 #힐링 #키즈 
+          <p style="margin-left:10%;">
+             #여행 #먹방 #힐링 #키즈 
           </p>
         </div>
 
@@ -193,9 +193,9 @@ https://templatemo.com/tm-580-woox-travel
 
         <div id="top-banner-1" class="banner">
           <div class="banner-inner-wrapper header-text">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-12">
+			<div class="container">
+<!-- 			 <div class="row"> -->
+<!--                 <div class="col-lg-12">
                   <div class="more-info">
                     <div class="row">
                       <div class="col-lg-3 col-sm-6 col-6">
@@ -218,14 +218,14 @@ https://templatemo.com/tm-580-woox-travel
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
         <div id="top-banner-2" class="banner">
           <div class="banner-inner-wrapper header-text">
-            <div class="container">
-              <div class="row">
+          <div class="container">
+              <!-- <div class="row">
                 <div class="col-lg-12">
                   <div class="more-info">
                     <div class="row">
@@ -249,13 +249,13 @@ https://templatemo.com/tm-580-woox-travel
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
         <div id="top-banner-3" class="banner">
           <div class="banner-inner-wrapper header-text">
-            <div class="container">
+          <!-- <div class="container">
               <div class="row">
                 <div class="col-lg-12">
                   <div class="more-info">
@@ -281,13 +281,13 @@ https://templatemo.com/tm-580-woox-travel
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <div id="top-banner-4" class="banner">
           <div class="banner-inner-wrapper header-text">
-            <div class="container">
-              <div class="row">
+          <div class="container">
+              <!-- <div class="row">
                 <div class="col-lg-12">
                   <div class="more-info">
                     <div class="row">
@@ -311,12 +311,12 @@ https://templatemo.com/tm-580-woox-travel
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
       </div>
-      <nav>
+<!--       <nav>
         <div class="controls">
           <label for="banner1"><span class="progressbar"><span class="progressbar-fill"></span></span><span
               class="text">1</span></label>
@@ -327,7 +327,7 @@ https://templatemo.com/tm-580-woox-travel
           <label for="banner4"><span class="progressbar"><span class="progressbar-fill"></span></span><span
               class="text">4</span></label>
         </div>
-      </nav>
+      </nav> -->
     </div>
   </section>
   <!-- ***** Main Banner Area End ***** -->

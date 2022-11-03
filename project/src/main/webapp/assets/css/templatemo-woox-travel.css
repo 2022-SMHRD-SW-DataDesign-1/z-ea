@@ -643,7 +643,6 @@ Header Style
   .header-area {
 
     background-color: #6A5ACD;
-
     padding: 0px 15px;
     height: 100px;
     box-shadow: none;
@@ -754,6 +753,9 @@ Banner Style
 }
 #section-1 .content-slider input {
   /* display: none; */
+}
+#section-1 .content-slider .slider .main-caption{
+	margin-top : 20px;
 }
 
 #section-1 .content-slider .slider {
