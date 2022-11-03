@@ -43,6 +43,11 @@
 			<version>1.18.12</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.jfinal</groupId>
+			<artifactId>cos</artifactId>
+			<version>2020.4</version>
+		</dependency>
 
 	</dependencies>
 

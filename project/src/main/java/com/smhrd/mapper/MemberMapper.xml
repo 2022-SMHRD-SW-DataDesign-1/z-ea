@@ -12,4 +12,21 @@
 	<select id="login_info" parameterType="String" resultType="MemberDTO">
 	select * from member_tb where mb_email = #{mb_email}
 	</select>
+	<select id="emailCheck" parameterType="String" resultType="boolean">
+	select case when count(*)>0 then 1
+ 					else 0
+ 				end result
+ 		from member_tb where mb_email = #{mb_email}
+	</select>
+	<update id="update" parameterType="MemberDTO">
+	update member_tb
+set
+    mb_pw = #{mb_pw}, 
+    mb_birthdate = #{mb_birthdate}, 
+    mb_name = #{mb_name}, 
+    mb_phone = #{mb_phone}, 
+    mb_joindate = sysdate, 
+    mb_type = 1
+where mb_email = #{mb_email}
+	</update>
 </mapper>
