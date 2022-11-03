@@ -23,9 +23,10 @@ public class JoinService extends HttpServlet {
 		
 		String mb_email = request.getParameter("mb_email");
 		String mb_pw = request.getParameter("mb_pw");
-		String mb_birthdate = request.getParameter("mb_birthdate");
+		String birthdate = request.getParameter("mb_birthdate");
 		String mb_name = request.getParameter("mb_name");
 		String mb_phone = request.getParameter("mb_phone");
+		String mb_birthdate = birthdate.replace("-", "");
 		System.out.println(mb_email);
 		System.out.println(mb_pw);
 		System.out.println(mb_birthdate);

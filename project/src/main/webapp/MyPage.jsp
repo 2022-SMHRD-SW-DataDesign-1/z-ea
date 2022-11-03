@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -33,6 +34,7 @@ https://templatemo.com/tm-580-woox-travel
 </head>
 
 <body>
+<% MemberDTO info = (MemberDTO) session.getAttribute("info");%>
 
 	<!-- ***** Preloader Start ***** -->
 	<div id="js-preloader" class="js-preloader">
@@ -63,6 +65,24 @@ https://templatemo.com/tm-580-woox-travel
 							<li><a href="deals.jsp">예약</a></li>
 							<li><a href="reservation.jsp">양도</a></li>
 							<li><a href="reservation.jsp">커뮤니티</a></li>
+							 <%if(info == null){ %>
+              <li>
+                <button class="modalBtn" onclick="show()" style="background-color: #22B3C1; padding: 8px 14px; border: none;
+                          color: #fff;
+                         ">로그인</button>
+              </li>
+               <%}else{ %>
+               <li>
+                <a href="MyPage.jsp" class="modalBtn"  style="background-color: #22B3C1; padding: 8px 14px; border: none;
+                          color: #fff;
+                         ">마이페이지</a>
+               </li>
+               <li>
+                <a href="LogoutService" class="modalBtn"  style="background-color: #22B3C1; padding: 8px 14px; border: none;
+                          color: #fff;
+                         ">로그아웃</a>
+               </li>
+               <%} %>
 						</ul>
 						<a class='menu-trigger'> <span>Menu</span>
 						</a>
@@ -72,6 +92,7 @@ https://templatemo.com/tm-580-woox-travel
 			</div>
 		</div>
 	</header>
+	
 	<!-- ***** Header Area End ***** -->
 
 	<div class=se style="background-color: blanchedalmond; height: 300px;">
@@ -152,6 +173,31 @@ https://templatemo.com/tm-580-woox-travel
 			$(".option").removeClass("active");
 			$(this).addClass("active");
 		});
+		
+		 function show() {
+		      console.log("외않되");
+		      let modal = document.querySelector(".modalPopup");
+		      let modalBtn = document.querySelector(".modalBtn");
+		      let mainCaption = document.querySelector(".main-caption")
+		      let dark = document.querySelector(".controls")
+
+		      console.log("실행도미");
+		      if (modal.style.opacity == "0") {
+		    	mainCaption.style.opacity ="0";
+		      dark.style.opacity = "0"
+		        modal.style.opacity = "1";
+		        modal.style.display = "block"
+		        modalBtn.textContent = "닫기"
+		      }
+
+		      else {
+		        dark.style.opacity ="1";
+		    	  mainCaption.style.opacity ="1";
+		        modal.style.opacity = "0";
+		        modal.style.display = "none";
+		        modalBtn.textContent = "로그인";
+		      }
+		    }
 	</script>
 
 </body>

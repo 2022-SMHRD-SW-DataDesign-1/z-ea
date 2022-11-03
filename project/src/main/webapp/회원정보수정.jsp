@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -37,6 +38,7 @@ https://templatemo.com/tm-580-woox-travel
 </head>
 
 <body>
+	<% MemberDTO info =(MemberDTO)session.getAttribute("info"); %>
 
 	<!-- ***** Preloader Start ***** -->
 	<div id="js-preloader" class="js-preloader">
@@ -67,10 +69,24 @@ https://templatemo.com/tm-580-woox-travel
 							<li><a href="deals.jsp">예약</a></li>
 							<li><a href="reservation.jsp">양도</a></li>
 							<li><a href="reservation.jsp">커뮤니티</a></li>
-							<li>
-								<button class="modalBtn" onclick="show()"
-									style="background-color: #6a5acd; padding: 8px 14px; border: none; color: #fff;">로그인</button>
-							</li>
+											 <%if(info == null){ %>
+              <li>
+                <button class="modalBtn" onclick="show()" style="background-color: #22B3C1; padding: 8px 14px; border: none;
+                          color: #fff;
+                         ">로그인</button>
+              </li>
+               <%}else{ %>
+               <li>
+                <a href="MyPage.jsp" class="modalBtn"  style="background-color: #22B3C1; padding: 8px 14px; border: none;
+                          color: #fff;
+                         ">마이페이지</a>
+               </li>
+               <li>
+                <a href="LogoutService" class="modalBtn"  style="background-color: #22B3C1; padding: 8px 14px; border: none;
+                          color: #fff;
+                         ">로그아웃</a>
+               </li>
+               <%} %>
 						</ul>
 						<a class='menu-trigger'> <span>Menu</span>
 						</a>
@@ -99,25 +115,34 @@ https://templatemo.com/tm-580-woox-travel
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<form id="reservation-form" name="gs" method="submit" role="search"
+				  	<form id="reservation-form" name="gs" method="submit" role="search"
 						action="#">
+						
 						<div class="row">
 							<div class="col-lg-12">
 								<h4>회원정보</h4>
 							</div>
+				  	</form> 
+							<!-- 이메일 -->
+							<div class="col-lg-6">
+								<fieldset>
+									<label for="email" class="form-label"></label> 
+								</fieldset>
+							</div>
 							<!-- 이름 -->
+							<form action="UpdateService" method="post">
 							<div class="col-lg-6">
 								<fieldset>
 									<label for="Name" class="form-label">Name</label><br> <input
-										type="text" name="Name" class="Name"
-										placeholder="로그인 했을 때 이름 바뀌지 않게 넣기" autocomplete="on" required>
+										type="text" name="mb_name" class="Name"
+										placeholder="name" autocomplete="on" required>
 								</fieldset>
 							</div>
 							<!-- 전화번호 -->
 							<div class="col-lg-6">
 								<fieldset>
 									<label for="Number" class="form-label">Phone Number</label> <input
-										type="text" name="Number" class="Number"
+										type="text" name="mb_phone" class="Number"
 										placeholder="Ex. +xxx xxx xxx">
 								</fieldset>
 							</div>
@@ -125,33 +150,25 @@ https://templatemo.com/tm-580-woox-travel
 							<div class="col-lg-6">
 								<fieldset>
 									<label for="password" class="form-label">Password</label> <input
-										type="text" name="Number" class="Number"
+										type="password" name="mb_pw" class="Number"
 										placeholder="password">
-								</fieldset>
-							</div>
-							<!-- 이메일 -->
-							<div class="col-lg-6">
-								<fieldset>
-									<label for="email" class="form-label">Email</label> <input
-										type="text" name="Name" class="Name" autocomplete="on"
-										required>
 								</fieldset>
 							</div>
 							<!-- 생년월일 -->
 							<div class="col-lg-12">
 								<fieldset>
 									<label for="Number" class="form-label">Birth</label> <input
-										type="date" name="date" class="date" required>
+										type="date" name="mb_birthdate" class="date" required>
 								</fieldset>
 							</div>
 
 							<div class="col-lg-12">
 								<fieldset>
-									<button class="main-button">Save</button>
+									<button type="submit" class="main-button">Save</button>
 								</fieldset>
+							</from>
 							</div>
 						</div>
-					</form>
 				</div>
 			</div>
 		</div>
@@ -190,6 +207,31 @@ https://templatemo.com/tm-580-woox-travel
 			$(".option").removeClass("active");
 			$(this).addClass("active");
 		});
+		
+		function show() {
+		      console.log("외않되");
+		      let modal = document.querySelector(".modalPopup");
+		      let modalBtn = document.querySelector(".modalBtn");
+		      let mainCaption = document.querySelector(".main-caption")
+		      let dark = document.querySelector(".controls")
+
+		      console.log("실행도미");
+		      if (modal.style.opacity == "0") {
+		    	mainCaption.style.opacity ="0";
+		      dark.style.opacity = "0"
+		        modal.style.opacity = "1";
+		        modal.style.display = "block"
+		        modalBtn.textContent = "닫기"
+		      }
+
+		      else {
+		        dark.style.opacity ="1";
+		    	  mainCaption.style.opacity ="1";
+		        modal.style.opacity = "0";
+		        modal.style.display = "none";
+		        modalBtn.textContent = "로그인";
+		      }
+		    }
 	</script>
 
 </body>

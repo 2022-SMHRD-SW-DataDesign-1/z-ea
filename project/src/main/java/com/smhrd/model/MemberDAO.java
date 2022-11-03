@@ -33,4 +33,19 @@ public class MemberDAO {
 		
 		return info;
 	}
+	public boolean emailCheck(String mb_email_ck) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		boolean check = session.selectOne("emailCheck", mb_email_ck);
+		session.close();
+		
+		return check;
+	}
+	public int update(MemberDTO dto) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int row = session.update("update", dto);
+		session.close();
+		
+		return row;
+		
+	}
 }

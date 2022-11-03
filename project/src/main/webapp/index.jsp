@@ -67,17 +67,24 @@ https://templatemo.com/tm-580-woox-travel
 							<li><a href="deals.jsp">예약</a></li>
 							<li><a href="reservation.jsp">양도</a></li>
 							<li><a href="reservation.jsp">커뮤니티</a></li>
-              <li>
               <%if(info == null){ %>
+              <li>
                 <button class="modalBtn" onclick="show()" style="background-color: #22B3C1; padding: 8px 14px; border: none;
                           color: #fff;
                          ">로그인</button>
+              </li>
                <%}else{ %>
+               <li>
                 <a href="MyPage.jsp" class="modalBtn"  style="background-color: #22B3C1; padding: 8px 14px; border: none;
                           color: #fff;
                          ">마이페이지</a>
+               </li>
+               <li>
+                <a href="LogoutService" class="modalBtn"  style="background-color: #22B3C1; padding: 8px 14px; border: none;
+                          color: #fff;
+                         ">로그아웃</a>
+               </li>
                <%} %>
-              </li>
             </ul>
             <a class='menu-trigger'>
               <span>Menu</span>
@@ -116,7 +123,7 @@ https://templatemo.com/tm-580-woox-travel
             style="position : fixed; background-color : black; width: 100%; height: 100%; opacity: 0.9; ">
           </div>
           <div class="LoginModal"
-            style="text-align: center; background-color: white; width: 540px; height: 600px; margin-top: 10%; margin-left: 36%; position: fixed; align-content: center;">
+            style="text-align: center; background-color: white; width: 540px; height: 650px; margin-top: 10%; margin-left: 36%; position: fixed; align-content: center;">
             <!-- 로그인 -->
             <form action="LoginService" method="post">
             <table style="margin: auto; margin-top: 10%;">
@@ -150,7 +157,15 @@ https://templatemo.com/tm-580-woox-travel
                 <td>
                   <div style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이메일 </div>
                 </td>
-                <td><input type="email" name="mb_email" style="width: 180px;" /></td>
+                <td><input type="email" name="mb_email" id="mb_email_ck" style="width: 180px;" /></td>
+              </tr>
+              <tr>
+                <td colspan="2"><input type="button" value="email중복확인" onclick="checkE()"> </td>
+              </tr>
+              <tr>
+              	<th colspan="2">
+              	<span style="padding: 10px;" id="resultCheck"></span>
+              	</th>
               </tr>
               <tr>
                 <td>
@@ -162,7 +177,7 @@ https://templatemo.com/tm-580-woox-travel
                 <td>
                   <div style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">생년월일 </div>
                 </td>
-                <td><input type="text" name="mb_birthdate" style="width: 180px;" /></td>
+                <td><input type="date" name="mb_birthdate" style="width: 180px;" /></td>
               </tr>
               <tr>
                 <td>
@@ -478,7 +493,10 @@ https://templatemo.com/tm-580-woox-travel
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.js"></script>
   <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/jquery/jquery.slim.js"></script>
+  <script src="vendor/jquery/jquery.slim.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
   <script src="assets/js/isotope.min.js"></script>
@@ -527,7 +545,30 @@ https://templatemo.com/tm-580-woox-travel
       }
     }
 	
+	function checkE() {
+		let mb_email_ck =$('#mb_email_ck').val();
+		console.log(mb_email_ck);
 		
+		$.ajax({
+			url : 'EmailCheckService', 
+			data : {'mb_email_ck':mb_email_ck}, 
+			type : 'get',
+			success : function(data){ 
+				console.log(data);
+				
+				if(data == 'true'){
+					$('#resultCheck').text('사용할 수 없는 아이디')
+				}else{ 
+					$('#resultCheck').text('사용할 수 있는 아이디')
+				}
+			},
+			error : function() {	  
+				console.log("통신실패");
+				
+			}
+		});
+		
+	}
 	
   </script>
 
