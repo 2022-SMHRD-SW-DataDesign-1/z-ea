@@ -31,7 +31,7 @@ public class FilterService extends HttpServlet {
 		String tag = request.getParameter("item_tag");
 		
 
-		tag = "#가족";
+		tag = "가족";
 		
 		ArrayList<ItemDTO> list= new ItemDAO().Filter(tag);
 		

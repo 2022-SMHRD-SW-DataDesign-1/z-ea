@@ -205,62 +205,50 @@ https://templatemo.com/tm-580-woox-travel
 						<div class="row" style="display: block;">
 
 							<h2>
-								카테고리 <em>Cities &amp; Towns</em>
+								카테고리 
 							</h2>
 
 							<div class="col-lg-12">
 								<div class="owl-cites-town owl-carousel"
 									style="display: inline-block;">
-									<div class="item">
-										<div class="thumb" style="height: 10%;">
-											<img src="" alt="" style="height: 40px;">
-											<h4>연인</h4>
+									
+										<div class="choose1" style="height: 40px;width:120px;  border: solid black 1px" onclick="tag_filter(this)">
+											가족
 										</div>
-									</div>
-									<div class="item">
-										<div class="thumb">
-											<img src="" alt="" style="height: 40px;">
-											<h4>가족</h4>
+							
+									
+										<div  class="choose1" style=" height: 40px; width:120px;  border: solid black 1px"onclick="tag_filter(this)">
+											싱글
 										</div>
-									</div>
-									<div class="item">
-										<div class="thumb">
-											<img src="" alt="" onclick="" style="height: 40px;">
-											<h4>뷰 맛집</h4>
+								
+									
+										<div class="choose1" style="height: 40px; width:120px; border: solid black 1px;" onclick="tag_filter(this)">
+											헤ㅔㅎ
 										</div>
-									</div>
-									<div class="item">
-										<div class="thumb">
-											<img src="" alt="" onclick="" style="height: 40px;">
-											<h4>핫한 여행지</h4>
+								
+									
+										<div class="choose1" style="height: 40px; width:120px; border: solid black 1px"onclick="tag_filter(this)">
+											야호
 										</div>
-									</div>
-									<div class="item">
-										<div class="thumb">
-											<img src="" alt="" onclick="" style="height: 40px;">
-											<h4>단체 모임</h4>
+								
+								
+										<div class="choose1" style="height: 40px; width:120px; border: solid black 1px" onclick="tag_filter(this)">
+											산
 										</div>
-									</div>
-									<div class="item">
-										<div class="thumb">
-											<img src="" alt="" onclick="" style="height: 40px;">
-											<h4>Kingston</h4>
+							
+									
+										<div class="choose1" style="height: 40px; width:120px; border: solid black 1px"onclick="tag_filter(this)">
+											바다
 										</div>
-									</div>
-									<div class="item">
-										<div class="thumb">
-											<img src="" alt="" onclick="" style="height: 40px;">
-											<h4>George Town</h4>
+								
+								
+										<div class="choose1" style="height: 40px; width:120px; border: solid black 1px"onclick="tag_filter(this)">
+											들판?
 										</div>
-									</div>
-									<div class="item">
-										<div class="thumb">
-											<img src="" alt="" onclick="" style="height: 40px;">
-											<h4>Santo Domingo</h4>
-										</div>
-									</div>
+								
+									
 								</div>
-
+<hr/>
 
 
 								<div>
@@ -351,18 +339,29 @@ https://templatemo.com/tm-580-woox-travel
 			console.log(slidercon.style.zIndex);
 			if (modal.style.display == "none") {
 
-				modal.style.display = "block"
-				modalBtn.textContent = "닫기"
+				modal.style.display = "block";
+				modalBtn.textContent = "닫기";
 			}
 
 			else {
 				// mainCaption.style.opacity ="1";
-				modal.style.display = "none"
+				modal.style.display = "none";
 
 				modalBtn.textContent = "로그인";
 			}
 		}
 	</script>
+	<script>
+	function tag_filter(id){
+		if(id.style.backgroundColor == "white"){
+		id.style.backgroundColor ="black";}else {
+			id.style.backgroundColor = "white";
+		}
+		
+		}
+	</script>
+
+
 </body>
 
 </html>
