@@ -67,10 +67,9 @@ https://templatemo.com/tm-580-woox-travel
 							<li><a href="reservation.jsp">양도</a></li>
 							<li><a href="reservation.jsp">커뮤니티</a></li>
 							<li>
-						
-              <button class="modalBtn" onclick="show()" style="background-color: #6A5ACD; padding: 8px 14px; border: none;
-                          color: #fff;
-                         ">로그인</button>
+
+								<button class="modalBtn" onclick="show()"
+									style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">로그인</button>
 						</ul>
 						<a class='menu-trigger'> <span>Menu</span>
 						</a>
@@ -81,472 +80,248 @@ https://templatemo.com/tm-580-woox-travel
 		</div>
 	</header>
 	<!-- ***** Header Area End ***** -->
-<div class="modalPopup" style="display: none; z-index:50;">
-          <div class="ModalBack" onclick
-            style="position : fixed; background-color : black; width: 100%; height: 100%; opacity: 0.9; ">
-          </div>
-          <div class="LoginModal"
-            style="text-align: center; background-color: white; width: 540px; height: 600px; margin-top: 10%; margin-left: 36%; position: fixed; align-content: center;">
-            <!-- 로그인 -->
-            <table style="margin: auto; margin-top: 10%;">
-              <th colspan="2" style="font-size: 20px; padding: 10px; text-align: center;">로그인</th>
-              <tr>
-                <td>
-                  <div style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이메일 </div>
-                </td>
-                <td><input type="email" name="email" style="width: 180px;" /></td>
-              </tr>
-              <tr>
-                <td>
-                  <div style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">비밀번호 </div>
-                </td>
-                <td><input type="password" name="password" style="width: 180px;" /></td>
-              </tr>
-              <td colspan="2" style="text-align: center;"><input type="submit" value="로그인" style="width: 80px;"></td>
-            </table>
-            <!-- 회원가입-->
-            <table style="margin: auto; margin-top: 10%;">
-              <th colspan="2" style="font-size: 20px; padding: 10px; text-align: center;">회원가입</th>
-              <tr>
-                <td>
-                  <div style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이름 </div>
-                </td>
-                <td><input type="text" name="name" style="width: 180px;" /></td>
-              </tr>
-              <tr>
-                <td>
-                  <div style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이메일 </div>
-                </td>
-                <td><input type="email" name="email" style="width: 180px;" /></td>
-              </tr>
-              <tr>
-                <td>
-                  <div style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">비밀번호 </div>
-                </td>
-                <td><input type="password" name="password" style="width: 180px;" /></td>
-              </tr>
-              <td colspan="2" style="text-align: center;"><input type="submit" value="회원가입" style="width: 80px;"></td>
-            </table>
-          </div>
-        </div>
-        <div class="dark">
-	<!-- ***** Main Banner Area Start ***** -->
-	<div class="about-main-content">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="content">
-						
-						
+<div class="modalPopup" style="z-index:100; display: none;">
+		<div class="ModalBack"
+			style="position: fixed; background-color: black; width: 100%; height: 100%; opacity: 0.5; ">
+		</div>
+		<div class="LoginModal"
+			style="text-align: center; z-index:3000; background-color: white; width: 500px; height: 650px; margin-top: 10%; margin-left: 36%; position: fixed; align-content: center;">
+			<!-- 로그인 -->
+			<form action="LoginService" method="post">
+				<table style="margin: auto; margin-top: 8%;">
+					<th colspan="2" style="font-size: 20px; padding: 10px;">로그인</th>
+					<tr>
+						<td>
+							<div
+								style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이메일
+							</div>
+						</td>
+						<td><input type="email" name="mb_email" style="width: 180px;" /></td>
+					</tr>
+					<tr>
+						<td>
+							<div
+								style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">비밀번호
+							</div>
+						</td>
+						<td><input type="password" name="mb_pw" style="width: 180px;" /></td>
+					</tr>
+					<td colspan="2" style="text-align: center;"><input
+						type="submit" value="로그인" style="width: 80px;"></td>
+				</table>
+			</form>
+			<!-- 회원가입-->
+			<form action="JoinService" method="post">
+				<table style="margin: auto; margin-top: 8%;">
+					<th colspan="2" style="font-size: 20px; padding: 10px;">회원가입</th>
+					<tr>
+						<td>
+							<div
+								style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이름
+							</div>
+						</td>
+						<td><input type="text" name="mb_name" style="width: 180px;" /></td>
+					</tr>
+					<tr>
+						<td>
+							<div
+								style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이메일
+							</div>
+						</td>
+						<td><input type="email" name="mb_email" id="mb_email_ck"
+							style="width: 180px;" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="button" value="email중복확인"
+							onclick="checkE()"></td>
+					</tr>
+					<tr>
+						<th colspan="2"><span style="padding: 10px;" id="resultCheck"></span></th>
+					</tr>
+					<tr>
+						<td>
+							<div
+								style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">비밀번호
+							</div>
+						</td>
+						<td><input type="password" name="mb_pw" style="width: 180px;" /></td>
+					</tr>
+					<tr>
+						<td>
+							<div
+								style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">생년월일
+							</div>
+						</td>
+						<td><input type="date" name="mb_birthdate"
+							style="width: 180px;" /></td>
+					</tr>
+					<tr>
+						<td>
+							<div
+								style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">전화번호
+							</div>
+						</td>
+						<td><input type="text" name="mb_phone" style="width: 180px;" /></td>
+					</tr>
+					<td colspan="2" style="text-align: center;"><input
+						type="submit" value="회원가입" style="width: 80px;"></td>
+				</table>
+			</form>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	 <div class="dark">
+		<!-- ***** Main Banner Area Start ***** -->
+		<div class="about-main-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="content"></div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-	<!-- ***** Main Banner Area End ***** -->
+		</div> 
+		<!-- ***** Main Banner Area End ***** -->
 
-	<div class="cities-town">
-		<div class="container">
-			<div class="row">
-				<div class="slider-content">
-					<div class="row">
-						<div class="col-lg-12">
+	
+		
+		<!-- 모달 -->
+
+	<div class="cities-town" style="display: inline-block; text-align: center;">
+		<div class="container" >
+			<div class="row" style="text-align: center; ">
+				<div class="slider-content" >
+
+					<div class="row" style="display: block; " >
+						
 							<h2>
 							카테고리 <em>Cities &amp; Towns</em>
 							</h2>
-						</div>
+						
 						<div class="col-lg-12">
-							<div class="owl-cites-town owl-carousel">
+							<div class="owl-cites-town owl-carousel" style="display: inline-block;">
+								<div class="item">
+									<div class="thumb" style="height: 10%;">
+										<img src="" alt="" style="height: 40px; ">
+										<h4>연인</h4>
+									</div>
+								</div>
 								<div class="item">
 									<div class="thumb">
-										<img src="assets/images/cities-01.jpg" alt="" onclick="showDetail()">
-										<h4>Havana</h4>
-										
+										<img src="" alt="" style="height: 40px; ">
+										<h4>가족</h4>
 									</div>
 								</div>
-	
 								<div class="item">
-									<div class="thumb" onclick="showDetail()">
-										<img src="assets/images/cities-02.jpg" alt="" >
+									<div class="thumb">
+										<img src="" alt="" onclick="" style="height: 40px;" >
+										<h4>뷰 맛집</h4>
+									</div>
+								</div>
+								<div class="item">
+									<div class="thumb">
+										<img src="" alt="" onclick="" style="height: 40px;" >
+										<h4>핫한 여행지
+
+										</h4>
+									</div>
+								</div>
+								<div class="item">
+									<div class="thumb">
+										<img src="" alt="" onclick="" style="height: 40px;">
+										<h4>단체 모임</h4>
+									</div>
+								</div>
+								<div class="item">
+									<div class="thumb">
+										<img src="" alt="" onclick="" style="height: 40px;">
 										<h4>Kingston</h4>
 									</div>
 								</div>
 								<div class="item">
-									<div class="thumb" onclick="showDetail()">
-										<img src="assets/images/cities-03.jpg" alt="" >
+									<div class="thumb">
+										<img src="" alt="" onclick="" style="height: 40px;">
 										<h4>George Town</h4>
 									</div>
 								</div>
 								<div class="item">
-									<div class="thumb" onclick="showDetail()">
-										<img src="assets/images/cities-04.jpg" alt="">
-										<h4>Santo Domingo</h4>
-									</div>
-								</div>
-								<div class="item">
-									<div class="thumb" onclick="showDetail()">
-										<img src="assets/images/cities-01.jpg" alt="">
-										<h4>Havana</h4>
-									</div>
-								</div>
-								<div class="item">
-									<div class="thumb" onclick="showDetail()">
-										<img src="assets/images/cities-02.jpg" alt="">
-										<h4>Kingston</h4>
-									</div>
-								</div>
-								<div class="item">
-									<div class="thumb" onclick="showDetail()">
-										<img src="assets/images/cities-03.jpg" alt="">
-										<h4>George Town</h4>
-									</div>
-								</div>
-								<div class="item">
-									<div class="thumb" onclick="showDetail()">
-										<img src="assets/images/cities-04.jpg" alt="">
+									<div class="thumb">
+										<img src="" alt="" onclick="" style="height: 40px;">
 										<h4>Santo Domingo</h4>
 									</div>
 								</div>
 							</div>
+							<div>
+							<div style=" margin-top: 5%;  width: 100%; height: 400px; padding: 10px 5px 10px 5px;">
+							<div class="item_list" style="border: 1px violet solid; display :inline-block; width: 250px; height: 350px;text-align: center; padding: 5px; display: flexbox;">
+								<img src="assets/images/offers-01.jpg" alt="" style="width: 200px; height : 200px; " >
+								<div style="text-align: left;">
+									<p>장소이름 </p>
+								<p> 설명</p></div>
+							</div>
+							<div class="item_list" style="border: 1px violet solid; display :inline-block; width: 250px; height: 350px;text-align: center; padding: 5px; display: flexbox;">
+								<img src="assets/images/offers-01.jpg" alt="" style="width: 200px; height : 200px; " >
+								<div style="text-align: left;">
+									<p>장소이름 </p>
+								<p> 설명</p></div>
+							</div>
+							<div class="item_list" style="border: 1px violet solid; display :inline-block; width: 250px; height: 350px;text-align: center; padding: 5px; display: flexbox;">
+								<img src="assets/images/offers-01.jpg" alt="" style="width: 200px; height : 200px; " >
+								<div style="text-align: left;">
+									<p>장소이름 </p>
+								<p> 설명</p></div></div>
+							<div class="item_list" style="border: 1px violet solid; display :inline-block; width: 250px; height: 350px;text-align: center; padding: 5px; display: flexbox;">
+								<img src="assets/images/offers-01.jpg" alt="" style="width: 200px; height : 200px; " >
+								<div style="text-align: left;">
+									<p>장소이름 </p>
+								<p> 설명</p></div></div>
+							<div class="item_list" style="border: 1px violet solid; display :inline-block; width: 250px; height: 350px;text-align: center; padding: 5px; display: flexbox;">
+								<img src="assets/images/offers-01.jpg" alt="" style="width: 200px; height : 200px; " >
+								<div style="text-align: left;">
+									<p>장소이름 </p>
+								<p> 설명</p></div></div>
+							<div class="item_list" style="border: 1px violet solid; display :inline-block; width: 250px; height: 350px;text-align: center; padding: 5px; display: flexbox;">
+								<img src="assets/images/offers-01.jpg" alt="" style="width: 200px; height : 200px; " >
+								<div style="text-align: left;">
+									<p>장소이름 </p>
+								<p> 설명</p></div></div>
+							<div class="item_list" style="border: 1px violet solid; display :inline-block; width: 250px; height: 350px;text-align: center; padding: 5px; display: flexbox;">
+								<img src="assets/images/offers-01.jpg" alt="" style="width: 200px; height : 200px; " >
+								<div style="text-align: left;">
+								<p>장소이름 </p>
+							<p> 설명</p></div></div>
+							
+								<div class="item_list" style="border: 1px violet solid; display :inline-block; width: 250px; height: 350px;text-align: center; padding: 5px; display: flexbox;">
+								<img src="assets/images/offers-01.jpg" alt="" style="width: 200px; height : 200px; " >
+								<div style="text-align: left;">
+									<p>장소이름 </p>
+								<p> 설명</p></div></div>
+							<div class="item_list" style="border: 1px violet solid; display :inline-block; width: 250px; height: 350px;text-align: center; padding: 5px; display: flexbox;">
+								<img src="assets/images/offers-01.jpg" alt="" style="width: 200px; height : 200px; " >
+								<div style="text-align: left;">
+									<p>장소이름 </p>
+								<p> 설명</p></div></div>
+							<div class="item_list" style="border: 1px violet solid; display :inline-block; width: 250px; height: 350px;text-align: center; padding: 5px; display: flexbox;">
+								<img src="assets/images/offers-01.jpg" alt="" style="width: 200px; height : 200px; " >
+								<div style="text-align: left;">
+									<p>장소이름 </p>
+								<p> 설명</p></div></div>
 						</div>
+						</div>
+						
+						</div>
+						
+						
 					</div>
 				</div>
 			</div>
 		</div>
+		
 	</div>
-
-</script>
-	<div class="weekly-offers">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 offset-lg-3">
-					<div class="section-heading text-center">
-						<h2>Best Weekly Offers In Each City</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-							sed do eiusmod tempor incididunt ut labore.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="owl-weekly-offers owl-carousel">
-						<div class="item">
-							<div class="thumb">
-								<img src="assets/images/offers-01.jpg" alt="">
-								<div class="text">
-									<h4>
-										Havana<br> <span><i class="fa fa-users"></i> 234
-											Check Ins</span>
-									</h4>
-									<h6>
-										$420<br> <span>/person</span>
-									</h6>
-									<div class="line-dec"></div>
-									<ul>
-										<li>Deal Includes:</li>
-										<li><i class="fa fa-taxi"></i> 5 Days Trip > Hotel
-											Included</li>
-										<li><i class="fa fa-plane"></i> Airplane Bill Included</li>
-										<li><i class="fa fa-building"></i> Daily Places Visit</li>
-									</ul>
-									<div class="main-button">
-										<a href="reservation.jsp">Make a Reservation</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="thumb">
-								<img src="assets/images/offers-02.jpg" alt="">
-								<div class="text">
-									<h4>
-										Kingston<br> <span><i class="fa fa-users"></i> 234
-											Check Ins</span>
-									</h4>
-									<h6>
-										$420<br> <span>/person</span>
-									</h6>
-									<div class="line-dec"></div>
-									<ul>
-										<li>Deal Includes:</li>
-										<li><i class="fa fa-taxi"></i> 5 Days Trip > Hotel
-											Included</li>
-										<li><i class="fa fa-plane"></i> Airplane Bill Included</li>
-										<li><i class="fa fa-building"></i> Daily Places Visit</li>
-									</ul>
-									<div class="main-button">
-										<a href="reservation.jsp">Make a Reservation</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="thumb">
-								<img src="assets/images/offers-03.jpg" alt="">
-								<div class="text">
-									<h4>
-										George Town<br> <span><i class="fa fa-users"></i>
-											234 Check Ins</span>
-									</h4>
-									<h6>
-										$420<br> <span>/person</span>
-									</h6>
-									<div class="line-dec"></div>
-									<ul>
-										<li>Deal Includes:</li>
-										<li><i class="fa fa-taxi"></i> 5 Days Trip > Hotel
-											Included</li>
-										<li><i class="fa fa-plane"></i> Airplane Bill Included</li>
-										<li><i class="fa fa-building"></i> Daily Places Visit</li>
-									</ul>
-									<div class="main-button">
-										<a href="reservation.jsp">Make a Reservation</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="thumb">
-								<img src="assets/images/offers-01.jpg" alt="">
-								<div class="text">
-									<h4>
-										Havana<br> <span><i class="fa fa-users"></i> 234
-											Check Ins</span>
-									</h4>
-									<h6>
-										$420<br> <span>/person</span>
-									</h6>
-									<div class="line-dec"></div>
-									<ul>
-										<li>Deal Includes:</li>
-										<li><i class="fa fa-taxi"></i> 5 Days Trip > Hotel
-											Included</li>
-										<li><i class="fa fa-plane"></i> Airplane Bill Included</li>
-										<li><i class="fa fa-building"></i> Daily Places Visit</li>
-									</ul>
-									<div class="main-button">
-										<a href="reservation.jsp">Make a Reservation</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="thumb">
-								<img src="assets/images/offers-02.jpg" alt="">
-								<div class="text">
-									<h4>
-										Kingston<br> <span><i class="fa fa-users"></i> 234
-											Check Ins</span>
-									</h4>
-									<h6>
-										$420<br> <span>/person</span>
-									</h6>
-									<div class="line-dec"></div>
-									<ul>
-										<li>Deal Includes:</li>
-										<li><i class="fa fa-taxi"></i> 5 Days Trip > Hotel
-											Included</li>
-										<li><i class="fa fa-plane"></i> Airplane Bill Included</li>
-										<li><i class="fa fa-building"></i> Daily Places Visit</li>
-									</ul>
-									<div class="main-button">
-										<a href="reservation.jsp">Make a Reservation</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="thumb">
-								<img src="assets/images/offers-03.jpg" alt="">
-								<div class="text">
-									<h4>
-										George Town<br> <span><i class="fa fa-users"></i>
-											234 Check Ins</span>
-									</h4>
-									<h6>
-										$420<br> <span>/person</span>
-									</h6>
-									<div class="line-dec"></div>
-									<ul>
-										<li>Deal Includes:</li>
-										<li><i class="fa fa-taxi"></i> 5 Days Trip > Hotel
-											Included</li>
-										<li><i class="fa fa-plane"></i> Airplane Bill Included</li>
-										<li><i class="fa fa-building"></i> Daily Places Visit</li>
-									</ul>
-									<div class="main-button">
-										<a href="reservation.jsp">Make a Reservation</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="more-about">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 align-self-center">
-					<div class="left-image">
-						<img src="assets/images/about-left-image.jpg" alt="">
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="section-heading">
-						<h2>Discover More About Our Country</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-							sed do eiusmod tempor incididunt ut labore.</p>
-					</div>
-					<div class="row">
-						<div class="col-lg-6">
-							<div class="info-item">
-								<h4>150.640 +</h4>
-								<span>Total Guests Yearly</span>
-							</div>
-						</div>
-						<div class="col-lg-6">
-							<div class="info-item">
-								<h4>175.000+</h4>
-								<span>Amazing Accomoditations</span>
-							</div>
-						</div>
-						<div class="col-lg-12">
-							<div class="info-item">
-								<div class="row">
-									<div class="col-lg-6">
-										<h4>12.560+</h4>
-										<span>Amazing Places</span>
-									</div>
-									<div class="col-lg-6">
-										<h4>240.580+</h4>
-										<span>Different Check-ins Yearly</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-						do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit
-						amet, consectetur adipiscing elit, sed do eiusmod tempor
-						incididunt ut labore.</p>
-					<div class="main-button">
-						<a href="reservation.jsp">Discover More</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-   <!-- 모달 -->
-
-	<div class="best-locations">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 offset-lg-3">
-					<div class="section-heading text-center">
-						<h2>Best Locations In Caribbeans</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-							sed do eiusmod tempor incididunt ut labore.</p>
-					</div>
-				</div>
-				<div class="col-lg-8 offset-lg-2">
-					<div class="options">
-						<div class="option active"
-							style="-optionBackground: url(https://buttoncreatives.com/html/woox/assets/images/best-01.jpg);">
-							<div class="shadow"></div>
-							<div class="label">
-								<div class="icon">
-									<i class="fas fa-expand"></i>
-								</div>
-								<div class="info">
-									<div class="main">Havana</div>
-									<div class="sub">Population: 2M</div>
-								</div>
-							</div>
-						</div>
-						<div class="option"
-							style="-optionBackground: url(https://buttoncreatives.com/html/woox/assets/images/best-02.jpg);">
-							<div class="shadow"></div>
-							<div class="label">
-								<div class="icon">
-									<i class="fas fa-expand"></i>
-								</div>
-								<div class="info">
-									<div class="main">Kingston</div>
-									<div class="sub">Population: 3.5M</div>
-								</div>
-							</div>
-						</div>
-						<div class="option"
-							style="-optionBackground: url(https://buttoncreatives.com/html/woox/assets/images/best-03.jpg);">
-							<div class="shadow"></div>
-							<div class="label">
-								<div class="icon">
-									<i class="fas fa-expand"></i>
-								</div>
-								<div class="info">
-									<div class="main">London</div>
-									<div class="sub">Population: 4.1M</div>
-								</div>
-							</div>
-						</div>
-						<div class="option"
-							style="-optionBackground: url(https://buttoncreatives.com/html/woox/assets/images/best-04.jpg);">
-							<div class="shadow"></div>
-							<div class="label">
-								<div class="icon">
-									<i class="fas fa-expand"></i>
-								</div>
-								<div class="info">
-									<div class="main">Pristina</div>
-									<div class="sub">Population: 520K</div>
-								</div>
-							</div>
-						</div>
-						<div class="option"
-							style="-optionBackground: url(https://buttoncreatives.com/html/woox/assets/images/best-05.jpg);">
-							<div class="shadow"></div>
-							<div class="label">
-								<div class="icon">
-									<i class="fas fa-expand"></i>
-								</div>
-								<div class="info">
-									<div class="main">Paris</div>
-									<div class="sub">Population: 3M</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-12">
-					<div class="main-button text-center">
-						<a href="deals.jsp">Discover All Places</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<div class="call-to-action">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8">
-					<h2>Are You Looking To Travel ?</h2>
-					<h4>Make A Reservation By Clicking The Button</h4>
-				</div>
-				<div class="col-lg-4">
-					<div class="border-button">
-						<a href="reservation.jsp">Book Yours Now</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-  </div>
 	<footer>
 		<div class="container">
 			<div class="row">
@@ -580,30 +355,31 @@ https://templatemo.com/tm-580-woox-travel
 			$(".option").removeClass("active");
 			$(this).addClass("active");
 		});
-    </script>
-    <script>
-		 function show() {
-			 console.log("실행");
-		      let modal = document.querySelector(".modalPopup");
-		      let modalBtn = document.querySelector(".modalBtn");
-		      // let mainCaption = document.querySelector(".main-caption")
-          let slidercon = document.querySelector(".dark")
-		      if (modal.style.opacity == "0") {
-		    	// mainCaption.style.opacity ="0";
-          slidercon.style.opacity ="0";
-		        modal.style.opacity = "1";
-		        modal.style.display = "block"
-		        modalBtn.textContent = "닫기"
-		      }
+	</script>
+	<script>
+		function show() {
+			console.log("실행");
+			let modal = document.querySelector(".modalPopup");
+			let modalBtn = document.querySelector(".modalBtn");
+			// let mainCaption = document.querySelector(".main-caption")
+			let slidercon = document.querySelector(".dark")
+			console.log(modal.style.zIndex);
+			console.log(slidercon.style.zIndex);
+			if (modal.style.display == "none") {
+				
+			
+				modal.style.display = "block"
+				modalBtn.textContent = "닫기"
+			}
 
-		      else {
-		    	  // mainCaption.style.opacity ="1";
-            slidercon.style.opacity="1";
-		        modal.style.opacity = "0";
-		        modal.style.display = "none";
-		        modalBtn.textContent = "로그인";
-		      }
-		    }
+			else {
+				// mainCaption.style.opacity ="1";
+				modal.style.display = "none"
+				
+				
+				modalBtn.textContent = "로그인";
+			}
+		}
 	</script>
 
 </body>
