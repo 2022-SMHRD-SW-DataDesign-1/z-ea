@@ -102,8 +102,7 @@ https://templatemo.com/tm-580-woox-travel
 
 
 
-	<!-- ***** Header Area End ***** -->
-	
+
 	<!-- ***** Main Banner Area Start ***** -->
 	<section id="section-1">
 		<div class="content-slider">
