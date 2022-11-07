@@ -1,6 +1,5 @@
 package com.smhrd.model;
 
-import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
@@ -9,30 +8,24 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.smhrd.db.SqlSessionManger;
 
-public class BoardDAO {
+public class CommentDAO {
 	private SqlSessionFactory sqlSessionFactory =
 			SqlSessionManger.getSqlSession();
-	//업로드
-	public int upload(BoardDTO dto) {
+	
+	public int insert(CommentDTO dto) {
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int row = session.insert("upload", dto);
+		int insert = session.insert("insert",dto);
 		session.close();
 		
-		return row;
-		
+		return insert;
 	}
-	public ArrayList<BoardDTO> select() {
+	
+	public ArrayList<CommentDTO> show_comment(BigDecimal cminfo){//(CommentDTO cminfo)
 		SqlSession session = sqlSessionFactory.openSession(true);
-		ArrayList<BoardDTO> list =(ArrayList) session.selectList("select");
+		ArrayList<CommentDTO> list = (ArrayList)session.selectList("show_comment", cminfo);
 		session.close();
 		
 		return list;
-	}
-	public BoardDTO show(BigDecimal board_num) {
-		SqlSession session = sqlSessionFactory.openSession(true);
-		BoardDTO dto = session.selectOne("show", board_num);
-		session.close();
 		
-		return dto;
 	}
 }
