@@ -14,8 +14,6 @@
 	href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
 	rel="stylesheet">
 
-<title>WoOx Travel Bootstrap 5 Theme</title>
-
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -61,13 +59,13 @@ https://templatemo.com/tm-580-woox-travel
 					<nav class="main-nav">
 						<!-- ***** Logo Start ***** -->
 						<a href="index.jsp" class="logo"> <img
-							src="assets/images/짱구2.jpg" alt="">
+							src="assets/images/logo.png" alt="">
 						</a>
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
 							<li><a href="index.jsp" class="active">홈</a></li>
-							<li><a href="about.jsp">테마</a></li>
+							<li><a href="about.jsp">글램핑&카라반</a></li>
 							<li><a href="deals.jsp">예약</a></li>
 							<li><a href="reservation.jsp">양도</a></li>
 							<li><a href="community.jsp">커뮤니티</a></li>
@@ -101,8 +99,6 @@ https://templatemo.com/tm-580-woox-travel
 	</header>
 
 
-
-
 	<!-- ***** Main Banner Area Start ***** -->
 	<section id="section-1">
 		<div class="content-slider">
@@ -113,7 +109,6 @@ https://templatemo.com/tm-580-woox-travel
 				type="radio" id="banner4" class="sec-1-input" name="banner">
 
 			<div class="slider">
-			
 				<div class="main-caption">
 					<div style="margin-left: 10%; font-size: 25px">검색어를 입력하세요</div>
 					<form action="get">
@@ -122,98 +117,106 @@ https://templatemo.com/tm-580-woox-travel
 						<input type="submit" value="검색" />
 					</form>
 					<p style="margin-left: 10%;">#여행 #먹방 #힐링 #키즈</p>
-					
+
 				</div>
-<div class="modalPopup" style="z-index:100; display: none;">
-		<div class="ModalBack"
-			style="position: fixed; background-color: black; width: 100%; height: 100%; opacity: 0.5; ">
-		</div>
-		<div class="LoginModal"
-			style="text-align: center; z-index:3000; background-color: white; width: 500px; height: 650px; margin-top: 10%; margin-left: 36%; position: fixed; align-content: center;">
-			<!-- 로그인 -->
-			<form action="LoginService" method="post">
-				<table style="margin: auto; margin-top: 8%;">
-					<th colspan="2" style="font-size: 20px; padding: 10px;">로그인</th>
-					<tr>
-						<td>
-							<div
-								style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이메일
-							</div>
-						</td>
-						<td><input type="email" name="mb_email" style="width: 180px;" /></td>
-					</tr>
-					<tr>
-						<td>
-							<div
-								style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">비밀번호
-							</div>
-						</td>
-						<td><input type="password" name="mb_pw" style="width: 180px;" /></td>
-					</tr>
-					<td colspan="2" style="text-align: center;"><input
-						type="submit" value="로그인" style="width: 80px;"></td>
-				</table>
-			</form>
-			<!-- 회원가입-->
-			<form action="JoinService" method="post">
-				<table style="margin: auto; margin-top: 8%;">
-					<th colspan="2" style="font-size: 20px; padding: 10px;">회원가입</th>
-					<tr>
-						<td>
-							<div
-								style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이름
-							</div>
-						</td>
-						<td><input type="text" name="mb_name" style="width: 180px;" /></td>
-					</tr>
-					<tr>
-						<td>
-							<div
-								style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이메일
-							</div>
-						</td>
-						<td><input type="email" name="mb_email" id="mb_email_ck"
-							style="width: 180px;" /></td>
-					</tr>
-					<tr>
-						<td colspan="2"><input type="button" value="email중복확인"
-							onclick="checkE()"></td>
-					</tr>
-					<tr>
-						<th colspan="2"><span style="padding: 10px;" id="resultCheck"></span></th>
-					</tr>
-					<tr>
-						<td>
-							<div
-								style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">비밀번호
-							</div>
-						</td>
-						<td><input type="password" name="mb_pw" style="width: 180px;" /></td>
-					</tr>
-					<tr>
-						<td>
-							<div
-								style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">생년월일
-							</div>
-						</td>
-						<td><input type="date" name="mb_birthdate"
-							style="width: 180px;" /></td>
-					</tr>
-					<tr>
-						<td>
-							<div
-								style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">전화번호
-							</div>
-						</td>
-						<td><input type="text" name="mb_phone" style="width: 180px;" /></td>
-					</tr>
-					<td colspan="2" style="text-align: center;"><input
-						type="submit" value="회원가입" style="width: 80px;"></td>
-				</table>
-			</form>
-		</div>
-	</div>
-	
+				<div class="modalPopup" style="z-index: 100; display: none; margin-top:45px; ">
+					<div class="ModalBack"
+						style="position: fixed;background-color: black;width: 100%;height: 100%;opacity: 0.5;">
+					</div>
+					<div class="LoginModal"
+						style="text-align: center; z-index: 3000; background-color: white; width: 500px; height: 650px; margin-top: 10%; margin-left: 36%; position: fixed; align-content: center;">
+						<!-- 로그인 -->
+						<form action="LoginService" method="post">
+							<table style="margin: auto; margin-top: 8%;">
+								<th colspan="2" style="font-size: 20px; padding: 10px;">로그인</th>
+								<tr>
+									<td>
+										<div
+											style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이메일
+										</div>
+									</td>
+									<td><input type="email" name="mb_email"
+										style="width: 180px;" /></td>
+								</tr>
+								<tr>
+									<td>
+										<div
+											style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">비밀번호
+										</div>
+									</td>
+									<td><input type="password" name="mb_pw"
+										style="width: 180px;" /></td>
+								</tr>
+								<td colspan="2" style="text-align: center;"><input
+									type="submit" value="로그인" style="width: 80px;"></td>
+							</table>
+						</form>
+						<!-- 회원가입-->
+						<form action="JoinService" method="post">
+							<table style="margin: auto; margin-top: 8%;">
+								<th colspan="2" style="font-size: 20px; padding: 10px;">회원가입</th>
+								<tr>
+									<td>
+										<div
+											style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이름
+										</div>
+									</td>
+									<td><input type="text" name="mb_name"
+										style="width: 180px;" /></td>
+								</tr>
+								<tr>
+									<td>
+										<div
+											style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이메일
+										</div>
+									</td>
+									<td><input type="email" name="mb_email" id="mb_email_ck"
+										style="width: 180px;" /></td>
+								</tr>
+								<tr>
+									<td colspan="2"><input type="button" value="email중복확인"
+										onclick="checkE()"></td>
+								</tr>
+								<tr>
+									<th colspan="2"><span style="padding: 10px;"
+										id="resultCheck"></span></th>
+								</tr>
+								<tr>
+									<td>
+										<div
+											style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">비밀번호
+										</div>
+									</td>
+									<td><input type="password" name="mb_pw"
+										style="width: 180px;" /></td>
+								</tr>
+								<tr>
+									<td>
+										<div
+											style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">생년월일
+										</div>
+									</td>
+									<td><input type="date" name="mb_birthdate"
+										style="width: 180px;" /></td>
+								</tr>
+								<tr>
+									<td>
+										<div
+											style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">전화번호
+										</div>
+									</td>
+									<td><input type="text" name="mb_phone"
+										style="width: 180px;" /></td>
+								</tr>
+								<td colspan="2" style="text-align: center;"><input
+									type="submit" value="회원가입" style="width: 80px;"></td>
+							</table>
+						</form>
+					</div>
+				</div>
+				
+				
+
 				<!-- 모달 -->
 
 				<div id="top-banner-1" class="banner">
@@ -441,7 +444,7 @@ https://templatemo.com/tm-580-woox-travel
 	</script>
 	<script>
 		function show() {
-		
+
 			let modal = document.querySelector(".modalPopup");
 			let modalBtn = document.querySelector(".modalBtn");
 			let mainCaption = document.querySelector(".main-caption")
@@ -450,7 +453,6 @@ https://templatemo.com/tm-580-woox-travel
 			console.log("실행도미");
 			if (modal.style.display == "none") {
 
-				
 				modal.style.display = "block";
 				modalBtn.textContent = "닫기";
 			}
