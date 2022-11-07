@@ -4,40 +4,47 @@
 <%@page import="com.smhrd.model.MemberDTO"%>
 <%@page import="com.smhrd.model.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en-us">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<!-- Bootstrap core CSS -->
-	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-	<!-- Load fonts -->
-	<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+<!-- Load fonts -->
+<link href='http://fonts.googleapis.com/css?family=Montserrat'
+	rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lora'
+	rel='stylesheet' type='text/css'>
 
-	<!-- Additional CSS Files -->
-	<link rel="stylesheet" href="assets/css/fontawesome.css">
-	<link rel="stylesheet" href="assets/css/templatemo-woox-travel.css">
-	<link rel="stylesheet" href="assets/css/owl.css">
-	<link rel="stylesheet" href="assets/css/animate.css">
-	<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+<!-- Additional CSS Files -->
+<link rel="stylesheet" href="assets/css/fontawesome.css">
+<link rel="stylesheet" href="assets/css/templatemo-woox-travel.css">
+<link rel="stylesheet" href="assets/css/owl.css">
+<link rel="stylesheet" href="assets/css/animate.css">
+<link rel="stylesheet"
+	href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
-	<!-- Load css styles -->
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-	<!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
+<!-- Load css styles -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+<!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
 
 </head>
 
 <body>
-	<%MemberDTO info = (MemberDTO)session.getAttribute("info"); %>
-	  <!-- ***** Header Area Start ***** -->
-	  <header class="header-area header-sticky">
+	<%
+	MemberDTO info = (MemberDTO) session.getAttribute("info");
+	%>
+	<!-- ***** Header Area Start ***** -->
+	<header class="header-area header-sticky">
 		<div class="container">
+<<<<<<< HEAD
 		  <div class="row">
 			<div class="col-12">
 			  <nav class="main-nav">
@@ -53,7 +60,7 @@
 				  <li><a href="about.jsp">테마</a></li>
 				  <li><a href="deals.jsp">예약</a></li>
 				  <li><a href="reservation.jsp">양도</a></li>
-				  <li><a href="Community.html">커뮤니티</a></li>
+				  <li><a href="Community.jsp">커뮤니티</a></li>
 				 								 <%if(info == null){ %>
               <li>
                 <button class="modalBtn" onclick="show()" style="background-color:#6A5ACD; padding: 8px 14px; border: none;
@@ -78,18 +85,60 @@
 				</a>
 				<!-- ***** Menu End ***** -->
 			  </nav>
+=======
+			<div class="row">
+				<div class="col-12">
+					<nav class="main-nav">
+						<!-- ***** Logo Start ***** -->
+						<a href="Main.html" class="logo"> <img
+							src="assets/images/logo.png" alt="">
+						</a>
+						<!-- ***** Logo End ***** -->
+
+						<!-- ***** Menu Start ***** -->
+						<ul class="nav">
+							<li><a href="index.jsp">홈</a></li>
+							<li><a href="about.jsp">글램핑&카라반</a></li>
+							<li><a href="deals.jsp">예약</a></li>
+							<li><a href="reservation.jsp">양도</a></li>
+							<li><a href="community.html" class="active">커뮤니티</a></li>
+							<%
+							if (info == null) {
+							%>
+							<li>
+								<button class="modalBtn" onclick="show()"
+									style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">로그인</button>
+							</li>
+							<%
+							} else {
+							%>
+							<li><a href="MyPage.jsp" class="modalBtn"
+								style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">마이페이지</a>
+							</li>
+							<li><a href="LogoutService" class="modalBtn"
+								style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">로그아웃</a>
+							</li>
+							<%
+							}
+							%>
+						</ul>
+						<a class='menu-trigger'> <span>Menu</span>
+						</a>
+						<!-- ***** Menu End ***** -->
+					</nav>
+				</div>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 			</div>
-		  </div>
 		</div>
-	  </header>
-	  <!-- ***** Header Area End ***** -->
-	  
-	 <div class="modalPopup" style="z-index:100; display: none;">
+	</header>
+	<!-- ***** Header Area End ***** -->
+
+	<div class="modalPopup" style="z-index: 100; display: none;">
 		<div class="ModalBack"
-			style="position: fixed; background-color: black; width: 100%; height: 100%; opacity: 0.5; ">
+			style="position: fixed; background-color: black; width: 100%; height: 100%; opacity: 0.5;">
 		</div>
 		<div class="LoginModal"
-			style="text-align: center; z-index:3000; background-color: white; width: 500px; height: 650px; margin-top: 10%; margin-left: 36%; position: fixed; align-content: center;">
+			style="text-align: center; z-index: 3000; background-color: white; width: 500px; height: 650px; margin-top: 10%; margin-left: 36%; position: fixed; align-content: center;">
 			<!-- 로그인 -->
 			<form action="LoginService" method="post">
 				<table style="margin: auto; margin-top: 8%;">
@@ -173,34 +222,44 @@
 			</form>
 		</div>
 	</div>
-	
+
 	<!-- Portfolio section start -->
 	<section id="portfolio" class="darker">
 		<div class="container2">
 			<header>
 				<h2>커뮤니티</h2>
 				<a href="community_input.jsp">작성하기</a>
-				<% ArrayList<BoardDTO> list = new BoardDAO().select(); %>
+				<%
+				ArrayList<BoardDTO> list = new BoardDAO().select();
+				%>
 			</header>
-			
+
 			<div id="single-project"></div>
-			
+
 			<div class="row">
-				<%for(int i = 0; i < list.size(); i++){ %>
+				<%
+				for (int i = 0; i < list.size(); i++) {
+				%>
 				<figure class="portfolio-item col-md-4 col-sm-6">
-					<a href="community_detail.jsp?board_num=<%=list.get(i).getBoard_num()%>">
-					<img class="img-responsive" src="./file/<%=list.get(i).getBoard_file()%>" alt="Adena icons pack" />
+					<a
+						href="community_detail.jsp?board_num=<%=list.get(i).getBoard_num()%>">
+						<img class="img-responsive"
+						src="./file/<%=list.get(i).getBoard_file()%>"
+						alt="Adena icons pack" />
 					</a>
 					<figcaption class="mask">
-						<a href="community_detail.jsp?board_num=<%=list.get(i).getBoard_num()%>">
-							<p><%=list.get(i).getBoard_title() %></p>
+						<a
+							href="community_detail.jsp?board_num=<%=list.get(i).getBoard_num()%>">
+							<p><%=list.get(i).getBoard_title()%></p>
 						</a>
 					</figcaption>
 				</figure>
-				<%} %>
-				
-			
-				
+				<%
+				}
+				%>
+
+
+
 			</div>
 		</div>
 	</section>
@@ -212,16 +271,16 @@
 				<div class="col-lg-12">
 					<p>
 						Copyright Â© 2036 <a href="#">WoOx Travel</a> Company. All rights
-						reserved. <br>Design: <a href="https://templatemo.com" target="_blank"
-							title="free CSS templates">TemplateMo</a>
-						Distribution: <a href="https://themewagon.com target=" _blank">ThemeWagon</a>
+						reserved. <br>Design: <a href="https://templatemo.com"
+							target="_blank" title="free CSS templates">TemplateMo</a>
+						Distribution: <a href="https://themewagon.com target="_blank">ThemeWagon</a>
 					</p>
 				</div>
 			</div>
 		</div>
 	</footer>
 
-	
+
 
 	<!-- Load jQuery -->
 	<script>
@@ -234,8 +293,7 @@
 			console.log(modal.style.zIndex);
 			console.log(slidercon.style.zIndex);
 			if (modal.style.display == "none") {
-				
-			
+
 				modal.style.display = "block"
 				modalBtn.textContent = "닫기"
 			}
@@ -243,23 +301,52 @@
 			else {
 				// mainCaption.style.opacity ="1";
 				modal.style.display = "none"
-				
-				
+
 				modalBtn.textContent = "로그인";
 			}
 		}
 	</script>
 	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script src="vendor/jquery/jquery.js"></script>
 
 	<!-- Load Booststrap -->
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 
 	<script type="text/javascript" src="js/smooth-scroll.js"></script>
 
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript"
+		src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
 	<!-- Load custom js for theme -->
 	<script type="text/javascript" src="js/app.js"></script>
+	<script>
+		function checkE() {
+			let mb_email_ck = $('#mb_email_ck').val();
+			console.log(mb_email_ck);
+
+			$.ajax({
+				url : 'EmailCheckService',
+				data : {
+					'mb_email_ck' : mb_email_ck
+				},
+				type : 'get',
+				success : function(data) {
+					console.log(data);
+
+					if (data == 'true') {
+						$('#resultCheck').text('사용할 수 없는 아이디')
+					} else {
+						$('#resultCheck').text('사용할 수 있는 아이디')
+					}
+				},
+				error : function() {
+					console.log("통신실패");
+
+				}
+			});
+
+		}
+	</script>
 
 
 </body>

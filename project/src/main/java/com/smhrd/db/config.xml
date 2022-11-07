@@ -9,6 +9,11 @@
 	<typeAliases>
 		<typeAlias type="com.smhrd.model.MemberDTO" alias="MemberDTO"/>
 		<typeAlias type="com.smhrd.model.BoardDTO" alias="BoardDTO"/>
+<<<<<<< HEAD
+		<typeAlias type="com.smhrd.model.BoardDTO" alias="CommentDTO"/>
+=======
+		<typeAlias type="com.smhrd.model.ItemDTO" alias="ItemDTO"/>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 	</typeAliases>
 	
   <environments default="development">
@@ -25,5 +30,10 @@
   <mappers>
     <mapper resource="com/smhrd/mapper/MemberMapper.xml"/>
     <mapper resource="com/smhrd/mapper/BoardMapper.xml"/>
+<<<<<<< HEAD
+    <mapper resource="com/smhrd/mapper/CommentMapper.xml"/>
+=======
+    <mapper resource="com/smhrd/mapper/ItemMapper.xml"/>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
   </mappers>
 </configuration>

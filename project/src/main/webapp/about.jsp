@@ -1,3 +1,10 @@
+<%@page import="com.smhrd.model.MemberDTO"%>
+
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.smhrd.model.ItemDAO"%>
+<%@page import="com.smhrd.model.ItemDTO"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -13,8 +20,6 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
 	rel="stylesheet">
-
-<title>WoOx Travel - About Us</title>
 
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -36,6 +41,9 @@ https://templatemo.com/tm-580-woox-travel
 </head>
 
 <body>
+	<%
+	MemberDTO info = (MemberDTO) session.getAttribute("info");
+	%>
 
 	<!-- ***** Preloader Start ***** -->
 	<div id="js-preloader" class="js-preloader">
@@ -46,6 +54,7 @@ https://templatemo.com/tm-580-woox-travel
 			</div>
 		</div>
 	</div>
+
 	<!-- ***** Preloader End ***** -->
 
 	<!-- ***** Header Area Start ***** -->
@@ -61,15 +70,30 @@ https://templatemo.com/tm-580-woox-travel
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
-							<li><a href="index.jsp" class="active">홈</a></li>
-							<li><a href="about.jsp">테마</a></li>
+							<li><a href="index.jsp">홈</a></li>
+							<li><a href="about.jsp" class="active">글램핑&카라반</a></li>
 							<li><a href="deals.jsp">예약</a></li>
 							<li><a href="reservation.jsp">양도</a></li>
-							<li><a href="reservation.jsp">커뮤니티</a></li>
+							<li><a href="community.jsp">커뮤니티</a></li>
+							<%
+							if (info == null) {
+							%>
 							<li>
-
 								<button class="modalBtn" onclick="show()"
 									style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">로그인</button>
+							</li>
+							<%
+							} else {
+							%>
+							<li><a href="MyPage.jsp" class="modalBtn"
+								style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">마이페이지</a>
+							</li>
+							<li><a href="LogoutService" class="modalBtn"
+								style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">로그아웃</a>
+							</li>
+							<%
+							}
+							%>
 						</ul>
 						<a class='menu-trigger'> <span>Menu</span>
 						</a>
@@ -79,13 +103,15 @@ https://templatemo.com/tm-580-woox-travel
 			</div>
 		</div>
 	</header>
+
+
 	<!-- ***** Header Area End ***** -->
-<div class="modalPopup" style="z-index:100; display: none;">
+	<div class="modalPopup" style="z-index: 100; display: none;">
 		<div class="ModalBack"
-			style="position: fixed; background-color: black; width: 100%; height: 100%; opacity: 0.5; ">
+			style="position: fixed; background-color: black; width: 100%; height: 100%; opacity: 0.5;">
 		</div>
 		<div class="LoginModal"
-			style="text-align: center; z-index:3000; background-color: white; width: 500px; height: 650px; margin-top: 10%; margin-left: 36%; position: fixed; align-content: center;">
+			style="text-align: center; z-index: 3000; background-color: white; width: 500px; height: 650px; margin-top: 10%; margin-left: 36%; position: fixed; align-content: center;">
 			<!-- 로그인 -->
 			<form action="LoginService" method="post">
 				<table style="margin: auto; margin-top: 8%;">
@@ -169,12 +195,8 @@ https://templatemo.com/tm-580-woox-travel
 			</form>
 		</div>
 	</div>
-	
-	
-	
-	
-	
-	 <div class="dark">
+
+	<div class="dark">
 		<!-- ***** Main Banner Area Start ***** -->
 		<div class="about-main-content">
 			<div class="container">
@@ -184,204 +206,174 @@ https://templatemo.com/tm-580-woox-travel
 					</div>
 				</div>
 			</div>
-		</div> 
+		</div>
 		<!-- ***** Main Banner Area End ***** -->
 
-	
-		
 		<!-- 모달 -->
 
-	<div class="cities-town" style="display: inline-block; text-align: center;">
-		<div class="container" >
-			<div class="row" style="text-align: center; ">
-				<div class="slider-content" >
+		<div class="cities-town"
+			style="display: inline-block; margin-left: 15%;">
+			<div class="container">
+				<div class="row" style="text-align: center;">
+					<div class="slider-content">
 
-					<div class="row" style="display: block; " >
-						
-							<h2>
-							카테고리 <em>Cities &amp; Towns</em>
-							</h2>
-						
-						<div class="col-lg-12">
-							<div class="owl-cites-town owl-carousel" style="display: inline-block;">
-								<div class="item">
-									<div class="thumb" style="height: 10%;">
-										<img src="" alt="" style="height: 40px; ">
-										<h4>연인</h4>
-									</div>
-								</div>
-								<div class="item">
-									<div class="thumb">
-										<img src="" alt="" style="height: 40px; ">
-										<h4>가족</h4>
-									</div>
-								</div>
-								<div class="item">
-									<div class="thumb">
-										<img src="" alt="" onclick="" style="height: 40px;" >
-										<h4>뷰 맛집</h4>
-									</div>
-								</div>
-								<div class="item">
-									<div class="thumb">
-										<img src="" alt="" onclick="" style="height: 40px;" >
-										<h4>핫한 여행지
+						<div class="row" style="display: block;">
 
-										</h4>
-									</div>
+							<h2>카테고리</h2>
+
+							<div class="col-lg-12">
+								<div class="owl-cites-town owl-carousel"
+									style="display: inline-block;">
+
+									<div class="choose1"
+										style="height: 40px; width: 120px; border: solid black 1px"
+										onclick="tag_filter(this)">#가족</div>
+
+
+									<div class="choose1"
+										style="height: 40px; width: 120px; border: solid black 1px"
+										onclick="tag_filter(this)">#혼자</div>
+
+
+									<div class="choose1"
+										style="height: 40px; width: 120px; border: solid black 1px;"
+										onclick="tag_filter(this)">#감성</div>
+
+
+									<div class="choose1"
+										style="height: 40px; width: 120px; border: solid black 1px"
+										onclick="tag_filter(this)">#커플</div>
+
+
+									<div class="choose1"
+										style="height: 40px; width: 120px; border: solid black 1px"
+										onclick="tag_filter(this)">#단체</div>
+
+
+									<div class="choose1"
+										style="height: 40px; width: 120px; border: solid black 1px"
+										onclick="tag_filter(this)">#바다</div>
+
+
+									<div class="choose1"
+										style="height: 40px; width: 120px; border: solid black 1px"
+										onclick="tag_filter(this)">#산</div>
+
 								</div>
-								<div class="item">
-									<div class="thumb">
-										<img src="" alt="" onclick="" style="height: 40px;">
-										<h4>단체 모임</h4>
-									</div>
-								</div>
-								<div class="item">
-									<div class="thumb">
-										<img src="" alt="" onclick="" style="height: 40px;">
-										<h4>Kingston</h4>
-									</div>
-								</div>
-								<div class="item">
-									<div class="thumb">
-										<img src="" alt="" onclick="" style="height: 40px;">
-										<h4>George Town</h4>
-									</div>
-								</div>
-								<div class="item">
-									<div class="thumb">
-										<img src="" alt="" onclick="" style="height: 40px;">
-										<h4>Santo Domingo</h4>
+								<hr />
+
+								<div>
+									<div
+										style="margin-top: 5%; width: 100%; display: inline-block; padding: 10px 5px 10px 5px;">
+
+										<%
+										ItemDAO dao = new ItemDAO();
+										ArrayList<ItemDTO> item_list = new ArrayList<ItemDTO>();
+										item_list = dao.Filter("#가족");
+
+										for (int i = 0; i < item_list.size(); i++) {
+										%>
+
+										<a class="item_list" href="ShowService?num=<%=item_list.get(i).getNum() %>"
+											style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox;">
+											<img src="assets/images/offers-01.jpg" alt=""
+												style="width: 200px; height: 200px;">
+											<div style="text-align: left; padding-left: 20px;">
+												<p><%= item_list.get(i).getName()%></p>
+												<p><%=item_list.get(i).getDesc()%></p>
+											</div>
+										</a>
+										<%
+										}
+										%>
+
 									</div>
 								</div>
 							</div>
-							<div>
-							<div style=" margin-top: 5%;  width: 100%; height: 400px; padding: 10px 5px 10px 5px;">
-							<div class="item_list" style="border: 1px violet solid; display :inline-block; width: 250px; height: 350px;text-align: center; padding: 5px; display: flexbox;">
-								<img src="assets/images/offers-01.jpg" alt="" style="width: 200px; height : 200px; " >
-								<div style="text-align: left;">
-									<p>장소이름 </p>
-								<p> 설명</p></div>
-							</div>
-							<div class="item_list" style="border: 1px violet solid; display :inline-block; width: 250px; height: 350px;text-align: center; padding: 5px; display: flexbox;">
-								<img src="assets/images/offers-01.jpg" alt="" style="width: 200px; height : 200px; " >
-								<div style="text-align: left;">
-									<p>장소이름 </p>
-								<p> 설명</p></div>
-							</div>
-							<div class="item_list" style="border: 1px violet solid; display :inline-block; width: 250px; height: 350px;text-align: center; padding: 5px; display: flexbox;">
-								<img src="assets/images/offers-01.jpg" alt="" style="width: 200px; height : 200px; " >
-								<div style="text-align: left;">
-									<p>장소이름 </p>
-								<p> 설명</p></div></div>
-							<div class="item_list" style="border: 1px violet solid; display :inline-block; width: 250px; height: 350px;text-align: center; padding: 5px; display: flexbox;">
-								<img src="assets/images/offers-01.jpg" alt="" style="width: 200px; height : 200px; " >
-								<div style="text-align: left;">
-									<p>장소이름 </p>
-								<p> 설명</p></div></div>
-							<div class="item_list" style="border: 1px violet solid; display :inline-block; width: 250px; height: 350px;text-align: center; padding: 5px; display: flexbox;">
-								<img src="assets/images/offers-01.jpg" alt="" style="width: 200px; height : 200px; " >
-								<div style="text-align: left;">
-									<p>장소이름 </p>
-								<p> 설명</p></div></div>
-							<div class="item_list" style="border: 1px violet solid; display :inline-block; width: 250px; height: 350px;text-align: center; padding: 5px; display: flexbox;">
-								<img src="assets/images/offers-01.jpg" alt="" style="width: 200px; height : 200px; " >
-								<div style="text-align: left;">
-									<p>장소이름 </p>
-								<p> 설명</p></div></div>
-							<div class="item_list" style="border: 1px violet solid; display :inline-block; width: 250px; height: 350px;text-align: center; padding: 5px; display: flexbox;">
-								<img src="assets/images/offers-01.jpg" alt="" style="width: 200px; height : 200px; " >
-								<div style="text-align: left;">
-								<p>장소이름 </p>
-							<p> 설명</p></div></div>
-							
-								<div class="item_list" style="border: 1px violet solid; display :inline-block; width: 250px; height: 350px;text-align: center; padding: 5px; display: flexbox;">
-								<img src="assets/images/offers-01.jpg" alt="" style="width: 200px; height : 200px; " >
-								<div style="text-align: left;">
-									<p>장소이름 </p>
-								<p> 설명</p></div></div>
-							<div class="item_list" style="border: 1px violet solid; display :inline-block; width: 250px; height: 350px;text-align: center; padding: 5px; display: flexbox;">
-								<img src="assets/images/offers-01.jpg" alt="" style="width: 200px; height : 200px; " >
-								<div style="text-align: left;">
-									<p>장소이름 </p>
-								<p> 설명</p></div></div>
-							<div class="item_list" style="border: 1px violet solid; display :inline-block; width: 250px; height: 350px;text-align: center; padding: 5px; display: flexbox;">
-								<img src="assets/images/offers-01.jpg" alt="" style="width: 200px; height : 200px; " >
-								<div style="text-align: left;">
-									<p>장소이름 </p>
-								<p> 설명</p></div></div>
 						</div>
-						</div>
-						
-						</div>
-						
-						
 					</div>
 				</div>
 			</div>
 		</div>
-		
-	</div>
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<p>
-						Copyright Â© 2036 <a href="#">WoOx Travel</a> Company. All rights
-						reserved. <br>Design: <a href="https://templatemo.com"
-							target="_blank" title="free CSS templates">TemplateMo</a>
-						Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
-					</p>
+
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p>
+							Copyright Â© 2036 <a href="#">WoOx Travel</a> Company. All rights
+							reserved. <br>Design: <a href="https://templatemo.com"
+								target="_blank" title="free CSS templates">TemplateMo</a>
+							Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
+						</p>
+					</div>
 				</div>
-			</div>
-		</div>
-	</footer>
 
 
-	<!-- Scripts -->
-	<!-- Bootstrap core JavaScript -->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-	<script src="assets/js/isotope.min.js"></script>
-	<script src="assets/js/owl-carousel.js"></script>
-	<script src="assets/js/wow.js"></script>
-	<script src="assets/js/tabs.js"></script>
-	<script src="assets/js/popup.js"></script>
-	<script src="assets/js/custom.js"></script>
 
-	<script>
-		$(".option").click(function() {
-			$(".option").removeClass("active");
-			$(this).addClass("active");
-		});
-	</script>
-	<script>
-		function show() {
-			console.log("실행");
-			let modal = document.querySelector(".modalPopup");
-			let modalBtn = document.querySelector(".modalBtn");
-			// let mainCaption = document.querySelector(".main-caption")
-			let slidercon = document.querySelector(".dark")
-			console.log(modal.style.zIndex);
-			console.log(slidercon.style.zIndex);
-			if (modal.style.display == "none") {
-				
 			
-				modal.style.display = "block"
-				modalBtn.textContent = "닫기"
-			}
 
-			else {
-				// mainCaption.style.opacity ="1";
-				modal.style.display = "none"
-				
-				
-				modalBtn.textContent = "로그인";
-			}
+
+				<!-- Scripts -->
+				<!-- Bootstrap core JavaScript -->
+				<script src="vendor/jquery/jquery.min.js"></script>
+				<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+				<script src="assets/js/isotope.min.js"></script>
+				<script src="assets/js/owl-carousel.js"></script>
+				<script src="assets/js/wow.js"></script>
+				<script src="assets/js/tabs.js"></script>
+				<script src="assets/js/popup.js"></script>
+				<script src="assets/js/custom.js"></script>
+
+				<script>
+			$(".option").click(function() {
+				$(".option").removeClass("active");
+				$(this).addClass("active");
+			});
+		</script>
+				<script>
+			function show() {
+				console.log("실행");
+				let modal = document.querySelector(".modalPopup");
+				let modalBtn = document.querySelector(".modalBtn");
+				// let mainCaption = document.querySelector(".main-caption")
+				let slidercon = document.querySelector(".dark")
+				console.log(modal.style.zIndex);
+				console.log(slidercon.style.zIndex);
+				if (modal.style.display == "none") {
+
+
+
+					modal.style.display = "block"
+					modalBtn.textContent = "닫기"
+				}
+
+				else {
+					// mainCaption.style.opacity ="1";
+					modal.style.display = "none"
+
+
+					modalBtn.textContent = "로그인";
+				}
+
+	</script>
+		<script>
+	function tag_filter(id){
+		let value;
+		
+		if(id.style.backgroundColor == "white"){
+		id.style.backgroundColor ="blue";
+		value = id.textContent;
+		console.log(value);
+		}else {
+			id.style.backgroundColor = "white";
+			value = "";
+		}
+		
 		}
 	</script>
-
 </body>
 
 </html>
