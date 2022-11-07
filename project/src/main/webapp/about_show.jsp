@@ -44,6 +44,13 @@ https://templatemo.com/tm-580-woox-travel
 <body>
 	<%
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
+	int num = Integer.parseInt(request.getParameter("num"));
+	
+	System.out.println(num);
+	ItemDAO dao = new ItemDAO();
+	ItemDTO item = dao.showDetail(num);
+	System.out.print(item);
+
 	%>
 
 	<!-- ***** Preloader Start ***** -->
@@ -219,17 +226,17 @@ https://templatemo.com/tm-580-woox-travel
 				</div>
 			</div>
 
-			<h2 id="topTitle">타요캠핑장</h2>
+			<h2 id="topTitle"><%= item.getName() %></h2>
 
 			<div class="area_address" id="topAddr">
-				<span>강원 삼척시</span>
+				<span><%= item.getAddr() %></span>
 			</div>
 
 			<!-- 캐치플레이스 -->
 			<div class="dbDetail titBg" id="topCp">
 				<div class="titTypeWrap">
 					<h3>
-						<em>분위기 만렙 타요캠핑장</em>
+						<em><%= item.getName() %></em>
 					</h3>
 				</div>
 			</div>
@@ -253,20 +260,20 @@ https://templatemo.com/tm-580-woox-travel
 		<!-- 사진보기 -->
 		<div id="galleryGo">
 			<div class="user_reg"></div>
-			<h3 class="blind">사진보기</h3>
+			<h3 class="blind" style="padding : 20px">사진보기</h3>
 			<div class="photo_gallery">
 				<!-- 공사 사진 영역 -->
 				<div
-					class="swiper-container swiper-container-initialized swiper-container-horizontal">
+					class="swiper-container swiper-container-initialized swiper-container-horizontal" style="height:300px;">
 					<div class="swiper-wrapper" id="pImgList">
 						<div class="swiper-slide swiper-slide-active"
-							style="width: 290px;">
+							style="width: 450px;">
 							<img class="swiper-lazy swiper-lazy-loaded" alt="타요캠핑장  0"
 								onclick="openPhotoView(0)"
 								style="width: 100%; height: 100%; object-fit: contain;"
 								src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=42235b2d-f656-4510-ae35-c562feb955cc">
 						</div>
-						<div class="swiper-slide swiper-slide-next" style="width: 290px;">
+						<div class="swiper-slide swiper-slide-next" style="width: 450px;">
 							<img class="swiper-lazy swiper-lazy-loaded" alt="타요캠핑장  1"
 								onclick="openPhotoView(1)"
 								style="width: 100%; height: 100%; object-fit: contain;"
@@ -294,13 +301,11 @@ https://templatemo.com/tm-580-woox-travel
 
 		<!-- 상세정보 -->
 		<div id="detailGo">
-			<div class="blind">타요 캠핑장은 맹방 해수욕장과 삼척항 사이에 위치한 오분리 해변 팬션마을의 가장
-				안쪽에 자리 잡고 있다. 이스트오션 펜션과 함께 운영되고 있는 이곳은 단 6대의 카라반이 구비되어 있지만, 모든 카라반에서
-				바다를 조망할 수 있어 인기가 많다. 카라반마다 바비큐 장비가 구비된 테라스가 마련되어 있고, 키즈놀이터와 유아풀장,
-				포토존, 작은 카페도 갖추고 있다.</div>
+			<div class="blind" style="padding-top : 20px;">
+			<%= item.getDesc() %></div>
 			<!-- 내용더보기 -->
 			<div class="wrap_contView">
-				<h3>상세정보</h3>
+				<h3 style="padding : 20px">상세정보</h3>
 				<button class="btn_modify" onclick="goJikimi();">
 					<span>관광정보 수정요청</span>
 				</button>
@@ -315,14 +320,7 @@ https://templatemo.com/tm-580-woox-travel
                     여기에 값 넣기
                             </div> -->
 					</div>
-					<div class="inr_wrap" style="overflow: hidden; height: 110px;">
-						<div class="inr">
-							<p>타요 캠핑장은 맹방 해수욕장과 삼척항 사이에 위치한 오분리 해변 팬션마을의 가장 안쪽에 자리 잡고 있다.
-								이스트오션 펜션과 함께 운영되고 있는 이곳은 단 6대의 카라반이 구비되어 있지만, 모든 카라반에서 바다를 조망할 수
-								있어 인기가 많다. 카라반마다 바비큐 장비가 구비된 테라스가 마련되어 있고, 키즈놀이터와 유아풀장, 포토존, 작은
-								카페도 갖추고 있다.</p>
-						</div>
-					</div>
+					
 					<div class="cont_more" style="display: block;">
 						<button type="button" class="btn_more" title="내용더보기">
 							내용 <span>더보기</span>
@@ -330,7 +328,7 @@ https://templatemo.com/tm-580-woox-travel
 					</div>
 				</div>
 			</div>
-			<h3 class="blind">상세정보</h3>
+		
 			<!-- <!-- 주변정보 지도 -->
 			<div class="surroundingsMap" id="detailGo">
 				<div class="map_skip" tabindex="0">
@@ -497,16 +495,16 @@ https://templatemo.com/tm-580-woox-travel
 			<div id="replyGo">
 				<div class="replyWrap">
 					<!-- login 추가시 로그인 후 form -->
-					<h3 class="tit_reply">
+					<h3 class="tit_reply" style="padding : 20px">
 						여행톡<span>0</span>
 					</h3>
 					<div class="write">
 						<div class="form">
 							<form name="tform" id="tform">
-								<label class="blind" for="comment">로그인 후 소중한 댓글을 남겨주세요.</label>
+								
 								<span class="writeForm"><textarea name="" rows=""
 										id="comment" placeholder="로그인 후 소중한 댓글을 남겨주세요." cols=""
-										onkeydown="commentresize(this);" readonly="readonly"></textarea></span>
+										onkeydown="commentresize(this);" readonly="readonly" style="width:100%; height: 100%"></textarea></span>
 								<div class="fileRegbtn_wrap">
 									<span class="fileRegbtn"> <input type="file" id="fileUp"
 										name="fileUp" multiple="" onchange="fileChange(this)"

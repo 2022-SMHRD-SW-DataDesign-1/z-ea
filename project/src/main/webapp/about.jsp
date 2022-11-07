@@ -274,15 +274,15 @@ https://templatemo.com/tm-580-woox-travel
 										for (int i = 0; i < item_list.size(); i++) {
 										%>
 
-										<div class="item_list"
+										<a class="item_list" href="ShowService?num=<%=item_list.get(i).getNum() %>"
 											style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox;">
 											<img src="assets/images/offers-01.jpg" alt=""
 												style="width: 200px; height: 200px;">
 											<div style="text-align: left; padding-left: 20px;">
-												<p><%=i + 1%></p>
+												<p><%= item_list.get(i).getName()%></p>
 												<p><%=item_list.get(i).getDesc()%></p>
 											</div>
-										</div>
+										</a>
 										<%
 										}
 										%>
