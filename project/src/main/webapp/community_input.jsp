@@ -316,6 +316,7 @@ https://templatemo.com/tm-580-woox-travel
 				}
 			});
 		}
-	</script>
-</body>
-</html>
+
+		</body>
+		</html>
+	

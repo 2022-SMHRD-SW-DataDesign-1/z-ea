@@ -219,51 +219,48 @@ https://templatemo.com/tm-580-woox-travel
 
 						<div class="row" style="display: block;">
 
-							<h2>
-								카테고리 
-							</h2>
+							<h2>카테고리</h2>
 
 							<div class="col-lg-12">
 								<div class="owl-cites-town owl-carousel"
 									style="display: inline-block;">
-									
-										<div class="choose1" style="height: 40px;width:120px;  border: solid black 1px" onclick="tag_filter(this)">
-											가족
-										</div>
-							
-									
-										<div  class="choose1" style=" height: 40px; width:120px;  border: solid black 1px"onclick="tag_filter(this)">
-											싱글
-										</div>
-								
-									
-										<div class="choose1" style="height: 40px; width:120px; border: solid black 1px;" onclick="tag_filter(this)">
-											헤ㅔㅎ
-										</div>
-								
-									
-										<div class="choose1" style="height: 40px; width:120px; border: solid black 1px"onclick="tag_filter(this)">
-											야호
-										</div>
-								
-								
-										<div class="choose1" style="height: 40px; width:120px; border: solid black 1px" onclick="tag_filter(this)">
-											산
-										</div>
-							
-									
-										<div class="choose1" style="height: 40px; width:120px; border: solid black 1px"onclick="tag_filter(this)">
-											바다
-										</div>
-								
-								
-										<div class="choose1" style="height: 40px; width:120px; border: solid black 1px"onclick="tag_filter(this)">
-											들판?
-										</div>
-								
-									
+
+									<div class="choose1"
+										style="height: 40px; width: 120px; border: solid black 1px"
+										onclick="tag_filter(this)">#가족</div>
+
+
+									<div class="choose1"
+										style="height: 40px; width: 120px; border: solid black 1px"
+										onclick="tag_filter(this)">#혼자</div>
+
+
+									<div class="choose1"
+										style="height: 40px; width: 120px; border: solid black 1px;"
+										onclick="tag_filter(this)">#감성</div>
+
+
+									<div class="choose1"
+										style="height: 40px; width: 120px; border: solid black 1px"
+										onclick="tag_filter(this)">#커플</div>
+
+
+									<div class="choose1"
+										style="height: 40px; width: 120px; border: solid black 1px"
+										onclick="tag_filter(this)">#단체</div>
+
+
+									<div class="choose1"
+										style="height: 40px; width: 120px; border: solid black 1px"
+										onclick="tag_filter(this)">#바다</div>
+
+
+									<div class="choose1"
+										style="height: 40px; width: 120px; border: solid black 1px"
+										onclick="tag_filter(this)">#산</div>
+
 								</div>
-<hr/>
+								<hr />
 
 								<div>
 									<div
@@ -277,15 +274,15 @@ https://templatemo.com/tm-580-woox-travel
 										for (int i = 0; i < item_list.size(); i++) {
 										%>
 
-										<div class="item_list"
+										<a class="item_list" href="ShowService?num=<%=item_list.get(i).getNum() %>"
 											style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox;">
 											<img src="assets/images/offers-01.jpg" alt=""
 												style="width: 200px; height: 200px;">
 											<div style="text-align: left; padding-left: 20px;">
-												<p><%=i + 1%></p>
+												<p><%= item_list.get(i).getName()%></p>
 												<p><%=item_list.get(i).getDesc()%></p>
 											</div>
-										</div>
+										</a>
 										<%
 										}
 										%>
@@ -298,7 +295,7 @@ https://templatemo.com/tm-580-woox-travel
 				</div>
 			</div>
 		</div>
-		
+
 		<footer>
 			<div class="container">
 				<div class="row">
@@ -315,20 +312,7 @@ https://templatemo.com/tm-580-woox-travel
 
 
 
-				<footer>
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-12">
-								<p>
-									Copyright Â© 2036 <a href="#">WoOx Travel</a> Company. All
-									rights reserved. <br>Design: <a
-										href="https://templatemo.com" target="_blank"
-										title="free CSS templates">TemplateMo</a> Distribution: <a
-										href="https://themewagon.com target="_blank" >ThemeWagon</a>
-								</p>
-							</div>
-						</div>
-				</footer>
+			
 
 
 				<!-- Scripts -->
@@ -375,17 +359,21 @@ https://templatemo.com/tm-580-woox-travel
 				}
 
 	</script>
-	<script>
+		<script>
 	function tag_filter(id){
+		let value;
+		
 		if(id.style.backgroundColor == "white"){
-		id.style.backgroundColor ="black";}else {
+		id.style.backgroundColor ="blue";
+		value = id.textContent;
+		console.log(value);
+		}else {
 			id.style.backgroundColor = "white";
+			value = "";
 		}
 		
 		}
 	</script>
-
-
 </body>
 
 </html>

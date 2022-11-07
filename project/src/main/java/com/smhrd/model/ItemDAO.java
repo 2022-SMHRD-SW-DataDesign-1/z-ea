@@ -21,4 +21,10 @@ public ArrayList<ItemDTO> Filter(String filter) {
 	System.out.println(item_list);
 	return item_list;
 }
+public ItemDTO showDetail(int num) {
+	SqlSession session = sqlSessionFactory.openSession(true);
+	ItemDTO item = session.selectOne("showDetail",num);
+	session.close();
+	return item;
+}
 }

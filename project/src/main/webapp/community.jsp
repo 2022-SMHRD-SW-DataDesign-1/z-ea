@@ -44,6 +44,48 @@
 	<!-- ***** Header Area Start ***** -->
 	<header class="header-area header-sticky">
 		<div class="container">
+<<<<<<< HEAD
+		  <div class="row">
+			<div class="col-12">
+			  <nav class="main-nav">
+				<!-- ***** Logo Start ***** -->
+				<a href="Main.html" class="logo">
+				  <img src="assets/images/logo.png" alt="">
+				</a>
+				<!-- ***** Logo End ***** -->
+	
+				<!-- ***** Menu Start ***** -->
+				<ul class="nav">
+				  <li><a href="index.jsp" class="active">홈</a></li>
+				  <li><a href="about.jsp">테마</a></li>
+				  <li><a href="deals.jsp">예약</a></li>
+				  <li><a href="reservation.jsp">양도</a></li>
+				  <li><a href="Community.jsp">커뮤니티</a></li>
+				 								 <%if(info == null){ %>
+              <li>
+                <button class="modalBtn" onclick="show()" style="background-color:#6A5ACD; padding: 8px 14px; border: none;
+                          color: #fff;
+                         ">로그인</button>
+              </li>
+               <%}else{ %>
+               <li>
+                <a href="MyPage.jsp" class="modalBtn"  style="background-color: #6A5ACD; padding: 8px 14px; border: none;
+                          color: #fff;
+                         ">마이페이지</a>
+               </li>
+               <li>
+                <a href="LogoutService" class="modalBtn"  style="background-color: #6A5ACD; padding: 8px 14px; border: none;
+                          color: #fff;
+                         ">로그아웃</a>
+               </li>
+               <%} %>
+				</ul>
+				<a class='menu-trigger'>
+				  <span>Menu</span>
+				</a>
+				<!-- ***** Menu End ***** -->
+			  </nav>
+=======
 			<div class="row">
 				<div class="col-12">
 					<nav class="main-nav">
@@ -85,6 +127,7 @@
 						<!-- ***** Menu End ***** -->
 					</nav>
 				</div>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 			</div>
 		</div>
 	</header>
@@ -264,6 +307,7 @@
 		}
 	</script>
 	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script src="vendor/jquery/jquery.js"></script>
 
 	<!-- Load Booststrap -->
 	<script type="text/javascript" src="js/bootstrap.js"></script>
@@ -275,6 +319,34 @@
 
 	<!-- Load custom js for theme -->
 	<script type="text/javascript" src="js/app.js"></script>
+	<script>
+		function checkE() {
+			let mb_email_ck = $('#mb_email_ck').val();
+			console.log(mb_email_ck);
+
+			$.ajax({
+				url : 'EmailCheckService',
+				data : {
+					'mb_email_ck' : mb_email_ck
+				},
+				type : 'get',
+				success : function(data) {
+					console.log(data);
+
+					if (data == 'true') {
+						$('#resultCheck').text('사용할 수 없는 아이디')
+					} else {
+						$('#resultCheck').text('사용할 수 있는 아이디')
+					}
+				},
+				error : function() {
+					console.log("통신실패");
+
+				}
+			});
+
+		}
+	</script>
 
 
 </body>
