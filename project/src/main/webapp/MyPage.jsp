@@ -169,16 +169,14 @@ https://templatemo.com/tm-580-woox-travel
 	
 	<!-- ***** Header Area End ***** -->
 
-	<div class=se style="background-color: blanchedalmond; height: 300px;">
+	<div class=se style="height: 150px; margin: 30%;">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<h4>내 여행관리는 여기에서</h4>
-					<h2>My Page</h2>
-					<p>내 여행일정 관리부터 소통까지 !</p>
-					<div>
-						<a href="about.jsp">자세히 알아보기</a>
-					</div>
+					<h4>내 여행관리는 여기에서</h4><br>
+				
+						<h3 stylye="padding:10%"background=>My Page</h3>
+						<p>내 여행일정 관리부터 소통까지 !</p>
 				</div>
 			</div>
 		</div>
@@ -198,7 +196,7 @@ https://templatemo.com/tm-580-woox-travel
 					<div class="info-item">
 						<i class="fa fa-phone"></i>
 						<h4>예약 내역</h4>
-						<a href="#">내 예약 확인하기</a>
+						<a href="my Reservation.jsp">내 예약 확인하기</a>
 					</div>
 				</div>
 				<div class="col-lg-4 col-sm-6">
