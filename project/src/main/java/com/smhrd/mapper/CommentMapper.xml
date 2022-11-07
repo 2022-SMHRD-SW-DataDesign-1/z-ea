@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.mapper.CommentMapper">
+	<insert id="insert" parameterType="CommentDTO">
+	insert into Comment_tb
+	(board_num, 
+    mb_email, 
+    comment_content, 
+    comment_date)
+	 values(#{board_num},#{mb_email},#{comment_content},sysdate)
+	</insert>
+	<select id="show_comment" parameterType="BigDecimal" resultType="CommentDTO">
+	select * from Comment_tb where board_num = #{board_num}
+	</select>
+</mapper>

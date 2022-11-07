@@ -274,12 +274,13 @@ https://templatemo.com/tm-580-woox-travel
 										for (int i = 0; i < item_list.size(); i++) {
 										%>
 
-										<a class="item_list" href="ShowService?num=<%=item_list.get(i).getNum() %>"
+										<a class="item_list"
+											href="ShowService?num=<%=item_list.get(i).getNum()%>"
 											style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox;">
 											<img src="assets/images/offers-01.jpg" alt=""
-												style="width: 200px; height: 200px;">
+											style="width: 200px; height: 200px;">
 											<div style="text-align: left; padding-left: 20px;">
-												<p><%= item_list.get(i).getName()%></p>
+												<p><%=item_list.get(i).getName()%></p>
 												<p><%=item_list.get(i).getDesc()%></p>
 											</div>
 										</a>
@@ -310,30 +311,31 @@ https://templatemo.com/tm-580-woox-travel
 				</div>
 
 
+			</div>
+		</footer>
 
 
-			
 
 
-				<!-- Scripts -->
-				<!-- Bootstrap core JavaScript -->
-				<script src="vendor/jquery/jquery.min.js"></script>
-				<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+		<!-- Scripts -->
+		<!-- Bootstrap core JavaScript -->
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-				<script src="assets/js/isotope.min.js"></script>
-				<script src="assets/js/owl-carousel.js"></script>
-				<script src="assets/js/wow.js"></script>
-				<script src="assets/js/tabs.js"></script>
-				<script src="assets/js/popup.js"></script>
-				<script src="assets/js/custom.js"></script>
+		<script src="assets/js/isotope.min.js"></script>
+		<script src="assets/js/owl-carousel.js"></script>
+		<script src="assets/js/wow.js"></script>
+		<script src="assets/js/tabs.js"></script>
+		<script src="assets/js/popup.js"></script>
+		<script src="assets/js/custom.js"></script>
 
-				<script>
+		<script>
 			$(".option").click(function() {
 				$(".option").removeClass("active");
 				$(this).addClass("active");
 			});
 		</script>
-				<script>
+		<script>
 			function show() {
 				console.log("실행");
 				let modal = document.querySelector(".modalPopup");

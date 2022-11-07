@@ -24,6 +24,7 @@ public class BoardService extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
+
 		String path = "C:\\Users\\smhrd\\git\\repository\\project\\src\\main\\webapp\\file";
 		
 		System.out.println(path);

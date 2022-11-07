@@ -294,6 +294,34 @@ https://templatemo.com/tm-580-woox-travel
 		      }
 		    }
 	</script>
+	<script>
+		function checkE() {
+			let mb_email_ck = $('#mb_email_ck').val();
+			console.log(mb_email_ck);
+
+			$.ajax({
+				url : 'EmailCheckService',
+				data : {
+					'mb_email_ck' : mb_email_ck
+				},
+				type : 'get',
+				success : function(data) {
+					console.log(data);
+
+					if (data == 'true') {
+						$('#resultCheck').text('사용할 수 없는 아이디')
+					} else {
+						$('#resultCheck').text('사용할 수 있는 아이디')
+					}
+				},
+				error : function() {
+					console.log("통신실패");
+
+				}
+			});
+
+		}
+	</script>
 
 </body>
 

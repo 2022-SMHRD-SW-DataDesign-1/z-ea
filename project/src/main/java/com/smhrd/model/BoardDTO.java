@@ -1,16 +1,19 @@
 package com.smhrd.model;
 
+
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 @Getter
 @AllArgsConstructor
 @RequiredArgsConstructor
+@NoArgsConstructor
 public class BoardDTO {
 	// 글 번호 글 번호
     private BigDecimal board_num;

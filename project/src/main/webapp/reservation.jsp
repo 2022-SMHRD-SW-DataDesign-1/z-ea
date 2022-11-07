@@ -80,12 +80,12 @@ https://templatemo.com/tm-580-woox-travel
 	</header>
 	<!-- ***** Header Area End ***** -->
 	<!-- 모달 -->
-	<div class="modalPopup" style="z-index:100; display: none;">
+	<div class="modalPopup" style="z-index: 100; display: none;">
 		<div class="ModalBack"
-			style="position: fixed; background-color: black; width: 100%; height: 100%; opacity: 0.5; ">
+			style="position: fixed; background-color: black; width: 100%; height: 100%; opacity: 0.5;">
 		</div>
 		<div class="LoginModal"
-			style="text-align: center; z-index:3000; background-color: white; width: 500px; height: 650px; margin-top: 10%; margin-left: 36%; position: fixed; align-content: center;">
+			style="text-align: center; z-index: 3000; background-color: white; width: 500px; height: 650px; margin-top: 10%; margin-left: 36%; position: fixed; align-content: center;">
 			<!-- 로그인 -->
 			<form action="LoginService" method="post">
 				<table style="margin: auto; margin-top: 8%;">
@@ -169,7 +169,7 @@ https://templatemo.com/tm-580-woox-travel
 			</form>
 		</div>
 	</div>
-	
+
 	<div class="dark">
 		<div class="second-page-heading">
 			<div class="container">
@@ -356,7 +356,7 @@ https://templatemo.com/tm-580-woox-travel
 			}
 		}
 	</script>
-	</script>
+
 </body>
 
 </html>
