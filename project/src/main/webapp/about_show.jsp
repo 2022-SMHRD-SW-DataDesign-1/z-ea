@@ -38,6 +38,7 @@ TemplateMo 580 Woox Travel
 https://templatemo.com/tm-580-woox-travel
 
 -->
+<!-- item_detail page -->
 </head>
 
 <body>
