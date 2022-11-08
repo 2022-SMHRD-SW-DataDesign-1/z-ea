@@ -269,16 +269,14 @@ https://templatemo.com/tm-580-woox-travel
 										<%
 										ItemDAO dao = new ItemDAO();
 										ArrayList<ItemDTO> item_list = new ArrayList<ItemDTO>();
-										item_list = (ArrayList)request.getAttribute("item_list");
+										item_list = (ArrayList) request.getAttribute("item_list");
 										/* if(request.getParameter("tag") != null){
 											item_list = dao.Filter(request.getParameter("tag"));
 										}
 										 */
-										
-								
-											item_list =dao.showAll();
-									
-									
+
+										item_list = dao.showAll();
+
 										int cnt = 0;
 										if (request.getParameter("page") == null) {
 											for (int i = 0; i < item_list.size(); i++) {
@@ -287,16 +285,17 @@ https://templatemo.com/tm-580-woox-travel
 												}
 										%>
 
-										<a class="item_list"
+										<a id="item_list" class="item_list"
 											href="ShowService?num=<%=item_list.get(i).getNum()%>"
 											style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox;">
 											<img src="assets/images/offers-01.jpg" alt=""
 											style="width: 200px; height: 200px;">
 											<div style="text-align: left; padding-left: 20px;">
-												<p><%=item_list.get(i).getName()%></p>
-												<p><%=item_list.get(i).getDesc()%></p>
+												<p id="item"><%=item_list.get(i).getName()%></p>
+												<p id="item"><%=item_list.get(i).getDesc()%></p>
 											</div>
 										</a>
+
 										<%
 										cnt++;
 										}
@@ -307,7 +306,7 @@ https://templatemo.com/tm-580-woox-travel
 										int pageNum = Integer.parseInt(request.getParameter("page"));
 										System.out.print(item_list.size());
 										for (int i = (pageNum - 1) * 8; i < (item_list.size()); i++) {
-												
+
 											if (cnt == 8) {
 												break;
 											}
@@ -318,8 +317,8 @@ https://templatemo.com/tm-580-woox-travel
 											<img src="assets/images/offers-01.jpg" alt=""
 											style="width: 200px; height: 200px;">
 											<div style="text-align: left; padding-left: 20px;">
-												<p><%=item_list.get(i).getName()%></p>
-												<p><%=item_list.get(i).getDesc()%></p>
+												<p id="item"><%=item_list.get(i).getName()%></p>
+												<p id="item"><%=item_list.get(i).getDesc()%></p>
 											</div>
 										</a>
 
@@ -336,12 +335,10 @@ https://templatemo.com/tm-580-woox-travel
 										<div style="width: 100%">
 											<%
 											for (int j = 0; j < ((item_list.size()) / 8) + 1; j++) {
-											
 											%>
-											
-											<a id="page" value="<%=j + 1%>"
-												href="?page=<%=j + 1%>  " style="margin: 10px;">
-												<%=j + 1%>
+
+											<a id="page" value="<%=j + 1%>" href="?page=<%=j + 1%>  "
+												style="margin: 10px;"> <%=j + 1%>
 											</a>
 											<%
 											}
@@ -425,18 +422,59 @@ https://templatemo.com/tm-580-woox-travel
 	
 
 	function tag_filter(id){
-		let value;
+let value;
 		
 		if(id.style.backgroundColor == "white"){
 		id.style.backgroundColor ="blue";
 		value = id.textContent;
 		console.log(value);
+		$.ajax({
+			url : 'Filter',  //요청 서버 url
+			data : {'inputE': inputE},	//요청할 때 같이 보내줄 데이터
+			type : 'get', 				//요청 타입(method)
+			success : function(data){	//통신성공 (function(넘겨준데이터))
+				res=data;
+		console.log(res);
+			},
+			error : function(){			//통신실패
+				console.log("통신실패");
+			}
+		})
+
 		}else {
 			id.style.backgroundColor = "white";
 			value = "";
 		}
 		
 		}
+	</script>
+		<script>
+	function filter(id){
+		let inputE = id.val();
+		console.log(inputE);
+		
+		$.ajax({
+			url : 'EmailCheckService.do',  //요청 서버 url
+			data : {'inputE': inputE},	//요청할 때 같이 보내줄 데이터
+			type : 'get', 				//요청 타입(method)
+			success : function(data){	//통신성공 (function(넘겨준데이터))
+				console.log(typeof data);
+				//resultCheckE
+				if(data=='true'){
+					$("#resultCheckE").text('사용할 수 없는 아이디');
+				}else{ //false
+					$("#resultCheckE").text('사용할 수 있는 아이디');
+				}
+			},
+			error : function(){			//통신실패
+				console.log("통신실패");
+			}
+		})
+
+	}
+
+	
+	
 	</script>
 </body>
 
