@@ -13,7 +13,6 @@
 	href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
 	rel="stylesheet">
 
-<title>WoOx Travel - Special Deals</title>
 
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,13 +24,7 @@
 <link rel="stylesheet" href="assets/css/animate.css">
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-<!--
 
-TemplateMo 580 Woox Travel
-
-https://templatemo.com/tm-580-woox-travel
-
--->
 </head>
 
 <body>
@@ -62,8 +55,8 @@ https://templatemo.com/tm-580-woox-travel
 						<ul class="nav">
 							<li><a href="index.jsp">홈</a></li>
 							<li><a href="about.jsp">글램핑&카라반</a></li>
-							<li><a href="deals.jsp" class="active">예약</a></li>
-							<li><a href="reservation.jsp">양도</a></li>
+							<li><a href="deals.jsp" >예약</a></li>
+							<li><a href="reservation.jsp" class="active">양도</a></li>
 							<li><a href="community.jsp">커뮤니티</a></li>
 							<li>
 								<button class="modalBtn" onclick="show()"

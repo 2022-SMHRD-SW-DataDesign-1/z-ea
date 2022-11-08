@@ -23,7 +23,7 @@
 <link href='http://fonts.googleapis.com/css?family=Lora'
 	rel='stylesheet' type='text/css'>
 
-<!-- Additional CSS Files -->
+<!-- Additional CSS Files -->s
 <link rel="stylesheet" href="assets/css/fontawesome.css">
 <link rel="stylesheet" href="assets/css/templatemo-woox-travel.css">
 <link rel="stylesheet" href="assets/css/owl.css">
@@ -44,8 +44,6 @@
 	<!-- ***** Header Area Start ***** -->
 	<header class="header-area header-sticky">
 		<div class="container">
-			<<<<<<< HEAD ======= >>>>>>> branch 'master' of
-			https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 			<div class="row">
 				<div class="col-12">
 					<nav class="main-nav">
@@ -57,11 +55,11 @@
 
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
-							<li><a href="index.jsp" class="active">홈</a></li>
+							<li><a href="index.jsp">홈</a></li>
 							<li><a href="about.jsp">테마</a></li>
-							<li><a href="deals.jsp">예약</a></li>
-							<li><a href="reservation.jsp">양도</a></li>
-							<li><a href="Community.jsp">커뮤니티</a></li>
+							<li><a href="reservation.jsp">예약</a></li>
+							<li><a href="transfer.jsp">양도</a></li>
+							<li><a href="community.jsp"  class="active">커뮤니티</a></li>
 							<%
 							if (info == null) {
 							%>

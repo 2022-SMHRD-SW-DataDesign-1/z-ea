@@ -69,8 +69,8 @@ https://templatemo.com/tm-580-woox-travel
 							<li><a href="index.jsp">홈</a></li>
 							<li><a href="about.jsp">글램핑&카라반</a></li>
 							<li><a href="deals.jsp">예약</a></li>
-							<li><a href="reservation.jsp">양도</a></li>
-							<li><a href="community.jsp" class="active">커뮤니티</a></li>
+							<li><a href="reservation.jsp" class="active">양도</a></li>
+							<li><a href="community.jsp">커뮤니티</a></li>
 							<%
 							if (info == null) {
 							%>
@@ -214,9 +214,7 @@ https://templatemo.com/tm-580-woox-travel
 					<h2 style="margin-bottom: 50px;">작성하기</h2>
 				</div>
 		</form>
-		<%
-		ArrayList<ReservationDTO> list = new ReservationDAO().select();
-		%>
+
 		<form action="TransferService" method="post"
 			enctype="multipart/form-data">
 			<!-- 글제목 -->
@@ -224,13 +222,9 @@ https://templatemo.com/tm-580-woox-travel
 				<fieldset>
 					<label for="name" class="form-label">제목</label><br> <select
 						name="board_category">
-						<%
-						for (int i = 0; i < list.size(); i++) {
-						%>
+				
 						<option value="예약내역"></option>
-						<%
-						}
-						%>
+					
 					</select>
 				</fieldset>
 			</div>
