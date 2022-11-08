@@ -44,8 +44,7 @@
 	<!-- ***** Header Area Start ***** -->
 	<header class="header-area header-sticky">
 		<div class="container">
-			<<<<<<< HEAD ======= >>>>>>> branch 'master' of
-			https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
+			
 			<div class="row">
 				<div class="col-12">
 					<nav class="main-nav">
@@ -231,7 +230,7 @@
 				<h2>커뮤니티</h2>
 				<a href="community_input.jsp">작성하기</a>
 				<%
-				ArrayList<BoardDTO> list = new BoardDAO().select();
+				ArrayList<BoardDTO> list = new BoardDAO().selectBoard();
 				%>
 			</header>
 

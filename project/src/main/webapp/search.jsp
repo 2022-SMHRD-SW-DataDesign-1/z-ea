@@ -210,56 +210,22 @@ https://templatemo.com/tm-580-woox-travel
 		<!-- ***** Main Banner Area End ***** -->
 
 		<!-- 모달 -->
-
+<%ItemDAO dao = new ItemDAO();
+ArrayList<ItemDTO> item_list = new ArrayList<ItemDTO>();
+item_list = (ArrayList)request.getAttribute("item_list");
+ %>
 		<div class="cities-town"
-			style="display: inline-block; margin-left: 15%;">
+			style="display: inline-block; width :80%;  margin-left: 15%;">
 			<div class="container">
 				<div class="row" style="text-align: center;">
 					<div class="slider-content">
 
 						<div class="row" style="display: block;">
 
-							<h2>카테고리</h2>
+							<h1 style="margin-bottom: 25px;">검색 결과</h1>
+							<h3><%= item_list.size() %>건이 검색되었습니다.</h3>
 
-							<div class="col-lg-12">
-								<div class="owl-cites-town owl-carousel"
-									style="display: inline-block;">
-
-									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
-										onclick="tag_filter(this)">#가족</div>
-
-
-									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
-										onclick="tag_filter(this)">#혼자</div>
-
-
-									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px;"
-										onclick="tag_filter(this)">#감성</div>
-
-
-									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
-										onclick="tag_filter(this)">#커플</div>
-
-
-									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
-										onclick="tag_filter(this)">#단체</div>
-
-
-									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
-										onclick="tag_filter(this)">#바다</div>
-
-
-									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
-										onclick="tag_filter(this)">#산</div>
-
-								</div>
+						
 								<hr />
 
 								<div>
@@ -267,24 +233,9 @@ https://templatemo.com/tm-580-woox-travel
 										style="margin-top: 5%; width: 100%; display: inline-block; padding: 10px 5px 10px 5px;">
 
 										<%
-										ItemDAO dao = new ItemDAO();
-										ArrayList<ItemDTO> item_list = new ArrayList<ItemDTO>();
-										item_list = (ArrayList)request.getAttribute("item_list");
-										/* if(request.getParameter("tag") != null){
-											item_list = dao.Filter(request.getParameter("tag"));
-										}
-										 */
 										
-								
-											item_list =dao.showAll();
-									
-									
-										int cnt = 0;
-										if (request.getParameter("page") == null) {
 											for (int i = 0; i < item_list.size(); i++) {
-												if (cnt == 8) {
-											break;
-												}
+											
 										%>
 
 										<a class="item_list"
@@ -298,55 +249,18 @@ https://templatemo.com/tm-580-woox-travel
 											</div>
 										</a>
 										<%
-										cnt++;
+									
 										}
 										%>
-										<%
-										} else {
-
-										int pageNum = Integer.parseInt(request.getParameter("page"));
-										System.out.print(item_list.size());
-										for (int i = (pageNum - 1) * 8; i < (item_list.size()); i++) {
-												
-											if (cnt == 8) {
-												break;
-											}
-										%>
-										<a class="item_list"
-											href="ShowService?num=<%=item_list.get(i).getNum()%>"
-											style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox;">
-											<img src="assets/images/offers-01.jpg" alt=""
-											style="width: 200px; height: 200px;">
-											<div style="text-align: left; padding-left: 20px;">
-												<p><%=item_list.get(i).getName()%></p>
-												<p><%=item_list.get(i).getDesc()%></p>
-											</div>
-										</a>
+										
 
 
-										<%
-										cnt++;
-										}
-										}
-										%>
+				
 
 
 
 
-										<div style="width: 100%">
-											<%
-											for (int j = 0; j < ((item_list.size()) / 8) + 1; j++) {
-											
-											%>
-											
-											<a id="page" value="<%=j + 1%>"
-												href="?page=<%=j + 1%>  " style="margin: 10px;">
-												<%=j + 1%>
-											</a>
-											<%
-											}
-											%>
-										</div>
+										<div style="width: 100%"></div>
 
 									</div>
 								</div>

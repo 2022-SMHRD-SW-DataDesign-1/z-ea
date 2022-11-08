@@ -16,6 +16,7 @@ public ArrayList<ItemDTO> Filter(String filter) {
 	SqlSession session = sqlSessionFactory.openSession(true);
 	System.out.println("DB");
 	ArrayList<ItemDTO> item_list = (ArrayList)session.selectList("Filter",filter);
+	System.out.println(item_list.size());
 	System.out.println("DAO");
 	session.close();
 	System.out.println(item_list);
