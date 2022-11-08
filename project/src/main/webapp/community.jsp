@@ -44,7 +44,6 @@
 	<!-- ***** Header Area Start ***** -->
 	<header class="header-area header-sticky">
 		<div class="container">
-<<<<<<< HEAD
 		  <div class="row">
 			<div class="col-12">
 			  <nav class="main-nav">
@@ -85,7 +84,6 @@
 				</a>
 				<!-- ***** Menu End ***** -->
 			  </nav>
-=======
 			<div class="row">
 				<div class="col-12">
 					<nav class="main-nav">
@@ -127,7 +125,6 @@
 						<!-- ***** Menu End ***** -->
 					</nav>
 				</div>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 			</div>
 		</div>
 	</header>

@@ -10,4 +10,10 @@
 	<select id="showDetail" resultType="ItemDTO">
 	select * from GLAMPING_CARAVAN_TB where gc_num=#{num}
 	</select>
+	<select id="tagCheck" parameterType="String" resultType="Boolean">
+	select case when count(*)>0 then 1
+ 					else 0
+ 				end result
+ 		from GLAMPING_CARAVAN_TB where gc_tag = #{gc_tag}
+	</select>
 </mapper>

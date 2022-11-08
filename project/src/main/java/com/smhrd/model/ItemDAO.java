@@ -19,6 +19,7 @@ public ArrayList<ItemDTO> Filter(String filter) {
 	System.out.println("DAO");
 	session.close();
 	System.out.println(item_list);
+	System.out.println(item_list.size());
 	return item_list;
 }
 public ItemDTO showDetail(int num) {
@@ -27,4 +28,5 @@ public ItemDTO showDetail(int num) {
 	session.close();
 	return item;
 }
+
 }
