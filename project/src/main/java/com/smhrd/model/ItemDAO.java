@@ -34,4 +34,10 @@ public ArrayList<ItemDTO> searchName(String name) {
 	session.close();
 	return dto;
 }
+public ArrayList<ItemDTO> showAll() {
+	SqlSession session = sqlSessionFactory.openSession(true);
+	ArrayList<ItemDTO> dto = (ArrayList)session.selectList("showAll");
+	session.close();
+	return dto;
+}
 }
