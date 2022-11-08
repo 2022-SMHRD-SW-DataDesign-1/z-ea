@@ -118,7 +118,7 @@ https://templatemo.com/tm-580-woox-travel
 					<form action="SearchService" method="post">
 						<input id="SearchEngine" type="text" placeholder="#여행" name="tag"
 							style="width: 30%; height: 50px; border-radius: 20px; padding: 10px; margin: 5px;" />
-						<input type="submit" value="검색" />
+						<input style="padding : 12px; border: none; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD;" type="submit" value="검색" />
 					</form>
 					
 					
