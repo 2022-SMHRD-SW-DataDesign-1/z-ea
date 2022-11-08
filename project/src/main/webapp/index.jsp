@@ -111,11 +111,20 @@ https://templatemo.com/tm-580-woox-travel
 			<div class="slider">
 				<div class="main-caption">
 					<div style="margin-left: 10%; font-size: 25px">검색어를 입력하세요</div>
-					<form action="get">
-						<input type="text" placeholder="#여행"
+					
+					
+					
+					
+					<form action="SearchService" method="post">
+						<input id="SearchEngine" type="text" placeholder="#여행" name="search"
 							style="width: 30%; height: 50px; border-radius: 20px; padding: 10px; margin: 5px;" />
 						<input type="submit" value="검색" />
 					</form>
+					
+					
+					
+					
+					
 					<p style="margin-left: 10%;">#여행 #먹방 #힐링 #키즈</p>
 
 				</div>
