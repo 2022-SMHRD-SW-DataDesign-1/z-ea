@@ -16,50 +16,39 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.smhrd.model.BoardDAO;
 import com.smhrd.model.BoardDTO;
 import com.smhrd.model.MemberDTO;
+import com.smhrd.model.TransferDAO;
+import com.smhrd.model.TransferDTO;
 
-@WebServlet("/BoardService")
-public class BoardService extends HttpServlet {
+@WebServlet("/TransferService")
+public class TransferService extends HttpServlet {
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		request.setCharacterEncoding("UTF-8");
-		
 
 		String path = "C:\\Users\\smhrd\\git\\repository\\project\\src\\main\\webapp\\file";
-		
 		System.out.println(path);
-		
-		int size = 20*1024*1024;
+
+		int size = 20 * 1024 * 1024;
 		String encoding = "UTF-8";
-		
+
 		DefaultFileRenamePolicy rename = new DefaultFileRenamePolicy();
-		MultipartRequest multi = 
-				new MultipartRequest(request, path, size, encoding, rename);
+		MultipartRequest multi = new MultipartRequest(request, path, size, encoding, rename);
 		
-		String board_title = multi.getParameter("board_title");
-		String board_content = multi.getParameter("board_content");
-		String board_file = multi.getFilesystemName("board_file");
-		board_file = URLEncoder.encode(board_file,"UTF-8");
-		String board_category = multi.getParameter("board_category");
-		
-		System.out.println(board_title);
-		System.out.println(board_content);
-		System.out.println(board_file);
-		System.out.println(board_category);
 		HttpSession session = request.getSession();
 		MemberDTO info = (MemberDTO)session.getAttribute("info");
 		
-		BoardDTO dto = new BoardDTO(board_title, board_content, board_file, board_category,info.getMb_email());
-		int row = new BoardDAO().upload(dto);
-		
-		if(row >0) {
+		TransferDTO dto = new TransferDTO();
+		int row = new TransferDAO().upload(dto);
+
+		if (row > 0) {
 			System.out.println("업로드 성공");
-		}else {
+		} else {
 			System.out.println("업로드 실패");
 		}
-		RequestDispatcher rd = request.getRequestDispatcher("community.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("transfer.jsp");
 		rd.forward(request, response);
-		
-	}
 
+	}
 }

@@ -29,4 +29,10 @@ public ItemDTO showDetail(int num) {
 	return item;
 }
 
+public ArrayList<ItemDTO> searchName(String name) {
+	SqlSession session = sqlSessionFactory.openSession(true);
+	ArrayList<ItemDTO> dto = (ArrayList)session.selectList("search", name);
+	session.close();
+	return dto;
+}
 }

@@ -5,22 +5,22 @@
 <mapper namespace="com.smhrd.mapper.BoardMapper">
 	<insert id="upload" parameterType="BoardDTO">
 		INSERT INTO community_tb
-    (board_title, 
-    board_content, 
-    board_file, 
-    board_category, 
-    board_date, 
-    mb_email)
-VALUES
-    (#{board_title} , 
-    #{board_content}, 
-    #{board_file}, 
-    #{board_category}, 
-    sysdate, 
-    #{mb_email})
+		(board_title,
+		board_content,
+		board_file,
+		board_category,
+		board_date,
+		mb_email)
+		VALUES
+		(#{board_title} ,
+		#{board_content},
+		#{board_file},
+		#{board_category},
+		sysdate,
+		#{mb_email})
 	</insert>
 	<select id="select" resultType="BoardDTO">
-	select * from community_tb order by board_date desc
+		select * from community_tb order by board_date desc
 	</select>
 	
 	<select id="show" parameterType="Bigdecimal" resultType="BoardDTO">
