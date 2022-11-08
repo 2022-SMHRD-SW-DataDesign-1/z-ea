@@ -240,7 +240,6 @@ https://templatemo.com/tm-580-woox-travel
 			</div>
 		</div>
 	</div>
-	</div>
 	<footer>
 		<div class="container">
 			<div class="row">
@@ -316,7 +315,6 @@ https://templatemo.com/tm-580-woox-travel
 				}
 			});
 		}
-
-		</body>
-		</html>
-	
+	</script>
+</body>
+</html>

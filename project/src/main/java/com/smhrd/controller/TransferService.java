@@ -36,9 +36,6 @@ public class TransferService extends HttpServlet {
 		DefaultFileRenamePolicy rename = new DefaultFileRenamePolicy();
 		MultipartRequest multi = new MultipartRequest(request, path, size, encoding, rename);
 		
-	
-		
-		
 		HttpSession session = request.getSession();
 		MemberDTO info = (MemberDTO)session.getAttribute("info");
 		

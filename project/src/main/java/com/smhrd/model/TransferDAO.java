@@ -1,7 +1,7 @@
 package com.smhrd.model;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
-
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -27,6 +27,14 @@ public class TransferDAO {
 		
 		return list;
 		
+	}
+	
+	public TransferDTO show(BigDecimal transfer_num) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		TransferDTO transfer = session.selectOne("show", transfer_num);
+		session.close();
+		
+		return transfer;
 	}
 
 }

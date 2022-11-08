@@ -55,7 +55,7 @@ https://templatemo.com/tm-580-woox-travel
 							<li><a href="index.jsp">홈</a></li>
 							<li><a href="about.jsp">글램핑&카라반</a></li>
 							<li><a href="deals.jsp">예약</a></li>
-							<li><a href="transfer.jsp"  class="active">양도</a></li>
+							<li><a href="transfer.jsp" class="active">양도</a></li>
 							<li><a href="community.html">커뮤니티</a></li>
 							<%
 							if (info == null) {
@@ -207,9 +207,9 @@ https://templatemo.com/tm-580-woox-travel
 											aria-label="Default select example" id="chooseLocation"
 											onChange="this.form.click()">
 											<option selected>지역</option>
-											<option type="checkbox" name="option1" value="Italy">전남</option>
-											<option value="France">전북</option>
-											<option value="Switzerland"></option>
+											<option type="checkbox" name="option1" value="전남">전남</option>
+											<option value="전북">전북</option>
+											<option value=""></option>
 											<option value="Thailand">Thailand</option>
 											<option value="Australia">Australia</option>
 											<option value="India">India</option>
@@ -249,22 +249,25 @@ https://templatemo.com/tm-580-woox-travel
 				<div class="row">
 					<div class="col-lg-6 offset-lg-3">
 						<div class="section-heading text-center">
-							<h2>Best Weekly Offers In Each City</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-								sed do eiusmod tempor incididunt ut labore.</p>
+							<h2>양도</h2>
+							<p>떠나고 싶은 당신! 더 싼값에 놀러가볼까요~!!~~!~</p>
 						</div>
 					</div>
-					<div class="col-lg-6 col-sm-6">
+
+					<%
+					for (int i = 1; i < 5; i++) {
+					%>
+					<div class="col-lg-6 col-sm-6" style="overflow: hidden;">
 						<div class="item">
 							<div class="row">
 								<div class="col-lg-6">
 									<div class="image">
-										<img src="assets/images/deals-01.jpg" alt="">
+										<img src="assets/images/deals-0<%=i%>.jpg" alt="">
 									</div>
 								</div>
 								<div class="col-lg-6 align-self-center">
 									<div class="content">
-										<span class="info">*Limited Offer Today</span>
+										<span class="info">마감일</span>
 										<h4>Glasgow City Lorem</h4>
 										<div class="row">
 											<div class="col-6">
@@ -278,106 +281,17 @@ https://templatemo.com/tm-580-woox-travel
 										<p>Lorem ipsum dolor sit amet dire consectetur adipiscing
 											elit.</p>
 										<div class="main-button">
-											<a href="reservation.jsp">Make a Reservation</a>
+											<a href="reservation.jsp">자세히보기</a>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-6 col-sm-6">
-						<div class="item">
-							<div class="row">
-								<div class="col-lg-6">
-									<div class="image">
-										<img src="assets/images/deals-02.jpg" alt="">
-									</div>
-								</div>
-								<div class="col-lg-6 align-self-center">
-									<div class="content">
-										<span class="info">*Today & Tomorrow Only</span>
-										<h4>Venezia Italy Ipsum</h4>
-										<div class="row">
-											<div class="col-6">
-												<i class="fa fa-clock"></i> <span class="list">5 Days</span>
-											</div>
-											<div class="col-6">
-												<i class="fa fa-map"></i> <span class="list">Daily
-													Places</span>
-											</div>
-										</div>
-										<p>Lorem ipsum dolor sit amet dire consectetur adipiscing
-											elit.</p>
-										<div class="main-button">
-											<a href="reservation.jsp">Make a Reservation</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6 col-sm-6">
-						<div class="item">
-							<div class="row">
-								<div class="col-lg-6">
-									<div class="image">
-										<img src="assets/images/deals-03.jpg" alt="">
-									</div>
-								</div>
-								<div class="col-lg-6 align-self-center">
-									<div class="content">
-										<span class="info">**Undefined</span>
-										<h4>Glasgow City Lorem</h4>
-										<div class="row">
-											<div class="col-6">
-												<i class="fa fa-clock"></i> <span class="list">5 Days</span>
-											</div>
-											<div class="col-6">
-												<i class="fa fa-map"></i> <span class="list">Daily
-													Places</span>
-											</div>
-										</div>
-										<p>Lorem ipsum dolor sit amet dire consectetur adipiscing
-											elit.</p>
-										<div class="main-button">
-											<a href="reservation.jsp">Make a Reservation</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6 col-sm-6">
-						<div class="item">
-							<div class="row">
-								<div class="col-lg-6">
-									<div class="image">
-										<img src="assets/images/deals-04.jpg" alt="">
-									</div>
-								</div>
-								<div class="col-lg-6 align-self-center">
-									<div class="content">
-										<span class="info">*Offer Until 24th March</span>
-										<h4>Glasgow City Lorem</h4>
-										<div class="row">
-											<div class="col-6">
-												<i class="fa fa-clock"></i> <span class="list">5 Days</span>
-											</div>
-											<div class="col-6">
-												<i class="fa fa-map"></i> <span class="list">Daily
-													Places</span>
-											</div>
-										</div>
-										<p>This free CSS template is provided by Template Mo
-											website.</p>
-										<div class="main-button">
-											<a href="reservation.jsp">Make a Reservation</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					<%
+					}
+					%>
+
 					<div class="col-lg-12">
 						<ul class="page-numbers">
 							<li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
