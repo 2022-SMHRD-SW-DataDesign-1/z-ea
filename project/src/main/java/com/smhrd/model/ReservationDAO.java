@@ -6,5 +6,6 @@ import com.smhrd.db.SqlSessionManger;
 
 public class ReservationDAO {
 	private SqlSessionFactory sqlSessionFactory = SqlSessionManger.getSqlSession();
-
+	
+	
 }

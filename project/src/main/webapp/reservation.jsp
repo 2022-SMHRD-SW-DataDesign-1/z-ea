@@ -14,7 +14,6 @@
 	href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
 	rel="stylesheet">
 
-<title>WoOx Travel Reservation Page</title>
 
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,10 +26,240 @@
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
+
+
+<html>
+<head>
+<title>:: JavaScript 캘린더 ::</title>
+<style type="text/css">
+a {
+	color: #000000;
+	text-decoration: none;
+}
+
+.scriptCalendar {
+	text-align: center;
+}
+
+.scriptCalendar>thead>tr>td {
+	width: 50px;
+	height: 50px;
+}
+
+.scriptCalendar>thead>tr:first-child>td {
+	font-weight: bold;
+}
+
+.scriptCalendar>thead>tr:last-child>td {
+	background-color: #90EE90;
+}
+
+.scriptCalendar>tbody>tr>td {
+	width: 50px;
+	height: 50px;
+}
+</style>
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function() {
+		buildCalendar();
+	});
+
+	var today = new Date(); // @param 전역 변수, 오늘 날짜 / 내 컴퓨터 로컬을 기준으로 today에 Date 객체를 넣어줌
+	var date = new Date(); // @param 전역 변수, today의 Date를 세어주는 역할
+
+	/**
+	 * @brief   이전달 버튼 클릭
+	 */
+	function prevCalendar() {
+		this.today = new Date(today.getFullYear(), today.getMonth() - 1, today
+				.getDate());
+		buildCalendar(); // @param 전월 캘린더 출력 요청
+	}
+
+	/**
+	 * @brief   다음달 버튼 클릭
+	 */
+	function nextCalendar() {
+		this.today = new Date(today.getFullYear(), today.getMonth() + 1, today
+				.getDate());
+		buildCalendar(); // @param 명월 캘린더 출력 요청
+	}
+
+	/**
+	 * @brief   캘린더 오픈
+	 * @details 날짜 값을 받아 캘린더 폼을 생성하고, 날짜값을 채워넣는다.
+	 */
+	function buildCalendar() {
+
+		let doMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+		let lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+
+		let tbCalendar = document.querySelector(".scriptCalendar > tbody");
+
+		document.getElementById("calYear").innerText = today.getFullYear(); // @param YYYY월
+		document.getElementById("calMonth").innerText = autoLeftPad((today
+				.getMonth() + 1), 2); // @param MM월
+
+		// @details 이전 캘린더의 출력결과가 남아있다면, 이전 캘린더를 삭제한다.
+		while (tbCalendar.rows.length > 0) {
+			tbCalendar.deleteRow(tbCalendar.rows.length - 1);
+		}
+
+		// @param 첫번째 개행
+		let row = tbCalendar.insertRow();
+
+		// @param 날짜가 표기될 열의 증가값
+		let dom = 1;
+
+		// @details 시작일의 요일값( doMonth.getDay() ) + 해당월의 전체일( lastDate.getDate())을  더해준 값에서
+		//               7로 나눈값을 올림( Math.ceil() )하고 다시 시작일의 요일값( doMonth.getDay() )을 빼준다.
+		let daysLength = (Math
+				.ceil((doMonth.getDay() + lastDate.getDate()) / 7) * 7)
+				- doMonth.getDay();
+
+		// @param 달력 출력
+		// @details 시작값은 1일을 직접 지정하고 요일값( doMonth.getDay() )를 빼서 마이너스( - )로 for문을 시작한다.
+		for (let day = 1 - doMonth.getDay(); daysLength >= day; day++) {
+
+			let column = row.insertCell();
+
+			// @param 평일( 전월일과 익월일의 데이터 제외 )
+			if (Math.sign(day) == 1 && lastDate.getDate() >= day) {
+
+				// @param 평일 날짜 데이터 삽입
+
+				column.innerText = autoLeftPad(day, 2);
+
+				// @param 일요일인 경우
+				if (dom % 7 == 1) {
+					column.style.color = "#FF4D4D";
+				}
+
+				// @param 토요일인 경우
+				if (dom % 7 == 0) {
+					column.style.color = "#4D4DFF";
+					row = tbCalendar.insertRow(); // @param 토요일이 지나면 다시 가로 행을 한줄 추가한다.
+				}
+
+			}
+
+			// @param 평일 전월일과 익월일의 데이터 날짜변경
+			else {
+				let exceptDay = new Date(doMonth.getFullYear(), doMonth
+						.getMonth(), day);
+				column.innerText = autoLeftPad(exceptDay.getDate(), 2);
+				column.style.color = "#A9A9A9";
+			}
+
+			// @brief   전월, 명월 음영처리
+			// @details 현재년과 선택 년도가 같은경우
+			if (today.getFullYear() == date.getFullYear()) {
+
+				// @details 현재월과 선택월이 같은경우
+				if (today.getMonth() == date.getMonth()) {
+
+					// @details 현재일보다 이전인 경우이면서 현재월에 포함되는 일인경우
+					if (date.getDate() > day && Math.sign(day) == 1) {
+						column.style.backgroundColor = "#E5E5E5";
+					}
+
+					// @details 현재일보다 이후이면서 현재월에 포함되는 일인경우
+					else if (date.getDate() < day && lastDate.getDate() >= day) {
+						column.style.backgroundColor = "#FFFFFF";
+						column.style.cursor = "pointer";
+						column.onclick = function() {
+							calendarChoiceDay(this);
+						}
+					}
+
+					// @details 현재일인 경우
+					else if (date.getDate() == day) {
+						column.style.backgroundColor = "#FFFFE6";
+						column.style.cursor = "pointer";
+						column.onclick = function() {
+							calendarChoiceDay(this);
+						}
+					}
+
+					// @details 현재월보다 이전인경우
+				} else if (today.getMonth() < date.getMonth()) {
+					if (Math.sign(day) == 1 && day <= lastDate.getDate()) {
+						column.style.backgroundColor = "#E5E5E5";
+					}
+				}
+
+				// @details 현재월보다 이후인경우
+				else {
+					if (Math.sign(day) == 1 && day <= lastDate.getDate()) {
+						column.style.backgroundColor = "#FFFFFF";
+						column.style.cursor = "pointer";
+						column.onclick = function() {
+							calendarChoiceDay(this);
+						}
+					}
+				}
+			}
+
+			// @details 선택한년도가 현재년도보다 작은경우
+			else if (today.getFullYear() < date.getFullYear()) {
+				if (Math.sign(day) == 1 && day <= lastDate.getDate()) {
+					column.style.backgroundColor = "#E5E5E5";
+				}
+			}
+
+			// @details 선택한년도가 현재년도보다 큰경우
+			else {
+				if (Math.sign(day) == 1 && day <= lastDate.getDate()) {
+					column.style.backgroundColor = "#FFFFFF";
+					column.style.cursor = "pointer";
+					column.onclick = function() {
+						calendarChoiceDay(this);
+					}
+				}
+			}
+
+			dom++;
+
+		}
+	}
+
+	/**
+	 * @brief   날짜 선택
+	 * @details 사용자가 선택한 날짜에 체크표시를 남긴다.
+	 */
+	function calendarChoiceDay(column) {
+
+		// @param 기존 선택일이 존재하는 경우 기존 선택일의 표시형식을 초기화 한다.
+		if (document.getElementsByClassName("choiceDay")[0]) {
+			document.getElementsByClassName("choiceDay")[0].style.backgroundColor = "#FFFFFF";
+			document.getElementsByClassName("choiceDay")[0].classList
+					.remove("choiceDay");
+		}
+
+		// @param 선택일 체크 표시
+		column.style.backgroundColor = "#FF9999";
+
+		// @param 선택일 클래스명 변경
+		column.classList.add("choiceDay");
+	}
+
+	/**
+	 * @brief   숫자 두자릿수( 00 ) 변경
+	 * @details 자릿수가 한자리인 ( 1, 2, 3등 )의 값을 10, 11, 12등과 같은 두자리수 형식으로 맞추기위해 0을 붙인다.
+	 * @param   num     앞에 0을 붙일 숫자 값
+	 * @param   digit   글자의 자릿수를 지정 ( 2자릿수인 경우 00, 3자릿수인 경우 000 … )
+	 */
+	function autoLeftPad(num, digit) {
+		if (String(num).length < digit) {
+			num = new Array(digit - String(num).length + 1).join("0") + num;
+		}
+		return num;
+	}
+</script>
 </head>
 
-<body>
 
+<body>
 	<%
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
 	%>
@@ -60,10 +289,10 @@
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
-							<li><a href="index.jsp" class="active">홈</a></li>
+							<li><a href="index.jsp">홈</a></li>
 							<li><a href="about.jsp">글램핑&카라반</a></li>
-							<li><a href="deals.jsp">예약</a></li>
-							<li><a href="reservation.jsp">양도</a></li>
+							<li><a href="reservation.jsp" class="active">예약</a></li>
+							<li><a href="transfer.jsp">양도</a></li>
 							<li><a href="community.jsp">커뮤니티</a></li>
 							<%
 							if (info == null) {
@@ -93,14 +322,16 @@
 			</div>
 		</div>
 	</header>
+	<!-- ***** Header Area End ***** -->
+
 	<div class="dark">
-		<div class="page-heading">
+		<div class="second-page-heading">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
 						<h4>지금 바로 예약해보세요!</h4>
 						<h2>예약하기</h2>
-						<div class="border-button">
+						<div class="main-button">
 							<a href="index.jsp">홈으로 돌아가기</a>
 						</div>
 					</div>
@@ -114,513 +345,99 @@
 					<div class="col-lg-12">
 						<form id="search-form" name="gs" method="submit" role="search"
 							action="#">
-							<!-- <div class="row">
-                <div class="col-lg-2">
-                  <h4>Sort Deals By:</h4>
-                </div>
-                <div class="col-lg-4">
-                    <fieldset>
-                        <select name="Location" class="form-select" aria-label="Default select example" id="chooseLocation" onChange="this.form.click()">
-                            <option selected>Destinations</option>
-                            <option type="checkbox" name="option1" value="Italy">Italy</option>
-                            <option value="France">France</option>
-                            <option value="Switzerland">Switzerland</option>
-                            <option value="Thailand">Thailand</option>
-                            <option value="Australia">Australia</option>
-                            <option value="India">India</option>
-                            <option value="Indonesia">Indonesia</option>
-                            <option value="Malaysia">Malaysia</option>
-                            <option value="Singapore">Singapore</option>
-                        </select>
-                    </fieldset>
-                </div> -->
-							<!-- ***** Header Area End ***** -->
 
 							<div class="topArea">
 								<div class="topInner">
-									<h2 class="titDep1">Booking</h2>
+									<h2 class="titDep1">예약</h2>
 									<br>
-									<!-- 예약하기-->
 									<div class="col-lg-12">
-										<!--                 
-                <label for="datetime">날짜와 시간을 선택하세요:
-                  <input type="datetime-local"
-                         id="datetime"
-                         max="2077-06-20T21:00"
-                         min="2077-06-05T12:30"
-                         value="2077-06-15T13:27">
-                </label> -->
 										<li class=""><strong class="listTit">투숙기간 선택</strong><br>
 											<em class="intValue" id="dateText">
-												<fieldset>
-													<label for="Number" class="form-label"
-														style="margin: 10px;">Check In Date</label> <input
-														type="date" name="date" class="date" required>
-												</fieldset>
-									</div>
-									<div class="col-lg-12" style="margin: 10px;">
-										<fieldset>
-											<label for="Number" class="form-label">Check Out Date</label>
-											<input type="date" name="date" class="date" required>
-										</fieldset>
+												<table class="scriptCalendar">
+													<thead>
+														<tr>
+															<td onClick="prevCalendar();" style="cursor: pointer;">&#60;&#60;</td>
+															<td colspan="5"><span id="calYear">YYYY</span>년 <span
+																id="calMonth">MM</span>월</td>
+															<td onClick="nextCalendar();" style="cursor: pointer;">&#62;&#62;</td>
+														</tr>
+														<tr>
+															<td>일</td>
+															<td>월</td>
+															<td>화</td>
+															<td>수</td>
+															<td>목</td>
+															<td>금</td>
+															<td>토</td>
+														</tr>
+													</thead>
+													<tbody></tbody>
+												</table>
 									</div>
 									</button>
-									<div class="toggleCont">
-										<div class="toggleInner">
-											<div class="calContainer hasDatepicker" id="dp1667457381723">
-												<div
-													class="calWrap ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all ui-datepicker-multi"
-													style="display: block;">
-													<div class="ui-datepicker-group calInner calLeft">
-														<div
-															class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-left">
-															<button disabled=""
-																class="btnMonth prevMonth ui-corner-all ui-state-disabled"
-																type="button" title="Prev">
-																<span class="ui-icon ui-icon-circle-triangle-w">Prev</span>
-															</button>
-															<strong class="calMonth"><span
-																class="ui-datepicker-year">2022</span>.<span
-																class="ui-datepicker-month">11</span></strong>
-														</div>
-														<table class="calendar">
-															<thead>
-																<tr>
-																	<th scope="col" class="fRed"><span title="Sunday">SUN</span></th>
-																	<th scope="col"><span title="Monday">MON</span></th>
-																	<th scope="col"><span title="Tuesday">TUE</span></th>
-																	<th scope="col"><span title="Wednesday">WED</span></th>
-																	<th scope="col"><span title="Thursday">THU</span></th>
-																	<th scope="col"><span title="Friday">FRI</span></th>
-																	<th scope="col"><span title="Saturday">SAT</span></th>
-																</tr>
-															</thead>
-															<tbody>
-																<tr>
-																	<td
-																		class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
-																	<td
-																		class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
-																	<td
-																		class=" ui-datepicker-unselectable ui-state-disabled "><span
-																		class="ui-state-default default">1</span></td>
-																	<td
-																		class=" ui-datepicker-unselectable ui-state-disabled ">
-																		<span class="ui-state-default default">2</span>
-																	</td>
-																	<td
-																		class=" ui-datepicker-days-cell-over  ui-datepicker-current-day ui-datepicker-today"
-																		data-handler="selectDay" data-event="click"
-																		data-month="10" data-year="2022"><a
-																		class="ui-state-default ui-state-highlight ui-state-active"
-																		href="#">3</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022"><a
-																		class="ui-state-default" href="#">4</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022"><a
-																		class="ui-state-default" href="#">5</a></td>
-																</tr>
-																<tr>
-																	<td class=" fRed " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022">
-																		<a class="ui-state-default" href="#">6</a>
-																	</td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022">
-																		<a class="ui-state-default" href="#">7</a>
-																	</td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022"><a
-																		class="ui-state-default" href="#">8</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022"><a
-																		class="ui-state-default" href="#">9</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022"><a
-																		class="ui-state-default" href="#">10</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022"><a
-																		class="ui-state-default" href="#">11</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022"><a
-																		class="ui-state-default" href="#">12</a></td>
-																</tr>
-																<tr>
-																	<td class=" fRed " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022"><a
-																		class="ui-state-default" href="#">13</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022"><a
-																		class="ui-state-default" href="#">14</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022"><a
-																		class="ui-state-default" href="#">15</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022"><a
-																		class="ui-state-default" href="#">16</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022"><a
-																		class="ui-state-default" href="#">17</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022"><a
-																		class="ui-state-default" href="#">18</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022"><a
-																		class="ui-state-default" href="#">19</a></td>
-																</tr>
-																<tr>
-																	<td class=" fRed " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022"><a
-																		class="ui-state-default" href="#">20</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022"><a
-																		class="ui-state-default" href="#">21</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022"><a
-																		class="ui-state-default" href="#">22</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022"><a
-																		class="ui-state-default" href="#">23</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022"><a
-																		class="ui-state-default" href="#">24</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022"><a
-																		class="ui-state-default" href="#">25</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022"><a
-																		class="ui-state-default" href="#">26</a></td>
-																</tr>
-																<tr>
-																	<td class=" fRed " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022"><a
-																		class="ui-state-default" href="#">27</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022"><a
-																		class="ui-state-default" href="#">28</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022"><a
-																		class="ui-state-default" href="#">29</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="10" data-year="2022"><a
-																		class="ui-state-default" href="#">30</a></td>
-																	<td
-																		class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
-																	<td
-																		class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
-																	<td
-																		class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
-																</tr>
-															</tbody>
-														</table>
-													</div>
-													<div class="ui-datepicker-group calInner calRight">
-														<div
-															class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-right">
-															<button class="btnMonth nextMonth ui-corner-all"
-																type="button" data-handler="next" data-event="click"
-																title="Next">
-																<span class="ui-icon ui-icon-circle-triangle-e">Next</span>
-															</button>
-															<strong class="calMonth"></strong> <span
-																class="ui-datepicker-year">2022</span>.<span
-																class="ui-datepicker-month">12</span></strong>
-														</div>
-														<table class="calendar">
-															<thead>
-																<tr>
-																	<th scope="col" class="fRed"><span title="Sunday">SUN</span></th>
-																	<th scope="col"><span title="Monday">MON</span></th>
-																	<th scope="col"><span title="Tuesday">TUE</span></th>
-																	<th scope="col"><span title="Wednesday">WED</span></th>
-																	<th scope="col"><span title="Thursday">THU</span></th>
-																	<th scope="col"><span title="Friday">FRI</span></th>
-																	<th scope="col"><span title="Saturday">SAT</span></th>
-																</tr>
-															</thead>
-															<tbody>
-																<tr>
-																	<td
-																		class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
-																	<td
-																		class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
-																	<td
-																		class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
-																	<td
-																		class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">1</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">2</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">3</a></td>
-																</tr>
-																<tr>
-																	<td class=" fRed " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">4</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">5</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">6</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">7</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">8</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">9</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">10</a></td>
-																</tr>
-																<tr>
-																	<td class=" fRed " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">11</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">12</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">13</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">14</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">15</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">16</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">17</a></td>
-																</tr>
-																<tr>
-																	<td class=" fRed " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">18</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">19</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">20</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">21</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">22</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">23</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">24</a></td>
-																</tr>
-																<tr>
-																	<td class=" fRed " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">25</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">26</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">27</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">28</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">29</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">30</a></td>
-																	<td class=" " data-handler="selectDay"
-																		data-event="click" data-month="11" data-year="2022"><a
-																		class="ui-state-default" href="#">31</a></td>
-																</tr>
-															</tbody>
-														</table>
-													</div>
-													<div class="ui-datepicker-row-break"></div>
+
+
+									<footer>
+										<div class="container">
+											<div class="row">
+												<div class="col-lg-12">
+													<p>
+														Copyright © 2036 <a href="#">WoOx Travel</a> Company. All
+														rights reserved. <br>Design: <a
+															href="https://templatemo.com" target="_blank"
+															title="free CSS templates">TemplateMo</a> Distribution: <a
+															href="https://themewagon.com target="_blank" >ThemeWagon</a>
+													</p>
 												</div>
 											</div>
 										</div>
-									</div>
-									<!-- //toggleCont -->
-									<div class="col-lg-12">
-										<fieldset>
-											<button class="main-button">설정하기</button>
-										</fieldset>
-									</div>
-									<br>
-
-									<!-- <button type="button" class="btnToggle">
-						<span class="hidden">상세내용</span><br> -->
-									</li>
-
-									<!-- //toggleCont -->
-									</li>
-									<li><strong class="listTit">객실 및 인원 선택</strong> <em
-										class="intValue" id="roomText">객실&nbsp;1개<span>성인&nbsp;2명</span></em>
-										<!-- <div class="row">
-                <div class="col-lg-2">
-                  <h4>Sort Deals By:</h4>
-                </div>
-                <div class="col-lg-4">
-                    <fieldset>
-                        <select name="Room" class="form-select" aria-label="Default select example" id="chooseRoom" onChange="this.form.click()">
-                            <option selected>방 갯수</option>
-                            <option type="checkbox" name="option1" value="디럭스">디럭스</option>
-                            <option value="">France</option>
-                            <option value="Switzerland">Switzerland</option>
-                            <option value="Thailand">Thailand</option>
-                            <option value="Australia">Australia</option>
-                            <option value="India">India</option>
-                            <option value="Indonesia">Indonesia</option>
-                            <option value="Malaysia">Malaysia</option>
-                            <option value="Singapore">Singapore</option>
-                        </select>
-                    </fieldset>
-                </div> -->
-
-										<div class="toggleCont" style="display: none;">
-											<div class="toggleInner">
-												<div class="roomContainer">
-													<div class="roomWrap">
-														<div class="roomSel on">
-															<div class="roomInner">
-																<strong class="roomTit">객실1</strong>
-																<div class="numWrap" data-roomnum="1">
-																	<div class="numPeople" data-target="adult">
-																		<input type="hidden" name="adltCntArr" value="2">
-																		<button type="button" class="btnDown">인원 수 감소</button>
-																		<span>성인 <em>2</em></span>
-																		<button type="button" class="btnUp">인원 수 증가</button>
-																	</div>
-																	<div class="numPeople" data-target="child">
-																		<input type="hidden" name="chldCntArr" value="0">
-																		<button type="button" class="btnDown blank">인원
-																			수 감소</button>
-																		<span>어린이 <em>0</em></span>
-																		<button type="button" class="btnUp">인원 수 증가</button>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="roomSel">
-															<!-- 객실 추가 시 클래스 on 추가 -->
-															<div class="roomInner">
-																<strong class="roomTit">객실2</strong>
-																<div class="numWrap" data-roomnum="2">
-																	<div class="numPeople" data-target="adult">
-																		<input type="hidden" name="adltCntArr" value="0">
-																		<button type="button" class="btnDown blank">인원
-																			수 감소</button>
-																		<span>성인 <em>0</em></span>
-																		<button type="button" class="btnUp">인원 수 증가</button>
-																		<!-- 인원 수 0 일 경우 감소 쪽에 blank 클래스 추가 -->
-																	</div>
-																	<div class="numPeople" data-target="child">
-																		<input type="hidden" name="chldCntArr" value="0">
-																		<button type="button" class="btnDown blank">인원
-																			수 감소</button>
-																		<span>어린이 <em>0</em></span>
-																		<button type="button" class="btnUp">인원 수 증가</button>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="roomSel">
-															<div class="roomInner">
-																<strong class="roomTit">객실3</strong>
-																<div class="numWrap" data-roomnum="3">
-																	<div class="numPeople" data-target="adult">
-																		<input type="hidden" name="adltCntArr" value="0">
-																		<button type="button" class="btnDown blank">인원
-																			수 감소</button>
-																		<span>성인 <em>0</em></span>
-																		<button type="button" class="btnUp">인원 수 증가</button>
-																	</div>
-																	<div class="numPeople" data-target="child">
-																		<input type="hidden" name="chldCntArr" value="0">
-																		<button type="button" class="btnDown blank">인원
-																			수 감소</button>
-																		<span>어린이 <em>0</em></span>
-																		<button type="button" class="btnUp">인원 수 증가</button>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<!-- //roomWrap -->
-													<ul class="txtGuide">
-														<li>최대 3개 객실 예약 가능</li>
-														<br>
-														<li id="ageTxtGuide">어린이 기준 : 37개월 ~ 만 12세</li>
-														<br>
-													</ul>
-												</div>
-												<!-- //roomContainer -->
-												<div class="btnArea" style="margin: left"10px;>
-													<a href="deals.html" class="btnSC btnL active"
-														onclick="fncSearchList();">객실 검색</a><br>
-												</div>
-											</div>
-										</div> <!-- //toggleCont --></li>
-									</ul>
+									</footer>
 
 
-								</div>
-								<br> <br>
+									<!-- Scripts -->
+									<!-- Bootstrap core JavaScript -->
+									<script src="vendor/jquery/jquery.min.js"></script>
+									<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-								<footer>
-									<div class="container">
-										<div class="row">
-											<div class="col-lg-12">
-												<p>
-													Copyright © 2036 <a href="#">WoOx Travel</a> Company. All
-													rights reserved. <br>Design: <a
-														href="https://templatemo.com" target="_blank"
-														title="free CSS templates">TemplateMo</a> Distribution: <a
-														href="https://themewagon.com target="_blank" >ThemeWagon</a>
-												</p>
-											</div>
-										</div>
-									</div>
-								</footer>
+									<script src="assets/js/isotope.min.js"></script>
+									<script src="assets/js/owl-carousel.js"></script>
+									<script src="assets/js/wow.js"></script>
+									<script src="assets/js/tabs.js"></script>
+									<script src="assets/js/popup.js"></script>
+									<script src="assets/js/custom.js"></script>
 
+									<script>
+										$(".option").click(function() {
+											$(".option").removeClass("active");
+											$(this).addClass("active");
+										});
+									</script>
+									<script>
+										function show() {
+											console.log("실행");
+											let modal = document
+													.querySelector(".modalPopup");
+											let modalBtn = document
+													.querySelector(".modalBtn");
+											// let mainCaption = document.querySelector(".main-caption")
+											let slidercon = document
+													.querySelector(".dark")
+											console.log(modal.style.zIndex);
+											console.log(slidercon.style.zIndex);
+											if (modal.style.display == "none") {
 
-								<!-- Scripts -->
-								<!-- Bootstrap core JavaScript -->
-								<script src="vendor/jquery/jquery.min.js"></script>
-								<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+												modal.style.display = "block"
+												modalBtn.textContent = "닫기"
+											}
 
-								<script src="assets/js/isotope.min.js"></script>
-								<script src="assets/js/owl-carousel.js"></script>
-								<script src="assets/js/wow.js"></script>
-								<script src="assets/js/tabs.js"></script>
-								<script src="assets/js/popup.js"></script>
-								<script src="assets/js/custom.js"></script>
+											else {
+												// mainCaption.style.opacity ="1";
+												modal.style.display = "none"
 
-								<script>
-									$(".option").click(function() {
-										$(".option").removeClass("active");
-										$(this).addClass("active");
-									});
-								</script>
+												modalBtn.textContent = "로그인";
+											}
+										}
+									</script>
 </body>
 
 </html>

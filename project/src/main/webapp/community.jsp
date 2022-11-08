@@ -44,6 +44,8 @@
 	<!-- ***** Header Area Start ***** -->
 	<header class="header-area header-sticky">
 		<div class="container">
+			<<<<<<< HEAD ======= >>>>>>> branch 'master' of
+			https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 			<div class="row">
 				<div class="col-12">
 					<nav class="main-nav">
@@ -127,6 +129,8 @@
 						</div>
 					</div>
 				</div>
+			</div>
+		</div>
 	</header>
 	<!-- ***** Header Area End ***** -->
 

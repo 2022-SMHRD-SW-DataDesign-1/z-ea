@@ -34,7 +34,9 @@ https://templatemo.com/tm-580-woox-travel
 </head>
 
 <body>
-<% MemberDTO info = (MemberDTO) session.getAttribute("info");%>
+	<%
+	MemberDTO info = (MemberDTO) session.getAttribute("info");
+	%>
 
 	<!-- ***** Preloader Start ***** -->
 	<div id="js-preloader" class="js-preloader">
@@ -65,108 +67,127 @@ https://templatemo.com/tm-580-woox-travel
 							<li><a href="deals.jsp">예약</a></li>
 							<li><a href="reservation.jsp">양도</a></li>
 							<li><a href="community.jsp">커뮤니티</a></li>
-							 <%if(info == null){ %>
-              <li>
-                <button class="modalBtn" onclick="show()" style="background-color: #6A5ACD; padding: 8px 14px; border: none;
-                          color: #fff;
-                         ">로그인</button>
-              </li>
-               <%}else{ %>
-               <li>
-                <a href="MyPage.jsp"  class="active" class="modalBtn"  style="background-color: #6A5ACD; padding: 8px 14px; border: none;
-                          color: #fff;
-                         ">마이페이지</a>
-               </li>
-               <li>
-                <a href="LogoutService" class="modalBtn"  style="background-color: #6A5ACD; padding: 8px 14px; border: none;
-                          color: #fff;
-                         ">로그아웃</a>
-               </li>
-               <%} %>
+							<%
+							if (info == null) {
+							%>
+							<li>
+								<button class="modalBtn" onclick="show()"
+									style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">로그인</button>
+							</li>
+							<%
+							} else {
+							%>
+							<li><a href="MyPage.jsp" class="active" class="modalBtn"
+								style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">마이페이지</a>
+							</li>
+							<li><a href="LogoutService" class="modalBtn"
+								style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">로그아웃</a>
+							</li>
+							<%
+							}
+							%>
 						</ul>
 						<a class='menu-trigger'> <span>Menu</span>
 						</a>
 						<!-- ***** Menu End ***** -->
-						
+
 					</nav>
 				</div>
 			</div>
 		</div>
 	</header>
 	<!-- 모달 -->
-        <div class="modalPopup" style="display: none;">
-          <div class="ModalBack" onclick
-            style="position : fixed; background-color : black; width: 100%; height: 100%; opacity: 0.9; ">
-          </div>
-          <div class="LoginModal"
-            style="text-align: center; background-color: white; width: 540px; height: 650px; margin-top: 10%; margin-left: 36%; position: fixed; align-content: center;">
-            <!-- 로그인 -->
-            <form action="LoginService" method="post">
-            <table style="margin: auto; margin-top: 10%;">
-              <th colspan="2" style="font-size: 20px; padding: 10px;">로그인</th>
-              <tr>
-                <td>
-                  <div style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이메일 </div>
-                </td>
-                <td><input type="email" name="mb_email" style="width: 180px;" /></td>
-              </tr>
-              <tr>
-                <td>
-                  <div style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">비밀번호 </div>
-                </td>
-                <td><input type="password" name="mb_pw" style="width: 180px;" /></td>
-              </tr>
-              <td colspan="2" style="text-align: center;"><input type="submit" value="로그인" style="width: 80px;"></td>
-            </table>
-            </form>
-            <!-- 회원가입-->
-            <form action="JoinService" method="post">
-            <table style="margin: auto; margin-top: 10%;">
-              <th colspan="2" style="font-size: 20px; padding: 10px;">회원가입</th>
-              <tr>
-                <td>
-                  <div style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이름 </div>
-                </td>
-                <td><input type="text" name="mb_name" style="width: 180px;" /></td>
-              </tr>
-              <tr>
-                <td>
-                  <div style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이메일 </div>
-                </td>
-                <td><input type="email" name="mb_email" id="mb_email_ck" style="width: 180px;" /></td>
-              </tr>
-              <tr>
-                <td colspan="2"><input type="button" value="email중복확인" onclick="checkE()"> </td>
-              </tr>
-              <tr>
-              	<th colspan="2">
-              	<span style="padding: 10px;" id="resultCheck"></span>
-              	</th>
-              </tr>
-              <tr>
-                <td>
-                  <div style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">비밀번호 </div>
-                </td>
-                <td><input type="password" name="mb_pw" style="width: 180px;" /></td>
-              </tr>
-              <tr>
-                <td>
-                  <div style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">생년월일 </div>
-                </td>
-                <td><input type="date" name="mb_birthdate" style="width: 180px;" /></td>
-              </tr>
-              <tr>
-                <td>
-                  <div style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">전화번호 </div>
-                </td>
-                <td><input type="text" name="mb_phone" style="width: 180px;" /></td>
-              </tr>
-              <td colspan="2" style="text-align: center;"><input type="submit" value="회원가입" style="width: 80px;"></td>
-            </table>
-            </form>
-          </div>
-        </div>
-	
+	<div class="modalPopup" style="display: none;">
+		<div class="ModalBack" onclick
+			style="position: fixed; background-color: black; width: 100%; height: 100%; opacity: 0.9;">
+		</div>
+		<div class="LoginModal"
+			style="text-align: center; background-color: white; width: 540px; height: 650px; margin-top: 10%; margin-left: 36%; position: fixed; align-content: center;">
+			<!-- 로그인 -->
+			<form action="LoginService" method="post">
+				<table style="margin: auto; margin-top: 10%;">
+					<th colspan="2" style="font-size: 20px; padding: 10px;">로그인</th>
+					<tr>
+						<td>
+							<div
+								style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이메일
+							</div>
+						</td>
+						<td><input type="email" name="mb_email" style="width: 180px;" /></td>
+					</tr>
+					<tr>
+						<td>
+							<div
+								style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">비밀번호
+							</div>
+						</td>
+						<td><input type="password" name="mb_pw" style="width: 180px;" /></td>
+					</tr>
+					<td colspan="2" style="text-align: center;"><input
+						type="submit" value="로그인" style="width: 80px;"></td>
+				</table>
+			</form>
+			<!-- 회원가입-->
+			<form action="JoinService" method="post">
+				<table style="margin: auto; margin-top: 10%;">
+					<th colspan="2" style="font-size: 20px; padding: 10px;">회원가입</th>
+					<tr>
+						<td>
+							<div
+								style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이름
+							</div>
+						</td>
+						<td><input type="text" name="mb_name" style="width: 180px;" /></td>
+					</tr>
+					<tr>
+						<td>
+							<div
+								style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이메일
+							</div>
+						</td>
+						<td><input type="email" name="mb_email" id="mb_email_ck"
+							style="width: 180px;" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="button" value="email중복확인"
+							onclick="checkE()"></td>
+					</tr>
+					<tr>
+						<th colspan="2"><span style="padding: 10px;" id="resultCheck"></span>
+						</th>
+					</tr>
+					<tr>
+						<td>
+							<div
+								style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">비밀번호
+							</div>
+						</td>
+						<td><input type="password" name="mb_pw" style="width: 180px;" /></td>
+					</tr>
+					<tr>
+						<td>
+							<div
+								style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">생년월일
+							</div>
+						</td>
+						<td><input type="date" name="mb_birthdate"
+							style="width: 180px;" /></td>
+					</tr>
+					<tr>
+						<td>
+							<div
+								style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">전화번호
+							</div>
+						</td>
+						<td><input type="text" name="mb_phone" style="width: 180px;" /></td>
+					</tr>
+					<td colspan="2" style="text-align: center;"><input
+						type="submit" value="회원가입" style="width: 80px;"></td>
+				</table>
+			</form>
+		</div>
+	</div>
+
 	<!-- ***** Header Area End ***** -->
 
 	<div class=se style="background-color: blanchedalmond; height: 300px;">
@@ -211,7 +232,7 @@ https://templatemo.com/tm-580-woox-travel
 			</div>
 		</div>
 	</div>
-	</div>
+
 
 
 	<footer>
@@ -247,31 +268,31 @@ https://templatemo.com/tm-580-woox-travel
 			$(".option").removeClass("active");
 			$(this).addClass("active");
 		});
-		
-		 function show() {
-		      console.log("외않되");
-		      let modal = document.querySelector(".modalPopup");
-		      let modalBtn = document.querySelector(".modalBtn");
-		      let mainCaption = document.querySelector(".main-caption")
-		      let dark = document.querySelector(".controls")
 
-		      console.log("실행도미");
-		      if (modal.style.opacity == "0") {
-		    	mainCaption.style.opacity ="0";
-		      dark.style.opacity = "0"
-		        modal.style.opacity = "1";
-		        modal.style.display = "block"
-		        modalBtn.textContent = "닫기"
-		      }
+		function show() {
+			console.log("외않되");
+			let modal = document.querySelector(".modalPopup");
+			let modalBtn = document.querySelector(".modalBtn");
+			let mainCaption = document.querySelector(".main-caption")
+			let dark = document.querySelector(".controls")
 
-		      else {
-		        dark.style.opacity ="1";
-		    	  mainCaption.style.opacity ="1";
-		        modal.style.opacity = "0";
-		        modal.style.display = "none";
-		        modalBtn.textContent = "로그인";
-		      }
-		    }
+			console.log("실행도미");
+			if (modal.style.opacity == "0") {
+				mainCaption.style.opacity = "0";
+				dark.style.opacity = "0"
+				modal.style.opacity = "1";
+				modal.style.display = "block"
+				modalBtn.textContent = "닫기"
+			}
+
+			else {
+				dark.style.opacity = "1";
+				mainCaption.style.opacity = "1";
+				modal.style.opacity = "0";
+				modal.style.display = "none";
+				modalBtn.textContent = "로그인";
+			}
+		}
 	</script>
 
 </body>

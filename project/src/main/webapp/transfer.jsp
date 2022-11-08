@@ -25,19 +25,25 @@
 <link rel="stylesheet" href="assets/css/animate.css">
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-<!--
-
-TemplateMo 580 Woox Travel
-
-https://templatemo.com/tm-580-woox-travel
-
--->
 </head>
 
 <body>
 	<%
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
 	%>
+
+	<!-- ***** Preloader Start ***** -->
+	<div id="js-preloader" class="js-preloader">
+		<div class="preloader-inner">
+			<span class="dot"></span>
+			<div class="dots">
+				<span></span> <span></span> <span></span>
+			</div>
+		</div>
+	</div>
+
+	<!-- ***** Preloader End ***** -->
+
 	<!-- ***** Header Area Start ***** -->
 	<header class="header-area header-sticky">
 		<div class="container">
@@ -45,18 +51,17 @@ https://templatemo.com/tm-580-woox-travel
 				<div class="col-12">
 					<nav class="main-nav">
 						<!-- ***** Logo Start ***** -->
-						<a href="Main.html" class="logo"> <img
+						<a href="index.jsp" class="logo"> <img
 							src="assets/images/logo.png" alt="">
 						</a>
 						<!-- ***** Logo End ***** -->
-
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
-							<li><a href="index.jsp">홈</a></li>
+							<li><a href="index.jsp" class="active">홈</a></li>
 							<li><a href="about.jsp">글램핑&카라반</a></li>
-							<li><a href="deals.jsp">예약</a></li>
-							<li><a href="transfer.jsp" class="active">양도</a></li>
-							<li><a href="community.html">커뮤니티</a></li>
+							<li><a href="reservation.jsp">예약</a></li>
+							<li><a href="transfer.jsp">양도</a></li>
+							<li><a href="community.jsp">커뮤니티</a></li>
 							<%
 							if (info == null) {
 							%>

@@ -11,7 +11,7 @@
     comment_date)
 	 values(#{board_num},#{mb_email},#{comment_content},sysdate)
 	</insert>
-	<select id="show_comment" parameterType="Bigdecimal" resultType="CommentDTO">
+	<select id="show_comment" parameterType="BigDecimal" resultType="CommentDTO">
 	select * from Comment_tb where board_num = #{board_num}
 	</select>
 </mapper>

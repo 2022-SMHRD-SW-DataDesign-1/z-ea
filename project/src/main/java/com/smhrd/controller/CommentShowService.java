@@ -23,17 +23,16 @@ public class CommentShowService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		request.setCharacterEncoding("UTF-8");
-		//HttpSession session = request.getSession();
-		//BoardDTO dto = (BoardDTO)session.getAttribute("Comment_info");
-		
-		BigDecimal board_num = new BigDecimal(request.getParameter("board_num"));
+	
+		System.out.println(request.getParameter("board_num"));
+	BigDecimal board_num = new BigDecimal(request.getParameter("board_num"));
 		//ArrayList<CommentDTO> list = new CommentDAO().show_comment(board_num);
 		
 		//response.getWriter().print(list);
 		//System.out.println(list);
 		//CommentDTO info = new CommentDTO(dto.getBoard_num(),dto.getMb_email(),dto.getBoard_content());
 		ArrayList<CommentDTO> list= (ArrayList<CommentDTO>)new CommentDAO().show_comment(board_num);//.show_comment(info.ge);
-		
+		System.out.println(list);
 		if(list !=null) {
 			System.out.println("조회 성공");
 		}else {
