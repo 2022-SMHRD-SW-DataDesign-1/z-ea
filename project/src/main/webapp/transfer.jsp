@@ -1,13 +1,6 @@
 <%@page import="com.smhrd.model.MemberDTO"%>
-
-<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="com.smhrd.model.ItemDAO"%>
-<%@page import="com.smhrd.model.ItemDTO"%>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +14,7 @@
 	href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
 	rel="stylesheet">
 
+
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -31,13 +25,6 @@
 <link rel="stylesheet" href="assets/css/animate.css">
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-<!--
-
-TemplateMo 580 Woox Travel
-
-https://templatemo.com/tm-580-woox-travel
-
--->
 </head>
 
 <body>
@@ -70,10 +57,10 @@ https://templatemo.com/tm-580-woox-travel
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
-							<li><a href="index.jsp">홈</a></li>
-							<li><a href="about.jsp" class="active">글램핑&카라반</a></li>
-							<li><a href="deals.jsp">예약</a></li>
-							<li><a href="reservation.jsp">양도</a></li>
+							<li><a href="index.jsp" class="active">홈</a></li>
+							<li><a href="about.jsp">글램핑&카라반</a></li>
+							<li><a href="reservation.jsp">예약</a></li>
+							<li><a href="transfer.jsp">양도</a></li>
 							<li><a href="community.jsp">커뮤니티</a></li>
 							<%
 							if (info == null) {
@@ -103,9 +90,8 @@ https://templatemo.com/tm-580-woox-travel
 			</div>
 		</div>
 	</header>
-
-
 	<!-- ***** Header Area End ***** -->
+
 	<div class="modalPopup" style="z-index: 100; display: none;">
 		<div class="ModalBack"
 			style="position: fixed; background-color: black; width: 100%; height: 100%; opacity: 0.5;">
@@ -197,137 +183,128 @@ https://templatemo.com/tm-580-woox-travel
 	</div>
 
 	<div class="dark">
-		<!-- ***** Main Banner Area Start ***** -->
-		<div class="about-main-content">
+		<div class="second-page-heading">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
-						<div class="content"></div>
+						<h2>예약 양도</h2>
+						<div class="main-button">
+							<a href="about.jsp">양도하러가기</a>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- ***** Main Banner Area End ***** -->
 
-		<!-- 모달 -->
-
-		<div class="cities-town"
-			style="display: inline-block; margin-left: 15%;">
+		<div class="search-form">
 			<div class="container">
-				<div class="row" style="text-align: center;">
-					<div class="slider-content">
-
-						<div class="row" style="display: block;">
-
-							<h2>카테고리</h2>
-
-							<div class="col-lg-12">
-								<div class="owl-cites-town owl-carousel"
-									style="display: inline-block;">
-
-									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
-										onclick="tag_filter(this)">#가족</div>
-
-
-									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
-										onclick="tag_filter(this)">#혼자</div>
-
-
-									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px;"
-										onclick="tag_filter(this)">#감성</div>
-
-
-									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
-										onclick="tag_filter(this)">#커플</div>
-
-
-									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
-										onclick="tag_filter(this)">#단체</div>
-
-
-									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
-										onclick="tag_filter(this)">#바다</div>
-
-
-									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
-										onclick="tag_filter(this)">#산</div>
-
+				<div class="row">
+					<div class="col-lg-12">
+						<form id="search-form" name="gs" method="submit" role="search"
+							action="#">
+							<div class="row">
+								<div class="col-lg-2">
+									<h4>떠나요</h4>
 								</div>
-								<hr />
+								<div class="col-lg-4">
+									<fieldset>
+										<select name="Location" class="form-select"
+											aria-label="Default select example" id="chooseLocation"
+											onChange="this.form.click()">
+											<option selected>지역</option>
+											<option type="checkbox" name="option1" value="전남">전남</option>
+											<option value="전북">전북</option>
+											<option value=""></option>
+											<option value="Thailand">Thailand</option>
+											<option value="Australia">Australia</option>
+											<option value="India">India</option>
+											<option value="Indonesia">Indonesia</option>
+											<option value="Malaysia">Malaysia</option>
+											<option value="Singapore">Singapore</option>
+										</select>
+									</fieldset>
+								</div>
+								<div class="col-lg-4">
+									<fieldset>
+										<select name="Price" class="form-select"
+											aria-label="Default select example" id="choosePrice"
+											onChange="this.form.click()">
+											<option selected>가격</option>
+											<option value="100">- 100,000</option>
+											<option value="250">100,000 - 200,000</option>
+											<option value="500">200,000 - 300,000</option>
+											<option value="2500+">300,000 +</option>
+										</select>
+									</fieldset>
+								</div>
+								<div class="col-lg-2">
+									<fieldset>
+										<button class="border-button">검색</button>
+									</fieldset>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 
-								<div>
-									<div
-										style="margin-top: 5%; width: 100%; display: inline-block; padding: 10px 5px 10px 5px;">
+		<div class="amazing-deals">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 offset-lg-3">
+						<div class="section-heading text-center">
+							<h2>양도</h2>
+							<p>떠나고 싶은 당신! 더 싼값에 놀러가볼까요~!!~~!~</p>
+						</div>
+					</div>
 
-										<%
-										ItemDAO dao = new ItemDAO();
-										ArrayList<ItemDTO> item_list = new ArrayList<ItemDTO>();
-										item_list = (ArrayList)request.getAttribute("item_list");
-/* 										item_list = dao.Filter("#가족");
- */										int cnt = 0;
-										if (request.getParameter("page") == null) {
-											for (int i = 0; i < item_list.size(); i++) 
-												{ if(cnt == 8){break;}%>
-												
-												<a class="item_list"
-													href="ShowService?num=<%=item_list.get(i).getNum()%>"
-													style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox;">
-													<img src="assets/images/offers-01.jpg" alt=""
-													style="width: 200px; height: 200px;">
-													<div style="text-align: left; padding-left: 20px;">
-														<p><%=item_list.get(i).getName()%></p>
-														<p><%=item_list.get(i).getDesc()%></p>
-													</div>
-												</a>
-												<%
-												cnt++;}
-										%>
-										<%}else{
-										
-										int pageNum = Integer.parseInt(request.getParameter("page")) ;
-										for(int i = (pageNum-1)*8;i< (item_list.size()); i++){
-										 
-											if(cnt == 8){break;}%>
-											<a class="item_list"
-													href="ShowService?num=<%=item_list.get(i).getNum()%>"
-													style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox;">
-													<img src="assets/images/offers-01.jpg" alt=""
-													style="width: 200px; height: 200px;">
-													<div style="text-align: left; padding-left: 20px;">
-														<p><%=item_list.get(i).getName()%></p>
-														<p><%=item_list.get(i).getDesc()%></p>
-													</div>
-												</a> 
-											
-										
-										<% cnt++;}}%>
-										 
-										
-									
-
-										<div style="width : 100%">
-										<%
-										for (int j = 0; j < ((item_list.size()) / 8) + 1; j++) {
-										%>
-										<a id="page" value="<%=j + 1%>" href="about.jsp?page=<%=j + 1%>" style="margin: 10px;">
-											<%=j + 1%>
-										</a>
-										<%
-										}
-										%>
-</div>
-
+					<%
+					for (int i = 1; i < 5; i++) {
+					%>
+					<div class="col-lg-6 col-sm-6" style="overflow: hidden;">
+						<div class="item">
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="image">
+										<img src="assets/images/deals-0<%=i%>.jpg" alt="">
+									</div>
+								</div>
+								<div class="col-lg-6 align-self-center">
+									<div class="content">
+										<span class="info">마감일</span>
+										<h4>Glasgow City Lorem</h4>
+										<div class="row">
+											<div class="col-6">
+												<i class="fa fa-clock"></i> <span class="list">5 Days</span>
+											</div>
+											<div class="col-6">
+												<i class="fa fa-map"></i> <span class="list">Daily
+													Places</span>
+											</div>
+										</div>
+										<p>Lorem ipsum dolor sit amet dire consectetur adipiscing
+											elit.</p>
+										<div class="main-button">
+											<a href="reservation.jsp">자세히보기</a>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
+					</div>
+					<%
+					}
+					%>
+
+					<div class="col-lg-12">
+						<ul class="page-numbers">
+							<li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
+							<li><a href="#">1</a></li>
+							<li class="active"><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#"><i class="fa fa-arrow-right"></i></a></li>
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -338,19 +315,15 @@ https://templatemo.com/tm-580-woox-travel
 				<div class="row">
 					<div class="col-lg-12">
 						<p>
-							Copyright Â© 2036 <a href="#">WoOx Travel</a> Company. All rights
+							Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights
 							reserved. <br>Design: <a href="https://templatemo.com"
 								target="_blank" title="free CSS templates">TemplateMo</a>
 							Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
 						</p>
 					</div>
 				</div>
-
-
 			</div>
 		</footer>
-
-
 
 
 		<!-- Scripts -->
@@ -382,8 +355,6 @@ https://templatemo.com/tm-580-woox-travel
 				console.log(slidercon.style.zIndex);
 				if (modal.style.display == "none") {
 
-
-
 					modal.style.display = "block"
 					modalBtn.textContent = "닫기"
 				}
@@ -392,28 +363,10 @@ https://templatemo.com/tm-580-woox-travel
 					// mainCaption.style.opacity ="1";
 					modal.style.display = "none"
 
-
 					modalBtn.textContent = "로그인";
 				}
-
-	</script>
-		<script>
-	
-
-	function tag_filter(id){
-		let value;
-		
-		if(id.style.backgroundColor == "white"){
-		id.style.backgroundColor ="blue";
-		value = id.textContent;
-		console.log(value);
-		}else {
-			id.style.backgroundColor = "white";
-			value = "";
-		}
-		
-		}
-	</script>
+			}
+		</script>
 </body>
 
 </html>

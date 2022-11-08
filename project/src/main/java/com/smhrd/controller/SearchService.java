@@ -15,10 +15,10 @@ import com.smhrd.model.ItemDAO;
 import com.smhrd.model.ItemDTO;
 
 /**
- * Servlet implementation class FilterService
+ * Servlet implementation class searchService
  */
-@WebServlet("/FilterService")
-public class FilterService extends HttpServlet {
+@WebServlet("/SearchService")
+public class SearchService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -26,23 +26,32 @@ public class FilterService extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("UTF-8");
+	
+request.setCharacterEncoding("UTF-8");
 		
-		String tag = request.getParameter("item_tag");
-		
+		String tag = request.getParameter("search");
+		if(tag.contains("#") == true) {
+			System.out.println(tag);
 
-		tag = "가족";
+			
+			ArrayList<ItemDTO> list= new ItemDAO().Filter(tag);
+			
+			
+			request.setAttribute("item_list", list);
+		}else {
+			System.out.println(tag);
+			
+			ArrayList<ItemDTO> item= new ItemDAO().searchName(tag);
+			
+			request.setAttribute("item_list", item);
+			
+		}
 		
-		ArrayList<ItemDTO> list= new ItemDAO().Filter(tag);
-		
-		
-		request.setAttribute("item_list", list);
-System.out.println();
+        System.out.println();
 		RequestDispatcher rd = request.getRequestDispatcher("about.jsp");
 		rd.forward(request, response);
 		
-		
-		
+	
 	}
 
 }

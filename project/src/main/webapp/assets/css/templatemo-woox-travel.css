@@ -558,8 +558,7 @@ Header Style
 
 .header-area.header-sticky {
 	min-height: 70px;
-	z-index:150;
-	
+	z-index: 150;
 }
 
 .header-area.header-sticky .nav li a.active {
@@ -1522,15 +1521,34 @@ body #user-button {
 }
 
 100
+
+
 %
 {
 opacity
+
+
 :
-1;
+
+
+1
+;
+
+
 display
+
+
 :
+
+
 block
-!important;
+
+
+!
+important
+;
+
+
 }
 }
 @
@@ -1540,15 +1558,34 @@ keyframes slide { 0%, 50% {
 }
 
 100
+
+
 %
 {
 opacity
+
+
 :
-1;
+
+
+1
+;
+
+
 display
+
+
 :
+
+
 block
-!important;
+
+
+!
+important
+;
+
+
 }
 }
 body #user-button .u-card {
@@ -1661,13 +1698,27 @@ body #user-button .u-icons a.u-random div {
 }
 
 100
+
+
 %
 {
 transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 360deg
-);
+
+
+)
+;
+
+
 }
 }
 @
@@ -1676,13 +1727,27 @@ keyframes diespin { 0% {
 }
 
 100
+
+
 %
 {
 transform
+
+
 :
-rotate(
+
+
+rotate
+(
+
+
 360deg
-);
+
+
+)
+;
+
+
 }
 }
 body #user-button .u-icons a.u-random:not(:hover) div {
@@ -1865,7 +1930,7 @@ body .options .option {
 	transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 
-body .options .option { 
+body .options .option {
 	-defaultBackground: #6A5ACD;
 }
 
@@ -2179,8 +2244,6 @@ Reservation Page Style
 	text-align: center;
 }
 
-
-
 .second-page-heading h4 {
 	font-size: 20px;
 	font-weight: 500;
@@ -2293,7 +2356,7 @@ Reservation Page Style
 	color: #afafaf;
 }
 
-.reservation-form #reservation-form input, .reservation-form #reservation-form 
+.reservation-form #reservation-form input, .reservation-form #reservation-form
 	{
 	width: 100%;
 	height: 46px;
