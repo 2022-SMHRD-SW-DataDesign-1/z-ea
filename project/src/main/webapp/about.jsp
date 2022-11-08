@@ -269,24 +269,60 @@ https://templatemo.com/tm-580-woox-travel
 										<%
 										ItemDAO dao = new ItemDAO();
 										ArrayList<ItemDTO> item_list = new ArrayList<ItemDTO>();
-										item_list = dao.Filter("#가족");
-
-										for (int i = 0; i < item_list.size(); i++) {
+										item_list = (ArrayList)request.getAttribute("item_list");
+/* 										item_list = dao.Filter("#가족");
+ */										int cnt = 0;
+										if (request.getParameter("page") == null) {
+											for (int i = 0; i < item_list.size(); i++) 
+												{ if(cnt == 8){break;}%>
+												
+												<a class="item_list"
+													href="ShowService?num=<%=item_list.get(i).getNum()%>"
+													style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox;">
+													<img src="assets/images/offers-01.jpg" alt=""
+													style="width: 200px; height: 200px;">
+													<div style="text-align: left; padding-left: 20px;">
+														<p><%=item_list.get(i).getName()%></p>
+														<p><%=item_list.get(i).getDesc()%></p>
+													</div>
+												</a>
+												<%
+												cnt++;}
 										%>
+										<%}else{
+										
+										int pageNum = Integer.parseInt(request.getParameter("page")) ;
+										for(int i = (pageNum-1)*8;i< (item_list.size()); i++){
+										 
+											if(cnt == 8){break;}%>
+											<a class="item_list"
+													href="ShowService?num=<%=item_list.get(i).getNum()%>"
+													style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox;">
+													<img src="assets/images/offers-01.jpg" alt=""
+													style="width: 200px; height: 200px;">
+													<div style="text-align: left; padding-left: 20px;">
+														<p><%=item_list.get(i).getName()%></p>
+														<p><%=item_list.get(i).getDesc()%></p>
+													</div>
+												</a> 
+											
+										
+										<% cnt++;}}%>
+										 
+										
+									
 
-										<a class="item_list"
-											href="ShowService?num=<%=item_list.get(i).getNum()%>"
-											style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox;">
-											<img src="assets/images/offers-01.jpg" alt=""
-											style="width: 200px; height: 200px;">
-											<div style="text-align: left; padding-left: 20px;">
-												<p><%=item_list.get(i).getName()%></p>
-												<p><%=item_list.get(i).getDesc()%></p>
-											</div>
+										<div style="width : 100%">
+										<%
+										for (int j = 0; j < ((item_list.size()) / 8) + 1; j++) {
+										%>
+										<a id="page" value="<%=j + 1%>" href="about.jsp?page=<%=j + 1%>" style="margin: 10px;">
+											<%=j + 1%>
 										</a>
 										<%
 										}
 										%>
+</div>
 
 									</div>
 								</div>
@@ -362,6 +398,8 @@ https://templatemo.com/tm-580-woox-travel
 
 	</script>
 		<script>
+	
+
 	function tag_filter(id){
 		let value;
 		
