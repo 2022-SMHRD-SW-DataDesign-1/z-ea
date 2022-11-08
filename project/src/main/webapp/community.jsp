@@ -23,7 +23,8 @@
 <link href='http://fonts.googleapis.com/css?family=Lora'
 	rel='stylesheet' type='text/css'>
 
-<!-- Additional CSS Files -->s
+<!-- Additional CSS Files -->
+s
 <link rel="stylesheet" href="assets/css/fontawesome.css">
 <link rel="stylesheet" href="assets/css/templatemo-woox-travel.css">
 <link rel="stylesheet" href="assets/css/owl.css">
@@ -59,7 +60,7 @@
 							<li><a href="about.jsp">테마</a></li>
 							<li><a href="reservation.jsp">예약</a></li>
 							<li><a href="transfer.jsp">양도</a></li>
-							<li><a href="community.jsp"  class="active">커뮤니티</a></li>
+							<li><a href="community.jsp" class="active">커뮤니티</a></li>
 							<%
 							if (info == null) {
 							%>
@@ -84,6 +85,7 @@
 						</a>
 						<!-- ***** Menu End ***** -->
 					</nav>
+
 					<div class="row">
 						<div class="col-12">
 							<nav class="main-nav">
@@ -229,7 +231,7 @@
 				<h2>커뮤니티</h2>
 				<a href="community_input.jsp">작성하기</a>
 				<%
-				ArrayList<BoardDTO> list = new BoardDAO().select();
+				ArrayList<BoardDTO> list = new BoardDAO().selectBoard();
 				%>
 			</header>
 

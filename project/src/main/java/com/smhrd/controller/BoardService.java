@@ -24,7 +24,12 @@ public class BoardService extends HttpServlet {
 			throws ServletException, IOException {
 
 		request.setCharacterEncoding("UTF-8");
+<<<<<<< HEAD
 
+=======
+		
+
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 		String path = "C:\\Users\\smhrd\\git\\repository\\project\\src\\main\\webapp\\file";
 
 		System.out.println(path);

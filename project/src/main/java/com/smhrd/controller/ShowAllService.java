@@ -9,16 +9,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.smhrd.model.ItemDAO;
 import com.smhrd.model.ItemDTO;
 
 /**
- * Servlet implementation class FilterService
+ * Servlet implementation class ShowAllService
  */
-@WebServlet("/FilterService")
-public class FilterService extends HttpServlet {
+@WebServlet("/ShowAllService")
+public class ShowAllService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -27,20 +26,11 @@ public class FilterService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
-		
-		String tag = request.getParameter("item_tag");
-		
-		
-		ArrayList<ItemDTO> list= new ItemDAO().Filter(tag);
-		
-		
+		ArrayList<ItemDTO> list= new ItemDAO().showAll();
 		request.setAttribute("item_list", list);
-System.out.println();
+		
 		RequestDispatcher rd = request.getRequestDispatcher("about.jsp");
 		rd.forward(request, response);
-		
-		
-		
 	}
 
 }

@@ -1,3 +1,4 @@
+<%@page import="java.math.BigDecimal"%>
 <%@page import="com.smhrd.model.MemberDTO"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.util.ArrayList"%>
@@ -45,12 +46,11 @@ https://templatemo.com/tm-580-woox-travel
 	<%
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
 	int num = Integer.parseInt(request.getParameter("num"));
-	
+
 	System.out.println(num);
 	ItemDAO dao = new ItemDAO();
 	ItemDTO item = dao.showDetail(num);
 	System.out.print(item);
-
 	%>
 
 	<!-- ***** Preloader Start ***** -->
@@ -226,17 +226,17 @@ https://templatemo.com/tm-580-woox-travel
 				</div>
 			</div>
 
-			<h2 id="topTitle"><%= item.getName() %></h2>
+			<h2 id="topTitle"><%=item.getName()%></h2>
 
 			<div class="area_address" id="topAddr">
-				<span><%= item.getAddr() %></span>
+				<span id="address"><%=item.getAddr()%></span>
 			</div>
 
 			<!-- 캐치플레이스 -->
 			<div class="dbDetail titBg" id="topCp">
 				<div class="titTypeWrap">
 					<h3>
-						<em><%= item.getName() %></em>
+						<em><%=item.getName()%></em>
 					</h3>
 				</div>
 			</div>
@@ -260,11 +260,12 @@ https://templatemo.com/tm-580-woox-travel
 		<!-- 사진보기 -->
 		<div id="galleryGo">
 			<div class="user_reg"></div>
-			<h3 class="blind" style="padding : 20px">사진보기</h3>
+			<h3 class="blind" style="padding: 20px">사진보기</h3>
 			<div class="photo_gallery">
 				<!-- 공사 사진 영역 -->
 				<div
-					class="swiper-container swiper-container-initialized swiper-container-horizontal" style="height:300px;">
+					class="swiper-container swiper-container-initialized swiper-container-horizontal"
+					style="height: 300px;">
 					<div class="swiper-wrapper" id="pImgList">
 						<div class="swiper-slide swiper-slide-active"
 							style="width: 450px;">
@@ -282,7 +283,7 @@ https://templatemo.com/tm-580-woox-travel
 
 					</div>
 					<!-- Add Pagination -->
-				<!-- 	<div class="swiper-pagination swiper-pagination-fraction">
+					<!-- 	<div class="swiper-pagination swiper-pagination-fraction">
 						<span class="swiper-pagination-current">1</span> / <span
 							class="swiper-pagination-total">5</span>
 					</div> -->
@@ -301,11 +302,11 @@ https://templatemo.com/tm-580-woox-travel
 
 		<!-- 상세정보 -->
 		<div id="detailGo">
-			<div class="blind" style="padding-top : 20px;">
-			<%= item.getDesc() %></div>
+			<div class="blind" style="padding-top: 20px;">
+				<%=item.getDesc()%></div>
 			<!-- 내용더보기 -->
 			<div class="wrap_contView">
-				<h3 style="padding : 20px">상세정보</h3>
+				<h3 style="padding: 20px">상세정보</h3>
 				<button class="btn_modify" onclick="goJikimi();">
 					<span>관광정보 수정요청</span>
 				</button>
@@ -320,7 +321,7 @@ https://templatemo.com/tm-580-woox-travel
                     여기에 값 넣기
                             </div> -->
 					</div>
-					
+
 					<div class="cont_more" style="display: block;">
 						<button type="button" class="btn_more" title="내용더보기">
 							내용 <span>더보기</span>
@@ -328,16 +329,57 @@ https://templatemo.com/tm-580-woox-travel
 					</div>
 				</div>
 			</div>
-		
 			<!-- <!-- 주변정보 지도 -->
+			
 			<div class="surroundingsMap" id="detailGo">
 				<div class="map_skip" tabindex="0">
 					<a style="display: none;" href="javascript:jumpkakaomap();">지도
 						건너뛰기</a>
 				</div>
-				<div id="map" class="wrap_map"
-					style="overflow: hidden; background: url(&quot;https://t1.daumcdn.net/mapjsapi/images/bg_tile.png&quot;);">
-					open 클래스 추가 시 지도 확장
+				<div id="map" class="wrap_map" style="overflow: hidden;">
+
+					<div id="map" style="width: 900px; height: 350px;"></div>
+
+					<script type="text/javascript"
+						src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e68d48a5b99c5c426f94e0e5b5f56dbc&libraries=services"></script>
+					<script>
+						var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+						    mapOption = {
+						        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+						        level: 3 // 지도의 확대 레벨
+						    };  
+						
+						// 지도를 생성합니다    
+						var map = new kakao.maps.Map(mapContainer, mapOption); 
+						
+						// 주소-좌표 변환 객체를 생성합니다
+						var geocoder = new kakao.maps.services.Geocoder();
+						
+						// 주소로 좌표를 검색합니다
+						geocoder.addressSearch(document.getElementById('address').textContent, function(result, status) {
+						
+						    // 정상적으로 검색이 완료됐으면 
+						     if (status === kakao.maps.services.Status.OK) {
+						
+						        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+						
+						        // 결과값으로 받은 위치를 마커로 표시합니다
+						        var marker = new kakao.maps.Marker({
+						            map: map,
+						            position: coords
+						        });
+						
+						        // 인포윈도우로 장소에 대한 설명을 표시합니다
+						        var infowindow = new kakao.maps.InfoWindow({
+						            content: '<div style="width:150px;text-align:center;padding:6px 0;">'+document.getElementById('topTitle').textContent+'</div>'
+						        });
+						        infowindow.open(map, marker);
+						
+						        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+						        map.setCenter(coords);
+						    } 
+						});    
+						</script>
 					<img src="../resources/images/sub/map_dim01.png" alt=""
 						style="width: 100%; height: 100%;"> <a
 						href="javascript:myLocation();" class="position">내위치</a> <a
@@ -361,7 +403,8 @@ https://templatemo.com/tm-580-woox-travel
 							</div>
 						</div>
 						<button type="button" class="close">닫기</button>
-					</div> -->
+					</div>
+					-->
 					<div class="map_menu">
 						<button type="button" class="view" style="display: none;">상세보기</button>
 						<ul>
@@ -382,7 +425,7 @@ https://templatemo.com/tm-580-woox-travel
 								</button></li>
 						</ul>
 					</div>
-		<!-- 			지도 -->
+					<!-- 			지도 -->
 					<div
 						style="position: absolute; cursor: default; z-index: 1; margin: 0px 6px; height: 19px; line-height: 14px; left: 0px; bottom: 0px; color: rgb(0, 0, 0);">
 						<div
@@ -437,7 +480,7 @@ https://templatemo.com/tm-580-woox-travel
 				</div>
 				<!-- //세부 정보 -->
 			</div>
-			
+
 
 			<!-- 중간 배너 -->
 			<ul class="list_banner clfix" style="display: none;">
@@ -495,16 +538,17 @@ https://templatemo.com/tm-580-woox-travel
 			<div id="replyGo">
 				<div class="replyWrap">
 					<!-- login 추가시 로그인 후 form -->
-					<h3 class="tit_reply" style="padding : 20px">
+					<h3 class="tit_reply" style="padding: 20px">
 						여행톡<span>0</span>
 					</h3>
 					<div class="write">
 						<div class="form">
 							<form name="tform" id="tform">
-								
+
 								<span class="writeForm"><textarea name="" rows=""
 										id="comment" placeholder="로그인 후 소중한 댓글을 남겨주세요." cols=""
-										onkeydown="commentresize(this);" readonly="readonly" style="width:100%; height: 100%"></textarea></span>
+										onkeydown="commentresize(this);" readonly="readonly"
+										style="width: 100%; height: 100%"></textarea></span>
 								<div class="fileRegbtn_wrap">
 									<span class="fileRegbtn"> <input type="file" id="fileUp"
 										name="fileUp" multiple="" onchange="fileChange(this)"
@@ -588,6 +632,34 @@ https://templatemo.com/tm-580-woox-travel
 					modalBtn.textContent = "로그인";
 				}
 
+	</script>
+	<script>
+		function checkE() {
+			let mb_email_ck = $('#mb_email_ck').val();
+			console.log(mb_email_ck);
+
+			$.ajax({
+				url : 'EmailCheckService',
+				data : {
+					'mb_email_ck' : mb_email_ck
+				},
+				type : 'get',
+				success : function(data) {
+					console.log(data);
+
+					if (data == 'true') {
+						$('#resultCheck').text('사용할 수 없는 아이디')
+					} else {
+						$('#resultCheck').text('사용할 수 있는 아이디')
+					}
+				},
+				error : function() {
+					console.log("통신실패");
+
+				}
+			});
+
+		}
 	</script>
 </body>
 

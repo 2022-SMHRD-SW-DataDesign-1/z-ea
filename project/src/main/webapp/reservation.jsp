@@ -31,7 +31,8 @@
 .rap {
 	max-width: 820px;
 	padding: 0 1.4rem;
-	margin-top: .3rem;
+	margin-top: 3rem;
+	height: 35rem;
 }
 
 .dateHead {
@@ -39,7 +40,7 @@
 }
 
 .dateHead div {
-	background: #e31b20;
+	background: darkslateblue;
 	color: #fff;
 	text-align: center;
 }
@@ -91,6 +92,7 @@
 .nextDay {
 	transform: rotate(45deg);
 }
+
 
 /* ---- */
 @import
@@ -189,24 +191,53 @@
 				</div>
 			</div>
 		</div>
-		<div class='rap'>
-			<div class="header">
-				<div class="btn prevDay"></div>
-				<h2 class='dateTitle'></h2>
-				<div class="btn nextDay"></div>
-			</div>
 
-			<div class="grid dateHead">
-				<div>일</div>
-				<div>월</div>
-				<div>화</div>
-				<div>수</div>
-				<div>목</div>
-				<div>금</div>
-				<div>토</div>
-			</div>
 
-			<div class="grid dateBoard"></div>
+		<div class="search-form">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class='rap'>
+							<h4>투숙기간 선택</h4>
+							<div class="header" style="margin-top: 30px;">
+								<div class="btn prevDay"></div>
+								<h2 class='dateTitle'></h2>
+								<div class="btn nextDay"></div>
+							</div>
+
+							<div class="grid dateHead" style="margin-top: 50px;">
+								<div>일</div>
+								<div>월</div>
+								<div>화</div>
+								<div>수</div>
+								<div>목</div>
+								<div>금</div>
+								<div>토</div>
+							</div>
+
+							<div class="grid dateBoard" style="margin-top: 50px;"></div>
+						</div>
+
+						<div class="col-lg-12">
+							<div class='rap'>
+								<h4 style="margin-bottom:30px;">객실 추가인원</h4>
+								<fieldset>
+									<select name="Guests" class="form-select"
+										aria-label="Default select example" id="chooseGuests"
+										onChange="this.form.click()">
+										<option selected>ex. 3 or 4 or 5</option>
+										<option type="checkbox" name="option1" value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4+">4+</option>
+									</select>
+								</fieldset>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<footer>
@@ -252,7 +283,7 @@ for (let i = 0; i < prevDay; i++) {
 
 // 이번달 날짜 표시하기
 for (let i = 1; i <= lastDay; i++) {    
-  htmlDummy += `<div>${i}</div>`;
+  htmlDummy += `<div class="#b${i}">${i}</div>`;
 }
 
 // 다음달 날짜 표시하기
@@ -278,7 +309,10 @@ makeCalendar(new Date(date.setMonth(date.getMonth() - 1)));
 document.querySelector(`.nextDay`).onclick = () => {
 makeCalendar(new Date(date.setMonth(date.getMonth() + 1)));
 }
-</script>
+
+
+
+	</script>
 		<!-- Bootstrap core JavaScript -->
 		<script src="vendor/jquery/jquery.min.js"></script>
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -288,12 +322,6 @@ makeCalendar(new Date(date.setMonth(date.getMonth() + 1)));
 		<script src="assets/js/tabs.js"></script>
 		<script src="assets/js/popup.js"></script>
 		<script src="assets/js/custom.js"></script>
-		<script>
-			$(".option").click(function() {
-				$(".option").removeClass("active");
-				$(this).addClass("active");
-			});
-		</script>
 </body>
 
 </html>

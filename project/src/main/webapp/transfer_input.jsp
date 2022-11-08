@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.ReservationDAO"%>
+<%@page import="com.smhrd.model.ReservationDTO"%>
 <%@page import="java.math.BigDecimal"%>
 <%@page import="com.smhrd.model.MemberDTO"%>
 <%@page import="com.smhrd.model.MemberDAO"%>
