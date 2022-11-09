@@ -194,12 +194,7 @@ https://templatemo.com/tm-580-woox-travel
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<h4>내 여행관리는 여기에서</h4>
-					<h2>My Page</h2>
-					<p>내 여행일정 관리부터 소통까지 !</p>
-					<div>
-						<a href="about.jsp">자세히 알아보기</a>
-					</div>
+				
 				</div>
 			</div>
 		</div>

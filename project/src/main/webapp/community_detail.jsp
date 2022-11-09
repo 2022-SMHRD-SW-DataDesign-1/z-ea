@@ -1,5 +1,3 @@
-<%@page import="java.util.List"%>
-<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.math.BigDecimal"%>
 <%@page import="com.smhrd.model.CommentDTO"%>
 <%@page import="com.smhrd.model.CommentDAO"%>
@@ -51,11 +49,12 @@
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
-							<li><a href="index.jsp" class="active">홈</a></li>
+							<li><a href="index.jsp" >홈</a></li>
 							<li><a href="about.jsp">테마</a></li>
-							<li><a href="deals.jsp">예약</a></li>
-							<li><a href="reservation.jsp">양도</a></li>
-							<li><a href="Community.html">커뮤니티</a></li>
+							<li><a href="reservation.jsp">예약</a></li>
+							<li><a href="transfer.jsp">양도</a></li>
+							<li><a href="community.jsp" class="active">커뮤니티</a></li>
+							
 							<%
 							if (info == null) {
 							%>
@@ -176,7 +175,7 @@
 	</div>
 	<%
 	BigDecimal board_num = new BigDecimal(request.getParameter("board_num"));
-	BoardDTO dto = new BoardDAO().show(board_num);
+	BoardDTO dto = new BoardDAO().showBoard(board_num);
 	%>
 	<!-- Portfolio section start -->
 	<section id="portfolio" class="darker">
@@ -228,58 +227,40 @@
 				<%
 				}
 				%>
-				<br> <br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<table>
-					<div style="font-size: 20px;">댓글</div>
+				<div>댓글</div>
+				<form action="CommentShowService?board_num=<%=dto.getBoard_num()%>">
+					<input type="submit" value="댓글조회">
+				</form>
+				<div>
+					<!-- 댓글내용조회 -->
 					<%
-					CommentDAO dao = new CommentDAO();
-					ArrayList<CommentDTO> clist = dao.show_comment(dto.getBoard_num());
-					System.out.println(clist);
+					// HttpSession s = request.getSession();
+					//ommentDTO cminfo =(CommentDTO)s.getAttribute("Comment_info");
+					//CommentDTO comment = new CommentDTO(board_num,dto.getMb_email(),dto.getMb_email());
+					//if(new BigDecimal(request.getParameter("num")) !=null){
+					ArrayList<CommentDTO> list = (ArrayList<CommentDTO>) new CommentDAO().show_comment(board_num);
 					%>
-					<div>
-						<!-- 댓글내용조회 -->
-						<table style="margin:20px;">
-							
-							<%
-							if (clist != null) {
-							%>
-							<%
-							for (int i = 0; i < clist.size(); i++) {
-							%>
-							<tr >
-								<th><%=i + 1%></th>
-							
-								<div class="col-lg-6">
-								<td><label for="Name" class="form-label"
-									style="display: inline-block;">작성자이메일 <%=clist.get(i).getMb_email()%>
-								</label></td>
-								</div>
-								<td><label for="Name" class="form-label"
-									style="display: inline-block;">작성시간 :  <%=clist.get(i).getComment_date()%> </label></td>
-							</tr>
-							<tr style="border: 1px black solid;">
-								<td><label for="Name" class="form-label"
-									style="display: inline-block;  padding: 5px;">댓글내용 : <%=clist.get(i).getComment_content()%> </label></td>
-							</tr>
-							<%
-							}
-							} else {
-							%>
-							<tr>
-								<th></th>
-							</tr>
-							<%
-							}
-							%>
-						</table>
-				</table>
+					<table>
+						<%
+						for (int i = 0; i < list.size(); i++) {
+						%>
+						<tr>
+							<th><%=i + 1%></th>
+						</tr>
+						<tr>
+							<td><span>작성자이메일 <%=list.get(i).getMb_email()%>
+							</span></td>
+							<td><span>작성시간 : <%=list.get(i).getComment_date()%></span></td>
+						</tr>
+						<tr>
+							<td><span>댓글내용 : <%=list.get(i).getComment_content()%></span></td>
+						</tr>
+						<%
+						}
+						%>
+					</table>
+				</div>
 			</div>
-		</div>
 		</div>
 	</section>
 	<!-- Portfolio section end -->

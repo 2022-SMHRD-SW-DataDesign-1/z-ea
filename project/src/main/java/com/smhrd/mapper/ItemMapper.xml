@@ -14,4 +14,7 @@
 	<select id="search" resultType="ItemDTO">
 	select * from GLAMPING_CARAVAN_TB where gc_name=#{name}
 	</select>
+	<select id="showAll" resultType="ItemDTO">
+	select * from GLAMPING_CARAVAN_TB
+	</select>
 </mapper>

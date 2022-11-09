@@ -16,6 +16,7 @@ public ArrayList<ItemDTO> Filter(String filter) {
 	SqlSession session = sqlSessionFactory.openSession(true);
 	System.out.println("DB");
 	ArrayList<ItemDTO> item_list = (ArrayList)session.selectList("Filter",filter);
+	System.out.println(item_list.size());
 	System.out.println("DAO");
 	session.close();
 	System.out.println(item_list);
@@ -32,6 +33,12 @@ public ItemDTO showDetail(int num) {
 public ArrayList<ItemDTO> searchName(String name) {
 	SqlSession session = sqlSessionFactory.openSession(true);
 	ArrayList<ItemDTO> dto = (ArrayList)session.selectList("search", name);
+	session.close();
+	return dto;
+}
+public ArrayList<ItemDTO> showAll() {
+	SqlSession session = sqlSessionFactory.openSession(true);
+	ArrayList<ItemDTO> dto = (ArrayList)session.selectList("showAll");
 	session.close();
 	return dto;
 }

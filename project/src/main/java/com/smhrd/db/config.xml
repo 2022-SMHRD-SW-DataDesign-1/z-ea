@@ -9,8 +9,9 @@
 		<typeAlias type="com.smhrd.model.MemberDTO" alias="MemberDTO"/>
 		<typeAlias type="com.smhrd.model.BoardDTO" alias="BoardDTO"/>
 		<typeAlias type="com.smhrd.model.CommentDTO" alias="CommentDTO"/>
-		<typeAlias type="com.smhrd.model.ItemDTO" alias="ItemDTO"/>
 		<typeAlias type="com.smhrd.model.ReviewDTO" alias="ReviewDTO"/>
+		<typeAlias type="com.smhrd.model.ItemDTO" alias="ItemDTO"/>
+		<typeAlias type="com.smhrd.model.TransferDTO" alias="TransferDTO"/>
 	</typeAliases>
 	
   <environments default="development">
@@ -30,5 +31,7 @@
     <mapper resource="com/smhrd/mapper/CommentMapper.xml"/>
     <mapper resource="com/smhrd/mapper/ItemMapper.xml"/>
     <mapper resource="com/smhrd/mapper/ReviewMapper.xml"/>
+    <mapper resource="com/smhrd/mapper/TransferMapper.xml"/>
+
   </mappers>
 </configuration>

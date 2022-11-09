@@ -1,6 +1,5 @@
 package com.smhrd.model;
 
-import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
@@ -21,16 +20,16 @@ public class BoardDAO {
 		return row;
 		
 	}
-	public ArrayList<BoardDTO> select() {
+	public ArrayList<BoardDTO> selectBoard() {
 		SqlSession session = sqlSessionFactory.openSession(true);
-		ArrayList<BoardDTO> list =(ArrayList) session.selectList("select");
+		ArrayList<BoardDTO> list =(ArrayList) session.selectList("selectBoard");
 		session.close();
 		
 		return list;
 	}
-	public BoardDTO show(BigDecimal board_num) {
+	public BoardDTO showBoard(BigDecimal board_num) {
 		SqlSession session = sqlSessionFactory.openSession(true);
-		BoardDTO dto = session.selectOne("show", board_num);
+		BoardDTO dto = session.selectOne("showBoard", board_num);
 		session.close();
 		
 		return dto;

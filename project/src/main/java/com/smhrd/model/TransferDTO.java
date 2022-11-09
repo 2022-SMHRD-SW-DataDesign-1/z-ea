@@ -11,8 +11,9 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @AllArgsConstructor
 @RequiredArgsConstructor
-
 public class TransferDTO {
+		// TODO Auto-generated constructor stub
+	
 	// 양도 번호
 	private BigDecimal transfer_num;
 	@NonNull
