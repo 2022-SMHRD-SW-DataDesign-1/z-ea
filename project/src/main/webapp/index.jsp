@@ -76,6 +76,7 @@ https://templatemo.com/tm-580-woox-travel
 								<button class="modalBtn" onclick="show()"
 									style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">로그인</button>
 							</li>
+							
 							<%
 							} else {
 							%>
@@ -86,6 +87,7 @@ https://templatemo.com/tm-580-woox-travel
 								style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">로그아웃</a>
 							</li>
 							<%
+							
 							}
 							%>
 						</ul>
@@ -427,7 +429,6 @@ https://templatemo.com/tm-580-woox-travel
 	<script src="vendor/jquery/jquery.slim.js"></script>
 	<script src="vendor/jquery/jquery.slim.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
 	<script src="assets/js/isotope.min.js"></script>
 	<script src="assets/js/owl-carousel.js"></script>
 	<script src="assets/js/wow.js"></script>
