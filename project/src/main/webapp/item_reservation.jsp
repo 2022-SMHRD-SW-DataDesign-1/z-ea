@@ -3,6 +3,7 @@
 <%@page import="com.smhrd.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@page import="java.util.Calendar"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -201,22 +202,13 @@
 		</div>
 
 
-		<div class="search-form">
+		<div class="search-form"
+			style="width: 980px; margin: 0 auto; margin-top: 100px; padding: 0 20px 27px 20px;">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-12">
+					<div class="col-lg-12"
+						style="padding: 8px; margin-bottom: 8px; background-color: #fff; box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);">
 						<div class='rap'>
-							<h2 id="topTitle"
-								style="font-size: 50px;"><%=item.getName()%></h2>
-							<div class="area_address" id="topAddr"
-								style="margin-top: 10px; font-size: 30px;">
-								<span id="address"><%=item.getAddr()%></span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-12">
-						<div class='rap' style="margin-top: -400px;">
 							<!-- 사진보기 -->
 							<div id="galleryGo">
 								<div class="user_reg"></div>
@@ -245,71 +237,123 @@
 									</div>
 								</div>
 							</div>
-							<!-- //사진보기 -->
+						</div>
+					</div>
+					<!-- //사진보기 -->
 
-							<div class="col-lg-12">
-								<div class='rap' >
-									<h4>일정 선택하기</h4>
-									<div class="header" style="margin-top: 30px;">
-										<div class="btn prevDay"></div>
-										<h2 class='dateTitle'></h2>
-										<div class="btn nextDay"></div>
-									</div>
-
-									<div class="grid dateHead" style="margin-top: 50px;">
-										<div>일</div>
-										<div>월</div>
-										<div>화</div>
-										<div>수</div>
-										<div>목</div>
-										<div>금</div>
-										<div>토</div>
-									</div>
-
-									<div class="grid dateBoard" style="margin-top: 50px;"></div>
-								</div>
-							</div>
-
-							<div class="col-lg-12">
-								<div class='rap'>
-									<h4 style="margin-bottom: 30px;">객실 추가인원</h4>
-									<fieldset>
-										<select name="Guests" class="form-select"
-											aria-label="Default select example" id="chooseGuests"
-											onChange="this.form.click()">
-											<option selected>ex. 3 or 4 or 5</option>
-											<option type="checkbox" name="option1" value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4+">4+</option>
-										</select>
-									</fieldset>
-								</div>
-
+					<div class="col-lg-12" style="margin-top: -250px;">
+						<div class='rap'>
+							<h2 id="topTitle" style="font-size: 35px;"><%=item.getName()%></h2>
+							<div class="area_address" id="topAddr"
+								style="margin-top: 10px; font-size: 30px;">
+								<span id="address"><%=item.getAddr()%></span><br> <span
+									id="address">전화번호</span>
 							</div>
 						</div>
+					</div>
+
+					<div class="col-lg-12" style="margin-top: -300px;">
+						<div class='rap'>
+							<h4>일정 선택하기</h4>
+							<div class="header" style="margin-top: 30px;">
+								<div class="btn prevDay"></div>
+								<h2 class='dateTitle'></h2>
+								<div class="btn nextDay"></div>
+							</div>
+
+							<div class="grid dateHead" style="margin-top: 50px;">
+								<div>일</div>
+								<div>월</div>
+								<div>화</div>
+								<div>수</div>
+								<div>목</div>
+								<div>금</div>
+								<div>토</div>
+							</div>
+
+							<div class="grid dateBoard" style="margin-top: 50px;"></div>
+						</div>
+						<button id="datesearch">검색</button>
+
+						<br>
+						<div>
+							<h4>체크인</h4>
+							<h4 id="checkin"></h4>
+							<h4>체크아웃</h4>
+							<h4 id="checkout"></h4>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="col-lg-12">
+					<div class='rap'>
+						<h4 style="margin-bottom: 30px;">방</h4>
+						<select>
+							<option selected></option>
+
+						</select>
+
+					</div>
+				</div>
+
+				<div class="col-lg-12">
+					<div class='rap'>
+						<h4 style="margin-bottom: 30px;">객실 인원</h4>
+						<fieldset>
+							<p>성인</p>
+							<select name="Guests" class="form-select"
+								aria-label="Default select example" id="chooseGuests"
+								onChange="this.form.click()">
+								<option selected>인원수</option>
+								<option type="checkbox" name="option1" value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4+">4+</option>
+							</select>
+							<p>아이</p>
+							<select name="Guests" class="form-select"
+								aria-label="Default select example" id="chooseGuests"
+								onChange="this.form.click()">
+								<option selected>인원수</option>
+								<option type="checkbox" name="option1" value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4+">4+</option>
+							</select>
+						</fieldset>
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
 
-			<footer>
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12">
-							<p>
-								Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights
-								reserved. <br>Design: <a href="https://templatemo.com"
-									target="_blank" title="free CSS templates">TemplateMo</a>
-								Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
-							</p>
-						</div>
-					</div>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<p>
+						Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights
+						reserved. <br>Design: <a href="https://templatemo.com"
+							target="_blank" title="free CSS templates">TemplateMo</a>
+						Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
+					</p>
 				</div>
-			</footer>
-			<!-- Scripts -->
+			</div>
+		</div>
+	</footer>
+	<!-- Scripts -->
+
+	<!-- <script>
+var today = new Date();
+var month = today.getMonth()+1;
+console.log("월 : ",month);
+</script>	 -->
 
 
-			<script>
+	<!-- 달력생성 -->
+	<script>
+
 //달력 생성
 const makeCalendar = (date) => {
 // 현재의 년도와 월 받아오기
@@ -327,6 +371,7 @@ const limitDay = prevDay + lastDay;
 const nextDay = Math.ceil(limitDay / 7) * 7;
 
 let htmlDummy = '';
+/* let arr=[]; */
 
 // 한달전 날짜 표시하기
 for (let i = 0; i < prevDay; i++) {
@@ -335,7 +380,10 @@ for (let i = 0; i < prevDay; i++) {
 
 // 이번달 날짜 표시하기
 for (let i = 1; i <= lastDay; i++) {    
-  htmlDummy += `<div class="#b${i}" onclick="tag_filter(this)" onclick='getInnerText(this)'>${i}</div>`;
+  htmlDummy += `<div class="#b${i}" onclick="tag_filter(this)">${i}</div>`;
+  `let arr${i}=[]`
+/*   arr.push(`let arr${i}=[]`); */
+/*   console.log(arr); */
 }
 
 // 다음달 날짜 표시하기
@@ -352,7 +400,6 @@ const date = new Date();
 makeCalendar(date);
 
 
-
 //이전달 이동
 document.querySelector(`.prevDay`).onclick = () => {
 makeCalendar(new Date(date.setMonth(date.getMonth() - 1)));
@@ -365,45 +412,88 @@ makeCalendar(new Date(date.setMonth(date.getMonth() + 1)));
 
 </script>
 
-			<script>
+
+
+	<!-- 날짜선택 -->
+	<script>
+		let day=[];
+		
 function tag_filter(id){
 	let value;
 			
 			if(id.style.backgroundColor == "white"){
-			id.style.backgroundColor ="yellow";
-			value = id.textContent;
-			console.log(value);
-			/* $.ajax({
-				url : 'Filter',  //요청 서버 url
-				data : {'inputE': inputE},	//요청할 때 같이 보내줄 데이터
-				type : 'get', 				//요청 타입(method)
-				success : function(data){	//통신성공 (function(넘겨준데이터))
-					res=data;
-			console.log(res);
-				},
-				error : function(){			//통신실패
-					console.log("통신실패");
+				id.style.backgroundColor ="yellow";
+				value = id.textContent;
+				console.log(value);
+				let check=day.includes(value);
+				if(check==false){
+				day.push(value);
 				}
-			}) */
-
-			}else {
-				id.style.backgroundColor = "white";
-				value = "";
 			}
 			
+			else{
+				id.style.backgroundColor ="white";
+				value=id.textContent;
+				for(var i=0;i<day.length;i++){
+					if(day[i]===value){
+						day.splice(i,1);
+						i--;
+						}
+					}
 			}
+			for(var i=0;i<day.length;i++){
+				console.log(typeof day[i]);
+				
+			}
+			
+		
+}
+			
 		</script>
 
+	<script>
+						document.getElementById("datesearch").onclick=function(){
+							let min=parseInt(day[0]);
+							let max=parseInt(day[0]);
+							
+							console.log(min);
+							console.log(max);
+							
+							for(var i=1;i<day.length;i++){
+								if(min>parseInt(day[i])){
+									min=parseInt(day[i]);
+								}
+							}
+							
+							for(var i=0;i<day.length;i++){
+								if(max<parseInt(day[i])){
+									max=parseInt(day[i]);
+								}
+							}
+							
+							console.log(min);
+							console.log(max);
+							
+							document.getElementById("checkin").textContent=min;
+							document.getElementById("checkout").textContent=max;
+							
+							
+						};
+						</script>
 
-			<!-- Bootstrap core JavaScript -->
-			<script src="vendor/jquery/jquery.min.js"></script>
-			<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-			<script src="assets/js/isotope.min.js"></script>
-			<script src="assets/js/owl-carousel.js"></script>
-			<script src="assets/js/wow.js"></script>
-			<script src="assets/js/tabs.js"></script>
-			<script src="assets/js/popup.js"></script>
-			<script src="assets/js/custom.js"></script>
+
+
+
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/js/isotope.min.js"></script>
+	<script src="assets/js/owl-carousel.js"></script>
+	<script src="assets/js/wow.js"></script>
+	<script src="assets/js/tabs.js"></script>
+	<script src="assets/js/popup.js"></script>
+	<script src="assets/js/custom.js"></script>
 </body>
 
 </html>

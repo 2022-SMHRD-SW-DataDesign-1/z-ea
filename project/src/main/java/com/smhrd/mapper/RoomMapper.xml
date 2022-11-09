@@ -7,4 +7,8 @@
 	select * from room_tb where room_num in(select room_num from reservation_calendar_tb
 	where mb_email = #{mb_email})
 	</select>
+	
+	<select id="room_select" parameterType="String" resultType="RoomDTO">
+	select * from room_tb where 
+	</select>
 </mapper>

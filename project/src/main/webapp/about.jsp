@@ -392,6 +392,7 @@ https://templatemo.com/tm-580-woox-travel
 				$(this).addClass("active");
 			});
 		</script>
+
 		<script>
 			function show() {
 				console.log("실행");
@@ -421,7 +422,7 @@ https://templatemo.com/tm-580-woox-travel
 
 		<script>
 	function tag_filter(id){
-let value;
+	let value;
 		
 		if(id.style.backgroundColor == "white"){
 		id.style.backgroundColor ="blue";
@@ -445,9 +446,6 @@ let value;
 		
 		}
 	</script>
-<<<<<<< HEAD
-
-=======
 	<script>
 	  function listView(data){ // [{           },{            },{                }]
 		  var tag="<table>";
@@ -472,11 +470,6 @@ let value;
 		
 	</script>
 	<script>
-	function FullView()
-	
-	</script>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
-		<script>
 	function filter(id){
 		let inputE = id.val();
 		console.log(inputE);
