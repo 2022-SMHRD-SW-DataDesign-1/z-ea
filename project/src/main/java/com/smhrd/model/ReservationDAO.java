@@ -26,5 +26,11 @@ public class ReservationDAO {
 		return list;
 	}
 	
-	
+	public ArrayList<ReservationDTO> my_re_show(String email){
+		SqlSession session = sqlSessionFactory.openSession(true);
+		ArrayList<ReservationDTO> list = (ArrayList)session.selectList("my_re_show",email);
+		session.close();
+		
+		return list;
+	}
 }

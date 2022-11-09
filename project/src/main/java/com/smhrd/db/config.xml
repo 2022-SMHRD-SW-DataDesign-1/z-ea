@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
@@ -10,8 +9,12 @@
 		<typeAlias type="com.smhrd.model.MemberDTO" alias="MemberDTO"/>
 		<typeAlias type="com.smhrd.model.BoardDTO" alias="BoardDTO"/>
 		<typeAlias type="com.smhrd.model.CommentDTO" alias="CommentDTO"/>
+		<typeAlias type="com.smhrd.model.ReviewDTO" alias="ReviewDTO"/>
 		<typeAlias type="com.smhrd.model.ItemDTO" alias="ItemDTO"/>
 		<typeAlias type="com.smhrd.model.TransferDTO" alias="TransferDTO"/>
+		<typeAlias type="com.smhrd.model.ReservationDTO" alias="ReservationDTO"/>
+		<typeAlias type="com.smhrd.model.RoomDTO" alias="RoomDTO"/>
+		<typeAlias type="com.smhrd.model.GlampingDTO" alias="GlampingDTO"/>
 	</typeAliases>
 	
   <environments default="development">
@@ -30,6 +33,11 @@
     <mapper resource="com/smhrd/mapper/BoardMapper.xml"/>
     <mapper resource="com/smhrd/mapper/CommentMapper.xml"/>
     <mapper resource="com/smhrd/mapper/ItemMapper.xml"/>
+    <mapper resource="com/smhrd/mapper/ReviewMapper.xml"/>
     <mapper resource="com/smhrd/mapper/TransferMapper.xml"/>
+    <mapper resource="com/smhrd/mapper/ReservationMapper.xml"/>
+    <mapper resource="com/smhrd/mapper/RoomMapper.xml"/>
+    <mapper resource="com/smhrd/mapper/GlampingMapper.xml"/>
+
   </mappers>
 </configuration>
