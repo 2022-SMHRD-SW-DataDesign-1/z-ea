@@ -470,7 +470,7 @@ https://templatemo.com/tm-580-woox-travel
 						<div class="inr">
 							<ul>
 								<li><strong>문의 및 안내</strong><span class="mo"><a
-										href="#"><%=item.getTel()%></a></span><span class="pc">010-4252-4420</span></li>
+										href="#"><%=item.getTel()%></a></span></li>
 								<li><strong>종류</strong><span><%=item.getType()%></span></li>
 								<!-- <li><strong>홈페이지</strong><span><a
 										href=" http://tayocaravan.com" target="_blank"
