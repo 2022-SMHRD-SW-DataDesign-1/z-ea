@@ -1,6 +1,8 @@
 package com.smhrd.controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +18,8 @@ public class ItemReservService extends HttpServlet {
 		int num = Integer.parseInt(request.getParameter("num"));
 		System.out.println(num);
 		
-		
+		RequestDispatcher rd = request.getRequestDispatcher("item_reservation.jsp");
+		rd.forward(request, response);
 	}
 
 }

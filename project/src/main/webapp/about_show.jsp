@@ -330,7 +330,7 @@ https://templatemo.com/tm-580-woox-travel
 				</div>
 			</div>
 			<!-- <!-- 주변정보 지도 -->
-			
+
 			<div class="surroundingsMap" id="detailGo">
 				<div class="map_skip" tabindex="0">
 					<a style="display: none;" href="javascript:jumpkakaomap();">지도
@@ -571,7 +571,13 @@ https://templatemo.com/tm-580-woox-travel
 							</div>
 						</div>
 					</div>
-				<div id= reservation style="width: 100%; height: 50px; margin: 15px; text-align: center;"  > <button type="button" class="btn btn-primary btn-lg" style="background-color : #6A5ACD;">예약하러가기</button></div>
+					<a href="ItemReservService?num=<%=item.getNum() %>">
+						<div id=reservation
+							style="width: 100%; height: 50px; margin: 15px; text-align: center;">
+							<button type="button" class="btn btn-primary btn-lg"
+								style="background-color: #6A5ACD;">예약하러가기</button>
+						</div>
+					</a>
 				</div>
 			</div>
 			<!-- //여행톡 -->
@@ -633,7 +639,7 @@ https://templatemo.com/tm-580-woox-travel
 				}
 
 	</script>
-	<script>
+			<script>
 		function checkE() {
 			let mb_email_ck = $('#mb_email_ck').val();
 			console.log(mb_email_ck);

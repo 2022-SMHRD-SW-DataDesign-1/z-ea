@@ -206,19 +206,20 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class='rap'>
-							<h2 id="topTitle"><%=item.getName()%></h2>
-							<div class="area_address" id="topAddr">
+							<h2 id="topTitle"
+								style="font-size: 50px;"><%=item.getName()%></h2>
+							<div class="area_address" id="topAddr"
+								style="margin-top: 10px; font-size: 30px;">
 								<span id="address"><%=item.getAddr()%></span>
 							</div>
 						</div>
 					</div>
 
 					<div class="col-lg-12">
-						<div class='rap'>
+						<div class='rap' style="margin-top: -400px;">
 							<!-- 사진보기 -->
 							<div id="galleryGo">
 								<div class="user_reg"></div>
-								<h3 class="blind" style="padding: 20px">사진보기</h3>
 								<div class="photo_gallery">
 									<!-- 공사 사진 영역 -->
 									<div
@@ -241,27 +242,13 @@
 											</div>
 
 										</div>
-										<!-- Add Pagination -->
-										<!-- 	<div class="swiper-pagination swiper-pagination-fraction">
-						<span class="swiper-pagination-current">1</span> / <span
-							class="swiper-pagination-total">5</span>
-					</div> -->
-										<!-- Add Arrows -->
-										<div class="swiper-button-next" tabindex="0" role="button"
-											aria-label="Next slide" aria-disabled="false">다음</div>
-										<div class="swiper-button-prev swiper-button-disabled"
-											tabindex="0" role="button" aria-label="Previous slide"
-											aria-disabled="true">이전</div>
-										<span class="swiper-notification" aria-live="assertive"
-											aria-atomic="true"></span>
 									</div>
-
 								</div>
 							</div>
 							<!-- //사진보기 -->
 
 							<div class="col-lg-12">
-								<div class='rap'>
+								<div class='rap' >
 									<h4>일정 선택하기</h4>
 									<div class="header" style="margin-top: 30px;">
 										<div class="btn prevDay"></div>
