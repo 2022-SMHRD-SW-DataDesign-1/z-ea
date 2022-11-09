@@ -12,10 +12,10 @@ public class ItemDAO {
 private SqlSessionFactory sqlSessionFactory =
 SqlSessionManger.getSqlSession();
 
-public ArrayList<ItemDTO> Filter(String filter) {
+public ArrayList<ItemDTO> Filter(String tag) {
 	SqlSession session = sqlSessionFactory.openSession(true);
 	System.out.println("DB");
-	ArrayList<ItemDTO> item_list = (ArrayList)session.selectList("Filter",filter);
+	ArrayList<ItemDTO> item_list = (ArrayList)session.selectList("Filter",tag);
 	System.out.println(item_list.size());
 	System.out.println("DAO");
 	session.close();
