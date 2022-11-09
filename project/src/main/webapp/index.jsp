@@ -58,8 +58,8 @@ https://templatemo.com/tm-580-woox-travel
 				<div class="col-12">
 					<nav class="main-nav">
 						<!-- ***** Logo Start ***** -->
-						<a href="index.jsp" class="logo"> <img
-							src="assets/images/logo.png" alt="">
+						<a href="index.jsp" class="logo" > <img
+							src="assets/images/logo.png" style="width : 50px; margin-top: -5px;" alt="">
 						</a>
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->

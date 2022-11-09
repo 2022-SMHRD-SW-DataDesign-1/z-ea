@@ -32,7 +32,7 @@ public class ReservationService extends HttpServlet {
 		System.out.println(dto.getMb_email());
 		
 		ReservationDTO info = new ReservationDTO(rc_num,room_num,);
-		int row = new ReservationDAO().insert(info);s
+		int row = new ReservationDAO().insert(info);
 	
 		
 	}

@@ -189,7 +189,7 @@
 					<div class="col-lg-12">
 						<h2>예약 양도</h2>
 						<div class="main-button">
-							<a href="about.jsp">양도하러가기</a>
+							<a href="transfer_input.jsp">양도하러가기</a>
 						</div>
 					</div>
 				</div>

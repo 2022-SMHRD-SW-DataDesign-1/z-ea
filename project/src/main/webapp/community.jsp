@@ -5,19 +5,24 @@
 <%@page import="com.smhrd.model.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
 <!-- Load fonts -->
 <link href='http://fonts.googleapis.com/css?family=Montserrat'
 	rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lora'
 	rel='stylesheet' type='text/css'>
+
 <!-- Additional CSS Files -->
 
 <link rel="stylesheet" href="assets/css/fontawesome.css">
@@ -26,10 +31,12 @@
 <link rel="stylesheet" href="assets/css/animate.css">
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
 <!-- Load css styles -->
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-<!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
+
 </head>
+
 <body>
 	<%
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
@@ -37,52 +44,56 @@
 	<!-- ***** Header Area Start ***** -->
 	<header class="header-area header-sticky">
 		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<nav class="main-nav">
-						<!-- ***** Logo Start ***** -->
-						<a href="Main.html" class="logo"> <img
-							src="assets/images/logo.png" alt="">
-						</a>
-						<!-- ***** Logo End ***** -->
-						<!-- ***** Menu Start ***** -->
-						<ul class="nav">
-							<li><a href="index.jsp">홈</a></li>
-							<li><a href="about.jsp">글램핑&카라반</a></li>
-							<li><a href="reservation.jsp">예약</a></li>
-							<li><a href="transfer.jsp">양도</a></li>
-							<li><a href="community.html" class="active">커뮤니티</a></li>
-							<%
-							if (info == null) {
-							%>
-							<li>
-								<button class="modalBtn" onclick="show()"
-									style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">로그인</button>
-							</li>
-							<%
-							} else {
-							%>
-							<li><a href="MyPage.jsp" class="modalBtn"
-								style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">마이페이지</a>
-							</li>
-							<li><a href="LogoutService" class="modalBtn"
-								style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">로그아웃</a>
-							</li>
-							<%
-							}
-							%>
-						</ul>
-						<a class='menu-trigger'> <span>Menu</span>
-						</a>
-						<!-- ***** Menu End ***** -->
-					</nav>
+			
+		
+					<div class="row">
+						<div class="col-12">
+							<nav class="main-nav">
+								<!-- ***** Logo Start ***** -->
+								<a href="Main.html" class="logo"> <img
+									src="assets/images/logo.png" alt="">
+								</a>
+								<!-- ***** Logo End ***** -->
+
+								<!-- ***** Menu Start ***** -->
+								<ul class="nav">
+									<li><a href="index.jsp">홈</a></li>
+									<li><a href="about.jsp">글램핑&카라반</a></li>
+									<li><a href="deals.jsp">예약</a></li>
+									<li><a href="reservation.jsp">양도</a></li>
+									<li><a href="community.html" class="active">커뮤니티</a></li>
+									<%
+									if (info == null) {
+									%>
+									<li>
+										<button class="modalBtn" onclick="show()"
+											style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">로그인</button>
+									</li>
+									<%
+									} else {
+									%>
+									<li><a href="MyPage.jsp" class="modalBtn"
+										style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">마이페이지</a>
+									</li>
+									<li><a href="LogoutService" class="modalBtn"
+										style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">로그아웃</a>
+									</li>
+									<%
+									}
+									%>
+								</ul>
+								<a class='menu-trigger'> <span>Menu</span>
+								</a>
+								<!-- ***** Menu End ***** -->
+							</nav>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-		</div>
-		</div>
 	</header>
 	<!-- ***** Header Area End ***** -->
+
 	<div class="modalPopup" style="z-index: 100; display: none;">
 		<div class="ModalBack"
 			style="position: fixed; background-color: black; width: 100%; height: 100%; opacity: 0.5;">
@@ -172,17 +183,20 @@
 			</form>
 		</div>
 	</div>
+
 	<!-- Portfolio section start -->
 	<section id="portfolio" class="darker">
 		<div class="container2">
 			<header>
 				<h2>커뮤니티</h2>
-				<a href="community_input.jsp">작성하기</a>
+				
 				<%
 				ArrayList<BoardDTO> list = new BoardDAO().selectBoard();
 				%>
 			</header>
+
 			<div id="single-project"></div>
+
 			<div class="row">
 				<%
 				for (int i = 0; i < list.size(); i++) {
@@ -203,11 +217,15 @@
 				</figure>
 				<%
 				}
-				%>
+				%><a href="community_input.jsp" style="text-align: right; margin-top : 30px; margin-bottom : 30px;"><button type="button" class="btn btn-primary btn-lg" style="background-color : #6A5ACD;">작성하기</button></a>
+
+
+
 			</div>
 		</div>
 	</section>
 	<!-- Portfolio section end -->
+
 	<footer>
 		<div class="container">
 			<div class="row">
@@ -222,6 +240,9 @@
 			</div>
 		</div>
 	</footer>
+
+
+
 	<!-- Load jQuery -->
 	<script>
 		function show() {
@@ -233,28 +254,37 @@
 			console.log(modal.style.zIndex);
 			console.log(slidercon.style.zIndex);
 			if (modal.style.display == "none") {
+
 				modal.style.display = "block"
 				modalBtn.textContent = "닫기"
+
 			} else {
+
 				// mainCaption.style.opacity ="1";
 				modal.style.display = "none"
+
 				modalBtn.textContent = "로그인";
 			}
 		}
 	</script>
 	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 	<script src="vendor/jquery/jquery.js"></script>
+
 	<!-- Load Booststrap -->
 	<script type="text/javascript" src="js/bootstrap.js"></script>
+
 	<script type="text/javascript" src="js/smooth-scroll.js"></script>
+
 	<script type="text/javascript"
 		src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
 	<!-- Load custom js for theme -->
 	<script type="text/javascript" src="js/app.js"></script>
 	<script>
 		function checkE() {
 			let mb_email_ck = $('#mb_email_ck').val();
 			console.log(mb_email_ck);
+
 			$.ajax({
 				url : 'EmailCheckService',
 				data : {
@@ -263,6 +293,7 @@
 				type : 'get',
 				success : function(data) {
 					console.log(data);
+
 					if (data == 'true') {
 						$('#resultCheck').text('사용할 수 없는 아이디')
 					} else {
@@ -271,9 +302,14 @@
 				},
 				error : function() {
 					console.log("통신실패");
+
 				}
 			});
+
 		}
 	</script>
+
+
 </body>
+
 </html>
