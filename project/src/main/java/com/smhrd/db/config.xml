@@ -10,6 +10,7 @@
 		<typeAlias type="com.smhrd.model.BoardDTO" alias="BoardDTO"/>
 		<typeAlias type="com.smhrd.model.CommentDTO" alias="CommentDTO"/>
 		<typeAlias type="com.smhrd.model.ItemDTO" alias="ItemDTO"/>
+		<typeAlias type="com.smhrd.model.ReviewDTO" alias="ReviewDTO"/>
 	</typeAliases>
 	
   <environments default="development">
@@ -28,5 +29,6 @@
     <mapper resource="com/smhrd/mapper/BoardMapper.xml"/>
     <mapper resource="com/smhrd/mapper/CommentMapper.xml"/>
     <mapper resource="com/smhrd/mapper/ItemMapper.xml"/>
+    <mapper resource="com/smhrd/mapper/ReviewMapper.xml"/>
   </mappers>
 </configuration>

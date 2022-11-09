@@ -26,4 +26,20 @@
 	<select id="show" parameterType="Bigdecimal" resultType="BoardDTO">
 	select * from community_tb where board_num = #{board_num}
 	</select>
+	<select id="my_board" parameterType="String" resultType="BoardDTO">
+	select * from community_tb where mb_email = #{mb_email}
+	</select>
+	<update id="boardupdate" parameterType="BoardDTO" >
+	UPDATE community_tb
+SET
+    board_title = #{board_title}, 
+    board_content = #{board_content}, 
+    board_file = #{board_file}, 
+    board_category = #{board_category}, 
+    board_date = sysdate
+WHERE board_num = #{board_num}
+	</update>
+	<delete id="board_delete">
+	delete from community_tb where board_num =#{board_num}
+	</delete>
 </mapper>
