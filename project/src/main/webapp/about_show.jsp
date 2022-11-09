@@ -572,6 +572,7 @@ https://templatemo.com/tm-580-woox-travel
 							</div>
 						</div>
 					</div>
+				<div id= reservation style="width: 100%; height: 50px; margin: 15px; text-align: center;"  > <button type="button" class="btn btn-primary btn-lg" style="background-color : #6A5ACD;">예약하러가기</button></div>
 				</div>
 			</div>
 			<!-- //여행톡 -->
