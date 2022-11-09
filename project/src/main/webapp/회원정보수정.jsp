@@ -106,7 +106,7 @@ https://templatemo.com/tm-580-woox-travel
 				<div class="col-lg-12">
 					<h2>회원 정보 수정</h2>
 					<div class="main-button">
-						<a href="index.jsp">BACK</a>
+						<a href="MyPage.jsp">BACK</a>
 
 					</div>
 				</div>

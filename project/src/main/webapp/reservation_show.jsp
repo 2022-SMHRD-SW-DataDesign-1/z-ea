@@ -1,3 +1,11 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="com.smhrd.model.GlampingDTO"%>
+<%@page import="com.smhrd.model.GlampingDAO"%>
+<%@page import="com.smhrd.model.RoomDTO"%>
+<%@page import="com.smhrd.model.RoomDAO"%>
+<%@page import="com.smhrd.model.ReservationDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.smhrd.model.ReservationDAO"%>
 <%@page import="com.smhrd.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -106,14 +114,24 @@ https://templatemo.com/tm-580-woox-travel
 				<div class="col-lg-12">
 					<h2>예약 정보 조회</h2>
 					<div class="main-button">
-						<a href="index.jsp">BACK</a>
+						<a href="MyPage.jsp">BACK</a>
 
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
+	<%
+	ArrayList<ReservationDTO> re_list = new ReservationDAO().my_re_show(info.getMb_email());
+	ArrayList<RoomDTO> ro_list = new RoomDAO().my_room_show(info.getMb_email());
+	ArrayList<GlampingDTO> gl_list = new GlampingDAO().my_glamping_show(info.getMb_email());
+	System.out.println(re_list.size());
+	System.out.println(ro_list.size());
+	System.out.println(gl_list.size());
+	%>
+	<%
+	if (info != null) {
+	%>
 	<div class="reservation-form">
 		<div class="row" style="margin-bottom: 40px;">
 			<div class="col-lg-12">
@@ -121,59 +139,115 @@ https://templatemo.com/tm-580-woox-travel
 					action="#">
 
 					<div class="row">
-
 						<h4>예약정보조회</h4>
 				</form>
-				<!-- 이메일 -->
-				<div class="col-lg-6">
-					<fieldset>
-						<label for="email" class="form-label"></label>
-					</fieldset>
-				</div>
+				<%
+				for (int i = 0; i < re_list.size(); i++) {
+				%>
 				<!-- 이름 -->
-				<form action="UpdateService" method="post"
-					style="margin-bottom: 40px;">
+				<div style="margin-bottom: 40px;">
 					<div class="col-lg-6">
 						<fieldset>
-							<label for="Name" class="form-label">Name</label><br> <input
-								type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required>
+							<label for="Name" class="form-label">이용자이메일</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=re_list.get(i).getMb_email()%></p>
 						</fieldset>
 					</div>
-					<!-- 전화번호 -->
 					<div class="col-lg-6">
 						<fieldset>
-							<label for="Number" class="form-label">Phone Number</label> <input
-								type="text" name="mb_phone" class="Number"
-								placeholder="Ex. +xxx xxx xxx">
+							<label for="Name" class="form-label">장소유형</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=gl_list.get(i).getGc_type()%></p>
 						</fieldset>
 					</div>
-					<!-- 패스워드 -->
 					<div class="col-lg-6">
 						<fieldset>
-							<label for="password" class="form-label">Password</label> <input
-								type="password" name="mb_pw" class="Number"
-								placeholder="password">
+							<label for="Name" class="form-label">장소명</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=gl_list.get(i).getGc_name()%></p>
 						</fieldset>
 					</div>
-					<!-- 생년월일 -->
-					<div class="col-lg-12">
+					<div class="col-lg-6">
 						<fieldset>
-							<label for="Number" class="form-label">Birth</label> <input
-								type="date" name="mb_birthdate" class="date" required>
+							<label for="Name" class="form-label">장소연락처</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=gl_list.get(i).getGc_tel()%></p>
+						</fieldset>
+					</div>
+					<div class="col-lg-6">
+						<fieldset>
+							<label for="Name" class="form-label">장소주소</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=gl_list.get(i).getGc_addr()%></p>
+						</fieldset>
+					</div>
+					<div class="col-lg-6">
+						<fieldset>
+							<label for="Name" class="form-label">장소시설</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=gl_list.get(i).getGc_facilities()%></p>
+						</fieldset>
+					</div>
+					<div class="col-lg-6">
+						<fieldset>
+							<label for="Name" class="form-label">장소부가시설</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=gl_list.get(i).getGc_Ad_facilities()%></p>
+						</fieldset>
+					</div>
+					<div class="col-lg-6">
+						<fieldset>
+							<label for="Name" class="form-label">가격</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=gl_list.get(i).getGc_price()%></p>
 						</fieldset>
 					</div>
 
-					<div class="col-lg-12">
+					<div class="col-lg-6">
 						<fieldset>
-							<button type="submit" class="main-button">Save</button>
+							<label for="Name" class="form-label">방이름</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=ro_list.get(i).getRoom_name()%></p>
 						</fieldset>
 					</div>
-				</form>
+					<div class="col-lg-6">
+						<fieldset>
+							<label for="Name" class="form-label">방상태</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=ro_list.get(i).getRoom_status()%></p>
+						</fieldset>
+					</div>
+					<div class="col-lg-6">
+						<fieldset>
+							<label for="Name" class="form-label">호실제한인원수</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=ro_list.get(i).getPeople_limit()%></p>
+						</fieldset>
+					</div>
+					<div class="col-lg-6">
+						<fieldset>
+							<label for="Name" class="form-label">입실시간</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=re_list.get(i).getCheck_in()%></p>
+						</fieldset>
+					</div>
+					<div class="col-lg-6">
+						<fieldset>
+							<label for="Name" class="form-label">퇴실시간</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=re_list.get(i).getCheck_out()%></p>
+						</fieldset>
+					</div>
+				</div>
+				<%
+				}
+				%>
 			</div>
 		</div>
 	</div>
-	
+	<%
+	}
+	%>
 	<!-- 모달 -->
 	<div class="modalPopup" style="display: none;">
 		<div class="ModalBack" onclick
@@ -266,8 +340,8 @@ https://templatemo.com/tm-580-woox-travel
 		</div>
 	</div>
 
-	
-	
+
+
 
 	<!-- Scripts -->
 	<!-- Bootstrap core JavaScript -->
