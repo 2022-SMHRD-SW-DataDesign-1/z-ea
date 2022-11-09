@@ -1,5 +1,4 @@
 <%@page import="com.smhrd.model.MemberDTO"%>
-
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.smhrd.model.ItemDAO"%>
@@ -72,8 +71,8 @@ https://templatemo.com/tm-580-woox-travel
 						<ul class="nav">
 							<li><a href="index.jsp">홈</a></li>
 							<li><a href="about.jsp" class="active">글램핑&카라반</a></li>
-							<li><a href="deals.jsp">예약</a></li>
-							<li><a href="reservation.jsp">양도</a></li>
+							<li><a href="reservation.jsp">예약</a></li>
+							<li><a href="transfer.jsp">양도</a></li>
 							<li><a href="community.jsp">커뮤니티</a></li>
 							<%
 							if (info == null) {
@@ -263,92 +262,92 @@ https://templatemo.com/tm-580-woox-travel
 								<hr />
 
 								<div>
-							       <div id="item">
-							       		<div
-										 style="margin-top: 5%; width: 100%; display: inline-block; padding: 10px 5px 10px 5px;">
+									<div id="item">
+										<div
+											style="margin-top: 5%; width: 100%; display: inline-block; padding: 10px 5px 10px 5px;">
 
-										<%
-										ItemDAO dao = new ItemDAO();
-										ArrayList<ItemDTO> item_list = new ArrayList<ItemDTO>();
-										item_list = (ArrayList) request.getAttribute("item_list");
-										/* if(request.getParameter("tag") != null){
-											item_list = dao.Filter(request.getParameter("tag"));
-										}
-										 */
+											<%
+											ItemDAO dao = new ItemDAO();
+											ArrayList<ItemDTO> item_list = new ArrayList<ItemDTO>();
+											item_list = (ArrayList) request.getAttribute("item_list");
+											/* if(request.getParameter("tag") != null){
+												item_list = dao.Filter(request.getParameter("tag"));
+											}
+											 */
 
-										item_list = dao.showAll();
+											item_list = dao.showAll();
 
-										int cnt = 0;
-										if (request.getParameter("page") == null) {
-											for (int i = 0; i < item_list.size(); i++) {
-												if (cnt == 8) {
-											break;
-												}
-										%>
-
-										<a id="item_list" class="item_list"
-											href="ShowService?num=<%=item_list.get(i).getNum()%>"
-											style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox;">
-											<img src="assets/images/offers-01.jpg" alt=""
-											style="width: 200px; height: 200px;">
-											<div style="text-align: left; padding-left: 20px;">
-												<p id="item"><%=item_list.get(i).getName()%></p>
-												<p id="item"><%=item_list.get(i).getDesc()%></p>
-											</div>
-										</a>
-
-										<%
-										cnt++;
-										}
-										%>
-										<%
-										} else {
-
-										int pageNum = Integer.parseInt(request.getParameter("page"));
-										System.out.print(item_list.size());
-										for (int i = (pageNum - 1) * 8; i < (item_list.size()); i++) {
-
-											if (cnt == 8) {
+											int cnt = 0;
+											if (request.getParameter("page") == null) {
+												for (int i = 0; i < item_list.size(); i++) {
+													if (cnt == 8) {
 												break;
-											}
-										%>
-										<a class="item_list"
-											href="ShowService?num=<%=item_list.get(i).getNum()%>"
-											style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox;">
-											<img src="assets/images/offers-01.jpg" alt=""
-											style="width: 200px; height: 200px;">
-											<div style="text-align: left; padding-left: 20px;">
-												<p id="item"><%=item_list.get(i).getName()%></p>
-												<p id="item"><%=item_list.get(i).getDesc()%></p>
-											</div>
-										</a>
-
-
-										<%
-										cnt++;
-										}
-										}
-										%>
-
-
-
-
-										<div style="width: 100%">
-											<%
-											for (int j = 0; j < ((item_list.size()) / 8) + 1; j++) {
+													}
 											%>
 
-											<a id="page" value="<%=j + 1%>" href="?page=<%=j + 1%>  "
-												style="margin: 10px;"> <%=j + 1%>
+											<a id="item_list" class="item_list"
+												href="ShowService?num=<%=item_list.get(i).getNum()%>"
+												style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox;">
+												<img src="assets/images/offers-01.jpg" alt=""
+												style="width: 200px; height: 200px;">
+												<div style="text-align: left; padding-left: 20px;">
+													<p id="item"><%=item_list.get(i).getName()%></p>
+													<p id="item"><%=item_list.get(i).getDesc()%></p>
+												</div>
 											</a>
+
 											<%
+											cnt++;
 											}
 											%>
-										</div>
+											<%
+											} else {
 
+											int pageNum = Integer.parseInt(request.getParameter("page"));
+											System.out.print(item_list.size());
+											for (int i = (pageNum - 1) * 8; i < (item_list.size()); i++) {
+
+												if (cnt == 8) {
+													break;
+												}
+											%>
+											<a class="item_list"
+												href="ShowService?num=<%=item_list.get(i).getNum()%>"
+												style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox;">
+												<img src="assets/images/offers-01.jpg" alt=""
+												style="width: 200px; height: 200px;">
+												<div style="text-align: left; padding-left: 20px;">
+													<p id="item"><%=item_list.get(i).getName()%></p>
+													<p id="item"><%=item_list.get(i).getDesc()%></p>
+												</div>
+											</a>
+
+
+											<%
+											cnt++;
+											}
+											}
+											%>
+
+
+
+
+											<div style="width: 100%">
+												<%
+												for (int j = 0; j < ((item_list.size()) / 8) + 1; j++) {
+												%>
+
+												<a id="page" value="<%=j + 1%>" href="?page=<%=j + 1%>  "
+													style="margin: 10px;"> <%=j + 1%>
+												</a>
+												<%
+												}
+												%>
+											</div>
+
+										</div>
 									</div>
-							       </div>
-							       
+
 								</div>
 							</div>
 						</div>
@@ -373,8 +372,6 @@ https://templatemo.com/tm-580-woox-travel
 
 			</div>
 		</footer>
-
-
 
 
 		<!-- Scripts -->
@@ -421,11 +418,10 @@ https://templatemo.com/tm-580-woox-travel
 				}
 
 	</script>
-		<script>
-	
 
+		<script>
 	function tag_filter(id){
-let value;
+		let value;
 		
 		if(id.style.backgroundColor == "white"){
 		id.style.backgroundColor ="blue";
@@ -449,7 +445,8 @@ let value;
 		
 		}
 	</script>
-	<script>
+
+		<script>
 	  function listView(data){ // [{           },{            },{                }]
 		  var tag="<table>";
 		  let cnt = 0;
@@ -472,33 +469,8 @@ let value;
 	  }
 		
 	</script>
-	<script>
-	function FullView()
-	
-	</script>
-	<script>
-	function sendDataToServer(survey) { //send Ajax request to your web
-		server alert("The results are: " + JSON.stringify(survey.data));
-		}
-		
-	var survey = new Survey.Model(surveyJSON);
-		
-		$("#surveyContainer").Survey({
-		model: survey, onComplete: sendDataToServer
-		});
-		$.ajax({
-			url:"inputSurvey",
-			data : {"data":JSON.stringify(survey.data)},
-			type: "post",
-			success : function(data){
-			console.log("성공");	
-			}
-			}
-		
-		})
 
-			
-	</script>
+
 		<script>
 	function filter(id){
 		let inputE = id.val();

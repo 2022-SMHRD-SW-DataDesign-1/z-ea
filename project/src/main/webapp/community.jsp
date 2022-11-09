@@ -24,6 +24,7 @@
 	rel='stylesheet' type='text/css'>
 
 <!-- Additional CSS Files -->
+
 <link rel="stylesheet" href="assets/css/fontawesome.css">
 <link rel="stylesheet" href="assets/css/templatemo-woox-travel.css">
 <link rel="stylesheet" href="assets/css/owl.css">
@@ -33,7 +34,6 @@
 
 <!-- Load css styles -->
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-<!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
 
 </head>
 
@@ -257,9 +257,9 @@
 
 				modal.style.display = "block"
 				modalBtn.textContent = "닫기"
-			}
 
-			else {
+			} else {
+
 				// mainCaption.style.opacity ="1";
 				modal.style.display = "none"
 

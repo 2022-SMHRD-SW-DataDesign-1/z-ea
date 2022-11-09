@@ -59,15 +59,15 @@ https://templatemo.com/tm-580-woox-travel
 					<nav class="main-nav">
 						<!-- ***** Logo Start ***** -->
 						<a href="index.jsp" class="logo" > <img
-							src="assets/images/logo.png" style="width : 100px; margin-top: -5px;" alt="">
+							src="assets/images/logo.png" style="width : 50px; margin-top: -5px;" alt="">
 						</a>
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
 							<li><a href="index.jsp" class="active">홈</a></li>
 							<li><a href="about.jsp">글램핑&카라반</a></li>
-							<li><a href="deals.jsp">예약</a></li>
-							<li><a href="reservation.jsp">양도</a></li>
+							<li><a href="reservation.jsp">예약</a></li>
+							<li><a href="transfer.jsp">양도</a></li>
 							<li><a href="community.jsp">커뮤니티</a></li>
 							<%
 							if (info == null) {

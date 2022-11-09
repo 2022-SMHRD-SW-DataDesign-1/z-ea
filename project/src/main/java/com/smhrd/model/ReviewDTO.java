@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 @Getter
@@ -20,13 +21,21 @@ public class ReviewDTO {
     @NonNull
     // 리뷰 내용 리뷰 내용
     private String review_content;
-    @NonNull
+   
     // 점수 점수
+    @NonNull
     private BigDecimal score;
 
     // 리뷰 날짜 리뷰 날짜
     private Timestamp review_date;
 
-    // 장소 순번 
+    // 장소 순번
+    @NonNull
     private BigDecimal gc_num;
+
+   
+    
+    
 }
+
+

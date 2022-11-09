@@ -34,4 +34,11 @@ public class ReviewDAO {
 		
 		return del;
 	}
+	public int review_insert(ReviewDTO dto) {
+		// TODO Auto-generated method stub
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int row = session.insert("review_insert",dto);
+		session.close();
+		return row;
+	}
 }
