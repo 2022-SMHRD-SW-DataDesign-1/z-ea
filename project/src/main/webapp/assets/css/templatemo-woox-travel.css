@@ -112,7 +112,7 @@ p {
 }
 
 img {
-	width: 100%;
+	width: 50%;
 	overflow: hidden;
 }
 
@@ -316,7 +316,6 @@ Pre-loader Style
 ---------------------------------------------
 Header Style
 --------------------------------------------- 
-*/
 .background-header {
 	background-color: #6A5ACD !important;
 	height: 70px !important;
@@ -365,12 +364,12 @@ Header Style
 }
 
 .header-area .main-nav .logo img {
-	width: 159px;
-	margin-top: 15px;
+	width: 30px;
+	
 }
 
 .background-header .main-nav .logo img {
-	width: 159px;
+	width: 30px;
 }
 
 .header-area .main-nav .nav {
