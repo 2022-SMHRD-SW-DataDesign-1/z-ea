@@ -1,5 +1,4 @@
 <%@page import="com.smhrd.model.MemberDTO"%>
-
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.smhrd.model.ItemDAO"%>
@@ -72,8 +71,8 @@ https://templatemo.com/tm-580-woox-travel
 						<ul class="nav">
 							<li><a href="index.jsp">홈</a></li>
 							<li><a href="about.jsp" class="active">글램핑&카라반</a></li>
-							<li><a href="deals.jsp">예약</a></li>
-							<li><a href="reservation.jsp">양도</a></li>
+							<li><a href="reservation.jsp">예약</a></li>
+							<li><a href="transfer.jsp">양도</a></li>
 							<li><a href="community.jsp">커뮤니티</a></li>
 							<%
 							if (info == null) {
@@ -372,8 +371,6 @@ https://templatemo.com/tm-580-woox-travel
 		</footer>
 
 
-
-
 		<!-- Scripts -->
 		<!-- Bootstrap core JavaScript -->
 		<script src="vendor/jquery/jquery.min.js"></script>
@@ -418,9 +415,8 @@ https://templatemo.com/tm-580-woox-travel
 				}
 
 	</script>
-		<script>
-	
 
+		<script>
 	function tag_filter(id){
 let value;
 		
@@ -448,6 +444,7 @@ let value;
 		
 		}
 	</script>
+
 		<script>
 	function filter(id){
 		let inputE = id.val();

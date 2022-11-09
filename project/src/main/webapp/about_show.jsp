@@ -532,7 +532,6 @@ https://templatemo.com/tm-580-woox-travel
 			</div>
 			<!-- //태그 -->
 
-
 			<!-- 여행톡 -->
 			<h3 class="blind">여행톡</h3>
 			<div id="replyGo">

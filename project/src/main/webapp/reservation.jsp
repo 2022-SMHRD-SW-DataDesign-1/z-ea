@@ -64,6 +64,7 @@
 	padding: .6rem .8rem;
 	border-radius: .6rem;
 	border: 1px solid #eee;
+	background-color: white;
 }
 
 .noColor {
@@ -93,10 +94,9 @@
 	transform: rotate(45deg);
 }
 
-
 /* ---- */
 @import
-	url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css")
+	url("https://cdn.Sjsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css")
 	;
 
 * {
@@ -106,6 +106,7 @@
 	box-sizing: border-box;
 	font-family: Pretendard;
 }
+
 </style>
 
 
@@ -198,7 +199,7 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class='rap'>
-							<h4>투숙기간 선택</h4>
+							<h4>일정 선택하기</h4>
 							<div class="header" style="margin-top: 30px;">
 								<div class="btn prevDay"></div>
 								<h2 class='dateTitle'></h2>
@@ -220,44 +221,60 @@
 
 						<div class="col-lg-12">
 							<div class='rap'>
-								<h4 style="margin-bottom:30px;">객실 추가인원</h4>
-								<fieldset>
-									<select name="Guests" class="form-select"
-										aria-label="Default select example" id="chooseGuests"
-										onChange="this.form.click()">
-										<option selected>ex. 3 or 4 or 5</option>
-										<option type="checkbox" name="option1" value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4+">4+</option>
-									</select>
-								</fieldset>
+								<div class="camp-name-search">
+									<h4>캠핑장 검색하기</h4>
+									<div
+										class="input-area d-flex align-items-center justify-content-center mx-auto">
+										<img
+											src="https://static.campingtalk.me/local/images/icon/search/search.svg">
+										<input id="searchText_-1" type="text"
+											placeholder="클릭하여 검색하세요." class="text-center p-0">
+										<ul aria-labelledby="searchText_-1"
+											class="search-box-list border" style="display: none;"></ul>
+									</div>
+								</div>
 							</div>
 
+							<div class="col-lg-12">
+								<div class='rap'>
+									<h4 style="margin-bottom: 30px;">객실 추가인원</h4>
+									<fieldset>
+										<select name="Guests" class="form-select"
+											aria-label="Default select example" id="chooseGuests"
+											onChange="this.form.click()">
+											<option selected>ex. 3 or 4 or 5</option>
+											<option type="checkbox" name="option1" value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4+">4+</option>
+										</select>
+									</fieldset>
+								</div>
+
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<p>
-							Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights
-							reserved. <br>Design: <a href="https://templatemo.com"
-								target="_blank" title="free CSS templates">TemplateMo</a>
-							Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
-						</p>
+			<footer>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<p>
+								Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights
+								reserved. <br>Design: <a href="https://templatemo.com"
+									target="_blank" title="free CSS templates">TemplateMo</a>
+								Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
+							</p>
+						</div>
 					</div>
 				</div>
-			</div>
-		</footer>
-		<!-- Scripts -->
+			</footer>
+			<!-- Scripts -->
 
 
-		<script>
+			<script>
 //달력 생성
 const makeCalendar = (date) => {
 // 현재의 년도와 월 받아오기
@@ -283,7 +300,7 @@ for (let i = 0; i < prevDay; i++) {
 
 // 이번달 날짜 표시하기
 for (let i = 1; i <= lastDay; i++) {    
-  htmlDummy += `<div class="#b${i}">${i}</div>`;
+  htmlDummy += `<div class="#b${i}" onclick="tag_filter(this)" onclick='getInnerText(this)'>${i}</div>`;
 }
 
 // 다음달 날짜 표시하기
@@ -297,8 +314,9 @@ document.querySelector(`.dateTitle`).innerText = `${nowYear}년 ${nowMonth}월`;
 
 
 const date = new Date();
-
 makeCalendar(date);
+
+
 
 //이전달 이동
 document.querySelector(`.prevDay`).onclick = () => {
@@ -310,18 +328,47 @@ document.querySelector(`.nextDay`).onclick = () => {
 makeCalendar(new Date(date.setMonth(date.getMonth() + 1)));
 }
 
+</script>
+
+			<script>
+function tag_filter(id){
+	let value;
+			
+			if(id.style.backgroundColor == "white"){
+			id.style.backgroundColor ="yellow";
+			value = id.textContent;
+			console.log(value);
+			/* $.ajax({
+				url : 'Filter',  //요청 서버 url
+				data : {'inputE': inputE},	//요청할 때 같이 보내줄 데이터
+				type : 'get', 				//요청 타입(method)
+				success : function(data){	//통신성공 (function(넘겨준데이터))
+					res=data;
+			console.log(res);
+				},
+				error : function(){			//통신실패
+					console.log("통신실패");
+				}
+			}) */
+
+			}else {
+				id.style.backgroundColor = "white";
+				value = "";
+			}
+			
+			}
+		</script>
 
 
-	</script>
-		<!-- Bootstrap core JavaScript -->
-		<script src="vendor/jquery/jquery.min.js"></script>
-		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-		<script src="assets/js/isotope.min.js"></script>
-		<script src="assets/js/owl-carousel.js"></script>
-		<script src="assets/js/wow.js"></script>
-		<script src="assets/js/tabs.js"></script>
-		<script src="assets/js/popup.js"></script>
-		<script src="assets/js/custom.js"></script>
+			<!-- Bootstrap core JavaScript -->
+			<script src="vendor/jquery/jquery.min.js"></script>
+			<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+			<script src="assets/js/isotope.min.js"></script>
+			<script src="assets/js/owl-carousel.js"></script>
+			<script src="assets/js/wow.js"></script>
+			<script src="assets/js/tabs.js"></script>
+			<script src="assets/js/popup.js"></script>
+			<script src="assets/js/custom.js"></script>
 </body>
 
 </html>

@@ -24,7 +24,7 @@
 	rel='stylesheet' type='text/css'>
 
 <!-- Additional CSS Files -->
-s
+
 <link rel="stylesheet" href="assets/css/fontawesome.css">
 <link rel="stylesheet" href="assets/css/templatemo-woox-travel.css">
 <link rel="stylesheet" href="assets/css/owl.css">
@@ -57,10 +57,10 @@ s
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
 							<li><a href="index.jsp">홈</a></li>
-							<li><a href="about.jsp">테마</a></li>
+							<li><a href="about.jsp">글램핑&카라반</a></li>
 							<li><a href="reservation.jsp">예약</a></li>
 							<li><a href="transfer.jsp">양도</a></li>
-							<li><a href="community.jsp" class="active">커뮤니티</a></li>
+							<li><a href="community.html" class="active">커뮤니티</a></li>
 							<%
 							if (info == null) {
 							%>
@@ -85,51 +85,10 @@ s
 						</a>
 						<!-- ***** Menu End ***** -->
 					</nav>
-
-					<div class="row">
-						<div class="col-12">
-							<nav class="main-nav">
-								<!-- ***** Logo Start ***** -->
-								<a href="Main.html" class="logo"> <img
-									src="assets/images/logo.png" alt="">
-								</a>
-								<!-- ***** Logo End ***** -->
-
-								<!-- ***** Menu Start ***** -->
-								<ul class="nav">
-									<li><a href="index.jsp">홈</a></li>
-									<li><a href="about.jsp">글램핑&카라반</a></li>
-									<li><a href="deals.jsp">예약</a></li>
-									<li><a href="reservation.jsp">양도</a></li>
-									<li><a href="community.html" class="active">커뮤니티</a></li>
-									<%
-									if (info == null) {
-									%>
-									<li>
-										<button class="modalBtn" onclick="show()"
-											style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">로그인</button>
-									</li>
-									<%
-									} else {
-									%>
-									<li><a href="MyPage.jsp" class="modalBtn"
-										style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">마이페이지</a>
-									</li>
-									<li><a href="LogoutService" class="modalBtn"
-										style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">로그아웃</a>
-									</li>
-									<%
-									}
-									%>
-								</ul>
-								<a class='menu-trigger'> <span>Menu</span>
-								</a>
-								<!-- ***** Menu End ***** -->
-							</nav>
-						</div>
-					</div>
 				</div>
 			</div>
+		</div>
+		</div>
 		</div>
 	</header>
 	<!-- ***** Header Area End ***** -->
