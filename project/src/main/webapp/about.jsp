@@ -263,8 +263,9 @@ https://templatemo.com/tm-580-woox-travel
 								<hr />
 
 								<div>
-									<div
-										style="margin-top: 5%; width: 100%; display: inline-block; padding: 10px 5px 10px 5px;">
+							       <div id="item">
+							       		<div
+										 style="margin-top: 5%; width: 100%; display: inline-block; padding: 10px 5px 10px 5px;">
 
 										<%
 										ItemDAO dao = new ItemDAO();
@@ -346,6 +347,8 @@ https://templatemo.com/tm-580-woox-travel
 										</div>
 
 									</div>
+							       </div>
+							       
 								</div>
 							</div>
 						</div>
@@ -430,12 +433,10 @@ let value;
 		console.log(value);
 		$.ajax({
 			url : 'Filter',  //요청 서버 url
-			data : {'inputE': inputE},	//요청할 때 같이 보내줄 데이터
-			type : 'get', 				//요청 타입(method)
-			success : function(data){	//통신성공 (function(넘겨준데이터))
-				res=data;
-		console.log(res);
-			},
+			data : {'gc_tag': value},	//요청할 때 같이 보내줄 데이터
+			type : 'post', 				//요청 타입(method)
+			dataType : "json",
+			success : listView,
 			error : function(){			//통신실패
 				console.log("통신실패");
 			}
@@ -447,6 +448,33 @@ let value;
 		}
 		
 		}
+	</script>
+	<script>
+	  function listView(data){ // [{           },{            },{                }]
+		  var tag="<table>";
+		  let cnt = 0;
+		  tag+="<div style='margin-top :5%;'>";	
+		  $.each(data, function(index, obj){
+			console.log(obj.num);
+			  tag+="<a href='ShowService?num="+obj.num+"'>"
+			  tag+="<div style='width:250px; height: 350px; display: inline-block;'><img src='assets/images/offers-01.jpg' alt=''style='width: 200px; height: 200px; display: flexbox;'> "
+			  tag+="<div style='text-align: left; padding-left: 20px;'>"  
+				  tag+="<p id='item'>"+obj.name +"</p>";
+				  tag+="<p id='item'>"+obj.desc +"</p>";
+			  tag+="</div></div>";
+			  
+			  tag+="</a>";
+		  });		  
+		  tag+="</div>";
+		  
+		  tag+="</table>";
+		  $("#item").html(tag);
+	  }
+		
+	</script>
+	<script>
+	function FullView()
+	
 	</script>
 		<script>
 	function filter(id){
