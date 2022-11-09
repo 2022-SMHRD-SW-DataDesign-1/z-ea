@@ -14,4 +14,17 @@
 	<select id="show_comment" parameterType="BigDecimal" resultType="CommentDTO">
 	select * from Comment_tb where board_num = #{board_num}
 	</select>
+	<select id="my_comment" parameterType="String" resultType="CommentDTO">
+	select * from Comment_tb where mb_email = #{mb_email}
+	</select>
+	<update id="commentupdate" parameterType="CommentDTO">
+	UPDATE comment_tb
+SET
+    comment_content = #{comment_content}, 
+    comment_date = sysdate
+WHERE comment_num = #{comment_num}
+	</update>
+	<delete id="comment_delete">
+	delete from comment_tb where comment_num = #{comment_num}
+	</delete>
 </mapper>

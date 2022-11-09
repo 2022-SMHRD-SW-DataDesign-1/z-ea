@@ -214,14 +214,14 @@ https://templatemo.com/tm-580-woox-travel
 					<div class="info-item">
 						<i class="fa fa-phone"></i>
 						<h4>예약 내역</h4>
-						<a href="#">내 예약 확인하기</a>
+						<a href="reservation_show.jsp">내 예약 확인하기</a>
 					</div>
 				</div>
 				<div class="col-lg-4 col-sm-6">
 					<div class="info-item">
 						<i class="fa fa-map-marker"></i>
 						<h4>나의 후기</h4>
-						<a href="#">내가 작성한 리뷰/ 게시글</a>
+						<a href="comment_review.jsp">내가 작성한 리뷰/ 게시글</a>
 					</div>
 				</div>
 			</div>

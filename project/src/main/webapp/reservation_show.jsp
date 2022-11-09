@@ -1,19 +1,34 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="com.smhrd.model.GlampingDTO"%>
+<%@page import="com.smhrd.model.GlampingDAO"%>
+<%@page import="com.smhrd.model.RoomDTO"%>
+<%@page import="com.smhrd.model.RoomDAO"%>
+<%@page import="com.smhrd.model.ReservationDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.smhrd.model.ReservationDAO"%>
 <%@page import="com.smhrd.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang=en>
+
 <head>
+
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <link
 	href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
 	rel="stylesheet">
+
 <title>WoOx Travel Reservation Page</title>
+
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
 <!-- Additional CSS Files -->
 <link rel="stylesheet" href="assets/css/fontawesome.css">
 <link rel="stylesheet" href="assets/css/templatemo-woox-travel.css">
@@ -22,14 +37,19 @@
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 <!--
+
 TemplateMo 580 Woox Travel
+
 https://templatemo.com/tm-580-woox-travel
+
 -->
 </head>
+
 <body>
 	<%
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
 	%>
+
 	<!-- ***** Preloader Start ***** -->
 	<div id="js-preloader" class="js-preloader">
 		<div class="preloader-inner">
@@ -40,6 +60,7 @@ https://templatemo.com/tm-580-woox-travel
 		</div>
 	</div>
 	<!-- ***** Preloader End ***** -->
+
 	<!-- ***** Header Area Start ***** -->
 	<header class="header-area header-sticky">
 		<div class="container">
@@ -53,11 +74,11 @@ https://templatemo.com/tm-580-woox-travel
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
-							<li><a href="index.jsp">홈</a></li>
+							<li><a href="index.jsp" class="active">홈</a></li>
 							<li><a href="about.jsp">글램핑&카라반</a></li>
 							<li><a href="deals.jsp">예약</a></li>
 							<li><a href="reservation.jsp">양도</a></li>
-							<li><a href="community.jsp" class="active">커뮤니티</a></li>
+							<li><a href="community.jsp">커뮤니티</a></li>
 							<%
 							if (info == null) {
 							%>
@@ -87,6 +108,146 @@ https://templatemo.com/tm-580-woox-travel
 		</div>
 	</header>
 	<!-- ***** Header Area End ***** -->
+	<div class="second-page-heading" style="height: 100px;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h2>예약 정보 조회</h2>
+					<div class="main-button">
+						<a href="MyPage.jsp">BACK</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<%
+	ArrayList<ReservationDTO> re_list = new ReservationDAO().my_re_show(info.getMb_email());
+	ArrayList<RoomDTO> ro_list = new RoomDAO().my_room_show(info.getMb_email());
+	ArrayList<GlampingDTO> gl_list = new GlampingDAO().my_glamping_show(info.getMb_email());
+	System.out.println(re_list.size());
+	System.out.println(ro_list.size());
+	System.out.println(gl_list.size());
+	%>
+	<%
+	if (info != null) {
+	%>
+	<div class="reservation-form">
+		<div class="row" style="margin-bottom: 40px;">
+			<div class="col-lg-12">
+				<form id="reservation-form" name="gs" method="submit" role="search"
+					action="#">
+
+					<div class="row">
+						<h4>예약정보조회</h4>
+				</form>
+				<%
+				for (int i = 0; i < re_list.size(); i++) {
+				%>
+				<!-- 이름 -->
+				<div style="margin-bottom: 40px;">
+					<div class="col-lg-6">
+						<fieldset>
+							<label for="Name" class="form-label">이용자이메일</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=re_list.get(i).getMb_email()%></p>
+						</fieldset>
+					</div>
+					<div class="col-lg-6">
+						<fieldset>
+							<label for="Name" class="form-label">장소유형</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=gl_list.get(i).getGc_type()%></p>
+						</fieldset>
+					</div>
+					<div class="col-lg-6">
+						<fieldset>
+							<label for="Name" class="form-label">장소명</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=gl_list.get(i).getGc_name()%></p>
+						</fieldset>
+					</div>
+					<div class="col-lg-6">
+						<fieldset>
+							<label for="Name" class="form-label">장소연락처</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=gl_list.get(i).getGc_tel()%></p>
+						</fieldset>
+					</div>
+					<div class="col-lg-6">
+						<fieldset>
+							<label for="Name" class="form-label">장소주소</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=gl_list.get(i).getGc_addr()%></p>
+						</fieldset>
+					</div>
+					<div class="col-lg-6">
+						<fieldset>
+							<label for="Name" class="form-label">장소시설</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=gl_list.get(i).getGc_facilities()%></p>
+						</fieldset>
+					</div>
+					<div class="col-lg-6">
+						<fieldset>
+							<label for="Name" class="form-label">장소부가시설</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=gl_list.get(i).getGc_Ad_facilities()%></p>
+						</fieldset>
+					</div>
+					<div class="col-lg-6">
+						<fieldset>
+							<label for="Name" class="form-label">가격</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=gl_list.get(i).getGc_price()%></p>
+						</fieldset>
+					</div>
+
+					<div class="col-lg-6">
+						<fieldset>
+							<label for="Name" class="form-label">방이름</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=ro_list.get(i).getRoom_name()%></p>
+						</fieldset>
+					</div>
+					<div class="col-lg-6">
+						<fieldset>
+							<label for="Name" class="form-label">방상태</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=ro_list.get(i).getRoom_status()%></p>
+						</fieldset>
+					</div>
+					<div class="col-lg-6">
+						<fieldset>
+							<label for="Name" class="form-label">호실제한인원수</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=ro_list.get(i).getPeople_limit()%></p>
+						</fieldset>
+					</div>
+					<div class="col-lg-6">
+						<fieldset>
+							<label for="Name" class="form-label">입실시간</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=re_list.get(i).getCheck_in()%></p>
+						</fieldset>
+					</div>
+					<div class="col-lg-6">
+						<fieldset>
+							<label for="Name" class="form-label">퇴실시간</label>
+							<p type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=re_list.get(i).getCheck_out()%></p>
+						</fieldset>
+					</div>
+				</div>
+				<%
+				}
+				%>
+			</div>
+		</div>
+	</div>
+	<%
+	}
+	%>
 	<!-- 모달 -->
 	<div class="modalPopup" style="display: none;">
 		<div class="ModalBack" onclick
@@ -178,92 +339,22 @@ https://templatemo.com/tm-580-woox-travel
 			</form>
 		</div>
 	</div>
-	<div class="second-page-heading">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<h2></h2>
-					<div class="main-button">
-						<a href="index.jsp">BACK</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="reservation-form">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<form id="reservation-form" name="gs" method="submit" role="search"
-						action="#">
 
-						<div class="row">
-							<div class="col-lg-12">
-								<h4>작성하기</h4>
-							</div>
-					</form>
-					<form action="BoardService" method="post"
-						enctype="multipart/form-data">
-						<!-- 글제목 -->
-						<div class="col-lg-6">
-							<fieldset>
-								<label for="name" class="form-label">title</label><br> <input
-									type="text" name="board_title" class="Name" placeholder="title"
-									autocomplete="on" required> <select
-									name="board_category">
-									<option value="#바다">바다</option>
-									<option value="#산">산</option>
-									<option value="#뷰">뷰</option>
-									<option value="#감성">감성</option>
-								</select>
-							</fieldset>
-						</div>
-						<!-- 글내용 -->
-						<div class="col-lg-6">
-							<fieldset>
-								<p>content</p>
-								<label for="name" class="form-label"></label><br>
-								<textarea type="text" name="board_content" class="Name"
-									placeholder="content" autocomplete="on" required
-									style="resize: none;" rows="10">
-										</textarea>
-								<input type="file" name="board_file" style="float: right;">
-							</fieldset>
-						</div>
-						<div class="col-lg-12">
-							<fieldset>
-								<button type="submit" class="main-button">작성하기</button>
-							</fieldset>
-							</from>
-						</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<p>
-						Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights
-						reserved. <br>Design: <a href="https://templatemo.com"
-							target="_blank" title="free CSS templates">TemplateMo</a>
-						Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
-					</p>
-				</div>
-			</div>
-		</div>
-	</footer>
+
+
+
 	<!-- Scripts -->
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
 	<script src="assets/js/isotope.min.js"></script>
 	<script src="assets/js/owl-carousel.js"></script>
 	<script src="assets/js/wow.js"></script>
 	<script src="assets/js/tabs.js"></script>
 	<script src="assets/js/popup.js"></script>
 	<script src="assets/js/custom.js"></script>
+
 	<script>
 		$(".option").click(function() {
 			$(".option").removeClass("active");
@@ -276,6 +367,7 @@ https://templatemo.com/tm-580-woox-travel
 			let modalBtn = document.querySelector(".modalBtn");
 			let mainCaption = document.querySelector(".main-caption")
 			let dark = document.querySelector(".controls")
+
 			console.log("실행도미");
 			if (modal.style.opacity == "0") {
 				mainCaption.style.opacity = "0";
@@ -283,7 +375,9 @@ https://templatemo.com/tm-580-woox-travel
 				modal.style.opacity = "1";
 				modal.style.display = "block"
 				modalBtn.textContent = "닫기"
-			} else {
+			}
+
+			else {
 				dark.style.opacity = "1";
 				mainCaption.style.opacity = "1";
 				modal.style.opacity = "0";
@@ -292,29 +386,7 @@ https://templatemo.com/tm-580-woox-travel
 			}
 		}
 	</script>
-	<script>
-		function checkE() {
-			let mb_email_ck = $('#mb_email_ck').val();
-			console.log(mb_email_ck);
-			$.ajax({
-				url : 'EmailCheckService',
-				data : {
-					'mb_email_ck' : mb_email_ck
-				},
-				type : 'get',
-				success : function(data) {
-					console.log(data);
-					if (data == 'true') {
-						$('#resultCheck').text('사용할 수 없는 아이디')
-					} else {
-						$('#resultCheck').text('사용할 수 있는 아이디')
-					}
-				},
-				error : function() {
-					console.log("통신실패");
-				}
-			});
-		}
-	</script>
+
 </body>
+
 </html>
