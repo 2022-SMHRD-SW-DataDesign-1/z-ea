@@ -48,7 +48,6 @@ https://templatemo.com/tm-580-woox-travel
 			</div>
 		</div>
 	</div>
-
 	<!-- ***** Preloader End ***** -->
 
 	<!-- ***** Header Area Start ***** -->
@@ -59,7 +58,7 @@ https://templatemo.com/tm-580-woox-travel
 					<nav class="main-nav">
 						<!-- ***** Logo Start ***** -->
 						<a href="index.jsp" class="logo" > <img
-							src="assets/images/logo.png" style="width : 50px; margin-top: -5px;" alt="">
+							src="assets/images/logo.png" alt="">
 						</a>
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->

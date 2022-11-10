@@ -273,7 +273,6 @@
 
 							<div class="grid dateBoard" style="margin-top: 50px;"></div>
 						</div>
-						<button id="datesearch">검색</button>
 
 						<br>
 						<div>
