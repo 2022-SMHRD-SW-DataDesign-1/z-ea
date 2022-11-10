@@ -1,3 +1,8 @@
+<%@page import="java.math.BigDecimal"%>
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="com.smhrd.model.RoomDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.smhrd.model.RoomDAO"%>
 <%@page import="com.smhrd.model.ItemDTO"%>
 <%@page import="com.smhrd.model.ItemDAO"%>
 <%@page import="com.smhrd.model.MemberDTO"%>
@@ -118,12 +123,31 @@
 <body>
 	<%
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
-	int num = Integer.parseInt(request.getParameter("num"));
+	BigDecimal num = new BigDecimal(request.getParameter("num"));
 
 	System.out.println(num);
-	ItemDAO dao = new ItemDAO();
-	ItemDTO item = dao.showDetail(num);
-	System.out.print(item);
+	//ItemDAO dao = new ItemDAO();
+	//ItemDTO item = dao.showDetail(num);
+	//System.out.print(item);
+	//System.out.print("item" + item.getNum());
+	%>
+	
+	<%
+	ArrayList<RoomDTO> room_list = new RoomDAO().showroom(num);
+
+/* 	String[][] day = new String[30][room_list.size()]; */
+
+	/* for (int i = 1; i <= 31; i++) {
+		for (int j = 0; j < room_list.size(); j++) {
+			day[i][j] = room_list.get(j).getRoom_name();
+		}
+	}
+
+	System.out.println(day.length); */
+	
+	
+		System.out.print("akagjagkjaf"+room_list.size());
+	
 	%>
 
 	<!-- ***** Preloader Start ***** -->
@@ -276,10 +300,11 @@
 
 						<br>
 						<div>
-							<h4>체크인</h4>
+							<h4 style="font-size: 15px; padding: 10px;">체크인</h4>
 							<h4 id="checkin"></h4>
-							<h4>체크아웃</h4>
+							<h4 style="font-size: 15px; padding: 10px;">체크아웃</h4>
 							<h4 id="checkout"></h4>
+							<button id="datesearch">확인</button>
 						</div>
 					</div>
 				</div>
@@ -300,7 +325,7 @@
 					<div class='rap'>
 						<h4 style="margin-bottom: 30px;">객실 인원</h4>
 						<fieldset>
-							<p>성인</p>
+							<h4 style="font-size: 15px; padding: 10px;">성인</h4>
 							<select name="Guests" class="form-select"
 								aria-label="Default select example" id="chooseGuests"
 								onChange="this.form.click()">
@@ -310,7 +335,7 @@
 								<option value="3">3</option>
 								<option value="4+">4+</option>
 							</select>
-							<p>아이</p>
+							<h4 style="font-size: 15px; padding: 10px;">아이</h4>
 							<select name="Guests" class="form-select"
 								aria-label="Default select example" id="chooseGuests"
 								onChange="this.form.click()">
@@ -327,6 +352,8 @@
 		</div>
 	</div>
 
+	
+
 	<footer>
 		<div class="container">
 			<div class="row">
@@ -342,12 +369,6 @@
 		</div>
 	</footer>
 	<!-- Scripts -->
-
-	<!-- <script>
-var today = new Date();
-var month = today.getMonth()+1;
-console.log("월 : ",month);
-</script>	 -->
 
 
 	<!-- 달력생성 -->
@@ -370,7 +391,6 @@ const limitDay = prevDay + lastDay;
 const nextDay = Math.ceil(limitDay / 7) * 7;
 
 let htmlDummy = '';
-/* let arr=[]; */
 
 // 한달전 날짜 표시하기
 for (let i = 0; i < prevDay; i++) {
@@ -379,11 +399,10 @@ for (let i = 0; i < prevDay; i++) {
 
 // 이번달 날짜 표시하기
 for (let i = 1; i <= lastDay; i++) {    
-  htmlDummy += `<div class="#b${i}" onclick="tag_filter(this)">${i}</div>`;
-  `let arr${i}=[]`
-/*   arr.push(`let arr${i}=[]`); */
-/*   console.log(arr); */
-}
+  htmlDummy += `<div id="#b${i}" onclick="tag_filter(this)">${i}</div>`;
+/*   `let arr${i}=[]`; */
+  }
+
 
 // 다음달 날짜 표시하기
 for (let i = limitDay; i < nextDay; i++) {
@@ -411,35 +430,33 @@ makeCalendar(new Date(date.setMonth(date.getMonth() + 1)));
 
 </script>
 
-
-
-	<!-- 날짜선택 -->
 	<script>
 		let day=[];
 		
 function tag_filter(id){
 	let value;
 			const cnt = 2;
-			let id_class = $(id).attr("class");
 			var num;
 			
 			
 			{
-			if((id.style.backgroundColor == "white" )&& day.length < 2){
+			if((id.style.backgroundColor == "white" )&& day.length < 1){
+				value = id.textContent;
+				num = parseInt(value);
+				console.log("num",num);
+				next_day = num+1;
+				console.log("next_day",next_day);
+				next_id=("#b"+next_day);
+				console.log("next_id",next_id);
 				
 				id.style.backgroundColor ="yellow";
-				num = parseInt(id_class.split("b")[1]);
-				next_day = num+1;
-				
-				value = id.textContent;
-				next_id = (id_class.split("b")[0] += next_day);
-				
-				document.getElementsByClassName("next_id").style.backgroundColor = "yellow";
+				document.getElementById(next_id).style.backgroundColor="yellow";				
 				
 				let check=day.includes(value);
 				
 				if(check==false){
 				day.push(value);
+				day.push(next_day);
 				}
 			}
 			
@@ -454,10 +471,7 @@ function tag_filter(id){
 						}
 					}
 			}
-			/*for(var i=0;i<day.length;i++){
-				console.log(day[i]);
-				
-			}*/
+			console.log(day);
 			
 		
 }}

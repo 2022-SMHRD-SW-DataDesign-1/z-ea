@@ -19,9 +19,9 @@ public class RoomDAO {
 		return list;
 	}
 	
-	public ArrayList<RoomDTO> room_select(){
+	public ArrayList<RoomDTO> showroom(BigDecimal gc_num){
 		SqlSession session = sqlSessionFactory.openSession(true);
-		ArrayList<RoomDTO> list = (ArrayList) session.selectList("room_select");
+		ArrayList<RoomDTO> list = (ArrayList) session.selectList("showroom",gc_num);
 		session.close();
 		
 		return list;
