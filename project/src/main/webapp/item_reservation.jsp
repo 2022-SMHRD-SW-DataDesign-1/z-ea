@@ -419,12 +419,25 @@ makeCalendar(new Date(date.setMonth(date.getMonth() + 1)));
 		
 function tag_filter(id){
 	let value;
+			const cnt = 2;
+			let id_class = $(id).attr("class");
+			var num;
 			
-			if(id.style.backgroundColor == "white"){
+			
+			{
+			if((id.style.backgroundColor == "white" )&& day.length < 2){
+				
 				id.style.backgroundColor ="yellow";
+				num = parseInt(id_class.split("b")[1]);
+				next_day = num+1;
+				
 				value = id.textContent;
-				console.log(value);
+				next_id = (id_class.split("b")[0] += next_day);
+				
+				document.getElementsByClassName("next_id").style.backgroundColor = "yellow";
+				
 				let check=day.includes(value);
+				
 				if(check==false){
 				day.push(value);
 				}
@@ -433,20 +446,21 @@ function tag_filter(id){
 			else{
 				id.style.backgroundColor ="white";
 				value=id.textContent;
-				for(var i=0;i<day.length;i++){
+				
+				for(var i=0;i< day.length;i++){
 					if(day[i]===value){
-						day.splice(i,1);
+						day.splice(i,value);
 						i--;
 						}
 					}
 			}
-			for(var i=0;i<day.length;i++){
-				console.log(typeof day[i]);
+			/*for(var i=0;i<day.length;i++){
+				console.log(day[i]);
 				
-			}
+			}*/
 			
 		
-}
+}}
 			
 		</script>
 
