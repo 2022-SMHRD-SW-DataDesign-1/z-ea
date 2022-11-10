@@ -7,4 +7,10 @@
 	<insert id="like_insert" parameterType="LikeDTO" >
 	insert into like_tb(gc_num, liked, mb_email, like_date) values(#{gc_num},#{liked},#{mb_email},sysdate)
 	</insert>
+	<select id="showLike" parameterType="LikeDTO" resultType="int">
+	select count(*) from like_tb where gc_num=#{gc_num} and mb_email = #{mb_email}
+	</select>
+	<select id="countLike" parameterType= "BigDecimal" resultType="int">
+	select count(*) from like_tb where gc_num = #{gc_num}
+	</select>
 </mapper>
