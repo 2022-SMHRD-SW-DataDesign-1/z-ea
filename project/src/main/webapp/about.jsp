@@ -470,6 +470,13 @@ https://templatemo.com/tm-580-woox-travel
 	  }
 		
 	</script>
+<<<<<<< HEAD
+		<script>
+	function FullView()
+	
+	</script>
+=======
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 		<script>
 	function filter(id){
 		let inputE = id.val();

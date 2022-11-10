@@ -264,7 +264,7 @@ https://templatemo.com/tm-580-woox-travel
 			<!-- //캐치플레이스 -->
 
 			<div class="post_area">
-			<div style="text-align: left;">
+			<div style="text-align: left;padding:10px;">
 			<a >
 				<%if(showLike == 0){ %>
 				<img src="assets\images\ico_mpost01.png" id="like" class="btn_good" style="width : 30px; height:auto; "  onclick="setLike()" >
@@ -285,7 +285,7 @@ https://templatemo.com/tm-580-woox-travel
 
 
 		<!-- 사진보기 -->
-		<div id="galleryGo">
+		<div id="galleryGo"style="padding-top: 10x;">
 			<div class="user_reg"></div>
 			<h3 class="blind" style="padding: 20px">사진보기</h3>
 			<div class="photo_gallery">
@@ -295,7 +295,7 @@ https://templatemo.com/tm-580-woox-travel
 					style="height: 300px;">
 					<div class="swiper-wrapper" id="pImgList">
 						<div class="swiper-slide swiper-slide-active"
-							style="width: 450px;">
+							style="width:450px">
 							<img class="swiper-lazy swiper-lazy-loaded" alt="타요캠핑장  0"
 								onclick="openPhotoView(0)"
 								style="width: 100%; height: 100%; object-fit: contain;"
@@ -329,12 +329,12 @@ https://templatemo.com/tm-580-woox-travel
 
 		<!-- 상세정보 -->
 		<div id="detailGo">
-			<div class="blind" style="padding-top: 20px;">
+			<div class="blind" style="padding-top: 40px;">
 				<%=item.getDesc()%></div>
 			<!-- 내용더보기 -->
 			<div class="wrap_contView">
 				<h3 class="blind" style="padding: 20px; font-size: 28px;">상세정보</h3>
-				<button class="btn_modify" onclick="goJikimi();">
+				<button class="btn_modify" onclick="goJikimi();" style="border-radious:25px">
 					<span>관광정보 수정요청</span>
 				</button>
 				<!-- //내용더보기 -->
