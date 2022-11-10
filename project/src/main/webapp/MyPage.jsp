@@ -15,7 +15,6 @@
 	href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
 	rel="stylesheet">
 
-<title>WoOx Travel Reservation Page</title>
 
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -221,14 +220,18 @@ https://templatemo.com/tm-580-woox-travel
 					<div class="info-item">
 						<i class="fa fa-phone"></i>
 						<h4>예약 내역</h4>
+<<<<<<< HEAD
 						<a href="my Reservation.jsp">내 예약 확인하기</a>
+=======
+						<a href="reservation_show.jsp">내 예약 확인하기</a>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 					</div>
 				</div>
 				<div class="col-lg-4 col-sm-6">
 					<div class="info-item">
 						<i class="fa fa-map-marker"></i>
 						<h4>나의 후기</h4>
-						<a href="#">내가 작성한 리뷰/ 게시글</a>
+						<a href="comment_review.jsp">내가 작성한 리뷰/ 게시글</a>
 					</div>
 				</div>
 			</div>

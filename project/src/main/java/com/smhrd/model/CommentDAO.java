@@ -33,4 +33,27 @@ public class CommentDAO {
 		return list;
 		
 	}
+	public ArrayList<CommentDTO> my_comment(String email) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		ArrayList<CommentDTO> list = (ArrayList)session.selectList("my_comment", email);
+		session.close();
+		
+		return list;
+	}
+	public int commentupdate(CommentDTO dto) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int update = session.update("commentupdate", dto);
+		session.close();
+		
+		return update;
+		
+	}
+	public int comment_delete(BigDecimal num) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int del = session.delete("comment_delete",num);
+		session.close();
+		
+		return del;
+	}
+
 }

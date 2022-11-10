@@ -24,6 +24,7 @@
 	rel='stylesheet' type='text/css'>
 
 <!-- Additional CSS Files -->
+
 <link rel="stylesheet" href="assets/css/fontawesome.css">
 <link rel="stylesheet" href="assets/css/templatemo-woox-travel.css">
 <link rel="stylesheet" href="assets/css/owl.css">
@@ -33,7 +34,6 @@
 
 <!-- Load css styles -->
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-<!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
 
 </head>
 
@@ -189,7 +189,7 @@
 		<div class="container2">
 			<header>
 				<h2>커뮤니티</h2>
-				<a href="community_input.jsp">작성하기</a>
+				
 				<%
 				ArrayList<BoardDTO> list = new BoardDAO().selectBoard();
 				%>
@@ -217,7 +217,7 @@
 				</figure>
 				<%
 				}
-				%>
+				%><a href="community_input.jsp" style="text-align: right; margin-top : 30px; margin-bottom : 30px;"><button type="button" class="btn btn-primary btn-lg" style="background-color : #6A5ACD;">작성하기</button></a>
 
 
 
@@ -257,9 +257,9 @@
 
 				modal.style.display = "block"
 				modalBtn.textContent = "닫기"
-			}
 
-			else {
+			} else {
+
 				// mainCaption.style.opacity ="1";
 				modal.style.display = "none"
 

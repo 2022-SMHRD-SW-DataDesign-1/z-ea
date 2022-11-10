@@ -1,5 +1,4 @@
 <%@page import="com.smhrd.model.MemberDTO"%>
-
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.smhrd.model.ItemDAO"%>
@@ -18,6 +17,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <link
+
 	href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
 	rel="stylesheet">
 
@@ -72,8 +72,8 @@ https://templatemo.com/tm-580-woox-travel
 						<ul class="nav">
 							<li><a href="index.jsp">홈</a></li>
 							<li><a href="about.jsp" class="active">글램핑&카라반</a></li>
-							<li><a href="deals.jsp">예약</a></li>
-							<li><a href="reservation.jsp">양도</a></li>
+							<li><a href="reservation.jsp">예약</a></li>
+							<li><a href="transfer.jsp">양도</a></li>
 							<li><a href="community.jsp">커뮤니티</a></li>
 							<%
 							if (info == null) {
@@ -375,8 +375,6 @@ https://templatemo.com/tm-580-woox-travel
 		</footer>
 
 
-
-
 		<!-- Scripts -->
 		<!-- Bootstrap core JavaScript -->
 		<script src="vendor/jquery/jquery.min.js"></script>
@@ -395,6 +393,7 @@ https://templatemo.com/tm-580-woox-travel
 				$(this).addClass("active");
 			});
 		</script>
+
 		<script>
 			function show() {
 				console.log("실행");
@@ -421,11 +420,10 @@ https://templatemo.com/tm-580-woox-travel
 				}
 
 	</script>
-		<script>
-	
 
+		<script>
 	function tag_filter(id){
-let value;
+		let value;
 		
 		if(id.style.backgroundColor == "white"){
 		id.style.backgroundColor ="blue";
@@ -472,10 +470,13 @@ let value;
 	  }
 		
 	</script>
+<<<<<<< HEAD
 		<script>
 	function FullView()
 	
 	</script>
+=======
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 		<script>
 	function filter(id){
 		let inputE = id.val();

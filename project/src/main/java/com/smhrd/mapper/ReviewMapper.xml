@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.mapper.ReviewMapper">
+	<select id="my_review" parameterType="String" resultType="ReviewDTO">
+	select * from review_tb where mb_email = #{mb_email}
+	</select>
+	<update id="reviewupdate" parameterType="ReviewDTO">
+	UPDATE review_tb
+SET
+    review_content = #{review_content}, 
+    score = #{score}, 
+    review_date = sysdate 
+WHERE review_num = #{review_num}
+	</update>
+	<delete id="review_delete">
+	delete from review_tb where review_num =#{review_num}
+	</delete>
+	
+	<insert id="review_insert" parameterType="ReviewDTO" >
+	insert into review_tb(mb_email, review_content,score,review_date, gc_num) values(#{mb_email},#{review_content},#{score},sysdate,#{gc_num})
+	</insert>
+	<select id="gc_review" parameterType="BigDecimal" resultType="ReviewDTO">
+	select * from review_tb where gc_num = #{gc_num}
+	</select>
+</mapper>

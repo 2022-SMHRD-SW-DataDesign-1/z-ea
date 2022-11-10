@@ -9,32 +9,5 @@ import com.smhrd.db.SqlSessionManger;
 
 public class TransferDAO {
 	private SqlSessionFactory sqlSessionFactory = SqlSessionManger.getSqlSession();
-	
-	// 업로드
-	public int upload(TransferDTO dto) {
-		SqlSession session = sqlSessionFactory.openSession(true);
-		int row = session.insert("upload", dto);
-		session.close();
-		
-		return row;
-		
-	}
-	
-	public ArrayList<TransferDTO> select(){
-		SqlSession session = sqlSessionFactory.openSession(true);
-		ArrayList<TransferDTO> list = (ArrayList) session.selectList("select");
-		session.close();
-		
-		return list;
-		
-	}
-	
-	public TransferDTO show(BigDecimal transfer_num) {
-		SqlSession session = sqlSessionFactory.openSession(true);
-		TransferDTO transfer = session.selectOne("show", transfer_num);
-		session.close();
-		
-		return transfer;
-	}
 
 }

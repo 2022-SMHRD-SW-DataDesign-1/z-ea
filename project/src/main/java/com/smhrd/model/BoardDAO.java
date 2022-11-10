@@ -34,4 +34,24 @@ public class BoardDAO {
 		
 		return dto;
 	}
+	public ArrayList<BoardDTO> my_board(String email){
+		SqlSession session = sqlSessionFactory.openSession(true);
+		ArrayList<BoardDTO> list = (ArrayList)session.selectList("my_board", email);
+		session.close();
+		return list;
+	}
+	public int boardupdate(BoardDTO dto) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int update = session.update("boardupdate", dto);
+		session.close();
+		
+		return update;
+	}
+	public int board_delete(BigDecimal num) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int del = session.delete("board_delete", num);
+		session.close();
+		
+		return del;
+	}
 }

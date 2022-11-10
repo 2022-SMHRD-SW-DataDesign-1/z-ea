@@ -20,6 +20,7 @@ public ArrayList<ItemDTO> Filter(String tag) {
 	System.out.println("DAO");
 	session.close();
 	System.out.println(item_list);
+	System.out.println(item_list.size());
 	return item_list;
 }
 public ItemDTO showDetail(int num) {
