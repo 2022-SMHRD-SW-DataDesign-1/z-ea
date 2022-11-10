@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.ReviewDTO"%>
+<%@page import="com.smhrd.model.ReviewDAO"%>
 <%@page import="java.math.BigDecimal"%>
 <%@page import="com.smhrd.model.MemberDTO"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
@@ -46,8 +48,16 @@ https://templatemo.com/tm-580-woox-travel
 	<%
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
 	int num = Integer.parseInt(request.getParameter("num"));
-
-	System.out.println(num);
+	BigDecimal gc_num= new BigDecimal(request.getParameter("num"));
+	
+	ArrayList<ReviewDTO> review_list = new ArrayList<ReviewDTO>();
+	ReviewDAO Reviewdao = new ReviewDAO();
+	
+	review_list = Reviewdao.gc_review(gc_num);
+	
+	System.out.println(review_list);
+	
+	
 	ItemDAO dao = new ItemDAO();
 	ItemDTO item = dao.showDetail(num);
 	System.out.print(item);
@@ -243,15 +253,16 @@ https://templatemo.com/tm-580-woox-travel
 			<!-- //캐치플레이스 -->
 
 			<div class="post_area">
-				<button type="button" class="btn_good" onclick="setLike();">
+			<div style="text-align: left;">
+			<a >
+			
+				<img src="assets\images\ico_mpost01.png" id="like" class="btn_good" style="width : 30px; height:auto; "  onclick="setLike()" >
 					<span class="ico">좋아요</span><span class="num" id="conLike">0</span>
-				</button>
-				<span class="rline">
-					<button type="button" class="btn_bookmark"
-						onclick="setFavoContentDetail();">
-						<span class="ico">즐겨찾기</span>
-					</button>
-				</span>
+				</img>
+			</a>	
+			</div>	
+				
+			
 			</div>
 		</div>
 		<!-- //상단 -->
@@ -306,7 +317,7 @@ https://templatemo.com/tm-580-woox-travel
 				<%=item.getDesc()%></div>
 			<!-- 내용더보기 -->
 			<div class="wrap_contView">
-				<h3 style="padding: 20px">상세정보</h3>
+				<h3 class="blind" style="padding: 20px; font-size: 28px;">상세정보</h3>
 				<button class="btn_modify" onclick="goJikimi();">
 					<span>관광정보 수정요청</span>
 				</button>
@@ -545,21 +556,28 @@ https://templatemo.com/tm-580-woox-travel
 			<!-- //태그 -->
 
 			<!-- 여행톡 -->
-			<h3 class="blind">여행 후기</h3>
+			<h3 class="blind">여행 후기 <span style="font-size: 22px; font-weight: normal;"><%= review_list.size() %>건의 리뷰가 나왔어요.</span></h3>
 			<div id="replyGo">
 				<div class="replyWrap">
 					<!-- login 추가시 로그인 후 form -->
-					<h3 class="tit_reply" style="padding: 20px">
-						후기<span>0</span>
-					</h3>
+					<%for (int i=0; i<review_list.size(); i++) {%>
+					<div class="showReview" style=" display:inline; margin-top: 10px;">
+					<div class="writer" ><h3 style="font-size: 15px; padding: 10px 10px 10px 10px; margin-bottom: -10px; display:inline-block;">작성자 : <%= review_list.get(i).getMb_email()%></h3>
+						<div class="score"  style="display: inline-block; float: right; padding: 10px 10px 10px 10px; "> 사용자가 등록한 점수에요. <%= review_list.get(i).getScore() %>점</div>
+					</div><hr/>
+				
+					<div class="content" style="overflow: hidden; padding: 0px 10px 0px 10px; margin-bottom: 20px;"><%=review_list.get(i).getReview_content() %></div>
+					</div>
+					<%} %>
 					<div class="write" style="height: 250px">
+						
 						<div class="form">
 							<form name="tform" id="tform">
 
 								<textarea name="review" rows="" id="comment215"
 									placeholder="소중한 후기를 남겨주세요." cols=""
 									onkeydown="commentresize(this);"
-									style="width: 900px; height: 150px; margin-top: -50px;"></textarea>
+									style="width: 900px; height: 150px; "></textarea>
 								<div class="fileRegbtn_wrap">
 									<%
 									if (info != null) {
@@ -634,6 +652,45 @@ https://templatemo.com/tm-580-woox-travel
 					$(this).addClass("active");
 				});
 			</script>
+			<script>
+			function setLike(){
+				let like =document.querySelector(".btn_good");
+				let like_cnt = document.querySelector(".num");
+				let gc_num = <%=item.getNum()%>;
+				console.log(like.src);
+				if(like.src == "http://localhost:8081/project/assets/images/ico_mpost01.png")
+				{
+					console.log(like_cnt.textContent);
+					number = parseInt(like_cnt.textContent)+1;
+					like_cnt.textContent = number;
+					like.src = "http://localhost:8081/project/assets/images/ico_mpost01_on.png";
+					$.ajax({	
+						url : 'LikeService',
+						
+						data : {
+							'like' : number,
+							'gc_num' : gc_num,
+						},
+						type : 'get',
+					
+						success : function(data) {
+							alert("성공!!!")},
+						error : function(request,status,error){
+						        alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+						      }
+
+					}); 
+					
+					
+				}else {like.src = "http://localhost:8081/project/assets/images/ico_mpost01.png";
+				number = parseInt(like_cnt.textContent)-1;
+				like_cnt.textContent = number;
+				}
+				
+			}
+			
+			</script>
+			
 			<script>
 				function show() {
 					console.log("실행");

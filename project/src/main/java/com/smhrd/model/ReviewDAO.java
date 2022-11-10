@@ -20,6 +20,14 @@ public class ReviewDAO {
 		
 		return list;
 	}
+	public ArrayList<ReviewDTO> gc_review(BigDecimal gc_num){
+		SqlSession session = sqlSessionFactory.openSession(true);
+		
+		ArrayList<ReviewDTO> list = (ArrayList)session.selectList("gc_review", gc_num);
+		session.close();
+		
+		return list;
+	}
 	public int reviewupdate(ReviewDTO dto) {
 		SqlSession session = sqlSessionFactory.openSession(true);
 		int update = session.update("reviewupdate", dto);
