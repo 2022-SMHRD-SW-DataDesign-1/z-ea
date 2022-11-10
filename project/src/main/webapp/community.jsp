@@ -44,48 +44,8 @@
 	<!-- ***** Header Area Start ***** -->
 	<header class="header-area header-sticky">
 		<div class="container">
-			<<<<<<< HEAD ======= >>>>>>> branch 'master' of
-			https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
-			<div class="row">
-				<div class="col-12">
-					<nav class="main-nav">
-						<!-- ***** Logo Start ***** -->
-						<a href="Main.html" class="logo"> <img
-							src="assets/images/logo.png" alt="">
-						</a>
-						<!-- ***** Logo End ***** -->
-
-						<!-- ***** Menu Start ***** -->
-						<ul class="nav">
-							<li><a href="index.jsp" class="active">홈</a></li>
-							<li><a href="about.jsp">테마</a></li>
-							<li><a href="deals.jsp">예약</a></li>
-							<li><a href="reservation.jsp">양도</a></li>
-							<li><a href="Community.jsp">커뮤니티</a></li>
-							<%
-							if (info == null) {
-							%>
-							<li>
-								<button class="modalBtn" onclick="show()"
-									style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">로그인</button>
-							</li>
-							<%
-							} else {
-							%>
-							<li><a href="MyPage.jsp" class="modalBtn"
-								style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">마이페이지</a>
-							</li>
-							<li><a href="LogoutService" class="modalBtn"
-								style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">로그아웃</a>
-							</li>
-							<%
-							}
-							%>
-						</ul>
-						<a class='menu-trigger'> <span>Menu</span>
-						</a>
-						<!-- ***** Menu End ***** -->
-					</nav>
+			
+		
 					<div class="row">
 						<div class="col-12">
 							<nav class="main-nav">
@@ -231,7 +191,7 @@
 				<h2>커뮤니티</h2>
 				<a href="community_input.jsp">작성하기</a>
 				<%
-				ArrayList<BoardDTO> list = new BoardDAO().select();
+				ArrayList<BoardDTO> list = new BoardDAO().selectBoard();
 				%>
 			</header>
 

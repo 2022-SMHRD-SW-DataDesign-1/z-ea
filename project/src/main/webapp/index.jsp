@@ -66,8 +66,8 @@ https://templatemo.com/tm-580-woox-travel
 						<ul class="nav">
 							<li><a href="index.jsp" class="active">홈</a></li>
 							<li><a href="about.jsp">글램핑&카라반</a></li>
-							<li><a href="reservation.jsp">예약</a></li>
-							<li><a href="transfer.jsp">양도</a></li>
+							<li><a href="deals.jsp">예약</a></li>
+							<li><a href="reservation.jsp">양도</a></li>
 							<li><a href="community.jsp">커뮤니티</a></li>
 							<%
 							if (info == null) {
@@ -118,9 +118,9 @@ https://templatemo.com/tm-580-woox-travel
 					
 					
 					<form action="SearchService" method="post">
-						<input id="SearchEngine" type="text" placeholder="#여행" name="search"
+						<input id="SearchEngine" type="text" placeholder="#여행" name="tag"
 							style="width: 30%; height: 50px; border-radius: 20px; padding: 10px; margin: 5px;" />
-						<input type="submit" value="검색" />
+						<input style="padding : 12px; border: none; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD;" type="submit" value="검색" />
 					</form>
 					
 					

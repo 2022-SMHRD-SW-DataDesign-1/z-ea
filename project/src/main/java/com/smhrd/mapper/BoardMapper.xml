@@ -19,11 +19,11 @@
 		sysdate,
 		#{mb_email})
 	</insert>
-	<select id="select" resultType="BoardDTO">
+	<select id="selectBoard" resultType="BoardDTO">
 		select * from community_tb order by board_date desc
 	</select>
 	
-	<select id="show" parameterType="Bigdecimal" resultType="BoardDTO">
+	<select id="showBoard" parameterType="Bigdecimal" resultType="BoardDTO">
 	select * from community_tb where board_num = #{board_num}
 	</select>
 </mapper>
