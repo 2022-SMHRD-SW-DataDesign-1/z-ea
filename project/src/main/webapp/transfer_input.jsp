@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.GlampingDTO"%>
+<%@page import="com.smhrd.model.GlampingDAO"%>
 <%@page import="com.smhrd.model.ReservationDAO"%>
 <%@page import="com.smhrd.model.ReservationDTO"%>
 <%@page import="java.math.BigDecimal"%>
@@ -200,7 +202,7 @@ https://templatemo.com/tm-580-woox-travel
 				<div class="col-lg-12">
 					<h2>양도하기</h2>
 					<div class="main-button">
-						<a href="index.jsp">BACK</a>
+						<a href="transfer.jsp">BACK</a>
 					</div>
 				</div>
 			</div>
@@ -213,23 +215,23 @@ https://templatemo.com/tm-580-woox-travel
 
 			<div class="row">
 				<div class="col-lg-12">
-					<h2 style="margin-bottom: 50px;">작성하기</h2>
+					<h2 style="margin-bottom: 50px;">양도신청하기</h2>
 				</div>
 		</form>
 		<%
-		ArrayList<ReservationDTO> list = new ReservationDAO().select();
+		ArrayList<GlampingDTO> my_glamping_list = new GlampingDAO().my_glamping_show(info.getMb_email());
+		ArrayList<ReservationDTO> my_re_list = new ReservationDAO().my_re_show(info.getMb_email());
 		%>
-		<form action="TransferService" method="post"
-			enctype="multipart/form-data">
+		<form action="TransferService" method="post">
 			<!-- 글제목 -->
 			<div class="col-lg-6">
 				<fieldset>
-					<label for="name" class="form-label">제목</label><br> <select
-						name="board_category">
+					<label for="name" class="form-label">예약건 장소명</label><br> <select
+						name="rc_num">
 						<%
-						for (int i = 0; i < list.size(); i++) {
+						for (int i = 0; i < my_glamping_list.size(); i++) {
 						%>
-						<option value="예약내역"></option>
+						<option value="<%=my_re_list.get(i).getRc_num()%>"><%=my_glamping_list.get(i).getGc_name() %></option>
 						<%
 						}
 						%>
@@ -239,20 +241,20 @@ https://templatemo.com/tm-580-woox-travel
 			<!-- 글내용 -->
 			<div class="col-lg-6">
 				<fieldset>
-					<p>content</p>
+					<p>양도이유</p>
 					<label for="name" class="form-label"></label><br>
-					<textarea type="text" name="board_content" class="Name"
+					<textarea type="text" name="transfer_reason" class="Name"
 						placeholder="content" autocomplete="on" required
 						style="resize: none;" rows="10">
-										</textarea>
-					<input type="file" name="board_file" style="float: right;">
+										</textarea> <br>
+					<label for="name" class="form-label">제시가격</label>
+					<input type="text" name="offer_price" >
 				</fieldset>
 			</div>
 			<div class="col-lg-12">
 				<fieldset>
-					<button type="submit" class="main-button">작성하기</button>
+					<button type="submit" class="main-button">양도신청</button>
 				</fieldset>
-				</from>
 			</div>
 		</form>
 	</div>

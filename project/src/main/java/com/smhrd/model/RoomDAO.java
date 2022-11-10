@@ -18,5 +18,12 @@ public class RoomDAO {
 		
 		return list;
 	}
+	public RoomDTO transfer_num_room_show(BigDecimal transfer_num) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		RoomDTO info = session.selectOne("transfer_num_room_show", transfer_num);
+		session.close();
+		
+		return info;
+	}
 	
 }

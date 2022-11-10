@@ -133,7 +133,7 @@ https://templatemo.com/tm-580-woox-travel
 				if (info != null) {
 				%>
 				<div style="margin-bottom: 40px;">
-					<div class="col-lg-6">
+					<div class="table">
 						<table>
 							<%
 							for (int i = 0; i < comment_list.size(); i++) {
@@ -195,7 +195,7 @@ https://templatemo.com/tm-580-woox-travel
 				if (info != null) {
 				%>
 				<div style="margin-bottom: 40px;">
-					<div class="col-lg-6">
+					<div class="table">
 						<table>
 							<%
 							for (int i = 0; i < review_list.size(); i++) {
@@ -257,7 +257,7 @@ https://templatemo.com/tm-580-woox-travel
 				if (info != null) {
 				%>
 				<div style="margin-bottom: 40px;">
-					<div class="col-lg-6">
+					<div class="table">
 						<table>
 							<%
 							for (int i = 0; i < board_list.size(); i++) {

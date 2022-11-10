@@ -7,4 +7,9 @@
 	select * from room_tb where room_num in(select room_num from reservation_calendar_tb
 	where mb_email = #{mb_email})
 	</select>
+	
+	<select id="transfer_num_room_show" parameterType="BigDecimal" resultType="RoomDTO">
+	select * from room_tb where room_num =(select room_num from reservation_calendar_tb where rc_num =(
+	select rc_num from transfer_tb where transfer_num =#{transfer_num}))
+	</select>
 </mapper>

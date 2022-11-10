@@ -1,3 +1,12 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="java.sql.Timestamp"%>
+<%@page import="com.smhrd.model.ReservationDAO"%>
+<%@page import="com.smhrd.model.ReservationDTO"%>
+<%@page import="com.smhrd.model.GlampingDAO"%>
+<%@page import="com.smhrd.model.GlampingDTO"%>
+<%@page import="com.smhrd.model.TransferDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.smhrd.model.TransferDAO"%>
 <%@page import="com.smhrd.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -189,14 +198,14 @@
 					<div class="col-lg-12">
 						<h2>예약 양도</h2>
 						<div class="main-button">
-							<a href="about.jsp">양도하러가기</a>
+							<a href="transfer_input.jsp">양도하러가기</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="search-form">
+		<!-- <div class="search-form">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
@@ -247,7 +256,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<div class="amazing-deals">
 			<div class="container">
@@ -258,35 +267,35 @@
 							<p>떠나고 싶은 당신! 더 싼값에 놀러가볼까요~!!~~!~</p>
 						</div>
 					</div>
+<% ArrayList<TransferDTO> transfer_list = new TransferDAO().transfer_all_show();
 
-					<%
-					for (int i = 1; i < 5; i++) {
-					%>
+%>				
+				<%if(info!=null){ %>	
+				<%for(int i=0; i<transfer_list.size(); i++){ %>
+					<%if(transfer_list.get(i).getTransfer_status().equals("0"));{ %>
 					<div class="col-lg-6 col-sm-6" style="overflow: hidden;">
 						<div class="item">
 							<div class="row">
 								<div class="col-lg-6">
 									<div class="image">
-										<img src="assets/images/deals-0<%=i%>.jpg" alt="">
+										<img src="assets/images/deals-0<%=i+1%>.jpg" alt="">
 									</div>
 								</div>
 								<div class="col-lg-6 align-self-center">
 									<div class="content">
-										<span class="info">마감일</span>
-										<h4>Glasgow City Lorem</h4>
+										<h4><%=new GlampingDAO().transfer_num_glamping_show(transfer_list.get(i).getTransfer_num()).getGc_name() %></h4>
 										<div class="row">
 											<div class="col-6">
-												<i class="fa fa-clock"></i> <span class="list">5 Days</span>
+												<i class="fa fa-clock"></i> <span class="list">마감<%=new ReservationDAO().transfer_num_check_in(transfer_list.get(i).getTransfer_num()).getCheck_in() %></span>
 											</div>
 											<div class="col-6">
-												<i class="fa fa-map"></i> <span class="list">Daily
-													Places</span>
+												<i class="fa fa-map"></i> <span class="list"><%=new TransferDAO().transfer_show(transfer_list.get(i).getTransfer_num()).getOffer_price() %></span>
 											</div>
 										</div>
-										<p>Lorem ipsum dolor sit amet dire consectetur adipiscing
-											elit.</p>
+										<p>양도이유 : <%=new TransferDAO().transfer_show(transfer_list.get(i).getTransfer_num()).getTransfer_reason() %></p>
+										<p>주소 : <%=new GlampingDAO().transfer_num_glamping_show(transfer_list.get(i).getTransfer_num()).getGc_addr() %></p>
 										<div class="main-button">
-											<a href="reservation.jsp">자세히보기</a>
+											<a href="transfer_select_show.jsp?transfer_num=<%=transfer_list.get(i).getTransfer_num()%>">자세히보기</a>
 										</div>
 									</div>
 								</div>
@@ -294,16 +303,16 @@
 						</div>
 					</div>
 					<%
-					}
+					}}}
 					%>
 
 					<div class="col-lg-12">
 						<ul class="page-numbers">
-							<li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
-							<li><a href="#">1</a></li>
-							<li class="active"><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#"><i class="fa fa-arrow-right"></i></a></li>
+							<!-- <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
+							<li><a href="#">1</a></li> -->
+							<li class="active"><a href="#">up</a></li>
+							<!-- <li><a href="#">3</a></li>
+							<li><a href="#"><i class="fa fa-arrow-right"></i></a></li> -->
 						</ul>
 					</div>
 				</div>
