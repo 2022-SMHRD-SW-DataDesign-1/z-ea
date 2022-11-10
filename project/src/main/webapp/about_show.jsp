@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.model.LikeDAO"%>
+<%@page import="com.smhrd.model.LikeDTO"%>
 <%@page import="com.smhrd.model.ReviewDTO"%>
 <%@page import="com.smhrd.model.ReviewDAO"%>
 <%@page import="java.math.BigDecimal"%>
@@ -47,15 +49,24 @@ https://templatemo.com/tm-580-woox-travel
 <body>
 	<%
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
+	String mb_email = info.getMb_email();
 	int num = Integer.parseInt(request.getParameter("num"));
 	BigDecimal gc_num= new BigDecimal(request.getParameter("num"));
+	BigDecimal liked= new BigDecimal("3");
 	
 	ArrayList<ReviewDTO> review_list = new ArrayList<ReviewDTO>();
 	ReviewDAO Reviewdao = new ReviewDAO();
-	
+	System.out.print(liked);
+	System.out.print(gc_num);
+	System.out.print(mb_email);
 	review_list = Reviewdao.gc_review(gc_num);
 	
-	System.out.println(review_list);
+	LikeDTO likedto = new LikeDTO(gc_num, liked ,mb_email);
+	int countLike = new LikeDAO().countLike(gc_num);
+	int showLike = new LikeDAO().showLike(likedto);
+	
+	
+	
 	
 	
 	ItemDAO dao = new ItemDAO();
@@ -255,10 +266,15 @@ https://templatemo.com/tm-580-woox-travel
 			<div class="post_area">
 			<div style="text-align: left;padding:10px;">
 			<a >
-			
+				<%if(showLike == 0){ %>
 				<img src="assets\images\ico_mpost01.png" id="like" class="btn_good" style="width : 30px; height:auto; "  onclick="setLike()" >
-					<span class="ico">좋아요</span><span class="num" id="conLike">0</span>
+					<span class="ico">좋아요</span><span class="num" id="conLike"><%= countLike %></span>
 				</img>
+				<%} else { %>
+					<img src="assets\images\ico_mpost01_on.png" id="like" class="btn_good" style="width : 30px; height:auto; "  onclick="setLike()" >
+					<span class="ico">좋아요</span><span class="num" id="conLike"><%= countLike %></span>
+				</img>
+				<% }%>
 			</a>	
 			</div>	
 				

@@ -1,5 +1,7 @@
 package com.smhrd.model;
 
+import java.math.BigDecimal;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -15,4 +17,16 @@ public class LikeDAO {
 		return row;
 		
 	}
-}
+	public int showLike(LikeDTO like) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int liked = session.selectOne("showLike", like);
+		session.close();
+		return liked;
+	}
+	public int countLike(BigDecimal gc_num) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int count = session.selectOne("countLike", gc_num);
+		session.close();
+		return count;
+	
+}}

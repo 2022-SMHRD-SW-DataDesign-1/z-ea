@@ -35,8 +35,7 @@ public class LikeService extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		MemberDTO info = (MemberDTO) session.getAttribute("info");
-		// System.out.println("GC_NUM : "+gc_num);
-		// System.out.println("REVIEW_CONTENT : "+ review_content);
+		
 		response.getWriter().print(num);
 		response.getWriter().print(like);
 		
