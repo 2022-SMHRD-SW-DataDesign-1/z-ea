@@ -1,11 +1,11 @@
 <%@page import="com.smhrd.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,236 +26,90 @@
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
-
-
-<html>
-<head>
-<title>:: JavaScript 캘린더 ::</title>
-<style type="text/css">
-a {
-	color: #000000;
-	text-decoration: none;
+<style>
+/* 달력 */
+.rap {
+	max-width: 820px;
+	padding: 0 1.4rem;
+	margin-top: 3rem;
+	height: 35rem;
 }
 
-.scriptCalendar {
+.dateHead {
+	margin-bottom: .4rem;
+}
+
+.dateHead div {
+	background: darkslateblue;
+	color: #fff;
 	text-align: center;
 }
 
-.scriptCalendar>thead>tr>td {
-	width: 50px;
-	height: 50px;
+.grid {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	grid-gap: 5px;
 }
 
-.scriptCalendar>thead>tr:first-child>td {
+.grid div {
+	padding: .6rem;
+	font-size: .9rem;
+	cursor: pointer;
+}
+
+.dateBoard div {
+	color: #222;
 	font-weight: bold;
-}
-
-.scriptCalendar>thead>tr:last-child>td {
-	background-color: #90EE90;
-}
-
-.scriptCalendar>tbody>tr>td {
-	width: 50px;
 	height: 50px;
+	padding: .6rem .8rem;
+	border-radius: .6rem;
+	border: 1px solid #eee;
+	background-color: white;
 }
+
+.noColor {
+	background: #eee;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem 2rem;
+}
+
+.btn {
+	display: block;
+	width: 20px;
+	height: 20px;
+	border: 3px solid #000;
+	border-width: 3px 3px 0 0;
+	cursor: pointer;
+}
+
+.prevDay {
+	transform: rotate(-135deg);
+}
+
+.nextDay {
+	transform: rotate(45deg);
+}
+
+/* ---- */
+@import
+	url("https://cdn.Sjsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css")
+	;
+
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	box-sizing: border-box;
+	font-family: Pretendard;
+}
+
 </style>
-<script type="text/javascript">
-	document.addEventListener("DOMContentLoaded", function() {
-		buildCalendar();
-	});
 
-	var today = new Date(); // @param 전역 변수, 오늘 날짜 / 내 컴퓨터 로컬을 기준으로 today에 Date 객체를 넣어줌
-	var date = new Date(); // @param 전역 변수, today의 Date를 세어주는 역할
 
-	/**
-	 * @brief   이전달 버튼 클릭
-	 */
-	function prevCalendar() {
-		this.today = new Date(today.getFullYear(), today.getMonth() - 1, today
-				.getDate());
-		buildCalendar(); // @param 전월 캘린더 출력 요청
-	}
-
-	/**
-	 * @brief   다음달 버튼 클릭
-	 */
-	function nextCalendar() {
-		this.today = new Date(today.getFullYear(), today.getMonth() + 1, today
-				.getDate());
-		buildCalendar(); // @param 명월 캘린더 출력 요청
-	}
-
-	/**
-	 * @brief   캘린더 오픈
-	 * @details 날짜 값을 받아 캘린더 폼을 생성하고, 날짜값을 채워넣는다.
-	 */
-	function buildCalendar() {
-
-		let doMonth = new Date(today.getFullYear(), today.getMonth(), 1);
-		let lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
-
-		let tbCalendar = document.querySelector(".scriptCalendar > tbody");
-
-		document.getElementById("calYear").innerText = today.getFullYear(); // @param YYYY월
-		document.getElementById("calMonth").innerText = autoLeftPad((today
-				.getMonth() + 1), 2); // @param MM월
-
-		// @details 이전 캘린더의 출력결과가 남아있다면, 이전 캘린더를 삭제한다.
-		while (tbCalendar.rows.length > 0) {
-			tbCalendar.deleteRow(tbCalendar.rows.length - 1);
-		}
-
-		// @param 첫번째 개행
-		let row = tbCalendar.insertRow();
-
-		// @param 날짜가 표기될 열의 증가값
-		let dom = 1;
-
-		// @details 시작일의 요일값( doMonth.getDay() ) + 해당월의 전체일( lastDate.getDate())을  더해준 값에서
-		//               7로 나눈값을 올림( Math.ceil() )하고 다시 시작일의 요일값( doMonth.getDay() )을 빼준다.
-		let daysLength = (Math
-				.ceil((doMonth.getDay() + lastDate.getDate()) / 7) * 7)
-				- doMonth.getDay();
-
-		// @param 달력 출력
-		// @details 시작값은 1일을 직접 지정하고 요일값( doMonth.getDay() )를 빼서 마이너스( - )로 for문을 시작한다.
-		for (let day = 1 - doMonth.getDay(); daysLength >= day; day++) {
-
-			let column = row.insertCell();
-
-			// @param 평일( 전월일과 익월일의 데이터 제외 )
-			if (Math.sign(day) == 1 && lastDate.getDate() >= day) {
-
-				// @param 평일 날짜 데이터 삽입
-
-				column.innerText = autoLeftPad(day, 2);
-
-				// @param 일요일인 경우
-				if (dom % 7 == 1) {
-					column.style.color = "#FF4D4D";
-				}
-
-				// @param 토요일인 경우
-				if (dom % 7 == 0) {
-					column.style.color = "#4D4DFF";
-					row = tbCalendar.insertRow(); // @param 토요일이 지나면 다시 가로 행을 한줄 추가한다.
-				}
-
-			}
-
-			// @param 평일 전월일과 익월일의 데이터 날짜변경
-			else {
-				let exceptDay = new Date(doMonth.getFullYear(), doMonth
-						.getMonth(), day);
-				column.innerText = autoLeftPad(exceptDay.getDate(), 2);
-				column.style.color = "#A9A9A9";
-			}
-
-			// @brief   전월, 명월 음영처리
-			// @details 현재년과 선택 년도가 같은경우
-			if (today.getFullYear() == date.getFullYear()) {
-
-				// @details 현재월과 선택월이 같은경우
-				if (today.getMonth() == date.getMonth()) {
-
-					// @details 현재일보다 이전인 경우이면서 현재월에 포함되는 일인경우
-					if (date.getDate() > day && Math.sign(day) == 1) {
-						column.style.backgroundColor = "#E5E5E5";
-					}
-
-					// @details 현재일보다 이후이면서 현재월에 포함되는 일인경우
-					else if (date.getDate() < day && lastDate.getDate() >= day) {
-						column.style.backgroundColor = "#FFFFFF";
-						column.style.cursor = "pointer";
-						column.onclick = function() {
-							calendarChoiceDay(this);
-						}
-					}
-
-					// @details 현재일인 경우
-					else if (date.getDate() == day) {
-						column.style.backgroundColor = "#FFFFE6";
-						column.style.cursor = "pointer";
-						column.onclick = function() {
-							calendarChoiceDay(this);
-						}
-					}
-
-					// @details 현재월보다 이전인경우
-				} else if (today.getMonth() < date.getMonth()) {
-					if (Math.sign(day) == 1 && day <= lastDate.getDate()) {
-						column.style.backgroundColor = "#E5E5E5";
-					}
-				}
-
-				// @details 현재월보다 이후인경우
-				else {
-					if (Math.sign(day) == 1 && day <= lastDate.getDate()) {
-						column.style.backgroundColor = "#FFFFFF";
-						column.style.cursor = "pointer";
-						column.onclick = function() {
-							calendarChoiceDay(this);
-						}
-					}
-				}
-			}
-
-			// @details 선택한년도가 현재년도보다 작은경우
-			else if (today.getFullYear() < date.getFullYear()) {
-				if (Math.sign(day) == 1 && day <= lastDate.getDate()) {
-					column.style.backgroundColor = "#E5E5E5";
-				}
-			}
-
-			// @details 선택한년도가 현재년도보다 큰경우
-			else {
-				if (Math.sign(day) == 1 && day <= lastDate.getDate()) {
-					column.style.backgroundColor = "#FFFFFF";
-					column.style.cursor = "pointer";
-					column.onclick = function() {
-						calendarChoiceDay(this);
-					}
-				}
-			}
-
-			dom++;
-
-		}
-	}
-
-	/**
-	 * @brief   날짜 선택
-	 * @details 사용자가 선택한 날짜에 체크표시를 남긴다.
-	 */
-	function calendarChoiceDay(column) {
-
-		// @param 기존 선택일이 존재하는 경우 기존 선택일의 표시형식을 초기화 한다.
-		if (document.getElementsByClassName("choiceDay")[0]) {
-			document.getElementsByClassName("choiceDay")[0].style.backgroundColor = "#FFFFFF";
-			document.getElementsByClassName("choiceDay")[0].classList
-					.remove("choiceDay");
-		}
-
-		// @param 선택일 체크 표시
-		column.style.backgroundColor = "#FF9999";
-
-		// @param 선택일 클래스명 변경
-		column.classList.add("choiceDay");
-	}
-
-	/**
-	 * @brief   숫자 두자릿수( 00 ) 변경
-	 * @details 자릿수가 한자리인 ( 1, 2, 3등 )의 값을 10, 11, 12등과 같은 두자리수 형식으로 맞추기위해 0을 붙인다.
-	 * @param   num     앞에 0을 붙일 숫자 값
-	 * @param   digit   글자의 자릿수를 지정 ( 2자릿수인 경우 00, 3자릿수인 경우 000 … )
-	 */
-	function autoLeftPad(num, digit) {
-		if (String(num).length < digit) {
-			num = new Array(digit - String(num).length + 1).join("0") + num;
-		}
-		return num;
-	}
-</script>
 </head>
 
 
@@ -339,105 +193,182 @@ a {
 			</div>
 		</div>
 
+
 		<div class="search-form">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
-						<form id="search-form" name="gs" method="submit" role="search"
-							action="#">
+						<div class='rap'>
+							<h4>일정 선택하기</h4>
+							<div class="header" style="margin-top: 30px;">
+								<div class="btn prevDay"></div>
+								<h2 class='dateTitle'></h2>
+								<div class="btn nextDay"></div>
+							</div>
 
-							<div class="topArea">
-								<div class="topInner">
-									<h2 class="titDep1">예약</h2>
-									<br>
-									<div class="col-lg-12">
-										<li class=""><strong class="listTit">투숙기간 선택</strong><br>
-											<em class="intValue" id="dateText">
-												<table class="scriptCalendar">
-													<thead>
-														<tr>
-															<td onClick="prevCalendar();" style="cursor: pointer;">&#60;&#60;</td>
-															<td colspan="5"><span id="calYear">YYYY</span>년 <span
-																id="calMonth">MM</span>월</td>
-															<td onClick="nextCalendar();" style="cursor: pointer;">&#62;&#62;</td>
-														</tr>
-														<tr>
-															<td>일</td>
-															<td>월</td>
-															<td>화</td>
-															<td>수</td>
-															<td>목</td>
-															<td>금</td>
-															<td>토</td>
-														</tr>
-													</thead>
-													<tbody></tbody>
-												</table>
+							<div class="grid dateHead" style="margin-top: 50px;">
+								<div>일</div>
+								<div>월</div>
+								<div>화</div>
+								<div>수</div>
+								<div>목</div>
+								<div>금</div>
+								<div>토</div>
+							</div>
+
+							<div class="grid dateBoard" style="margin-top: 50px;"></div>
+						</div>
+
+						<div class="col-lg-12">
+							<div class='rap'>
+								<div class="camp-name-search">
+									<h4>캠핑장 검색하기</h4>
+									<div
+										class="input-area d-flex align-items-center justify-content-center mx-auto">
+										<img
+											src="https://static.campingtalk.me/local/images/icon/search/search.svg">
+										<input id="searchText_-1" type="text"
+											placeholder="클릭하여 검색하세요." class="text-center p-0">
+										<ul aria-labelledby="searchText_-1"
+											class="search-box-list border" style="display: none;"></ul>
 									</div>
-									</button>
+								</div>
+							</div>
+
+							<div class="col-lg-12">
+								<div class='rap'>
+									<h4 style="margin-bottom: 30px;">객실 추가인원</h4>
+									<fieldset>
+										<select name="Guests" class="form-select"
+											aria-label="Default select example" id="chooseGuests"
+											onChange="this.form.click()">
+											<option selected>ex. 3 or 4 or 5</option>
+											<option type="checkbox" name="option1" value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4+">4+</option>
+										</select>
+									</fieldset>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<footer>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<p>
+								Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights
+								reserved. <br>Design: <a href="https://templatemo.com"
+									target="_blank" title="free CSS templates">TemplateMo</a>
+								Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- Scripts -->
 
 
-									<footer>
-										<div class="container">
-											<div class="row">
-												<div class="col-lg-12">
-													<p>
-														Copyright © 2036 <a href="#">WoOx Travel</a> Company. All
-														rights reserved. <br>Design: <a
-															href="https://templatemo.com" target="_blank"
-															title="free CSS templates">TemplateMo</a> Distribution: <a
-															href="https://themewagon.com target="_blank" >ThemeWagon</a>
-													</p>
-												</div>
-											</div>
-										</div>
-									</footer>
+			<script>
+//달력 생성
+const makeCalendar = (date) => {
+// 현재의 년도와 월 받아오기
+const nowYear = new Date(date).getFullYear();
+const nowMonth = new Date(date).getMonth() + 1;
+
+// 한달전의 마지막 요일
+const prevDay = new Date(nowYear, nowMonth - 1, 1).getDay();
+
+// 현재 월의 마지막 날 구하기
+const lastDay = new Date(nowYear, nowMonth, 0).getDate();
+
+// 남은 박스만큼 다음달 날짜 표시
+const limitDay = prevDay + lastDay;
+const nextDay = Math.ceil(limitDay / 7) * 7;
+
+let htmlDummy = '';
+
+// 한달전 날짜 표시하기
+for (let i = 0; i < prevDay; i++) {
+  htmlDummy += `<div class="noColor"></div>`;
+}
+
+// 이번달 날짜 표시하기
+for (let i = 1; i <= lastDay; i++) {    
+  htmlDummy += `<div class="#b${i}" onclick="tag_filter(this)" onclick='getInnerText(this)'>${i}</div>`;
+}
+
+// 다음달 날짜 표시하기
+for (let i = limitDay; i < nextDay; i++) {
+  htmlDummy += `<div class="noColor"></div>`;
+}
+
+document.querySelector(`.dateBoard`).innerHTML = htmlDummy;
+document.querySelector(`.dateTitle`).innerText = `${nowYear}년 ${nowMonth}월`;
+}
 
 
-									<!-- Scripts -->
-									<!-- Bootstrap core JavaScript -->
-									<script src="vendor/jquery/jquery.min.js"></script>
-									<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+const date = new Date();
+makeCalendar(date);
 
-									<script src="assets/js/isotope.min.js"></script>
-									<script src="assets/js/owl-carousel.js"></script>
-									<script src="assets/js/wow.js"></script>
-									<script src="assets/js/tabs.js"></script>
-									<script src="assets/js/popup.js"></script>
-									<script src="assets/js/custom.js"></script>
 
-									<script>
-										$(".option").click(function() {
-											$(".option").removeClass("active");
-											$(this).addClass("active");
-										});
-									</script>
-									<script>
-										function show() {
-											console.log("실행");
-											let modal = document
-													.querySelector(".modalPopup");
-											let modalBtn = document
-													.querySelector(".modalBtn");
-											// let mainCaption = document.querySelector(".main-caption")
-											let slidercon = document
-													.querySelector(".dark")
-											console.log(modal.style.zIndex);
-											console.log(slidercon.style.zIndex);
-											if (modal.style.display == "none") {
 
-												modal.style.display = "block"
-												modalBtn.textContent = "닫기"
-											}
+//이전달 이동
+document.querySelector(`.prevDay`).onclick = () => {
+makeCalendar(new Date(date.setMonth(date.getMonth() - 1)));
+}
 
-											else {
-												// mainCaption.style.opacity ="1";
-												modal.style.display = "none"
+//다음달 이동
+document.querySelector(`.nextDay`).onclick = () => {
+makeCalendar(new Date(date.setMonth(date.getMonth() + 1)));
+}
 
-												modalBtn.textContent = "로그인";
-											}
-										}
-									</script>
+</script>
+
+			<script>
+function tag_filter(id){
+	let value;
+			
+			if(id.style.backgroundColor == "white"){
+			id.style.backgroundColor ="yellow";
+			value = id.textContent;
+			console.log(value);
+			/* $.ajax({
+				url : 'Filter',  //요청 서버 url
+				data : {'inputE': inputE},	//요청할 때 같이 보내줄 데이터
+				type : 'get', 				//요청 타입(method)
+				success : function(data){	//통신성공 (function(넘겨준데이터))
+					res=data;
+			console.log(res);
+				},
+				error : function(){			//통신실패
+					console.log("통신실패");
+				}
+			}) */
+
+			}else {
+				id.style.backgroundColor = "white";
+				value = "";
+			}
+			
+			}
+		</script>
+
+
+			<!-- Bootstrap core JavaScript -->
+			<script src="vendor/jquery/jquery.min.js"></script>
+			<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+			<script src="assets/js/isotope.min.js"></script>
+			<script src="assets/js/owl-carousel.js"></script>
+			<script src="assets/js/wow.js"></script>
+			<script src="assets/js/tabs.js"></script>
+			<script src="assets/js/popup.js"></script>
+			<script src="assets/js/custom.js"></script>
 </body>
 
 </html>

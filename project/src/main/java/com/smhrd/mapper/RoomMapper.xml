@@ -12,4 +12,7 @@
 	select * from room_tb where room_num =(select room_num from reservation_calendar_tb where rc_num =(
 	select rc_num from transfer_tb where transfer_num =#{transfer_num}))
 	</select>
+	<select id="room_select" parameterType="int" resultType="RoomDTO">
+	select * from room_tb where gc_num =#{gc_num}
+	</select>
 </mapper>

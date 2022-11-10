@@ -73,8 +73,8 @@ https://templatemo.com/tm-580-woox-travel
 							<li><a href="index.jsp">홈</a></li>
 							<li><a href="about.jsp">글램핑&카라반</a></li>
 							<li><a href="deals.jsp">예약</a></li>
-							<li><a href="reservation.jsp">양도</a></li>
-							<li><a href="community.jsp" class="active">커뮤니티</a></li>
+							<li><a href="reservation.jsp" class="active">양도</a></li>
+							<li><a href="community.jsp">커뮤니티</a></li>
 							<%
 							if (info == null) {
 							%>
@@ -223,6 +223,7 @@ https://templatemo.com/tm-580-woox-travel
 		ArrayList<ReservationDTO> my_re_list = new ReservationDAO().my_re_show(info.getMb_email());
 		%>
 		<form action="TransferService" method="post">
+
 			<!-- 글제목 -->
 			<div class="col-lg-6">
 				<fieldset>

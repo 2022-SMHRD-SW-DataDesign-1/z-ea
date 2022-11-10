@@ -15,7 +15,6 @@
 	href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
 	rel="stylesheet">
 
-<title>WoOx Travel Reservation Page</title>
 
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -190,10 +189,14 @@ https://templatemo.com/tm-580-woox-travel
 
 	<!-- ***** Header Area End ***** -->
 
-	<div class=se style="background-color: blanchedalmond; height: 300px;">
+	<div class=se style="height: 150px; margin: 30%;">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
+					<h4>내 여행관리는 여기에서</h4><br>
+				
+						<h3 stylye="padding:10%"background=>My Page</h3>
+						<p>내 여행일정 관리부터 소통까지 !</p>
 				
 				</div>
 			</div>

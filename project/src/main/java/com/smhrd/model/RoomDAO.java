@@ -26,4 +26,12 @@ public class RoomDAO {
 		return info;
 	}
 	
+	public ArrayList<RoomDTO> room_select(){
+		SqlSession session = sqlSessionFactory.openSession(true);
+		ArrayList<RoomDTO> list = (ArrayList) session.selectList("room_select");
+		session.close();
+		
+		return list;
+	}
+	
 }

@@ -1,3 +1,7 @@
+<%@page import="com.smhrd.model.LikeDAO"%>
+<%@page import="com.smhrd.model.LikeDTO"%>
+<%@page import="com.smhrd.model.ReviewDTO"%>
+<%@page import="com.smhrd.model.ReviewDAO"%>
 <%@page import="java.math.BigDecimal"%>
 <%@page import="com.smhrd.model.MemberDTO"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
@@ -45,9 +49,26 @@ https://templatemo.com/tm-580-woox-travel
 <body>
 	<%
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
+	String mb_email = info.getMb_email();
 	int num = Integer.parseInt(request.getParameter("num"));
-
-	System.out.println(num);
+	BigDecimal gc_num= new BigDecimal(request.getParameter("num"));
+	BigDecimal liked= new BigDecimal("3");
+	
+	ArrayList<ReviewDTO> review_list = new ArrayList<ReviewDTO>();
+	ReviewDAO Reviewdao = new ReviewDAO();
+	System.out.print(liked);
+	System.out.print(gc_num);
+	System.out.print(mb_email);
+	review_list = Reviewdao.gc_review(gc_num);
+	
+	LikeDTO likedto = new LikeDTO(gc_num, liked ,mb_email);
+	int countLike = new LikeDAO().countLike(gc_num);
+	int showLike = new LikeDAO().showLike(likedto);
+	
+	
+	
+	
+	
 	ItemDAO dao = new ItemDAO();
 	ItemDTO item = dao.showDetail(num);
 	System.out.print(item);
@@ -243,22 +264,28 @@ https://templatemo.com/tm-580-woox-travel
 			<!-- //캐치플레이스 -->
 
 			<div class="post_area">
-				<button type="button" class="btn_good" onclick="setLike();">
-					<span class="ico">좋아요</span><span class="num" id="conLike">0</span>
-				</button>
-				<span class="rline">
-					<button type="button" class="btn_bookmark"
-						onclick="setFavoContentDetail();">
-						<span class="ico">즐겨찾기</span>
-					</button>
-				</span>
+			<div style="text-align: left;padding:10px;">
+			<a >
+				<%if(showLike == 0){ %>
+				<img src="assets\images\ico_mpost01.png" id="like" class="btn_good" style="width : 30px; height:auto; "  onclick="setLike()" >
+					<span class="ico">좋아요</span><span class="num" id="conLike"><%= countLike %></span>
+				</img>
+				<%} else { %>
+					<img src="assets\images\ico_mpost01_on.png" id="like" class="btn_good" style="width : 30px; height:auto; "  onclick="setLike()" >
+					<span class="ico">좋아요</span><span class="num" id="conLike"><%= countLike %></span>
+				</img>
+				<% }%>
+			</a>	
+			</div>	
+				
+			
 			</div>
 		</div>
 		<!-- //상단 -->
 
 
 		<!-- 사진보기 -->
-		<div id="galleryGo">
+		<div id="galleryGo"style="padding-top: 10x;">
 			<div class="user_reg"></div>
 			<h3 class="blind" style="padding: 20px">사진보기</h3>
 			<div class="photo_gallery">
@@ -268,7 +295,7 @@ https://templatemo.com/tm-580-woox-travel
 					style="height: 300px;">
 					<div class="swiper-wrapper" id="pImgList">
 						<div class="swiper-slide swiper-slide-active"
-							style="width: 450px;">
+							style="width:450px">
 							<img class="swiper-lazy swiper-lazy-loaded" alt="타요캠핑장  0"
 								onclick="openPhotoView(0)"
 								style="width: 100%; height: 100%; object-fit: contain;"
@@ -302,12 +329,12 @@ https://templatemo.com/tm-580-woox-travel
 
 		<!-- 상세정보 -->
 		<div id="detailGo">
-			<div class="blind" style="padding-top: 20px;">
+			<div class="blind" style="padding-top: 40px;">
 				<%=item.getDesc()%></div>
 			<!-- 내용더보기 -->
 			<div class="wrap_contView">
-				<h3 style="padding: 20px">상세정보</h3>
-				<button class="btn_modify" onclick="goJikimi();">
+				<h3 class="blind" style="padding: 20px; font-size: 28px;">상세정보</h3>
+				<button class="btn_modify" onclick="goJikimi();" style="border-radious:25px">
 					<span>관광정보 수정요청</span>
 				</button>
 				<!-- //내용더보기 -->
@@ -330,7 +357,7 @@ https://templatemo.com/tm-580-woox-travel
 				</div>
 			</div>
 			<!-- <!-- 주변정보 지도 -->
-			
+
 			<div class="surroundingsMap" id="detailGo">
 				<div class="map_skip" tabindex="0">
 					<a style="display: none;" href="javascript:jumpkakaomap();">지도
@@ -344,42 +371,54 @@ https://templatemo.com/tm-580-woox-travel
 						src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e68d48a5b99c5c426f94e0e5b5f56dbc&libraries=services"></script>
 					<script>
 						var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-						    mapOption = {
-						        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-						        level: 3 // 지도의 확대 레벨
-						    };  
-						
+						mapOption = {
+							center : new kakao.maps.LatLng(33.450701,
+									126.570667), // 지도의 중심좌표
+							level : 3
+						// 지도의 확대 레벨
+						};
+
 						// 지도를 생성합니다    
-						var map = new kakao.maps.Map(mapContainer, mapOption); 
-						
+						var map = new kakao.maps.Map(mapContainer, mapOption);
+
 						// 주소-좌표 변환 객체를 생성합니다
 						var geocoder = new kakao.maps.services.Geocoder();
-						
+
 						// 주소로 좌표를 검색합니다
-						geocoder.addressSearch(document.getElementById('address').textContent, function(result, status) {
-						
-						    // 정상적으로 검색이 완료됐으면 
-						     if (status === kakao.maps.services.Status.OK) {
-						
-						        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-						
-						        // 결과값으로 받은 위치를 마커로 표시합니다
-						        var marker = new kakao.maps.Marker({
-						            map: map,
-						            position: coords
-						        });
-						
-						        // 인포윈도우로 장소에 대한 설명을 표시합니다
-						        var infowindow = new kakao.maps.InfoWindow({
-						            content: '<div style="width:150px;text-align:center;padding:6px 0;">'+document.getElementById('topTitle').textContent+'</div>'
-						        });
-						        infowindow.open(map, marker);
-						
-						        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-						        map.setCenter(coords);
-						    } 
-						});    
-						</script>
+						geocoder
+								.addressSearch(
+										document.getElementById('address').textContent,
+										function(result, status) {
+
+											// 정상적으로 검색이 완료됐으면 
+											if (status === kakao.maps.services.Status.OK) {
+
+												var coords = new kakao.maps.LatLng(
+														result[0].y,
+														result[0].x);
+
+												// 결과값으로 받은 위치를 마커로 표시합니다
+												var marker = new kakao.maps.Marker(
+														{
+															map : map,
+															position : coords
+														});
+
+												// 인포윈도우로 장소에 대한 설명을 표시합니다
+												var infowindow = new kakao.maps.InfoWindow(
+														{
+															content : '<div style="width:150px;text-align:center;padding:6px 0;">'
+																	+ document
+																			.getElementById('topTitle').textContent
+																	+ '</div>'
+														});
+												infowindow.open(map, marker);
+
+												// 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+												map.setCenter(coords);
+											}
+										});
+					</script>
 					<img src="../resources/images/sub/map_dim01.png" alt=""
 						style="width: 100%; height: 100%;"> <a
 						href="javascript:myLocation();" class="position">내위치</a> <a
@@ -458,17 +497,17 @@ https://templatemo.com/tm-580-woox-travel
 						<div class="inr">
 							<ul>
 								<li><strong>문의 및 안내</strong><span class="mo"><a
-										href="tel:010-4252-4420">010-4252-4420</a></span><span class="pc">010-4252-4420</span></li>
-								<li><strong>홈페이지</strong><span><a
+										href="#"><%=item.getTel()%></a></span></li>
+								<li><strong>종류</strong><span><%=item.getType()%></span></li>
+								<!-- <li><strong>홈페이지</strong><span><a
 										href=" http://tayocaravan.com" target="_blank"
-										title="새창 : 타요캠핑장 사이트로 이동"> http://tayocaravan.com</a></span></li>
-								<li><strong>주소</strong><span>강원도 삼척시 삼척로 4246-30</span></li>
+										title="새창 : 타요캠핑장 사이트로 이동"> http://tayocaravan.com</a></span></li> -->
+								<li><strong>주소</strong><span><%=item.getAddr()%></span></li>
 								<li><strong>이용시간</strong><span>15:00 ~ 익일11:00</span></li>
-								<li><strong>휴일</strong><span>없음</span></li>
+
 								<li><strong>주차</strong><span>주차가능</span></li>
-								<li><strong>이용요금</strong><span>100,000원~260,000원<br>※
-										이용요금은 변동될 수 있으므로 홈페이지 참조 또는 전화 문의 요망
-								</span></li>
+								<li><strong>이용요금</strong><span><%=item.getPrice()%><br>※
+										이용요금은 변동될 수 있으므로 홈페이지 참조 또는 전화 문의 요망 </span></li>
 							</ul>
 						</div>
 					</div>
@@ -514,55 +553,65 @@ https://templatemo.com/tm-580-woox-travel
 			<div class="tag_cont" style="padding-right: 0px;">
 				<div class="inr" style="height: 70px;">
 					<ul class="clfix">
-						<li><a
-							href="javascript:goTagList(&quot;28&quot;,&quot;강원도캠핑장&quot;,&quot;09aae5ac-c676-43d6-a8ea-00724b6d726b&quot;)"><span>#강원도캠핑장</span></a></li>
-						<li><a
-							href="javascript:goTagList(&quot;28&quot;,&quot;레포츠&quot;,&quot;e6875575-2cc2-43ba-9651-28d31a7b3e23&quot;)"><span>#레포츠</span></a></li>
-						<li><a
-							href="javascript:goTagList(&quot;28&quot;,&quot;삼척시캠핑장&quot;,&quot;b3b9e864-2f50-4ec5-92b7-e8505a624ace&quot;)"><span>#삼척시캠핑장</span></a></li>
-						<li><a
-							href="javascript:goTagList(&quot;28&quot;,&quot;어린이놀이터&quot;,&quot;f99a3f6b-13d0-4c45-b573-9cd8c55f3958&quot;)"><span>#어린이놀이터</span></a></li>
-						<li><a
-							href="javascript:goTagList(&quot;28&quot;,&quot;일출명소&quot;,&quot;7b755b61-ba42-11e8-932f-02001c6b0001&quot;)"><span>#일출명소</span></a></li>
-						<li><a
-							href="javascript:goTagList(&quot;28&quot;,&quot;키즈캠핑&quot;,&quot;b98add79-4b93-49c1-b9d3-63b09379a296&quot;)"><span>#키즈캠핑</span></a></li>
+
+						<%
+						String tag = item.getTag();
+						System.out.print(tag);
+						String[] tagArr = tag.split(" ");
+						for (int i = 0; i < tagArr.length; i++) {
+						%>
+						<li><a href="#"><span><%=tagArr[i]%></span></a></li>
+						<%
+						}
+						%>
+
 					</ul>
 				</div>
 				<button type="button" class="btn_more" style="display: none;">더보기</button>
 			</div>
 			<!-- //태그 -->
 
-
 			<!-- 여행톡 -->
-			<h3 class="blind">여행톡</h3>
+			<h3 class="blind">여행 후기 <span style="font-size: 22px; font-weight: normal;"><%= review_list.size() %>건의 리뷰가 나왔어요.</span></h3>
 			<div id="replyGo">
 				<div class="replyWrap">
 					<!-- login 추가시 로그인 후 form -->
-					<h3 class="tit_reply" style="padding: 20px">
-						여행톡<span>0</span>
-					</h3>
-					<div class="write">
+					<%for (int i=0; i<review_list.size(); i++) {%>
+					<div class="showReview" style=" display:inline; margin-top: 10px;">
+					<div class="writer" ><h3 style="font-size: 15px; padding: 10px 10px 10px 10px; margin-bottom: -10px; display:inline-block;">작성자 : <%= review_list.get(i).getMb_email()%></h3>
+						<div class="score"  style="display: inline-block; float: right; padding: 10px 10px 10px 10px; "> 사용자가 등록한 점수에요. <%= review_list.get(i).getScore() %>점</div>
+					</div><hr/>
+				
+					<div class="content" style="overflow: hidden; padding: 0px 10px 0px 10px; margin-bottom: 20px;"><%=review_list.get(i).getReview_content() %></div>
+					</div>
+					<%} %>
+					<div class="write" style="height: 250px">
+						
 						<div class="form">
 							<form name="tform" id="tform">
 
-								<span class="writeForm"><textarea name="" rows=""
-										id="comment" placeholder="로그인 후 소중한 댓글을 남겨주세요." cols=""
-										onkeydown="commentresize(this);" readonly="readonly"
-										style="width: 100%; height: 100%"></textarea></span>
+								<textarea name="review" rows="" id="comment215"
+									placeholder="소중한 후기를 남겨주세요." cols=""
+									onkeydown="commentresize(this);"
+									style="width: 900px; height: 150px; "></textarea>
 								<div class="fileRegbtn_wrap">
-									<span class="fileRegbtn"> <input type="file" id="fileUp"
-										name="fileUp" multiple="" onchange="fileChange(this)"
-										disabled="disabled"> <label for="fileUp"
-										class="btn_fileUp">파일찾기</label> <a href="javascript:"
-										class="btn_apply ContentComment">로그인</a>
-									</span>
+									<%
+									if (info != null) {
+									%>
+
+									<a href="javascript:void(0)" id="regi" onclick="regi_review()">등록하기</a>
+									<%
+									} else {
+									%>
+									<a href="#" class="btn_apply ContentComment">로그인</a>
+									<%
+									}
+									%>
 								</div>
 							</form>
 						</div>
 					</div>
-					<div class="wrap_reply">
-						<p class="reply_none">등록된 댓글이 없습니다.</p>
-					</div>
+
 					<div class="wrap_reply">
 						<div class="list_reply">
 							<ul>
@@ -572,7 +621,15 @@ https://templatemo.com/tm-580-woox-travel
 							</div>
 						</div>
 					</div>
-				<div id= reservation style="width: 100%; height: 50px; margin: 15px; text-align: center;"  > <button type="button" class="btn btn-primary btn-lg" style="background-color : #6A5ACD;">예약하러가기</button></div>
+
+					<div style="text-align: right; margin: 20px;">
+						<a href="ItemReservService?num=<%=item.getNum()%>" style="">
+
+							<button type="button" class="btn btn-primary btn-lg"
+								style="background-color: #6A5ACD;">예약하러가기</button>
+
+						</a>
+					</div>
 				</div>
 			</div>
 			<!-- //여행톡 -->
@@ -606,62 +663,126 @@ https://templatemo.com/tm-580-woox-travel
 			<script src="assets/js/custom.js"></script>
 
 			<script>
-			$(".option").click(function() {
-				$(".option").removeClass("active");
-				$(this).addClass("active");
-			});
-		</script>
+				$(".option").click(function() {
+					$(".option").removeClass("active");
+					$(this).addClass("active");
+				});
+			</script>
 			<script>
-			function show() {
-				console.log("실행");
-				let modal = document.querySelector(".modalPopup");
-				let modalBtn = document.querySelector(".modalBtn");
-				// let mainCaption = document.querySelector(".main-caption")
-				let slidercon = document.querySelector(".dark")
-				console.log(modal.style.zIndex);
-				console.log(slidercon.style.zIndex);
-				if (modal.style.display == "none") {
+			function setLike(){
+				let like =document.querySelector(".btn_good");
+				let like_cnt = document.querySelector(".num");
+				let gc_num = <%=item.getNum()%>;
+				console.log(like.src);
+				if(like.src == "http://localhost:8081/project/assets/images/ico_mpost01.png")
+				{
+					console.log(like_cnt.textContent);
+					number = parseInt(like_cnt.textContent)+1;
+					like_cnt.textContent = number;
+					like.src = "http://localhost:8081/project/assets/images/ico_mpost01_on.png";
+					$.ajax({	
+						url : 'LikeService',
+						
+						data : {
+							'like' : number,
+							'gc_num' : gc_num,
+						},
+						type : 'get',
+					
+						success : function(data) {
+							alert("성공!!!")},
+						error : function(request,status,error){
+						        alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+						      }
 
-					modal.style.display = "block"
-					modalBtn.textContent = "닫기"
+					}); 
+					
+					
+				}else {like.src = "http://localhost:8081/project/assets/images/ico_mpost01.png";
+				number = parseInt(like_cnt.textContent)-1;
+				like_cnt.textContent = number;
 				}
+				
+			}
+			
+			</script>
+			
+			<script>
+				function show() {
+					console.log("실행");
+					let modal = document.querySelector(".modalPopup");
+					let modalBtn = document.querySelector(".modalBtn");
+					// let mainCaption = document.querySelector(".main-caption")
+					let slidercon = document.querySelector(".dark")
+					console.log(modal.style.zIndex);
+					console.log(slidercon.style.zIndex);
+					if (modal.style.display == "none") {
 
-				else {
-					// mainCaption.style.opacity ="1";
-					modal.style.display = "none"
-
-					modalBtn.textContent = "로그인";
-				}
-
-	</script>
-	<script>
-		function checkE() {
-			let mb_email_ck = $('#mb_email_ck').val();
-			console.log(mb_email_ck);
-
-			$.ajax({
-				url : 'EmailCheckService',
-				data : {
-					'mb_email_ck' : mb_email_ck
-				},
-				type : 'get',
-				success : function(data) {
-					console.log(data);
-
-					if (data == 'true') {
-						$('#resultCheck').text('사용할 수 없는 아이디')
-					} else {
-						$('#resultCheck').text('사용할 수 있는 아이디')
+						modal.style.display = "block"
+						modalBtn.textContent = "닫기"
 					}
-				},
-				error : function() {
-					console.log("통신실패");
+
+					else {
+						// mainCaption.style.opacity ="1";
+						modal.style.display = "none"
+
+						modalBtn.textContent = "로그인";
+					}
+			</script>
+			<script>
+				function regi_review() {
+						let regi_value = $("#comment215").val();
+						let gc_num = <%=item.getNum()%>;
+						console.log(regi_value);
+						console.log(gc_num);
+
+						$.ajax({	
+							url : 'ReviewService',
+							
+							data : {
+								'review_content' : regi_value,
+								'gc_num' : gc_num,
+							},
+							type : 'get',
+						
+							success : function(data) {
+								alert("성공!!!")},
+							error : function(request,status,error){
+							        alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+							      }
+
+						}); 
+					}
+
+			</script>
+			<script>
+				function checkE() {
+					let mb_email_ck = $('#mb_email_ck').val();
+					console.log(mb_email_ck);
+
+					$.ajax({
+						url : 'EmailCheckService',
+						data : {
+							'mb_email_ck' : mb_email_ck
+						},
+						type : 'get',
+						success : function(data) {
+							console.log(data);
+
+							if (data == 'true') {
+								$('#resultCheck').text('사용할 수 없는 아이디')
+							} else {
+								$('#resultCheck').text('사용할 수 있는 아이디')
+							}
+						},
+						error : function() {
+							console.log("통신실패");
+
+						}
+					});
 
 				}
-			});
-
-		}
-	</script>
+			</script>
 </body>
 
 </html>

@@ -58,16 +58,16 @@ https://templatemo.com/tm-580-woox-travel
 				<div class="col-12">
 					<nav class="main-nav">
 						<!-- ***** Logo Start ***** -->
-						<a href="index.jsp" class="logo"> <img
-							src="assets/images/logo.png" alt="">
+						<a href="index.jsp" class="logo" > <img
+							src="assets/images/logo.png" style="width : 50px; margin-top: -5px;" alt="">
 						</a>
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
 							<li><a href="index.jsp" class="active">홈</a></li>
 							<li><a href="about.jsp">글램핑&카라반</a></li>
-							<li><a href="deals.jsp">예약</a></li>
-							<li><a href="reservation.jsp">양도</a></li>
+							<li><a href="reservation.jsp">예약</a></li>
+							<li><a href="transfer.jsp">양도</a></li>
 							<li><a href="community.jsp">커뮤니티</a></li>
 							<%
 							if (info == null) {
@@ -76,6 +76,7 @@ https://templatemo.com/tm-580-woox-travel
 								<button class="modalBtn" onclick="show()"
 									style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">로그인</button>
 							</li>
+							
 							<%
 							} else {
 							%>
@@ -86,6 +87,7 @@ https://templatemo.com/tm-580-woox-travel
 								style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">로그아웃</a>
 							</li>
 							<%
+							
 							}
 							%>
 						</ul>
@@ -427,7 +429,6 @@ https://templatemo.com/tm-580-woox-travel
 	<script src="vendor/jquery/jquery.slim.js"></script>
 	<script src="vendor/jquery/jquery.slim.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
 	<script src="assets/js/isotope.min.js"></script>
 	<script src="assets/js/owl-carousel.js"></script>
 	<script src="assets/js/wow.js"></script>

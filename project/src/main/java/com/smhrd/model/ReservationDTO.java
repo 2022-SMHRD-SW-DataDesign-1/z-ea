@@ -1,8 +1,8 @@
 package com.smhrd.model;
 
 import java.math.BigDecimal;
-import java.sql.Timestamp;
 
+import java.sql.Timestamp;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -26,5 +26,4 @@ public class ReservationDTO {
 
     // 퇴실 시간 
     private Timestamp check_out;
-
 }

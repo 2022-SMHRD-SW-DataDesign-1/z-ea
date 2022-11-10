@@ -17,4 +17,11 @@ WHERE review_num = #{review_num}
 	<delete id="review_delete">
 	delete from review_tb where review_num =#{review_num}
 	</delete>
+	
+	<insert id="review_insert" parameterType="ReviewDTO" >
+	insert into review_tb(mb_email, review_content,score,review_date, gc_num) values(#{mb_email},#{review_content},#{score},sysdate,#{gc_num})
+	</insert>
+	<select id="gc_review" parameterType="BigDecimal" resultType="ReviewDTO">
+	select * from review_tb where gc_num = #{gc_num}
+	</select>
 </mapper>
