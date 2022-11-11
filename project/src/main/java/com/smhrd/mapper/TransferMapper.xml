@@ -3,5 +3,34 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smhrd.mapper.TransferMapper">
-
+	<insert id="transfer_upload" parameterType="TransferDTO">
+	INSERT INTO transfer_tb
+    (rc_num, 
+    transfer_id, 
+    transfer_reason, 
+    offer_price, 
+    reg_date, 
+    transfer_status)
+	VALUES
+    (#{rc_num}, 
+    #{transfer_id}, 
+    #{transfer_reason}, 
+    #{offer_price}, 
+    sysdate, 
+    '0')
+	</insert>
+	
+	<select id="transfer_all_show" resultType="TransferDTO">
+		select * from transfer_tb 
+	</select>
+	
+	<select id="transfer_show" parameterType="Bigdecimal"
+		resultType="TransferDTO">
+		select * from transfer_tb where
+		transfer_num=#{transfer_num}
+	</select>
+	<select id="transfer_status_check" parameterType="TransferDTO">
+	update transfer_tb set transfer_status = '1' where rc_num =#{rc_num} and transfer_id =#{transfer_id} 
+	</select>
+	
 </mapper>

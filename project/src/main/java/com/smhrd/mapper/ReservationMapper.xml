@@ -6,4 +6,10 @@
 	<select id="my_re_show" parameterType="String" resultType="ReservationDTO">
 	select * from reservation_calendar_tb where mb_email = #{mb_email}
 	</select>
+	<select id="transfer_num_check_in" parameterType="BigDecimal" resultType="ReservationDTO">
+	select * from reservation_calendar_tb where rc_num =(select rc_num from transfer_tb where transfer_num =#{transfer_num})
+	</select>
+	<update id="transfer_update" parameterType="ReservationDTO">
+	update reservation_calendar_tb set mb_email=#{mb_email} where rc_num=#{rc_num}
+	</update>
 </mapper>

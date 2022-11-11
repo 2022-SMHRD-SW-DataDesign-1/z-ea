@@ -216,18 +216,6 @@
 			"showQuestionNumbers" : "off"
 		};
 
-<<<<<<< HEAD
-	function sendDataToServer(survey) {
-		//send Ajax request to your web server
-		alert("The results are: " + JSON.stringify(survey.data));
-		data = JSON.stringify(survey.data);
-		data1 = JSON.parse(data);
-		dataArr = Object.values(data1);
-		console.log(dataArr);
-		
-	};
-	</script>
-=======
 		function sendDataToServer(survey) {
 			// function열어
 
@@ -251,7 +239,6 @@
 			for (let i = 0; i < data[5].length; i++) {
 				tipdata += data[5][i];
 			}
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 			
 			//send Ajax request to your web server
 			if (confirm("제출 ㄱ?"))
@@ -260,7 +247,7 @@
 				$.ajax({
 					//ajax 열어
 					//traditional : true,
-					url : "Survey2Service",
+					url : "SurveyUpdateService",
 					data : {
 						mb_age : data[0],
 						mb_view : viewdata,

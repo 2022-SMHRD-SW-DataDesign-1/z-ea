@@ -370,8 +370,8 @@ Header Style
 }
 
 .header-area .main-nav .logo img {
-	width: 159px;
-	margin-top: 15px;
+	width: 130px;
+	margin-top:-30px;
 }
 
 .background-header .main-nav .logo img {
@@ -624,6 +624,7 @@ Header Style
 	}
 	.header-area .logo {
 		margin-left: 0px;
+		margin-top:-32px;
 	}
 	.header-area .menu-trigger {
 		display: block !important;
