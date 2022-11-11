@@ -1,34 +1,24 @@
-<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
-<%@page import="com.smhrd.model.GlampingDTO"%>
-<%@page import="com.smhrd.model.GlampingDAO"%>
-<%@page import="com.smhrd.model.RoomDTO"%>
-<%@page import="com.smhrd.model.RoomDAO"%>
-<%@page import="com.smhrd.model.ReservationDTO"%>
-<%@page import="java.util.ArrayList"%>
 <%@page import="com.smhrd.model.ReservationDAO"%>
+<%@page import="com.smhrd.model.ReservationDTO"%>
+<%@page import="java.math.BigDecimal"%>
 <%@page import="com.smhrd.model.MemberDTO"%>
+<%@page import="com.smhrd.model.MemberDAO"%>
+<%@page import="com.smhrd.model.TransferDAO"%>
+<%@page import="com.smhrd.model.TransferDTO"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
-<html lang=en>
-
+<html lang="en">
 <head>
-
-<meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
 <link
 	href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
 	rel="stylesheet">
-
-<title>WoOx Travel Reservation Page</title>
-
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
 <!-- Additional CSS Files -->
 <link rel="stylesheet" href="assets/css/fontawesome.css">
 <link rel="stylesheet" href="assets/css/templatemo-woox-travel.css">
@@ -37,19 +27,23 @@
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 <!--
-
 TemplateMo 580 Woox Travel
-
 https://templatemo.com/tm-580-woox-travel
-
 -->
+<style>
+.table-dark{
+	margin:30px; padding:10px;
+}
+.table-dark > tr {
+padding:10px;
+}
+.re-title { margin-top:50px; padding:10px;}
+</style>
 </head>
-
 <body>
 	<%
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
 	%>
-
 	<!-- ***** Preloader Start ***** -->
 	<div id="js-preloader" class="js-preloader">
 		<div class="preloader-inner">
@@ -60,7 +54,6 @@ https://templatemo.com/tm-580-woox-travel
 		</div>
 	</div>
 	<!-- ***** Preloader End ***** -->
-
 	<!-- ***** Header Area Start ***** -->
 	<header class="header-area header-sticky">
 		<div class="container">
@@ -74,11 +67,11 @@ https://templatemo.com/tm-580-woox-travel
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
-							<li><a href="index.jsp" class="active">홈</a></li>
+							<li><a href="index.jsp">홈</a></li>
 							<li><a href="about.jsp">글램핑&카라반</a></li>
 							<li><a href="deals.jsp">예약</a></li>
 							<li><a href="reservation.jsp">양도</a></li>
-							<li><a href="community.jsp">커뮤니티</a></li>
+							<li><a href="community.jsp" class="active">커뮤니티</a></li>
 							<%
 							if (info == null) {
 							%>
@@ -108,147 +101,6 @@ https://templatemo.com/tm-580-woox-travel
 		</div>
 	</header>
 	<!-- ***** Header Area End ***** -->
-	<div class="second-page-heading" style="height: 100px;">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<h2>예약 정보 조회</h2>
-					<div class="main-button">
-						<a href="MyPage.jsp">BACK</a>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<%
-	ArrayList<ReservationDTO> re_list = new ReservationDAO().my_re_show(info.getMb_email());
-	ArrayList<RoomDTO> ro_list = new RoomDAO().my_room_show(info.getMb_email());
-	ArrayList<GlampingDTO> gl_list = new GlampingDAO().my_glamping_show(info.getMb_email());
-	System.out.println(re_list.size());
-	System.out.println(ro_list.size());
-	System.out.println(gl_list.size());
-	%>
-	<%
-	if (info != null) {
-	%>
-	<div class="reservation-form">
-		<div class="row" style="margin-bottom: 40px;">
-			<div class="col-lg-12">
-				<form id="reservation-form" name="gs" method="submit" role="search"
-					action="#">
-
-					<div class="row">
-						<h4>예약정보조회</h4>
-				</form>
-				<%
-				for (int i = 0; i < re_list.size(); i++) {
-				%>
-				<!-- 이름 -->
-				<div style="margin-bottom: 40px;">
-					<p>예약정보<%=i+1 %></p><br>
-					<div class="col-lg-6">
-						<fieldset>
-							<label for="Name" class="form-label">이용자이메일</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=re_list.get(i).getMb_email()%></p>
-						</fieldset>
-					</div>
-					<div class="col-lg-6">
-						<fieldset>
-							<label for="Name" class="form-label">장소유형</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=gl_list.get(i).getGc_type()%></p>
-						</fieldset>
-					</div>
-					<div class="col-lg-6">
-						<fieldset>
-							<label for="Name" class="form-label">장소명</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=gl_list.get(i).getGc_name()%></p>
-						</fieldset>
-					</div>
-					<div class="col-lg-6">
-						<fieldset>
-							<label for="Name" class="form-label">장소연락처</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=gl_list.get(i).getGc_tel()%></p>
-						</fieldset>
-					</div>
-					<div class="col-lg-6">
-						<fieldset>
-							<label for="Name" class="form-label">장소주소</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=gl_list.get(i).getGc_addr()%></p>
-						</fieldset>
-					</div>
-					<div class="col-lg-6">
-						<fieldset>
-							<label for="Name" class="form-label">장소시설</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=gl_list.get(i).getGc_facilities()%></p>
-						</fieldset>
-					</div>
-					<div class="col-lg-6">
-						<fieldset>
-							<label for="Name" class="form-label">장소부가시설</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=gl_list.get(i).getGc_Ad_facilities()%></p>
-						</fieldset>
-					</div>
-					<div class="col-lg-6">
-						<fieldset>
-							<label for="Name" class="form-label">가격</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=gl_list.get(i).getGc_price()%></p>
-						</fieldset>
-					</div>
-
-					<div class="col-lg-6">
-						<fieldset>
-							<label for="Name" class="form-label">방이름</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=ro_list.get(i).getRoom_name()%></p>
-						</fieldset>
-					</div>
-					<div class="col-lg-6">
-						<fieldset>
-							<label for="Name" class="form-label">방상태</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=ro_list.get(i).getRoom_status()%></p>
-						</fieldset>
-					</div>
-					<div class="col-lg-6">
-						<fieldset>
-							<label for="Name" class="form-label">호실제한인원수</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=ro_list.get(i).getPeople_limit()%></p>
-						</fieldset>
-					</div>
-					<div class="col-lg-6">
-						<fieldset>
-							<label for="Name" class="form-label">입실시간</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=re_list.get(i).getCheck_in()%></p>
-						</fieldset>
-					</div>
-					<div class="col-lg-6">
-						<fieldset>
-							<label for="Name" class="form-label">퇴실시간</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=re_list.get(i).getCheck_out()%></p>
-						</fieldset>
-					</div>
-				</div>
-				<%
-				}
-				%>
-			</div>
-		</div>
-	</div>
-	<%
-	}
-	%>
 	<!-- 모달 -->
 	<div class="modalPopup" style="display: none;">
 		<div class="ModalBack" onclick
@@ -340,54 +192,94 @@ https://templatemo.com/tm-580-woox-travel
 			</form>
 		</div>
 	</div>
-
-
-
-
+<%
+//	ReservationDAO dao = new ReservationDAO();
+//	ArrayList<ReservationDTO> selectlist = dao.selectlist();
+	
+%>
+	<div class="second-page-heading" >
+	   
+		<div class="container">
+			<div class="row">
+			</div>
+			<div class="row">
+			<div class="user-info">
+					<h3 class="title" style="font-size: 25px; color:#000; margin-top:50px;">양도신청</h3>
+					<form action="TransferService" method="post">
+						<table class="table">
+							<tr style="color: #000;">
+								<td style="width: 300px;">e-mail</td>
+								<td style="width: 600px; text-align: right;">게시일</td>
+							</tr>
+						</table>
+						<h4 class="re-title" style="color:#000;" >예약 사항 </h4>
+						<table class="table-dark" style="color:#000;">
+							<tr  >
+								<td style="text-align: left;">예약한 날짜:</td>
+								<td></td>
+							</tr>
+							<tr >
+								<td style="text-align: left;">방이름:</td>
+								<td></td>
+							</tr>
+							<tr >
+								<td style="text-align: left;">가능한 인원:</td>
+								<td></td>
+							</tr>
+							<tr >
+								<td style="text-align: left;">입실 시간:</td>
+								<td></td>
+							</tr>
+							<tr >
+								<td style="text-align: left;">퇴실 시간:</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td style="text-align: left;">양도 사유:</td>
+								<td><input type="text" name="reason"></td>
+							</tr>
+						</table>
+						
+						<div class="btn">
+							<input type="button" class="btn btn-primary" value="양도하기">
+						</div>
+					</form>
+				</div>
+				<!-- user-info end -->
+			</div>
+		</div>
+		
+			
+	</div>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<p>
+						Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights
+						reserved. <br>Design: <a href="https://templatemo.com"
+							target="_blank" title="free CSS templates">TemplateMo</a>
+						Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
 	<!-- Scripts -->
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
 	<script src="assets/js/isotope.min.js"></script>
 	<script src="assets/js/owl-carousel.js"></script>
 	<script src="assets/js/wow.js"></script>
 	<script src="assets/js/tabs.js"></script>
 	<script src="assets/js/popup.js"></script>
 	<script src="assets/js/custom.js"></script>
-
 	<script>
 		$(".option").click(function() {
 			$(".option").removeClass("active");
 			$(this).addClass("active");
 		});
-
-		function show() {
-			console.log("외않되");
-			let modal = document.querySelector(".modalPopup");
-			let modalBtn = document.querySelector(".modalBtn");
-			let mainCaption = document.querySelector(".main-caption")
-			let dark = document.querySelector(".controls")
-
-			console.log("실행도미");
-			if (modal.style.opacity == "0") {
-				mainCaption.style.opacity = "0";
-				dark.style.opacity = "0"
-				modal.style.opacity = "1";
-				modal.style.display = "block"
-				modalBtn.textContent = "닫기"
-			}
-
-			else {
-				dark.style.opacity = "1";
-				mainCaption.style.opacity = "1";
-				modal.style.opacity = "0";
-				modal.style.display = "none";
-				modalBtn.textContent = "로그인";
-			}
-		}
 	</script>
-
 </body>
-
 </html>

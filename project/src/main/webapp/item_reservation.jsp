@@ -440,14 +440,12 @@
 		</footer>
 		<!-- Scripts -->
 
-=======
 		<!-- <script>
 var today = new Date();
 var month = today.getMonth()+1;
 console.log("월 : ",month);
 </script>	 -->
 
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 
 		<!-- 달력생성 -->
 		<script>

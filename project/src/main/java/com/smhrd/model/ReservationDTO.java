@@ -5,11 +5,12 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+
 @Getter
 @AllArgsConstructor
 public class ReservationDTO {
 	 
-    private BigDecimal gc_num;
+    private BigDecimal rc_num;
 
     // 방 순번 
     private BigDecimal room_num;

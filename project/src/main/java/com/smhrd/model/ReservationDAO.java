@@ -1,5 +1,6 @@
 package com.smhrd.model;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 import org.apache.ibatis.session.SqlSession;
@@ -33,6 +34,17 @@ public class ReservationDAO {
 		
 		return list;
 	}
-	
-	
+	public ReservationDTO transfer_num_check_in(BigDecimal transfer_num) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		ReservationDTO info = session.selectOne("transfer_num_check_in", transfer_num);
+		session.close();
+		return info;
+	}
+	public int transfer_update(ReservationDTO dto) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int row = session.update("transfer_update", dto);
+		session.close();
+		
+		return row;
+	}
 }

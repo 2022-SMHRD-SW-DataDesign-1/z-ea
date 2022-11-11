@@ -8,24 +8,35 @@ import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
+
 @Getter
 @AllArgsConstructor
 @RequiredArgsConstructor
 public class TransferDTO {
-		// TODO Auto-generated constructor stub
 	
-	// 양도 번호
-	private BigDecimal transfer_num;
-	@NonNull
-	private BigDecimal rc_num;
-	@NonNull
-	private String transfer_id;
-	@NonNull
-	private String assignee_id;
-	@NonNull
-	private BigDecimal offer_price;
-	private Timestamp reg_date;
-	private char transfer_status;
+	 // 양도 순번 
+    private BigDecimal transfer_num;
+
+    // 예약 순번 
+    @NonNull
+    private BigDecimal rc_num;
+
+    @NonNull
+    // 양도자 아이디 
+    private String transfer_id;
+    // 양도이유 
+    @NonNull
+    private String transfer_reason;
+    // 제시 가격 
+    @NonNull
+    private BigDecimal offer_price;
+
+    // 게시 일자 
+    private Timestamp reg_date;
+
+    // 체결 여부 
+    private String transfer_status;
+
 	
 	
 	

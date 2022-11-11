@@ -199,8 +199,6 @@ https://templatemo.com/tm-580-woox-travel
 
 					<h3 stylye="padding:10%" background=>My Page</h3>
 					<p>내 여행일정 관리부터 소통까지 !</p>
-					======= >>>>>>> branch 'master' of
-					https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 				</div>
 			</div>
 		</div>
