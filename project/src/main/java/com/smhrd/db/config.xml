@@ -22,6 +22,9 @@
 		<typeAlias type="com.smhrd.model.GlampingDTO"
 			alias="GlampingDTO" />
 		<typeAlias type="com.smhrd.model.LikeDTO" alias="LikeDTO" />
+		<typeAlias type="com.smhrd.model.SurveyDTO2"
+			alias="SurveyDTO2" />
+		<typeAlias type="com.smhrd.model.SurveyDTO2" alias="SurveyDTO2" />
 	</typeAliases>
 
 	<environments default="development">
@@ -46,6 +49,7 @@
 		<mapper resource="com/smhrd/mapper/RoomMapper.xml" />
 		<mapper resource="com/smhrd/mapper/GlampingMapper.xml" />
 		<mapper resource="com/smhrd/mapper/LikeMapper.xml" />
+		<mapper resource="com/smhrd/mapper/SurveyMapper2.xml" />
 
 
 	</mappers>

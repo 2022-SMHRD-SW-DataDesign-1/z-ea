@@ -8,7 +8,7 @@
 	where mb_email = #{mb_email})
 	</select>
 	
-	<select id="showroom" parameterType="String" resultType="RoomDTO">
-	select * from room_tb where gc_num={gc_num}
+	<select id="showroom" parameterType="int" resultType="RoomDTO">
+	select * from room_tb where gc_num=#{gc_num}
 	</select>
 </mapper>

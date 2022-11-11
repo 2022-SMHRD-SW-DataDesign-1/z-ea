@@ -123,13 +123,13 @@
 <body>
 	<%
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
-	BigDecimal num = new BigDecimal(request.getParameter("num"));
+	int num = Integer.parseInt(request.getParameter("num"));
 
 	System.out.println(num);
-	//ItemDAO dao = new ItemDAO();
-	//ItemDTO item = dao.showDetail(num);
-	//System.out.print(item);
-	//System.out.print("item" + item.getNum());
+	ItemDAO dao = new ItemDAO();
+	ItemDTO item = dao.showDetail(num);
+	System.out.print(item);
+	System.out.print("item" + item.getNum());
 	%>
 	
 	<%
