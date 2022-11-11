@@ -1,9 +1,6 @@
 package com.smhrd.controller;
 
 import java.io.IOException;
-import java.math.BigDecimal;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,9 +12,11 @@ import com.smhrd.model.MemberDTO;
 import com.smhrd.model.SurveyDAO2;
 import com.smhrd.model.SurveyDTO2;
 
-@WebServlet("/Survey2Service")
-public class Survey2Service extends HttpServlet {
-
+/**
+ * Servlet implementation class SurveyUpdateService
+ */
+@WebServlet("/SurveyUpdateService")
+public class SurveyUpdateService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -48,14 +47,13 @@ public class Survey2Service extends HttpServlet {
 		System.out.println(data6);
 
 		SurveyDTO2 dto2 = new SurveyDTO2(dto.getMb_email(), data, data1, data2, data3, data4, data5, data6);
-		int row = new SurveyDAO2().survey(dto2);
+		int row = new SurveyDAO2().surv_update(dto2);
 
 		if (row > 0) {
 			System.out.println("성공");
 		} else {
 			System.out.println("실패");
 		}
-		
 	}
 
 }

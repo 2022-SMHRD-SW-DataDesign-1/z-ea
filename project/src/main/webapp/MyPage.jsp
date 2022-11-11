@@ -230,6 +230,13 @@ https://templatemo.com/tm-580-woox-travel
 						<a href="comment_review.jsp">내가 작성한 리뷰/ 게시글</a>
 					</div>
 				</div>
+				<div class="col-lg-4 col-sm-6">
+					<div class="info-item">
+						<i class="fa fa-map-marker"></i>
+						<h4>설문조사</h4>
+						<a href="Survey_update.jsp">설문조사 다시하기</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -1,3 +1,9 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="com.smhrd.model.ItemDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.smhrd.model.ItemDAO"%>
+<%@page import="com.smhrd.model.SurveyDTO2"%>
+<%@page import="com.smhrd.model.SurveyDAO2"%>
 <%@page import="com.smhrd.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -57,7 +63,7 @@ https://templatemo.com/tm-580-woox-travel
 				<div class="col-12">
 					<nav class="main-nav">
 						<!-- ***** Logo Start ***** -->
-						<a href="index.jsp" class="logo" > <img
+						<a href="index.jsp" class="logo"> <img
 							src="assets/images/logo.png" alt="">
 						</a>
 						<!-- ***** Logo End ***** -->
@@ -75,7 +81,7 @@ https://templatemo.com/tm-580-woox-travel
 								<button class="modalBtn" onclick="show()"
 									style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">로그인</button>
 							</li>
-							
+
 							<%
 							} else {
 							%>
@@ -86,7 +92,6 @@ https://templatemo.com/tm-580-woox-travel
 								style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">로그아웃</a>
 							</li>
 							<%
-							
 							}
 							%>
 						</ul>
@@ -112,26 +117,29 @@ https://templatemo.com/tm-580-woox-travel
 			<div class="slider">
 				<div class="main-caption">
 					<div style="margin-left: 10%; font-size: 25px">검색어를 입력하세요</div>
-					
-					
-					
-					
+
+
+
+
 					<form action="SearchService" method="post">
 						<input id="SearchEngine" type="text" placeholder="#여행" name="tag"
 							style="width: 30%; height: 50px; border-radius: 20px; padding: 10px; margin: 5px;" />
-						<input style="padding : 12px; border: none; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD;" type="submit" value="검색" />
+						<input
+							style="padding: 12px; border: none; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD;"
+							type="submit" value="검색" />
 					</form>
-					
-					
-					
-					
-					
+
+
+
+
+
 					<p style="margin-left: 10%;">#여행 #먹방 #힐링 #키즈</p>
 
 				</div>
-				<div class="modalPopup" style="z-index: 100; display: none; margin-top:45px; ">
+				<div class="modalPopup"
+					style="z-index: 100; display: none; margin-top: 45px;">
 					<div class="ModalBack"
-						style="position: fixed;background-color: black;width: 100%;height: 100%;opacity: 0.5;">
+						style="position: fixed; background-color: black; width: 100%; height: 100%; opacity: 0.5;">
 					</div>
 					<div class="LoginModal"
 						style="text-align: center; z-index: 3000; background-color: white; width: 500px; height: 650px; margin-top: 10%; margin-left: 36%; position: fixed; align-content: center;">
@@ -224,8 +232,8 @@ https://templatemo.com/tm-580-woox-travel
 						</form>
 					</div>
 				</div>
-				
-				
+
+
 
 				<!-- 모달 -->
 
@@ -252,7 +260,41 @@ https://templatemo.com/tm-580-woox-travel
 		</div>
 	</section>
 	<!-- ***** Main Banner Area End ***** -->
+	<%
+	if (info != null) {
+		SurveyDTO2 surv_info = new SurveyDAO2().surv_info(info.getMb_email());
+		ArrayList<ItemDTO> age_list = new ItemDAO().surv_item_filter((surv_info.getMb_age()));
+		ArrayList<ItemDTO> company_list = new ItemDAO().surv_item_filter((surv_info.getMb_company()));
+		ArrayList<ItemDTO> season_list = new ItemDAO().surv_item_filter((surv_info.getMb_season()));
+		ArrayList<ItemDTO> type_list = new ItemDAO().surv_item_filter((surv_info.getMb_tour_type()));
+		//		ArrayList<ItemDTO> tip_list = new ItemDAO().Filter(surv_info.getMb_tip());
+		//		String[] themedata = surv_info.getMb_tour_theme().split("#");
+		//		System.out.println("0번" + themedata[0]);
+		//		System.out.println("1번" + themedata[1]);
+		//		System.out.println("2번" + themedata[2]);
+		//		System.out.println("3번" + themedata[3]);
+		//		System.out.println("size"+themedata.length);
+		//		ArrayList<ItemDTO> theme_list = new ItemDAO().Filter(a)
+		//		for(int j=0; i<theme_list.size())
+		//		for(int i=1;i<themedata.length; i++) {
+		//			a=themedata[i];
+		//		}
 
+		//				surv_info.getMb_tour_theme());
+		//		ArrayList<ItemDTO> theme_list = new ArrayList<ItemDTO>();
+
+		//		for (int i = 1; i < themedata.length; i++) {
+		//			theme_list.add(new);
+		//		}
+
+		//		ArrayList<ItemDTO> view_list = new ItemDAO().Filter(surv_info.getMb_view());
+	%>
+
+	<%
+	ItemDAO dao = new ItemDAO();
+	ArrayList<ItemDTO> item_list = new ArrayList<ItemDTO>();
+	item_list = (ArrayList) request.getAttribute("item_list");
+	%>
 	<div class="visit-country">
 		<div class="container">
 			<div class="row"></div>
@@ -270,7 +312,161 @@ https://templatemo.com/tm-580-woox-travel
 										</div>
 										<div class="col-lg-8 col-sm-7">
 											<div class="right-content">
-												<h4>SWITZERLAND</h4>
+												<h4><%=age_list.get(0).getName()%></h4>
+												<span><%=age_list.get(0).getTag()%></span>
+												<div class="main-button">
+													<a id="item_list" class="item_list"
+														href="ShowService?num=<%=age_list.get(0).getNum()%>">상세보기</a>
+												</div>
+												<p><%=age_list.get(0).getAddr()%></p>
+												<ul class="info">
+													<li><i class="fa fa-user"></i>전화번호 : <%=age_list.get(0).getTel()%></li>
+													<li><i class="fa fa-globe"></i>가격 : <%=age_list.get(0).getPrice()%></li>
+													<li><i class="fa fa-home"></i>유형 : <%=age_list.get(0).getType()%></li>
+												</ul>
+												<div class="text-button">
+													<a href="about.jsp">더보려면?<i
+														class="fa fa-arrow-right"></i></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<div class="item">
+									<div class="row">
+										<div class="col-lg-4 col-sm-5">
+											<div class="image">
+												<img src="assets/images/country-02.jpg" alt="">
+											</div>
+										</div>
+										<div class="col-lg-8 col-sm-7">
+											<div class="right-content">
+												<h4><%=company_list.get(0).getName()%></h4>
+												<span><%=company_list.get(0).getTag()%></span>
+												<div class="main-button">
+													<a id="item_list" class="item_list"
+														href="ShowService?num=<%=company_list.get(0).getNum()%>">상세보기</a>
+												</div>
+												<p><%=company_list.get(0).getAddr()%></p>
+												<ul class="info">
+													<li><i class="fa fa-user"></i>전화번호 : <%=company_list.get(0).getTel()%></li>
+													<li><i class="fa fa-globe"></i>가격 : <%=company_list.get(0).getPrice()%></li>
+													<li><i class="fa fa-home"></i>유형 : <%=company_list.get(0).getType()%></li>
+												</ul>
+												<div class="text-button">
+													<a href="about.jsp">더보려면?<i
+														class="fa fa-arrow-right"></i></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<div class="item last-item">
+									<div class="row">
+										<div class="col-lg-4 col-sm-5">
+											<div class="image">
+												<img src="assets/images/country-03.jpg" alt="">
+											</div>
+										</div>
+										<div class="col-lg-8 col-sm-7">
+											<div class="right-content">
+												<h4>FRANCE</h4>
+												<span>Europe</span>
+												<div class="main-button">
+													<a href="about.jsp">Explore More</a>
+												</div>
+												<p>
+													We hope this WoOx template is useful for you, please
+													support us a <a href="https://paypal.me/templatemo"
+														target="_blank">small amount of PayPal</a> to info [at]
+													templatemo.com for our survival. We really appreciate your
+													contribution.
+												</p>
+												<ul class="info">
+													<li><i class="fa fa-user"></i> 67.41 Mil People</li>
+													<li><i class="fa fa-globe"></i> 551.500 km2</li>
+													<li><i class="fa fa-home"></i> $425.600</li>
+												</ul>
+												<div class="text-button">
+													<a href="about.jsp">Need Directions ? <i
+														class="fa fa-arrow-right"></i></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<ul class="page-numbers">
+									<li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
+									<li><a href="#">1</a></li>
+									<li class="active"><a href="#">2</a></li>
+									<li><a href="#">3</a></li>
+									<li><a href="#"><i class="fa fa-arrow-right"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="side-bar-map">
+						<div class="row">
+							<div class="col-lg-12">
+								<div id="map">
+									<iframe
+										src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12469.776493332698!2d-80.14036379941481!3d25.907788681148624!2m3!1f357.26927939317244!2f20.870722720054623!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x88d9add4b4ac788f%3A0xe77469d09480fcdb!2sSunny%20Isles%20Beach!5e1!3m2!1sen!2sth!4v1642869952544!5m2!1sen!2sth"
+										width="100%" height="550px" frameborder="0"
+										style="border: 0; border-radius: 23px;" allowfullscreen=""></iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="call-to-action">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<h2>Are You Looking To Travel ?</h2>
+					<h4>Make A Reservation By Clicking The Button</h4>
+				</div>
+				<div class="col-lg-4">
+					<div class="border-button">
+						<a href="reservation.jsp">Book Yours Now</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<%
+	} else {
+	%>
+	<div class="visit-country">
+		<div class="container">
+			<div class="row"></div>
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="items">
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="item">
+									<div class="row">
+										<div class="col-lg-4 col-sm-5">
+											<div class="image">
+												<img src="assets/images/country-01.jpg" alt="">
+											</div>
+										</div>
+										<div class="col-lg-8 col-sm-7">
+											<div class="right-content">
+												<h4></h4>
 												<span>Europe</span>
 												<div class="main-button">
 													<a href="about.jsp">Explore More</a>
@@ -405,6 +601,10 @@ https://templatemo.com/tm-580-woox-travel
 			</div>
 		</div>
 	</div>
+	<%
+	}
+	%>
+
 
 	<footer>
 		<div class="container">
@@ -420,6 +620,10 @@ https://templatemo.com/tm-580-woox-travel
 			</div>
 		</div>
 	</footer>
+
+
+
+
 
 	<!-- Scripts -->
 	<!-- Bootstrap core JavaScript -->

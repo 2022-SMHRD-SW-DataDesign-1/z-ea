@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
@@ -12,13 +13,14 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @AllArgsConstructor
 @RequiredArgsConstructor
+@NoArgsConstructor
 public class SurveyDTO2 {
 
 	private BigDecimal survey_num;
 	@NonNull
 	private String mb_email;
 	@NonNull
-	private BigDecimal mb_age;
+	private String mb_age;
 	@NonNull
 	private String mb_view;
 	@NonNull

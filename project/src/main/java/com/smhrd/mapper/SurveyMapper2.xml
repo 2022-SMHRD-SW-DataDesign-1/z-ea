@@ -27,4 +27,33 @@
 		#{mb_season})
 	</insert>
 
+	<select id="surv_check" parameterType="String"
+		resultType="boolean">
+		select case when count(*)>0 then 1
+		else 0
+		end result
+		from
+		survey_tb where mb_email = #{mb_email}
+	</select>
+
+	<select id="surv_info" parameterType="String"
+		resultType="SurveyDTO2">
+		select * from survey_tb where mb_email = #{mb_email}
+	</select>
+
+	<update id="surv_update" parameterType="SurveyDTO2">
+		update
+		survey_tb
+		set
+		mb_age=#{mb_age},
+		mb_view=#{mb_view},
+		mb_company=#{mb_company},
+		mb_tour_theme=#{mb_tour_theme},
+		mb_tour_type=#{mb_tour_type},
+		survey_date=sysdate,
+		mb_tip=#{mb_tip},
+		mb_season=#{mb_season}
+		where mb_email = #{mb_email}
+	</update>
+
 </mapper>
