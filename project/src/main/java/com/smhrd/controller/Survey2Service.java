@@ -2,7 +2,6 @@ package com.smhrd.controller;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.net.URLEncoder;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,10 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
-import com.smhrd.model.BoardDAO;
-import com.smhrd.model.BoardDTO;
 import com.smhrd.model.MemberDTO;
 import com.smhrd.model.SurveyDAO2;
 import com.smhrd.model.SurveyDTO2;

@@ -27,11 +27,13 @@ public class LoginService extends HttpServlet {
 		//HttpSession session = request.getSession();
 		//MemberDTO info = (MemberDTO)session.getAttribute("info");
 		
+		System.out.println("아마 여긴 찍힐듯");
 		MemberDTO i  = new MemberDAO().login_info(mb_email);
 		
 		MemberDTO dto = new MemberDTO(mb_email, mb_pw, i.getMb_birthdate(),i.getMb_name(),i.getMb_phone());
 		
 		MemberDTO login = new MemberDAO().login(dto);
+		System.out.println("아마 여긴 안찍힐듯");
 		
 		if(login !=null) {
 			System.out.println("로그인성공");
