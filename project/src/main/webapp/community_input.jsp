@@ -54,8 +54,8 @@ https://templatemo.com/tm-580-woox-travel
 						<ul class="nav">
 							<li><a href="index.jsp">홈</a></li>
 							<li><a href="about.jsp">글램핑&카라반</a></li>
-							<li><a href="deals.jsp">예약</a></li>
-							<li><a href="reservation.jsp">양도</a></li>
+							<li><a href="reservation.jsp">예약</a></li>
+							<li><a href="transfer.jsp">양도</a></li>
 							<li><a href="community.jsp" class="active">커뮤니티</a></li>
 							<%
 							if (info == null) {
@@ -99,7 +99,7 @@ https://templatemo.com/tm-580-woox-travel
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="reservation-form">
 		<div class="container">
 			<div class="row">
@@ -131,17 +131,17 @@ https://templatemo.com/tm-580-woox-travel
 								<!-- 글내용 -->
 								<div class="col-lg-6">
 									<fieldset>
-										<label style="margin-top:30px;">content</label><br>
-										<label for="name" class="form-label"></label><br>
+										<label style="margin-top: 30px;">content</label><br> <label
+											for="name" class="form-label"></label><br>
 										<textarea type="text" name="board_content" class="Name"
 											placeholder="content" autocomplete="on" required
-											style="resize: none; margin-top:-20px;" rows="10">
+											style="resize: none; margin-top: -20px;" rows="10">
 										</textarea>
 									</fieldset>
 									<input type="file" name="board_file">
 								</div>
 								<div class="col-lg-12">
-									<fieldset style="margin-top:40px;">
+									<fieldset style="margin-top: 40px;">
 										<button type="submit" class="main-button">작성하기</button>
 									</fieldset>
 									</from>

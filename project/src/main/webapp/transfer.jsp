@@ -275,10 +275,14 @@
 						System.out.println("status확인 :" + transfer_list.get(i).getTransfer_status());
 					%>
 
-					<% if (transfer_list.get(i).getTransfer_status().equals("0")){%>
+					<%
+					if (transfer_list.get(i).getTransfer_status().equals("0")) {
+					%>
 
 
-					<% System.out.println("status확인 :" + transfer_list.get(i).getTransfer_status());%>
+					<%
+					System.out.println("status확인 :" + transfer_list.get(i).getTransfer_status());
+					%>
 
 					<div class="col-lg-6 col-sm-6" style="overflow: hidden;">
 						<div class="item">
@@ -315,12 +319,12 @@
 						</div>
 					</div>
 					<%
-					}else
+					} else
 					%>
 					<%
 					}
 					%>
-					<div class="col-lg-12">
+					<div class="col-lg-12" style="margin-bottom:50px;">
 						<ul class="page-numbers">
 							<!-- <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
 							<li><a href="#">1</a></li> -->
