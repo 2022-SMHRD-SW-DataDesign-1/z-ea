@@ -9,14 +9,14 @@ import com.smhrd.db.SqlSessionManger;
 
 public class SurveyDAO2 {
 	private SqlSessionFactory sqlSessionFactory = SqlSessionManger.getSqlSession();
-	
+
 	public int survey(SurveyDTO2 dto) {
-		
+
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int row = session.insert("survey",dto);
+		int row = session.insert("survey", dto);
 		session.close();
-		
+
 		return row;
-		
+
 	}
 }

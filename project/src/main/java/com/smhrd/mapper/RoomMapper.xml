@@ -11,4 +11,7 @@
 	<select id="showroom" parameterType="int" resultType="RoomDTO">
 	select * from room_tb where gc_num=#{gc_num}
 	</select>
+	<select id="room_select" resultType="RoomDTO">
+	select * from room_tb where gc_num = #{gc_num}
+	</select>
 </mapper>

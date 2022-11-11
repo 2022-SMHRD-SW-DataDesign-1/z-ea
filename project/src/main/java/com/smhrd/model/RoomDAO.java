@@ -19,9 +19,17 @@ public class RoomDAO {
 		return list;
 	}
 	
+<<<<<<< HEAD
 	public ArrayList<RoomDTO> showroom(int gc_num){
+=======
+	public ArrayList<RoomDTO> room_select(BigDecimal gc_num){
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 		SqlSession session = sqlSessionFactory.openSession(true);
+<<<<<<< HEAD
 		ArrayList<RoomDTO> list = (ArrayList) session.selectList("showroom",gc_num);
+=======
+		ArrayList<RoomDTO> list = (ArrayList)session.selectList("room_select",gc_num);
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 		session.close();
 		
 		return list;

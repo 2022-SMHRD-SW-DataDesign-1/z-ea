@@ -41,6 +41,7 @@ public class JoinService extends HttpServlet {
 			request.setAttribute("mb_email",mb_email);
 			//HttpSession session =  request.getSession();
 			//session.setAttribute("info", row);
+			
 		}else {
 			System.out.println("회원가입 실패");
 		}

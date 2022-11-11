@@ -24,7 +24,6 @@
 		<typeAlias type="com.smhrd.model.LikeDTO" alias="LikeDTO" />
 		<typeAlias type="com.smhrd.model.SurveyDTO2"
 			alias="SurveyDTO2" />
-		<typeAlias type="com.smhrd.model.SurveyDTO2" alias="SurveyDTO2" />
 	</typeAliases>
 
 	<environments default="development">

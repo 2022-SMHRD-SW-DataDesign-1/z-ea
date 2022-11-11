@@ -20,7 +20,7 @@
 		#{mb_age},
 		#{mb_view},
 		#{mb_company},
-		#{mb_tour_theme,
+		#{mb_tour_theme},
 		#{mb_tour_type},
 		sysdate,
 		#{mb_tip},
