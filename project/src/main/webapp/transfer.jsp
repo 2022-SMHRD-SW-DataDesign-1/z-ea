@@ -69,7 +69,7 @@
 							<li><a href="index.jsp">홈</a></li>
 							<li><a href="about.jsp">글램핑&카라반</a></li>
 							<li><a href="reservation.jsp">예약</a></li>
-							<li><a href="transfer.jsp"  class="active">양도</a></li>
+							<li><a href="transfer.jsp" class="active">양도</a></li>
 							<li><a href="community.jsp">커뮤니티</a></li>
 							<%
 							if (info == null) {
@@ -267,35 +267,47 @@
 							<p>떠나고 싶은 당신! 더 싼값에 놀러가볼까요~!!~~!~</p>
 						</div>
 					</div>
-<% ArrayList<TransferDTO> transfer_list = new TransferDAO().transfer_all_show();
+					<%
+					ArrayList<TransferDTO> transfer_list = new TransferDAO().transfer_all_show();
+					%>
+					<%
+					for (int i = 0; i < transfer_list.size(); i++) {
+						System.out.println("status확인 :" + transfer_list.get(i).getTransfer_status());
+					%>
 
-%>				
-				<%if(info!=null){ %>	
-				<%for(int i=0; i<transfer_list.size(); i++){ %>
-					<%if(transfer_list.get(i).getTransfer_status().equals("0"));{ %>
+					<% if (transfer_list.get(i).getTransfer_status().equals("0")){%>
+
+
+					<% System.out.println("status확인 :" + transfer_list.get(i).getTransfer_status());%>
+
 					<div class="col-lg-6 col-sm-6" style="overflow: hidden;">
 						<div class="item">
 							<div class="row">
 								<div class="col-lg-6">
 									<div class="image">
-										<img src="assets/images/deals-0<%=i+1%>.jpg" alt="">
+										<img src="assets/images/deals-0<%=i + 1%>.jpg" alt="">
 									</div>
 								</div>
 								<div class="col-lg-6 align-self-center">
 									<div class="content">
-										<h4><%=new GlampingDAO().transfer_num_glamping_show(transfer_list.get(i).getTransfer_num()).getGc_name() %></h4>
+										<h4><%=new GlampingDAO().transfer_num_glamping_show(transfer_list.get(i).getTransfer_num()).getGc_name()%></h4>
 										<div class="row">
 											<div class="col-6">
-												<i class="fa fa-clock"></i> <span class="list">마감<%=new ReservationDAO().transfer_num_check_in(transfer_list.get(i).getTransfer_num()).getCheck_in() %></span>
+												<i class="fa fa-clock"></i> <span class="list">마감<%=new ReservationDAO().transfer_num_check_in(transfer_list.get(i).getTransfer_num()).getCheck_in()%></span>
 											</div>
 											<div class="col-6">
-												<i class="fa fa-map"></i> <span class="list"><%=new TransferDAO().transfer_show(transfer_list.get(i).getTransfer_num()).getOffer_price() %></span>
+												<i class="fa fa-map"></i> <span class="list"><%=new TransferDAO().transfer_show(transfer_list.get(i).getTransfer_num()).getOffer_price()%></span>
 											</div>
 										</div>
-										<p>양도이유 : <%=new TransferDAO().transfer_show(transfer_list.get(i).getTransfer_num()).getTransfer_reason() %></p>
-										<p>주소 : <%=new GlampingDAO().transfer_num_glamping_show(transfer_list.get(i).getTransfer_num()).getGc_addr() %></p>
+										<p>
+											양도이유 :
+											<%=new TransferDAO().transfer_show(transfer_list.get(i).getTransfer_num()).getTransfer_reason()%></p>
+										<p>
+											주소 :
+											<%=new GlampingDAO().transfer_num_glamping_show(transfer_list.get(i).getTransfer_num()).getGc_addr()%></p>
 										<div class="main-button">
-											<a href="transfer_select_show.jsp?transfer_num=<%=transfer_list.get(i).getTransfer_num()%>">자세히보기</a>
+											<a
+												href="transfer_select_show.jsp?transfer_num=<%=transfer_list.get(i).getTransfer_num()%>">자세히보기</a>
 										</div>
 									</div>
 								</div>
@@ -303,9 +315,11 @@
 						</div>
 					</div>
 					<%
-					}}}
+					}else
 					%>
-
+					<%
+					}
+					%>
 					<div class="col-lg-12">
 						<ul class="page-numbers">
 							<!-- <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>

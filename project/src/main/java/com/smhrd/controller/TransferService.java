@@ -41,8 +41,9 @@ public class TransferService extends HttpServlet {
 		} else {
 			System.out.println("실패");
 		}
-		RequestDispatcher rd = request.getRequestDispatcher("transfer.jsp");
-		rd.forward(request, response);
+		response.sendRedirect("transfer.jsp");
+		//RequestDispatcher rd = request.getRequestDispatcher("transfer.jsp");
+		//rd.forward(request, response);
 
 	}
 }

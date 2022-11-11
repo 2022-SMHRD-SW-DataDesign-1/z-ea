@@ -12,12 +12,15 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.smhrd.model.ReservationDAO;
 import com.smhrd.model.ReservationDTO;
+import com.smhrd.model.TransferDAO;
+import com.smhrd.model.TransferDTO;
 @WebServlet("/TransferChangeService")
 public class TransferChangeService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String mb_email = request.getParameter("email");
+		String transfer_id = request.getParameter("email");
 		BigDecimal rc_num = new BigDecimal(request.getParameter("num"));
 		System.out.println("email"+mb_email);
 		System.out.println("tran_num"+rc_num);
@@ -29,6 +32,13 @@ public class TransferChangeService extends HttpServlet {
 			System.out.println("성");
 		}else {
 			System.out.println("실");
+		}
+		TransferDTO tdto = new TransferDTO(rc_num,transfer_id,transfer_id,rc_num);
+		int status_row = new TransferDAO().transfer_status_check(tdto);
+		if(status_row>0) {
+			System.out.println("status성");
+		}else {
+			System.out.println("status실");
 		}
 		RequestDispatcher rd = request.getRequestDispatcher("reservation_show.jsp");
 		rd.forward(request, response);

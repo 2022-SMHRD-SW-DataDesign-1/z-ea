@@ -36,5 +36,12 @@ public class TransferDAO {
 		
 		return transfer;
 	}
-
+	public int transfer_status_check(TransferDTO dto) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int up = session.update("transfer_status_check", dto);
+		session.close();
+		
+		return up;
+	}
+		
 }
