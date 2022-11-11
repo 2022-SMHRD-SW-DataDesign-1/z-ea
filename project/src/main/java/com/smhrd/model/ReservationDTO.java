@@ -9,7 +9,7 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public class ReservationDTO {
-	 // 가능한 일정 순번 
+	 
     private BigDecimal rc_num;
 
     // 방 순번 

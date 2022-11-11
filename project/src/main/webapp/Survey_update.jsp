@@ -247,7 +247,7 @@
 				$.ajax({
 					//ajax 열어
 					//traditional : true,
-					url : "Survey2Service",
+					url : "SurveyUpdateService",
 					data : {
 						mb_age : data[0],
 						mb_view : viewdata,

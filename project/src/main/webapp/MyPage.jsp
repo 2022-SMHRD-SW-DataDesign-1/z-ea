@@ -193,11 +193,12 @@ https://templatemo.com/tm-580-woox-travel
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<h4>내 여행관리는 여기에서</h4><br>
-				
-						<h3 stylye="padding:10%"background=>My Page</h3>
-						<p>내 여행일정 관리부터 소통까지 !</p>
-				
+					<<<<<<< HEAD
+					<h4>내 여행관리는 여기에서</h4>
+					<br>
+
+					<h3 stylye="padding:10%" background=>My Page</h3>
+					<p>내 여행일정 관리부터 소통까지 !</p>
 				</div>
 			</div>
 		</div>
@@ -225,6 +226,13 @@ https://templatemo.com/tm-580-woox-travel
 						<i class="fa fa-map-marker"></i>
 						<h4>나의 후기</h4>
 						<a href="comment_review.jsp">내가 작성한 리뷰/ 게시글</a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-sm-6">
+					<div class="info-item">
+						<i class="fa fa-map-marker"></i>
+						<h4>설문조사</h4>
+						<a href="Survey_update.jsp">설문조사 다시하기</a>
 					</div>
 				</div>
 			</div>

@@ -1,3 +1,10 @@
+<%@page import="com.smhrd.model.RoomDAO"%>
+<%@page import="java.math.BigDecimal"%>
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="com.smhrd.model.RoomDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.smhrd.model.ItemDTO"%>
 <%@page import="com.smhrd.model.ItemDAO"%>
 <%@page import="com.smhrd.model.MemberDTO"%>
@@ -124,6 +131,28 @@
 	ItemDAO dao = new ItemDAO();
 	ItemDTO item = dao.showDetail(num);
 	System.out.print(item);
+	System.out.print("item" + item.getNum());
+	%>
+	
+	<%
+	ArrayList<RoomDTO> room_list = new RoomDAO().showroom(num);
+
+/* 	String[][] day = new String[30][room_list.size()]; */
+
+	/* for (int i = 1; i <= 31; i++) {
+		for (int j = 0; j < room_list.size(); j++) {
+			day[i][j] = room_list.get(j).getRoom_name();
+		}
+	}
+
+	System.out.println(day.length); */
+	
+	
+		System.out.print("akagjagkjaf"+room_list.size());
+	
+	RoomDAO roomdao = new RoomDAO();
+	BigDecimal gc_num = item.getNum();
+	ArrayList<RoomDTO> roomList = roomdao.room_select(gc_num);
 	%>
 
 	<!-- ***** Preloader Start ***** -->
@@ -251,40 +280,74 @@
 							</div>
 						</div>
 					</div>
+					<form action="ReservationService?gc_num=<%=gc_num %>" method="post">
+						<div class="col-lg-12" style="margin-top: -300px;">
+							<div class='rap'>
+								<h4>일정 선택하기</h4>
+								<div class="header" style="margin-top: 30px;">
+									<div class="btn prevDay"></div>
+									<h2 id="yearMonth" class='dateTitle'></h2>
+									<div class="btn nextDay"></div>
+								</div>
 
-					<div class="col-lg-12" style="margin-top: -300px;">
-						<div class='rap'>
-							<h4>일정 선택하기</h4>
-							<div class="header" style="margin-top: 30px;">
-								<div class="btn prevDay"></div>
-								<h2 class='dateTitle'></h2>
-								<div class="btn nextDay"></div>
+								<div class="grid dateHead" style="margin-top: 50px;">
+									<div>일</div>
+									<div>월</div>
+									<div>화</div>
+									<div>수</div>
+									<div>목</div>
+									<div>금</div>
+									<div>토</div>
+								</div>
+
+								<div class="grid dateBoard" style="margin-top: 50px;"></div>
 							</div>
+							<button id="datesearch">검색</button>
 
-							<div class="grid dateHead" style="margin-top: 50px;">
-								<div>일</div>
-								<div>월</div>
-								<div>화</div>
-								<div>수</div>
-								<div>목</div>
-								<div>금</div>
-								<div>토</div>
+							<br>
+							<div>
+								<h4>체크인</h4>
+								<h4 name=checkin id="checkin"></h4>
+								<h4>체크아웃</h4>
+								<h4 name= checkout id="checkout"></h4>
 							</div>
-
-							<div class="grid dateBoard" style="margin-top: 50px;"></div>
 						</div>
-						<button id="datesearch">검색</button>
 
 						<br>
 						<div>
-							<h4>체크인</h4>
+							<h4 style="font-size: 15px; padding: 10px;">체크인</h4>
 							<h4 id="checkin"></h4>
-							<h4>체크아웃</h4>
+							<h4 style="font-size: 15px; padding: 10px;">체크아웃</h4>
 							<h4 id="checkout"></h4>
-						</div>
-					</div>
-				</div>
+							<button id="datesearch">확인</button>
 
+
+						<div class="col-lg-12">
+							<div class='rap'>
+								<h4 style="margin-bottom: 30px;">방</h4>
+								<select name="roomname">
+									
+									<%
+									for (int i = 0; i < roomList.size(); i++) {
+									%>
+									<option value="<%=roomList.get(i).getRoom_name()%>"><%=roomList.get(i).getRoom_name()%></option>
+									<%
+									}
+									%>
+
+								</select>
+
+							</div>
+						</div>
+
+						<div class="col-lg-12">
+							<div class='rap'>
+								<h4 style="margin-bottom: 30px;">객실 인원</h4>
+								<fieldset>
+									<p>성인</p>
+									인원수 <select name="Guests_adult" class="form-select"
+										aria-label="Default select example" id="chooseGuests"
+										onChange="this.form.click()">
 
 				<div class="col-lg-12">
 					<div class='rap'>
@@ -301,7 +364,7 @@
 					<div class='rap'>
 						<h4 style="margin-bottom: 30px;">객실 인원</h4>
 						<fieldset>
-							<p>성인</p>
+							<h4 style="font-size: 15px; padding: 10px;">성인</h4>
 							<select name="Guests" class="form-select"
 								aria-label="Default select example" id="chooseGuests"
 								onChange="this.form.click()">
@@ -311,7 +374,7 @@
 								<option value="3">3</option>
 								<option value="4+">4+</option>
 							</select>
-							<p>아이</p>
+							<h4 style="font-size: 15px; padding: 10px;">아이</h4>
 							<select name="Guests" class="form-select"
 								aria-label="Default select example" id="chooseGuests"
 								onChange="this.form.click()">
@@ -323,10 +386,33 @@
 							</select>
 						</fieldset>
 					</div>
+										<option type="checkbox" name="option1" value="1">1</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4+">4+</option>
+									</select>
+									<p>아이</p>
+									<select name="Guests_kid" class="form-select"
+										aria-label="Default select example" id="chooseGuests"
+										onChange="this.form.click()">
+										<option selected>인원수</option>
+										<option type="checkbox" name="option1" value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4+">4+</option>
+									</select>
+								</fieldset>
+							</div>
+						</div>
+						
+						<input id="submit" type="submit" value="이거 제출" />
+					</form>
 				</div>
 			</div>
 		</div>
-	</div>
+
+	
 
 	<footer>
 		<div class="container">
@@ -338,21 +424,31 @@
 							target="_blank" title="free CSS templates">TemplateMo</a>
 						Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
 					</p>
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p>
+							Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights
+							reserved. <br>Design: <a href="https://templatemo.com"
+								target="_blank" title="free CSS templates">TemplateMo</a>
+							Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
+						</p>
+					</div>
 				</div>
 			</div>
-		</div>
-	</footer>
-	<!-- Scripts -->
+		</footer>
+		<!-- Scripts -->
 
-	<!-- <script>
+		<!-- <script>
 var today = new Date();
 var month = today.getMonth()+1;
 console.log("월 : ",month);
 </script>	 -->
 
 
-	<!-- 달력생성 -->
-	<script>
+		<!-- 달력생성 -->
+		<script>
 
 //달력 생성
 const makeCalendar = (date) => {
@@ -371,7 +467,6 @@ const limitDay = prevDay + lastDay;
 const nextDay = Math.ceil(limitDay / 7) * 7;
 
 let htmlDummy = '';
-/* let arr=[]; */
 
 // 한달전 날짜 표시하기
 for (let i = 0; i < prevDay; i++) {
@@ -380,11 +475,10 @@ for (let i = 0; i < prevDay; i++) {
 
 // 이번달 날짜 표시하기
 for (let i = 1; i <= lastDay; i++) {    
-  htmlDummy += `<div class="#b${i}" onclick="tag_filter(this)">${i}</div>`;
-  `let arr${i}=[]`
-/*   arr.push(`let arr${i}=[]`); */
-/*   console.log(arr); */
-}
+  htmlDummy += `<div id="#b${i}" onclick="tag_filter(this)">${i}</div>`;
+/*   `let arr${i}=[]`; */
+  }
+
 
 // 다음달 날짜 표시하기
 for (let i = limitDay; i < nextDay; i++) {
@@ -414,100 +508,18 @@ makeCalendar(new Date(date.setMonth(date.getMonth() + 1)));
 
 
 
-	<!-- 날짜선택 -->
-	<script>
-		let day=[];
-		
-function tag_filter(id){
-	let value;
-			const cnt = 2;
-			let id_class = $(id).attr("class");
-			var num;
-			
-			
-			{
-			if((id.style.backgroundColor == "white" )&& day.length < 2){
-				
-				id.style.backgroundColor ="yellow";
-				num = parseInt(id_class.split("b")[1]);
-				next_day = num+1;
-				
-				value = id.textContent;
-				next_id = (id_class.split("b")[0] += next_day);
-				
-				document.getElementsByClassName("next_id").style.backgroundColor = "yellow";
-				
-				let check=day.includes(value);
-				
-				if(check==false){
-				day.push(value);
-				}
-			}
-			
-			else{
-				id.style.backgroundColor ="white";
-				value=id.textContent;
-				
-				for(var i=0;i< day.length;i++){
-					if(day[i]===value){
-						day.splice(i,value);
-						i--;
-						}
-					}
-			}
-			/*for(var i=0;i<day.length;i++){
-				console.log(day[i]);
-				
-			}*/
-			
-		
-}}
-			
-		</script>
-
-	<script>
-						document.getElementById("datesearch").onclick=function(){
-							let min=parseInt(day[0]);
-							let max=parseInt(day[0]);
-							
-							console.log(min);
-							console.log(max);
-							
-							for(var i=1;i<day.length;i++){
-								if(min>parseInt(day[i])){
-									min=parseInt(day[i]);
-								}
-							}
-							
-							for(var i=0;i<day.length;i++){
-								if(max<parseInt(day[i])){
-									max=parseInt(day[i]);
-								}
-							}
-							
-							console.log(min);
-							console.log(max);
-							
-							document.getElementById("checkin").textContent=min;
-							document.getElementById("checkout").textContent=max;
-							
-							
-						};
-						</script>
 
 
 
-
-
-	<!-- Bootstrap core JavaScript -->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="assets/js/isotope.min.js"></script>
-	<script src="assets/js/owl-carousel.js"></script>
-	<script src="assets/js/wow.js"></script>
-	<script src="assets/js/tabs.js"></script>
-	<script src="assets/js/popup.js"></script>
-	<script src="assets/js/custom.js"></script>
+		<!-- Bootstrap core JavaScript -->
+		<script src="vendor/jquery/jquery.min.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="assets/js/isotope.min.js"></script>
+		<script src="assets/js/owl-carousel.js"></script>
+		<script src="assets/js/wow.js"></script>
+		<script src="assets/js/tabs.js"></script>
+		<script src="assets/js/popup.js"></script>
+		<script src="assets/js/custom.js"></script>
 </body>
 
 </html>

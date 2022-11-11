@@ -106,7 +106,6 @@
 	box-sizing: border-box;
 	font-family: Pretendard;
 }
-
 </style>
 
 
@@ -222,27 +221,39 @@
 						<div class="col-lg-12">
 							<div class='rap'>
 								<div class="camp-name-search">
-									<h4>캠핑장 검색하기</h4>
+									<h4 style="margin-bottom: 30px;">캠핑장 검색하기</h4>
 									<div
 										class="input-area d-flex align-items-center justify-content-center mx-auto">
-										<img
+										<img style="width: 30px; height: 30px;"
 											src="https://static.campingtalk.me/local/images/icon/search/search.svg">
 										<input id="searchText_-1" type="text"
-											placeholder="클릭하여 검색하세요." class="text-center p-0">
+											placeholder="클릭하여 검색하세요." class="text-center p-0"
+											style="margin-left: 30px; padding: 30px; margin-right: 20px; width: 700px; height: 40px;">
 										<ul aria-labelledby="searchText_-1"
 											class="search-box-list border" style="display: none;"></ul>
 									</div>
 								</div>
 							</div>
 
-							<div class="col-lg-12">
+							<div class="col-lg-12" style="margin-top: -400px;">
 								<div class='rap'>
-									<h4 style="margin-bottom: 30px;">객실 추가인원</h4>
+									<h4 style="margin-bottom: 30px;">객실 인원</h4>
 									<fieldset>
+										<h4 style="font-size: 15px; padding: 10px;">성인</h4>
 										<select name="Guests" class="form-select"
 											aria-label="Default select example" id="chooseGuests"
 											onChange="this.form.click()">
-											<option selected>ex. 3 or 4 or 5</option>
+											<option selected>인원수</option>
+											<option type="checkbox" name="option1" value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4+">4+</option>
+										</select>
+										<h4 style="font-size: 15px; padding: 10px;">아이</h4>
+										<select name="Guests" class="form-select"
+											aria-label="Default select example" id="chooseGuests"
+											onChange="this.form.click()">
+											<option selected>인원수</option>
 											<option type="checkbox" name="option1" value="1">1</option>
 											<option value="2">2</option>
 											<option value="3">3</option>
@@ -250,7 +261,6 @@
 										</select>
 									</fieldset>
 								</div>
-
 							</div>
 						</div>
 					</div>
