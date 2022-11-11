@@ -193,14 +193,11 @@ https://templatemo.com/tm-580-woox-travel
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-<<<<<<< HEAD
+
 					<h4>내 여행관리는 여기에서</h4><br>
 				
 						<h3 stylye="padding:10%"background=>My Page</h3>
 						<p>내 여행일정 관리부터 소통까지 !</p>
-=======
-				
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 				</div>
 			</div>
 		</div>
@@ -220,11 +217,11 @@ https://templatemo.com/tm-580-woox-travel
 					<div class="info-item">
 						<i class="fa fa-phone"></i>
 						<h4>예약 내역</h4>
-<<<<<<< HEAD
+
 						<a href="my Reservation.jsp">내 예약 확인하기</a>
-=======
+
 						<a href="reservation_show.jsp">내 예약 확인하기</a>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
+
 					</div>
 				</div>
 				<div class="col-lg-4 col-sm-6">

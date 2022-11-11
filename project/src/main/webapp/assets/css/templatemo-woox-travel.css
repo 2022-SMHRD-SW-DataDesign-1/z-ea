@@ -40,10 +40,15 @@ pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img,
 	aside, footer, figcaption {
 	margin: 0;
 	padding: 0;
-	border: 0;
+	border:0;
 	outline: 0;
 }
 
+/* .choose1{
+	border-radius: 25px;
+	text-align: center;
+	margin-top: 5px;
+} */
 .clearfix:after {
 	content: ".";
 	display: block;
@@ -96,7 +101,7 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
 	margin-top: 0px;
-	margin-bottom: 0px;
+	margin-bottom: 20px;
 	color: #2a2a2a;
 	font-weight: 700;
 }

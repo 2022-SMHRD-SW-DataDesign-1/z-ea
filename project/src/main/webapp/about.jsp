@@ -17,7 +17,6 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <link
-
 	href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
 	rel="stylesheet">
 
@@ -224,39 +223,55 @@ https://templatemo.com/tm-580-woox-travel
 							<div class="col-lg-12">
 								<div class="owl-cites-town owl-carousel"
 									style="display: inline-block;">
+									
+								<!-- 	<div class="choose1"
+										style="text-align: center"
+										border-radius: 25px;
+										margin-top: 5px;
+										
+
+										 ></div> -->
+
 
 									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
+										style="height: 40px; width: 120px; border: solid black 1px;border-radius: 25px;
+										margin-top: 5px;padding-top: 7px;"
 										onclick="tag_filter(this)">#가족</div>
 
 
 									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
+											style="height: 40px; width: 120px; border: solid black 1px;border-radius: 25px;
+										margin-top: 5px;padding-top: 7px;"
 										onclick="tag_filter(this)">#혼자</div>
 
 
 									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px;"
+											style="height: 40px; width: 120px; border: solid black 1px;border-radius: 25px;
+										margin-top: 5px;padding-top: 7px;" 
 										onclick="tag_filter(this)">#감성</div>
 
 
 									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
+											style="height: 40px; width: 120px; border: solid black 1px;border-radius: 25px;
+										margin-top: 5px;padding-top: 7px;": 
 										onclick="tag_filter(this)">#커플</div>
 
 
 									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
+											style="height: 40px; width: 120px; border: solid black 1px;border-radius: 25px;
+										margin-top: 5px;padding-top: 7px;"
 										onclick="tag_filter(this)">#단체</div>
 
 
 									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
+											style="height: 40px; width: 120px; border: solid black 1px;border-radius: 25px;
+										margin-top: 5px;padding-top: 7px;"
 										onclick="tag_filter(this)">#바다</div>
 
 
 									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
+											style="height: 40px; width: 120px; border: solid black 1px;border-radius: 25px;
+										margin-top: 5px;padding-top: 7px;"
 										onclick="tag_filter(this)">#산</div>
 
 								</div>
@@ -470,13 +485,13 @@ https://templatemo.com/tm-580-woox-travel
 	  }
 		
 	</script>
-<<<<<<< HEAD
+		<<<<<<< HEAD
 		<script>
 	function FullView()
 	
 	</script>
-=======
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
+		======= >>>>>>> branch 'master' of
+		https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 		<script>
 	function filter(id){
 		let inputE = id.val();

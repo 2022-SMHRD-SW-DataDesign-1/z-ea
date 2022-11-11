@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.smhrd.mapper.SurveyMapper">
+ <insert id="Survey_insert" parameterType="SurveyDTO">
+	insert into survey_tb values(#{mb_age},#{mb_view},#{mb_company},#{mb_tour_type},#{mb_tour_theme},#{survey_date},sysdate)
+	</insert>
+  
+  
+  
+  
+  
+  </mapper>

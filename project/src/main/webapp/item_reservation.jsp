@@ -255,7 +255,7 @@
 					<div class="col-lg-12" style="margin-top: -300px;">
 						<div class='rap'>
 							<h4>일정 선택하기</h4>
-							<div class="header" style="margin-top: 30px;">
+							<div class="header" style="margin-top: 30px; margin-bottom:20px">
 								<div class="btn prevDay"></div>
 								<h2 class='dateTitle'></h2>
 								<div class="btn nextDay"></div>
