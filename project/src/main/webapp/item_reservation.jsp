@@ -317,11 +317,7 @@
 
 					<br>
 					<div>
-						<h4 style="font-size: 15px; padding: 10px;">체크인</h4>
-						<h4 id="checkin"></h4>
-						<h4 style="font-size: 15px; padding: 10px;">체크아웃</h4>
-						<h4 id="checkout"></h4>
-						<button id="datesearch">확인</button>
+
 
 
 						<div class="col-lg-12">
@@ -347,54 +343,16 @@
 								<h4 style="margin-bottom: 30px;">객실 인원</h4>
 								<fieldset>
 									<p>성인</p>
-									인원수 <select name="Guests_adult" class="form-select"
+									<select name="Guests_adult" class="form-select"
 										aria-label="Default select example" id="chooseGuests"
 										onChange="this.form.click()">
-
-										<div class="col-lg-12">
-											<div class='rap'>
-												<h4 style="margin-bottom: 30px;">방</h4>
-												<select>
-													<option selected></option>
-
-												</select>
-
-											</div>
-										</div>
-
-										<div class="col-lg-12">
-											<div class='rap'>
-												<h4 style="margin-bottom: 30px;">객실 인원</h4>
-												<fieldset>
-													<h4 style="font-size: 15px; padding: 10px;">성인</h4>
-													<select name="Guests" class="form-select"
-														aria-label="Default select example" id="chooseGuests"
-														onChange="this.form.click()">
-														<option selected>인원수</option>
-														<option type="checkbox" name="option1" value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-														<option value="4+">4+</option>
-													</select>
-													<h4 style="font-size: 15px; padding: 10px;">아이</h4>
-													<select name="Guests" class="form-select"
-														aria-label="Default select example" id="chooseGuests"
-														onChange="this.form.click()">
-														<option selected>인원수</option>
-														<option type="checkbox" name="option1" value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-														<option value="4+">4+</option>
-													</select>
-												</fieldset>
-											</div>
-											<option type="checkbox" name="option1" value="1">1</option>
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4+">4+</option>
+										<option selected>인원수</option>
+										<option type="checkbox" name="option1" value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4+">4+</option>
 									</select>
-									<p>아이</p>
+									<h4 style="font-size: 15px; padding: 10px;">아이</h4>
 									<select name="Guests_kid" class="form-select"
 										aria-label="Default select example" id="chooseGuests"
 										onChange="this.form.click()">
@@ -406,52 +364,47 @@
 									</select>
 								</fieldset>
 							</div>
-						</div>
 
-						<input id="submit" type="submit" value="이거 제출" />
-						</form>
+						</div>
 					</div>
+
+					<input id="submit" type="submit" value="이거 제출" />
+					</form>
 				</div>
 			</div>
+		</div>
 
 
 
-			<footer>
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12">
-							<p>
-								Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights
-								reserved. <br>Design: <a href="https://templatemo.com"
-									target="_blank" title="free CSS templates">TemplateMo</a>
-								Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
-							</p>
-							<footer>
-								<div class="container">
-									<div class="row">
-										<div class="col-lg-12">
-											<p>
-												Copyright © 2036 <a href="#">WoOx Travel</a> Company. All
-												rights reserved. <br>Design: <a
-													href="https://templatemo.com" target="_blank"
-													title="free CSS templates">TemplateMo</a> Distribution: <a
-													href="https://themewagon.com target="_blank" >ThemeWagon</a>
-											</p>
-										</div>
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p>
+							Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights
+							reserved. <br>Design: <a href="https://templatemo.com"
+								target="_blank" title="free CSS templates">TemplateMo</a>
+							Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
+						</p>
+						<footer>
+							<div class="container">
+								<div class="row">
+									<div class="col-lg-12">
+										<p>
+											Copyright © 2036 <a href="#">WoOx Travel</a> Company. All
+											rights reserved. <br>Design: <a
+												href="https://templatemo.com" target="_blank"
+												title="free CSS templates">TemplateMo</a> Distribution: <a
+												href="https://themewagon.com target="_blank" >ThemeWagon</a>
+										</p>
 									</div>
 								</div>
-							</footer>
-							<!-- Scripts -->
-
-							<!-- <script>
-var today = new Date();
-var month = today.getMonth()+1;
-console.log("월 : ",month);
-</script>	 -->
+							</div>
+						</footer>
+						<!-- Scripts -->
 
 
-							<!-- 달력생성 -->
-							<script>
+						<script>
 
 //달력 생성
 const makeCalendar = (date) => {
@@ -510,10 +463,10 @@ makeCalendar(new Date(date.setMonth(date.getMonth() + 1)));
 </script>
 
 
-							<!-- 날짜선택 -->
-							<script>
+						<!-- 날짜선택 -->
+						<script>
 		
-		const cnt = 2;
+
 		let day=[];
 function tag_filter(id){
 	let value;
@@ -526,18 +479,17 @@ function tag_filter(id){
 		
 			let input;
 			
-			if((id.style.backgroundColor == "white" )&& day.length < 2){
-				
+			if((id.style.backgroundColor == "white" ) && day.length < 2){
 				id.style.backgroundColor ="yellow";
-				num = parseInt(id_class.split("b")[1]);
+				
+				
 				
 				month =document.querySelector(`.dateTitle`).innerText;
 				month_num = ((month.split("년 ")[1]).split("월")[0]);
 				
 				
 				value = id.textContent;
-		
-				/* next_id = (id_class.split("b")[0] += next_day); */
+
 				let ok = month_num+ value;
 				
 				console.log(ok);
@@ -559,14 +511,12 @@ function tag_filter(id){
 					}
 			}
 			
-			
-			/*for(var i=0;i<day.length;i++){
-				console.log(day[i]);}*/				
+				
 }
 			
 		</script>
 
-							<script>
+						<script>
 
 						document.getElementById("datesearch").onclick=function(){
 							let min=parseInt(day[0]);
@@ -594,20 +544,7 @@ function tag_filter(id){
 							document.getElementById("checkout").textContent=max;
 							$('input[name=checkin]').attr('value',min);
 							$('input[name=checkout]').attr('value',max);
-						 	/* $.ajax({
-								url : "ReservationService",
-								type : 'post',
-								data : {
-									min :"min" ,
-									max :"max" ,
-								},
-								success : function(data) {
-											
-							     },
-								error : function() {
-									alert("error");
-								}
-							}); */
+					
 							
 						};
 						</script>
@@ -617,15 +554,15 @@ function tag_filter(id){
 
 
 
-							<!-- Bootstrap core JavaScript -->
-							<script src="vendor/jquery/jquery.min.js"></script>
-							<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-							<script src="assets/js/isotope.min.js"></script>
-							<script src="assets/js/owl-carousel.js"></script>
-							<script src="assets/js/wow.js"></script>
-							<script src="assets/js/tabs.js"></script>
-							<script src="assets/js/popup.js"></script>
-							<script src="assets/js/custom.js"></script>
+						<!-- Bootstrap core JavaScript -->
+						<script src="vendor/jquery/jquery.min.js"></script>
+						<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+						<script src="assets/js/isotope.min.js"></script>
+						<script src="assets/js/owl-carousel.js"></script>
+						<script src="assets/js/wow.js"></script>
+						<script src="assets/js/tabs.js"></script>
+						<script src="assets/js/popup.js"></script>
+						<script src="assets/js/custom.js"></script>
 </body>
 
 </html>
