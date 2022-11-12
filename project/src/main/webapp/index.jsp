@@ -299,7 +299,7 @@ https://templatemo.com/tm-580-woox-travel
 			let img_src;
 			for (let i = 1; i <= 100; i++) {
 				if (item_num == i) {
-					img_src = 'assets/images/' + item_num + '.jpg';
+					img_src = 'assets/images/' + i + '.jpg';
 				}
 			}
 			return img_src;
