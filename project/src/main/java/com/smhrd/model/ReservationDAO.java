@@ -33,4 +33,12 @@ public class ReservationDAO {
 		
 		return list;
 	}
+
+	public int insertReservation(ReservationDTO reservDTO) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int row = session.insert("insertReservation", reservDTO);
+		session.close();
+		
+		return row;
+	}
 }

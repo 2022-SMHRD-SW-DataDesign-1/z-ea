@@ -12,11 +12,11 @@ public class GlampingDAO {
 	private SqlSessionFactory sqlSessionFactory =
 			SqlSessionManger.getSqlSession();
 	
-	public ArrayList<GlampingDTO> my_glamping_show(String email){
+	public GlampingDTO my_glamping_show(BigDecimal gc_num){
 		SqlSession session = sqlSessionFactory.openSession(true);
-		ArrayList<GlampingDTO> list = (ArrayList)session.selectList("my_glamping_show", email);
+		GlampingDTO dto =session.selectOne("my_glamping_show", gc_num);
 		session.close();
 		
-		return list;
+		return dto;
 	}
 }

@@ -23,7 +23,8 @@ public class RoomDAO {
 		SqlSession session = sqlSessionFactory.openSession(true);
 		ArrayList<RoomDTO> list = (ArrayList)session.selectList("room_select",gc_num);
 		session.close();
-		
+	
+
 		return list;
 	}
 	

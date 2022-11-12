@@ -259,50 +259,55 @@
 							</div>
 						</div>
 					</div>
-					<form action="ReservationService?gc_num=<%=gc_num %>" method="post">
-						<div class="col-lg-12" style="margin-top: -300px;">
-							<div class='rap'>
-								<h4>일정 선택하기</h4>
-								<div class="header" style="margin-top: 30px;">
-									<div class="btn prevDay"></div>
-									<h2 id="yearMonth" class='dateTitle'></h2>
-									<div class="btn nextDay"></div>
-								</div>
 
-								<div class="grid dateHead" style="margin-top: 50px;">
-									<div>일</div>
-									<div>월</div>
-									<div>화</div>
-									<div>수</div>
-									<div>목</div>
-									<div>금</div>
-									<div>토</div>
-								</div>
-
-								<div class="grid dateBoard" style="margin-top: 50px;"></div>
+					<div class="col-lg-12" style="margin-top: -300px;">
+						<div class='rap'>
+							<h4>일정 선택하기</h4>
+							<div class="header" style="margin-top: 30px;">
+								<div class="btn prevDay"></div>
+								<h2 id="yearMonth" class='dateTitle'></h2>
+								<div class="btn nextDay"></div>
 							</div>
-							<button id="datesearch">검색</button>
 
-							<br>
-							<div>
-								<h4>체크인</h4>
-								<h4 name=checkin id="checkin"></h4>
-								<h4>체크아웃</h4>
-								<h4 name= checkout id="checkout"></h4>
+							<div class="grid dateHead" style="margin-top: 50px;">
+								<div>일</div>
+								<div>월</div>
+								<div>화</div>
+								<div>수</div>
+								<div>목</div>
+								<div>금</div>
+								<div>토</div>
 							</div>
+
+							<div class="grid dateBoard" style="margin-top: 50px;"></div>
 						</div>
+						<button id="datesearch">검색</button>
+
+						<br>
+						<form action="ReservationService?gc_num=<%=gc_num%>" method="post">
+						<div>
+							<h4>체크인</h4>
+							<h4>
+								<input type="text" name=checkin id="checkin" value=""></input>
+							</h4>
+							<h4>체크아웃</h4>
+							<h4>
+								<input type="text" name=checkout id="checkout" value=""></input>
+							</h4>
+						</div>
+					</div>
 
 
-
+					
 						<div class="col-lg-12">
 							<div class='rap'>
 								<h4 style="margin-bottom: 30px;">방</h4>
 								<select name="roomname">
-									
+
 									<%
 									for (int i = 0; i < roomList.size(); i++) {
 									%>
-									<option value="<%=roomList.get(i).getRoom_name()%>"><%=roomList.get(i).getRoom_name()%></option>
+									<option value="<%=i+1 %>"><%=roomList.get(i).getRoom_name()%></option>
 									<%
 									}
 									%>
@@ -340,7 +345,7 @@
 								</fieldset>
 							</div>
 						</div>
-						
+
 						<input id="submit" type="submit" value="이거 제출" />
 					</form>
 				</div>
@@ -490,13 +495,13 @@ function tag_filter(id){
 		</script>
 
 		<script>
-	
-						document.getElementById("submit").onclick=function(){
+
+						document.getElementById("datesearch").onclick=function(){
 							let min=parseInt(day[0]);
 							let max=parseInt(day[0]);
 							
-							console.log(min);
-							console.log(max);
+							console.log("min");
+							console.log("max");
 							
 							for(var i=1;i<day.length;i++){
 								if(min>parseInt(day[i])){
@@ -515,13 +520,14 @@ function tag_filter(id){
 							
 							document.getElementById("checkin").textContent=min;
 							document.getElementById("checkout").textContent=max;
-							
-							$.ajax({
+							$('input[name=checkin]').attr('value',min);
+							$('input[name=checkout]').attr('value',max);
+						 	/* $.ajax({
 								url : "ReservationService",
 								type : 'post',
 								data : {
-									checkin :"min" ,
-									checkout :"max" ,
+									min :"min" ,
+									max :"max" ,
 								},
 								success : function(data) {
 											
@@ -529,7 +535,8 @@ function tag_filter(id){
 								error : function() {
 									alert("error");
 								}
-							});
+							}); */
+							
 						};
 						</script>
 
