@@ -63,8 +63,8 @@ https://templatemo.com/tm-580-woox-travel
 						<ul class="nav">
 							<li><a href="index.jsp">홈</a></li>
 							<li><a href="about.jsp">글램핑&카라반</a></li>
-							<li><a href="deals.jsp">예약</a></li>
-							<li><a href="reservation.jsp">양도</a></li>
+							<li><a href="reservation.jsp">예약</a></li>
+							<li><a href="transfer.jsp">양도</a></li>
 							<li><a href="community.jsp">커뮤니티</a></li>
 							<%
 							if (info == null) {
@@ -194,6 +194,7 @@ https://templatemo.com/tm-580-woox-travel
 			<div class="row">
 				<div class="col-lg-12">
 
+
 					<h4>내 여행관리는 여기에서</h4><br>
 				
 						<h3 stylye="padding:10%"background=>My Page</h3>
@@ -228,6 +229,13 @@ https://templatemo.com/tm-580-woox-travel
 						<i class="fa fa-map-marker"></i>
 						<h4>나의 후기</h4>
 						<a href="comment_review.jsp">내가 작성한 리뷰/ 게시글</a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-sm-6">
+					<div class="info-item">
+						<i class="fa fa-map-marker"></i>
+						<h4>설문조사</h4>
+						<a href="Survey_update.jsp">설문조사 다시하기</a>
 					</div>
 				</div>
 			</div>

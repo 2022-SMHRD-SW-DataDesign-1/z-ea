@@ -28,8 +28,17 @@ public class ReservationService extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
-		System.out.println("여기부터");
-		MemberDTO dto = (MemberDTO) session.getAttribute("info");
+
+		MemberDTO dto = (MemberDTO)session.getAttribute("info");
+		/*
+		 * System.out.println(rc_num); System.out.println(dto.getMb_email());
+		 * 
+		 * 
+		 * System.out.println("여기부터"); MemberDTO dto = (MemberDTO)
+		 * session.getAttribute("info"); BigDecimal gc_num = new
+		 * BigDecimal(request.getParameter("gc_num"));
+		 */
+
 
 		BigDecimal gc_num = new BigDecimal(request.getParameter("gc_num"));
 

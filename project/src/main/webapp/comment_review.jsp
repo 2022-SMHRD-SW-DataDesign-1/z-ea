@@ -73,10 +73,10 @@ https://templatemo.com/tm-580-woox-travel
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
-							<li><a href="index.jsp" class="active">홈</a></li>
+							<li><a href="index.jsp">홈</a></li>
 							<li><a href="about.jsp">글램핑&카라반</a></li>
-							<li><a href="deals.jsp">예약</a></li>
-							<li><a href="reservation.jsp">양도</a></li>
+							<li><a href="reservation.jsp">예약</a></li>
+							<li><a href="transfer.jsp">양도</a></li>
 							<li><a href="community.jsp">커뮤니티</a></li>
 							<%
 							if (info == null) {
@@ -88,7 +88,7 @@ https://templatemo.com/tm-580-woox-travel
 							<%
 							} else {
 							%>
-							<li><a href="MyPage.jsp" class="modalBtn"
+							<li><a href="MyPage.jsp" class="active" class="modalBtn"
 								style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">마이페이지</a>
 							</li>
 							<li><a href="LogoutService" class="modalBtn"
@@ -133,7 +133,7 @@ https://templatemo.com/tm-580-woox-travel
 				if (info != null) {
 				%>
 				<div style="margin-bottom: 40px;">
-					<div class="col-lg-6">
+					<div class="table">
 						<table>
 							<%
 							for (int i = 0; i < comment_list.size(); i++) {
@@ -195,7 +195,7 @@ https://templatemo.com/tm-580-woox-travel
 				if (info != null) {
 				%>
 				<div style="margin-bottom: 40px;">
-					<div class="col-lg-6">
+					<div class="table">
 						<table>
 							<%
 							for (int i = 0; i < review_list.size(); i++) {
@@ -257,7 +257,7 @@ https://templatemo.com/tm-580-woox-travel
 				if (info != null) {
 				%>
 				<div style="margin-bottom: 40px;">
-					<div class="col-lg-6">
+					<div class="table">
 						<table>
 							<%
 							for (int i = 0; i < board_list.size(); i++) {

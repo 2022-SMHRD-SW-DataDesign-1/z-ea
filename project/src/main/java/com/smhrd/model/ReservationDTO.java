@@ -5,19 +5,25 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+
+
+
 @Getter
 @AllArgsConstructor
 @RequiredArgsConstructor
 @NoArgsConstructor
 public class ReservationDTO {
+
 	
 
 
 	@NonNull
     private BigDecimal gc_num;
+
 
     // 방 순번
 @NonNull

@@ -1,8 +1,10 @@
+<%@page import="com.smhrd.model.RoomDAO"%>
+<%@page import="java.math.BigDecimal"%>
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="com.smhrd.model.RoomDTO"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
-<%@page import="java.math.BigDecimal"%>
-<%@page import="com.smhrd.model.RoomDTO"%>
-<%@page import="com.smhrd.model.RoomDAO"%>
 <%@page import="com.smhrd.model.ItemDTO"%>
 <%@page import="com.smhrd.model.ItemDAO"%>
 <%@page import="com.smhrd.model.MemberDTO"%>
@@ -129,6 +131,22 @@
 	ItemDAO dao = new ItemDAO();
 	ItemDTO item = dao.showDetail(num);
 	System.out.print(item);
+	System.out.print("item" + item.getNum());
+	%>
+
+	<%
+	/* 	ArrayList<RoomDTO> room_list = new RoomDAO().showroom(num);
+	 */
+	/* 	String[][] day = new String[30][room_list.size()]; */
+
+	/* for (int i = 1; i <= 31; i++) {
+		for (int j = 0; j < room_list.size(); j++) {
+			day[i][j] = room_list.get(j).getRoom_name();
+		}
+	}
+
+	System.out.println(day.length); */
+
 	RoomDAO roomdao = new RoomDAO();
 	BigDecimal gc_num = item.getNum();
 	ArrayList<RoomDTO> roomList = roomdao.room_select(gc_num);
@@ -285,20 +303,27 @@
 
 						<br>
 						<form action="ReservationService?gc_num=<%=gc_num%>" method="post">
-						<div>
-							<h4>체크인</h4>
-							<h4>
-								<input type="text" name=checkin id="checkin" value=""></input>
-							</h4>
-							<h4>체크아웃</h4>
-							<h4>
-								<input type="text" name=checkout id="checkout" value=""></input>
-							</h4>
-						</div>
+							<div>
+								<h4>체크인</h4>
+								<h4>
+									<input type="text" name=checkin id="checkin" value=""></input>
+								</h4>
+								<h4>체크아웃</h4>
+								<h4>
+									<input type="text" name=checkout id="checkout" value=""></input>
+								</h4>
+							</div>
 					</div>
 
+					<br>
+					<div>
+						<h4 style="font-size: 15px; padding: 10px;">체크인</h4>
+						<h4 id="checkin"></h4>
+						<h4 style="font-size: 15px; padding: 10px;">체크아웃</h4>
+						<h4 id="checkout"></h4>
+						<button id="datesearch">확인</button>
 
-					
+
 						<div class="col-lg-12">
 							<div class='rap'>
 								<h4 style="margin-bottom: 30px;">방</h4>
@@ -307,7 +332,7 @@
 									<%
 									for (int i = 0; i < roomList.size(); i++) {
 									%>
-									<option value="<%=i+1 %>"><%=roomList.get(i).getRoom_name()%></option>
+									<option value="<%=i + 1%>"><%=roomList.get(i).getRoom_name()%></option>
 									<%
 									}
 									%>
@@ -326,11 +351,48 @@
 										aria-label="Default select example" id="chooseGuests"
 										onChange="this.form.click()">
 
-										<option type="checkbox" name="option1" value="1">1</option>
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4+">4+</option>
+										<div class="col-lg-12">
+											<div class='rap'>
+												<h4 style="margin-bottom: 30px;">방</h4>
+												<select>
+													<option selected></option>
+
+												</select>
+
+											</div>
+										</div>
+
+										<div class="col-lg-12">
+											<div class='rap'>
+												<h4 style="margin-bottom: 30px;">객실 인원</h4>
+												<fieldset>
+													<h4 style="font-size: 15px; padding: 10px;">성인</h4>
+													<select name="Guests" class="form-select"
+														aria-label="Default select example" id="chooseGuests"
+														onChange="this.form.click()">
+														<option selected>인원수</option>
+														<option type="checkbox" name="option1" value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4+">4+</option>
+													</select>
+													<h4 style="font-size: 15px; padding: 10px;">아이</h4>
+													<select name="Guests" class="form-select"
+														aria-label="Default select example" id="chooseGuests"
+														onChange="this.form.click()">
+														<option selected>인원수</option>
+														<option type="checkbox" name="option1" value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4+">4+</option>
+													</select>
+												</fieldset>
+											</div>
+											<option type="checkbox" name="option1" value="1">1</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4+">4+</option>
 									</select>
 									<p>아이</p>
 									<select name="Guests_kid" class="form-select"
@@ -347,36 +409,49 @@
 						</div>
 
 						<input id="submit" type="submit" value="이거 제출" />
-					</form>
-				</div>
-			</div>
-		</div>
-
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<p>
-							Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights
-							reserved. <br>Design: <a href="https://templatemo.com"
-								target="_blank" title="free CSS templates">TemplateMo</a>
-							Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
-						</p>
+						</form>
 					</div>
 				</div>
 			</div>
-		</footer>
-		<!-- Scripts -->
 
-		<!-- <script>
+
+
+			<footer>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<p>
+								Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights
+								reserved. <br>Design: <a href="https://templatemo.com"
+									target="_blank" title="free CSS templates">TemplateMo</a>
+								Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
+							</p>
+							<footer>
+								<div class="container">
+									<div class="row">
+										<div class="col-lg-12">
+											<p>
+												Copyright © 2036 <a href="#">WoOx Travel</a> Company. All
+												rights reserved. <br>Design: <a
+													href="https://templatemo.com" target="_blank"
+													title="free CSS templates">TemplateMo</a> Distribution: <a
+													href="https://themewagon.com target="_blank" >ThemeWagon</a>
+											</p>
+										</div>
+									</div>
+								</div>
+							</footer>
+							<!-- Scripts -->
+
+							<!-- <script>
 var today = new Date();
 var month = today.getMonth()+1;
 console.log("월 : ",month);
 </script>	 -->
 
 
-		<!-- 달력생성 -->
-		<script>
+							<!-- 달력생성 -->
+							<script>
 
 //달력 생성
 const makeCalendar = (date) => {
@@ -395,7 +470,6 @@ const limitDay = prevDay + lastDay;
 const nextDay = Math.ceil(limitDay / 7) * 7;
 
 let htmlDummy = '';
-/* let arr=[]; */
 
 // 한달전 날짜 표시하기
 for (let i = 0; i < prevDay; i++) {
@@ -404,11 +478,10 @@ for (let i = 0; i < prevDay; i++) {
 
 // 이번달 날짜 표시하기
 for (let i = 1; i <= lastDay; i++) {    
-  htmlDummy += `<div class="#b${i}" onclick="tag_filter(this)">${i}</div>`;
-  `let arr${i}=[]`
-/*   arr.push(`let arr${i}=[]`); */
-/*   console.log(arr); */
-}
+  htmlDummy += `<div id="#b${i}" onclick="tag_filter(this)">${i}</div>`;
+/*   `let arr${i}=[]`; */
+  }
+
 
 // 다음달 날짜 표시하기
 for (let i = limitDay; i < nextDay; i++) {
@@ -437,9 +510,8 @@ makeCalendar(new Date(date.setMonth(date.getMonth() + 1)));
 </script>
 
 
-
-		<!-- 날짜선택 -->
-		<script>
+							<!-- 날짜선택 -->
+							<script>
 		
 		const cnt = 2;
 		let day=[];
@@ -494,7 +566,7 @@ function tag_filter(id){
 			
 		</script>
 
-		<script>
+							<script>
 
 						document.getElementById("datesearch").onclick=function(){
 							let min=parseInt(day[0]);
@@ -544,15 +616,16 @@ function tag_filter(id){
 
 
 
-		<!-- Bootstrap core JavaScript -->
-		<script src="vendor/jquery/jquery.min.js"></script>
-		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-		<script src="assets/js/isotope.min.js"></script>
-		<script src="assets/js/owl-carousel.js"></script>
-		<script src="assets/js/wow.js"></script>
-		<script src="assets/js/tabs.js"></script>
-		<script src="assets/js/popup.js"></script>
-		<script src="assets/js/custom.js"></script>
+
+							<!-- Bootstrap core JavaScript -->
+							<script src="vendor/jquery/jquery.min.js"></script>
+							<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+							<script src="assets/js/isotope.min.js"></script>
+							<script src="assets/js/owl-carousel.js"></script>
+							<script src="assets/js/wow.js"></script>
+							<script src="assets/js/tabs.js"></script>
+							<script src="assets/js/popup.js"></script>
+							<script src="assets/js/custom.js"></script>
 </body>
 
 </html>

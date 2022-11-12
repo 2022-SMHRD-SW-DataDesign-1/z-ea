@@ -210,12 +210,13 @@ https://templatemo.com/tm-580-woox-travel
 		<!-- ***** Main Banner Area End ***** -->
 
 		<!-- 모달 -->
-<%ItemDAO dao = new ItemDAO();
-ArrayList<ItemDTO> item_list = new ArrayList<ItemDTO>();
-item_list = (ArrayList)request.getAttribute("item_list");
- %>
+		<%
+		ItemDAO dao = new ItemDAO();
+		ArrayList<ItemDTO> item_list = new ArrayList<ItemDTO>();
+		item_list = (ArrayList) request.getAttribute("item_list");
+		%>
 		<div class="cities-town"
-			style="display: inline-block; width :80%;  margin-left: 15%;">
+			style="display: inline-block; width: 80%; margin-left: 15%;">
 			<div class="container">
 				<div class="row" style="text-align: center;">
 					<div class="slider-content">
@@ -223,46 +224,43 @@ item_list = (ArrayList)request.getAttribute("item_list");
 						<div class="row" style="display: block;">
 
 							<h1 style="margin-bottom: 25px;">검색 결과</h1>
-							<h3><%= item_list.size() %>건이 검색되었습니다.</h3>
-
-						
-								<hr />
-
-								<div>
-									<div
-										style="margin-top: 5%; width: 100%; display: inline-block; padding: 10px 5px 10px 5px;">
-
-										<%
-										
-											for (int i = 0; i < item_list.size(); i++) {
-											
-										%>
-
-										<a class="item_list"
-											href="ShowService?num=<%=item_list.get(i).getNum()%>"
-											style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox;">
-											<img src="assets/images/offers-01.jpg" alt=""
-											style="width: 200px; height: 200px;">
-											<div style="text-align: left; padding-left: 20px;">
-												<p><%=item_list.get(i).getName()%></p>
-												<p><%=item_list.get(i).getDesc()%></p>
-											</div>
-										</a>
-										<%
-									
-										}
-										%>
-										
+							<h3><%=item_list.size()%>건이 검색되었습니다.
+							</h3>
 
 
-				
+							<hr />
+
+							<div>
+								<div
+									style="margin-top: 5%; width: 100%; display: inline-block; padding: 10px 5px 10px 5px;">
+
+									<%
+									for (int i = 0; i < item_list.size(); i++) {
+									%>
+
+									<a class="item_list"
+										href="ShowService?num=<%=item_list.get(i).getNum()%>"
+										style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox;">
+										<img src="assets/images/offers-01.jpg" alt=""
+										style="width: 200px; height: 200px;">
+										<div style="text-align: left; padding-left: 20px;">
+											<p><%=item_list.get(i).getName()%></p>
+											<p><%=item_list.get(i).getDesc()%></p>
+										</div>
+									</a>
+									<%
+									}
+									%>
 
 
 
 
-										<div style="width: 100%"></div>
 
-									</div>
+
+
+
+									<div style="width: 100%"></div>
+
 								</div>
 							</div>
 						</div>
@@ -270,46 +268,47 @@ item_list = (ArrayList)request.getAttribute("item_list");
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<p>
-							Copyright Â© 2036 <a href="#">WoOx Travel</a> Company. All rights
-							reserved. <br>Design: <a href="https://templatemo.com"
-								target="_blank" title="free CSS templates">TemplateMo</a>
-							Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
-						</p>
-					</div>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<p>
+						Copyright Â© 2036 <a href="#">WoOx Travel</a> Company. All rights
+						reserved. <br>Design: <a href="https://templatemo.com"
+							target="_blank" title="free CSS templates">TemplateMo</a>
+						Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
+					</p>
 				</div>
-
-
 			</div>
-		</footer>
+
+
+		</div>
+	</footer>
 
 
 
 
-		<!-- Scripts -->
-		<!-- Bootstrap core JavaScript -->
-		<script src="vendor/jquery/jquery.min.js"></script>
-		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!-- Scripts -->
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-		<script src="assets/js/isotope.min.js"></script>
-		<script src="assets/js/owl-carousel.js"></script>
-		<script src="assets/js/wow.js"></script>
-		<script src="assets/js/tabs.js"></script>
-		<script src="assets/js/popup.js"></script>
-		<script src="assets/js/custom.js"></script>
+	<script src="assets/js/isotope.min.js"></script>
+	<script src="assets/js/owl-carousel.js"></script>
+	<script src="assets/js/wow.js"></script>
+	<script src="assets/js/tabs.js"></script>
+	<script src="assets/js/popup.js"></script>
+	<script src="assets/js/custom.js"></script>
 
-		<script>
+	<script>
 			$(".option").click(function() {
 				$(".option").removeClass("active");
 				$(this).addClass("active");
 			});
 		</script>
-		<script>
+	<script>
 			function show() {
 				console.log("실행");
 				let modal = document.querySelector(".modalPopup");
@@ -335,7 +334,7 @@ item_list = (ArrayList)request.getAttribute("item_list");
 				}
 
 	</script>
-		<script>
+	<script>
 	
 
 	function tag_filter(id){

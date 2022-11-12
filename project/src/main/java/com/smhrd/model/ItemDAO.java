@@ -42,4 +42,11 @@ public ArrayList<ItemDTO> showAll() {
 	session.close();
 	return dto;
 }
+
+public ArrayList<ItemDTO> surv_item_filter(String tag){
+	SqlSession session = sqlSessionFactory.openSession(true);
+	ArrayList<ItemDTO> list = (ArrayList)session.selectList("surv_item_filter", tag);
+	session.close();
+	return list;
+}
 }

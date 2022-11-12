@@ -7,41 +7,42 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.smhrd.db.SqlSessionManger;
 
-public class TransferDAO {
+public class SurveyDAO2 {
 	private SqlSessionFactory sqlSessionFactory = SqlSessionManger.getSqlSession();
-	
-	
-	public int transfer_upload(TransferDTO dto) {
+
+	public int survey(SurveyDTO2 dto) {
+
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int row = session.insert("transfer_upload", dto);
+		int row = session.insert("survey", dto);
+		session.close();
+
+		return row;
+		
+	}
+	
+	public boolean surv_check(String email ) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		boolean ck = session.selectOne("surv_check",email);
+		session.close();
+		
+		return ck;
+		
+	}
+	public SurveyDTO2 surv_info(String email) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		SurveyDTO2 info = session.selectOne("surv_info", email);
+		session.close();
+		
+		return info;
+	}
+	
+	public int surv_update(SurveyDTO2 dto) {
+		SqlSession session = sqlSessionFactory.openSession(true);
+		int row = session.update("surv_update", dto);
 		session.close();
 		
 		return row;
 		
 	}
 	
-	public ArrayList<TransferDTO> transfer_all_show(){
-		SqlSession session = sqlSessionFactory.openSession(true);
-		ArrayList<TransferDTO> list = (ArrayList) session.selectList("transfer_all_show");
-		session.close();
-		
-		return list;
-		
-	}
-	
-	public TransferDTO transfer_show(BigDecimal transfer_num) {
-		SqlSession session = sqlSessionFactory.openSession(true);
-		TransferDTO transfer = session.selectOne("transfer_show", transfer_num);
-		session.close();
-		
-		return transfer;
-	}
-	public int transfer_status_check(TransferDTO dto) {
-		SqlSession session = sqlSessionFactory.openSession(true);
-		int up = session.update("transfer_status_check", dto);
-		session.close();
-		
-		return up;
-	}
-		
 }

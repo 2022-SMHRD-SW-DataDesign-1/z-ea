@@ -3,11 +3,25 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smhrd.mapper.ReservationMapper">
-	<select id="my_re_show" parameterType="String" resultType="ReservationDTO">
-	select * from reservation_calendar_tb_1 where mb_email = #{mb_email}
+	<select id="my_re_show" parameterType="String"
+		resultType="ReservationDTO">
+		select * from reservation_calendar_tb_1 where mb_email = #{mb_email}
 	</select>
-	
 	<insert id="insertReservation" parameterType="ReservationDTO">
-	insert into reservation_calendar_tb_1(gc_num,room_num,rc_date, mb_email,check_in,check_out) values( #{gc_num,jdbcType=DECIMAL}, #{room_num,jdbcType=DECIMAL}, sysdate, #{mb_email,jdbcType=VARCHAR}, #{check_in,jdbcType=VARCHAR},#{check_out,jdbcType=VARCHAR})
+		insert into reservation_calendar_tb_1(gc_num,room_num,rc_date,
+		mb_email,check_in,check_out) values( #{gc_num,jdbcType=DECIMAL},
+		#{room_num,jdbcType=DECIMAL}, sysdate, #{mb_email,jdbcType=VARCHAR},
+		#{check_in,jdbcType=VARCHAR},#{check_out,jdbcType=VARCHAR})
 	</insert>
+
+	<select id="transfer_num_check_in" parameterType="BigDecimal"
+		resultType="ReservationDTO">
+		select * from reservation_calendar_tb where rc_num =(select rc_num from
+		transfer_tb where transfer_num =#{transfer_num})
+	</select>
+	<update id="transfer_update" parameterType="ReservationDTO">
+		update reservation_calendar_tb set mb_email=#{mb_email} where
+		rc_num=#{rc_num}
+	</update>
+
 </mapper>
