@@ -8,16 +8,15 @@
 	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-<html lang="en">\
+<html lang="en">
 
 <head>
 
-<meta charset="utf-8"> 
+<meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <link
-
 	href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
 	rel="stylesheet">
 
@@ -470,13 +469,10 @@ https://templatemo.com/tm-580-woox-travel
 	  }
 		
 	</script>
-<<<<<<< HEAD
-		<script>
+F		<script>
 	function FullView()
 	
 	</script>
-=======
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 		<script>
 	function filter(id){
 		let inputE = id.val();

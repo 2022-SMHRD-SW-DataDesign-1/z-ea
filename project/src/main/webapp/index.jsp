@@ -260,6 +260,7 @@ https://templatemo.com/tm-580-woox-travel
 		</div>
 	</section>
 	<!-- ***** Main Banner Area End ***** -->
+
 	<%
 	if (info != null) {
 		SurveyDTO2 surv_info = new SurveyDAO2().surv_info(info.getMb_email());
@@ -290,6 +291,21 @@ https://templatemo.com/tm-580-woox-travel
 		//		ArrayList<ItemDTO> view_list = new ItemDAO().Filter(surv_info.getMb_view());
 	%>
 
+	<script>
+		function showitem_info() {
+			let item_num =
+	<%=age_list.get(0).getNum()%>
+		;
+			let img_src;
+			for (let i = 1; i <= 100; i++) {
+				if (item_num == i) {
+					img_src = 'assets/images/' + item_num + '.jpg';
+				}
+			}
+			return img_src;
+		}
+	</script>
+
 	<%
 	ItemDAO dao = new ItemDAO();
 	ArrayList<ItemDTO> item_list = new ArrayList<ItemDTO>();
@@ -307,7 +323,11 @@ https://templatemo.com/tm-580-woox-travel
 									<div class="row">
 										<div class="col-lg-4 col-sm-5">
 											<div class="image">
-												<img src="assets/images/country-01.jpg" alt="">
+												<img id="showitem" src="">
+												<script>
+													document
+															.getElementById('showitem').src = showitem_info();
+												</script>
 											</div>
 										</div>
 										<div class="col-lg-8 col-sm-7">
@@ -325,8 +345,7 @@ https://templatemo.com/tm-580-woox-travel
 													<li><i class="fa fa-home"></i>유형 : <%=age_list.get(0).getType()%></li>
 												</ul>
 												<div class="text-button">
-													<a href="about.jsp">더보려면?<i
-														class="fa fa-arrow-right"></i></a>
+													<a href="about.jsp">더보려면?<i class="fa fa-arrow-right"></i></a>
 												</div>
 											</div>
 										</div>
@@ -356,8 +375,7 @@ https://templatemo.com/tm-580-woox-travel
 													<li><i class="fa fa-home"></i>유형 : <%=company_list.get(0).getType()%></li>
 												</ul>
 												<div class="text-button">
-													<a href="about.jsp">더보려면?<i
-														class="fa fa-arrow-right"></i></a>
+													<a href="about.jsp">더보려면?<i class="fa fa-arrow-right"></i></a>
 												</div>
 											</div>
 										</div>
@@ -706,6 +724,8 @@ https://templatemo.com/tm-580-woox-travel
 
 		}
 	</script>
+
+
 
 </body>
 
