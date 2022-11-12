@@ -289,7 +289,20 @@ https://templatemo.com/tm-580-woox-travel
 
 		//		ArrayList<ItemDTO> view_list = new ItemDAO().Filter(surv_info.getMb_view());
 	%>
-
+<script>
+		function camp_images() {
+			let item_num =
+	<%=age_list.get(0).getNum()%>
+		;
+			let img_src;
+			for (let i = 1; i <= 100; i++) {
+				if (item_num == i) {
+					img_src = 'assets/캠핑장 1차/' + i + '.jpg';
+				}
+			}
+			return img_src;
+		}
+	</script>
 	<%
 	ItemDAO dao = new ItemDAO();
 	ArrayList<ItemDTO> item_list = new ArrayList<ItemDTO>();
@@ -307,9 +320,14 @@ https://templatemo.com/tm-580-woox-travel
 									<div class="row">
 										<div class="col-lg-4 col-sm-5">
 											<div class="image">
-												<img src="assets/images/country-01.jpg" alt="">
+											<img id="camp_images" src="">
+												<script>document.getElymentById('camp_images').src=camp_images_info()</script>
+												
 											</div>
 										</div>
+								
+									
+							
 										<div class="col-lg-8 col-sm-7">
 											<div class="right-content">
 												<h4><%=age_list.get(0).getName()%></h4>
@@ -706,7 +724,19 @@ https://templatemo.com/tm-580-woox-travel
 
 		}
 	</script>
-
+	
+			}
+		</script>
+		
+			<script >
+			function camp_images_info(){
+			
+				get.email   
+				<img id="showitem" src="">
+				<script>
+					document
+							.getElementById('showitem').src = showitem_info();
+				</script>
 </body>
 
 </html>
