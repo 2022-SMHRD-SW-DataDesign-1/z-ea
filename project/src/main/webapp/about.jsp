@@ -196,29 +196,28 @@ https://templatemo.com/tm-580-woox-travel
 	</div>
 
 	<div class="dark">
-		<!-- ***** Main Banner Area Start ***** -->
 		<div class="about-main-content">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-12">
-						<div class="content"></div>
-					</div>
+					<div class="col-lg-12"></div>
+					<div class="content"></div>
 				</div>
 			</div>
 		</div>
+
 		<!-- ***** Main Banner Area End ***** -->
 
 		<!-- 모달 -->
 
 		<div class="cities-town"
-			style="display: inline-block; margin-left: 15%;">
+			style="display: inline-block; margin-left: 200px;">
 			<div class="container">
 				<div class="row" style="text-align: center;">
 					<div class="slider-content">
 
 						<div class="row" style="display: block;">
 
-							<h2>카테고리</h2>
+							<h2 style="margin-bottom: 60px;">카테고리</h2>
 
 							<div class="col-lg-12">
 								<div class="owl-cites-town owl-carousel"
@@ -469,7 +468,8 @@ https://templatemo.com/tm-580-woox-travel
 	  }
 		
 	</script>
-F		<script>
+		F
+		<script>
 	function FullView()
 	
 	</script>

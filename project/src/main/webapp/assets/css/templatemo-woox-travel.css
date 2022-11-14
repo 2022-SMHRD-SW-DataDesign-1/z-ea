@@ -374,7 +374,7 @@ Header Style
 }
 
 .background-header .main-nav .logo img {
-	width: 159px;
+	width: 135px;
 }
 
 .header-area .main-nav .nav {
@@ -1261,7 +1261,6 @@ About Page Style
 
 .cities-town .slider-content {
 	position: relative;
-	margin-left: 30%;
 	margin-top: 30px;
 	margin-bottom: 30px;
 	background-color: #fff;
