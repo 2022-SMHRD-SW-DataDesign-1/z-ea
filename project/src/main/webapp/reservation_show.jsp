@@ -221,19 +221,20 @@ https://templatemo.com/tm-580-woox-travel
 								autocomplete="on" required><%=re_list.get(i).getRoom_num()%></div>
 						</fieldset>
 					</div>
-			
+					<% StringBuffer buf = new StringBuffer(re_list.get(i).getCheck_in()); 
+						StringBuffer buf1 = new StringBuffer(re_list.get(i).getCheck_out());%>
 					<div class="col-lg-6">
 						<fieldset>
 							<label for="Name" class="form-label">체크인</label>
 							<div type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=re_list.get(i).getCheck_in()%></div>
+								autocomplete="on" required><%=buf.insert(2, '-')%></div>
 						</fieldset>
 					</div>
 					<div class="col-lg-6">
 						<fieldset>
 							<label for="Name" class="form-label">체크 아웃</label>
 							<div type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=re_list.get(i).getCheck_out()%></div>
+								autocomplete="on" required><%=buf1.insert(2, '-')%></div>
 						</fieldset>
 					</div>
 				</div><hr/>

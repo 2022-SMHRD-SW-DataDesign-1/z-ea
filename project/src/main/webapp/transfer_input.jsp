@@ -219,8 +219,9 @@ https://templatemo.com/tm-580-woox-travel
 				</div>
 		</form>
 		<%
-		ArrayList<GlampingDTO> my_glamping_list = new GlampingDAO().my_glamping_show(info.getMb_email());
 		ArrayList<ReservationDTO> my_re_list = new ReservationDAO().my_re_show(info.getMb_email());
+/* 		ArrayList<GlampingDTO> my_glamping_list = new GlampingDAO().my_glamping_show(gc_num); */
+		
 		%>
 		<form action="TransferService" method="post">
 
@@ -230,9 +231,11 @@ https://templatemo.com/tm-580-woox-travel
 					<label for="name" class="form-label">예약건 장소명</label><br> <select
 						name="rc_num">
 						<%
-						for (int i = 0; i < my_glamping_list.size(); i++) {
+					
+						GlampingDAO glamp_dao = new GlampingDAO();
+						for (int i = 0; i <my_re_list.size(); i++) {
 						%>
-						<option value="<%=my_re_list.get(i).getRc_num()%>"><%=my_glamping_list.get(i).getGc_name() %></option>
+						<option value="<%=my_re_list.get(i).getRc_num()%>"><%=glamp_dao.my_glamping_show(my_re_list.get(i).getGc_num()).getGc_name()%> (<%=my_re_list.get(i).getCheck_in()  %> - <%=my_re_list.get(i).getCheck_out() %>)</option>
 						<%
 						}
 						%>

@@ -20,7 +20,7 @@ public class ReservationDTO {
 
 	
 
-
+private BigDecimal rc_num;
 	@NonNull
     private BigDecimal gc_num;
 
