@@ -51,24 +51,20 @@ https://templatemo.com/tm-580-woox-travel
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
 	String mb_email = info.getMb_email();
 	int num = Integer.parseInt(request.getParameter("num"));
-	BigDecimal gc_num= new BigDecimal(request.getParameter("num"));
-	BigDecimal liked= new BigDecimal("3");
-	
+	BigDecimal gc_num = new BigDecimal(request.getParameter("num"));
+	BigDecimal liked = new BigDecimal("3");
+
 	ArrayList<ReviewDTO> review_list = new ArrayList<ReviewDTO>();
 	ReviewDAO Reviewdao = new ReviewDAO();
 	System.out.print(liked);
 	System.out.print(gc_num);
 	System.out.print(mb_email);
 	review_list = Reviewdao.gc_review(gc_num);
-	
-	LikeDTO likedto = new LikeDTO(gc_num, liked ,mb_email);
+
+	LikeDTO likedto = new LikeDTO(gc_num, liked, mb_email);
 	int countLike = new LikeDAO().countLike(gc_num);
 	int showLike = new LikeDAO().showLike(likedto);
-	
-	
-	
-	
-	
+
 	ItemDAO dao = new ItemDAO();
 	ItemDTO item = dao.showDetail(num);
 	System.out.print(item);
@@ -264,28 +260,31 @@ https://templatemo.com/tm-580-woox-travel
 			<!-- //캐치플레이스 -->
 
 			<div class="post_area">
-			<div style="text-align: left;padding:10px;">
-			<a >
-				<%if(showLike == 0){ %>
-				<img src="assets\images\ico_mpost01.png" id="like" class="btn_good" style="width : 30px; height:auto; "  onclick="setLike()" >
-					<span class="ico">좋아요</span><span class="num" id="conLike"><%= countLike %></span>
-				</img>
-				<%} else { %>
-					<img src="assets\images\ico_mpost01_on.png" id="like" class="btn_good" style="width : 30px; height:auto; "  onclick="setLike()" >
-					<span class="ico">좋아요</span><span class="num" id="conLike"><%= countLike %></span>
-				</img>
-				<% }%>
-			</a>	
-			</div>	
-				
-			
+				<div style="text-align: left; padding: 10px;">
+					<a> <%
+ if (showLike == 0) {
+ %> <img src="assets\images\ico_mpost01.png" id="like" class="btn_good"
+						style="width: 30px; height: auto;" onclick="setLike()"> <span
+						class="ico">좋아요</span><span class="num" id="conLike"><%=countLike%></span>
+						</img> <%
+ } else {
+ %> <img src="assets\images\ico_mpost01_on.png" id="like"
+						class="btn_good" style="width: 30px; height: auto;"
+						onclick="setLike()"> <span class="ico">좋아요</span><span
+						class="num" id="conLike"><%=countLike%></span> </img> <%
+ }
+ %>
+					</a>
+				</div>
+
+
 			</div>
 		</div>
 		<!-- //상단 -->
 
 
 		<!-- 사진보기 -->
-		<div id="galleryGo"style="padding-top: 10x;">
+		<div id="galleryGo" style="padding-top: 10x;">
 			<div class="user_reg"></div>
 			<h3 class="blind" style="padding: 20px">사진보기</h3>
 			<div class="photo_gallery">
@@ -295,13 +294,13 @@ https://templatemo.com/tm-580-woox-travel
 					style="height: 300px;">
 					<div class="swiper-wrapper" id="pImgList">
 						<div class="swiper-slide swiper-slide-active"
-							style="width:450px">
+							style="width: 465px; margin-right: 10px;">
 							<img class="swiper-lazy swiper-lazy-loaded" alt="타요캠핑장  0"
 								onclick="openPhotoView(0)"
 								style="width: 100%; height: 100%; object-fit: contain;"
 								src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=42235b2d-f656-4510-ae35-c562feb955cc">
 						</div>
-						<div class="swiper-slide swiper-slide-next" style="width: 450px;">
+						<div class="swiper-slide swiper-slide-next" style="width: 465px;">
 							<img class="swiper-lazy swiper-lazy-loaded" alt="타요캠핑장  1"
 								onclick="openPhotoView(1)"
 								style="width: 100%; height: 100%; object-fit: contain;"
@@ -315,10 +314,7 @@ https://templatemo.com/tm-580-woox-travel
 							class="swiper-pagination-total">5</span>
 					</div> -->
 					<!-- Add Arrows -->
-					<div class="swiper-button-next" tabindex="0" role="button"
-						aria-label="Next slide" aria-disabled="false">다음</div>
-					<div class="swiper-button-prev swiper-button-disabled" tabindex="0"
-						role="button" aria-label="Previous slide" aria-disabled="true">이전</div>
+
 					<span class="swiper-notification" aria-live="assertive"
 						aria-atomic="true"></span>
 				</div>
@@ -329,18 +325,13 @@ https://templatemo.com/tm-580-woox-travel
 
 		<!-- 상세정보 -->
 		<div id="detailGo">
+			<!-- 장소설명 -->
 			<div class="blind" style="padding-top: 40px;">
 				<%=item.getDesc()%></div>
 			<!-- 내용더보기 -->
-			<div class="wrap_contView">
+			<div class="wrap_contView" style="maring-top: 200px;">
 				<h3 class="blind" style="padding: 20px; font-size: 28px;">상세정보</h3>
-				<button class="btn_modify" onclick="goJikimi();" style="border-radious:25px">
-					<span>관광정보 수정요청</span>
-				</button>
 				<!-- //내용더보기 -->
-
-
-
 				<div class="area_txtView top" style="padding-bottom: 50px;">
 					<!-- 맛집 제보 코멘트 -->
 					<div class="gastroventure_report">
@@ -358,7 +349,7 @@ https://templatemo.com/tm-580-woox-travel
 			</div>
 			<!-- <!-- 주변정보 지도 -->
 
-			<div class="surroundingsMap" id="detailGo">
+			<div class="surroundingsMap" id="detailGo" style="margin-top: -2px;">
 				<div class="map_skip" tabindex="0">
 					<a style="display: none;" href="javascript:jumpkakaomap();">지도
 						건너뛰기</a>
@@ -419,51 +410,6 @@ https://templatemo.com/tm-580-woox-travel
 											}
 										});
 					</script>
-					<img src="../resources/images/sub/map_dim01.png" alt=""
-						style="width: 100%; height: 100%;"> <a
-						href="javascript:myLocation();" class="position">내위치</a> <a
-						href="javascript:changeCenter();" class="refreshify">새로고침</a> <a
-						href="javascript:mapOpenClose();" class="map_open">지도 펼치기</a> <a
-						href="javascript:mapOpenClose();" class="map_close">지도 접기</a>
-
-					<div class="layer" tabindex="0">
-						<span class="img"><a href="javascript:;"><img src=""
-								alt=""></a></span>
-						<div>
-							<strong><a href="javascript:;"></a></strong> <span class="area"></span>
-							<span class="km"></span>
-							<div class="btn">
-								<button type="button" class="bookmark"
-									onclick="setFavoContentDetail(2);">즐겨찾기</button>
-								<button type="button" class="good" onclick="setLike(2);">좋아요</button>
-								<button type="button" class="course"
-									onclick="MycourseAddContent(2);">코스담기</button>
-								<button type="button" class="guide roadbutton">길안내</button>
-							</div>
-						</div>
-						<button type="button" class="close">닫기</button>
-					</div>
-					-->
-					<div class="map_menu">
-						<button type="button" class="view" style="display: none;">상세보기</button>
-						<ul>
-							<li><button type="button">
-									<span class="icon1">주변 여행지</span>
-								</button></li>
-							<li><button type="button">
-									<span class="icon2">음식점</span>
-								</button></li>
-							<li><button type="button">
-									<span class="icon3">카페</span>
-								</button></li>
-							<li><button type="button">
-									<span class="icon4">숙소</span>
-								</button></li>
-							<li><button type="button">
-									<span class="icon5">주차장</span>
-								</button></li>
-						</ul>
-					</div>
 					<!-- 			지도 -->
 					<div
 						style="position: absolute; cursor: default; z-index: 1; margin: 0px 6px; height: 19px; line-height: 14px; left: 0px; bottom: 0px; color: rgb(0, 0, 0);">
@@ -489,6 +435,11 @@ https://templatemo.com/tm-580-woox-travel
 						style="cursor: auto; position: absolute; z-index: 2; left: 0px; top: 0px;"></div>
 				</div>
 			</div>
+
+			<button class="btn_modify" onclick="goJikimi();"
+				style="border-radious: 25px; float: right;">
+				<span>관광정보 수정요청</span>
+			</button>
 			<!-- //주변정보 지도 -->
 			<div class="wrap_contView" id="detailinfoview">
 				<!-- 세부 정보 -->
@@ -504,8 +455,6 @@ https://templatemo.com/tm-580-woox-travel
 										title="새창 : 타요캠핑장 사이트로 이동"> http://tayocaravan.com</a></span></li> -->
 								<li><strong>주소</strong><span><%=item.getAddr()%></span></li>
 								<li><strong>이용시간</strong><span>15:00 ~ 익일11:00</span></li>
-
-								<li><strong>주차</strong><span>주차가능</span></li>
 								<li><strong>이용요금</strong><span><%=item.getPrice()%><br>※
 										이용요금은 변동될 수 있으므로 홈페이지 참조 또는 전화 문의 요망 </span></li>
 							</ul>
@@ -550,8 +499,8 @@ https://templatemo.com/tm-580-woox-travel
 			<!-- //중간 배너 -->
 
 			<!-- 태그 -->
-			<div class="tag_cont" style="padding-right: 0px;">
-				<div class="inr" style="height: 70px;">
+			<div class="tag_cont">
+				<div class="inr" style="height: 100px; padding: 10px;">
 					<ul class="clfix">
 
 						<%
@@ -567,39 +516,62 @@ https://templatemo.com/tm-580-woox-travel
 
 					</ul>
 				</div>
-				<button type="button" class="btn_more" style="display: none;">더보기</button>
 			</div>
 			<!-- //태그 -->
+			<div style="height: 100px;">
+				<a href="ItemReservService?num=<%=item.getNum()%>">
+					<button type="button" class="btn btn-primary btn-lg"
+						style="background-color: #6A5ACD; float: right;">예약하러가기</button>
+				</a>
+			</div>
 
 			<!-- 여행톡 -->
-			<h3 class="blind">여행 후기 <span style="font-size: 22px; font-weight: normal;"><%= review_list.size() %>건의 리뷰가 나왔어요.</span></h3>
-			<div id="replyGo">
+			<h3 class="blind">
+				여행 후기 <span style="font-size: 22px; font-weight: normal;"><%=review_list.size()%>건의
+					리뷰가 나왔어요.</span>
+			</h3>
+			<div id="replyGo" style="margin-top: 50px;">
 				<div class="replyWrap">
 					<!-- login 추가시 로그인 후 form -->
-					<%for (int i=0; i<review_list.size(); i++) {%>
-					<div class="showReview" style=" display:inline; margin-top: 10px;">
-					<div class="writer" ><h3 style="font-size: 15px; padding: 10px 10px 10px 10px; margin-bottom: -10px; display:inline-block;">작성자 : <%= review_list.get(i).getMb_email()%></h3>
-						<div class="score"  style="display: inline-block; float: right; padding: 10px 10px 10px 10px; "> 사용자가 등록한 점수에요. <%= review_list.get(i).getScore() %>점</div>
-					</div><hr/>
-				
-					<div class="content" style="overflow: hidden; padding: 0px 10px 0px 10px; margin-bottom: 20px;"><%=review_list.get(i).getReview_content() %></div>
+					<%
+					for (int i = 0; i < review_list.size(); i++) {
+					%>
+					<div class="showReview" style="display: inline; margin-top: 10px;">
+						<div class="writer">
+							<h3
+								style="font-size: 15px; padding: 10px 10px 10px 10px; margin-bottom: -10px; display: inline-block;">
+								작성자 :
+								<%=review_list.get(i).getMb_email()%></h3>
+							<div class="score"
+								style="display: inline-block; float: right; padding: 10px 10px 10px 10px;">
+								사용자가 등록한 점수에요.
+								<%=review_list.get(i).getScore()%>점
+							</div>
+						</div>
+						<hr />
+
+						<div class="content"
+							style="overflow: hidden; padding: 0px 10px 0px 10px; margin-bottom: 20px;"><%=review_list.get(i).getReview_content()%></div>
 					</div>
-					<%} %>
+					<%
+					}
+					%>
 					<div class="write" style="height: 250px">
-						
+
 						<div class="form">
 							<form name="tform" id="tform">
 
 								<textarea name="review" rows="" id="comment215"
 									placeholder="소중한 후기를 남겨주세요." cols=""
 									onkeydown="commentresize(this);"
-									style="width: 900px; height: 150px; "></textarea>
+									style="width: 900px; height: 150px;"></textarea>
 								<div class="fileRegbtn_wrap">
 									<%
 									if (info != null) {
 									%>
 
-									<a href="javascript:void(0)" id="regi" onclick="regi_review()">등록하기</a>
+									<a href="javascript:void(0)" id="regi" onclick="regi_review()"
+										style="float: right;">등록하기</a>
 									<%
 									} else {
 									%>
@@ -622,53 +594,46 @@ https://templatemo.com/tm-580-woox-travel
 						</div>
 					</div>
 
-					<div style="text-align: right; margin: 20px;">
-						<a href="ItemReservService?num=<%=item.getNum()%>" style="">
-
-							<button type="button" class="btn btn-primary btn-lg"
-								style="background-color: #6A5ACD;">예약하러가기</button>
-
-						</a>
-					</div>
+					<div style="text-align: right; margin: 20px;"></div>
 				</div>
 			</div>
-			<!-- //여행톡 -->
+		</div>
+	</div>
 
-			<footer>
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12">
-							<p>
-								Copyright Â© 2036 <a href="#">WoOx Travel</a> Company. All
-								rights reserved. <br>Design: <a
-									href="https://templatemo.com" target="_blank"
-									title="free CSS templates">TemplateMo</a> Distribution: <a
-									href="https://themewagon.com target="_blank" >ThemeWagon</a>
-							</p>
-						</div>
-					</div>
-			</footer>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<p>
+						Copyright Â© 2036 <a href="#">WoOx Travel</a> Company. All rights
+						reserved. <br>Design: <a href="https://templatemo.com"
+							target="_blank" title="free CSS templates">TemplateMo</a>
+						Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
+					</p>
+				</div>
+			</div>
+	</footer>
 
 
-			<!-- Scripts -->
-			<!-- Bootstrap core JavaScript -->
-			<script src="vendor/jquery/jquery.min.js"></script>
-			<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!-- Scripts -->
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-			<script src="assets/js/isotope.min.js"></script>
-			<script src="assets/js/owl-carousel.js"></script>
-			<script src="assets/js/wow.js"></script>
-			<script src="assets/js/tabs.js"></script>
-			<script src="assets/js/popup.js"></script>
-			<script src="assets/js/custom.js"></script>
+	<script src="assets/js/isotope.min.js"></script>
+	<script src="assets/js/owl-carousel.js"></script>
+	<script src="assets/js/wow.js"></script>
+	<script src="assets/js/tabs.js"></script>
+	<script src="assets/js/popup.js"></script>
+	<script src="assets/js/custom.js"></script>
 
-			<script>
+	<script>
 				$(".option").click(function() {
 					$(".option").removeClass("active");
 					$(this).addClass("active");
 				});
 			</script>
-			<script>
+	<script>
 			function setLike(){
 				let like =document.querySelector(".btn_good");
 				let like_cnt = document.querySelector(".num");
@@ -706,8 +671,8 @@ https://templatemo.com/tm-580-woox-travel
 			}
 			
 			</script>
-			
-			<script>
+
+	<script>
 				function show() {
 					console.log("실행");
 					let modal = document.querySelector(".modalPopup");
@@ -729,7 +694,7 @@ https://templatemo.com/tm-580-woox-travel
 						modalBtn.textContent = "로그인";
 					}
 			</script>
-			<script>
+	<script>
 				function regi_review() {
 						let regi_value = $("#comment215").val();
 						let gc_num = <%=item.getNum()%>;
@@ -755,7 +720,7 @@ https://templatemo.com/tm-580-woox-travel
 					}
 
 			</script>
-			<script>
+	<script>
 				function checkE() {
 					let mb_email_ck = $('#mb_email_ck').val();
 					console.log(mb_email_ck);
