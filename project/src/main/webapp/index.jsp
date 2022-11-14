@@ -33,6 +33,7 @@
 
 </head>
 
+
 <body>
 	<%
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
@@ -247,6 +248,8 @@
 	</section>
 	<!-- ***** Main Banner Area End ***** -->
 
+
+
 	<%
 	if (info != null) {
 		SurveyDTO2 surv_info = new SurveyDAO2().surv_info(info.getMb_email());
@@ -276,12 +279,11 @@
 		//			theme_list.add(new);
 		//		}
 	%>
-	<%-- 
-<script>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
+
+	<script>
 		function camp_images_info() {
-			let item_num =
-	<%=age_list.get(0).getNum()%>
+			for(let j=0;j<=age_list.size();j++){
+			let item_num = <%=age_list.get(j).getNum()%>
 		;
 			let img_src;
 			for (let i = 1; i <= 100; i++) {
@@ -292,25 +294,10 @@
 			return img_src;
 		}
 	</script>
-
-	<script>
-		function showitem_info() {
-			let item_num =
-	<%=age_list.get(0).getNum()%>
-		;
-			let img_src;
-			for (let i = 1; i <= 100; i++) {
-				if (item_num == i) {
-					img_src = 'assets/images/' + i + '.jpg';
-				}
-			}
-			return img_src;
-		}
-	</script>
- --%>
 	<%ItemDAO dao = new ItemDAO();
 ArrayList<ItemDTO> item_list = new ArrayList<ItemDTO>();
 item_list = (ArrayList) request.getAttribute("item_list");%>
+
 
 	<div class="visit-country">
 		<div class="container">
@@ -330,27 +317,12 @@ item_list = (ArrayList) request.getAttribute("item_list");%>
 												<img id="camp_images" src="">
 												<script>
 													document
-															.getElementById('camp_images').src = camp_images_info()
+															.getElementById('camp_images').src = camp_images_info();
 												</script>
 
-												<img id="showitem" src=""> ======= <img
-													id="camp_images" src="">
-												<script>
-													document
-															.getElementById('camp_images').src = camp_images_info()
-												</script>
-
-												<img id="showitem"
-													src="assets/images/country-0<%=i + 1%>.jpg">
-												<script>
-													document
-															.getElementById('showitem').src = showitem_info();
-												</script>
 
 											</div>
 										</div>
-
-
 
 										<div class="col-lg-8 col-sm-7">
 											<div class="right-content">
