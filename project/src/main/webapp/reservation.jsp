@@ -182,11 +182,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
-						<h4>지금 바로 예약해보세요!</h4>
 						<h2>예약하기</h2>
-						<!-- <div class="main-button">
-							<a href="index.jsp">홈으로 돌아가기</a>
-						</div> -->
 					</div>
 				</div>
 			</div>

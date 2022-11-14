@@ -239,9 +239,6 @@ https://templatemo.com/tm-580-woox-travel
 	<div class="container" style="padding: 20px;">
 		<section id="portfolio" class="darker">
 			<div class="container">
-				<header>
-					<h2>커뮤니티</h2>
-				</header>
 
 				<%
 				ArrayList<BoardDTO> list = new BoardDAO().selectBoard();
@@ -251,7 +248,8 @@ https://templatemo.com/tm-580-woox-travel
 					<%
 					for (int i = 0; i < list.size(); i++) {
 					%>
-					<figure class="portfolio-item col-md-4 col-sm-6" style="padding:5px;">
+					<figure class="portfolio-item col-md-4 col-sm-6"
+						style="padding: 5px;">
 						<a
 							href="community_detail.jsp?board_num=<%=list.get(i).getBoard_num()%>">
 							<img class="img-responsive"

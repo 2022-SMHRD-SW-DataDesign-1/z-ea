@@ -156,7 +156,8 @@ https://templatemo.com/tm-580-woox-travel
 										style="width: 180px;" /></td>
 								</tr>
 								<td colspan="2" style="text-align: center;"><input
-									type="submit" value="로그인" style="width: 80px; background-color: #6A5ACD; border :none; color:white; padding : 5px 5px 5px 5px; border-radius: 10px;"></td>
+									type="submit" value="로그인"
+									style="width: 80px; background-color: #6A5ACD; border: none; color: white; padding: 5px 5px 5px 5px; border-radius: 10px;"></td>
 							</table>
 						</form>
 						<!-- 회원가입-->
@@ -182,7 +183,8 @@ https://templatemo.com/tm-580-woox-travel
 										style="width: 180px;" /></td>
 								</tr>
 								<tr>
-									<td colspan="2"><input type="button" value="email중복확인" style="background-color: #6A5ACD; border :none; color:white; padding : 5px 5px 5px 5px; border-radius: 10px;"
+									<td colspan="2"><input type="button" value="email중복확인"
+										style="background-color: #6A5ACD; border: none; color: white; padding: 5px 5px 5px 5px; border-radius: 10px;"
 										onclick="checkE()"></td>
 								</tr>
 								<tr>
@@ -217,7 +219,8 @@ https://templatemo.com/tm-580-woox-travel
 										style="width: 180px;" /></td>
 								</tr>
 								<td colspan="2" style="text-align: center;"><input
-									type="submit" value="회원가입" style="width: 80px;  background-color: #6A5ACD; border :none; color:white; padding : 5px 5px 5px 5px; border-radius: 10px;"></td>
+									type="submit" value="회원가입"
+									style="width: 80px; background-color: #6A5ACD; border: none; color: white; padding: 5px 5px 5px 5px; border-radius: 10px;"></td>
 							</table>
 						</form>
 					</div>
@@ -301,11 +304,11 @@ https://templatemo.com/tm-580-woox-travel
 	ArrayList<ItemDTO> item_list = new ArrayList<ItemDTO>();
 	item_list = (ArrayList) request.getAttribute("item_list");
 	%>
+
 	<div class="visit-country">
 		<div class="container">
-			<div class="row"></div>
 			<div class="row">
-				<div class="col-lg-8">
+				<div class="col-lg-8" style="margin-left: 150px;">
 					<div class="items">
 						<div class="row">
 							<%
@@ -656,7 +659,7 @@ https://templatemo.com/tm-580-woox-travel
 									<!-- <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
 									<li><a href="#">1</a></li> -->
 									<li class="active"><a href="#">up</a></li>
-								<!-- 	<li><a href="#">3</a></li>
+									<!-- 	<li><a href="#">3</a></li>
 									<li><a href="#"><i class="fa fa-arrow-right"></i></a></li> -->
 								</ul>
 							</div>
@@ -679,147 +682,21 @@ https://templatemo.com/tm-580-woox-travel
 				</div> -->
 			</div>
 		</div>
-	</div>
+	</div>F
 
-	<!-- <div class="call-to-action">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8">
-					<h2>Are You Looking To Travel ?</h2>
-					<h4>Make A Reservation By Clicking The Button</h4>
-				</div>
-				<div class="col-lg-4">
-					<div class="border-button">
-						<a href="reservation.jsp">Book Yours Now</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
-
-	<%
-	} else {
-	%>
-	<!-- <div class="visit-country">
-		<div class="container">
-			<div class="row"></div>
-			<div class="row">
-				<div class="col-lg-8">
-					<div class="items">
-						<div class="row">
-							<div class="col-lg-12">
-								<div class="item">
-									<div class="row">
-										<div class="col-lg-4 col-sm-5">
-											<div class="image">
-												<img src="assets/images/country-01.jpg" alt="">
-											</div>
-										</div>
-										<div class="col-lg-8 col-sm-7">
-											<div class="right-content">
-												<h4></h4>
-												<span>Europe</span>
-												<div class="main-button">
-													<a href="about.jsp">Explore More</a>
-												</div>
-												<p>Woox Travel is a professional Bootstrap 5 theme HTML
-													CSS layout for your website. You can use this layout for
-													your commercial work.</p>
-												<ul class="info">
-													<li><i class="fa fa-user"></i> 8.66 Mil People</li>
-													<li><i class="fa fa-globe"></i> 41.290 km2</li>
-													<li><i class="fa fa-home"></i> $1.100.200</li>
-												</ul>
-												<div class="text-button">
-													<a href="about.jsp">Need Directions ? <i
-														class="fa fa-arrow-right"></i></a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-12">
-								<div class="item">
-									<div class="row">
-										<div class="col-lg-4 col-sm-5">
-											<div class="image">
-												<img src="assets/images/country-02.jpg" alt="">
-											</div>
-										</div>
-										<div class="col-lg-8 col-sm-7">
-											<div class="right-content">
-												<h4>CARIBBEAN</h4>
-												<span>North America</span>
-												<div class="main-button">
-													<a href="about.jsp">Explore More</a>
-												</div>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing
-													elit, sed do eiusmod tempor incididunt ut labore dolor sit
-													amet, consectetur adipiscing elit, sed do eiusmod.</p>
-												<ul class="info">
-													<li><i class="fa fa-user"></i> 44.48 Mil People</li>
-													<li><i class="fa fa-globe"></i> 275.400 km2</li>
-													<li><i class="fa fa-home"></i> $946.000</li>
-												</ul>
-												<div class="text-button">
-													<a href="about.jsp">Need Directions ? <i
-														class="fa fa-arrow-right"></i></a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-12">
-								<div class="item last-item">
-									<div class="row">
-										<div class="col-lg-4 col-sm-5">
-											<div class="image">
-												<img src="assets/images/country-03.jpg" alt="">
-											</div>
-										</div>
-										<div class="col-lg-8 col-sm-7">
-											<div class="right-content">
-												<h4>FRANCE</h4>
-												<span>Europe</span>
-												<div class="main-button">
-													<a href="about.jsp">Explore More</a>
-												</div>
-												<p>
-													We hope this WoOx template is useful for you, please
-													support us a <a href="https://paypal.me/templatemo"
-														target="_blank">small amount of PayPal</a> to info [at]
-													templatemo.com for our survival. We really appreciate your
-													contribution.
-												</p>
-												<ul class="info">
-													<li><i class="fa fa-user"></i> 67.41 Mil People</li>
-													<li><i class="fa fa-globe"></i> 551.500 km2</li>
-													<li><i class="fa fa-home"></i> $425.600</li>
-												</ul>
-												<div class="text-button">
-													<a href="about.jsp">Need Directions ? <i
-														class="fa fa-arrow-right"></i></a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div> -->
-							<div class="col-lg-12">
-								<ul class="page-numbers">
-									<!-- <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
+	<div class="col-lg-12">
+		<ul class="page-numbers">
+			<!-- <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
 									<li><a href="#">1</a></li> -->
-									<li class="active"><a href="#">up</a></li>
-									<!-- <li><a href="#">3</a></li>
+			<li class="active"><a href="#">up</a></li>
+			<!-- <li><a href="#">3</a></li>
 									<li><a href="#"><i class="fa fa-arrow-right"></i></a></li> -->
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- <div class="col-lg-4">
+		</ul>
+	</div>
+	</div>
+	</div>
+	</div>
+	<!-- <div class="col-lg-4">
 					<div class="side-bar-map">
 						<div class="row">
 							<div class="col-lg-12">
@@ -832,9 +709,9 @@ https://templatemo.com/tm-580-woox-travel
 							</div>
 						</div>
 					</div> -->
-				</div>
-			</div>
-		</div>
+	</div>
+	</div>
+	</div>
 	</div>
 
 	<!-- <div class="call-to-action">
