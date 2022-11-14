@@ -215,9 +215,27 @@
 					} ],
 			"showQuestionNumbers" : "off"
 		};
+<<<<<<< HEAD
+=======
+
+
+	function sendDataToServer(survey) {
+		//send Ajax request to your web server
+		alert("The results are: " + JSON.stringify(survey.data));
+		data = JSON.stringify(survey.data);
+		data1 = JSON.parse(data);
+		dataArr = Object.values(data1);
+		console.log(dataArr);
+		
+	};
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 	</script>
+<<<<<<< HEAD
 
 	<script>
+=======
+
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 		function sendDataToServer(survey) {
 			// function열어
 			//var data = survey.data
@@ -236,8 +254,14 @@
 			let tipdata = '';
 			for (let i = 0; i < data[5].length; i++) {
 				tipdata += data[5][i];
+<<<<<<< HEAD
 			}
 
+=======
+			}
+			
+			//send Ajax request to your web server
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 			if (confirm("제출 ㄱ?"))
 			// if문 열어
 			{

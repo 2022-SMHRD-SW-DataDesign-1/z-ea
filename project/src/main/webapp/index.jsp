@@ -184,7 +184,7 @@ https://templatemo.com/tm-580-woox-travel
 								</tr>
 								<tr>
 									<td colspan="2"><input type="button" value="email중복확인"
-										style="background-color: #6A5ACD; border: none; color: white; padding: 5px 5px 5px 5px; border-radius: 10px;"
+										style="background-color: #6A5ACD; border: none; color: white; margin-left:20px; padding: 5px 5px 5px 5px; border-radius: 10px;"
 										onclick="checkE()"></td>
 								</tr>
 								<tr>
@@ -283,7 +283,12 @@ https://templatemo.com/tm-580-woox-travel
 		//			theme_list.add(new);
 		//		}
 	%>
+	<<<<<<< HEAD
 	<script>
+=======
+
+<script>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 		function camp_images_info() {
 			let item_num =
 	<%=age_list.get(0).getNum()%>
@@ -297,12 +302,31 @@ https://templatemo.com/tm-580-woox-travel
 			return img_src;
 		}
 	</script>
+	<<<<<<< HEAD =======
+
+
+	<script>
+		function showitem_info() {
+			let item_num =
+	<%=age_list.get(0).getNum()%>
+		;
+			let img_src;
+			for (let i = 1; i <= 100; i++) {
+				if (item_num == i) {
+					img_src = 'assets/images/' + i + '.jpg';
+				}
+			}
+			return img_src;
+		}
+	</script>
+	>>>>>>> branch 'master' of
+	https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 
 	<%
-	ItemDAO dao = new ItemDAO();
-	ArrayList<ItemDTO> item_list = new ArrayList<ItemDTO>();
-	item_list = (ArrayList) request.getAttribute("item_list");
-	%>
+ ItemDAO dao = new ItemDAO();
+ ArrayList<ItemDTO> item_list = new ArrayList<ItemDTO>();
+ item_list = (ArrayList) request.getAttribute("item_list");
+ %>
 
 	<div class="visit-country">
 		<div class="container">
@@ -841,8 +865,23 @@ https://templatemo.com/tm-580-woox-travel
 
 		}
 	</script>
+	<<<<<<< HEAD ======= }
+	</script>
 
+	<script>
+			function camp_images_info(){
+			
+				get.email   
+				<img id="showitem" src="">
+				<script>
+					document
+							.getElementById('showitem').src = showitem_info();
+				</script>
+	>>>>>>> branch 'master' of
+	https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git <<<<<<< HEAD
 
+	======= >>>>>>> branch 'master' of
+	https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 </body>
 
 </html>
