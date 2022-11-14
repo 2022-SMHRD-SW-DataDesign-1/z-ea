@@ -5,12 +5,12 @@
 <mapper namespace="com.smhrd.mapper.GlampingMapper">
 
 	<select id="my_glamping_show" parameterType="BigDecimal" resultType="GlampingDTO">
-	select * from glamping_caravan_tb where gc_num =#{gc_num}
+	select * from glamping_caravan_tb5 where gc_num =#{gc_num}
 
 
 	</select>
 	<select id="transfer_num_glamping_show" parameterType="BigDecimal" resultType="GlampingDTO">
-	select * from glamping_caravan_tb where gc_num =(select gc_num from room_tb where room_num = (
+	select * from glamping_caravan_tb5 where gc_num =(select gc_num from room_tb where room_num = (
 	select room_num from reservation_calendar_tb_1 where rc_num =(
 	select rc_num from transfer_tb where transfer_num =#{transfer_num})
 	))

@@ -15,12 +15,12 @@ SqlSessionManger.getSqlSession();
 public ArrayList<ItemDTO> Filter(String tag) {
 	SqlSession session = sqlSessionFactory.openSession(true);
 	System.out.println("DB");
+	String rtag = "%"+tag+"%";
+	System.out.println(rtag);
 	ArrayList<ItemDTO> item_list = (ArrayList)session.selectList("Filter",tag);
 	System.out.println(item_list.size());
-	System.out.println("DAO");
 	session.close();
-	System.out.println(item_list);
-	System.out.println(item_list.size());
+	
 	return item_list;
 }
 public ItemDTO showDetail(int num) {

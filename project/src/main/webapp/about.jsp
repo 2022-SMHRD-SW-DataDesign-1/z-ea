@@ -314,12 +314,12 @@
 
 											<a id="item_list" class="item_list"
 												href="ShowService?num=<%=item_list.get(i).getNum()%>"
-												style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox;">
+												style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox; overflow: hidden;">
 												<img src="assets/images/offers-01.jpg" alt=""
 												style="width: 200px; height: 200px;">
 												<div style="text-align: left; padding-left: 20px;">
 													<p id="item"><%=item_list.get(i).getName()%></p>
-													<p id="item"><%=item_list.get(i).getDesc()%></p>
+													<p id="item" ><%=item_list.get(i).getDesc()%></p>
 												</div>
 											</a>
 
@@ -340,7 +340,7 @@
 											%>
 											<a class="item_list"
 												href="ShowService?num=<%=item_list.get(i).getNum()%>"
-												style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox;">
+												style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox; overflow: hidden;">
 												<img src="assets/images/offers-01.jpg" alt=""
 												style="width: 200px; height: 200px;">
 												<div style="text-align: left; padding-left: 20px;">
@@ -483,7 +483,7 @@
 		  $.each(data, function(index, obj){
 			console.log(obj.num);
 			  tag+="<a href='ShowService?num="+obj.num+"'>"
-			  tag+="<div style='width:250px; height: 350px; display: inline-block;'><img src='assets/images/offers-01.jpg' alt=''style='width: 200px; height: 200px; display: flexbox;'> "
+			  tag+="<div style='width:250px; height: 350px; display: inline-block; overflow: hidden;'><img src='assets/images/offers-01.jpg' alt=''style='width: 200px; height: 200px; display: flexbox;'> "
 			  tag+="<div style='text-align: left; padding-left: 20px;'>"  
 				  tag+="<p id='item'>"+obj.name +"</p>";
 				  tag+="<p id='item'>"+obj.desc +"</p>";

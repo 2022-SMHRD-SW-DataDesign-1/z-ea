@@ -383,7 +383,7 @@
 										aria-label="Default select example" id="chooseGuests"
 										onChange="this.form.click()">
 										<option selected>인원수</option>
-										<option type="checkbox"                ="option1" value="1">1</option>
+										<option type="checkbox"="option1" value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
 										<option value="4+">4+</option>

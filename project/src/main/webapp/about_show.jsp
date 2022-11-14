@@ -505,13 +505,17 @@ https://templatemo.com/tm-580-woox-travel
 
 						<%
 						String tag = item.getTag();
+						
 						System.out.print(tag);
 						String[] tagArr = tag.split(" ");
 						for (int i = 0; i < tagArr.length; i++) {
+						System.out.print(tagArr[i]);
+							if(tagArr[i] != ""){
 						%>
+						
 						<li><a href="#"><span><%=tagArr[i]%></span></a></li>
 						<%
-						}
+						}}
 						%>
 
 					</ul>
