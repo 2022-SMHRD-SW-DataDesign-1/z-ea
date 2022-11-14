@@ -267,12 +267,14 @@ https://templatemo.com/tm-580-woox-travel
 		ArrayList<ItemDTO> company_list = new ItemDAO().surv_item_filter((surv_info.getMb_company()));
 		ArrayList<ItemDTO> season_list = new ItemDAO().surv_item_filter((surv_info.getMb_season()));
 		ArrayList<ItemDTO> type_list = new ItemDAO().surv_item_filter((surv_info.getMb_tour_type()));
-		//		ArrayList<ItemDTO> tip_list = new ItemDAO().Filter(surv_info.getMb_tip());
-		//		String[] themedata = surv_info.getMb_tour_theme().split("#");
-		//		System.out.println("0번" + themedata[0]);
-		//		System.out.println("1번" + themedata[1]);
-		//		System.out.println("2번" + themedata[2]);
-		//		System.out.println("3번" + themedata[3]);
+		//ArrayList<ItemDTO> tip_list = new ItemDAO().surv_item_filter((surv_info.getMb_tip()));
+		//ArrayList<ItemDTO> view_list = new ItemDAO().surv_item_filter((surv_info.getMb_view()));
+		
+				//String[] themedata = surv_info.getMb_tour_theme().split("#");
+				//System.out.println("0번" + themedata[0]);
+				//System.out.println("1번" + themedata[1]);
+				//System.out.println("2번" + themedata[2]);
+				//System.out.println("3번" + themedata[3]);
 		//		System.out.println("size"+themedata.length);
 		//		ArrayList<ItemDTO> theme_list = new ItemDAO().Filter(a)
 		//		for(int j=0; i<theme_list.size())
@@ -287,7 +289,6 @@ https://templatemo.com/tm-580-woox-travel
 		//			theme_list.add(new);
 		//		}
 
-		//		ArrayList<ItemDTO> view_list = new ItemDAO().Filter(surv_info.getMb_view());
 	%>
 
 	<%
@@ -302,27 +303,29 @@ https://templatemo.com/tm-580-woox-travel
 				<div class="col-lg-8">
 					<div class="items">
 						<div class="row">
+									<%if(age_list.size()>0){ %>
+									<%for(int i=0; i<age_list.size(); i++){ %>
 							<div class="col-lg-12">
 								<div class="item">
 									<div class="row">
 										<div class="col-lg-4 col-sm-5">
 											<div class="image">
-												<img src="assets/images/country-01.jpg" alt="">
+												<img src="assets/images/country-0<%=i+1%>.jpg" alt="">
 											</div>
 										</div>
 										<div class="col-lg-8 col-sm-7">
 											<div class="right-content">
-												<h4><%=age_list.get(0).getName()%></h4>
-												<span><%=age_list.get(0).getTag()%></span>
+												<h4><%=age_list.get(i).getName()%></h4>
+												<span><%=age_list.get(i).getTag()%></span>
 												<div class="main-button">
 													<a id="item_list" class="item_list"
-														href="ShowService?num=<%=age_list.get(0).getNum()%>">상세보기</a>
+														href="ShowService?num=<%=age_list.get(i).getNum()%>">상세보기</a>
 												</div>
-												<p><%=age_list.get(0).getAddr()%></p>
+												<p><%=age_list.get(i).getAddr()%></p>
 												<ul class="info">
-													<li><i class="fa fa-user"></i>전화번호 : <%=age_list.get(0).getTel()%></li>
-													<li><i class="fa fa-globe"></i>가격 : <%=age_list.get(0).getPrice()%></li>
-													<li><i class="fa fa-home"></i>유형 : <%=age_list.get(0).getType()%></li>
+													<li><i class="fa fa-user"></i>전화번호 : <%=age_list.get(i).getTel()%></li>
+													<li><i class="fa fa-globe"></i>가격 : <%=age_list.get(i).getPrice()%></li>
+													<li><i class="fa fa-home"></i>유형 : <%=age_list.get(i).getType()%></li>
 												</ul>
 												<div class="text-button">
 													<a href="about.jsp">더보려면?<i
@@ -333,27 +336,31 @@ https://templatemo.com/tm-580-woox-travel
 									</div>
 								</div>
 							</div>
+										<%} %>
+										<%}else{} %>
+									<%if(company_list.size()>0){ %>
+									<%for(int i =0; i<company_list.size(); i++){ %>
 							<div class="col-lg-12">
 								<div class="item">
 									<div class="row">
 										<div class="col-lg-4 col-sm-5">
 											<div class="image">
-												<img src="assets/images/country-02.jpg" alt="">
+												<img src="assets/images/country-0<%=i+1%>.jpg" alt="">
 											</div>
 										</div>
 										<div class="col-lg-8 col-sm-7">
 											<div class="right-content">
-												<h4><%=company_list.get(0).getName()%></h4>
-												<span><%=company_list.get(0).getTag()%></span>
+												<h4><%=company_list.get(i).getName()%></h4>
+												<span><%=company_list.get(i).getTag()%></span>
 												<div class="main-button">
 													<a id="item_list" class="item_list"
-														href="ShowService?num=<%=company_list.get(0).getNum()%>">상세보기</a>
+														href="ShowService?num=<%=company_list.get(i).getNum()%>">상세보기</a>
 												</div>
-												<p><%=company_list.get(0).getAddr()%></p>
+												<p><%=company_list.get(i).getAddr()%></p>
 												<ul class="info">
-													<li><i class="fa fa-user"></i>전화번호 : <%=company_list.get(0).getTel()%></li>
-													<li><i class="fa fa-globe"></i>가격 : <%=company_list.get(0).getPrice()%></li>
-													<li><i class="fa fa-home"></i>유형 : <%=company_list.get(0).getType()%></li>
+													<li><i class="fa fa-user"></i>전화번호 : <%=company_list.get(i).getTel()%></li>
+													<li><i class="fa fa-globe"></i>가격 : <%=company_list.get(i).getPrice()%></li>
+													<li><i class="fa fa-home"></i>유형 : <%=company_list.get(i).getType()%></li>
 												</ul>
 												<div class="text-button">
 													<a href="about.jsp">더보려면?<i
@@ -364,35 +371,34 @@ https://templatemo.com/tm-580-woox-travel
 									</div>
 								</div>
 							</div>
+								<%} %>
+										<%}else{} %>
+					<%if(season_list.size()>0){ %>
+									<%for(int i =0; i<season_list.size(); i++){ %>
 							<div class="col-lg-12">
-								<div class="item last-item">
+								<div class="item">
 									<div class="row">
 										<div class="col-lg-4 col-sm-5">
 											<div class="image">
-												<img src="assets/images/country-03.jpg" alt="">
+												<img src="assets/images/country-0<%=i+1%>.jpg" alt="">
 											</div>
 										</div>
 										<div class="col-lg-8 col-sm-7">
 											<div class="right-content">
-												<h4>FRANCE</h4>
-												<span>Europe</span>
+												<h4><%=season_list.get(i).getName()%></h4>
+												<span><%=season_list.get(i).getTag()%></span>
 												<div class="main-button">
-													<a href="about.jsp">Explore More</a>
+													<a id="item_list" class="item_list"
+														href="ShowService?num=<%=season_list.get(i).getNum()%>">상세보기</a>
 												</div>
-												<p>
-													We hope this WoOx template is useful for you, please
-													support us a <a href="https://paypal.me/templatemo"
-														target="_blank">small amount of PayPal</a> to info [at]
-													templatemo.com for our survival. We really appreciate your
-													contribution.
-												</p>
+												<p><%=season_list.get(i).getAddr()%></p>
 												<ul class="info">
-													<li><i class="fa fa-user"></i> 67.41 Mil People</li>
-													<li><i class="fa fa-globe"></i> 551.500 km2</li>
-													<li><i class="fa fa-home"></i> $425.600</li>
+													<li><i class="fa fa-user"></i>전화번호 : <%=season_list.get(i).getTel()%></li>
+													<li><i class="fa fa-globe"></i>가격 : <%=season_list.get(i).getPrice()%></li>
+													<li><i class="fa fa-home"></i>유형 : <%=season_list.get(i).getType()%></li>
 												</ul>
 												<div class="text-button">
-													<a href="about.jsp">Need Directions ? <i
+													<a href="about.jsp">더보려면?<i
 														class="fa fa-arrow-right"></i></a>
 												</div>
 											</div>
@@ -400,6 +406,161 @@ https://templatemo.com/tm-580-woox-travel
 									</div>
 								</div>
 							</div>
+										<%} %>
+										<%}else{} %>
+					<%if(type_list.size()>0){ %>
+									<%for(int i =0; i<type_list.size(); i++){ %>
+							<div class="col-lg-12">
+								<div class="item">
+									<div class="row">
+										<div class="col-lg-4 col-sm-5">
+											<div class="image">
+												<img src="assets/images/country-0<%=i+1%>.jpg" alt="">
+											</div>
+										</div>
+										<div class="col-lg-8 col-sm-7">
+											<div class="right-content">
+												<h4><%=type_list.get(i).getName()%></h4>
+												<span><%=type_list.get(i).getTag()%></span>
+												<div class="main-button">
+													<a id="item_list" class="item_list"
+														href="ShowService?num=<%=type_list.get(i).getNum()%>">상세보기</a>
+												</div>
+												<p><%=type_list.get(i).getAddr()%></p>
+												<ul class="info">
+													<li><i class="fa fa-user"></i>전화번호 : <%=type_list.get(i).getTel()%></li>
+													<li><i class="fa fa-globe"></i>가격 : <%=type_list.get(i).getPrice()%></li>
+													<li><i class="fa fa-home"></i>유형 : <%=type_list.get(i).getType()%></li>
+												</ul>
+												<div class="text-button">
+													<a href="about.jsp">더보려면?<i
+														class="fa fa-arrow-right"></i></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+										<%} %>
+										<%}else{} %>
+					
+<% 					String[] themedata = surv_info.getMb_tour_theme().split("#"); %>
+<% 					for(int i =1; i < themedata.length; i++){%>
+<%					ArrayList<ItemDTO> theme_list = new ItemDAO().surv_item_filter((themedata[i]));%>
+		<% 					if(theme_list.size() >0){ %>
+									<%for(int j =0; j<theme_list.size(); i++){ %>
+							<div class="col-lg-12">
+								<div class="item">
+									<div class="row">
+										<div class="col-lg-4 col-sm-5">
+											<div class="image">
+												<img src="assets/images/country-0<%=j+1%>.jpg" alt="">
+											</div>
+										</div>
+										<div class="col-lg-8 col-sm-7">
+											<div class="right-content">
+												<h4><%=theme_list.get(j).getName()%></h4>
+												<span><%=theme_list.get(j).getTag()%></span>
+												<div class="main-button">
+													<a id="item_list" class="item_list"
+														href="ShowService?num=<%=theme_list.get(i).getNum()%>">상세보기</a>
+												</div>
+												<p><%=theme_list.get(j).getAddr()%></p>
+												<ul class="info">
+													<li><i class="fa fa-user"></i>전화번호 : <%=theme_list.get(j).getTel()%></li>
+													<li><i class="fa fa-globe"></i>가격 : <%=theme_list.get(j).getPrice()%></li>
+													<li><i class="fa fa-home"></i>유형 : <%=theme_list.get(j).getType()%></li>
+												</ul>
+												<div class="text-button">
+													<a href="about.jsp">더보려면?<i
+														class="fa fa-arrow-right"></i></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+										<%} %>
+										<%}else{ %>
+										<%}} %>
+<% 					String[] tipdata = surv_info.getMb_tip().split("#"); %>
+<% 					for(int i =1; i < tipdata.length; i++){%>
+<%					ArrayList<ItemDTO> tip_list = new ItemDAO().surv_item_filter((tipdata[i]));%>
+			<% 					if(tip_list.size() >0){ %>
+									<%for(int j =0; j<tip_list.size(); i++){ %>
+							<div class="col-lg-12">
+								<div class="item">
+									<div class="row">
+										<div class="col-lg-4 col-sm-5">
+											<div class="image">
+												<img src="assets/images/country-0<%=j+1%>.jpg" alt="">
+											</div>
+										</div>
+										<div class="col-lg-8 col-sm-7">
+											<div class="right-content">
+												<h4><%=tip_list.get(j).getName()%></h4>
+												<span><%=tip_list.get(j).getTag()%></span>
+												<div class="main-button">
+													<a id="item_list" class="item_list"
+														href="ShowService?num=<%=tip_list.get(i).getNum()%>">상세보기</a>
+												</div>
+												<p><%=tip_list.get(j).getAddr()%></p>
+												<ul class="info">
+													<li><i class="fa fa-user"></i>전화번호 : <%=tip_list.get(j).getTel()%></li>
+													<li><i class="fa fa-globe"></i>가격 : <%=tip_list.get(j).getPrice()%></li>
+													<li><i class="fa fa-home"></i>유형 : <%=tip_list.get(j).getType()%></li>
+												</ul>
+												<div class="text-button">
+													<a href="about.jsp">더보려면?<i
+														class="fa fa-arrow-right"></i></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+										<%} %>
+										<%}else{ %>
+										<%}} %>
+<% 					String[] viewdata = surv_info.getMb_view().split("#"); %>
+<% 					for(int i =1; i < viewdata.length; i++){%>
+<%					ArrayList<ItemDTO> view_list = new ItemDAO().surv_item_filter((viewdata[i]));%>
+			<% 					if(view_list.size() >0){ %>
+									<%for(int j =0; j<view_list.size(); i++){ %>
+							<div class="col-lg-12">
+								<div class="item">
+									<div class="row">
+										<div class="col-lg-4 col-sm-5">
+											<div class="image">
+												<img src="assets/images/country-0<%=j+1%>.jpg" alt="">
+											</div>
+										</div>
+										<div class="col-lg-8 col-sm-7">
+											<div class="right-content">
+												<h4><%=view_list.get(j).getName()%></h4>
+												<span><%=view_list.get(j).getTag()%></span>
+												<div class="main-button">
+													<a id="item_list" class="item_list"
+														href="ShowService?num=<%=view_list.get(i).getNum()%>">상세보기</a>
+												</div>
+												<p><%=view_list.get(j).getAddr()%></p>
+												<ul class="info">
+													<li><i class="fa fa-user"></i>전화번호 : <%=view_list.get(j).getTel()%></li>
+													<li><i class="fa fa-globe"></i>가격 : <%=view_list.get(j).getPrice()%></li>
+													<li><i class="fa fa-home"></i>유형 : <%=view_list.get(j).getType()%></li>
+												</ul>
+												<div class="text-button">
+													<a href="about.jsp">더보려면?<i
+														class="fa fa-arrow-right"></i></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+										<%} %>
+										<%}else{ %>
+										<%}} %>
 							<div class="col-lg-12">
 								<ul class="page-numbers">
 									<li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
