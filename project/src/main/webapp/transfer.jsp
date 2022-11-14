@@ -42,6 +42,7 @@
 	background-repeat: no-repeat;
 	padding: 260px 0px 190px 0px;
 	text-align: center;
+}
 </style>
 </head>
 

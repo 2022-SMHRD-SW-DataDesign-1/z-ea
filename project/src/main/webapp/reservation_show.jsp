@@ -113,7 +113,8 @@ https://templatemo.com/tm-580-woox-travel
 				<div class="col-lg-12">
 					<h2>예약 정보 조회</h2>
 					<div class="main-button">
-						<a href="MyPage.jsp">BACK</a>
+						<a href="community.jsp"
+							style="width: 110px; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none;">BACK</a>
 
 					</div>
 				</div>
@@ -139,258 +140,279 @@ https://templatemo.com/tm-580-woox-travel
 					<div class="row" style="display: block;">
 						<div class="col-lg-12" style="margin: 20px;">
 							<div class="row">
-								<h4 style="margin-bottom: 50px; padding: 20px;">예약정보조회</h4>
-								<%
-								for (int i = 0; i < re_list.size(); i++) {
-									GlampingDTO gl_list = new GlampingDAO().my_glamping_show((re_list.get(i).getGc_num()));
-								%>
-								<!-- 이름 -->
-								<div style="margin-bottom: 40px;">
-									<h4 style="font-size: 20px;">
-										예약정보<%=i + 1%></h4>
-									<br>
-									<div class="col-lg-6" style="padding: 20px;">
-										<fieldset style="margin-bottom: 10px;">
-											<label for="Name" class="form-label"
-												style="font-size: 20px; font-weight: bold;">이용자이메일</label>
-											<div type="text" name="mb_name" class="Name"
-												placeholder="name" autocomplete="on" required
-												style="padding: 20px;"><%=re_list.get(i).getMb_email()%></div>
-										</fieldset>
-									</div>
-									<div class="col-lg-6" style="padding: 20px;">
-										<fieldset>
-											<label for="Name" class="form-label"
-												style="font-size: 20px; font-weight: bold;">장소유형</label>
-
-											<div type="text" name="mb_name" class="Name"
-												placeholder="name" autocomplete="on" required><%=gl_list.getGc_type()%></div>
-
-
-
-										</fieldset>
-									</div>
-									<div class="col-lg-6" style="padding: 20px;">
-										<fieldset>
-											<label for="Name" class="form-label"
-												style="font-size: 20px; font-weight: bold;">장소명</label>
-
-											<div type="text" name="mb_name" class="Name"
-												placeholder="name" autocomplete="on" required><%=gl_list.getGc_name()%></div>
-
-										</fieldset>
-									</div>
-									<div class="col-lg-6" style="padding: 20px;">
-										<fieldset>
-											<label for="Name" class="form-label"
-												style="font-size: 20px; font-weight: bold;">장소연락처</label>
-
-											<div type="text" name="mb_name" class="Name"
-												placeholder="name" autocomplete="on" required><%=gl_list.getGc_tel()%></div>
-
-										</fieldset>
-									</div>
-									<div class="col-lg-6" style="padding: 20px;">
-										<fieldset>
-											<label for="Name" class="form-label"
-												style="font-size: 20px; font-weight: bold;">장소주소</label>
-											<div type="text" name="mb_name" class="Name"
-												placeholder="name" autocomplete="on" required><%=gl_list.getGc_addr()%></div>
-
-										</fieldset>
-									</div>
-									<div class="col-lg-6" style="padding: 20px;">
-										<fieldset>
-											<label for="Name" class="form-label"
-												style="font-size: 20px; font-weight: bold;">가격</label>
-											<div type="text" name="mb_name" class="Name"
-												placeholder="name" autocomplete="on" required><%=gl_list.getGc_price()%></div>
-										</fieldset>
-									</div>
-
-									<div class="col-lg-6" style="padding: 20px;">
-										<fieldset>
-											<label for="Name" class="form-label"
-												style="font-size: 20px; font-weight: bold;">방이름</label>
-											<div type="text" name="mb_name" class="Name"
-												placeholder="name" autocomplete="on" required><%=re_list.get(i).getRoom_num()%></div>
-										</fieldset>
-									</div>
+								<div class="col-lg-12">
+									<h2 style="margin-bottom: 50px; padding: 20px;">예약정보조회</h2>
 									<%
-									StringBuffer buf = new StringBuffer(re_list.get(i).getCheck_in());
-									StringBuffer buf1 = new StringBuffer(re_list.get(i).getCheck_out());
+									for (int i = 0; i < re_list.size(); i++) {
+										GlampingDTO gl_list = new GlampingDAO().my_glamping_show((re_list.get(i).getGc_num()));
 									%>
-									<div class="col-lg-6" style="padding: 20px;">
-										<fieldset>
-											<label for="Name" class="form-label"
-												style="font-size: 20px; font-weight: bold;">체크인</label>
-											<div type="text" name="mb_name" class="Name"
-												placeholder="name" autocomplete="on" required><%=buf.insert(2, '-')%></div>
-										</fieldset>
-									</div>
-									<div class="col-lg-6" style="padding: 20px;">
-										<fieldset>
-											<label for="Name" class="form-label"
-												style="font-size: 20px; font-weight: bold;">체크 아웃</label>
-											<div type="text" name="mb_name" class="Name"
-												placeholder="name" autocomplete="on" required><%=buf1.insert(2, '-')%></div>
-										</fieldset>
+									<!-- 이름 -->
+									<div class="col-lg-12" style="margin-left: 10%;">
+										<div style="margin-bottom: 40px; padding: 20px; width: 150px;">
+											<h4 style="font-size: 20px; background-color: #c56cf0;">
+												예약정보<%=i + 1%></h4>
+											<div class="col-lg-6" style="padding: 10px; width: 800px;">
+												<fieldset>
+													<div style="float: left;">
+														<label for="Name" class="form-label"
+															style="font-size: 20px; font-weight: bold;">이용자이메일</label>
+													</div>
+													<div type="text" name="mb_name" class="Name"
+														placeholder="name" autocomplete="on" required
+														style="margin-left: 40%;"><%=re_list.get(i).getMb_email()%></div>
+												</fieldset>
+											</div>
+											<div class="col-lg-6" style="padding: 10px; width: 800px;">
+												<fieldset>
+													<div style="float: left;">
+														<label for="Name" class="form-label"
+															style="font-size: 20px; font-weight: bold;">장소유형</label>
+													</div>
+													<div type="text" name="mb_name" class="Name"
+														placeholder="name" autocomplete="on" required
+														style="margin-left: 40%;"><%=gl_list.getGc_type()%></div>
+												</fieldset>
+											</div>
+											<div class="col-lg-6" style="padding: 10px; width: 800px;">
+												<fieldset>
+													<div style="float: left;">
+														<label for="Name" class="form-label"
+															style="font-size: 20px; font-weight: bold;">장소명</label>
+													</div>
+													<div type="text" name="mb_name" class="Name"
+														placeholder="name" autocomplete="on" required
+														style="margin-left: 40%;"><%=gl_list.getGc_name()%></div>
+												</fieldset>
+											</div>
+											<div class="col-lg-6" style="padding: 10px; width: 800px;">
+												<fieldset>
+													<div style="float: left;">
+														<label for="Name" class="form-label"
+															style="font-size: 20px; font-weight: bold;">장소연락처</label>
+													</div>
+													<div type="text" name="mb_name" class="Name"
+														placeholder="name" autocomplete="on" required
+														style="margin-left: 40%;"><%=gl_list.getGc_tel()%></div>
+												</fieldset>
+											</div>
+											<div class="col-lg-6" style="padding: 10px; width: 800px;">
+												<fieldset>
+													<div style="float: left;">
+														<label for="Name" class="form-label"
+															style="font-size: 20px; font-weight: bold;">장소주소</label>
+													</div>
+													<div type="text" name="mb_name" class="Name"
+														placeholder="name" autocomplete="on" required
+														style="margin-left: 40%;"><%=gl_list.getGc_addr()%></div>
+												</fieldset>
+											</div>
+											<div class="col-lg-6" style="padding: 10px; width: 800px;">
+												<fieldset>
+													<div style="float: left;">
+														<label for="Name" class="form-label"
+															style="font-size: 20px; font-weight: bold;">가격</label>
+													</div>
+													<div type="text" name="mb_name" class="Name"
+														placeholder="name" autocomplete="on" required
+														style="margin-left: 40%;"><%=gl_list.getGc_price()%></div>
+
+												</fieldset>
+											</div>
+
+											<div class="col-lg-6" style="padding: 10px; width: 800px;">
+												<fieldset>
+													<div style="float: left;">
+														<label for="Name" class="form-label"
+															style="font-size: 20px; font-weight: bold;">방이름</label>
+													</div>
+													<div type="text" name="mb_name" class="Name"
+														placeholder="name" autocomplete="on" required
+														style="margin-left: 40%;"><%=re_list.get(i).getRoom_num()%></div>
+												</fieldset>
+											</div>
+											<%
+											StringBuffer buf = new StringBuffer(re_list.get(i).getCheck_in());
+											StringBuffer buf1 = new StringBuffer(re_list.get(i).getCheck_out());
+											%>
+											<div class="col-lg-6" style="padding: 10px; width: 800px;">
+												<fieldset>
+													<div style="float: left;">
+														<label for="Name" class="form-label"
+															style="font-size: 20px; font-weight: bold;">체크인</label>
+													</div>
+													<div type="text" name="mb_name" class="Name"
+														placeholder="name" autocomplete="on" required
+														style="margin-left: 40%;"><%=buf.insert(2, '-')%></div>
+												</fieldset>
+											</div>
+											<div class="col-lg-6" style="padding: 10px; width: 800px;">
+												<fieldset>
+													<div style="float: left;">
+														<label for="Name" class="form-label"
+															style="font-size: 20px; font-weight: bold;">체크 아웃</label>
+													</div>
+													<div type="text" name="mb_name" class="Name"
+														placeholder="name" autocomplete="on" required
+														style="margin-left: 40%;"><%=buf1.insert(2, '-')%></div>
+												</fieldset>
+											</div>
+										</div>
 									</div>
 								</div>
-								<hr />
 								<%
 								}
 								%>
 							</div>
-						</div>
-					</div>
-					<%
-					}
-					%>
-					<!-- 모달 -->
-					<div class="modalPopup" style="display: none;">
-						<div class="ModalBack" onclick
-							style="position: fixed; background-color: black; width: 100%; height: 100%; opacity: 0.9;">
-						</div>
-						<div class="LoginModal"
-							style="text-align: center; background-color: white; width: 540px; height: 650px; margin-top: 10%; margin-left: 36%; position: fixed; align-content: center;">
-							<!-- 로그인 -->
-							<form action="LoginService" method="post">
-								<table style="margin: auto; margin-top: 10%;">
-									<th colspan="2" style="font-size: 20px; padding: 10px;">로그인</th>
-									<tr>
-										<td>
-											<div
-												style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이메일
-											</div>
-										</td>
-										<td><input type="email" name="mb_email"
-											style="width: 180px;" /></td>
-									</tr>
-									<tr>
-										<td>
-											<div
-												style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">비밀번호
-											</div>
-										</td>
-										<td><input type="password" name="mb_pw"
-											style="width: 180px;" /></td>
-									</tr>
-									<td colspan="2" style="text-align: center;"><input
-										type="submit" value="로그인" style="width: 80px;"></td>
-								</table>
-							</form>
-							<!-- 회원가입-->
-							<form action="JoinService" method="post">
-								<table style="margin: auto; margin-top: 10%;">
-									<th colspan="2" style="font-size: 20px; padding: 10px;">회원가입</th>
-									<tr>
-										<td>
-											<div
-												style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이름
-											</div>
-										</td>
-										<td><input type="text" name="mb_name"
-											style="width: 180px;" /></td>
-									</tr>
-									<tr>
-										<td>
-											<div
-												style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이메일
-											</div>
-										</td>
-										<td><input type="email" name="mb_email" id="mb_email_ck"
-											style="width: 180px;" /></td>
-									</tr>
-									<tr>
-										<td colspan="2"><input type="button" value="email중복확인"
-											onclick="checkE()"></td>
-									</tr>
-									<tr>
-										<th colspan="2"><span style="padding: 10px;"
-											id="resultCheck"></span></th>
-									</tr>
-									<tr>
-										<td>
-											<div
-												style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">비밀번호
-											</div>
-										</td>
-										<td><input type="password" name="mb_pw"
-											style="width: 180px;" /></td>
-									</tr>
-									<tr>
-										<td>
-											<div
-												style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">생년월일
-											</div>
-										</td>
-										<td><input type="date" name="mb_birthdate"
-											style="width: 180px;" /></td>
-									</tr>
-									<tr>
-										<td>
-											<div
-												style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">전화번호
-											</div>
-										</td>
-										<td><input type="text" name="mb_phone"
-											style="width: 180px;" /></td>
-									</tr>
-									<td colspan="2" style="text-align: center;"><input
-										type="submit" value="회원가입" style="width: 80px;"></td>
-								</table>
-							</form>
-						</div>
-					</div>
-
-
-
-
-					<!-- Scripts -->
-					<!-- Bootstrap core JavaScript -->
-					<script src="vendor/jquery/jquery.min.js"></script>
-					<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-					<script src="assets/js/isotope.min.js"></script>
-					<script src="assets/js/owl-carousel.js"></script>
-					<script src="assets/js/wow.js"></script>
-					<script src="assets/js/tabs.js"></script>
-					<script src="assets/js/popup.js"></script>
-					<script src="assets/js/custom.js"></script>
-
-					<script>
-						$(".option").click(function() {
-							$(".option").removeClass("active");
-							$(this).addClass("active");
-						});
-
-						function show() {
-							console.log("외않되");
-							let modal = document.querySelector(".modalPopup");
-							let modalBtn = document.querySelector(".modalBtn");
-							let mainCaption = document
-									.querySelector(".main-caption")
-							let dark = document.querySelector(".controls")
-
-							console.log("실행도미");
-							if (modal.style.opacity == "0") {
-								mainCaption.style.opacity = "0";
-								dark.style.opacity = "0"
-								modal.style.opacity = "1";
-								modal.style.display = "block"
-								modalBtn.textContent = "닫기"
+							<%
 							}
+							%>
+							<!-- 모달 -->
+							<div class="modalPopup" style="display: none;">
+								<div class="ModalBack" onclick
+									style="position: fixed; background-color: black; width: 100%; height: 100%; opacity: 0.9;">
+								</div>
+								<div class="LoginModal"
+									style="text-align: center; background-color: white; width: 540px; height: 650px; margin-top: 10%; margin-left: 36%; position: fixed; align-content: center;">
+									<!-- 로그인 -->
+									<form action="LoginService" method="post">
+										<table style="margin: auto; margin-top: 10%;">
+											<th colspan="2" style="font-size: 20px; padding: 10px;">로그인</th>
+											<tr>
+												<td>
+													<div
+														style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이메일
+													</div>
+												</td>
+												<td><input type="email" name="mb_email"
+													style="width: 180px;" /></td>
+											</tr>
+											<tr>
+												<td>
+													<div
+														style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">비밀번호
+													</div>
+												</td>
+												<td><input type="password" name="mb_pw"
+													style="width: 180px;" /></td>
+											</tr>
+											<td colspan="2" style="text-align: center;"><input
+												type="submit" value="로그인" style="width: 80px;"></td>
+										</table>
+									</form>
+									<!-- 회원가입-->
+									<form action="JoinService" method="post">
+										<table style="margin: auto; margin-top: 10%;">
+											<th colspan="2" style="font-size: 20px; padding: 10px;">회원가입</th>
+											<tr>
+												<td>
+													<div
+														style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이름
+													</div>
+												</td>
+												<td><input type="text" name="mb_name"
+													style="width: 180px;" /></td>
+											</tr>
+											<tr>
+												<td>
+													<div
+														style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">이메일
+													</div>
+												</td>
+												<td><input type="email" name="mb_email"
+													id="mb_email_ck" style="width: 180px;" /></td>
+											</tr>
+											<tr>
+												<td colspan="2"><input type="button" value="email중복확인"
+													onclick="checkE()"></td>
+											</tr>
+											<tr>
+												<th colspan="2"><span style="padding: 10px;"
+													id="resultCheck"></span></th>
+											</tr>
+											<tr>
+												<td>
+													<div
+														style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">비밀번호
+													</div>
+												</td>
+												<td><input type="password" name="mb_pw"
+													style="width: 180px;" /></td>
+											</tr>
+											<tr>
+												<td>
+													<div
+														style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">생년월일
+													</div>
+												</td>
+												<td><input type="date" name="mb_birthdate"
+													style="width: 180px;" /></td>
+											</tr>
+											<tr>
+												<td>
+													<div
+														style="display: inline-block; margin-right: 10px; margin-top: 5px; padding: 5px;">전화번호
+													</div>
+												</td>
+												<td><input type="text" name="mb_phone"
+													style="width: 180px;" /></td>
+											</tr>
+											<td colspan="2" style="text-align: center;"><input
+												type="submit" value="회원가입" style="width: 80px;"></td>
+										</table>
+									</form>
+								</div>
+							</div>
 
-							else {
-								dark.style.opacity = "1";
-								mainCaption.style.opacity = "1";
-								modal.style.opacity = "0";
-								modal.style.display = "none";
-								modalBtn.textContent = "로그인";
-							}
-						}
-					</script>
+
+
+
+							<!-- Scripts -->
+							<!-- Bootstrap core JavaScript -->
+							<script src="vendor/jquery/jquery.min.js"></script>
+							<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+							<script src="assets/js/isotope.min.js"></script>
+							<script src="assets/js/owl-carousel.js"></script>
+							<script src="assets/js/wow.js"></script>
+							<script src="assets/js/tabs.js"></script>
+							<script src="assets/js/popup.js"></script>
+							<script src="assets/js/custom.js"></script>
+
+							<script>
+								$(".option").click(function() {
+									$(".option").removeClass("active");
+									$(this).addClass("active");
+								});
+
+								function show() {
+									console.log("외않되");
+									let modal = document
+											.querySelector(".modalPopup");
+									let modalBtn = document
+											.querySelector(".modalBtn");
+									let mainCaption = document
+											.querySelector(".main-caption")
+									let dark = document
+											.querySelector(".controls")
+
+									console.log("실행도미");
+									if (modal.style.opacity == "0") {
+										mainCaption.style.opacity = "0";
+										dark.style.opacity = "0"
+										modal.style.opacity = "1";
+										modal.style.display = "block"
+										modalBtn.textContent = "닫기"
+									}
+
+									else {
+										dark.style.opacity = "1";
+										mainCaption.style.opacity = "1";
+										modal.style.opacity = "0";
+										modal.style.display = "none";
+										modalBtn.textContent = "로그인";
+									}
+								}
+							</script>
 </body>
 
 </html>

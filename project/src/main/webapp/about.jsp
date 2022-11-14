@@ -215,14 +215,6 @@
 							<div class="col-lg-12">
 								<div class="owl-cites-town owl-carousel"
 									style="display: inline-block;">
-									
-								<!-- 	<div class="choose1"
-										style="text-align: center"
-										border-radius: 25px;
-										margin-top: 5px;
-										
-
-										 ></div> -->
 
 
 									<div class="choose1"

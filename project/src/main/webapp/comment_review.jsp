@@ -238,20 +238,20 @@ https://templatemo.com/tm-580-woox-travel
 										for (int i = 0; i < comment_list.size(); i++) {
 										%>
 										<tr style="padding: 5px; text-align: center;">
-											<td><p>댓글번호</p></td>
-											<td><p>댓글내용</p></td>
-											<td><p>댓글날짜</p></td>
+											<td><p style="padding: 5px; color: #4b4b4b;">댓글번호</p></td>
+											<td><p style="padding: 5px;color: #4b4b4b;">댓글내용</p></td>
+											<td><p style="padding: 5px;color: #4b4b4b;">댓글날짜</p></td>
 											<td></td>
 										</tr>
 										<tr style="padding: 5px; text-align: center;">
 											<td>
-												<p class="form-label"><%=comment_list.get(i).getComment_num()%></p>
+												<p class="label" style="padding: 5px;color: #4b4b4b;"><%=comment_list.get(i).getComment_num()%></p>
 											</td>
 											<td>
-												<p class="form-label"><%=comment_list.get(i).getComment_content()%></p>
+												<p class="label" style="padding: 5px;color: #4b4b4b;"><%=comment_list.get(i).getComment_content()%></p>
 											</td>
 											<td>
-												<p class="form-label"><%=comment_list.get(i).getComment_date()%></p>
+												<p class="label" style="padding: 5px;color: #4b4b4b;"><%=comment_list.get(i).getComment_date()%></p>
 											</td>
 											<td>
 												<button style="border: none; font-weight: bold;">
@@ -295,31 +295,31 @@ https://templatemo.com/tm-580-woox-travel
 										for (int i = 0; i < review_list.size(); i++) {
 										%>
 										<tr style="padding: 5px; text-align: center;">
-											<td><p>리뷰번호</p></td>
-											<td><p>내용</p></td>
-											<td><p>점수</p></td>
-											<td><p>날짜</p></td>
+											<td><p style="padding: 5px;color: #4b4b4b;">리뷰번호</p></td>
+											<td><p style="padding: 5px;color: #4b4b4b;">내용</p></td>
+											<td><p style="padding: 5px;color: #4b4b4b;">점수</p></td>
+											<td><p style="padding: 5px;color: #4b4b4b;">날짜</p></td>
 											<td></td>
 										</tr>
 										<tr style="padding: 5px; text-align: center;">
 											<td>
-												<p class="form-label"><%=review_list.get(i).getReview_num()%></p>
+												<p class="label" style="padding: 5px;color: #4b4b4b;"><%=review_list.get(i).getReview_num()%></p>
 											</td>
 											<td>
-												<p class="form-label"><%=review_list.get(i).getReview_content()%></p>
+												<p class="label" style="padding: 5px;color: #4b4b4b;"><%=review_list.get(i).getReview_content()%></p>
 											</td>
 											<td>
-												<p class="form-label"><%=review_list.get(i).getScore()%></p>
+												<p class="label" style="padding: 5px;color: #4b4b4b;"><%=review_list.get(i).getScore()%></p>
 											</td>
 											<td>
-												<p class="form-label"><%=review_list.get(i).getReview_date()%></p>
+												<p class="label" style="padding: 5px;color: #4b4b4b;"><%=review_list.get(i).getReview_date()%></p>
 											</td>
 											<td>
-												<button style="border: none; font-weight:bold;">
+												<button style="border: none; font-weight: bold;">
 													<a
 														href="mypage_update.jsp?name=리뷰&num=<%=review_list.get(i).getReview_num()%>">수정</a>
 												</button>
-												<button style="border: none; font-weight:bold;">
+												<button style="border: none; font-weight: bold;">
 													<a
 														href="ReviewDeleteService?num=<%=review_list.get(i).getReview_num()%>">삭제</a>
 												</button>
@@ -354,32 +354,32 @@ https://templatemo.com/tm-580-woox-travel
 										for (int i = 0; i < board_list.size(); i++) {
 										%>
 										<tr>
-											<td><p>커뮤니티번호</p></td>
-											<td><p>제목</p></td>
-											<td><p>내용</p></td>
-											<td><p>첨부파일</p></td>
-											<td><p>카테고리</p></td>
-											<td><p>작성일자</p></td>
+											<td><p style="padding: 5px;color: #4b4b4b;">커뮤니티번호</p></td>
+											<td><p style="padding: 5px;color: #4b4b4b;">제목</p></td>
+											<td><p style="padding: 5px;color: #4b4b4b;">내용</p></td>
+											<td><p style="padding: 5px;color: #4b4b4b;">첨부파일</p></td>
+											<td><p style="padding: 5px;color: #4b4b4b;">카테고리</p></td>
+											<td><p style="padding: 5px;color: #4b4b4b;">작성일자</p></td>
 											<td></td>
 										</tr>
 										<tr>
 											<td>
-												<p class="form-label"><%=board_list.get(i).getBoard_num()%></p>
+												<p class="label" style="padding: 5px;color: #4b4b4b;"><%=board_list.get(i).getBoard_num()%></p>
 											</td>
 											<td>
-												<p class="form-label"><%=board_list.get(i).getBoard_title()%></p>
+												<p class="label" style="padding: 5px;color: #4b4b4b;"><%=board_list.get(i).getBoard_title()%></p>
 											</td>
 											<td>
-												<p class="form-label"><%=board_list.get(i).getBoard_content()%></p>
+												<p class="label" style="padding: 5px;color: #4b4b4b;"><%=board_list.get(i).getBoard_content()%></p>
 											</td>
 											<td>
-												<p class="form-label"><%=board_list.get(i).getBoard_file()%></p>
+												<p class="label" style="padding: 5px;color: #4b4b4b;"><%=board_list.get(i).getBoard_file()%></p>
 											</td>
 											<td>
-												<p class="form-label"><%=board_list.get(i).getBoard_category()%></p>
+												<p class="label" style="padding: 5px;color: #4b4b4b;"><%=board_list.get(i).getBoard_category()%></p>
 											</td>
 											<td>
-												<p class="form-label"><%=board_list.get(i).getBoard_date()%></p>
+												<p class="label" style="padding: 5px;color: #4b4b4b;"><%=board_list.get(i).getBoard_date()%></p>
 											</td>
 											<td><button style="border: none; font-weight: bold;">
 													<a

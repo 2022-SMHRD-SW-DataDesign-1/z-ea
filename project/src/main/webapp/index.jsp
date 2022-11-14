@@ -279,7 +279,7 @@
 		//			theme_list.add(new);
 		//		}
 	%>
-
+<%-- 
 	<script>
 		function camp_images_info() {
 			for(let j=0;j<=age_list.size();j++){
@@ -293,7 +293,7 @@
 			}
 			return img_src;
 		}
-	</script>
+	</script> --%>
 	<%ItemDAO dao = new ItemDAO();
 ArrayList<ItemDTO> item_list = new ArrayList<ItemDTO>();
 item_list = (ArrayList) request.getAttribute("item_list");%>

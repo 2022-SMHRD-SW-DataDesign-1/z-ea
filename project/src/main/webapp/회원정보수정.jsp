@@ -176,7 +176,8 @@
 									</fieldset>
 								</div>
 
-								<div class="col-lg-6" style="padding: 20px; text-align: center; margin-top:50px;">
+								<div class="col-lg-6"
+									style="padding: 20px; text-align: center; margin-top: 50px;">
 									<fieldset>
 										<button type="submit" class="main-button"
 											style="width: 100px; padding: 12px; border: none; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD;">Save</button>
