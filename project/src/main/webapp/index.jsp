@@ -166,7 +166,7 @@ https://templatemo.com/tm-580-woox-travel
 										style="width: 180px;" /></td>
 								</tr>
 								<td colspan="2" style="text-align: center;"><input
-									type="submit" value="로그인" style="width: 80px;"></td>
+									type="submit" value="로그인" style="width: 80px; background-color: #6A5ACD; border :none; color:white; padding : 5px 5px 5px 5px; border-radius: 10px;"></td>
 							</table>
 						</form>
 						<!-- 회원가입-->
@@ -192,7 +192,7 @@ https://templatemo.com/tm-580-woox-travel
 										style="width: 180px;" /></td>
 								</tr>
 								<tr>
-									<td colspan="2"><input type="button" value="email중복확인"
+									<td colspan="2"><input type="button" value="email중복확인" style="background-color: #6A5ACD; border :none; color:white; padding : 5px 5px 5px 5px; border-radius: 10px;"
 										onclick="checkE()"></td>
 								</tr>
 								<tr>
@@ -227,7 +227,7 @@ https://templatemo.com/tm-580-woox-travel
 										style="width: 180px;" /></td>
 								</tr>
 								<td colspan="2" style="text-align: center;"><input
-									type="submit" value="회원가입" style="width: 80px;"></td>
+									type="submit" value="회원가입" style="width: 80px;  background-color: #6A5ACD; border :none; color:white; padding : 5px 5px 5px 5px; border-radius: 10px;"></td>
 							</table>
 						</form>
 					</div>
@@ -563,17 +563,17 @@ https://templatemo.com/tm-580-woox-travel
 										<%}} %>
 							<div class="col-lg-12">
 								<ul class="page-numbers">
-									<li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
-									<li><a href="#">1</a></li>
-									<li class="active"><a href="#">2</a></li>
-									<li><a href="#">3</a></li>
-									<li><a href="#"><i class="fa fa-arrow-right"></i></a></li>
+									<!-- <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
+									<li><a href="#">1</a></li> -->
+									<li class="active"><a href="#">up</a></li>
+								<!-- 	<li><a href="#">3</a></li>
+									<li><a href="#"><i class="fa fa-arrow-right"></i></a></li> -->
 								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4">
+				<!-- <div class="col-lg-4">
 					<div class="side-bar-map">
 						<div class="row">
 							<div class="col-lg-12">
@@ -586,12 +586,12 @@ https://templatemo.com/tm-580-woox-travel
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
 
-	<div class="call-to-action">
+	<!-- <div class="call-to-action">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8">
@@ -605,12 +605,12 @@ https://templatemo.com/tm-580-woox-travel
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<%
 	} else {
 	%>
-	<div class="visit-country">
+	<!-- <div class="visit-country">
 		<div class="container">
 			<div class="row"></div>
 			<div class="row">
@@ -716,20 +716,20 @@ https://templatemo.com/tm-580-woox-travel
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> -->
 							<div class="col-lg-12">
 								<ul class="page-numbers">
-									<li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
-									<li><a href="#">1</a></li>
-									<li class="active"><a href="#">2</a></li>
-									<li><a href="#">3</a></li>
-									<li><a href="#"><i class="fa fa-arrow-right"></i></a></li>
+									<!-- <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
+									<li><a href="#">1</a></li> -->
+									<li class="active"><a href="#">up</a></li>
+									<!-- <li><a href="#">3</a></li>
+									<li><a href="#"><i class="fa fa-arrow-right"></i></a></li> -->
 								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4">
+				<!-- <div class="col-lg-4">
 					<div class="side-bar-map">
 						<div class="row">
 							<div class="col-lg-12">
@@ -741,13 +741,13 @@ https://templatemo.com/tm-580-woox-travel
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="call-to-action">
+	<!-- <div class="call-to-action">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8">
@@ -761,7 +761,7 @@ https://templatemo.com/tm-580-woox-travel
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<%
 	}
 	%>
