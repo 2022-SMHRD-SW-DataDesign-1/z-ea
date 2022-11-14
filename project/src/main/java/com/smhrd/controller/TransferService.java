@@ -25,6 +25,7 @@ public class TransferService extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 		BigDecimal rc_num = new BigDecimal(request.getParameter("rc_num"));
+
 		String transfer_reason = request.getParameter("transfer_reason");
 		BigDecimal offer_price = new BigDecimal(request.getParameter("offer_price"));
 		HttpSession session = request.getSession();

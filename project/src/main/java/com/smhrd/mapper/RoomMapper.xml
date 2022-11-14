@@ -13,7 +13,7 @@
 	<select id="transfer_num_room_show" parameterType="BigDecimal"
 		resultType="RoomDTO">
 		select * from room_tb where room_num =(select room_num from
-		reservation_calendar_tb where rc_num =(
+		reservation_calendar_tb_1 where rc_num =(
 		select rc_num from transfer_tb
 		where transfer_num =#{transfer_num}))
 	</select>

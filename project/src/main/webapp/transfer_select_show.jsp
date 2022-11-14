@@ -249,8 +249,9 @@ img {
 								<td style="width: 300px;"><%=new GlampingDAO().transfer_num_glamping_show(transfer_num).getGc_type()%></td>
 							</tr>
 							<tr>
+							<% StringBuffer bu = new StringBuffer(new ReservationDAO().transfer_num_check_in(transfer_num).getCheck_in()); %>
 								<td style="width: 300px;">양도 마감일:</td>
-								<td style="width: 300px;"><%=new ReservationDAO().transfer_num_check_in(transfer_num).getCheck_in()%></td>
+								<td style="width: 300px;"><%=bu.insert(2, '-')%></td>
 							</tr>
 							<tr>
 								<td style="width: 300px;">제시가격:</td>
@@ -263,11 +264,14 @@ img {
 							</tr>
 
 						</table>
+						<% StringBuffer buf = new StringBuffer(new ReservationDAO().transfer_num_check_in(transfer_num).getCheck_in());
+							StringBuffer buf1 = new StringBuffer(new ReservationDAO().transfer_num_check_in(transfer_num).getCheck_out());
+						%>
 						<table class="table" style="text-align: left; width: 80%;">
 							<tr>
 								<td style="width: 300px;">기간:</td>
-								<td style="width: 300px;"><%=new ReservationDAO().transfer_num_check_in(transfer_num).getCheck_in()%>
-									~<%=new ReservationDAO().transfer_num_check_in(transfer_num).getCheck_out()%></td>
+								<td style="width: 300px;"><%=buf.insert(2, '-')%>
+									~<%=buf1.insert(2, '-')%></td>
 							</tr>
 							<tr>
 								<td style="width: 300px;">제한 인원:</td>
@@ -324,7 +328,7 @@ img {
 						<button type="button" id="btnGo" class="btn btn-primary btn-sm"
 							disabled="disabled">
 							<a
-								href="TransferChangeService?num=<%=new TransferDAO().transfer_show(transfer_num).getRc_num()%>&email=<%=info.getMb_email()%>">양도받기</a>
+								href="TransferChangeService?num=<%=new TransferDAO().transfer_show(transfer_num).getRc_num()%>&email=<%=info.getMb_email()%>&room_num=<%=new RoomDAO().transfer_num_room_show(transfer_num).getRoom_num()%>&transfer_num=<%=transfer_num%>">양도받기</a>
 						</button>
 					</div>
 				</div>
