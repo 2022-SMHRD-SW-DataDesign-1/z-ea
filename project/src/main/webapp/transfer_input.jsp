@@ -202,62 +202,72 @@ https://templatemo.com/tm-580-woox-travel
 				<div class="col-lg-12">
 					<h2>양도하기</h2>
 					<div class="main-button">
-						<a href="transfer.jsp">BACK</a>
+						<a href="transfer.jsp"
+							style="width: 110px; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none;">BACK</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="transfer-form" style="margin: 150px;">
-		<form id="reservation-form" name="gs" method="submit" role="search"
-			action="#">
 
+	<div class="cities-town"
+		style="display: inline-block; margin-left: 350px;">
+		<div class="container">
 			<div class="row">
-				<div class="col-lg-12">
-					<h2 style="margin-bottom: 50px;">양도신청하기</h2>
-				</div>
-		</form>
-		<%
-		ArrayList<GlampingDTO> my_glamping_list = new GlampingDAO().my_glamping_show(info.getMb_email());
-		ArrayList<ReservationDTO> my_re_list = new ReservationDAO().my_re_show(info.getMb_email());
-		%>
-		<form action="TransferService" method="post">
+				<div class="slider-content" style="width: 1200px;">
+					<div class="transfer-form" style="margin: 20px;">
+						<div class="col-lg-12">
+							<h2 style="margin-bottom: 50px;">양도신청하기</h2>
+						</div>
+						<%
+						ArrayList<ReservationDTO> my_re_list = new ReservationDAO().my_re_show(info.getMb_email());
+						/* 		ArrayList<GlampingDTO> my_glamping_list = new GlampingDAO().my_glamping_show(gc_num); */
+						%>
+						<form action="TransferService" method="post">
+							<!-- 글제목 -->
+							<div class="col-lg-6">
+								<fieldset>
+									<label for="name" class="form-label">예약건 장소명</label><br> <select
+										name="rc_num">
+										<%
+										GlampingDAO glamp_dao = new GlampingDAO();
+										for (int i = 0; i < my_re_list.size(); i++) {
+										%>
 
-			<!-- 글제목 -->
-			<div class="col-lg-6">
-				<fieldset>
-					<label for="name" class="form-label">예약건 장소명</label><br> <select
-						name="rc_num">
-						<%
-						for (int i = 0; i < my_glamping_list.size(); i++) {
-						%>
-						<option value="<%=my_re_list.get(i).getRc_num()%>"><%=my_glamping_list.get(i).getGc_name()%></option>
-						<%
-						}
-						%>
-					</select>
-				</fieldset>
-			</div>
-			<!-- 글내용 -->
-			<div class="col-lg-6">
-				<fieldset>
-					<p>양도이유</p>
-					<label for="name" class="form-label"></label><br>
-					<textarea type="text" name="transfer_reason" class="Name"
-						placeholder="content" autocomplete="on" required
-						style="resize: none;" rows="10">
+										<option value="<%=my_re_list.get(i).getRc_num()%>"><%=glamp_dao.my_glamping_show(my_re_list.get(i).getGc_num()).getGc_name()%>
+											(<%=my_re_list.get(i).getCheck_in()%> -
+											<%=my_re_list.get(i).getCheck_out()%>)
+										</option>
+
+										<%
+										}
+										%>
+									</select>
+								</fieldset>
+							</div>
+							<!-- 글내용 -->
+							<div class="col-lg-6">
+								<fieldset>
+									<label for="name" class="form-label">양도 사유</label><br>
+									<textarea type="text" name="transfer_reason" class="Name"
+										placeholder="content" autocomplete="on" required
+										style="resize: none;" rows="10">
 										</textarea>
-					<br> <label for="name" class="form-label">제시가격</label> <input
-						type="text" name="offer_price">
-				</fieldset>
+									<br> <label for="name" class="form-label">제시가격</label> <input
+										type="text" name="offer_price">
+								</fieldset>
+							</div>
+							<div class="col-lg-12">
+								<fieldset>
+									<button type="submit" class="main-button">양도신청</button>
+								</fieldset>
+							</div>
+						</form>
+					</div>
+				</div>
 			</div>
-			<div class="col-lg-12">
-				<fieldset>
-					<button type="submit" class="main-button">양도신청</button>
-				</fieldset>
-			</div>
-		</form>
+		</div>
 	</div>
 
 

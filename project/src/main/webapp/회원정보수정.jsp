@@ -136,7 +136,7 @@ justify-content: center;
 							style="margin-top: 40px; width: 700px; text-align:center
 							;">
 							<div class="row"
-								style="text-align: center; padding: 5px 10px 5px 10px;">
+								style="text-align: center ; padding: 5px 10px 5px 10px; ">
 								<div class="col-lg-12">
 									<form id="reservation-form" name="gs" method="submit"
 										style="text-align: center;" role="search" action="#">

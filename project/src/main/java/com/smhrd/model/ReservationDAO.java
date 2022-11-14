@@ -47,6 +47,7 @@ public class ReservationDAO {
 		session.close();
 		return info;
 	}
+	
 
 	public int transfer_update(ReservationDTO dto) {
 		SqlSession session = sqlSessionFactory.openSession(true);

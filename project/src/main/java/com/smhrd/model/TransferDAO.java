@@ -36,9 +36,9 @@ public class TransferDAO {
 		
 		return transfer;
 	}
-	public int transfer_status_check(TransferDTO dto) {
+	public int transfer_status_check(BigDecimal transfer_num) {
 		SqlSession session = sqlSessionFactory.openSession(true);
-		int up = session.update("transfer_status_check", dto);
+		int up = session.update("transfer_status_check", transfer_num);
 		session.close();
 		
 		return up;

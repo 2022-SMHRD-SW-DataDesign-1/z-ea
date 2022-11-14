@@ -207,73 +207,22 @@
 					<div class="col-lg-12">
 						<h2>예약 양도</h2>
 						<div class="main-button">
-							<a href="transfer_input.jsp">양도하러가기</a>
+							<a href="transfer_input.jsp"
+								style="width: 110px; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none;">양도하기</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<!-- <div class="search-form">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<form id="search-form" name="gs" method="submit" role="search"
-							action="#">
-							<div class="row">
-								<div class="col-lg-2">
-									<h4>떠나요</h4>
-								</div>
-								<div class="col-lg-4">
-									<fieldset>
-										<select name="Location" class="form-select"
-											aria-label="Default select example" id="chooseLocation"
-											onChange="this.form.click()">
-											<option selected>지역</option>
-											<option type="checkbox" name="option1" value="전남">전남</option>
-											<option value="전북">전북</option>
-											<option value=""></option>
-											<option value="Thailand">Thailand</option>
-											<option value="Australia">Australia</option>
-											<option value="India">India</option>
-											<option value="Indonesia">Indonesia</option>
-											<option value="Malaysia">Malaysia</option>
-											<option value="Singapore">Singapore</option>
-										</select>
-									</fieldset>
-								</div>
-								<div class="col-lg-4">
-									<fieldset>
-										<select name="Price" class="form-select"
-											aria-label="Default select example" id="choosePrice"
-											onChange="this.form.click()">
-											<option selected>가격</option>
-											<option value="100">- 100,000</option>
-											<option value="250">100,000 - 200,000</option>
-											<option value="500">200,000 - 300,000</option>
-											<option value="2500+">300,000 +</option>
-										</select>
-									</fieldset>
-								</div>
-								<div class="col-lg-2">
-									<fieldset>
-										<button class="border-button">검색</button>
-									</fieldset>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div> -->
 
 		<div class="amazing-deals">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6 offset-lg-3">
 						<div class="section-heading text-center">
-							<h2>양도</h2>
-							<p>떠나고 싶은 당신! 더 싼값에 놀러가볼까요~!!~~!~</p>
+							<!-- <h2>양도</h2>
+							<p>떠나고 싶은 당신! 더 싼값에 놀러가볼까요~!!~~!~</p> -->
 						</div>
 					</div>
 					<%
@@ -282,6 +231,7 @@
 					<%
 					for (int i = 0; i < transfer_list.size(); i++) {
 						System.out.println("status확인 :" + transfer_list.get(i).getTransfer_status());
+					System.out.println(transfer_list.get(i).getTransfer_num());
 					%>
 
 					<%
@@ -290,6 +240,7 @@
 
 
 					<%
+					StringBuffer buf = new StringBuffer(new ReservationDAO().transfer_num_check_in(transfer_list.get(i).getTransfer_num()).getCheck_in());
 					System.out.println("status확인 :" + transfer_list.get(i).getTransfer_status());
 					%>
 
@@ -303,21 +254,21 @@
 								</div>
 								<div class="col-lg-6 align-self-center">
 									<div class="content">
-										<h4><%=new GlampingDAO().transfer_num_glamping_show(transfer_list.get(i).getTransfer_num()).getGc_name()%></h4>
+										<h4><%=transfer_list.get(i).getTransfer_num() %></h4>
 										<div class="row">
 											<div class="col-6">
-												<i class="fa fa-clock"></i> <span class="list">마감<%=new ReservationDAO().transfer_num_check_in(transfer_list.get(i).getTransfer_num()).getCheck_in()%></span>
+												<i class="fa fa-clock"></i> <span class="list">마감<%=buf.insert(2, '-')%></span>
 											</div>
 											<div class="col-6">
-												<i class="fa fa-map"></i> <span class="list"><%=new TransferDAO().transfer_show(transfer_list.get(i).getTransfer_num()).getOffer_price()%></span>
+												<i class="fa fa-map"></i> <span class="list"><%= transfer_list.get(i).getOffer_price()
+												/* new TransferDAO().transfer_show(transfer_list.get(i).getTransfer_num()).getOffer_price() */%></span>
 											</div>
 										</div>
 										<p>
 											양도이유 :
-											<%=new TransferDAO().transfer_show(transfer_list.get(i).getTransfer_num()).getTransfer_reason()%></p>
-										<p>
-											주소 :
-											<%=new GlampingDAO().transfer_num_glamping_show(transfer_list.get(i).getTransfer_num()).getGc_addr()%></p>
+											<%=transfer_list.get(i).getTransfer_reason()
+											/* new TransferDAO().transfer_show(transfer_list.get(i).getTransfer_num()).getTransfer_reason() */%></p>
+										
 										<div class="main-button">
 											<a
 												href="transfer_select_show.jsp?transfer_num=<%=transfer_list.get(i).getTransfer_num()%>">자세히보기</a>
@@ -354,55 +305,55 @@
 							Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights
 							reserved. <br>Design: <a href="https://templatemo.com"
 								target="_blank" title="free CSS templates">TemplateMo</a>
-							Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
-						</p>
+							Distribution: <a href="https://themewagon.com target="_blank">ThemeWagon</a>
+							</p>
+						</div>
 					</div>
 				</div>
-			</div>
-		</footer>
+				</footer>
 
 
-		<!-- Scripts -->
-		<!-- Bootstrap core JavaScript -->
-		<script src="vendor/jquery/jquery.min.js"></script>
-		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+				<!-- Scripts -->
+				<!-- Bootstrap core JavaScript -->
+				<script src="vendor/jquery/jquery.min.js"></script>
+				<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-		<script src="assets/js/isotope.min.js"></script>
-		<script src="assets/js/owl-carousel.js"></script>
-		<script src="assets/js/wow.js"></script>
-		<script src="assets/js/tabs.js"></script>
-		<script src="assets/js/popup.js"></script>
-		<script src="assets/js/custom.js"></script>
+				<script src="assets/js/isotope.min.js"></script>
+				<script src="assets/js/owl-carousel.js"></script>
+				<script src="assets/js/wow.js"></script>
+				<script src="assets/js/tabs.js"></script>
+				<script src="assets/js/popup.js"></script>
+				<script src="assets/js/custom.js"></script>
 
-		<script>
-			$(".option").click(function() {
-				$(".option").removeClass("active");
-				$(this).addClass("active");
-			});
-		</script>
-		<script>
-			function show() {
-				console.log("실행");
-				let modal = document.querySelector(".modalPopup");
-				let modalBtn = document.querySelector(".modalBtn");
-				// let mainCaption = document.querySelector(".main-caption")
-				let slidercon = document.querySelector(".dark")
-				console.log(modal.style.zIndex);
-				console.log(slidercon.style.zIndex);
-				if (modal.style.display == "none") {
+				<script>
+					$(".option").click(function() {
+						$(".option").removeClass("active");
+						$(this).addClass("active");
+					});
+				</script>
+				<script>
+					function show() {
+						console.log("실행");
+						let modal = document.querySelector(".modalPopup");
+						let modalBtn = document.querySelector(".modalBtn");
+						// let mainCaption = document.querySelector(".main-caption")
+						let slidercon = document.querySelector(".dark")
+						console.log(modal.style.zIndex);
+						console.log(slidercon.style.zIndex);
+						if (modal.style.display == "none") {
 
-					modal.style.display = "block"
-					modalBtn.textContent = "닫기"
-				}
+							modal.style.display = "block"
+							modalBtn.textContent = "닫기"
+						}
 
-				else {
-					// mainCaption.style.opacity ="1";
-					modal.style.display = "none"
+						else {
+							// mainCaption.style.opacity ="1";
+							modal.style.display = "none"
 
-					modalBtn.textContent = "로그인";
-				}
-			}
-		</script>
+							modalBtn.textContent = "로그인";
+						}
+					}
+				</script>
 </body>
 
 </html>

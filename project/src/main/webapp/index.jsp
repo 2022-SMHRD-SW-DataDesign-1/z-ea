@@ -117,10 +117,6 @@ https://templatemo.com/tm-580-woox-travel
 			<div class="slider">
 				<div class="main-caption">
 					<div style="margin-left: 10%; font-size: 25px">검색어를 입력하세요</div>
-
-
-
-
 					<form action="SearchService" method="post">
 						<input id="SearchEngine" type="text" placeholder="#여행" name="tag"
 							style="width: 30%; height: 50px; border-radius: 20px; padding: 10px; margin: 5px;" />
@@ -128,13 +124,7 @@ https://templatemo.com/tm-580-woox-travel
 							style="padding: 12px; border: none; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD;"
 							type="submit" value="검색" />
 					</form>
-
-
-
-
-
 					<p style="margin-left: 10%;">#여행 #먹방 #힐링 #키즈</p>
-
 				</div>
 				<div class="modalPopup"
 					style="z-index: 100; display: none; margin-top: 45px;">
@@ -166,7 +156,8 @@ https://templatemo.com/tm-580-woox-travel
 										style="width: 180px;" /></td>
 								</tr>
 								<td colspan="2" style="text-align: center;"><input
-									type="submit" value="로그인" style="width: 80px;"></td>
+									type="submit" value="로그인"
+									style="width: 80px; background-color: #6A5ACD; border: none; color: white; padding: 5px 5px 5px 5px; border-radius: 10px;"></td>
 							</table>
 						</form>
 						<!-- 회원가입-->
@@ -193,6 +184,7 @@ https://templatemo.com/tm-580-woox-travel
 								</tr>
 								<tr>
 									<td colspan="2"><input type="button" value="email중복확인"
+										style="background-color: #6A5ACD; border: none; color: white; padding: 5px 5px 5px 5px; border-radius: 10px;"
 										onclick="checkE()"></td>
 								</tr>
 								<tr>
@@ -227,7 +219,8 @@ https://templatemo.com/tm-580-woox-travel
 										style="width: 180px;" /></td>
 								</tr>
 								<td colspan="2" style="text-align: center;"><input
-									type="submit" value="회원가입" style="width: 80px;"></td>
+									type="submit" value="회원가입"
+									style="width: 80px; background-color: #6A5ACD; border: none; color: white; padding: 5px 5px 5px 5px; border-radius: 10px;"></td>
 							</table>
 						</form>
 					</div>
@@ -327,11 +320,11 @@ https://templatemo.com/tm-580-woox-travel
 	ArrayList<ItemDTO> item_list = new ArrayList<ItemDTO>();
 	item_list = (ArrayList) request.getAttribute("item_list");
 	%>
+
 	<div class="visit-country">
 		<div class="container">
-			<div class="row"></div>
 			<div class="row">
-				<div class="col-lg-8">
+				<div class="col-lg-8" style="margin-left: 150px;">
 					<div class="items">
 						<div class="row">
 							<%
@@ -685,17 +678,17 @@ https://templatemo.com/tm-580-woox-travel
 							%>
 							<div class="col-lg-12">
 								<ul class="page-numbers">
-									<li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
-									<li><a href="#">1</a></li>
-									<li class="active"><a href="#">2</a></li>
-									<li><a href="#">3</a></li>
-									<li><a href="#"><i class="fa fa-arrow-right"></i></a></li>
+									<!-- <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
+									<li><a href="#">1</a></li> -->
+									<li class="active"><a href="#">up</a></li>
+									<!-- 	<li><a href="#">3</a></li>
+									<li><a href="#"><i class="fa fa-arrow-right"></i></a></li> -->
 								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4">
+				<!-- <div class="col-lg-4">
 					<div class="side-bar-map">
 						<div class="row">
 							<div class="col-lg-12">
@@ -708,12 +701,42 @@ https://templatemo.com/tm-580-woox-travel
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
+	</div>F
+
+	<div class="col-lg-12">
+		<ul class="page-numbers">
+			<!-- <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
+									<li><a href="#">1</a></li> -->
+			<li class="active"><a href="#">up</a></li>
+			<!-- <li><a href="#">3</a></li>
+									<li><a href="#"><i class="fa fa-arrow-right"></i></a></li> -->
+		</ul>
+	</div>
+	</div>
+	</div>
+	</div>
+	<!-- <div class="col-lg-4">
+					<div class="side-bar-map">
+						<div class="row">
+							<div class="col-lg-12">
+								<div id="map">
+									<iframe
+										src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12469.776493332698!2d-80.14036379941481!3d25.907788681148624!2m3!1f357.26927939317244!2f20.870722720054623!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x88d9add4b4ac788f%3A0xe77469d09480fcdb!2sSunny%20Isles%20Beach!5e1!3m2!1sen!2sth!4v1642869952544!5m2!1sen!2sth"
+										width="100%" height="550px" frameborder="0"
+										style="border: 0; border-radius: 23px;" allowfullscreen=""></iframe>
+								</div>
+							</div>
+						</div>
+					</div> -->
+	</div>
+	</div>
+	</div>
 	</div>
 
-	<div class="call-to-action">
+	<!-- <div class="call-to-action">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8">
@@ -727,163 +750,7 @@ https://templatemo.com/tm-580-woox-travel
 				</div>
 			</div>
 		</div>
-	</div>
-
-	<%
-	} else {
-	%>
-	<div class="visit-country">
-		<div class="container">
-			<div class="row"></div>
-			<div class="row">
-				<div class="col-lg-8">
-					<div class="items">
-						<div class="row">
-							<div class="col-lg-12">
-								<div class="item">
-									<div class="row">
-										<div class="col-lg-4 col-sm-5">
-											<div class="image">
-												<img src="assets/images/country-01.jpg" alt="">
-											</div>
-										</div>
-										<div class="col-lg-8 col-sm-7">
-											<div class="right-content">
-												<h4></h4>
-												<span>Europe</span>
-												<div class="main-button">
-													<a href="about.jsp">Explore More</a>
-												</div>
-												<p>Woox Travel is a professional Bootstrap 5 theme HTML
-													CSS layout for your website. You can use this layout for
-													your commercial work.</p>
-												<ul class="info">
-													<li><i class="fa fa-user"></i> 8.66 Mil People</li>
-													<li><i class="fa fa-globe"></i> 41.290 km2</li>
-													<li><i class="fa fa-home"></i> $1.100.200</li>
-												</ul>
-												<div class="text-button">
-													<a href="about.jsp">Need Directions ? <i
-														class="fa fa-arrow-right"></i></a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-12">
-								<div class="item">
-									<div class="row">
-										<div class="col-lg-4 col-sm-5">
-											<div class="image">
-												<img src="assets/images/country-02.jpg" alt="">
-											</div>
-										</div>
-										<div class="col-lg-8 col-sm-7">
-											<div class="right-content">
-												<h4>CARIBBEAN</h4>
-												<span>North America</span>
-												<div class="main-button">
-													<a href="about.jsp">Explore More</a>
-												</div>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing
-													elit, sed do eiusmod tempor incididunt ut labore dolor sit
-													amet, consectetur adipiscing elit, sed do eiusmod.</p>
-												<ul class="info">
-													<li><i class="fa fa-user"></i> 44.48 Mil People</li>
-													<li><i class="fa fa-globe"></i> 275.400 km2</li>
-													<li><i class="fa fa-home"></i> $946.000</li>
-												</ul>
-												<div class="text-button">
-													<a href="about.jsp">Need Directions ? <i
-														class="fa fa-arrow-right"></i></a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-12">
-								<div class="item last-item">
-									<div class="row">
-										<div class="col-lg-4 col-sm-5">
-											<div class="image">
-												<img src="assets/images/country-03.jpg" alt="">
-											</div>
-										</div>
-										<div class="col-lg-8 col-sm-7">
-											<div class="right-content">
-												<h4>FRANCE</h4>
-												<span>Europe</span>
-												<div class="main-button">
-													<a href="about.jsp">Explore More</a>
-												</div>
-												<p>
-													We hope this WoOx template is useful for you, please
-													support us a <a href="https://paypal.me/templatemo"
-														target="_blank">small amount of PayPal</a> to info [at]
-													templatemo.com for our survival. We really appreciate your
-													contribution.
-												</p>
-												<ul class="info">
-													<li><i class="fa fa-user"></i> 67.41 Mil People</li>
-													<li><i class="fa fa-globe"></i> 551.500 km2</li>
-													<li><i class="fa fa-home"></i> $425.600</li>
-												</ul>
-												<div class="text-button">
-													<a href="about.jsp">Need Directions ? <i
-														class="fa fa-arrow-right"></i></a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-12">
-								<ul class="page-numbers">
-									<li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
-									<li><a href="#">1</a></li>
-									<li class="active"><a href="#">2</a></li>
-									<li><a href="#">3</a></li>
-									<li><a href="#"><i class="fa fa-arrow-right"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="side-bar-map">
-						<div class="row">
-							<div class="col-lg-12">
-								<div id="map">
-									<iframe
-										src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12469.776493332698!2d-80.14036379941481!3d25.907788681148624!2m3!1f357.26927939317244!2f20.870722720054623!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x88d9add4b4ac788f%3A0xe77469d09480fcdb!2sSunny%20Isles%20Beach!5e1!3m2!1sen!2sth!4v1642869952544!5m2!1sen!2sth"
-										width="100%" height="550px" frameborder="0"
-										style="border: 0; border-radius: 23px;" allowfullscreen=""></iframe>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="call-to-action">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8">
-					<h2>Are You Looking To Travel ?</h2>
-					<h4>Make A Reservation By Clicking The Button</h4>
-				</div>
-				<div class="col-lg-4">
-					<div class="border-button">
-						<a href="reservation.jsp">Book Yours Now</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	</div> -->
 	<%
 	}
 	%>
