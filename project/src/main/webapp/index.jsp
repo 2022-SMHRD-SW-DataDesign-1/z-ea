@@ -283,7 +283,7 @@ https://templatemo.com/tm-580-woox-travel
 		//			theme_list.add(new);
 		//		}
 	%>
-<<<<<<< HEAD
+
 <script>
 		function camp_images_info() {
 			let item_num =
@@ -298,7 +298,7 @@ https://templatemo.com/tm-580-woox-travel
 			return img_src;
 		}
 	</script>
-=======
+
 
 	<script>
 		function showitem_info() {
@@ -856,7 +856,6 @@ https://templatemo.com/tm-580-woox-travel
 
 		}
 	</script>
-<<<<<<< HEAD
 	
 			}
 		</script>
@@ -870,11 +869,7 @@ https://templatemo.com/tm-580-woox-travel
 					document
 							.getElementById('showitem').src = showitem_info();
 				</script>
-=======
 
-
-
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 </body>
 
 </html>
