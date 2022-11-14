@@ -468,11 +468,12 @@ https://templatemo.com/tm-580-woox-travel
 	  }
 		
 	</script>
-		F
 		<script>
 	function FullView()
 	
 	</script>
+
+
 		<script>
 	function filter(id){
 		let inputE = id.val();
