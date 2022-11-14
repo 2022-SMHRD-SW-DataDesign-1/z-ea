@@ -46,6 +46,7 @@ https://templatemo.com/tm-580-woox-travel
 			</div>
 		</div>
 	</div>
+
 	<!-- ***** Preloader End ***** -->
 
 	<!-- ***** Header Area Start ***** -->
@@ -76,7 +77,7 @@ https://templatemo.com/tm-580-woox-travel
 							<%
 							} else {
 							%>
-							<li><a href="MyPage.jsp" class="active" class="modalBtn"
+							<li><a href="MyPage.jsp" class="modalBtn" class="active"
 								style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">마이페이지</a>
 							</li>
 							<li><a href="LogoutService" class="modalBtn"
@@ -89,13 +90,29 @@ https://templatemo.com/tm-580-woox-travel
 						<a class='menu-trigger'> <span>Menu</span>
 						</a>
 						<!-- ***** Menu End ***** -->
-
 					</nav>
 				</div>
 			</div>
 		</div>
 	</header>
-	<!-- 모달 -->
+	<!-- ***** Header Area End ***** -->
+
+	<div class="dark">
+		<div class="second-page-heading">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<h4>내 여행관리는 여기에서</h4>
+						<h2>My Page</h2>
+						<div class="main-button">
+							<p>내 여행일정 관리부터 소통까지 !</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="modalPopup" style="display: none;">
 		<div class="ModalBack" onclick
 			style="position: fixed; background-color: black; width: 100%; height: 100%; opacity: 0.9;">
@@ -152,8 +169,7 @@ https://templatemo.com/tm-580-woox-travel
 							onclick="checkE()"></td>
 					</tr>
 					<tr>
-						<th colspan="2"><span style="padding: 10px;" id="resultCheck"></span>
-						</th>
+						<th colspan="2"><span style="padding: 10px;" id="resultCheck"></span></th>
 					</tr>
 					<tr>
 						<td>
@@ -189,49 +205,33 @@ https://templatemo.com/tm-580-woox-travel
 
 	<!-- ***** Header Area End ***** -->
 
-	<div class=se style="height: 150px; margin: 30%;">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
 
-
-					<h4>내 여행관리는 여기에서</h4><br>
-				
-						<h3 stylye="padding:10%"background=>My Page</h3>
-						<p>내 여행일정 관리부터 소통까지 !</p>
-
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<div class="more-info reservation-info" style="margin: 10%;">
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-4 col-sm-6">
+			<div class="row" style="width: 1500px; margin-left: -50px;">
+				<div class="col-lg-4 col-sm-6" style="width: 350px;">
 					<div class="info-item">
 						<i class="fa fa-envelope"></i>
 						<h4>회원정보</h4>
 						<a href="회원정보수정.jsp">회원정보 수정하기</a>
 					</div>
 				</div>
-				<div class="col-lg-4 col-sm-6">
+				<div class="col-lg-4 col-sm-6" style="width: 350px;">
 					<div class="info-item">
 						<i class="fa fa-phone"></i>
 						<h4>예약 내역</h4>
-
 						<a href="reservation_show.jsp">내 예약 확인하기</a>
-
 					</div>
 				</div>
-				<div class="col-lg-4 col-sm-6">
+				<div class="col-lg-4 col-sm-6" style="width: 350px;">
 					<div class="info-item">
 						<i class="fa fa-map-marker"></i>
 						<h4>나의 후기</h4>
 						<a href="comment_review.jsp">내가 작성한 리뷰/ 게시글</a>
 					</div>
 				</div>
-				<div class="col-lg-4 col-sm-6">
+				<div class="col-lg-4 col-sm-6" style="width: 350px;">
 					<div class="info-item">
 						<i class="fa fa-map-marker"></i>
 						<h4>설문조사</h4>
@@ -303,7 +303,6 @@ https://templatemo.com/tm-580-woox-travel
 			}
 		}
 	</script>
-
 </body>
 
 </html>

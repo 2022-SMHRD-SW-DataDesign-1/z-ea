@@ -134,7 +134,6 @@
 	text-indent: -9999px;
 }
 
-
 /* 시티투어 */
 .tit_cont .area_tag .citytour {
 	padding: 0 0 0 45px;
@@ -151,7 +150,6 @@
 		no-repeat;
 	text-indent: -9999px;
 }
-
 
 .area_tag+h2 {
 	margin-top: -5px
@@ -36727,7 +36725,7 @@ a.mapPosition:before {
 	.post_area .btn_good.on .ico {
 		background: url(../images/ico_mpost01_on.png) 0 0/100% 100% no-repeat;
 	}
-/* 	.post_area .btn_sharing {
+	/* 	.post_area .btn_sharing {
 		margin-right: 0;
 	}
 	.post_area .btn_sharing .ico {
@@ -36745,18 +36743,17 @@ a.mapPosition:before {
 		background: url(../images/ico_mpost03.png) 0 0/100% 100% no-repeat;
 	}
 	.post_area .btn_bookmark.on .ico {
-		background: url(../images/ico_mpost03_on.png) 0 0/100% 100%
-			no-repeat;
+		background: url(../images/ico_mpost03_on.png) 0 0/100% 100% no-repeat;
 	}
 	.post_area .btn_print {
 		display: none;
 	}
-/* 	.post_area .btn_cos .ico {
+	/* 	.post_area .btn_cos .ico {
 		width: 19px;
 		height: 19px;
 		background: url(../images/sub/ico_mpost05.png) 0 0/100% 100% no-repeat;
 	} */
-/* 	.post_area .btn_map .ico {
+	/* 	.post_area .btn_map .ico {
 		width: 22px;
 		height: 19px;
 		background: url(../images/sub/ico_mpost06.png) 0 0/100% 100% no-repeat;
@@ -38414,8 +38411,6 @@ a.mapPosition:before {
 		padding: 0;
 	}
 
-
-
 	/** 여행지, 축제 상세 **/
 	/* 부가정보 */
 	.wrap_contView+.list_banner {
@@ -38454,11 +38449,6 @@ a.mapPosition:before {
 		display: block;
 	}
 
-
-
-
-
-	
 	/* 유의사항 */
 	.attention_area {
 		margin-top: 15px;
@@ -38928,8 +38918,6 @@ a.mapPosition:before {
 		height: 100%;
 	}
 
-
-
 	/* 지역서비스 내주변 */
 	.wrap_map .marker {
 		bottom: 25px;
@@ -39339,8 +39327,6 @@ a.mapPosition:before {
 		font-size: 13px;
 	}
 
-	
-
 	/** 무장애여행 **/
 	.title_bfree_wrap {
 		margin-top: 30px;
@@ -39477,7 +39463,6 @@ a.mapPosition:before {
 		word-wrap: break-word;
 	}
 
-
 	/** 이벤트 **/
 	.event_wrap {
 		overflow: hidden;
@@ -39507,14 +39492,6 @@ a.mapPosition:before {
 	.event_list .info_area .date {
 		font-size: 12px;
 	}
-
-
-
-	
-
-
-	
-	
 }
 
 @media all and (min-width:768px) and (max-width:1023px) {
@@ -39682,8 +39659,6 @@ a.mapPosition:before {
 		height: 30px;
 	}
 }
-
-
 
 #contents {
 	width: 980px;

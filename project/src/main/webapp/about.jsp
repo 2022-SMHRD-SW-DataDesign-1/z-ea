@@ -8,16 +8,15 @@
 	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-<html lang="en">\
+<html lang="en">
 
 <head>
 
-<meta charset="utf-8"> 
+<meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <link
-
 	href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
 	rel="stylesheet">
 
@@ -197,66 +196,65 @@ https://templatemo.com/tm-580-woox-travel
 	</div>
 
 	<div class="dark">
-		<!-- ***** Main Banner Area Start ***** -->
 		<div class="about-main-content">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-12">
-						<div class="content"></div>
-					</div>
+					<div class="col-lg-12"></div>
+					<div class="content"></div>
 				</div>
 			</div>
 		</div>
+
 		<!-- ***** Main Banner Area End ***** -->
 
 		<!-- 모달 -->
 
 		<div class="cities-town"
-			style="display: inline-block; margin-left: 15%;">
+			style="display: inline-block; margin-left: 250px;">
 			<div class="container">
 				<div class="row" style="text-align: center;">
 					<div class="slider-content">
 
 						<div class="row" style="display: block;">
 
-							<h2>카테고리</h2>
+							<h2 style="margin-bottom: 60px;">카테고리</h2>
 
 							<div class="col-lg-12">
 								<div class="owl-cites-town owl-carousel"
 									style="display: inline-block;">
 
 									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
+										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
 										onclick="tag_filter(this)">#가족</div>
 
 
 									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
+										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
 										onclick="tag_filter(this)">#혼자</div>
 
 
 									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px;"
+										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
 										onclick="tag_filter(this)">#감성</div>
 
 
 									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
+										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
 										onclick="tag_filter(this)">#커플</div>
 
 
 									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
+										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
 										onclick="tag_filter(this)">#단체</div>
 
 
 									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
+										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
 										onclick="tag_filter(this)">#바다</div>
 
 
 									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
+										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
 										onclick="tag_filter(this)">#산</div>
 
 								</div>
@@ -469,6 +467,10 @@ https://templatemo.com/tm-580-woox-travel
 		  $("#item").html(tag);
 	  }
 		
+	</script>
+		<script>
+	function FullView()
+	
 	</script>
 
 

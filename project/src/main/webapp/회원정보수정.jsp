@@ -16,7 +16,6 @@
 	href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
 	rel="stylesheet">
 
-<title>WoOx Travel Reservation Page</title>
 
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,13 +27,6 @@
 <link rel="stylesheet" href="assets/css/animate.css">
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-<!--
-
-TemplateMo 580 Woox Travel
-
-https://templatemo.com/tm-580-woox-travel
-
--->
 </head>
 
 <body>
@@ -114,13 +106,13 @@ https://templatemo.com/tm-580-woox-travel
 		</div>
 	</div>
 
-	<div class="reservation-form">
-		<div class="row" style="margin-bottom: 40px;">
+	<div class="container" style="margin-top: 40px; width: 700px;">
+		<div class="row">
 			<div class="col-lg-12">
 				<form id="reservation-form" name="gs" method="submit" role="search"
 					action="#">
 
-					<div class="row">
+					<div class="row" style="text-align: center;">
 
 						<h4>회원정보</h4>
 				</form>
@@ -173,7 +165,7 @@ https://templatemo.com/tm-580-woox-travel
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- 모달 -->
 	<div class="modalPopup" style="display: none;">
 		<div class="ModalBack" onclick
@@ -266,8 +258,8 @@ https://templatemo.com/tm-580-woox-travel
 		</div>
 	</div>
 
-	
-	
+
+
 
 	<!-- Scripts -->
 	<!-- Bootstrap core JavaScript -->

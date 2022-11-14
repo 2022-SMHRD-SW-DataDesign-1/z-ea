@@ -235,7 +235,9 @@ https://templatemo.com/tm-580-woox-travel
 						GlampingDAO glamp_dao = new GlampingDAO();
 						for (int i = 0; i <my_re_list.size(); i++) {
 						%>
+
 						<option value="<%=my_re_list.get(i).getRc_num()%>"><%=glamp_dao.my_glamping_show(my_re_list.get(i).getGc_num()).getGc_name()%> (<%=my_re_list.get(i).getCheck_in()  %> - <%=my_re_list.get(i).getCheck_out() %>)</option>
+
 						<%
 						}
 						%>
@@ -250,9 +252,9 @@ https://templatemo.com/tm-580-woox-travel
 					<textarea type="text" name="transfer_reason" class="Name"
 						placeholder="content" autocomplete="on" required
 						style="resize: none;" rows="10">
-										</textarea> <br>
-					<label for="name" class="form-label">제시가격</label>
-					<input type="text" name="offer_price" >
+										</textarea>
+					<br> <label for="name" class="form-label">제시가격</label> <input
+						type="text" name="offer_price">
 				</fieldset>
 			</div>
 			<div class="col-lg-12">
