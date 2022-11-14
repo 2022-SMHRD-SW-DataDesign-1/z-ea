@@ -218,7 +218,7 @@ https://templatemo.com/tm-580-woox-travel
 						if (info == null) {
 						%><button type="button" class="btn btn-primary btn-lg"
 							onclick="javascript:lo()"
-							style="width: 110px; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none;"">작성하기</button>
+							style="width: 110px; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none;">작성하기</button>
 						</a>
 						<%
 						} else {

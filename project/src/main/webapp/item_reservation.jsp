@@ -219,9 +219,6 @@
 					<div class="col-lg-12">
 						<h4>지금 바로 예약해보세요!</h4>
 						<h2>예약하기</h2>
-						<div class="main-button">
-							<a href="index.jsp">홈으로 돌아가기</a>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -376,7 +373,7 @@
 
 							</div>
 						</div>
-						<div style="text-align:center;">
+						<div style="text-align: center;">
 							<input id="submit" type="submit" value="예약"
 								style="width: 200px; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none;" />
 						</div>
