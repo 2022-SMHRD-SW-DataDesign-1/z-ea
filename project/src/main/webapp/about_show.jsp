@@ -521,7 +521,7 @@ https://templatemo.com/tm-580-woox-travel
 			<div style="height: 100px;">
 				<a href="ItemReservService?num=<%=item.getNum()%>">
 					<button type="button" class="btn btn-primary btn-lg"
-						style="background-color: #6A5ACD; float: right;">예약하러가기</button>
+						style="background-color: #6A5ACD; float: right; border-color:#6A5ACD">예약하러가기</button>
 				</a>
 			</div>
 

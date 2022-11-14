@@ -42,7 +42,7 @@
 	max-width: 820px;
 	padding: 0 1.4rem;
 	margin-top: 3rem;
-	height: 35rem;
+	height: 34rem;
 }
 
 .dateHead {
@@ -178,8 +178,8 @@
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
 							<li><a href="index.jsp">홈</a></li>
-							<li><a href="about.jsp">글램핑&카라반</a></li>
-							<li><a href="reservation.jsp" class="active">예약</a></li>
+							<li><a href="about.jsp" class="active">글램핑&카라반</a></li>
+							<li><a href="reservation.jsp">예약</a></li>
 							<li><a href="transfer.jsp">양도</a></li>
 							<li><a href="community.jsp">커뮤니티</a></li>
 							<%
@@ -228,183 +228,197 @@
 		</div>
 
 
-		<div class="search-form"
-			style="width: 980px; margin: 0 auto; margin-top: 100px; padding: 0 20px 27px 20px;">
+		<div class="cities-town"
+			style="display: inline-block; margin-left: 350px;">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-12"
-						style="padding: 8px; margin-bottom: 8px; background-color: #fff; box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);">
-						<div class='rap'>
-							<!-- 사진보기 -->
-							<div id="galleryGo">
-								<div class="user_reg"></div>
-								<div class="photo_gallery">
-									<!-- 공사 사진 영역 -->
-									<div
-										class="swiper-container swiper-container-initialized swiper-container-horizontal"
-										style="height: 300px;">
-										<div class="swiper-wrapper" id="pImgList">
-											<div class="swiper-slide swiper-slide-active"
-												style="width: 450px;">
-												<img class="swiper-lazy swiper-lazy-loaded" alt="타요캠핑장  0"
-													onclick="openPhotoView(0)"
-													style="width: 100%; height: 100%; object-fit: contain;"
-													src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=42235b2d-f656-4510-ae35-c562feb955cc">
-											</div>
-											<div class="swiper-slide swiper-slide-next"
-												style="width: 450px;">
-												<img class="swiper-lazy swiper-lazy-loaded" alt="타요캠핑장  1"
-													onclick="openPhotoView(1)"
-													style="width: 100%; height: 100%; object-fit: contain;"
-													src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=3a2aea96-11ac-4394-ad25-33eb3d9c3ee0">
-											</div>
+					<div class="slider-content" style="width: 1200px;">
+						<div class="row" style="display: block;">
+							<div class="col-lg-12"
+								style="padding: 8px; margin-bottom: 8px; background-color: #fff;">
+								<div class='rap'>
+									<!-- 사진보기 -->
+									<div id="galleryGo">
+										<div class="user_reg"></div>
+										<div class="photo_gallery">
+											<!-- 공사 사진 영역 -->
+											<div
+												class="swiper-container swiper-container-initialized swiper-container-horizontal"
+												style="height: 300px;">
+												<div class="swiper-wrapper" id="pImgList">
+													<div class="swiper-slide swiper-slide-active"
+														style="width: 500px; margin-right: 20px;">
+														<img class="swiper-lazy swiper-lazy-loaded" alt="타요캠핑장  0"
+															onclick="openPhotoView(0)"
+															style="width: 100%; height: 100%; object-fit: contain;"
+															src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=42235b2d-f656-4510-ae35-c562feb955cc">
+													</div>
+													<div class="swiper-slide swiper-slide-next"
+														style="width: 500px;">
+														<img class="swiper-lazy swiper-lazy-loaded" alt="타요캠핑장  1"
+															onclick="openPhotoView(1)"
+															style="width: 100%; height: 100%; object-fit: contain;"
+															src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=3a2aea96-11ac-4394-ad25-33eb3d9c3ee0">
+													</div>
 
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-					<!-- //사진보기 -->
+							<!-- //사진보기 -->
 
-					<div class="col-lg-12" style="margin-top: -250px;">
-						<div class='rap'>
-							<h2 id="topTitle" style="font-size: 35px;"><%=item.getName()%></h2>
-							<div class="area_address" id="topAddr"
-								style="margin-top: 10px; font-size: 30px;">
-								<span id="address"><%=item.getAddr()%></span><br> <span
-									id="address">전화번호</span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-12" style="margin-top: -300px;">
-						<div class='rap'>
-							<h4>일정 선택하기</h4>
-							<div class="header" style="margin-top: 30px;">
-								<div class="btn prevDay"></div>
-								<h2 id="yearMonth" class='dateTitle'></h2>
-								<div class="btn nextDay"></div>
-							</div>
-
-							<div class="grid dateHead" style="margin-top: 50px;">
-								<div>일</div>
-								<div>월</div>
-								<div>화</div>
-								<div>수</div>
-								<div>목</div>
-								<div>금</div>
-								<div>토</div>
-							</div>
-
-							<div class="grid dateBoard" style="margin-top: 50px;"></div>
-						</div>
-						<button id="datesearch">검색</button>
-
-						<br>
-						<form action="ReservationService?gc_num=<%=gc_num%>" method="post">
-							<div>
-								<h4>체크인</h4>
-								<h4>
-									<input type="text" name=checkin id="checkin" value=""></input>
-								</h4>
-								<h4>체크아웃</h4>
-								<h4>
-									<input type="text" name=checkout id="checkout" value=""></input>
-								</h4>
-							</div>
-					</div>
-
-					<br>
-					<div>
-
-
-
-						<div class="col-lg-12">
-							<div class='rap'>
-								<h4 style="margin-bottom: 30px;">방</h4>
-								<select name="roomname">
-
-									<%
-									for (int i = 0; i < roomList.size(); i++) {
-									%>
-									<option value="<%=i + 1%>"><%=roomList.get(i).getRoom_name()%></option>
-									<%
-									}
-									%>
-
-								</select>
-
-							</div>
-						</div>
-
-						<div class="col-lg-12" style="margin-top:-400px;">
-							<div class='rap'>
-								<h4 style="margin-bottom: 30px;">객실 인원</h4>
-								<fieldset>
-									<p>성인</p>
-									<select name="Guests_adult" class="form-select"
-										aria-label="Default select example" id="chooseGuests"
-										onChange="this.form.click()">
-										<option selected>인원수</option>
-										<option type="checkbox" name="option1" value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4+">4+</option>
-									</select>
-									<h4 style="font-size: 15px; padding: 10px;">아이</h4>
-									<select name="Guests_kid" class="form-select"
-										aria-label="Default select example" id="chooseGuests"
-										onChange="this.form.click()">
-										<option selected>인원수</option>
-										<option type="checkbox" name="option1" value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4+">4+</option>
-									</select>
-								</fieldset>
-							</div>
-
-						</div>
-					</div>
-
-					<input id="submit" type="submit" value="이거 제출" />
-					</form>
-				</div>
-			</div>
-		</div>
-
-
-
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<p>
-							Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights
-							reserved. <br>Design: <a href="https://templatemo.com"
-								target="_blank" title="free CSS templates">TemplateMo</a>
-							Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
-						</p>
-						<footer>
-							<div class="container">
-								<div class="row">
-									<div class="col-lg-12">
-										<p>
-											Copyright © 2036 <a href="#">WoOx Travel</a> Company. All
-											rights reserved. <br>Design: <a
-												href="https://templatemo.com" target="_blank"
-												title="free CSS templates">TemplateMo</a> Distribution: <a
-												href="https://themewagon.com target="_blank" >ThemeWagon</a>
-										</p>
+							<div class="col-lg-12"
+								style="margin-top: -250px; margin-left: 20px;">
+								<div class='rap'>
+									<h2 id="topTitle" style="font-size: 35px;"><%=item.getName()%></h2>
+									<div class="area_address" id="topAddr"
+										style="margin-top: 10px; font-size: 30px;">
+										<span id="address"><%=item.getAddr()%></span><br> <span
+											id="address">전화번호</span>
 									</div>
 								</div>
 							</div>
-						</footer>
-						<!-- Scripts -->
+
+							<div class="col-lg-12"
+								style="margin-top: -300px; margin-left: 20px;">
+								<div class='rap'>
+									<h4>일정 선택하기</h4>
+									<div class="header" style="margin-top: 30px;">
+										<div class="btn prevDay"></div>
+										<h2 id="yearMonth" class='dateTitle'></h2>
+										<div class="btn nextDay"></div>
+									</div>
+
+									<div class="grid dateHead" style="margin-top: 50px;">
+										<div>일</div>
+										<div>월</div>
+										<div>화</div>
+										<div>수</div>
+										<div>목</div>
+										<div>금</div>
+										<div>토</div>
+									</div>
+
+									<div class="grid dateBoard" style="margin-top: 50px;"></div>
+								</div>
+
+								<div style="margin: 20px; margin-left: 20px;">
+									<form action="ReservationService?gc_num=<%=gc_num%>"
+										method="post">
+										<div style="float: left; margin-right: 20px;">
+											<h4 style="padding: 10px;">체크인</h4>
+											<h4>
+												<input type="text" name=checkin id="checkin" value=""
+													readonly style="padding: 10px;"></input>
+											</h4>
+										</div>
+										<div style="float: left; margin-right: 20px;">
+											<h4 style="padding: 10px;">체크아웃</h4>
+											<h4>
+												<input type="text" name=checkout id="checkout" value=""
+													readonly style="padding: 10px;"></input>
+											</h4>
+										</div>
+										<div>
+											<button id="datesearch"
+												style="margin-top: 50px; width: 110px; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none;">날짜검색</button>
+										</div>
+								</div>
+							</div>
+
+							<div class="col-lg-12" style="margin-left: 20px;">
+								<div class='rap'>
+									<h4 style="margin-bottom: 30px;">방</h4>
+									<select name="roomname">
+
+										<%
+										for (int i = 0; i < roomList.size(); i++) {
+										%>
+										<option value="<%=i + 1%>"><%=roomList.get(i).getRoom_name()%></option>
+										<%
+										}
+										%>
+
+									</select>
+
+								</div>
+							</div>
+
+							<div class="col-lg-12"
+								style="margin-top: -400px; margin-bottom: -250px; margin-left: 20px;">
+								<div class='rap'>
+									<h4 style="margin-bottom: 30px;">객실 인원</h4>
+									<fieldset>
+										<h4 style="font-size: 15px; padding: 10px;">성인</h4>
+										<select name="Guests_adult" class="form-select"
+											aria-label="Default select example" id="chooseGuests"
+											onChange="this.form.click()">
+											<option selected>인원수</option>
+											<option type="checkbox" name="option1" value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4+">4+</option>
+										</select>
+										<h4 style="font-size: 15px; padding: 10px;">아이</h4>
+										<select name="Guests_kid" class="form-select"
+											aria-label="Default select example" id="chooseGuests"
+											onChange="this.form.click()">
+											<option selected>인원수</option>
+											<option type="checkbox" name="option1" value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4+">4+</option>
+										</select>
+									</fieldset>
+								</div>
+
+							</div>
+						</div>
+						<div style="text-align:center;">
+							<input id="submit" type="submit" value="예약"
+								style="width: 200px; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none;" />
+						</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
 
 
-						<script>
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<p>
+						Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights
+						reserved. <br>Design: <a href="https://templatemo.com"
+							target="_blank" title="free CSS templates">TemplateMo</a>
+						Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
+					</p>
+					<footer>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-12">
+									<p>
+										Copyright © 2036 <a href="#">WoOx Travel</a> Company. All
+										rights reserved. <br>Design: <a
+											href="https://templatemo.com" target="_blank"
+											title="free CSS templates">TemplateMo</a> Distribution: <a
+											href="https://themewagon.com target="_blank" >ThemeWagon</a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</footer>
+					<!-- Scripts -->
+
+
+					<script>
 
 //달력 생성
 const makeCalendar = (date) => {
@@ -463,8 +477,8 @@ makeCalendar(new Date(date.setMonth(date.getMonth() + 1)));
 </script>
 
 
-						<!-- 날짜선택 -->
-						<script>
+					<!-- 날짜선택 -->
+					<script>
 		
 
 		let day=[];
@@ -516,7 +530,7 @@ function tag_filter(id){
 			
 		</script>
 
-						<script>
+					<script>
 
 						document.getElementById("datesearch").onclick=function(){
 							let min=parseInt(day[0]);
@@ -554,15 +568,15 @@ function tag_filter(id){
 
 
 
-						<!-- Bootstrap core JavaScript -->
-						<script src="vendor/jquery/jquery.min.js"></script>
-						<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-						<script src="assets/js/isotope.min.js"></script>
-						<script src="assets/js/owl-carousel.js"></script>
-						<script src="assets/js/wow.js"></script>
-						<script src="assets/js/tabs.js"></script>
-						<script src="assets/js/popup.js"></script>
-						<script src="assets/js/custom.js"></script>
+					<!-- Bootstrap core JavaScript -->
+					<script src="vendor/jquery/jquery.min.js"></script>
+					<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+					<script src="assets/js/isotope.min.js"></script>
+					<script src="assets/js/owl-carousel.js"></script>
+					<script src="assets/js/wow.js"></script>
+					<script src="assets/js/tabs.js"></script>
+					<script src="assets/js/popup.js"></script>
+					<script src="assets/js/custom.js"></script>
 </body>
 
 </html>

@@ -117,10 +117,6 @@ https://templatemo.com/tm-580-woox-travel
 			<div class="slider">
 				<div class="main-caption">
 					<div style="margin-left: 10%; font-size: 25px">검색어를 입력하세요</div>
-
-
-
-
 					<form action="SearchService" method="post">
 						<input id="SearchEngine" type="text" placeholder="#여행" name="tag"
 							style="width: 30%; height: 50px; border-radius: 20px; padding: 10px; margin: 5px;" />
@@ -128,13 +124,7 @@ https://templatemo.com/tm-580-woox-travel
 							style="padding: 12px; border: none; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD;"
 							type="submit" value="검색" />
 					</form>
-
-
-
-
-
 					<p style="margin-left: 10%;">#여행 #먹방 #힐링 #키즈</p>
-
 				</div>
 				<div class="modalPopup"
 					style="z-index: 100; display: none; margin-top: 45px;">
