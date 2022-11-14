@@ -5,20 +5,20 @@
 <mapper namespace="com.smhrd.mapper.BoardMapper">
 	
 	<select id="Filter" parameterType="String" resultType="ItemDTO">
-	select * from GLAMPING_CARAVAN_TB where gc_tag=#{tag}
+	select * from GLAMPING_CARAVAN_TB5 where gc_tag like '%'|| #{tag} || '%'
 	</select>
 	<select id="showDetail" resultType="ItemDTO">
-	select * from GLAMPING_CARAVAN_TB where gc_num=#{num}
+	select * from GLAMPING_CARAVAN_TB5 where gc_num=#{num}
 	</select>
 
 	<select id="search" resultType="ItemDTO">
-	select * from GLAMPING_CARAVAN_TB where gc_name=#{name}
+	select * from GLAMPING_CARAVAN_TB5 where gc_name=#{name}
 	</select>
 	<select id="showAll" resultType="ItemDTO">
-	select * from GLAMPING_CARAVAN_TB
+	select * from GLAMPING_CARAVAN_TB5
 	</select>
 	
 	<select id="surv_item_filter" parameterType="String" resultType="ItemDTO">
-	select * from GLAMPING_CARAVAN_TB where gc_tag like #{%gc_tag%}
+	select * from GLAMPING_CARAVAN_TB5 where gc_tag like '%'|| #{gc_tag} || '%'
 	</select>
 </mapper>

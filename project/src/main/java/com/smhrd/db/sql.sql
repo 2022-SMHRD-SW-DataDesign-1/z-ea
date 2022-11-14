@@ -7,7 +7,7 @@ select * from Comment_tb where board_num = 29;
 select * from GLAMPING_CARAVAN_TB where gc_num=25;
 select count(*) from like_tb where gc_num = 62;
 
-
+select count(*) from GLAMPING_CARAVAN_TB5 where gc_tag like '%#가족%'
 
 select count(*) from like_tb where gc_num=#{gc_num} and mb_email = #{mb_email}
 
