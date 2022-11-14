@@ -266,6 +266,161 @@
 							</div>
 							<!-- //사진보기 -->
 
+<<<<<<< HEAD
+					<div class="col-lg-12" style="margin-top: -250px;">
+						<div class='rap'>
+							<h2 id="topTitle" style="font-size: 35px;"><%=item.getName()%></h2>
+							<div class="area_address" id="topAddr"
+								style="margin-top: 10px; font-size: 30px;">
+								<span id="address"><%=item.getAddr()%></span><br> <span
+									id="address">전화번호</span>
+							</div>
+						</div>
+					</div>
+
+<<<<<<< HEAD
+
+					<div class="col-lg-12" style="margin-top: -300px;">
+						<div class='rap'>
+							<h4>일정 선택하기</h4>
+							<div class="header" style="margin-top: 30px; margin-bottom:20px">
+								<div class="btn prevDay"></div>
+								<h2 class='dateTitle'></h2>
+								<div class="btn nextDay"></div>
+
+								<div class="grid dateHead" style="margin-top: 50px;">
+									<div>일</div>
+									<div>월</div>
+									<div>화</div>
+									<div>수</div>
+									<div>목</div>
+									<div>금</div>
+									<div>토</div>
+								</div>
+
+								<div class="grid dateBoard" style="margin-top: 50px;"></div>
+=======
+					<div class="col-lg-12" style="margin-top: -300px;">
+						<div class='rap'>
+							<h4>일정 선택하기</h4>
+							<div class="header" style="margin-top: 30px;">
+								<div class="btn prevDay"></div>
+								<h2 id="yearMonth" class='dateTitle'></h2>
+								<div class="btn nextDay"></div>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
+							</div>
+
+							<div class="grid dateHead" style="margin-top: 50px;">
+								<div>일</div>
+								<div>월</div>
+								<div>화</div>
+								<div>수</div>
+								<div>목</div>
+								<div>금</div>
+								<div>토</div>
+							</div>
+
+							<div class="grid dateBoard" style="margin-top: 50px;"></div>
+						</div>
+						<button id="datesearch">검색</button>
+
+						<br>
+						<form action="ReservationService?gc_num=<%=gc_num%>" method="post">
+							<div>
+								<h4>체크인</h4>
+								<h4>
+									<input type="text" name=checkin id="checkin" value=""></input>
+								</h4>
+								<h4>체크아웃</h4>
+								<h4>
+									<input type="text" name=checkout id="checkout" value=""></input>
+								</h4>
+							</div>
+					</div>
+
+					<br>
+					<div>
+
+
+
+						<div class="col-lg-12">
+							<div class='rap'>
+								<h4 style="margin-bottom: 30px;">방</h4>
+								<select name="roomname">
+
+									<%
+									for (int i = 0; i < roomList.size(); i++) {
+									%>
+									<option value="<%=i + 1%>"><%=roomList.get(i).getRoom_name()%></option>
+									<%
+									}
+									%>
+
+								</select>
+
+							</div>
+						</div>
+
+						<div class="col-lg-12" style="margin-top:-400px;">
+							<div class='rap'>
+								<h4 style="margin-bottom: 30px;">객실 인원</h4>
+								<fieldset>
+									<p>성인</p>
+									<select name="Guests_adult" class="form-select"
+										aria-label="Default select example" id="chooseGuests"
+										onChange="this.form.click()">
+										<option selected>인원수</option>
+										<option type="checkbox" name="option1" value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4+">4+</option>
+									</select>
+									<h4 style="font-size: 15px; padding: 10px;">아이</h4>
+									<select name="Guests_kid" class="form-select"
+										aria-label="Default select example" id="chooseGuests"
+										onChange="this.form.click()">
+										<option selected>인원수</option>
+										<option type="checkbox"                ="option1" value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4+">4+</option>
+									</select>
+								</fieldset>
+							</div>
+
+						</div>
+					</div>
+
+					<input id="submit" type="submit" value="이거 제출" />
+					</form>
+				</div>
+			</div>
+		</div>
+
+
+
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<p>
+							Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights
+							reserved. <br>Design: <a href="https://templatemo.com"
+								target="_blank" title="free CSS templates">TemplateMo</a>
+							Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
+						</p>
+						<footer>
+							<div class="container">
+								<div class="row">
+									<div class="col-lg-12">
+										<p>
+											Copyright © 2036 <a href="#">WoOx Travel</a> Company. All
+											rights reserved. <br>Design: <a
+												href="https://templatemo.com" target="_blank"
+												title="free CSS templates">TemplateMo</a> Distribution: <a
+												href="https://themewagon.com target="_blank" >ThemeWagon</a>
+										</p>
+
 							<div class="col-lg-12"
 								style="margin-top: -250px; margin-left: 20px;">
 								<div class='rap'>
@@ -274,6 +429,7 @@
 										style="margin-top: 10px; font-size: 30px;">
 										<span id="address"><%=item.getAddr()%></span><br> <span
 											id="address">전화번호</span>
+
 									</div>
 								</div>
 							</div>

@@ -221,7 +221,10 @@ https://templatemo.com/tm-580-woox-travel
 					<div class="info-item">
 						<i class="fa fa-phone"></i>
 						<h4>예약 내역</h4>
-						<a href="reservation_show.jsp">내 예약 확인하기</a>
+
+						<a href="my Reservation.jsp">내 예약 확인하기</a> <a
+							href="reservation_show.jsp">내 예약 확인하기</a>
+
 					</div>
 				</div>
 				<div class="col-lg-4 col-sm-6" style="width: 350px;">

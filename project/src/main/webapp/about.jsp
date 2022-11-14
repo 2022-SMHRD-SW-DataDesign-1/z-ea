@@ -215,38 +215,73 @@
 							<div class="col-lg-12">
 								<div class="owl-cites-town owl-carousel"
 									style="display: inline-block;">
+									
+								<!-- 	<div class="choose1"
+										style="text-align: center"
+										border-radius: 25px;
+										margin-top: 5px;
+										
+
+										 ></div> -->
+
 
 									<div class="choose1"
+										style="height: 40px; width: 120px; border: solid black 1px;border-radius: 25px;
+										margin-top: 5px;padding-top: 7px;"
 										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
 										onclick="tag_filter(this)">#가족</div>
 
 
 									<div class="choose1"
+
+											style="height: 40px; width: 120px; border: solid black 1px;border-radius: 25px;
+										margin-top: 5px;padding-top: 7px;"
+
 										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
+
 										onclick="tag_filter(this)">#혼자</div>
 
 
 									<div class="choose1"
+
+											style="height: 40px; width: 120px; border: solid black 1px;border-radius: 25px;
+										margin-top: 5px;padding-top: 7px;" 
+
 										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
+
 										onclick="tag_filter(this)">#감성</div>
 
 
 									<div class="choose1"
+
+											style="height: 40px; width: 120px; border: solid black 1px;border-radius: 25px;
+										margin-top: 5px;padding-top: 7px;": 
+
 										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
+
 										onclick="tag_filter(this)">#커플</div>
 
 
 									<div class="choose1"
+
+											style="height: 40px; width: 120px; border: solid black 1px;border-radius: 25px;
+										margin-top: 5px;padding-top: 7px;"
+
 										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
+
 										onclick="tag_filter(this)">#단체</div>
 
 
 									<div class="choose1"
+											style="height: 40px; width: 120px; border: solid black 1px;border-radius: 25px;
+										margin-top: 5px;padding-top: 7px;"
 										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
 										onclick="tag_filter(this)">#바다</div>
 
 
 									<div class="choose1"
+											style="height: 40px; width: 120px; border: solid black 1px;border-radius: 25px;
+										margin-top: 5px;padding-top: 7px;"
 										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
 										onclick="tag_filter(this)">#산</div>
 
@@ -417,9 +452,11 @@
 		let value;
 		
 		if(id.style.backgroundColor == "white"){
-		id.style.backgroundColor ="blue";
+		id.style.backgroundColor ="skyblue";
+		id.style.borderColor ="skyblue"; 
 		value = id.textContent;
 		console.log(value);
+		
 		$.ajax({
 			url : 'Filter',  //요청 서버 url
 			data : {'gc_tag': value},	//요청할 때 같이 보내줄 데이터
@@ -461,11 +498,11 @@
 	  }
 		
 	</script>
+
 		<script>
 	function FullView()
 	
 	</script>
-
 
 		<script>
 	function filter(id){

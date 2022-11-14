@@ -44,6 +44,11 @@ pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img,
 	outline: 0;
 }
 
+/* .choose1{
+	border-radius: 25px;
+	text-align: center;
+	margin-top: 5px;
+} */
 .clearfix:after {
 	content: ".";
 	display: block;
@@ -96,7 +101,7 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
 	margin-top: 0px;
-	margin-bottom: 0px;
+	margin-bottom: 20px;
 	color: #2a2a2a;
 	font-weight: 700;
 }
@@ -970,8 +975,7 @@ Banner Style
 	animation: progressBarFill 5s linear;
 }
 /* Animations */
-@
-keyframes progressBarFill {from { margin-left:-100%;
+@keyframes progressBarFill {from { margin-left:-100%;
 	
 }
 
@@ -1272,7 +1276,7 @@ About Page Style
 
 .cities-town .slider-content h2 {
 	font-size: 30px;
-	margin-bottom: 30px;
+	margin:auto;
 }
 
 .cities-town .slider-content h2 em {
@@ -1535,9 +1539,13 @@ body #user-button {
 
 
 
+
+
 %
 {
 opacity
+
+
 
 
 
@@ -1563,7 +1571,11 @@ opacity
 
 
 
+
+
 1
+
+
 
 
 
@@ -1588,7 +1600,11 @@ display
 
 
 
+
+
 :
+
+
 
 
 
@@ -1614,8 +1630,12 @@ block
 
 
 
+
+
 !
 important
+
+
 
 
 
@@ -1648,35 +1668,20 @@ keyframes slide { 0%, 50% {
 
 
 
+
+
 %
 {
 opacity
-
-
-
-
-
-
-
-
-
-
-
 
 :
 
 
 
 
-
-
-
-
-
-
-
-
 1
+
+
 
 
 
@@ -1701,7 +1706,11 @@ display
 
 
 
+
+
 :
+
+
 
 
 
@@ -1727,8 +1736,12 @@ block
 
 
 
+
+
 !
 important
+
+
 
 
 
@@ -1864,9 +1877,13 @@ body #user-button .u-icons a.u-random div {
 
 
 
+
+
 %
 {
 transform
+
+
 
 
 
@@ -1892,7 +1909,11 @@ transform
 
 
 
+
+
 rotate
+
+
 
 
 
@@ -1918,6 +1939,8 @@ rotate
 
 
 
+
+
 360deg
 
 
@@ -1931,7 +1954,11 @@ rotate
 
 
 
+
+
 )
+
+
 
 
 
@@ -1963,9 +1990,13 @@ keyframes diespin { 0% {
 
 
 
+
+
 %
 {
 transform
+
+
 
 
 
@@ -1991,7 +2022,11 @@ transform
 
 
 
+
+
 rotate
+
+
 
 
 
@@ -2023,6 +2058,8 @@ rotate
 
 
 
+
+
 360deg
 
 
@@ -2036,7 +2073,11 @@ rotate
 
 
 
+
+
 )
+
+
 
 
 
@@ -2538,11 +2579,11 @@ Reservation Page Style
 --------------------------------------------- 
 */
 .second-page-heading {
-	background-image: url(../images/heading-bg-02.jpg);
+	background-image: url(../images/배너사진할꼬얌.jpg);
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	padding: 260px 0px 190px 0px;
+	padding: 260px 0px 230px 0px;
 	text-align: center;
 }
 

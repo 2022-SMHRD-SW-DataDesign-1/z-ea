@@ -283,6 +283,22 @@ https://templatemo.com/tm-580-woox-travel
 		//			theme_list.add(new);
 		//		}
 	%>
+<<<<<<< HEAD
+<script>
+		function camp_images_info() {
+			let item_num =
+	<%=age_list.get(0).getNum()%>
+		;
+			let img_src;
+			for (let i = 1; i <= 100; i++) {
+				if (item_num == i) {
+					img_src = 'assets/캠핑장 1차/' + i + '.jpg';
+				}
+			}
+			return img_src;
+		}
+	</script>
+=======
 
 	<script>
 		function showitem_info() {
@@ -322,6 +338,9 @@ https://templatemo.com/tm-580-woox-travel
 									<div class="row">
 										<div class="col-lg-4 col-sm-5">
 											<div class="image">
+											<img id="camp_images" src="">
+												<script>document.getElementById('camp_images').src=camp_images_info()</script>
+												
 												<img id="showitem" src="">
 												<script>
 													document
@@ -330,6 +349,9 @@ https://templatemo.com/tm-580-woox-travel
 												<img src="assets/images/country-0<%=i + 1%>.jpg" alt="">
 											</div>
 										</div>
+								
+									
+							
 										<div class="col-lg-8 col-sm-7">
 											<div class="right-content">
 												<h4><%=age_list.get(i).getName()%></h4>
@@ -834,9 +856,25 @@ https://templatemo.com/tm-580-woox-travel
 
 		}
 	</script>
+<<<<<<< HEAD
+	
+			}
+		</script>
+		
+			<script >
+			function camp_images_info(){
+			
+				get.email   
+				<img id="showitem" src="">
+				<script>
+					document
+							.getElementById('showitem').src = showitem_info();
+				</script>
+=======
 
 
 
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 </body>
 
 </html>

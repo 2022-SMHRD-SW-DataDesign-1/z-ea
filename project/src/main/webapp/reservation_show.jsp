@@ -146,7 +146,7 @@ https://templatemo.com/tm-580-woox-travel
 					GlampingDTO gl_list = new GlampingDAO().my_glamping_show((re_list.get(i).getGc_num()));
 				%>
 				<!-- 이름 -->
-				<div style="margin-bottom: 40px;">
+				<div  style="margin-bottom: 40px;">
 					<p>예약정보<%=i+1 %></p><br>
 					<div class="col-lg-6">
 						<fieldset>
