@@ -260,6 +260,7 @@ https://templatemo.com/tm-580-woox-travel
 		</div>
 	</section>
 	<!-- ***** Main Banner Area End ***** -->
+
 	<%
 	if (info != null) {
 		SurveyDTO2 surv_info = new SurveyDAO2().surv_info(info.getMb_email());
@@ -269,12 +270,12 @@ https://templatemo.com/tm-580-woox-travel
 		ArrayList<ItemDTO> type_list = new ItemDAO().surv_item_filter((surv_info.getMb_tour_type()));
 		//ArrayList<ItemDTO> tip_list = new ItemDAO().surv_item_filter((surv_info.getMb_tip()));
 		//ArrayList<ItemDTO> view_list = new ItemDAO().surv_item_filter((surv_info.getMb_view()));
-		
-				//String[] themedata = surv_info.getMb_tour_theme().split("#");
-				//System.out.println("0번" + themedata[0]);
-				//System.out.println("1번" + themedata[1]);
-				//System.out.println("2번" + themedata[2]);
-				//System.out.println("3번" + themedata[3]);
+
+		//String[] themedata = surv_info.getMb_tour_theme().split("#");
+		//System.out.println("0번" + themedata[0]);
+		//System.out.println("1번" + themedata[1]);
+		//System.out.println("2번" + themedata[2]);
+		//System.out.println("3번" + themedata[3]);
 		//		System.out.println("size"+themedata.length);
 		//		ArrayList<ItemDTO> theme_list = new ItemDAO().Filter(a)
 		//		for(int j=0; i<theme_list.size())
@@ -288,8 +289,22 @@ https://templatemo.com/tm-580-woox-travel
 		//		for (int i = 1; i < themedata.length; i++) {
 		//			theme_list.add(new);
 		//		}
-
 	%>
+
+	<script>
+		function showitem_info() {
+			let item_num =
+	<%=age_list.get(0).getNum()%>
+		;
+			let img_src;
+			for (let i = 1; i <= 100; i++) {
+				if (item_num == i) {
+					img_src = 'assets/images/' + i + '.jpg';
+				}
+			}
+			return img_src;
+		}
+	</script>
 
 	<%
 	ItemDAO dao = new ItemDAO();
@@ -303,14 +318,23 @@ https://templatemo.com/tm-580-woox-travel
 				<div class="col-lg-8">
 					<div class="items">
 						<div class="row">
-									<%if(age_list.size()>0){ %>
-									<%for(int i=0; i<age_list.size(); i++){ %>
+							<%
+							if (age_list.size() > 0) {
+							%>
+							<%
+							for (int i = 0; i < age_list.size(); i++) {
+							%>
 							<div class="col-lg-12">
 								<div class="item">
 									<div class="row">
 										<div class="col-lg-4 col-sm-5">
 											<div class="image">
-												<img src="assets/images/country-0<%=i+1%>.jpg" alt="">
+												<img id="showitem" src="">
+												<script>
+													document
+															.getElementById('showitem').src = showitem_info();
+												</script>
+												<img src="assets/images/country-0<%=i + 1%>.jpg" alt="">
 											</div>
 										</div>
 										<div class="col-lg-8 col-sm-7">
@@ -328,24 +352,32 @@ https://templatemo.com/tm-580-woox-travel
 													<li><i class="fa fa-home"></i>유형 : <%=age_list.get(i).getType()%></li>
 												</ul>
 												<div class="text-button">
-													<a href="about.jsp">더보려면?<i
-														class="fa fa-arrow-right"></i></a>
+													<a href="about.jsp">더보려면?<i class="fa fa-arrow-right"></i></a>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-										<%} %>
-										<%}else{} %>
-									<%if(company_list.size()>0){ %>
-									<%for(int i =0; i<company_list.size(); i++){ %>
+							<%
+							}
+							%>
+							<%
+							} else {
+							}
+							%>
+							<%
+							if (company_list.size() > 0) {
+							%>
+							<%
+							for (int i = 0; i < company_list.size(); i++) {
+							%>
 							<div class="col-lg-12">
 								<div class="item">
 									<div class="row">
 										<div class="col-lg-4 col-sm-5">
 											<div class="image">
-												<img src="assets/images/country-0<%=i+1%>.jpg" alt="">
+												<img src="assets/images/country-0<%=i + 1%>.jpg" alt="">
 											</div>
 										</div>
 										<div class="col-lg-8 col-sm-7">
@@ -363,24 +395,32 @@ https://templatemo.com/tm-580-woox-travel
 													<li><i class="fa fa-home"></i>유형 : <%=company_list.get(i).getType()%></li>
 												</ul>
 												<div class="text-button">
-													<a href="about.jsp">더보려면?<i
-														class="fa fa-arrow-right"></i></a>
+													<a href="about.jsp">더보려면?<i class="fa fa-arrow-right"></i></a>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-								<%} %>
-										<%}else{} %>
-					<%if(season_list.size()>0){ %>
-									<%for(int i =0; i<season_list.size(); i++){ %>
+							<%
+							}
+							%>
+							<%
+							} else {
+							}
+							%>
+							<%
+							if (season_list.size() > 0) {
+							%>
+							<%
+							for (int i = 0; i < season_list.size(); i++) {
+							%>
 							<div class="col-lg-12">
 								<div class="item">
 									<div class="row">
 										<div class="col-lg-4 col-sm-5">
 											<div class="image">
-												<img src="assets/images/country-0<%=i+1%>.jpg" alt="">
+												<img src="assets/images/country-0<%=i + 1%>.jpg" alt="">
 											</div>
 										</div>
 										<div class="col-lg-8 col-sm-7">
@@ -398,24 +438,32 @@ https://templatemo.com/tm-580-woox-travel
 													<li><i class="fa fa-home"></i>유형 : <%=season_list.get(i).getType()%></li>
 												</ul>
 												<div class="text-button">
-													<a href="about.jsp">더보려면?<i
-														class="fa fa-arrow-right"></i></a>
+													<a href="about.jsp">더보려면?<i class="fa fa-arrow-right"></i></a>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-										<%} %>
-										<%}else{} %>
-					<%if(type_list.size()>0){ %>
-									<%for(int i =0; i<type_list.size(); i++){ %>
+							<%
+							}
+							%>
+							<%
+							} else {
+							}
+							%>
+							<%
+							if (type_list.size() > 0) {
+							%>
+							<%
+							for (int i = 0; i < type_list.size(); i++) {
+							%>
 							<div class="col-lg-12">
 								<div class="item">
 									<div class="row">
 										<div class="col-lg-4 col-sm-5">
 											<div class="image">
-												<img src="assets/images/country-0<%=i+1%>.jpg" alt="">
+												<img src="assets/images/country-0<%=i + 1%>.jpg" alt="">
 											</div>
 										</div>
 										<div class="col-lg-8 col-sm-7">
@@ -433,28 +481,42 @@ https://templatemo.com/tm-580-woox-travel
 													<li><i class="fa fa-home"></i>유형 : <%=type_list.get(i).getType()%></li>
 												</ul>
 												<div class="text-button">
-													<a href="about.jsp">더보려면?<i
-														class="fa fa-arrow-right"></i></a>
+													<a href="about.jsp">더보려면?<i class="fa fa-arrow-right"></i></a>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-										<%} %>
-										<%}else{} %>
-					
-<% 					String[] themedata = surv_info.getMb_tour_theme().split("#"); %>
-<% 					for(int i =1; i < themedata.length; i++){%>
-<%					ArrayList<ItemDTO> theme_list = new ItemDAO().surv_item_filter((themedata[i]));%>
-		<% 					if(theme_list.size() >0){ %>
-									<%for(int j =0; j<theme_list.size(); i++){ %>
+							<%
+							}
+							%>
+							<%
+							} else {
+							}
+							%>
+
+							<%
+							String[] themedata = surv_info.getMb_tour_theme().split("#");
+							%>
+							<%
+							for (int i = 1; i < themedata.length; i++) {
+							%>
+							<%
+							ArrayList<ItemDTO> theme_list = new ItemDAO().surv_item_filter((themedata[i]));
+							%>
+							<%
+							if (theme_list.size() > 0) {
+							%>
+							<%
+							for (int j = 0; j < theme_list.size(); i++) {
+							%>
 							<div class="col-lg-12">
 								<div class="item">
 									<div class="row">
 										<div class="col-lg-4 col-sm-5">
 											<div class="image">
-												<img src="assets/images/country-0<%=j+1%>.jpg" alt="">
+												<img src="assets/images/country-0<%=j + 1%>.jpg" alt="">
 											</div>
 										</div>
 										<div class="col-lg-8 col-sm-7">
@@ -472,28 +534,44 @@ https://templatemo.com/tm-580-woox-travel
 													<li><i class="fa fa-home"></i>유형 : <%=theme_list.get(j).getType()%></li>
 												</ul>
 												<div class="text-button">
-													<a href="about.jsp">더보려면?<i
-														class="fa fa-arrow-right"></i></a>
+													<a href="about.jsp">더보려면?<i class="fa fa-arrow-right"></i></a>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-										<%} %>
-										<%}else{ %>
-										<%}} %>
-<% 					String[] tipdata = surv_info.getMb_tip().split("#"); %>
-<% 					for(int i =1; i < tipdata.length; i++){%>
-<%					ArrayList<ItemDTO> tip_list = new ItemDAO().surv_item_filter((tipdata[i]));%>
-			<% 					if(tip_list.size() >0){ %>
-									<%for(int j =0; j<tip_list.size(); i++){ %>
+							<%
+							}
+							%>
+							<%
+							} else {
+							%>
+							<%
+							}
+							}
+							%>
+							<%
+							String[] tipdata = surv_info.getMb_tip().split("#");
+							%>
+							<%
+							for (int i = 1; i < tipdata.length; i++) {
+							%>
+							<%
+							ArrayList<ItemDTO> tip_list = new ItemDAO().surv_item_filter((tipdata[i]));
+							%>
+							<%
+							if (tip_list.size() > 0) {
+							%>
+							<%
+							for (int j = 0; j < tip_list.size(); i++) {
+							%>
 							<div class="col-lg-12">
 								<div class="item">
 									<div class="row">
 										<div class="col-lg-4 col-sm-5">
 											<div class="image">
-												<img src="assets/images/country-0<%=j+1%>.jpg" alt="">
+												<img src="assets/images/country-0<%=j + 1%>.jpg" alt="">
 											</div>
 										</div>
 										<div class="col-lg-8 col-sm-7">
@@ -511,28 +589,44 @@ https://templatemo.com/tm-580-woox-travel
 													<li><i class="fa fa-home"></i>유형 : <%=tip_list.get(j).getType()%></li>
 												</ul>
 												<div class="text-button">
-													<a href="about.jsp">더보려면?<i
-														class="fa fa-arrow-right"></i></a>
+													<a href="about.jsp">더보려면?<i class="fa fa-arrow-right"></i></a>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-										<%} %>
-										<%}else{ %>
-										<%}} %>
-<% 					String[] viewdata = surv_info.getMb_view().split("#"); %>
-<% 					for(int i =1; i < viewdata.length; i++){%>
-<%					ArrayList<ItemDTO> view_list = new ItemDAO().surv_item_filter((viewdata[i]));%>
-			<% 					if(view_list.size() >0){ %>
-									<%for(int j =0; j<view_list.size(); i++){ %>
+							<%
+							}
+							%>
+							<%
+							} else {
+							%>
+							<%
+							}
+							}
+							%>
+							<%
+							String[] viewdata = surv_info.getMb_view().split("#");
+							%>
+							<%
+							for (int i = 1; i < viewdata.length; i++) {
+							%>
+							<%
+							ArrayList<ItemDTO> view_list = new ItemDAO().surv_item_filter((viewdata[i]));
+							%>
+							<%
+							if (view_list.size() > 0) {
+							%>
+							<%
+							for (int j = 0; j < view_list.size(); i++) {
+							%>
 							<div class="col-lg-12">
 								<div class="item">
 									<div class="row">
 										<div class="col-lg-4 col-sm-5">
 											<div class="image">
-												<img src="assets/images/country-0<%=j+1%>.jpg" alt="">
+												<img src="assets/images/country-0<%=j + 1%>.jpg" alt="">
 											</div>
 										</div>
 										<div class="col-lg-8 col-sm-7">
@@ -550,17 +644,23 @@ https://templatemo.com/tm-580-woox-travel
 													<li><i class="fa fa-home"></i>유형 : <%=view_list.get(j).getType()%></li>
 												</ul>
 												<div class="text-button">
-													<a href="about.jsp">더보려면?<i
-														class="fa fa-arrow-right"></i></a>
+													<a href="about.jsp">더보려면?<i class="fa fa-arrow-right"></i></a>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-										<%} %>
-										<%}else{ %>
-										<%}} %>
+							<%
+							}
+							%>
+							<%
+							} else {
+							%>
+							<%
+							}
+							}
+							%>
 							<div class="col-lg-12">
 								<ul class="page-numbers">
 									<!-- <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
@@ -867,6 +967,8 @@ https://templatemo.com/tm-580-woox-travel
 
 		}
 	</script>
+
+
 
 </body>
 

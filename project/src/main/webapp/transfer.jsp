@@ -205,58 +205,6 @@
 			</div>
 		</div>
 
-		<!-- <div class="search-form">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<form id="search-form" name="gs" method="submit" role="search"
-							action="#">
-							<div class="row">
-								<div class="col-lg-2">
-									<h4>떠나요</h4>
-								</div>
-								<div class="col-lg-4">
-									<fieldset>
-										<select name="Location" class="form-select"
-											aria-label="Default select example" id="chooseLocation"
-											onChange="this.form.click()">
-											<option selected>지역</option>
-											<option type="checkbox" name="option1" value="전남">전남</option>
-											<option value="전북">전북</option>
-											<option value=""></option>
-											<option value="Thailand">Thailand</option>
-											<option value="Australia">Australia</option>
-											<option value="India">India</option>
-											<option value="Indonesia">Indonesia</option>
-											<option value="Malaysia">Malaysia</option>
-											<option value="Singapore">Singapore</option>
-										</select>
-									</fieldset>
-								</div>
-								<div class="col-lg-4">
-									<fieldset>
-										<select name="Price" class="form-select"
-											aria-label="Default select example" id="choosePrice"
-											onChange="this.form.click()">
-											<option selected>가격</option>
-											<option value="100">- 100,000</option>
-											<option value="250">100,000 - 200,000</option>
-											<option value="500">200,000 - 300,000</option>
-											<option value="2500+">300,000 +</option>
-										</select>
-									</fieldset>
-								</div>
-								<div class="col-lg-2">
-									<fieldset>
-										<button class="border-button">검색</button>
-									</fieldset>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div> -->
 
 		<div class="amazing-deals">
 			<div class="container">
@@ -273,6 +221,7 @@
 					<%
 					for (int i = 0; i < transfer_list.size(); i++) {
 						System.out.println("status확인 :" + transfer_list.get(i).getTransfer_status());
+					System.out.println(transfer_list.get(i).getTransfer_num());
 					%>
 
 					<%
@@ -281,6 +230,7 @@
 
 
 					<%
+					StringBuffer buf = new StringBuffer(new ReservationDAO().transfer_num_check_in(transfer_list.get(i).getTransfer_num()).getCheck_in());
 					System.out.println("status확인 :" + transfer_list.get(i).getTransfer_status());
 					%>
 
@@ -294,21 +244,21 @@
 								</div>
 								<div class="col-lg-6 align-self-center">
 									<div class="content">
-										<h4><%=new GlampingDAO().transfer_num_glamping_show(transfer_list.get(i).getTransfer_num()).getGc_name()%></h4>
+										<h4><%=transfer_list.get(i).getTransfer_num() %></h4>
 										<div class="row">
 											<div class="col-6">
-												<i class="fa fa-clock"></i> <span class="list">마감<%=new ReservationDAO().transfer_num_check_in(transfer_list.get(i).getTransfer_num()).getCheck_in()%></span>
+												<i class="fa fa-clock"></i> <span class="list">마감<%=buf.insert(2, '-')%></span>
 											</div>
 											<div class="col-6">
-												<i class="fa fa-map"></i> <span class="list"><%=new TransferDAO().transfer_show(transfer_list.get(i).getTransfer_num()).getOffer_price()%></span>
+												<i class="fa fa-map"></i> <span class="list"><%= transfer_list.get(i).getOffer_price()
+												/* new TransferDAO().transfer_show(transfer_list.get(i).getTransfer_num()).getOffer_price() */%></span>
 											</div>
 										</div>
 										<p>
 											양도이유 :
-											<%=new TransferDAO().transfer_show(transfer_list.get(i).getTransfer_num()).getTransfer_reason()%></p>
-										<p>
-											주소 :
-											<%=new GlampingDAO().transfer_num_glamping_show(transfer_list.get(i).getTransfer_num()).getGc_addr()%></p>
+											<%=transfer_list.get(i).getTransfer_reason()
+											/* new TransferDAO().transfer_show(transfer_list.get(i).getTransfer_num()).getTransfer_reason() */%></p>
+										
 										<div class="main-button">
 											<a
 												href="transfer_select_show.jsp?transfer_num=<%=transfer_list.get(i).getTransfer_num()%>">자세히보기</a>

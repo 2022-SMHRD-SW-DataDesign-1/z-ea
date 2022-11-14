@@ -338,7 +338,7 @@
 							</div>
 						</div>
 
-						<div class="col-lg-12">
+						<div class="col-lg-12" style="margin-top:-400px;">
 							<div class='rap'>
 								<h4 style="margin-bottom: 30px;">객실 인원</h4>
 								<fieldset>

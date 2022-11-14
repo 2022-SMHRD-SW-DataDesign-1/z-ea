@@ -1,5 +1,4 @@
 <%@page import="com.smhrd.model.MemberDTO"%>
-
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.smhrd.model.ItemDAO"%>
@@ -32,7 +31,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
+	<%
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
 	%>
 	<header class="header-area header-sticky">
@@ -80,40 +79,42 @@
 			</div>
 		</div>
 	</header>
-	
-		<!-- ***** Main Banner Area Start ***** -->
-		<div class="about-main-content" style="opacity : 0.3;">
-			<div class="container">
-				<div class="row" >
-					<div class="col-lg-12" style="text-align : center;" >
-						<div class="content" style="background-color :black; width : 100%; height: 800px;">
-							<img ="./project/src/main/webapp/assets/images/cities-04.jpg" alt="" style="width: 30%; height: 30%; border: black 1px solid;">
-							
-							
-						</div>
+
+	<!-- ***** Main Banner Area Start ***** -->
+	<div class="about-main-content" style="opacity: 0.3;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12" style="text-align: center;">
+					<div class="content"
+						style="background-color: black; width: 100%; height: 800px;">
+						<img
+							="./project/src/main/webapp/assets/images/cities-04.jpg" alt=""
+							style="width: 30%; height: 30%; border: black 1px solid;">
+
+
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="slider-content">
-					<div style="background-color : white; width: 1200px height: 500px;">
-						
-						</div>
-						</div>
-	
+	</div>
+	<div class="slider-content">
+		<div style="background-color: white; width: 1200px height: 500px;">
+
+		</div>
+	</div>
+
 	<footer>
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-12">
-								<p>
-									Copyright Â© 2036 <a href="#">WoOx Travel</a> Company. All
-									rights reserved. <br>Design: <a
-										href="https://templatemo.com" target="_blank"
-										title="free CSS templates">TemplateMo</a> Distribution: <a
-										href="https://themewagon.com target="_blank" >ThemeWagon</a>
-								</p>
-							</div>
-						</div>
-				</footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<p>
+						Copyright Â© 2036 <a href="#">WoOx Travel</a> Company. All rights
+						reserved. <br>Design: <a href="https://templatemo.com"
+							target="_blank" title="free CSS templates">TemplateMo</a>
+						Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
+					</p>
+				</div>
+			</div>
+	</footer>
 </body>
 </html>

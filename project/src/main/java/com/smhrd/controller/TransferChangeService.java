@@ -20,12 +20,14 @@ public class TransferChangeService extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String mb_email = request.getParameter("email");
-		String transfer_id = request.getParameter("email");
+		//String transfer_id = request.getParameter("email");
 		BigDecimal rc_num = new BigDecimal(request.getParameter("num"));
+		BigDecimal room_num = new BigDecimal(request.getParameter("room_num"));
+		BigDecimal transfer_num = new BigDecimal(request.getParameter("transfer_num"));
 		System.out.println("email"+mb_email);
 		System.out.println("tran_num"+rc_num);
 		
-		ReservationDTO dto = new ReservationDTO(rc_num,rc_num, null, mb_email, null, null);
+		ReservationDTO dto = new ReservationDTO(rc_num,rc_num, room_num, null, mb_email,mb_email ,mb_email );
 		int row = new ReservationDAO().transfer_update(dto);
 		
 		if(row>0) {
@@ -33,8 +35,7 @@ public class TransferChangeService extends HttpServlet {
 		}else {
 			System.out.println("실");
 		}
-		TransferDTO tdto = new TransferDTO(rc_num,transfer_id,transfer_id,rc_num);
-		int status_row = new TransferDAO().transfer_status_check(tdto);
+		int status_row = new TransferDAO().transfer_status_check(transfer_num);
 		if(status_row>0) {
 			System.out.println("status성");
 		}else {

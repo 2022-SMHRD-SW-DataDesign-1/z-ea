@@ -29,8 +29,8 @@
 		select * from transfer_tb where
 		transfer_num=#{transfer_num}
 	</select>
-	<select id="transfer_status_check" parameterType="TransferDTO">
-	update transfer_tb set transfer_status = '1' where rc_num =#{rc_num} and transfer_id =#{transfer_id} 
+	<select id="transfer_status_check" parameterType="BigDecimal">
+	update transfer_tb set transfer_status = '1' where transfer_num =#{transfer_num} 
 	</select>
 	
 </mapper>
