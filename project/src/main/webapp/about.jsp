@@ -210,7 +210,7 @@ https://templatemo.com/tm-580-woox-travel
 		<!-- 모달 -->
 
 		<div class="cities-town"
-			style="display: inline-block; margin-left: 200px;">
+			style="display: inline-block; margin-left: 250px;">
 			<div class="container">
 				<div class="row" style="text-align: center;">
 					<div class="slider-content">
@@ -224,37 +224,37 @@ https://templatemo.com/tm-580-woox-travel
 									style="display: inline-block;">
 
 									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
+										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
 										onclick="tag_filter(this)">#가족</div>
 
 
 									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
+										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
 										onclick="tag_filter(this)">#혼자</div>
 
 
 									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px;"
+										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
 										onclick="tag_filter(this)">#감성</div>
 
 
 									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
+										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
 										onclick="tag_filter(this)">#커플</div>
 
 
 									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
+										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
 										onclick="tag_filter(this)">#단체</div>
 
 
 									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
+										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
 										onclick="tag_filter(this)">#바다</div>
 
 
 									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px"
+										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
 										onclick="tag_filter(this)">#산</div>
 
 								</div>
