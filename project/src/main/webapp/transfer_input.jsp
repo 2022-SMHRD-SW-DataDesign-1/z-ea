@@ -218,7 +218,7 @@ https://templatemo.com/tm-580-woox-travel
 				<div class="slider-content" style="width: 1200px;">
 					<div class="transfer-form" style="margin: 20px;">
 						<div class="col-lg-12">
-							<h2 style="margin-bottom: 50px;">양도신청하기</h2>
+							<h2 style="margin-bottom: 50px; padding: 20px;">양도신청하기</h2>
 						</div>
 						<%
 						ArrayList<ReservationDTO> my_re_list = new ReservationDAO().my_re_show(info.getMb_email());
@@ -226,17 +226,19 @@ https://templatemo.com/tm-580-woox-travel
 						%>
 						<form action="TransferService" method="post">
 							<!-- 글제목 -->
-							<div class="col-lg-6">
-								<fieldset>
-									<label for="name" class="form-label">예약건 장소명</label><br> <select
-										name="rc_num">
+							<div class="col-lg-6" style="padding: 20px;">
+								<fieldset style="margin-bottom: 10px;">
+									<label for="name" class="form-label"
+										style="font-size: 20px; font-weight: bold;">예약건 장소</label><br>
+									<select name="rc_num">
+										<option value="none">=== 선택 ===</option>
 										<%
 										GlampingDAO glamp_dao = new GlampingDAO();
 										for (int i = 0; i < my_re_list.size(); i++) {
 										%>
 
 										<option value="<%=my_re_list.get(i).getRc_num()%>"><%=glamp_dao.my_glamping_show(my_re_list.get(i).getGc_num()).getGc_name()%>
-											(<%=my_re_list.get(i).getCheck_in()%> -
+											(<%=my_re_list.get(i).getCheck_in()%>-
 											<%=my_re_list.get(i).getCheck_out()%>)
 										</option>
 
@@ -247,24 +249,32 @@ https://templatemo.com/tm-580-woox-travel
 								</fieldset>
 							</div>
 							<!-- 글내용 -->
-							<div class="col-lg-6">
+							<div class="col-lg-6" style="padding: 20px;">
 								<fieldset>
-									<label for="name" class="form-label">양도 사유</label><br>
+									<label for="name" class="form-label"
+										style="font-size: 20px; font-weight: bold;">양도 사유</label><br>
 									<textarea type="text" name="transfer_reason" class="Name"
 										placeholder="content" autocomplete="on" required
-										style="resize: none;" rows="10">
+										style="width: 1000px; height: 400px; resize: none; padding: 10px;">
 										</textarea>
-									<br> <label for="name" class="form-label">제시가격</label> <input
-										type="text" name="offer_price">
 								</fieldset>
 							</div>
-							<div class="col-lg-12">
+							<div class="col-lg-6" style="padding: 20px;">
 								<fieldset>
-									<button type="submit" class="main-button">양도신청</button>
+									<label for="name" class="form-label"
+										style="font-size: 20px; font-weight: bold;">제시가격</label><br>
+									<input type="text" name="offer_price" placeholder="가격을 입력해주세요"
+										style="padding: 5px;">
 								</fieldset>
 							</div>
-						</form>
+							<div class="col-lg-12" style="padding: 20px; text-align: center;">
+								<fieldset>
+									<button type="submit" class="main-button"
+										style="width: 110px; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none;">작성</button>
+								</fieldset>
+							</div>
 					</div>
+					</form>
 				</div>
 			</div>
 		</div>

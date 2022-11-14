@@ -215,34 +215,20 @@
 					} ],
 			"showQuestionNumbers" : "off"
 		};
-
-<<<<<<< HEAD
-	function sendDataToServer(survey) {
-		//send Ajax request to your web server
-		alert("The results are: " + JSON.stringify(survey.data));
-		data = JSON.stringify(survey.data);
-		data1 = JSON.parse(data);
-		dataArr = Object.values(data1);
-		console.log(dataArr);
-		
-	};
 	</script>
-=======
+
+	<script>
 		function sendDataToServer(survey) {
 			// function열어
-
 			//var data = survey.data
 			var data = JSON.stringify(survey.data);
 			data = JSON.parse(data);
 			data = Object.values(data);
-
 			console.log(data);
-
 			let viewdata = '';
 			for (let i = 0; i < data[1].length; i++) {
 				viewdata += data[1][i];
 			}
-
 			let themedata = '';
 			for (let i = 0; i < data[4].length; i++) {
 				themedata += data[4][i];
@@ -251,9 +237,7 @@
 			for (let i = 0; i < data[5].length; i++) {
 				tipdata += data[5][i];
 			}
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
-			
-			//send Ajax request to your web server
+
 			if (confirm("제출 ㄱ?"))
 			// if문 열어
 			{
@@ -269,11 +253,8 @@
 						mb_tour_theme : themedata,
 						mb_tip : tipdata,
 						mb_season : data[6]
-
 					},
-
 					type : "post",
-
 					success : function(data) {
 						//success열어
 						console.log(data);
@@ -294,7 +275,6 @@
 						}
 					}
 				//error 닫
-
 				});
 				// ajax닫아
 			}
@@ -303,19 +283,11 @@
 				return false;
 			}
 		}
-
 		var survey = new Survey.Model(surveyJSON);
 		$("#surveyContainer").Survey({
 			model : survey,
 			onComplete : sendDataToServer
 		});
 	</script>
-
-
-
-
-
-
-
 </body>
 </html>

@@ -48,7 +48,6 @@ https://templatemo.com/tm-580-woox-travel
 	<%
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
 	%>
-
 	<!-- ***** Preloader Start ***** -->
 	<div id="js-preloader" class="js-preloader">
 		<div class="preloader-inner">
@@ -59,7 +58,6 @@ https://templatemo.com/tm-580-woox-travel
 		</div>
 	</div>
 	<!-- ***** Preloader End ***** -->
-
 	<!-- ***** Header Area Start ***** -->
 	<header class="header-area header-sticky">
 		<div class="container">
@@ -107,210 +105,6 @@ https://templatemo.com/tm-580-woox-travel
 		</div>
 	</header>
 	<!-- ***** Header Area End ***** -->
-	<div class="second-page-heading" style="height: 100px;">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<h2>댓글/리뷰/커뮤니티</h2>
-					<div class="main-button">
-						<a href="MyPage.jsp">BACK</a>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div>
-		<div>
-			<div>
-				<%
-				ArrayList<CommentDTO> comment_list = new CommentDAO().my_comment(info.getMb_email());
-				%>
-				<h4>댓글조회</h4>
-
-				<!-- 번호 -->
-				<%
-				if (info != null) {
-				%>
-				<div style="margin-bottom: 40px;">
-					<div class="table">
-						<table>
-							<%
-							for (int i = 0; i < comment_list.size(); i++) {
-							%>
-							<tr>
-								<td><p>댓글번호</p>
-								</td>
-								<td><p>댓글내용</p>
-								</td>
-								<td><p>댓글날짜</p>
-								</td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>
-									<p class="form-label"><%=comment_list.get(i).getComment_num()%></p>
-								</td>
-								<td>
-									<p class="form-label"><%=comment_list.get(i).getComment_content()%></p>
-								</td>
-								<td>
-									<p class="form-label"><%=comment_list.get(i).getComment_date()%></p>
-								</td>
-								<td>
-								<button ><a href="mypage_update.jsp?name=댓글&num=<%=comment_list.get(i).getComment_num()%>">수정</a></button>
-								</td>
-								<td>
-								<button ><a href="CommentDeleteService?num=<%=comment_list.get(i).getComment_num()%>">삭제</a></button>
-								</td>
-							</tr>
-							<%
-							}
-							%>
-
-						</table>
-					</div>
-				</div>
-				<%
-				}
-				%>
-			</div>
-		</div>
-	</div>
-	<br>
-
-
-
-	<div>
-		<div>
-			<div>
-
-
-				<h4>리뷰조회</h4>
-				<%
-				ArrayList<ReviewDTO> review_list = new ReviewDAO().my_review(info.getMb_email());
-				%>
-				<%
-				if (info != null) {
-				%>
-				<div style="margin-bottom: 40px;">
-					<div class="table">
-						<table>
-							<%
-							for (int i = 0; i < review_list.size(); i++) {
-							%>
-							<tr>
-								<td><p>리뷰번호</p>
-								</td>
-								<td><p>내용</p>
-								</td>
-								<td><p>점수</p>
-								</td>
-								<td><p>날짜</p>
-								</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>
-									<p class="form-label"><%=review_list.get(i).getReview_num()%></p>
-								</td>
-								<td>
-									<p class="form-label"><%=review_list.get(i).getReview_content()%></p>
-								</td>
-								<td>
-									<p class="form-label"><%=review_list.get(i).getScore()%></p>
-								</td>
-								<td>
-									<p class="form-label"><%=review_list.get(i).getReview_date()%></p>
-								</td>
-								<td>
-								<button ><a href="mypage_update.jsp?name=리뷰&num=<%=review_list.get(i).getReview_num()%>">수정</a></button>
-								</td>
-								<td>
-								<button ><a href="ReviewDeleteService?num=<%=review_list.get(i).getReview_num()%>">삭제</a></button>
-								</td>
-							</tr>
-
-					<%
-					}
-					%>
-						</table>
-					</div>
-				</div>
-				<%
-				}
-				%>
-			</div>
-		</div>
-	</div>
-	<br>
-	<div>
-		<div>
-			<div>
-
-				<h4>커뮤니티조회</h4>
-				<%
-				ArrayList<BoardDTO> board_list = new BoardDAO().my_board(info.getMb_email());
-				%>
-				<%
-				if (info != null) {
-				%>
-				<div style="margin-bottom: 40px;">
-					<div class="table">
-						<table>
-							<%
-							for (int i = 0; i < board_list.size(); i++) {
-							%>
-							<tr>
-								<td><p>커뮤니티번호</p>
-								</td>
-								<td><p>제목</p>
-								</td>
-								<td><p>내용</p>
-								</td>
-								<td><p>첨부파일</p>
-								</td>
-								<td><p>카테고리</p>
-								</td>
-								<td><p>작성일자</p>
-								</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>
-									<p class="form-label"><%=board_list.get(i).getBoard_num()%></p>
-								</td>
-								<td>
-									<p class="form-label"><%=board_list.get(i).getBoard_title()%></p>
-								</td>
-								<td>
-									<p class="form-label"><%=board_list.get(i).getBoard_content()%></p>
-								</td>
-								<td>
-									<p class="form-label"><%=board_list.get(i).getBoard_file()%></p>
-								</td>
-								<td>
-									<p class="form-label"><%=board_list.get(i).getBoard_category()%></p>
-								</td>
-								<td>
-									<p class="form-label"><%=board_list.get(i).getBoard_date()%></p>
-								</td>
-								<td><button ><a href="mypage_update.jsp?name=커뮤니티&num=<%=board_list.get(i).getBoard_num()%>">수정</a></button></td>
-								<td><button ><a href="CommunityDeleteService?num=<%=board_list.get(i).getBoard_num()%>">삭제</a></button></td>
-							</tr>
-							<%
-							}
-							%>
-						</table>
-					</div>
-				</div>
-				<%
-				}
-				%>
-			</div>
-		</div>
-	</div>
 	<!-- 모달 -->
 	<div class="modalPopup" style="display: none;">
 		<div class="ModalBack" onclick
@@ -404,6 +198,232 @@ https://templatemo.com/tm-580-woox-travel
 	</div>
 
 
+	<div class="second-page-heading">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h2>댓글/리뷰/커뮤니티</h2>
+					<div class="main-button">
+						<a href="MyPage.jsp"
+							style="width: 110px; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none;">BACK</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<%
+	ArrayList<CommentDTO> comment_list = new CommentDAO().my_comment(info.getMb_email());
+	%>
+	<div class="cities-town"
+		style="display: inline-block; margin-left: 350px;">
+		<div class="container">
+			<div class="row">
+				<div class="slider-content" style="width: 1200px;">
+					<div class="transfer-form" style="margin: 20px;">
+						<div class="col-lg-12">
+							<h2 style="margin-bottom: 50px; padding: 20px;">댓글 조회</h2>
+						</div>
+
+						<!-- 번호 -->
+						<%
+						if (info != null) {
+						%>
+						<div class="col-lg-6" style="padding: 20px;">
+							<div style="margin-bottom: 40px;">
+								<div class="table">
+									<table style="padding: 20px; width: 100%;">
+										<%
+										for (int i = 0; i < comment_list.size(); i++) {
+										%>
+										<tr>
+											<td><p>댓글번호</p></td>
+											<td><p>댓글내용</p></td>
+											<td><p>댓글날짜</p></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>
+												<p class="form-label"><%=comment_list.get(i).getComment_num()%></p>
+											</td>
+											<td>
+												<p class="form-label"><%=comment_list.get(i).getComment_content()%></p>
+											</td>
+											<td>
+												<p class="form-label"><%=comment_list.get(i).getComment_date()%></p>
+											</td>
+											<td>
+												<button>
+													<a
+														href="mypage_update.jsp?name=댓글&num=<%=comment_list.get(i).getComment_num()%>">수정</a>
+												</button>
+
+												<button>
+													<a
+														href="CommentDeleteService?num=<%=comment_list.get(i).getComment_num()%>">삭제</a>
+												</button>
+											</td>
+										</tr>
+										<%
+										}
+										%>
+
+									</table>
+								</div>
+							</div>
+							<%
+							}
+							%>
+						</div>
+
+						<div class="col-lg-12">
+							<h2 style="margin-bottom: 50px; padding: 20px;">리뷰 조회</h2>
+						</div>
+
+						<%
+						ArrayList<ReviewDTO> review_list = new ReviewDAO().my_review(info.getMb_email());
+						%>
+						<%
+						if (info != null) {
+						%>
+						<div class="col-lg-6" style="padding: 20px;">
+							<div style="margin-bottom: 40px;">
+								<div class="table">
+									<table style="padding: 20px; width: 100%;">
+										<%
+										for (int i = 0; i < review_list.size(); i++) {
+										%>
+										<tr>
+											<td><p>리뷰번호</p></td>
+											<td><p>내용</p></td>
+											<td><p>점수</p></td>
+											<td><p>날짜</p></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>
+												<p class="form-label"><%=review_list.get(i).getReview_num()%></p>
+											</td>
+											<td>
+												<p class="form-label"><%=review_list.get(i).getReview_content()%></p>
+											</td>
+											<td>
+												<p class="form-label"><%=review_list.get(i).getScore()%></p>
+											</td>
+											<td>
+												<p class="form-label"><%=review_list.get(i).getReview_date()%></p>
+											</td>
+											<td>
+												<button>
+													<a
+														href="mypage_update.jsp?name=리뷰&num=<%=review_list.get(i).getReview_num()%>">수정</a>
+												</button>
+												<button>
+													<a
+														href="ReviewDeleteService?num=<%=review_list.get(i).getReview_num()%>">삭제</a>
+												</button>
+											</td>
+										</tr>
+
+										<%
+										}
+										%>
+									</table>
+								</div>
+							</div>
+							<%
+							}
+							%>
+						</div>
+
+						<div class="col-lg-12">
+							<h2 style="margin-bottom: 50px; padding: 20px;">커뮤니티 조회</h2>
+						</div>
+						<%
+						ArrayList<BoardDTO> board_list = new BoardDAO().my_board(info.getMb_email());
+						%>
+						<%
+						if (info != null) {
+						%>
+						<div class="col-lg-6" style="padding: 20px;">
+							<div style="margin-bottom: 40px;">
+								<div class="table">
+									<table style="padding: 20px; width: 100%;">
+										<%
+										for (int i = 0; i < board_list.size(); i++) {
+										%>
+										<tr>
+											<td><p>커뮤니티번호</p></td>
+											<td><p>제목</p></td>
+											<td><p>내용</p></td>
+											<td><p>첨부파일</p></td>
+											<td><p>카테고리</p></td>
+											<td><p>작성일자</p></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>
+												<p class="form-label"><%=board_list.get(i).getBoard_num()%></p>
+											</td>
+											<td>
+												<p class="form-label"><%=board_list.get(i).getBoard_title()%></p>
+											</td>
+											<td>
+												<p class="form-label"><%=board_list.get(i).getBoard_content()%></p>
+											</td>
+											<td>
+												<p class="form-label"><%=board_list.get(i).getBoard_file()%></p>
+											</td>
+											<td>
+												<p class="form-label"><%=board_list.get(i).getBoard_category()%></p>
+											</td>
+											<td>
+												<p class="form-label"><%=board_list.get(i).getBoard_date()%></p>
+											</td>
+											<td><button>
+													<a
+														href="mypage_update.jsp?name=커뮤니티&num=<%=board_list.get(i).getBoard_num()%>">수정</a>
+												</button>
+												<button>
+													<a
+														href="CommunityDeleteService?num=<%=board_list.get(i).getBoard_num()%>">삭제</a>
+												</button></td>
+										</tr>
+										<%
+										}
+										%>
+									</table>
+								</div>
+							</div>
+							<%
+							}
+							%>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<p>
+						Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights
+						reserved. <br>Design: <a href="https://templatemo.com"
+							target="_blank" title="free CSS templates">TemplateMo</a>
+						Distribution: <a href="https://themewagon.com target="_blank">ThemeWagon</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+
 
 
 	<!-- Scripts -->
@@ -449,7 +469,6 @@ https://templatemo.com/tm-580-woox-travel
 			}
 		}
 	</script>
-
 </body>
 
 </html>

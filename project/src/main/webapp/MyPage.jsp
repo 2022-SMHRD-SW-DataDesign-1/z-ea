@@ -36,7 +36,6 @@ https://templatemo.com/tm-580-woox-travel
 	<%
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
 	%>
-
 	<!-- ***** Preloader Start ***** -->
 	<div id="js-preloader" class="js-preloader">
 		<div class="preloader-inner">
@@ -46,9 +45,7 @@ https://templatemo.com/tm-580-woox-travel
 			</div>
 		</div>
 	</div>
-
 	<!-- ***** Preloader End ***** -->
-
 	<!-- ***** Header Area Start ***** -->
 	<header class="header-area header-sticky">
 		<div class="container">
@@ -77,7 +74,7 @@ https://templatemo.com/tm-580-woox-travel
 							<%
 							} else {
 							%>
-							<li><a href="MyPage.jsp" class="modalBtn" class="active"
+							<li><a href="MyPage.jsp" class="active" class="modalBtn"  
 								style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">마이페이지</a>
 							</li>
 							<li><a href="LogoutService" class="modalBtn"
@@ -96,23 +93,7 @@ https://templatemo.com/tm-580-woox-travel
 		</div>
 	</header>
 	<!-- ***** Header Area End ***** -->
-
-	<div class="dark">
-		<div class="second-page-heading">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<h4>내 여행관리는 여기에서</h4>
-						<h2>My Page</h2>
-						<div class="main-button">
-							<p>내 여행일정 관리부터 소통까지 !</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
+	<!-- 모달 -->
 	<div class="modalPopup" style="display: none;">
 		<div class="ModalBack" onclick
 			style="position: fixed; background-color: black; width: 100%; height: 100%; opacity: 0.9;">
@@ -169,7 +150,8 @@ https://templatemo.com/tm-580-woox-travel
 							onclick="checkE()"></td>
 					</tr>
 					<tr>
-						<th colspan="2"><span style="padding: 10px;" id="resultCheck"></span></th>
+						<th colspan="2"><span style="padding: 10px;" id="resultCheck"></span>
+						</th>
 					</tr>
 					<tr>
 						<td>
@@ -203,7 +185,22 @@ https://templatemo.com/tm-580-woox-travel
 		</div>
 	</div>
 
-	<!-- ***** Header Area End ***** -->
+
+	<div class="dark">
+		<div class="second-page-heading">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<h4>내 여행관리는 여기에서</h4>
+						<h2>My Page</h2>
+						<div class="main-button">
+							<p>내 여행일정 관리부터 소통까지 !</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 
@@ -222,8 +219,7 @@ https://templatemo.com/tm-580-woox-travel
 						<i class="fa fa-phone"></i>
 						<h4>예약 내역</h4>
 
-						<a href="my Reservation.jsp">내 예약 확인하기</a> <a
-							href="reservation_show.jsp">내 예약 확인하기</a>
+						<a href="reservation_show.jsp">내 예약 확인하기</a>
 
 					</div>
 				</div>

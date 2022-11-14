@@ -53,7 +53,6 @@ https://templatemo.com/tm-580-woox-travel
 	<%
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
 	%>
-
 	<!-- ***** Preloader Start ***** -->
 	<div id="js-preloader" class="js-preloader">
 		<div class="preloader-inner">
@@ -63,9 +62,7 @@ https://templatemo.com/tm-580-woox-travel
 			</div>
 		</div>
 	</div>
-
 	<!-- ***** Preloader End ***** -->
-
 	<!-- ***** Header Area Start ***** -->
 	<header class="header-area header-sticky">
 		<div class="container">
@@ -83,7 +80,7 @@ https://templatemo.com/tm-580-woox-travel
 							<li><a href="about.jsp">글램핑&카라반</a></li>
 							<li><a href="reservation.jsp">예약</a></li>
 							<li><a href="transfer.jsp">양도</a></li>
-							<li><a href="community.jsp">커뮤니티</a></li>
+							<li><a href="community.jsp"  class="active">커뮤니티</a></li>
 							<%
 							if (info == null) {
 							%>
@@ -91,7 +88,6 @@ https://templatemo.com/tm-580-woox-travel
 								<button class="modalBtn" onclick="show()"
 									style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">로그인</button>
 							</li>
-
 							<%
 							} else {
 							%>
@@ -113,17 +109,17 @@ https://templatemo.com/tm-580-woox-travel
 			</div>
 		</div>
 	</header>
-
-	<div class="modalPopup"
-		style="z-index: 100; display: none; margin-top: 45px;">
-		<div class="ModalBack"
-			style="position: fixed; background-color: black; width: 100%; height: 100%; opacity: 0.5;">
+	<!-- ***** Header Area End ***** -->
+	<!-- 모달 -->
+	<div class="modalPopup" style="display: none;">
+		<div class="ModalBack" onclick
+			style="position: fixed; background-color: black; width: 100%; height: 100%; opacity: 0.9;">
 		</div>
 		<div class="LoginModal"
-			style="text-align: center; z-index: 3000; background-color: white; width: 500px; height: 650px; margin-top: 10%; margin-left: 36%; position: fixed; align-content: center;">
+			style="text-align: center; background-color: white; width: 540px; height: 650px; margin-top: 10%; margin-left: 36%; position: fixed; align-content: center;">
 			<!-- 로그인 -->
 			<form action="LoginService" method="post">
-				<table style="margin: auto; margin-top: 8%;">
+				<table style="margin: auto; margin-top: 10%;">
 					<th colspan="2" style="font-size: 20px; padding: 10px;">로그인</th>
 					<tr>
 						<td>
@@ -147,7 +143,7 @@ https://templatemo.com/tm-580-woox-travel
 			</form>
 			<!-- 회원가입-->
 			<form action="JoinService" method="post">
-				<table style="margin: auto; margin-top: 8%;">
+				<table style="margin: auto; margin-top: 10%;">
 					<th colspan="2" style="font-size: 20px; padding: 10px;">회원가입</th>
 					<tr>
 						<td>
@@ -171,7 +167,8 @@ https://templatemo.com/tm-580-woox-travel
 							onclick="checkE()"></td>
 					</tr>
 					<tr>
-						<th colspan="2"><span style="padding: 10px;" id="resultCheck"></span></th>
+						<th colspan="2"><span style="padding: 10px;" id="resultCheck"></span>
+						</th>
 					</tr>
 					<tr>
 						<td>
@@ -204,9 +201,9 @@ https://templatemo.com/tm-580-woox-travel
 			</form>
 		</div>
 	</div>
-	<!-- ***** Header Area End ***** -->
 
-	<div class="dark" style="z-index: 0;">
+
+	<div class="dark">
 		<div class="second-page-heading">
 			<div class="container">
 				<div class="row">

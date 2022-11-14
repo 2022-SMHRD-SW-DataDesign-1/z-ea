@@ -253,34 +253,16 @@ Pre-loader Style
 	pointer-events: none;
 }
 
-@
--webkit-keyframes dot { 50% {
-	-webkit-transform: translateX(96px);
-	transform: translateX(96px);
-}
-
-}
-@
-keyframes dot { 50% {
-	-webkit-transform: translateX(96px);
-	transform: translateX(96px);
-}
-
-}
-@
--webkit-keyframes dots { 50% {
+-webkit-keyframes dots {
 	-webkit-transform: translateX(-31px);
 	transform: translateX(-31px);
 }
 
-}
-@
-keyframes dots { 50% {
+keyframes dots {
 	-webkit-transform: translateX(-31px);
 	transform: translateX(-31px);
 }
 
-}
 .preloader-inner {
 	position: relative;
 	width: 142px;
@@ -974,16 +956,6 @@ Banner Style
 	{
 	animation: progressBarFill 5s linear;
 }
-/* Animations */
-@keyframes progressBarFill {from { margin-left:-100%;
-	
-}
-
-to {
-	margin-left: 0;
-}
-
-}
 
 /* 
 ---------------------------------------------
@@ -1276,7 +1248,7 @@ About Page Style
 
 .cities-town .slider-content h2 {
 	font-size: 30px;
-	margin:auto;
+	margin: auto;
 }
 
 .cities-town .slider-content h2 em {
@@ -1520,30 +1492,22 @@ body #user-button {
 	animation: slide 3s ease-out forwards;
 }
 
-@
--webkit-keyframes slide { 0%, 50% {
-	opacity: 0;
-	display: block !important;
-}
-
-100
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 %
 {
 opacity
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1573,7 +1537,49 @@ opacity
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1602,7 +1608,59 @@ display
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1632,8 +1690,6 @@ block
 
 
 
-!
-important
 
 
 
@@ -1646,84 +1702,6 @@ important
 
 
 
-;
-}
-}
-@
-keyframes slide { 0%, 50% {
-	opacity: 0;
-	display: block !important;
-}
-
-100
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%
-{
-opacity
-
-:
-
-
-
-
-1
-
-
-
-
-
-
-
-
-
-
-
-
-;
-display
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-block
 
 
 
@@ -1740,6 +1718,32 @@ block
 
 !
 important
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1879,9 +1883,61 @@ body #user-button .u-icons a.u-random div {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 %
 {
 transform
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1911,7 +1967,59 @@ transform
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 rotate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1941,6 +2049,32 @@ rotate
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 360deg
 
 
@@ -1956,7 +2090,59 @@ rotate
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1992,9 +2178,61 @@ keyframes diespin { 0% {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 %
 {
 transform
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2024,7 +2262,59 @@ transform
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 rotate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2060,6 +2350,32 @@ rotate
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 360deg
 
 
@@ -2075,7 +2391,59 @@ rotate
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
