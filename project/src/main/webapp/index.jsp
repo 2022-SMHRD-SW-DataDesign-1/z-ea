@@ -290,7 +290,7 @@ https://templatemo.com/tm-580-woox-travel
 		//		ArrayList<ItemDTO> view_list = new ItemDAO().Filter(surv_info.getMb_view());
 	%>
 <script>
-		function camp_images() {
+		function camp_images_info() {
 			let item_num =
 	<%=age_list.get(0).getNum()%>
 		;
@@ -321,7 +321,7 @@ https://templatemo.com/tm-580-woox-travel
 										<div class="col-lg-4 col-sm-5">
 											<div class="image">
 											<img id="camp_images" src="">
-												<script>document.getElymentById('camp_images').src=camp_images_info()</script>
+												<script>document.getElementById('camp_images').src=camp_images_info()</script>
 												
 											</div>
 										</div>

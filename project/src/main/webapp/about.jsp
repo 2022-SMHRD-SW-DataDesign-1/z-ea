@@ -441,9 +441,11 @@ https://templatemo.com/tm-580-woox-travel
 		let value;
 		
 		if(id.style.backgroundColor == "white"){
-		id.style.backgroundColor ="blue";
+		id.style.backgroundColor ="#7d5fff";
+		id.style.boder-color ="#7d5fff";
 		value = id.textContent;
 		console.log(value);
+		
 		$.ajax({
 			url : 'Filter',  //요청 서버 url
 			data : {'gc_tag': value},	//요청할 때 같이 보내줄 데이터

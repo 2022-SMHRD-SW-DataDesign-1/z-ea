@@ -34,6 +34,15 @@
 <link rel="stylesheet" href="assets/css/animate.css">
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+<style>
+.second-page-heading {
+	background-image: url(assets/images/배너사진할꼬얌2.jpg);
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 260px 0px 190px 0px;
+	text-align: center;
+</style>
 </head>
 
 <body>
