@@ -123,17 +123,17 @@ https://templatemo.com/tm-580-woox-travel
 	<%
 	ArrayList<ReservationDTO> re_list = new ReservationDAO().my_re_show(info.getMb_email());
 	ArrayList<RoomDTO> ro_list = new RoomDAO().my_room_show(info.getMb_email());
-	ArrayList<GlampingDTO> gl_list = new GlampingDAO().my_glamping_show(info.getMb_email());
+	
 	System.out.println(re_list.size());
 	System.out.println(ro_list.size());
-	System.out.println(gl_list.size());
+
 	%>
 	<%
 	if (info != null) {
 	%>
 	<div class="reservation-form">
-		<div class="row" style="margin-bottom: 40px;">
-			<div class="col-lg-12">
+		<div class="row" style="margin-bottom: 40px; text-align: center;">
+			<div class="col-lg-12" >
 				<form id="reservation-form" name="gs" method="submit" role="search"
 					action="#">
 
@@ -141,7 +141,9 @@ https://templatemo.com/tm-580-woox-travel
 						<h4>예약정보조회</h4>
 				</form>
 				<%
+				
 				for (int i = 0; i < re_list.size(); i++) {
+					GlampingDTO gl_list = new GlampingDAO().my_glamping_show((re_list.get(i).getGc_num()));
 				%>
 				<!-- 이름 -->
 				<div style="margin-bottom: 40px;">
@@ -149,96 +151,92 @@ https://templatemo.com/tm-580-woox-travel
 					<div class="col-lg-6">
 						<fieldset>
 							<label for="Name" class="form-label">이용자이메일</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=re_list.get(i).getMb_email()%></p>
+							<div type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=re_list.get(i).getMb_email()%></div>
 						</fieldset>
 					</div>
-					<div class="col-lg-6">
+					 <div class="col-lg-6">
 						<fieldset>
 							<label for="Name" class="form-label">장소유형</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=gl_list.get(i).getGc_type()%></p>
+						
+							<div type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=gl_list.getGc_type()%></div>
+							
+
+							
 						</fieldset>
 					</div>
-					<div class="col-lg-6">
+				<div class="col-lg-6">
 						<fieldset>
 							<label for="Name" class="form-label">장소명</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=gl_list.get(i).getGc_name()%></p>
+						
+							<div type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=gl_list.getGc_name()%></div>
+						
 						</fieldset>
 					</div>
 					<div class="col-lg-6">
 						<fieldset>
 							<label for="Name" class="form-label">장소연락처</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=gl_list.get(i).getGc_tel()%></p>
+	
+							<div type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=gl_list.getGc_tel()%></div>
+						
 						</fieldset>
 					</div>
 					<div class="col-lg-6">
 						<fieldset>
 							<label for="Name" class="form-label">장소주소</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=gl_list.get(i).getGc_addr()%></p>
+							<div type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=gl_list.getGc_addr()%></div>
+						
 						</fieldset>
 					</div>
 					<div class="col-lg-6">
 						<fieldset>
 							<label for="Name" class="form-label">장소시설</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=gl_list.get(i).getGc_facilities()%></p>
+							<div type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=gl_list.getGc_facilities()%></div>
 						</fieldset>
 					</div>
 					<div class="col-lg-6">
 						<fieldset>
 							<label for="Name" class="form-label">장소부가시설</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=gl_list.get(i).getGc_Ad_facilities()%></p>
+							<div type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=gl_list.getGc_Ad_facilities()%></div>
 						</fieldset>
 					</div>
 					<div class="col-lg-6">
 						<fieldset>
 							<label for="Name" class="form-label">가격</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=gl_list.get(i).getGc_price()%></p>
+							<div type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=gl_list.getGc_price()%></div>
 						</fieldset>
 					</div>
 
 					<div class="col-lg-6">
 						<fieldset>
 							<label for="Name" class="form-label">방이름</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=ro_list.get(i).getRoom_name()%></p>
+							<div type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=re_list.get(i).getRoom_num()%></div>
+						</fieldset>
+					</div>
+			
+					<div class="col-lg-6">
+						<fieldset>
+							<label for="Name" class="form-label">체크인</label>
+							<div type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=re_list.get(i).getCheck_in()%></div>
 						</fieldset>
 					</div>
 					<div class="col-lg-6">
 						<fieldset>
-							<label for="Name" class="form-label">방상태</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=ro_list.get(i).getRoom_status()%></p>
+							<label for="Name" class="form-label">체크 아웃</label>
+							<div type="text" name="mb_name" class="Name" placeholder="name"
+								autocomplete="on" required><%=re_list.get(i).getCheck_out()%></div>
 						</fieldset>
 					</div>
-					<div class="col-lg-6">
-						<fieldset>
-							<label for="Name" class="form-label">호실제한인원수</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=ro_list.get(i).getPeople_limit()%></p>
-						</fieldset>
-					</div>
-					<div class="col-lg-6">
-						<fieldset>
-							<label for="Name" class="form-label">입실시간</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=re_list.get(i).getCheck_in()%></p>
-						</fieldset>
-					</div>
-					<div class="col-lg-6">
-						<fieldset>
-							<label for="Name" class="form-label">퇴실시간</label>
-							<p type="text" name="mb_name" class="Name" placeholder="name"
-								autocomplete="on" required><%=re_list.get(i).getCheck_out()%></p>
-						</fieldset>
-					</div>
-				</div>
+				</div><hr/>
 				<%
 				}
 				%>
