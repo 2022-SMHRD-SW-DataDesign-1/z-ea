@@ -1,3 +1,4 @@
+<%@page import="java.io.File"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.smhrd.model.ItemDTO"%>
 <%@page import="java.util.ArrayList"%>
@@ -279,7 +280,7 @@
 		//			theme_list.add(new);
 		//		}
 	%>
-<%-- 
+	<%-- 
 	<script>
 		function camp_images_info() {
 			for(let j=0;j<=age_list.size();j++){
@@ -303,56 +304,62 @@ item_list = (ArrayList) request.getAttribute("item_list");%>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8" style="margin-left: 150px;">
-					<div class="items">
-						<div class="row"
-							style="width: 1000px; height: 800px; overflow: scroll;">
+					<div class="row"
+						style="width: 1400px; height: 600px; overflow: scroll;">
 
-							<%if (age_list.size() > 0) {%>
-							<%for (int i = 0; i < age_list.size(); i++) {%>
-							<div class="col-lg-12">
-								<div class="item">
-									<div class="row">
-										<div class="col-lg-4 col-sm-5">
-											<div class="image">
-												<img id="camp_images" src="">
-												<script>
-													document
-															.getElementById('camp_images').src = camp_images_info();
-												</script>
+						<%
+						if (age_list.size() > 0) {
+						%>
+						<%
+						for (int i = 0; i < age_list.size(); i++) {
+						%>
 
-
-											</div>
+						<div class="col-lg-12">
+							<div class="item">
+								<div class="row">
+									<div class="col-lg-4 col-sm-5">
+										<div class="image">
+											<img id="camp_images" src="assets/camping/<%=i + 330%>_1.jpg"
+												onerror="this.style.display='none'">
 										</div>
+									</div>
 
-										<div class="col-lg-8 col-sm-7">
-											<div class="right-content">
-												<h4><%=age_list.get(i).getName()%></h4>
-												<span><%=age_list.get(i).getTag()%></span>
-												<div class="main-button">
-													<a id="item_list" class="item_list"
-														href="ShowService?num=<%=age_list.get(i).getNum()%>">상세보기</a>
-												</div>
-												<p><%=age_list.get(i).getAddr()%></p>
-												<ul class="info">
-													<li><i class="fa fa-user"></i>전화번호 : <%=age_list.get(i).getTel()%></li>
-													<li><i class="fa fa-globe"></i>가격 : <%=age_list.get(i).getPrice()%></li>
-													<li><i class="fa fa-home"></i>유형 : <%=age_list.get(i).getType()%></li>
-												</ul>
-												<div class="text-button">
-													<a href="about.jsp">더보려면?<i class="fa fa-arrow-right"></i></a>
-												</div>
+									<div class="col-lg-8 col-sm-7">
+										<div class="right-content">
+											<h4><%=age_list.get(i).getName()%></h4>
+											<span><%=age_list.get(i).getTag()%></span>
+											<div class="main-button">
+												<a id="item_list" class="item_list"
+													href="ShowService?num=<%=age_list.get(i).getNum()%>">상세보기</a>
+											</div>
+											<p><%=age_list.get(i).getAddr()%></p>
+											<ul class="info">
+												<li><i class="fa fa-user"></i>전화번호 : <%=age_list.get(i).getTel()%></li>
+												<li><i class="fa fa-globe"></i>가격 : <%=age_list.get(i).getPrice()%></li>
+												<li><i class="fa fa-home"></i>유형 : <%=age_list.get(i).getType()%></li>
+											</ul>
+											<div class="text-button">
+												<a href="about.jsp">더보려면?<i class="fa fa-arrow-right"></i></a>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+						</div>
 
 
+						<%
+						}
+						}
+						%>
+						<%--<%
+=======
+							
+							
+							<% }}%>
+							<%--
 							<%
-							}
-							}
-							%>
-							<%--<%
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
 							}
 							%>
 							<%
@@ -395,6 +402,7 @@ item_list = (ArrayList) request.getAttribute("item_list");%>
 									</div>
 								</div>
 							</div>
+							
 							<%
 							}
 							%>
@@ -654,19 +662,19 @@ item_list = (ArrayList) request.getAttribute("item_list");%>
 							}
 							}
 							%> --%>
-							<div class="col-lg-12">
-								<ul class="page-numbers">
-									<!-- <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
+						<div class="col-lg-12">
+							<ul class="page-numbers">
+								<!-- <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
 									<li><a href="#">1</a></li> -->
-									<li class="active"><a href="#">up</a></li>
-									<!-- 	<li><a href="#">3</a></li>
+								<li class="active"><a href="#">up</a></li>
+								<!-- 	<li><a href="#">3</a></li>
 									<li><a href="#"><i class="fa fa-arrow-right"></i></a></li> -->
-								</ul>
-							</div>
+							</ul>
 						</div>
 					</div>
 				</div>
-				<!-- <div class="col-lg-4">
+			</div>
+			<!-- <div class="col-lg-4">
 					<div class="side-bar-map">
 						<div class="row">
 							<div class="col-lg-12">
@@ -680,8 +688,8 @@ item_list = (ArrayList) request.getAttribute("item_list");%>
 						</div>
 					</div>
 				</div> -->
-			</div>
 		</div>
+	</div>
 	</div>
 	<div class="col-lg-12">
 		<ul class="page-numbers">
@@ -705,10 +713,8 @@ item_list = (ArrayList) request.getAttribute("item_list");%>
 			<div class="row">
 				<div class="col-lg-12">
 					<p>
-						Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights
-						reserved. <br>Design: <a href="https://templatemo.com"
-							target="_blank" title="free CSS templates">TemplateMo</a>
-						Distribution: <a href="https://themewagon.com target="_blank">ThemeWagon</a>
+						Copyright © 2022 <a href="#">ze:a</a> Company. All rights
+						reserved.
 					</p>
 				</div>
 			</div>
@@ -800,6 +806,17 @@ item_list = (ArrayList) request.getAttribute("item_list");%>
 
 		}
 	</script>
+
+
+	<script>
+			function camp_images_info(){
+			
+				get.email   
+				<img id="showitem" src="">
+				<script>
+					document
+							.getElementById('showitem').src = showitem_info();
+				</script>
 
 </body>
 
