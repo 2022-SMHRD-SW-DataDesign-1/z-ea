@@ -223,27 +223,27 @@ https://templatemo.com/tm-580-woox-travel
 				<div class="slider-content" style="width: 1200px;">
 					<div class="transfer-form" style="margin: 20px;">
 						<div class="col-lg-12">
-							<h2 style="margin-bottom: 50px; padding: 20px;">댓글 조회</h2>
+							<h2 style="padding: 20px;">댓글 조회</h2>
 						</div>
 
 						<!-- 번호 -->
 						<%
 						if (info != null) {
 						%>
-						<div class="col-lg-6" style="padding: 20px;">
-							<div style="margin-bottom: 40px;">
+						<div class="col-lg-6" style="padding: 20px; width: 100%;">
+							<div>
 								<div class="table">
 									<table style="padding: 20px; width: 100%;">
 										<%
 										for (int i = 0; i < comment_list.size(); i++) {
 										%>
-										<tr>
+										<tr style="padding: 5px; text-align: center;">
 											<td><p>댓글번호</p></td>
 											<td><p>댓글내용</p></td>
 											<td><p>댓글날짜</p></td>
 											<td></td>
 										</tr>
-										<tr>
+										<tr style="padding: 5px; text-align: center;">
 											<td>
 												<p class="form-label"><%=comment_list.get(i).getComment_num()%></p>
 											</td>
@@ -254,12 +254,12 @@ https://templatemo.com/tm-580-woox-travel
 												<p class="form-label"><%=comment_list.get(i).getComment_date()%></p>
 											</td>
 											<td>
-												<button>
+												<button style="border: none; font-weight: bold;">
 													<a
 														href="mypage_update.jsp?name=댓글&num=<%=comment_list.get(i).getComment_num()%>">수정</a>
 												</button>
 
-												<button>
+												<button style="border: none; font-weight: bold;">
 													<a
 														href="CommentDeleteService?num=<%=comment_list.get(i).getComment_num()%>">삭제</a>
 												</button>
@@ -278,7 +278,7 @@ https://templatemo.com/tm-580-woox-travel
 						</div>
 
 						<div class="col-lg-12">
-							<h2 style="margin-bottom: 50px; padding: 20px;">리뷰 조회</h2>
+							<h2 style="padding: 20px;">리뷰 조회</h2>
 						</div>
 
 						<%
@@ -287,21 +287,21 @@ https://templatemo.com/tm-580-woox-travel
 						<%
 						if (info != null) {
 						%>
-						<div class="col-lg-6" style="padding: 20px;">
-							<div style="margin-bottom: 40px;">
-								<div class="table">
+						<div class="col-lg-6" style="padding: 20px; width: 100%;">
+							<div style="padding: 10px;">
+								<div class="table" style="margin-bottom: 10px;">
 									<table style="padding: 20px; width: 100%;">
 										<%
 										for (int i = 0; i < review_list.size(); i++) {
 										%>
-										<tr>
+										<tr style="padding: 5px; text-align: center;">
 											<td><p>리뷰번호</p></td>
 											<td><p>내용</p></td>
 											<td><p>점수</p></td>
 											<td><p>날짜</p></td>
 											<td></td>
 										</tr>
-										<tr>
+										<tr style="padding: 5px; text-align: center;">
 											<td>
 												<p class="form-label"><%=review_list.get(i).getReview_num()%></p>
 											</td>
@@ -315,11 +315,11 @@ https://templatemo.com/tm-580-woox-travel
 												<p class="form-label"><%=review_list.get(i).getReview_date()%></p>
 											</td>
 											<td>
-												<button>
+												<button style="border: none; font-weight:bold;">
 													<a
 														href="mypage_update.jsp?name=리뷰&num=<%=review_list.get(i).getReview_num()%>">수정</a>
 												</button>
-												<button>
+												<button style="border: none; font-weight:bold;">
 													<a
 														href="ReviewDeleteService?num=<%=review_list.get(i).getReview_num()%>">삭제</a>
 												</button>
@@ -338,7 +338,7 @@ https://templatemo.com/tm-580-woox-travel
 						</div>
 
 						<div class="col-lg-12">
-							<h2 style="margin-bottom: 50px; padding: 20px;">커뮤니티 조회</h2>
+							<h2 style="padding: 20px;">커뮤니티 조회</h2>
 						</div>
 						<%
 						ArrayList<BoardDTO> board_list = new BoardDAO().my_board(info.getMb_email());
@@ -346,7 +346,7 @@ https://templatemo.com/tm-580-woox-travel
 						<%
 						if (info != null) {
 						%>
-						<div class="col-lg-6" style="padding: 20px;">
+						<div class="col-lg-6" style="padding: 20px; width: 100%;">
 							<div style="margin-bottom: 40px;">
 								<div class="table">
 									<table style="padding: 20px; width: 100%;">
@@ -381,11 +381,11 @@ https://templatemo.com/tm-580-woox-travel
 											<td>
 												<p class="form-label"><%=board_list.get(i).getBoard_date()%></p>
 											</td>
-											<td><button>
+											<td><button style="border: none; font-weight: bold;">
 													<a
 														href="mypage_update.jsp?name=커뮤니티&num=<%=board_list.get(i).getBoard_num()%>">수정</a>
 												</button>
-												<button>
+												<button style="border: none; font-weight: bold;">
 													<a
 														href="CommunityDeleteService?num=<%=board_list.get(i).getBoard_num()%>">삭제</a>
 												</button></td>

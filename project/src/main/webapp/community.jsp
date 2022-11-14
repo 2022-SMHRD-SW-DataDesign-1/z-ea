@@ -29,10 +29,6 @@
 <link rel="stylesheet" href="assets/css/animate.css">
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-<!--TemplateMo 580 Woox Travel
-
-https://templatemo.com/tm-580-woox-travel
--->
 </head>
 
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
@@ -80,7 +76,7 @@ https://templatemo.com/tm-580-woox-travel
 							<li><a href="about.jsp">글램핑&카라반</a></li>
 							<li><a href="reservation.jsp">예약</a></li>
 							<li><a href="transfer.jsp">양도</a></li>
-							<li><a href="community.jsp"  class="active">커뮤니티</a></li>
+							<li><a href="community.jsp" class="active">커뮤니티</a></li>
 							<%
 							if (info == null) {
 							%>
