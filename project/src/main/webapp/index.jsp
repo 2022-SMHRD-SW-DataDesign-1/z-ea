@@ -1,3 +1,4 @@
+<%@page import="java.io.File"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.smhrd.model.ItemDTO"%>
 <%@page import="java.util.ArrayList"%>
@@ -324,29 +325,25 @@ https://templatemo.com/tm-580-woox-travel
 	<div class="visit-country" >
 		<div class="container">
 			<div class="row" >
-				<div class="col-lg-8" style="margin-left: 150px;">
+				<div class="col-lg-8" style="text-align: center;">
 					<div class="items">
-						<div class="row" style="width : 1000px; height : 800px; overflow: scroll;">
+						<div class="row" style="width : 1400px; height : 600px; overflow: scroll;">
 							
 							 <%
 							if (age_list.size() > 0) {
 							%>
 							<%
 							for (int i = 0; i < age_list.size(); i++) {
+							
 							%>
+							
 							<div class="col-lg-12">
 								<div class="item">
 									<div class="row">
 										<div class="col-lg-4 col-sm-5">
 											<div class="image">
-											<img id="camp_images" src="">
-												<script>document.getElementById('camp_images').src=camp_images_info()</script>
-												
-												<img id="showitem" src="assets/images/country-0<%=i + 1%>.jpg">
-												<script>
-													document
-															.getElementById('showitem').src = showitem_info();
-												</script>
+											<img id="camp_images" src="assets/camping/<%=i+330%>_1.jpg" onerror="this.style.display='none'" >
+											
 												
 											</div>
 										</div>
@@ -377,8 +374,9 @@ https://templatemo.com/tm-580-woox-travel
 							</div>
 							
 							
-							<%}} %>
-							<%--<%
+							<% }}%>
+							<%--
+							<%
 							}
 							%>
 							<%
@@ -421,6 +419,7 @@ https://templatemo.com/tm-580-woox-travel
 									</div>
 								</div>
 							</div>
+							
 							<%
 							}
 							%>
@@ -828,8 +827,6 @@ https://templatemo.com/tm-580-woox-travel
 		}
 	</script>
 	
-			}
-		</script>
 		
 			<script >
 			function camp_images_info(){

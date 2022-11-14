@@ -269,7 +269,7 @@
 							</div>
 							<!-- //사진보기 -->
 
-<<<<<<< HEAD
+
 					<div class="col-lg-12" style="margin-top: -250px;">
 						<div class='rap'>
 							<h2 id="topTitle" style="font-size: 35px;"><%=item.getName()%></h2>
@@ -281,7 +281,6 @@
 						</div>
 					</div>
 
-<<<<<<< HEAD
 
 					<div class="col-lg-12" style="margin-top: -300px;">
 						<div class='rap'>
@@ -302,15 +301,7 @@
 								</div>
 
 								<div class="grid dateBoard" style="margin-top: 50px;"></div>
-=======
-					<div class="col-lg-12" style="margin-top: -300px;">
-						<div class='rap'>
-							<h4>일정 선택하기</h4>
-							<div class="header" style="margin-top: 30px;">
-								<div class="btn prevDay"></div>
-								<h2 id="yearMonth" class='dateTitle'></h2>
-								<div class="btn nextDay"></div>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-SW-DataDesign-1/z-ea.git
+
 							</div>
 
 							<div class="grid dateHead" style="margin-top: 50px;">
