@@ -1,3 +1,9 @@
+<%@page import="com.smhrd.model.ItemDAO"%>
+<%@page import="com.smhrd.model.ItemDTO"%>
+<%@page import="com.smhrd.model.RoomDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.math.BigDecimal"%>
+<%@page import="com.smhrd.model.RoomDAO"%>
 <%@page import="com.smhrd.model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -182,6 +188,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
+						<h4>지금 바로 예약해보세요!</h4>
 						<h2>예약하기</h2>
 					</div>
 				</div>
@@ -189,98 +196,120 @@
 		</div>
 
 
-		<div class="search-form">
+		<div class="cities-town"
+			style="display: inline-block; margin-left: 350px;">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-12">
-						<div class='rap'>
-							<h4>일정 선택하기</h4>
-							<div class="header" style="margin-top: 30px;">
-								<div class="btn prevDay"></div>
-								<h2 class='dateTitle'></h2>
-								<div class="btn nextDay"></div>
-							</div>
-
-							<div class="grid dateHead" style="margin-top: 50px;">
-								<div>일</div>
-								<div>월</div>
-								<div>화</div>
-								<div>수</div>
-								<div>목</div>
-								<div>금</div>
-								<div>토</div>
-							</div>
-
-							<div class="grid dateBoard" style="margin-top: 50px;"></div>
-						</div>
-
-						<div class="col-lg-12">
-							<div class='rap'>
-								<div class="camp-name-search">
-									<h4 style="margin-bottom: 30px;">캠핑장 검색하기</h4>
-									<div
-										class="input-area d-flex align-items-center justify-content-center mx-auto">
-										<img style="width: 30px; height: 30px;"
-											src="https://static.campingtalk.me/local/images/icon/search/search.svg">
-										<input id="searchText_-1" type="text"
-											placeholder="클릭하여 검색하세요." class="text-center p-0"
-											style="margin-left: 30px; padding: 30px; margin-right: 20px; width: 700px; height: 40px;">
-										<ul aria-labelledby="searchText_-1"
-											class="search-box-list border" style="display: none;"></ul>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-lg-12" style="margin-top: -400px;">
+					<div class="slider-content" style="width: 1200px;">
+						<div class="row" style="display: block;">
+							<div class="col-lg-12"
+								style="padding: 8px; margin-bottom: 8px; background-color: #fff;">
 								<div class='rap'>
-									<h4 style="margin-bottom: 30px;">객실 인원</h4>
-									<fieldset>
-										<h4 style="font-size: 15px; padding: 10px;">성인</h4>
-										<select name="Guests" class="form-select"
-											aria-label="Default select example" id="chooseGuests"
-											onChange="this.form.click()">
-											<option selected>인원수</option>
-											<option type="checkbox" name="option1" value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4+">4+</option>
-										</select>
-										<h4 style="font-size: 15px; padding: 10px;">아이</h4>
-										<select name="Guests" class="form-select"
-											aria-label="Default select example" id="chooseGuests"
-											onChange="this.form.click()">
-											<option selected>인원수</option>
-											<option type="checkbox" name="option1" value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4+">4+</option>
-										</select>
-									</fieldset>
+									<div class="col-lg-12"
+										style="margin-top: -300px; margin-left: 20px;">
+										<div class='rap'>
+											<h4>일정 선택하기</h4>
+											<div class="header" style="margin-top: 30px;">
+												<div class="btn prevDay"></div>
+												<h2 class='dateTitle'></h2>
+												<div class="btn nextDay"></div>
+											</div>
+
+											<div class="grid dateHead" style="margin-top: 50px;">
+												<div>일</div>
+												<div>월</div>
+												<div>화</div>
+												<div>수</div>
+												<div>목</div>
+												<div>금</div>
+												<div>토</div>
+											</div>
+
+											<div class="grid dateBoard" style="margin-top: 50px;"></div>
+										</div>
+									</div>
+
+
+									<div class="col-lg-12"
+										style="margin-left: 20px; margin-top: 100px;">
+										<div class='rap'>
+											<div class="camp-name-search">
+												<br>
+												<h4 style="margin-bottom: 30px;">캠핑장 검색하기</h4>
+												<div
+													class="input-area d-flex align-items-center justify-content-center mx-auto">
+													<img style="width: 30px; height: 30px;"
+														src="https://static.campingtalk.me/local/images/icon/search/search.svg">
+													<input id="searchText_-1" type="text"
+														placeholder="클릭하여 검색하세요." class="text-center p-0"
+														style="margin-left: 30px; padding: 30px; margin-right: 20px; width: 700px; height: 40px;">
+													<ul aria-labelledby="searchText_-1"
+														class="search-box-list border" style="display: none;"></ul>
+												</div>
+											</div>
+										</div>
+										<div>
+											<button id="datesearch"
+												style="margin-top: 50px; width: 110px; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none;">찾아보기</button>
+										</div>
+									</div>
+
+
+
+									<div class="col-lg-12" style="margin-top: -400px;">
+										<div class='rap'>
+											<h4 style="margin-bottom: 30px;">객실 인원</h4>
+											<fieldset>
+												<h4 style="font-size: 15px; padding: 10px;">성인</h4>
+												<select name="Guests" class="form-select"
+													aria-label="Default select example" id="chooseGuests"
+													onChange="this.form.click()">
+													<option selected>인원수</option>
+													<option type="checkbox" name="option1" value="1">1</option>
+													<option value="2">2</option>
+													<option value="3">3</option>
+													<option value="4+">4+</option>
+												</select>
+												<h4 style="font-size: 15px; padding: 10px;">아이</h4>
+												<select name="Guests" class="form-select"
+													aria-label="Default select example" id="chooseGuests"
+													onChange="this.form.click()">
+													<option selected>인원수</option>
+													<option type="checkbox" name="option1" value="1">1</option>
+													<option value="2">2</option>
+													<option value="3">3</option>
+													<option value="4+">4+</option>
+												</select>
+											</fieldset>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
 
-			<footer>
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12">
-							<p>
-								Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights
-								reserved. <br>Design: <a href="https://templatemo.com"
-									target="_blank" title="free CSS templates">TemplateMo</a>
-								Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
-							</p>
-						</div>
-					</div>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<p>
+						Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights
+						reserved. <br>Design: <a href="https://templatemo.com"
+							target="_blank" title="free CSS templates">TemplateMo</a>
+						Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
+					</p>
 				</div>
-			</footer>
-			<!-- Scripts -->
+			</div>
+		</div>
+	</footer>
+	<!-- Scripts -->
 
 
-			<script>
+	<script>
 //달력 생성
 const makeCalendar = (date) => {
 // 현재의 년도와 월 받아오기
@@ -336,7 +365,7 @@ makeCalendar(new Date(date.setMonth(date.getMonth() + 1)));
 
 </script>
 
-			<script>
+	<script>
 function tag_filter(id){
 	let value;
 			
@@ -366,15 +395,15 @@ function tag_filter(id){
 		</script>
 
 
-			<!-- Bootstrap core JavaScript -->
-			<script src="vendor/jquery/jquery.min.js"></script>
-			<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-			<script src="assets/js/isotope.min.js"></script>
-			<script src="assets/js/owl-carousel.js"></script>
-			<script src="assets/js/wow.js"></script>
-			<script src="assets/js/tabs.js"></script>
-			<script src="assets/js/popup.js"></script>
-			<script src="assets/js/custom.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/js/isotope.min.js"></script>
+	<script src="assets/js/owl-carousel.js"></script>
+	<script src="assets/js/wow.js"></script>
+	<script src="assets/js/tabs.js"></script>
+	<script src="assets/js/popup.js"></script>
+	<script src="assets/js/custom.js"></script>
 </body>
 
 </html>
