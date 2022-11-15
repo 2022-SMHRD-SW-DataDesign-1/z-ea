@@ -29,7 +29,7 @@ public class ReservationService extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
 
-		MemberDTO dto = (MemberDTO)session.getAttribute("info");
+		MemberDTO dto = (MemberDTO) session.getAttribute("info");
 		/*
 		 * System.out.println(rc_num); System.out.println(dto.getMb_email());
 		 * 
@@ -39,31 +39,35 @@ public class ReservationService extends HttpServlet {
 		 * BigDecimal(request.getParameter("gc_num"));
 		 */
 
-
 		BigDecimal gc_num = new BigDecimal(request.getParameter("gc_num"));
 
 		String roomname = request.getParameter("roomname");
 		BigDecimal room_num = new BigDecimal(roomname);
-		
-		String mb_email =dto.getMb_email();
+		System.out.println("rr" + room_num);
+		String mb_email = dto.getMb_email();
 
 		String guests_a = request.getParameter("Guests_adult");
 
 		String guests_k = request.getParameter("Guests_kid");
 
-		String checkin = request.getParameter("checkin");
-		String checkout = request.getParameter("checkout");
-	
-		
+		String check_in = request.getParameter("checkin");
+		System.out.println("checkin" + check_in);
+		String check_out = request.getParameter("checkout");
+		System.out.println("checkout" + check_out);
 
-		 ReservationDTO reservDTO = new ReservationDTO(gc_num, room_num, mb_email, checkin, checkout);
+		ReservationDTO reservDTO = new ReservationDTO(gc_num, room_num, mb_email, check_in, check_out);
 
-			
-			  ReservationDAO reservDAO = new ReservationDAO(); int row =
-			  reservDAO.insertReservation(reservDTO); if(row>0) {
-			  System.out.println("예약 성공"); }else { System.out.println("예약 실패"); }
-			  
-			 
+		ReservationDAO reservDAO = new ReservationDAO();
+		int row = reservDAO.insertReservation(reservDTO);
+		if (row > 0) {
+			System.out.println("예약 성공");
+		} else {
+			System.out.println("예약 실패");
+		}
+
+		RequestDispatcher rd = request.getRequestDispatcher("reservation_show.jsp");
+		rd.forward(request, response);
+
 	}
 
 }

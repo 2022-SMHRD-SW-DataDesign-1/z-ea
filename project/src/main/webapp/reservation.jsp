@@ -205,190 +205,192 @@
 				</div>
 			</div>
 		</div>
+	</div>
 
 
-		<div class="cities-town"
-			style="display: inline-block; margin-left: 350px;">
-			<div class="container">
-				<div class="row">
-					<div class="slider-content" style="width: 1200px;">
-						<div class="row" style="display: block;">
-							<div class="col-lg-12"
-								style="padding: 8px; margin-bottom: 8px; background-color: #fff;">
-								<div class='rap'>
-									<div class="col-lg-12"
-										style="margin-top: -300px; margin-left: 20px;">
-										<div class='rap'>
-											<h4>일정 선택하기</h4>
-											<div class="header" style="margin-top: 30px;">
-												<div class="btn prevDay"></div>
-												<h2 class='dateTitle'></h2>
-												<div class="btn nextDay"></div>
-											</div>
+	<div class="cities-town"
+		style="display: inline-block; margin-left: 350px;">
+		<div class="container">
+			<div class="row">
+				<div class="slider-content" style="width: 1200px; margin-top: 50px;">
+					<div class="row" style="display: block;">
 
-											<div class="grid dateHead" style="margin-top: 50px;">
-												<div>일</div>
-												<div>월</div>
-												<div>화</div>
-												<div>수</div>
-												<div>목</div>
-												<div>금</div>
-												<div>토</div>
-											</div>
-
-											<div class="grid dateBoard" style="margin-top: 50px;"></div>
-										</div>
-									</div>
-
-
-									<div class="col-lg-12"
-										style="margin-left: 20px; margin-top: 100px;">
-										<div class='rap'>
-											<div class="camp-name-search">
-												<br>
-												<h4 style="margin-bottom: 30px;">캠핑장 검색하기</h4>
-												<div
-													class="input-area d-flex align-items-center justify-content-center mx-auto">
-													<form action="ReservationSearch" method="post">
-														<input name="reserv_search" id="searchText_-1" type="text"
-															placeholder="장소명으로 검색하세요." class="text-center p-0"
-															style="margin-left: 30px; padding: 30px; margin-right: 20px; width: 700px; height: 40px;">
-														<a href="ReservationSearch" type="post"><img
-															style="width: 30px; height: 30px;"
-															src="https://static.campingtalk.me/local/images/icon/search/search.svg">
-														</a>
-													</form>
-												</div>
-											</div>
-										</div>
-										<div>
-											<div>
-												<form action="ReservationService?" method="post">
-													<div>
-														<%
-														String gc_name = request.getParameter("gc_name");
-														System.out.println("gc_" + gc_name);
-														if (gc_name != null) {
-															ArrayList<GlampingDTO> glist = new GlampingDAO().reserv_search(gc_name);
-														%>
-														<ul aria-labelledby="searchText_-1"
-															class="search-box-list border" style="display: none;"></ul>
-														<select>
-															<%
-															for (int i = 0; i < glist.size(); i++) {
-															%>
-															<option name="gc_num"
-																value="<%=glist.get(i).getGc_num()%>">
-																<%=glist.get(i).getGc_name()%> <a
-																	href="RoomCheckService?gc_num=<%=glist.get(i).getGc_num()%>">방확인</a>
-															</option>
-															<%
-															}
-															%>
-														</select>
-														<%
-														BigDecimal gc_num = new BigDecimal(request.getParameter("gc_num"));
-														ArrayList<RoomDTO> list = new RoomDAO().room_select(gc_num);
-														if (list.size() > 0) {
-														%>
-														<select>
-															<%
-															for (int i = 0; i < list.size(); i++) {
-															%>
-															<option name="roomanme"
-																value="<%=list.get(i).getRoom_num()%>">
-																<%=list.get(i).getRoom_name()%>
-															</option>
-															<%
-															}
-															} else {
-															}
-															%>
-														</select>
-													</div>
-											</div>
-											<%
-											} else {
-											}
-											%>
-											<div style="margin: 20px; margin-left: 20px;">
-
-												<div style="float: left; margin-right: 20px;">
-													<h4 style="padding: 10px;">체크인</h4>
-													<h4>
-														<input type="text" name=checkin id="checkin" value=""
-															readonly style="padding: 10px;"></input>
-													</h4>
-												</div>
-												<div style="float: left; margin-right: 20px;">
-													<h4 style="padding: 10px;">체크아웃</h4>
-													<h4>
-														<input type="text" name=checkout id="checkout" value=""
-															readonly style="padding: 10px;"></input>
-													</h4>
-												</div>
-												<div>
-													<button id="datesearch"
-														style="margin-top: 50px; width: 110px; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none;">날짜검색</button>
-												</div>
-											</div>
-										</div>
-										<div class="col-lg-12" style="margin-top: -400px;">
-											<div class='rap'>
-												<h4 style="margin-bottom: 30px;">객실 인원</h4>
-												<fieldset>
-													<h4 style="font-size: 15px; padding: 10px;">성인</h4>
-													<select name="Guests" class="form-select"
-														aria-label="Default select example" id="chooseGuests"
-														onChange="this.form.click()">
-														<option selected>인원수</option>
-														<option type="checkbox" name="option1" value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-														<option value="4+">4+</option>
-													</select>
-													<h4 style="font-size: 15px; padding: 10px;">아이</h4>
-													<select name="Guests" class="form-select"
-														aria-label="Default select example" id="chooseGuests"
-														onChange="this.form.click()">
-														<option selected>인원수</option>
-														<option type="checkbox" name="option1" value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-														<option value="4+">4+</option>
-													</select>
-												</fieldset>
-											</div>
-											<div style="text-align: center;">
-												<input id="submit" type="submit" value="예약"
-													style="width: 200px; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none;" />
-											</div>
-										</div>
+						<div class="col-lg-12" style="margin-left: 20px;">
+							<div class='rap'>
+								<div class="camp-name-search">
+									<br>
+									<h4 style="margin-bottom: 30px;">캠핑장 검색하기</h4>
+									<div
+										class="input-area d-flex align-items-center justify-content-center mx-auto">
+										<form action="ReservationSearch" method="post">
+											<input name="reserv_search" id="searchText_-1" type="text"
+												placeholder="글램핑 & 카라반" class="text-center p-0"
+												style="margin-left: 40px; padding: 30px; margin-right: 30px; width: 700px; height: 40px;">
+											<img style="width: 30px; height: 30px; margin-top: -60px;"
+												src="https://static.campingtalk.me/local/images/icon/search/search.svg">
+											<!-- <a href="ReservationSearch" type="post">
+												</a> -->
 										</form>
 									</div>
 								</div>
 							</div>
 						</div>
+						<div style="width: 110px;">
+							<button id="datesearch"
+								style="margin-left: 660px; margin-top: 360px; width: 110px; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none;">날짜검색</button>
+
+						</div>
+						<div class="col-lg-12"
+							style="margin-left: 60px; margin-top: -857px;">
+							<form action="ReservationService?" method="post">
+								<div class='rap'>
+									<%
+									String gc_name = request.getParameter("gc_name");
+									System.out.println("gc_" + gc_name);
+									if (gc_name != null) {
+										ArrayList<GlampingDTO> glist = new GlampingDAO().reserv_search(gc_name);
+										System.out.println(glist);
+									%>
+									<ul aria-labelledby="searchText_-1"
+										class="search-box-list border" style="display: none;"></ul>
+									<select>
+										<%
+										for (int i = 0; i < glist.size(); i++) {
+										%>
+										<option name="gc_num" value="<%=glist.get(i).getGc_num()%>">
+											<%=glist.get(i).getGc_name()%>
+										</option>
+										<%
+										System.out.println("gc_num" + glist.get(i).getGc_num());
+										}
+										%>
+									</select>
+									<%-- System.out.println("gc_name"+glist.get(i).getGc_name()); %> --%>
+									<%-- <a href="RoomCheckService?gc_num=<%=glist.get(i).getGc_num()%>">방확인</a>
+															<%}%>
+															<%BigDecimal gc_num = new BigDecimal(request.getParameter("gc_num"));
+															if(gc_num!=null){
+															ArrayList<RoomDTO> list = new RoomDAO().room_select(gc_num);
+															System.out.println("gc_num1"+gc_num);
+															System.out.println("list"+list);
+															%>
+															<select>
+																<%for(int i= 0; i<list.size(); i++){
+																	%>
+															<option name="roomanme" value="<%=list.get(i).getRoom_num()%>">
+															<%System.out.println("room_num1"+list.get(i).getRoom_num()); %>
+																<%=list.get(i).getRoom_name()%>
+															</option> --%>
+									<%-- <%}}else{} %> --%>
+									</select>
+									<%
+									} else {
+									}
+									%>
+								</div>
+							</form>
+						</div>
+
+						<div class="col-lg-12"
+							style="margin-left: 20px; margin-top: -500px; margin-bottom: 400px;">
+							<div class='rap'>
+								<h4>일정 선택하기</h4>
+								<div class="header" style="margin-top: 30px;">
+									<div class="btn prevDay"></div>
+									<h2 id="yearMonth" class='dateTitle'></h2>
+									<div class="btn nextDay"></div>
+								</div>
+
+								<div class="grid dateHead" style="margin-top: 50px;">
+									<div>일</div>
+									<div>월</div>
+									<div>화</div>
+									<div>수</div>
+									<div>목</div>
+									<div>금</div>
+									<div>토</div>
+								</div>
+
+								<div class="grid dateBoard" style="margin-top: 50px;"></div>
+							</div>
+
+							<div style="margin: 20px;">
+								<div style="float: left; margin-right: 20px;">
+									<h4 style="padding: 10px;">체크인</h4>
+									<h4>
+										<input type="text" name=checkin id="checkin" value="" readonly
+											style="padding: 10px;"></input>
+									</h4>
+								</div>
+								<div style="float: left;">
+									<h4 style="padding: 10px;">체크아웃</h4>
+									<h4>
+										<input type="text" name=checkout id="checkout" value=""
+											readonly style="padding: 10px;"></input>
+									</h4>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="col-lg-12"
+							style="margin-top: -200px; margin-bottom: -250px;">
+							<div class='rap'>
+								<h4 style="margin-bottom: 30px; padding: 10px;">객실 인원</h4>
+								<fieldset>
+									<div style="padding: 10px;">
+										<h4 style="font-size: 15px;">성인</h4>
+										<select name="Guests_adult" class="form-select"
+											aria-label="Default select example" id="chooseGuests"
+											onChange="this.form.click()">
+											<option selected>인원수</option>
+											<option type="checkbox" name="option1" value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4+">4+</option>
+										</select>
+									</div>
+									<div style="padding: 10px;">
+										<h4 style="font-size: 15px;">아이</h4>
+										<select name="Guests_kid" class="form-select"
+											aria-label="Default select example" id="chooseGuests"
+											onChange="this.form.click()">
+											<option selected>인원수</option>
+											<option type="checkbox" name="option1" value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4+">4+</option>
+										</select>
+									</div>
+								</fieldset>
+							</div>
+
+						</div>
+						<div style="text-align: center;">
+							<input id="submit" type="submit" value="예약"
+								style="width: 200px; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none;" />
+						</div>
+						</form>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
+
 	<footer>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<p>
-						Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights
-						reserved. <br>Design: <a href="https://templatemo.com"
-							target="_blank" title="free CSS templates">TemplateMo</a>
-						Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
+						Copyright © 2022 <a href="#">ze:a</a> Company. All rights
+						reserved.
 					</p>
 				</div>
 			</div>
 		</div>
 	</footer>
+
 	<!-- Scripts -->
 
 
@@ -447,35 +449,59 @@ makeCalendar(new Date(date.setMonth(date.getMonth() + 1)));
 }
 
 </script>
-
+	<!-- 날짜선택 -->
 	<script>
+		
+
+		let day=[];
 function tag_filter(id){
 	let value;
 			
-			if(id.style.backgroundColor == "white"){
-			id.style.backgroundColor ="yellow";
-			value = id.textContent;
-			console.log(value);
-			/* $.ajax({
-				url : 'Filter',  //요청 서버 url
-				data : {'inputE': inputE},	//요청할 때 같이 보내줄 데이터
-				type : 'get', 				//요청 타입(method)
-				success : function(data){	//통신성공 (function(넘겨준데이터))
-					res=data;
-			console.log(res);
-				},
-				error : function(){			//통신실패
-					console.log("통신실패");
-				}
-			}) */
+			let id_class = $(id).attr("class");
+			
+			let month;
+			var num;
+			
+		
+			let input;
+			
+			if((id.style.backgroundColor == "white" ) && day.length < 2){
+				id.style.backgroundColor ="yellow";
+				
+				
+				
+				month =document.querySelector(`.dateTitle`).innerText;
+				month_num = ((month.split("년 ")[1]).split("월")[0]);
+				
+				
+				value = id.textContent;
 
-			}else {
-				id.style.backgroundColor = "white";
-				value = "";
+				let ok = month_num+ value;
+				
+				console.log(ok);
+				day.push(ok);
+				console.log("푸쉬완료"); 
+				
+				}
+			else{
+				id.style.backgroundColor ="white";
+				month =document.querySelector(`.dateTitle`).innerText;
+				month_num = ((month.split("년 ")[1]).split("월")[0]);
+				value=id.textContent;
+				let ok = month_num+value;
+				for(var i=0;i< day.length;i++){
+					if(day[i] === ok){
+						day.splice(i,ok);
+						i--;
+						}
+					}
 			}
 			
-			}
+				
+}
+			
 		</script>
+
 	<script>
 
 						document.getElementById("datesearch").onclick=function(){
@@ -508,6 +534,7 @@ function tag_filter(id){
 							
 						};
 						</script>
+
 
 
 	<!-- Bootstrap core JavaScript -->

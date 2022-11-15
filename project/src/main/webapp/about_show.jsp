@@ -282,7 +282,6 @@ https://templatemo.com/tm-580-woox-travel
 		</div>
 		<!-- //상단 -->
 
-
 		<!-- 사진보기 -->
 		<div id="galleryGo" style="padding-top: 10x;">
 			<div class="user_reg"></div>
@@ -298,13 +297,13 @@ https://templatemo.com/tm-580-woox-travel
 							<img class="swiper-lazy swiper-lazy-loaded" alt="타요캠핑장  0"
 								onclick="openPhotoView(0)"
 								style="width: 100%; height: 100%; object-fit: contain;"
-								src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=42235b2d-f656-4510-ae35-c562feb955cc">
+								src="assets/camping/333_1.jpg">
 						</div>
 						<div class="swiper-slide swiper-slide-next" style="width: 465px;">
 							<img class="swiper-lazy swiper-lazy-loaded" alt="타요캠핑장  1"
 								onclick="openPhotoView(1)"
 								style="width: 100%; height: 100%; object-fit: contain;"
-								src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=3a2aea96-11ac-4394-ad25-33eb3d9c3ee0">
+								src="assets/camping/333_2.jpg">
 						</div>
 
 					</div>
@@ -505,17 +504,18 @@ https://templatemo.com/tm-580-woox-travel
 
 						<%
 						String tag = item.getTag();
-						
+
 						System.out.print(tag);
 						String[] tagArr = tag.split(" ");
 						for (int i = 0; i < tagArr.length; i++) {
-						System.out.print(tagArr[i]);
-							if(tagArr[i] != ""){
+							System.out.print(tagArr[i]);
+							if (tagArr[i] != "") {
 						%>
-						
+
 						<li><a href="#"><span><%=tagArr[i]%></span></a></li>
 						<%
-						}}
+						}
+						}
 						%>
 
 					</ul>
@@ -525,7 +525,7 @@ https://templatemo.com/tm-580-woox-travel
 			<div style="height: 100px;">
 				<a href="ItemReservService?num=<%=item.getNum()%>">
 					<button type="button" class="btn btn-primary btn-lg"
-						style="background-color: #6A5ACD; float: right; border-color:#6A5ACD">예약하러가기</button>
+						style="background-color: #6A5ACD; float: right; border-color: #6A5ACD">예약하러가기</button>
 				</a>
 			</div>
 
@@ -609,13 +609,12 @@ https://templatemo.com/tm-580-woox-travel
 			<div class="row">
 				<div class="col-lg-12">
 					<p>
-						Copyright Â© 2036 <a href="#">WoOx Travel</a> Company. All rights
-						reserved. <br>Design: <a href="https://templatemo.com"
-							target="_blank" title="free CSS templates">TemplateMo</a>
-						Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
+						Copyright © 2022 <a href="#">ze:a</a> Company. All rights
+						reserved.
 					</p>
 				</div>
 			</div>
+		</div>
 	</footer>
 
 

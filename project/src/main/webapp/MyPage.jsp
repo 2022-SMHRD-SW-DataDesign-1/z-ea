@@ -74,7 +74,7 @@ https://templatemo.com/tm-580-woox-travel
 							<%
 							} else {
 							%>
-							<li><a href="MyPage.jsp" class="active" class="modalBtn"  
+							<li><a href="MyPage.jsp" class="active" class="modalBtn"
 								style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">마이페이지</a>
 							</li>
 							<li><a href="LogoutService" class="modalBtn"
@@ -248,16 +248,13 @@ https://templatemo.com/tm-580-woox-travel
 			<div class="row">
 				<div class="col-lg-12">
 					<p>
-						Copyright © 2036 <a href="#">WoOx Travel//ze-a</a> Company. All
-						rights reserved. <br>Design: <a href="https://templatemo.com"
-							target="_blank" title="free CSS templates">TemplateMo</a>
-						Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
+						Copyright © 2022 <a href="#">ze:a</a> Company. All rights
+						reserved.
 					</p>
 				</div>
 			</div>
 		</div>
 	</footer>
-
 
 	<!-- Scripts -->
 	<!-- Bootstrap core JavaScript -->

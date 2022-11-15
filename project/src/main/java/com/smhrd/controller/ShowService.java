@@ -29,7 +29,6 @@ public class ShowService extends HttpServlet {
 		int num = Integer.parseInt(request.getParameter("num"));
 		System.out.println(num);
 	
-		
 		ItemDTO detail = new ItemDAO().showDetail(num);
 		System.out.println("또다시 "+num);
 		

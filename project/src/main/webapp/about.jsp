@@ -36,7 +36,6 @@
 	<%
 	MemberDTO info = (MemberDTO) session.getAttribute("info");
 	%>
-
 	<!-- ***** Preloader Start ***** -->
 	<div id="js-preloader" class="js-preloader">
 		<div class="preloader-inner">
@@ -46,9 +45,7 @@
 			</div>
 		</div>
 	</div>
-
 	<!-- ***** Preloader End ***** -->
-
 	<!-- ***** Header Area Start ***** -->
 	<header class="header-area header-sticky">
 		<div class="container">
@@ -95,18 +92,17 @@
 			</div>
 		</div>
 	</header>
-
-
 	<!-- ***** Header Area End ***** -->
-	<div class="modalPopup" style="z-index: 100; display: none;">
-		<div class="ModalBack"
-			style="position: fixed; background-color: black; width: 100%; height: 100%; opacity: 0.5;">
+	<!-- 모달 -->
+	<div class="modalPopup" style="display: none;">
+		<div class="ModalBack" onclick
+			style="position: fixed; background-color: black; width: 100%; height: 100%; opacity: 0.9;">
 		</div>
 		<div class="LoginModal"
-			style="text-align: center; z-index: 3000; background-color: white; width: 500px; height: 650px; margin-top: 10%; margin-left: 36%; position: fixed; align-content: center;">
+			style="text-align: center; background-color: white; width: 540px; height: 650px; margin-top: 10%; margin-left: 36%; position: fixed; align-content: center;">
 			<!-- 로그인 -->
 			<form action="LoginService" method="post">
-				<table style="margin: auto; margin-top: 8%;">
+				<table style="margin: auto; margin-top: 10%;">
 					<th colspan="2" style="font-size: 20px; padding: 10px;">로그인</th>
 					<tr>
 						<td>
@@ -130,7 +126,7 @@
 			</form>
 			<!-- 회원가입-->
 			<form action="JoinService" method="post">
-				<table style="margin: auto; margin-top: 8%;">
+				<table style="margin: auto; margin-top: 10%;">
 					<th colspan="2" style="font-size: 20px; padding: 10px;">회원가입</th>
 					<tr>
 						<td>
@@ -154,7 +150,8 @@
 							onclick="checkE()"></td>
 					</tr>
 					<tr>
-						<th colspan="2"><span style="padding: 10px;" id="resultCheck"></span></th>
+						<th colspan="2"><span style="padding: 10px;" id="resultCheck"></span>
+						</th>
 					</tr>
 					<tr>
 						<td>
@@ -188,213 +185,213 @@
 		</div>
 	</div>
 
+
 	<div class="dark">
-		<div class="about-main-content">
+		<div class="second-page-heading">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-12"></div>
-					<div class="content"></div>
+					<div class="col-lg-12">
+						<h4>내 여행관리는 여기에서</h4>
+						<h2>My Page</h2>
+						<div class="main-button">
+							<p>내 여행일정 관리부터 소통까지 !</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-
-		<!-- ***** Main Banner Area End ***** -->
-
-		<!-- 모달 -->
-
-		<div class="cities-town"
-			style="display: inline-block; margin-left: 250px;">
-			<div class="container">
-				<div class="row" style="text-align: center;">
-					<div class="slider-content">
-
-						<div class="row" style="display: block;">
-
-							<h2 style="margin-bottom: 60px;">카테고리</h2>
-
-							<div class="col-lg-12">
-								<div class="owl-cites-town owl-carousel"
-									style="display: inline-block;">
+	</div>
 
 
-									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px; border-radius: 25px; margin-top: 5px; padding-top: 7px;"
-										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
-										onclick="tag_filter(this)">#가족</div>
+	<div class="cities-town"
+		style="display: inline-block; margin-left: 250px;">
+		<div class="container">
+			<div class="row" style="text-align: center;">
+				<div class="slider-content">
+
+					<div class="row" style="display: block;">
+
+						<h2 style="margin-bottom: 60px;">카테고리</h2>
+
+						<div class="col-lg-12">
+							<div class="owl-cites-town owl-carousel"
+								style="display: inline-block;">
 
 
-									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px; border-radius: 25px; margin-top: 5px; padding-top: 7px;"
-										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
-										onclick="tag_filter(this)">#혼자</div>
+								<div class="choose1"
+									style="height: 40px; width: 120px; border: solid black 1px; border-radius: 25px; margin-top: 5px; padding-top: 7px;"
+									style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
+									onclick="tag_filter(this)">#가족</div>
 
 
-									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px; border-radius: 25px; margin-top: 5px; padding-top: 7px;"
-										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
-										onclick="tag_filter(this)">#감성</div>
+								<div class="choose1"
+									style="height: 40px; width: 120px; border: solid black 1px; border-radius: 25px; margin-top: 5px; padding-top: 7px;"
+									style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
+									onclick="tag_filter(this)">#혼자</div>
 
 
-									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px; border-radius: 25px; margin-top: 5px; padding-top: 7px;"
-										:
-										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
-										onclick="tag_filter(this)">#커플</div>
+								<div class="choose1"
+									style="height: 40px; width: 120px; border: solid black 1px; border-radius: 25px; margin-top: 5px; padding-top: 7px;"
+									style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
+									onclick="tag_filter(this)">#감성</div>
 
 
-									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px; border-radius: 25px; margin-top: 5px; padding-top: 7px;"
-										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
-										onclick="tag_filter(this)">#단체</div>
+								<div class="choose1"
+									style="height: 40px; width: 120px; border: solid black 1px; border-radius: 25px; margin-top: 5px; padding-top: 7px;"
+									:
+									style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
+									onclick="tag_filter(this)">#커플</div>
 
 
-									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px; border-radius: 25px; margin-top: 5px; padding-top: 7px;"
-										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
-										onclick="tag_filter(this)">#바다</div>
+								<div class="choose1"
+									style="height: 40px; width: 120px; border: solid black 1px; border-radius: 25px; margin-top: 5px; padding-top: 7px;"
+									style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
+									onclick="tag_filter(this)">#단체</div>
 
 
-									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px; border-radius: 25px; margin-top: 5px; padding-top: 7px;"
-										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
-										onclick="tag_filter(this)">#산</div>
+								<div class="choose1"
+									style="height: 40px; width: 120px; border: solid black 1px; border-radius: 25px; margin-top: 5px; padding-top: 7px;"
+									style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
+									onclick="tag_filter(this)">#바다</div>
 
-								</div>
-								<hr />
 
-								<div>
-									<div id="item">
-										<div
-											style="margin-top: 5%; width: 100%; display: inline-block; padding: 10px 5px 10px 5px;">
+								<div class="choose1"
+									style="height: 40px; width: 120px; border: solid black 1px; border-radius: 25px; margin-top: 5px; padding-top: 7px;"
+									style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
+									onclick="tag_filter(this)">#산</div>
 
-											<%
-											ItemDAO dao = new ItemDAO();
-											ArrayList<ItemDTO> item_list = new ArrayList<ItemDTO>();
-											item_list = (ArrayList) request.getAttribute("item_list");
-											/* if(request.getParameter("tag") != null){
-												item_list = dao.Filter(request.getParameter("tag"));
-											}
-											 */
+							</div>
+							<hr />
 
-											item_list = dao.showAll();
+							<div>
+								<div id="item">
+									<div
+										style="margin-top: 5%; width: 100%; display: inline-block; padding: 10px 5px 10px 5px;">
 
-											int cnt = 0;
-											if (request.getParameter("page") == null) {
-												for (int i = 0; i < item_list.size(); i++) {
-													if (cnt == 8) {
-												break;
-													}
-											%>
+										<%
+										ItemDAO dao = new ItemDAO();
+										ArrayList<ItemDTO> item_list = new ArrayList<ItemDTO>();
+										item_list = (ArrayList) request.getAttribute("item_list");
+										/* if(request.getParameter("tag") != null){
+											item_list = dao.Filter(request.getParameter("tag"));
+										}
+										 */
 
-											<a id="item_list" class="item_list"
-												href="ShowService?num=<%=item_list.get(i).getNum()%>"
-												style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox; overflow: hidden;">
-												<img src="assets/camping/<%=i + 330%>_1.jpg" alt=""
-												style="width: 200px; height: 200px;">
-												<div style="text-align: left; padding-left: 20px;">
-													<p id="item"><%=item_list.get(i).getName()%></p>
-													<p id="item"><%=item_list.get(i).getDesc()%></p>
-												</div>
-											</a>
+										item_list = dao.showAll();
 
-											<%
-											cnt++;
-											}
-											%>
-											<%
-											} else {
-
-											int pageNum = Integer.parseInt(request.getParameter("page"));
-											System.out.print(item_list.size());
-											for (int i = (pageNum - 1) * 8; i < (item_list.size()); i++) {
-
+										int cnt = 0;
+										if (request.getParameter("page") == null) {
+											for (int i = 0; i < item_list.size(); i++) {
 												if (cnt == 8) {
-													break;
+											break;
 												}
-											%>
-											<a class="item_list"
-												href="ShowService?num=<%=item_list.get(i).getNum()%>"
-												style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox; overflow: hidden;">
-												<img src="assets/images/offers-01.jpg" alt=""
-												style="width: 200px; height: 200px;">
-												<div style="text-align: left; padding-left: 20px;">
-													<p id="item"><%=item_list.get(i).getName()%></p>
-													<p id="item"><%=item_list.get(i).getDesc()%></p>
-												</div>
-											</a>
+										%>
 
-
-											<%
-											cnt++;
-											}
-											}
-											%>
-
-
-
-
-											<div style="width: 100%">
-												<%
-												for (int j = 0; j < ((item_list.size()) / 8) + 1; j++) {
-												%>
-
-												<a id="page" value="<%=j + 1%>" href="?page=<%=j + 1%>  "
-													style="margin: 10px;"> <%=j + 1%>
-												</a>
-												<%
-												}
-												%>
+										<a id="item_list" class="item_list"
+											href="ShowService?num=<%=item_list.get(i).getNum()%>&num2=<%=i + 330%>"
+											style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox; overflow: hidden;">
+											<img value="<%=i + 330%>"
+											src="assets/camping/<%=i + 330%>_1.jpg" alt=""
+											style="width: 200px; height: 200px;">
+											<div style="text-align: left; padding-left: 20px;">
+												<p id="item" style="padding: 10px; color: #4b4b4b;"><%=item_list.get(i).getName()%></p>
 											</div>
+										</a>
 
+										<%
+										cnt++;
+										}
+										%>
+										<%
+										} else {
+
+										int pageNum = Integer.parseInt(request.getParameter("page"));
+										System.out.print(item_list.size());
+										for (int i = (pageNum - 1) * 8; i < (item_list.size()); i++) {
+
+											if (cnt == 8) {
+												break;
+											}
+										%>
+										<a class="item_list"
+											href="ShowService?num=<%=item_list.get(i).getNum()%>&num3=<%=i + 330%>"
+											style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox; overflow: hidden;">
+											<img src="assets/camping/<%=i + 350%>_1.jpg" alt=""
+											style="width: 200px; height: 200px;">
+											<div style="text-align: left; padding-left: 20px;">
+												<p id="item"><%=item_list.get(i).getName()%></p>
+											</div>
+										</a>
+
+
+										<%
+										cnt++;
+										}
+										}
+										%>
+
+
+
+
+										<div style="width: 100%">
+											<%
+											for (int j = 0; j < ((item_list.size()) / 8) + 1; j++) {
+											%>
+
+											<a id="page" value="<%=j + 1%>" href="?page=<%=j + 1%>  "
+												style="margin: 10px;"> <%=j + 1%>
+											</a>
+											<%
+											}
+											%>
 										</div>
-									</div>
 
+									</div>
 								</div>
+
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<p>
-							Copyright Â© 2036 <a href="#">WoOx Travel</a> Company. All rights
-							reserved. <br>Design: <a href="https://templatemo.com"
-								target="_blank" title="free CSS templates">TemplateMo</a>
-							Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
-						</p>
-					</div>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<p>
+						Copyright © 2022 <a href="#">ze:a</a> Company. All rights
+						reserved.
+					</p>
 				</div>
-
-
 			</div>
-		</footer>
+		</div>
+	</footer>
 
 
-		<!-- Scripts -->
-		<!-- Bootstrap core JavaScript -->
-		<script src="vendor/jquery/jquery.min.js"></script>
-		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-		<script src="assets/js/isotope.min.js"></script>
-		<script src="assets/js/owl-carousel.js"></script>
-		<script src="assets/js/wow.js"></script>
-		<script src="assets/js/tabs.js"></script>
-		<script src="assets/js/popup.js"></script>
-		<script src="assets/js/custom.js"></script>
+	<!-- Scripts -->
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-		<script>
+	<script src="assets/js/isotope.min.js"></script>
+	<script src="assets/js/owl-carousel.js"></script>
+	<script src="assets/js/wow.js"></script>
+	<script src="assets/js/tabs.js"></script>
+	<script src="assets/js/popup.js"></script>
+	<script src="assets/js/custom.js"></script>
+
+	<script>
 			$(".option").click(function() {
 				$(".option").removeClass("active");
 				$(this).addClass("active");
 			});
 		</script>
 
-		<script>
+	<script>
 			function show() {
 				console.log("실행");
 				let modal = document.querySelector(".modalPopup");
@@ -421,7 +418,7 @@
 
 	</script>
 
-		<script>
+	<script>
 	function tag_filter(id){
 		let value;
 		
@@ -449,18 +446,18 @@
 		
 		}
 	</script>
-		<script>
+	<script>
 	  function listView(data){ // [{           },{            },{                }]
 		  var tag="<table>";
 		  let cnt = 0;
 		  tag+="<div style='margin-top :5%;'>";	
 		  $.each(data, function(index, obj){
-			console.log(obj.num);
+			cnt++;
+			console.log(cnt);
 			  tag+="<a href='ShowService?num="+obj.num+"'>"
-			  tag+="<div style='width:250px; height: 350px; display: inline-block; overflow: hidden;'><img src='assets/images/offers-01.jpg' alt=''style='width: 200px; height: 200px; display: flexbox;'> "
+			  tag+="<div style='width:250px; height: 350px; display: inline-block; overflow: hidden;'><img src='assets/camping/"+(obj.num+330)+".jpg' alt=''style='width: 200px; height: 200px; display: flexbox;'> "
 			  tag+="<div style='text-align: left; padding-left: 20px;'>"  
-				  tag+="<p id='item'>"+obj.name +"</p>";
-				  tag+="<p id='item'>"+obj.desc +"</p>";
+				  tag+="<p id='item' style='padding: 10px; color: #4b4b4b;'>"+obj.name +"</p>";
 			  tag+="</div></div>";
 			  
 			  tag+="</a>";
@@ -473,18 +470,18 @@
 		
 	</script>
 
-		<script>
+	<script>
 	function FullView()
 	
 	</script>
 
-		<script>
+	<script>
 	function filter(id){
 		let inputE = id.val();
 		console.log(inputE);
 		
 		$.ajax({
-			url : 'EmailCheckService.do',  //요청 서버 url
+			url : 'EmailCheckService',  //요청 서버 url
 			data : {'inputE': inputE},	//요청할 때 같이 보내줄 데이터
 			type : 'get', 				//요청 타입(method)
 			success : function(data){	//통신성공 (function(넘겨준데이터))

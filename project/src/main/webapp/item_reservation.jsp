@@ -248,14 +248,14 @@
 														<img class="swiper-lazy swiper-lazy-loaded" alt="타요캠핑장  0"
 															onclick="openPhotoView(0)"
 															style="width: 100%; height: 100%; object-fit: contain;"
-															src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=42235b2d-f656-4510-ae35-c562feb955cc">
+															src="assets/camping/333_1.jpg">
 													</div>
 													<div class="swiper-slide swiper-slide-next"
 														style="width: 500px;">
 														<img class="swiper-lazy swiper-lazy-loaded" alt="타요캠핑장  1"
 															onclick="openPhotoView(1)"
 															style="width: 100%; height: 100%; object-fit: contain;"
-															src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&amp;id=3a2aea96-11ac-4394-ad25-33eb3d9c3ee0">
+															src="assets/camping/333_2.jpg">
 													</div>
 
 												</div>
@@ -302,7 +302,13 @@
 								</div>
 
 								<div style="margin: 20px; margin-left: 20px;">
-									<form>
+									<div style="float: right;">
+										<button id="datesearch"
+											style="margin-top: 70px; margin-left: -410px; width: 110px; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none;">날짜검색</button>
+									</div>
+									<form action="ReservationService?gc_num=<%=gc_num%>"
+										method="post">
+
 										<div style="float: left; margin-right: 20px;">
 											<h4 style="padding: 10px;">체크인</h4>
 											<h4>
@@ -317,68 +323,61 @@
 													readonly style="padding: 10px;"></input>
 											</h4>
 										</div>
-										<div>
-											<button id="datesearch"
-												style="margin-top: 70px; width: 110px; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none;">날짜검색</button>
-										</div>
-									</form>
 								</div>
 							</div>
 
-							<form action="ReservationService?gc_num=<%=gc_num%>"
-								method="post">
-								<div class="col-lg-12" style="margin-left: 20px;">
-									<div class='rap'>
-										<h4 style="margin-bottom: 30px;">방</h4>
-										<select name="roomname">
+							<div class="col-lg-12"
+								style="margin-top: 200px; margin-left: 20px;">
+								<div class='rap'>
+									<h4 style="margin-bottom: 30px;">방</h4>
+									<select name="roomname">
 
-											<%
-											for (int i = 0; i < roomList.size(); i++) {
-											%>
-											<option value="<%=i + 1%>"><%=roomList.get(i).getRoom_name()%></option>
-											<%
-											}
-											%>
+										<%
+										for (int i = 0; i < roomList.size(); i++) {
+										%>
+										<option value="<%=i + 1%>"><%=roomList.get(i).getRoom_name()%></option>
+										<%
+										}
+										%>
 
-										</select>
-
-									</div>
-								</div>
-
-								<div class="col-lg-12"
-									style="margin-top: -400px; margin-bottom: -250px; margin-left: 20px;">
-									<div class='rap'>
-										<h4 style="margin-bottom: 30px;">객실 인원</h4>
-										<fieldset>
-											<div style="padding: 10px;">
-												<h4 style="font-size: 15px;">성인</h4>
-												<select name="Guests_adult" class="form-select"
-													aria-label="Default select example" id="chooseGuests"
-													onChange="this.form.click()">
-													<option selected>인원수</option>
-													<option type="checkbox" name="option1" value="1">1</option>
-													<option value="2">2</option>
-													<option value="3">3</option>
-													<option value="4+">4+</option>
-												</select>
-											</div>
-											<div style="padding: 10px;">
-												<h4 style="font-size: 15px;">아이</h4>
-												<select name="Guests_kid" class="form-select"
-													aria-label="Default select example" id="chooseGuests"
-													onChange="this.form.click()">
-													<option selected>인원수</option>
-													<option type="checkbox" name="option1" value="1">1</option>
-													<option value="2">2</option>
-													<option value="3">3</option>
-													<option value="4+">4+</option>
-												</select>
-											</div>
-										</fieldset>
-									</div>
+									</select>
 
 								</div>
+							</div>
+							<div class="col-lg-12"
+								style="margin-top: -400px; margin-bottom: -250px; margin-left: 20px;">
+								<div class='rap'>
+									<h4 style="margin-bottom: 30px;">객실 인원</h4>
+									<fieldset>
+										<div style="padding: 10px;">
+											<h4 style="font-size: 15px;">성인</h4>
+											<select name="Guests_adult" class="form-select"
+												aria-label="Default select example" id="chooseGuests"
+												onChange="this.form.click()">
+												<option selected>인원수</option>
+												<option type="checkbox" name="option1" value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4+">4+</option>
+											</select>
+										</div>
+										<div style="padding: 10px;">
+											<h4 style="font-size: 15px;">아이</h4>
+											<select name="Guests_kid" class="form-select"
+												aria-label="Default select example" id="chooseGuests"
+												onChange="this.form.click()">
+												<option selected>인원수</option>
+												<option type="checkbox" name="option1" value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4+">4+</option>
+											</select>
+									</fieldset>
+								</div>
+
+							</div>
 						</div>
+
 						<div style="text-align: center;">
 							<input id="submit" type="submit" value="예약"
 								style="width: 200px; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none;" />

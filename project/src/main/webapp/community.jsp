@@ -1,3 +1,4 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.smhrd.model.BoardDAO"%>
 <%@page import="com.smhrd.model.BoardDTO"%>
 <%@page import="java.util.ArrayList"%>
@@ -229,50 +230,46 @@
 		</div>
 	</div>
 
-	<div class="container" style="padding: 20px;">
-		<section id="portfolio" class="darker">
-			<div class="container">
+	<div class="visit-country" style="margin-bottom: -50px;">
+		<div class="container" style="padding: 20px;">
+			<section id="portfolio" class="darker">
+				<div class="container">
 
-				<%
-				ArrayList<BoardDTO> list = new BoardDAO().selectBoard();
-				%>
+					<%ArrayList<BoardDTO> list = new BoardDAO().selectBoard();%>
 
-				<div class="row">
-					<%
-					for (int i = 0; i < list.size(); i++) {
-					%>
-					<figure class="portfolio-item col-md-4 col-sm-6"
-						style="padding: 5px;">
-						<a
-							href="community_detail.jsp?board_num=<%=list.get(i).getBoard_num()%>">
-							<img class="img-responsive"
-							src="./file/<%=list.get(i).getBoard_file()%>"
-							alt="Adena icons pack" />
-						</a>
-						<figcaption class="mask">
+					<div class="row">
+						<%for (int i = 0; i < list.size(); i++) {
+						System.out.print(list.get(i).getBoard_file());%>
+						<figure class="portfolio-item col-md-4 col-sm-6"
+							style="padding: 5px;">
 							<a
 								href="community_detail.jsp?board_num=<%=list.get(i).getBoard_num()%>">
+								<img class="img-responsive"
+								src="file/<%=list.get(i).getBoard_file()%>"
+								alt="Adena icons pack" />
 							</a>
-						</figcaption>
-					</figure>
-					<%
-					}
-					%>
+							<figcaption class="mask">
+								<a
+									href="community_detail.jsp?board_num=<%=list.get(i).getBoard_num()%>">
+								</a>
+							</figcaption>
+						</figure>
+						<%}%>
 
+					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+		</div>
 	</div>
+
 
 	<footer>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<p>
-						Copyright © 2036 <a href="#">WoOx Travel//ze-a</a> Company. All
-						rights reserved. <br>Design: <a href="https://templatemo.com"
-							target="_blank" title="free CSS templates">TemplateMo</a>
-						Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
+						Copyright © 2022 <a href="#">ze:a</a> Company. All rights
+						reserved.
 					</p>
 				</div>
 			</div>
@@ -358,7 +355,6 @@
 			alert('로그인하세요!');
 		}
 	</script>
-
 </body>
 
 </html>

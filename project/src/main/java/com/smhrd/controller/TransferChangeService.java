@@ -22,12 +22,12 @@ public class TransferChangeService extends HttpServlet {
 		String mb_email = request.getParameter("email");
 		//String transfer_id = request.getParameter("email");
 		BigDecimal rc_num = new BigDecimal(request.getParameter("num"));
-		BigDecimal room_num = new BigDecimal(request.getParameter("room_num"));
+		//BigDecimal room_num = new BigDecimal(request.getParameter("room_num"));
 		BigDecimal transfer_num = new BigDecimal(request.getParameter("transfer_num"));
 		System.out.println("email"+mb_email);
 		System.out.println("tran_num"+rc_num);
 		
-		ReservationDTO dto = new ReservationDTO(rc_num,rc_num, room_num, null, mb_email,mb_email ,mb_email );
+		ReservationDTO dto = new ReservationDTO(rc_num,rc_num, rc_num, null, mb_email,mb_email ,mb_email );
 		int row = new ReservationDAO().transfer_update(dto);
 		
 		if(row>0) {

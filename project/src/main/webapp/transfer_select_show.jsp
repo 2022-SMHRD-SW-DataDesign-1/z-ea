@@ -259,7 +259,8 @@ img {
 												style="font-size: 20px; font-weight: bold;">장소명</label>
 										</div>
 										<div style="margin-left: 30%;">
-											<p style="font-size: 20px; color: #4b4b4b;"><%=new GlampingDAO().transfer_num_glamping_show(transfer_num).getGc_name()%></p>
+											<p style="font-size: 20px; color: #4b4b4b;"><%=new GlampingDAO().my_glamping_show((new ReservationDAO().transfer_num_check_in(transfer_num).getGc_num()))
+		.getGc_name()%></p>
 										</div>
 										<hr
 											style="border: solid #dedede; border-width: 1px 0 0; width: 1000px;">
@@ -272,7 +273,8 @@ img {
 												style="font-size: 20px; font-weight: bold;">장소유형</label>
 										</div>
 										<div style="margin-left: 30%;">
-											<p style="font-size: 20px; color: #4b4b4b;"><%=new GlampingDAO().transfer_num_glamping_show(transfer_num).getGc_type()%></p>
+											<p style="font-size: 20px; color: #4b4b4b;"><%=new GlampingDAO().my_glamping_show((new ReservationDAO().transfer_num_check_in(transfer_num).getGc_num()))
+		.getGc_type()%></p>
 										</div>
 									</fieldset>
 									<hr
@@ -346,7 +348,7 @@ img {
 										style="border: solid #dedede; border-width: 1px 0 0; width: 1000px;">
 								</div>
 
-								<div class="col-lg-6" style="padding: 10px; margin-left: 20px;">
+								<%-- <div class="col-lg-6" style="padding: 10px; margin-left: 20px;">
 									<fieldset>
 										<div style="float: left;">
 											<label for="name" class="form-label"
@@ -359,7 +361,7 @@ img {
 									<hr
 										style="border: solid #dedede; border-width: 1px 0 0; width: 1000px;">
 								</div>
-
+ --%>
 								<div class="col-lg-6" style="padding: 10px; margin-left: 20px;">
 									<fieldset>
 										<div style="float: left;">
@@ -367,7 +369,8 @@ img {
 												style="font-size: 20px; font-weight: bold;">주소</label>
 										</div>
 										<div style="margin-left: 30%;">
-											<p style="font-size: 20px; color: #4b4b4b;"><%=new GlampingDAO().transfer_num_glamping_show(transfer_num).getGc_addr()%></p>
+											<p style="font-size: 20px; color: #4b4b4b; width: 800px"><%=new GlampingDAO().my_glamping_show((new ReservationDAO().transfer_num_check_in(transfer_num).getGc_num()))
+		.getGc_addr()%></p>
 										</div>
 									</fieldset>
 									<hr
@@ -382,26 +385,22 @@ img {
 												style="font-size: 20px; font-weight: bold;">장소 연락처</label>
 										</div>
 										<div style="margin-left: 30%;">
-											<p style="font-size: 20px; color: #4b4b4b;"><%=new GlampingDAO().transfer_num_glamping_show(transfer_num).getGc_tel()%></p>
+											<p style="font-size: 20px; color: #4b4b4b;"><%=new GlampingDAO().my_glamping_show((new ReservationDAO().transfer_num_check_in(transfer_num).getGc_num()))
+		.getGc_tel()%></p>
 										</div>
 									</fieldset>
 									<hr
 										style="border: solid #dedede; border-width: 1px 0 0; width: 1000px;">
 								</div>
 
-								<div class="col-lg-6" style="padding: 10px; margin-left: 20px;">
-									<fieldset>
-										<div style="float: left;">
-											<label for="name" class="form-label"
-												style="font-size: 20px; font-weight: bold;">방이름</label>
-										</div>
-										<div style="margin-left: 30%;">
-											<p style="font-size: 20px; color: #4b4b4b;"><%=new RoomDAO().transfer_num_room_show(transfer_num).getRoom_num()%></p>
-										</div>
-									</fieldset>
-									<hr
-										style="border: solid #dedede; border-width: 1px 0 0; width: 1000px;">
-								</div>
+								<%-- <div class="col-lg-6" style="padding: 10px; margin-left:
+								20px;"> <fieldset> <div style="float: left;"> <label for="name"
+								class="form-label" style="font-size: 20px; font-weight:
+								bold;">방이름</label> </div> <div style="margin-left: 30%;"> <p
+								style="font-size: 20px; color: #4b4b4b;"><%=new
+								RoomDAO().transfer_num_room_show(transfer_num).getRoom_num()%></p>
+								</div> </fieldset> <hr style="border: solid #dedede;
+								border-width: 1px 0 0; width: 1000px;"> </div> --%>
 
 								</table>
 								<div class="noti" style="width: 80%; color: #000;">
@@ -437,7 +436,7 @@ img {
 									<button id="btnGo" disabled="disabled"
 										style="margin-top: 70px; width: 110px; border-radius: 15px; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none; margin-left: -20px;">
 										<a style="color: white;"
-											href="TransferChangeService?num=<%=new TransferDAO().transfer_show(transfer_num).getRc_num()%>&email=<%=info.getMb_email()%>&room_num=<%=new RoomDAO().transfer_num_room_show(transfer_num).getRoom_num()%>&transfer_num=<%=transfer_num%>">양도받기</a>
+											href="TransferChangeService?num=<%=new TransferDAO().transfer_show(transfer_num).getRc_num()%>&email=<%=info.getMb_email()%>&transfer_num=<%=transfer_num%>">양도받기</a>
 									</button>
 								</div>
 							</div>
@@ -446,7 +445,6 @@ img {
 				</div>
 			</div>
 		</div>
-	</div>
 	</div>
 
 	<footer>

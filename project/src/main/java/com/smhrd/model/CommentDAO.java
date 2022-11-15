@@ -29,7 +29,7 @@ public class CommentDAO {
 		SqlSession session = sqlSessionFactory.openSession(true);
 		System.out.println("요기까진 댐");
 		ArrayList<CommentDTO> list = (ArrayList)session.selectList("show_comment", cminfo);
-		System.out.println(list.get(0).getComment_content());
+		
 		System.out.println("여기까지도 됌");
 		
 		session.close();

@@ -245,12 +245,16 @@
 							<div class="row">
 								<div class="col-lg-6">
 									<div class="image">
-										<img src="assets/images/deals-0<%=i + 1%>.jpg" alt="">
+										<img src="assets/camping/333_1.jpg" alt=""
+											style="width: 246px; height: 328px;">
 									</div>
 								</div>
 								<div class="col-lg-6 align-self-center">
 									<div class="content">
-										<h4><%=transfer_list.get(i).getTransfer_num()%></h4>
+										<h4><%=new GlampingDAO()
+		.my_glamping_show(
+				(new ReservationDAO().transfer_num_check_in(transfer_list.get(i).getTransfer_num()).getGc_num()))
+		.getGc_name()%></h4>
 										<div class="row">
 											<div class="col-6">
 												<i class="fa fa-clock"></i> <span class="list">마감<%=buf.insert(2, '-')%></span>
@@ -298,10 +302,8 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<p>
-							Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights
-							reserved. <br>Design: <a href="https://templatemo.com"
-								target="_blank" title="free CSS templates">TemplateMo</a>
-							Distribution: <a href="https://themewagon.com target="_blank">ThemeWagon</a>
+							Copyright © 2022 <a href="#">ze:a</a> Company. All rights
+							reserved.
 						</p>
 					</div>
 				</div>
