@@ -256,7 +256,10 @@ https://templatemo.com/tm-580-woox-travel
 														style="margin-left: 40%;"><%=buf1.insert(2, '-')%></div>
 												</fieldset>
 											</div>
+											<hr
+												style="margin-top: 40px; border: solid #4b4b4b; border-width: 2px 0 0; width: 800px;">
 										</div>
+
 									</div>
 								</div>
 								<%

@@ -233,109 +233,212 @@ img {
 					<div class="row" style="display: block;">
 						<div class="col-lg-12" style="margin: 20px;">
 							<div class="row">
+
 								<div class="col-lg-12">
-									<h4>양도확인</h4>
-									<table class="table"
-										style="text-align: left; width: 80%; color: #000;">
+									<h2 style="margin-bottom: 50px; padding: 20px;">양수신청</h2>
+								</div>
+
+								<div class="col-lg-6" style="padding: 10px; margin-left: 20px;">
+									<fieldset>
+										<div style="float: left;">
+											<label for="name" class="form-label"
+												style="font-size: 20px; font-weight: bold;">양도자</label>
+										</div>
+										<div style="margin-left: 30%;">
+											<p style="font-size: 20px; color: #4b4b4b;"><%=new TransferDAO().transfer_show(transfer_num).getTransfer_id()%></p>
+										</div>
+									</fieldset>
+									<hr
+										style="border: solid #dedede; border-width: 1px 0 0; width: 1000px;">
+								</div>
+
+								<div class="col-lg-6" style="padding: 10px; margin-left: 20px;">
+									<fieldset>
+										<div style="float: left;">
+											<label for="name" class="form-label"
+												style="font-size: 20px; font-weight: bold;">장소명</label>
+										</div>
+										<div style="margin-left: 30%;">
+											<p style="font-size: 20px; color: #4b4b4b;"><%=new GlampingDAO().transfer_num_glamping_show(transfer_num).getGc_name()%></p>
+										</div>
+										<hr
+											style="border: solid #dedede; border-width: 1px 0 0; width: 1000px;">
+								</div>
+
+								<div class="col-lg-6" style="padding: 10px; margin-left: 20px;">
+									<fieldset>
+										<div style="float: left;">
+											<label for="name" class="form-label"
+												style="font-size: 20px; font-weight: bold;">장소유형</label>
+										</div>
+										<div style="margin-left: 30%;">
+											<p style="font-size: 20px; color: #4b4b4b;"><%=new GlampingDAO().transfer_num_glamping_show(transfer_num).getGc_type()%></p>
+										</div>
+									</fieldset>
+									<hr
+										style="border: solid #dedede; border-width: 1px 0 0; width: 1000px;">
+								</div>
 
 
-										<tr>
-											<td style="width: 300px;">양도자 아이디:</td>
-											<td style="width: 300px;"><%=new TransferDAO().transfer_show(transfer_num).getTransfer_id()%></td>
-										</tr>
-										<tr>
-											<td style="width: 300px;">장소 명:</td>
-											<td style="width: 300px;"><%=new GlampingDAO().transfer_num_glamping_show(transfer_num).getGc_name()%></td>
-										</tr>
-										<tr>
-											<td style="width: 300px;">장소 유형:</td>
-											<td style="width: 300px;"><%=new GlampingDAO().transfer_num_glamping_show(transfer_num).getGc_type()%></td>
-										</tr>
-										<tr>
-											<%
-											StringBuffer bu = new StringBuffer(new ReservationDAO().transfer_num_check_in(transfer_num).getCheck_in());
-											%>
-											<td style="width: 300px;">양도 마감일:</td>
-											<td style="width: 300px;"><%=bu.insert(2, '-')%></td>
-										</tr>
-										<tr>
-											<td style="width: 300px;">제시가격:</td>
-											<td style="width: 300px;"><%=new TransferDAO().transfer_show(transfer_num).getOffer_price()%></td>
-										</tr>
+								<%
+								StringBuffer bu = new StringBuffer(new ReservationDAO().transfer_num_check_in(transfer_num).getCheck_in());
+								%>
+								<div class="col-lg-6" style="padding: 10px; margin-left: 20px;">
+									<fieldset>
+										<div style="float: left;">
+											<label for="name" class="form-label"
+												style="font-size: 20px; font-weight: bold;">양도 마감일</label>
+										</div>
+										<div style="margin-left: 30%;">
+											<p style="font-size: 20px; color: #4b4b4b;"><%=bu.insert(2, '-')%></p>
+										</div>
+									</fieldset>
+									<hr
+										style="border: solid #dedede; border-width: 1px 0 0; width: 1000px;">
+								</div>
 
-										<tr>
-											<td style="width: 300px;">양도 사유:</td>
-											<td style="width: 300px;"><%=new TransferDAO().transfer_show(transfer_num).getTransfer_reason()%></td>
-										</tr>
+								<div class="col-lg-6" style="padding: 10px; margin-left: 20px;">
+									<fieldset>
+										<div style="float: left;">
+											<label for="name" class="form-label"
+												style="font-size: 20px; font-weight: bold;">제시 가격</label>
+										</div>
+										<div style="margin-left: 30%;">
+											<p style="font-size: 20px; color: #4b4b4b;"><%=new TransferDAO().transfer_show(transfer_num).getOffer_price()%></p>
+										</div>
+									</fieldset>
+									<hr
+										style="border: solid #dedede; border-width: 1px 0 0; width: 1000px;">
+								</div>
 
-									</table>
-									<%
-									StringBuffer buf = new StringBuffer(new ReservationDAO().transfer_num_check_in(transfer_num).getCheck_in());
-									StringBuffer buf1 = new StringBuffer(new ReservationDAO().transfer_num_check_in(transfer_num).getCheck_out());
-									%>
-									<table class="table" style="text-align: left; width: 80%;">
-										<tr>
-											<td style="width: 300px;">기간:</td>
-											<td style="width: 300px;"><%=buf.insert(2, '-')%> ~<%=buf1.insert(2, '-')%></td>
-										</tr>
-										<tr>
-											<td style="width: 300px;">제한 인원:</td>
-											<td style="width: 300px;"><%=new RoomDAO().transfer_num_room_show(transfer_num).getPeople_limit()%></td>
-										</tr>
+								<div class="col-lg-6" style="padding: 10px; margin-left: 20px;">
+									<fieldset>
+										<div style="float: left;">
+											<label for="name" class="form-label"
+												style="font-size: 20px; font-weight: bold;">양도 사유</label>
+										</div>
+										<div style="margin-left: 30%;">
+											<p
+												style="font-size: 20px; word-break: break-all; color: #4b4b4b;"><%=new TransferDAO().transfer_show(transfer_num).getTransfer_reason()%></p>
+										</div>
+									</fieldset>
+									<hr
+										style="border: solid #dedede; border-width: 1px 0 0; width: 1000px;">
+								</div>
 
-										<tr>
-											<td style="width: 300px;">주소</td>
-											<td style="width: 300px;"><%=new GlampingDAO().transfer_num_glamping_show(transfer_num).getGc_addr()%></td>
-										</tr>
-										<tr>
-											<td style="width: 300px;">장소연락처</td>
-											<td style="width: 300px;"><%=new GlampingDAO().transfer_num_glamping_show(transfer_num).getGc_tel()%>
-											</td>
-										</tr>
-										<tr>
-											<td style="width: 300px;">방이름</td>
-											<td style="width: 300px;"><%=new RoomDAO().transfer_num_room_show(transfer_num).getRoom_num()%>
-											</td>
-										</tr>
+								<%
+								StringBuffer buf = new StringBuffer(new ReservationDAO().transfer_num_check_in(transfer_num).getCheck_in());
+								StringBuffer buf1 = new StringBuffer(new ReservationDAO().transfer_num_check_in(transfer_num).getCheck_out());
+								%>
 
-									</table>
-									<
-									<div class="noti" style="width: 80%; color: #000;">
-										<h5 style="color: #000;">공지사항</h5>
-										<ul style="margin-left: 30px;">
-											<li>코로나로 인한 5인 이상 집합금지 지침때문에 한 사이트당 4인 이상 예약을 받지 않습니다.</li>
-											<li>가족동반(다자녀 포함)으로 오는 경우에 한하여 예외 허용합니다.</li>
-											<li></li>
-											<li></li>
-											<li></li>
-										</ul>
-									</div>
-									<div class="ti" style="width: 80%; color: #000;">
-										<br>
-										<h5 class="ti-title" style="color: #000; margin-top: 10px;">주의사항</h5>
-										<ul>
-											<li>1.캠핑장의 공지사항/유의사항 등을 숙지하지 않으시고 캠핑장에 입실하여 발생되는 사고 및
-												분쟁에 대하여 땡큐캠핑은 책임사유가 없음을 알려 드립니다. (예 : 반려견 입장 불가/최대인원
-												제한/입,퇴실시간 준수 등)</li>
-											<li>2.양도 받은 예약건을 개인사유로 인하여 취소 시 캠핑장의 환불기준에 준하여 환불처리됨을 알려
-												드립니다.</li>
-											<li>3.양도자의 사기거래로 인하여 캠핑장에 입실을 못 하시는 경우, 해당여부를 파악하여
-												예약양도결제금액에 한하여 전액취소처리가 가능합니다.</li>
-											<li>4.캠핑장관리자의 예약관리 부주의로 인한 예약누락으로 인하여 캠핑을 하지 못하시는 경우의
-												관련처리 및 환불 책임은 해당캠핑장에 있음을 알려 드립니다.</li>
-										</ul>
-									</div>
-									<div class="check" style="color: #000;">
-										<input type="checkbox" id="ch"> 캠핑장 공지사항을 확인했으며, 양도거래
-										유의 사항에 동의합니다.
-									</div>
-									<div style="text-align: center;">
-										<button id="btnGo" disabled="disabled"
-											style="margin-top: 70px; width: 110px; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none;">
-											<a
-												href="TransferChangeService?num=<%=new TransferDAO().transfer_show(transfer_num).getRc_num()%>&email=<%=info.getMb_email()%>&room_num=<%=new RoomDAO().transfer_num_room_show(transfer_num).getRoom_num()%>&transfer_num=<%=transfer_num%>">양도받기</a>
-										</button>
-									</div>
+								<div class="col-lg-6" style="padding: 10px; margin-left: 20px;">
+									<fieldset>
+										<div style="float: left;">
+											<label for="name" class="form-label"
+												style="font-size: 20px; font-weight: bold;">기간</label>
+										</div>
+										<div style="margin-left: 30%;">
+											<p style="font-size: 20px; color: #4b4b4b;"><%=buf.insert(2, '-')%>
+												~<%=buf1.insert(2, '-')%></p>
+										</div>
+									</fieldset>
+									<hr
+										style="border: solid #dedede; border-width: 1px 0 0; width: 1000px;">
+								</div>
+
+								<div class="col-lg-6" style="padding: 10px; margin-left: 20px;">
+									<fieldset>
+										<div style="float: left;">
+											<label for="name" class="form-label"
+												style="font-size: 20px; font-weight: bold;">제한인원</label>
+										</div>
+										<div style="margin-left: 30%;">
+											<p style="font-size: 20px; color: #4b4b4b;"><%=new RoomDAO().transfer_num_room_show(transfer_num).getPeople_limit()%></p>
+										</div>
+									</fieldset>
+									<hr
+										style="border: solid #dedede; border-width: 1px 0 0; width: 1000px;">
+								</div>
+
+								<div class="col-lg-6" style="padding: 10px; margin-left: 20px;">
+									<fieldset>
+										<div style="float: left;">
+											<label for="name" class="form-label"
+												style="font-size: 20px; font-weight: bold;">주소</label>
+										</div>
+										<div style="margin-left: 30%;">
+											<p style="font-size: 20px; color: #4b4b4b;"><%=new GlampingDAO().transfer_num_glamping_show(transfer_num).getGc_addr()%></p>
+										</div>
+									</fieldset>
+									<hr
+										style="border: solid #dedede; border-width: 1px 0 0; width: 1000px;">
+								</div>
+
+
+								<div class="col-lg-6" style="padding: 10px; margin-left: 20px;">
+									<fieldset>
+										<div style="float: left;">
+											<label for="name" class="form-label"
+												style="font-size: 20px; font-weight: bold;">장소 연락처</label>
+										</div>
+										<div style="margin-left: 30%;">
+											<p style="font-size: 20px; color: #4b4b4b;"><%=new GlampingDAO().transfer_num_glamping_show(transfer_num).getGc_tel()%></p>
+										</div>
+									</fieldset>
+									<hr
+										style="border: solid #dedede; border-width: 1px 0 0; width: 1000px;">
+								</div>
+
+								<div class="col-lg-6" style="padding: 10px; margin-left: 20px;">
+									<fieldset>
+										<div style="float: left;">
+											<label for="name" class="form-label"
+												style="font-size: 20px; font-weight: bold;">방이름</label>
+										</div>
+										<div style="margin-left: 30%;">
+											<p style="font-size: 20px; color: #4b4b4b;"><%=new RoomDAO().transfer_num_room_show(transfer_num).getRoom_num()%></p>
+										</div>
+									</fieldset>
+									<hr
+										style="border: solid #dedede; border-width: 1px 0 0; width: 1000px;">
+								</div>
+
+								</table>
+								<div class="noti" style="width: 80%; color: #000;">
+									<h5 style="color: #000;">공지사항</h5>
+									<ul style="margin-left: -10%;">
+										<li>코로나로 인한 5인 이상 집합금지 지침때문에 한 사이트당 4인 이상 예약을 받지 않습니다.</li>
+										<li>가족동반(다자녀 포함)으로 오는 경우에 한하여 예외 허용합니다.</li>
+										<li></li>
+										<li></li>
+										<li></li>
+									</ul>
+								</div>
+								<div class="ti" style="width: 80%; color: #000;">
+									<br>
+									<h5 class="ti-title" style="color: #000; margin-top: 10px;">주의사항</h5>
+									<ul>
+										<li>1.캠핑장의 공지사항/유의사항 등을 숙지하지 않으시고 캠핑장에 입실하여 발생되는 사고 및 분쟁에
+											대하여 땡큐캠핑은 책임사유가 없음을 알려 드립니다. (예 : 반려견 입장 불가/최대인원 제한/입,퇴실시간 준수
+											등)</li>
+										<li>2.양도 받은 예약건을 개인사유로 인하여 취소 시 캠핑장의 환불기준에 준하여 환불처리됨을 알려
+											드립니다.</li>
+										<li>3.양도자의 사기거래로 인하여 캠핑장에 입실을 못 하시는 경우, 해당여부를 파악하여
+											예약양도결제금액에 한하여 전액취소처리가 가능합니다.</li>
+										<li>4.캠핑장관리자의 예약관리 부주의로 인한 예약누락으로 인하여 캠핑을 하지 못하시는 경우의
+											관련처리 및 환불 책임은 해당캠핑장에 있음을 알려 드립니다.</li>
+									</ul>
+								</div>
+								<div class="check" style="color: #000; margin-left: 50px;">
+									<input type="checkbox" id="ch"> 캠핑장 공지사항을 확인했으며, 양도거래
+									유의 사항에 동의합니다.
+								</div>
+								<div>
+									<button id="btnGo" disabled="disabled"
+										style="margin-top: 70px; width: 110px; border-radius: 15px; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none; margin-left: -20px;">
+										<a style="color: white;"
+											href="TransferChangeService?num=<%=new TransferDAO().transfer_show(transfer_num).getRc_num()%>&email=<%=info.getMb_email()%>&room_num=<%=new RoomDAO().transfer_num_room_show(transfer_num).getRoom_num()%>&transfer_num=<%=transfer_num%>">양도받기</a>
+									</button>
 								</div>
 							</div>
 						</div>
@@ -343,6 +446,7 @@ img {
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 
 	<footer>

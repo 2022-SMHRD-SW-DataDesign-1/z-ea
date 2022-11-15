@@ -218,62 +218,44 @@
 
 
 									<div class="choose1"
-										style="height: 40px; width: 120px; border: solid black 1px;border-radius: 25px;
-										margin-top: 5px;padding-top: 7px;"
+										style="height: 40px; width: 120px; border: solid black 1px; border-radius: 25px; margin-top: 5px; padding-top: 7px;"
 										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
 										onclick="tag_filter(this)">#가족</div>
 
 
 									<div class="choose1"
-
-											style="height: 40px; width: 120px; border: solid black 1px;border-radius: 25px;
-										margin-top: 5px;padding-top: 7px;"
-
+										style="height: 40px; width: 120px; border: solid black 1px; border-radius: 25px; margin-top: 5px; padding-top: 7px;"
 										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
-
 										onclick="tag_filter(this)">#혼자</div>
 
 
 									<div class="choose1"
-
-											style="height: 40px; width: 120px; border: solid black 1px;border-radius: 25px;
-										margin-top: 5px;padding-top: 7px;" 
-
+										style="height: 40px; width: 120px; border: solid black 1px; border-radius: 25px; margin-top: 5px; padding-top: 7px;"
 										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
-
 										onclick="tag_filter(this)">#감성</div>
 
 
 									<div class="choose1"
-
-											style="height: 40px; width: 120px; border: solid black 1px;border-radius: 25px;
-										margin-top: 5px;padding-top: 7px;": 
-
+										style="height: 40px; width: 120px; border: solid black 1px; border-radius: 25px; margin-top: 5px; padding-top: 7px;"
+										:
 										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
-
 										onclick="tag_filter(this)">#커플</div>
 
 
 									<div class="choose1"
-
-											style="height: 40px; width: 120px; border: solid black 1px;border-radius: 25px;
-										margin-top: 5px;padding-top: 7px;"
-
+										style="height: 40px; width: 120px; border: solid black 1px; border-radius: 25px; margin-top: 5px; padding-top: 7px;"
 										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
-
 										onclick="tag_filter(this)">#단체</div>
 
 
 									<div class="choose1"
-											style="height: 40px; width: 120px; border: solid black 1px;border-radius: 25px;
-										margin-top: 5px;padding-top: 7px;"
+										style="height: 40px; width: 120px; border: solid black 1px; border-radius: 25px; margin-top: 5px; padding-top: 7px;"
 										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
 										onclick="tag_filter(this)">#바다</div>
 
 
 									<div class="choose1"
-											style="height: 40px; width: 120px; border: solid black 1px;border-radius: 25px;
-										margin-top: 5px;padding-top: 7px;"
+										style="height: 40px; width: 120px; border: solid black 1px; border-radius: 25px; margin-top: 5px; padding-top: 7px;"
 										style="height: 40px; width: 120px; border: solid black 1px; padding: 10px;"
 										onclick="tag_filter(this)">#산</div>
 
@@ -307,11 +289,11 @@
 											<a id="item_list" class="item_list"
 												href="ShowService?num=<%=item_list.get(i).getNum()%>"
 												style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox; overflow: hidden;">
-												<img src="assets/images/offers-01.jpg" alt=""
+												<img src="assets/camping/<%=i + 330%>_1.jpg" alt=""
 												style="width: 200px; height: 200px;">
 												<div style="text-align: left; padding-left: 20px;">
 													<p id="item"><%=item_list.get(i).getName()%></p>
-													<p id="item" ><%=item_list.get(i).getDesc()%></p>
+													<p id="item"><%=item_list.get(i).getDesc()%></p>
 												</div>
 											</a>
 
