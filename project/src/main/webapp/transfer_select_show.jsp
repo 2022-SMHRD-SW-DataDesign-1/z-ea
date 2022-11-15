@@ -224,189 +224,199 @@ img {
 	BigDecimal transfer_num = new BigDecimal(request.getParameter("transfer_num"));
 	System.out.println(transfer_num);
 	%>
-	<div class="dark">
-		<div class="second-page-heading">
-			<div class="container">
-				<div class="more-info reservation-info">
-					<div class="container">
 
-						<table class="table" style="text-align: left; width: 80%;">
+	<div class="cities-town"
+		style="display: inline-block; margin-left: 350px; margin-top: 100px;">
+		<div class="container">
+			<div class="row">
+				<div class="slider-content" style="width: 1200px;">
+					<div class="row" style="display: block;">
+						<div class="col-lg-12" style="margin: 20px;">
+							<div class="row">
+								<div class="col-lg-12">
+									<h4>양도확인</h4>
+									<table class="table"
+										style="text-align: left; width: 80%; color: #000;">
 
-							<tr style="text-align: center;">
-								<td colspan="2"></td>
-							</tr>
 
-							<tr>
-								<td style="width: 300px;">양도자 아이디:</td>
-								<td style="width: 300px;"><%=new TransferDAO().transfer_show(transfer_num).getTransfer_id()%></td>
-							</tr>
-							<tr>
-								<td style="width: 300px;">장소 명:</td>
-								<td style="width: 300px;"><%=new GlampingDAO().transfer_num_glamping_show(transfer_num).getGc_name()%></td>
-							</tr>
-							<tr>
-								<td style="width: 300px;">장소 유형:</td>
-								<td style="width: 300px;"><%=new GlampingDAO().transfer_num_glamping_show(transfer_num).getGc_type()%></td>
-							</tr>
-							<tr>
-							<% StringBuffer bu = new StringBuffer(new ReservationDAO().transfer_num_check_in(transfer_num).getCheck_in()); %>
-								<td style="width: 300px;">양도 마감일:</td>
-								<td style="width: 300px;"><%=bu.insert(2, '-')%></td>
-							</tr>
-							<tr>
-								<td style="width: 300px;">제시가격:</td>
-								<td style="width: 300px;"><%=new TransferDAO().transfer_show(transfer_num).getOffer_price()%></td>
-							</tr>
+										<tr>
+											<td style="width: 300px;">양도자 아이디:</td>
+											<td style="width: 300px;"><%=new TransferDAO().transfer_show(transfer_num).getTransfer_id()%></td>
+										</tr>
+										<tr>
+											<td style="width: 300px;">장소 명:</td>
+											<td style="width: 300px;"><%=new GlampingDAO().transfer_num_glamping_show(transfer_num).getGc_name()%></td>
+										</tr>
+										<tr>
+											<td style="width: 300px;">장소 유형:</td>
+											<td style="width: 300px;"><%=new GlampingDAO().transfer_num_glamping_show(transfer_num).getGc_type()%></td>
+										</tr>
+										<tr>
+											<%
+											StringBuffer bu = new StringBuffer(new ReservationDAO().transfer_num_check_in(transfer_num).getCheck_in());
+											%>
+											<td style="width: 300px;">양도 마감일:</td>
+											<td style="width: 300px;"><%=bu.insert(2, '-')%></td>
+										</tr>
+										<tr>
+											<td style="width: 300px;">제시가격:</td>
+											<td style="width: 300px;"><%=new TransferDAO().transfer_show(transfer_num).getOffer_price()%></td>
+										</tr>
 
-							<tr>
-								<td style="width: 300px;">양도 사유:</td>
-								<td style="width: 300px;"><%=new TransferDAO().transfer_show(transfer_num).getTransfer_reason()%></td>
-							</tr>
+										<tr>
+											<td style="width: 300px;">양도 사유:</td>
+											<td style="width: 300px;"><%=new TransferDAO().transfer_show(transfer_num).getTransfer_reason()%></td>
+										</tr>
 
-						</table>
-						<% StringBuffer buf = new StringBuffer(new ReservationDAO().transfer_num_check_in(transfer_num).getCheck_in());
-							StringBuffer buf1 = new StringBuffer(new ReservationDAO().transfer_num_check_in(transfer_num).getCheck_out());
-						%>
-						<table class="table" style="text-align: left; width: 80%;">
-							<tr>
-								<td style="width: 300px;">기간:</td>
-								<td style="width: 300px;"><%=buf.insert(2, '-')%>
-									~<%=buf1.insert(2, '-')%></td>
-							</tr>
-							<tr>
-								<td style="width: 300px;">제한 인원:</td>
-								<td style="width: 300px;"><%=new RoomDAO().transfer_num_room_show(transfer_num).getPeople_limit()%></td>
-							</tr>
+									</table>
+									<%
+									StringBuffer buf = new StringBuffer(new ReservationDAO().transfer_num_check_in(transfer_num).getCheck_in());
+									StringBuffer buf1 = new StringBuffer(new ReservationDAO().transfer_num_check_in(transfer_num).getCheck_out());
+									%>
+									<table class="table" style="text-align: left; width: 80%;">
+										<tr>
+											<td style="width: 300px;">기간:</td>
+											<td style="width: 300px;"><%=buf.insert(2, '-')%> ~<%=buf1.insert(2, '-')%></td>
+										</tr>
+										<tr>
+											<td style="width: 300px;">제한 인원:</td>
+											<td style="width: 300px;"><%=new RoomDAO().transfer_num_room_show(transfer_num).getPeople_limit()%></td>
+										</tr>
 
-							<tr>
-								<td style="width: 300px;">주소</td>
-								<td style="width: 300px;"><%=new GlampingDAO().transfer_num_glamping_show(transfer_num).getGc_addr()%></td>
-							</tr>
-							<tr>
-								<td style="width: 300px;">장소연락처</td>
-								<td style="width: 300px;"><%=new GlampingDAO().transfer_num_glamping_show(transfer_num).getGc_tel()%>
-								</td>
-							</tr>
-							<tr>
-								<td style="width: 300px;">방이름</td>
-								<td style="width: 300px;"><%=new RoomDAO().transfer_num_room_show(transfer_num).getRoom_num()%>
-								</td>
-							</tr>
+										<tr>
+											<td style="width: 300px;">주소</td>
+											<td style="width: 300px;"><%=new GlampingDAO().transfer_num_glamping_show(transfer_num).getGc_addr()%></td>
+										</tr>
+										<tr>
+											<td style="width: 300px;">장소연락처</td>
+											<td style="width: 300px;"><%=new GlampingDAO().transfer_num_glamping_show(transfer_num).getGc_tel()%>
+											</td>
+										</tr>
+										<tr>
+											<td style="width: 300px;">방이름</td>
+											<td style="width: 300px;"><%=new RoomDAO().transfer_num_room_show(transfer_num).getRoom_num()%>
+											</td>
+										</tr>
 
-						</table>
-						<div class="noti" style="width: 80%;">
-							<h5>공지사항</h5>
-
-							<ul>
-								<li>코로나로 인한 5인 이상 집합금지 지침때문에 한 사이트당 4인 이상 예약을 받지 않습니다.</li>
-								<li>가족동반(다자녀 포함)으로 오는 경우에 한하여 예외 허용합니다.</li>
-								<li></li>
-								<li></li>
-								<li></li>
-							</ul>
+									</table>
+									<
+									<div class="noti" style="width: 80%; color: #000;">
+										<h5 style="color: #000;">공지사항</h5>
+										<ul style="margin-left: 30px;">
+											<li>코로나로 인한 5인 이상 집합금지 지침때문에 한 사이트당 4인 이상 예약을 받지 않습니다.</li>
+											<li>가족동반(다자녀 포함)으로 오는 경우에 한하여 예외 허용합니다.</li>
+											<li></li>
+											<li></li>
+											<li></li>
+										</ul>
+									</div>
+									<div class="ti" style="width: 80%; color: #000;">
+										<br>
+										<h5 class="ti-title" style="color: #000; margin-top: 10px;">주의사항</h5>
+										<ul>
+											<li>1.캠핑장의 공지사항/유의사항 등을 숙지하지 않으시고 캠핑장에 입실하여 발생되는 사고 및
+												분쟁에 대하여 땡큐캠핑은 책임사유가 없음을 알려 드립니다. (예 : 반려견 입장 불가/최대인원
+												제한/입,퇴실시간 준수 등)</li>
+											<li>2.양도 받은 예약건을 개인사유로 인하여 취소 시 캠핑장의 환불기준에 준하여 환불처리됨을 알려
+												드립니다.</li>
+											<li>3.양도자의 사기거래로 인하여 캠핑장에 입실을 못 하시는 경우, 해당여부를 파악하여
+												예약양도결제금액에 한하여 전액취소처리가 가능합니다.</li>
+											<li>4.캠핑장관리자의 예약관리 부주의로 인한 예약누락으로 인하여 캠핑을 하지 못하시는 경우의
+												관련처리 및 환불 책임은 해당캠핑장에 있음을 알려 드립니다.</li>
+										</ul>
+									</div>
+									<div class="check" style="color: #000;">
+										<input type="checkbox" id="ch"> 캠핑장 공지사항을 확인했으며, 양도거래
+										유의 사항에 동의합니다.
+									</div>
+									<div style="text-align: center;">
+										<button id="btnGo" disabled="disabled"
+											style="margin-top: 70px; width: 110px; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none;">
+											<a
+												href="TransferChangeService?num=<%=new TransferDAO().transfer_show(transfer_num).getRc_num()%>&email=<%=info.getMb_email()%>&room_num=<%=new RoomDAO().transfer_num_room_show(transfer_num).getRoom_num()%>&transfer_num=<%=transfer_num%>">양도받기</a>
+										</button>
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="ti" style="width: 80%;">
-							<br>
-							<h5 class="ti-title">주의사항</h5>
-							<ul>
-								<li>1.캠핑장의 공지사항/유의사항 등을 숙지하지 않으시고 캠핑장에 입실하여 발생되는 사고 및 분쟁에
-									대하여 땡큐캠핑은 책임사유가 없음을 알려 드립니다. (예 : 반려견 입장 불가/최대인원 제한/입,퇴실시간 준수
-									등)</li>
-								<li>2.양도 받은 예약건을 개인사유로 인하여 취소 시 캠핑장의 환불기준에 준하여 환불처리됨을 알려
-									드립니다.</li>
-								<li>3.양도자의 사기거래로 인하여 캠핑장에 입실을 못 하시는 경우, 해당여부를 파악하여
-									예약양도결제금액에 한하여 전액취소처리가 가능합니다.</li>
-								<li>4.캠핑장관리자의 예약관리 부주의로 인한 예약누락으로 인하여 캠핑을 하지 못하시는 경우의 관련처리
-									및 환불 책임은 해당캠핑장에 있음을 알려 드립니다.</li>
-							</ul>
-						</div>
-
-						<div class="check">
-							<input type="checkbox" id="ch"> 캠핑장 공지사항을 확인했으며, 양도거래 유의
-							사항에 동의합니다.
-						</div>
-						<button type="button" id="btnGo" class="btn btn-primary btn-sm"
-							disabled="disabled">
-							<a
-								href="TransferChangeService?num=<%=new TransferDAO().transfer_show(transfer_num).getRc_num()%>&email=<%=info.getMb_email()%>&room_num=<%=new RoomDAO().transfer_num_room_show(transfer_num).getRoom_num()%>&transfer_num=<%=transfer_num%>">양도받기</a>
-						</button>
 					</div>
 				</div>
 			</div>
 		</div>
-		<footer>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<p>
-							Copyright © 2032 ze:a. All rights reserved. <br>Design: <a
-								href="https://templatemo.com" target="_blank"
-								title="free CSS templates">TemplateMo</a> Distribution: <a
-								href="https://themewagon.com" target="_blank">ThemeWagon</a>
-						</p>
-					</div>
+	</div>
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<p>
+						Copyright © 2022 <a href="#">ze:a</a> Company. All rights
+						reserved.
+					</p>
 				</div>
 			</div>
-		</footer>
-		<!-- Scripts -->
-		<!-- Bootstrap core JavaScript -->
-		<!-- 	<script src="vendor/jquery/jquery.min.js"></script>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<!-- Bootstrap core JavaScript -->
+	<!-- 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script> -->
-		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-		<script src="assets/js/isotope.min.js"></script>
-		<script src="assets/js/owl-carousel.js"></script>
-		<script src="assets/js/wow.js"></script>
-		<script src="assets/js/tabs.js"></script>
-		<script src="assets/js/popup.js"></script>
-		<script src="assets/js/custom.js"></script>
-		<script>
-			$(document).ready(function() {
-				/* $("#btnGo").click(
-						function() {
-							window.open("check.html", "양도최종",
-									"width=300,height=250", true);
-						}); */
-				$("#ch").on('click', function() {
-					//alert($("#btnGo").attr("disabled")=="disabled");
-					if ($("#btnGo").attr("disabled") == "disabled") {
-						$("#btnGo").attr("disabled", false);
-					} else {
-						$("#btnGo").attr("disabled", true);
-					}
-				});
-			});
-		</script>
-		<script>
-			$(".option").click(function() {
-				$(".option").removeClass("active");
-				$(this).addClass("active");
-			});
-		</script>
-		<script>
-			function show() {
-				console.log("실행");
-				let modal = document.querySelector(".modalPopup");
-				let modalBtn = document.querySelector(".modalBtn");
-				// let mainCaption = document.querySelector(".main-caption")
-				let slidercon = document.querySelector(".dark")
-				if (modal.style.opacity == "0") {
-					// mainCaption.style.opacity ="0";
-					slidercon.style.opacity = "0";
-					modal.style.opacity = "1";
-					modal.style.display = "block"
-					modalBtn.textContent = "닫기"
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/js/isotope.min.js"></script>
+	<script src="assets/js/owl-carousel.js"></script>
+	<script src="assets/js/wow.js"></script>
+	<script src="assets/js/tabs.js"></script>
+	<script src="assets/js/popup.js"></script>
+	<script src="assets/js/custom.js"></script>
+	<script>
+		$(document).ready(function() {
+			/* $("#btnGo").click(
+					function() {
+						window.open("check.html", "양도최종",
+								"width=300,height=250", true);
+					}); */
+			$("#ch").on('click', function() {
+				//alert($("#btnGo").attr("disabled")=="disabled");
+				if ($("#btnGo").attr("disabled") == "disabled") {
+					$("#btnGo").attr("disabled", false);
 				} else {
-					// mainCaption.style.opacity ="1";
-					slidercon.style.opacity = "1";
-					modal.style.opacity = "0";
-					modal.style.display = "none";
-					modalBtn.textContent = "로그인";
+					$("#btnGo").attr("disabled", true);
 				}
+			});
+		});
+	</script>
+	<script>
+		$(".option").click(function() {
+			$(".option").removeClass("active");
+			$(this).addClass("active");
+		});
+	</script>
+	<script>
+		function show() {
+			console.log("실행");
+			let modal = document.querySelector(".modalPopup");
+			let modalBtn = document.querySelector(".modalBtn");
+			// let mainCaption = document.querySelector(".main-caption")
+			let slidercon = document.querySelector(".dark")
+			if (modal.style.opacity == "0") {
+				// mainCaption.style.opacity ="0";
+				slidercon.style.opacity = "0";
+				modal.style.opacity = "1";
+				modal.style.display = "block"
+				modalBtn.textContent = "닫기"
+			} else {
+				// mainCaption.style.opacity ="1";
+				slidercon.style.opacity = "1";
+				modal.style.opacity = "0";
+				modal.style.display = "none";
+				modalBtn.textContent = "로그인";
 			}
-		</script>
+		}
+	</script>
 </body>
 </html>

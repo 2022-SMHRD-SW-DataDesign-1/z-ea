@@ -30,7 +30,6 @@
 	href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 <!-- Load css styles -->
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-<!-- <link rel="stylesheet" type="text/css" href="css/style.css" /> -->
 </head>
 <body>
 	<%
@@ -49,12 +48,12 @@
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
-							<li><a href="index.jsp" >홈</a></li>
-							<li><a href="about.jsp">테마</a></li>
+							<li><a href="index.jsp">홈</a></li>
+							<li><a href="about.jsp">글램핑&카라반</a></li>
 							<li><a href="reservation.jsp">예약</a></li>
 							<li><a href="transfer.jsp">양도</a></li>
 							<li><a href="community.jsp" class="active">커뮤니티</a></li>
-							
+
 							<%
 							if (info == null) {
 							%>
@@ -177,107 +176,140 @@
 	BigDecimal board_num = new BigDecimal(request.getParameter("board_num"));
 	BoardDTO dto = new BoardDAO().showBoard(board_num);
 	%>
-	<!-- Portfolio section start -->
-	<section id="portfolio" class="darker">
-		<div class="container2">
-			<header>
-				<!-- 커뮤니티 상세내용 -->
-				<br>
-				<h5>
-					커뮤니티 <a href="community.jsp">뒤로가기</a>
-				</h5>
-				<h5 id="board_num"><%=dto.getBoard_num()%></h5>
-				<h5>
-					제목 :
-					<%=dto.getBoard_title()%></h5>
-				<h5>
-					카테고리 :<%=dto.getBoard_category()%></h5>
-				<h5>
-					작성자email :<%=dto.getMb_email()%></h5>
-				<h5>
-					게시날짜 :<%=dto.getBoard_date()%></h5>
-			</header>
-			<div id="single-project"></div>
+
+	<div class="cities-town"
+		style="display: inline-block; margin-left: 350px;">
+		<div class="container">
 			<div class="row">
-				<!--  <figure class="portfolio-item col-md-4 col-sm-6"> -->
-				<img class="img-responsive"
-					style="height: 500px; width: 500px; margin-left: 30%;"
-					src="./file/<%=dto.getBoard_file()%>" alt="Adena icons pack" />
-				<!-- 	<figcaption class="mask"> -->
-				<!-- 	</figcaption> -->
-				<div>
-					<%=dto.getBoard_content()%>
+				<div class="slider-content"
+					style="width: 1200px; margin-top: 100px;">
+					<div class="transfer-form">
+
+
+						<!-- Portfolio section start -->
+						<section id="portfolio" class="darker">
+							<div class="container">
+								<fieldset>
+									<div style="float: left;">
+										<a href="community.jsp"> <img class="img-concert"
+											src="assets/images/point.png"
+											style="width: 40px; margin-top: -300px; margin-left: -50px;">
+										</a>
+									</div>
+									<div style="margin-top: -160px; margin-left: 5%;">
+										<h4 style="font-size: 50px;">
+											<%=dto.getBoard_title()%></h4>
+
+									</div>
+								</fieldset>
+							</div>
+
+
+							<div class="row" style="margin: 10px;">
+								<img class="img-responsive"
+									style="height: 400px; width: 400px; margin-left: 30%;"
+									src="./file/<%=dto.getBoard_file()%>" alt="Adena icons pack" />
+								<!-- 	<figcaption class="mask"> -->
+								<!-- 	</figcaption> -->
+								<div>
+									<%=dto.getBoard_content()%>
+								</div>
+							</div>
+							<!-- 커뮤니티 상세내용 -->
+							<%-- <h5 id="board_num"><%=dtso.getBoard_num()%></h5> --%>
+							<h5 style="margin: 10px; padding: 10px;">
+								작성자 :<%=dto.getMb_email()%></h5>
+
+
+							<h5 style="margin: 10px; padding: 10px;">
+								카테고리 :<%=dto.getBoard_category()%></h5>
+
+							<h5 style="margin: 10px; padding: 10px;">
+								게시날짜 :<%=dto.getBoard_date()%></h5>
+
+							<br>
+							<!-- </figure> -->
+							<!-- 댓글작성 -->
+							<%
+							if (info != null) {
+							%>
+							<div style="margin: 20px;">
+								<form action="CommentService?board_num=<%=dto.getBoard_num()%>"
+									method="post">
+									<div>
+										<%=info.getMb_email()%></div>
+									<textarea type="text" name="comment_content" id="content"
+										style="resize: none; width: 1050px; height: 300px;"></textarea>
+									<input type="submit" value="댓글작성" onclick="commentShow()"
+										style="margin-left: 90%; width: 110px; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none;">
+								</form>
+							</div>
+							<%
+							}
+							%>
+							<div style="margin-top: 20px; padding: 20px;">
+								<h4>댓글</h4>
+							</div>
+							<a action="CommentShowService?board_num=<%=dto.getBoard_num()%>"
+								style="margin: 20px;"> <input type="submit" value="댓글조회">
+							</a>
+							<div style="margin: 20px;">
+								<!-- 댓글내용조회 -->
+								<%
+								// HttpSession s = request.getSession();
+								//ommentDTO cminfo =(CommentDTO)s.getAttribute("Comment_info");
+								//CommentDTO comment = new CommentDTO(board_num,dto.getMb_email(),dto.getMb_email());
+								//if(new BigDecimal(request.getParameter("num")) !=null){
+								ArrayList<CommentDTO> list = (ArrayList<CommentDTO>) new CommentDAO().show_comment(board_num);
+								%>
+								<table style="width: 1200px;">
+									<%
+									for (int i = 0; i < list.size(); i++) {
+									%>
+									<div style="magin: 20px;">
+										<tr>
+											<th><%=i + 1%></th>
+										</tr>
+										<tr>
+											<div>
+												<td><span>작성자 <%=list.get(i).getMb_email()%>
+												</span></td>
+
+											</div>
+										</tr>
+										<tr>
+											<div>
+												<td><span>댓글내용 : <%=list.get(i).getComment_content()%></span></td>
+												<td><span>작성시간 : <%=list.get(i).getComment_date()%></span></td>
+											</div>
+										</tr>
+									</div>
+									<%
+									}
+									%>
+								</table>
+							</div>
+					</div>
 				</div>
-				<br>
-				<!-- </figure> -->
-				<!-- 댓글작성 -->
-				<%
-				if (info != null) {
-				%>
-				<div>
-					<form action="CommentService?board_num=<%=dto.getBoard_num()%>"
-						method="post">
-						<div>
-							작성자이메일 :<%=info.getMb_email()%></div>
-						<textarea type="text" name="comment_content" id="content"
-							style="resize: none;" rows="10"></textarea>
-						<input type="submit" value="댓글작성" onclick="commentShow()">
-					</form>
-				</div>
-				<%
-				}
-				%>
-				<div>댓글</div>
-				<form action="CommentShowService?board_num=<%=dto.getBoard_num()%>">
-					<input type="submit" value="댓글조회">
-				</form>
-				<div>
-					<!-- 댓글내용조회 -->
-					<%
-					// HttpSession s = request.getSession();
-					//ommentDTO cminfo =(CommentDTO)s.getAttribute("Comment_info");
-					//CommentDTO comment = new CommentDTO(board_num,dto.getMb_email(),dto.getMb_email());
-					//if(new BigDecimal(request.getParameter("num")) !=null){
-					ArrayList<CommentDTO> list = (ArrayList<CommentDTO>) new CommentDAO().show_comment(board_num);
-					%>
-					<table>
-						<%
-						for (int i = 0; i < list.size(); i++) {
-						%>
-						<tr>
-							<th><%=i + 1%></th>
-						</tr>
-						<tr>
-							<td><span>작성자이메일 <%=list.get(i).getMb_email()%>
-							</span></td>
-							<td><span>작성시간 : <%=list.get(i).getComment_date()%></span></td>
-						</tr>
-						<tr>
-							<td><span>댓글내용 : <%=list.get(i).getComment_content()%></span></td>
-						</tr>
-						<%
-						}
-						%>
-					</table>
-				</div>
+				</section>
 			</div>
 		</div>
-	</section>
+	</div>
+	</div>
 	<!-- Portfolio section end -->
 	<footer>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<p>
-						Copyright Â© 2036 <a href="#">WoOx Travel</a> Company. All rights
-						reserved. <br>Design: <a href="https://templatemo.com"
-							target="_blank" title="free CSS templates">TemplateMo</a>
-						Distribution: <a href="https://themewagon.com target="_blank">ThemeWagon</a>
+						Copyright © 2022 <a href="#">ze:a</a> Company. All rights
+						reserved.
 					</p>
 				</div>
 			</div>
 		</div>
 	</footer>
+
 	<!-- Load jQuery -->
 	<script>
 		function show() {
@@ -291,8 +323,7 @@
 			if (modal.style.display == "none") {
 				modal.style.display = "block"
 				modalBtn.textContent = "닫기"
-			}
-			else {
+			} else {
 				// mainCaption.style.opacity ="1";
 				modal.style.display = "none"
 				modalBtn.textContent = "로그인";

@@ -4,15 +4,29 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smhrd.mapper.GlampingMapper">
 
-	<select id="my_glamping_show" parameterType="BigDecimal" resultType="GlampingDTO">
-	select * from glamping_caravan_tb5 where gc_num =#{gc_num}
+	<select id="my_glamping_show" parameterType="BigDecimal"
+		resultType="GlampingDTO">
+		select * from glamping_caravan_tb5 where gc_num =#{gc_num}
 
 
 	</select>
-	<select id="transfer_num_glamping_show" parameterType="BigDecimal" resultType="GlampingDTO">
-	select * from glamping_caravan_tb5 where gc_num =(select gc_num from room_tb where room_num = (
-	select room_num from reservation_calendar_tb_1 where rc_num =(
-	select rc_num from transfer_tb where transfer_num =#{transfer_num})
-	))
+	<select id="transfer_num_glamping_show"
+		parameterType="BigDecimal" resultType="GlampingDTO">
+		select * from
+		glamping_caravan_tb5 where gc_num =(select gc_num from room_tb
+		where
+		room_num = (
+		select room_num from reservation_calendar_tb_1 where
+		rc_num =(
+		select rc_num from transfer_tb where transfer_num
+		=#{transfer_num})
+		))
+	</select>
+
+	<select id="reserv_search" parameterType="String"
+		resultType="GlampingDTO">
+		select * from glamping_caravan_tb5 where gc_name like '%'
+		|| #{gc_name} ||
+		'%'
 	</select>
 </mapper>

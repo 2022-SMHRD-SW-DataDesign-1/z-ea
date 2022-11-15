@@ -20,25 +20,27 @@ import com.smhrd.model.CommentDTO;
 public class CommentShowService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		request.setCharacterEncoding("UTF-8");
-	
+
 		System.out.println(request.getParameter("board_num"));
-	BigDecimal board_num = new BigDecimal(request.getParameter("board_num"));
-		//ArrayList<CommentDTO> list = new CommentDAO().show_comment(board_num);
-		
-		//response.getWriter().print(list);
-		//System.out.println(list);
-		//CommentDTO info = new CommentDTO(dto.getBoard_num(),dto.getMb_email(),dto.getBoard_content());
-		ArrayList<CommentDTO> list= (ArrayList<CommentDTO>)new CommentDAO().show_comment(board_num);//.show_comment(info.ge);
+		BigDecimal board_num = new BigDecimal(request.getParameter("board_num"));
+		// ArrayList<CommentDTO> list = new CommentDAO().show_comment(board_num);
+
+		// response.getWriter().print(list);
+		// System.out.println(list);
+		// CommentDTO info = new
+		// CommentDTO(dto.getBoard_num(),dto.getMb_email(),dto.getBoard_content());
+		ArrayList<CommentDTO> list = (ArrayList<CommentDTO>) new CommentDAO().show_comment(board_num);// .show_comment(info.ge);
 		System.out.println(list);
-		if(list !=null) {
+		if (list != null) {
 			System.out.println("조회 성공");
-		}else {
+		} else {
 			System.out.println("조회 실패");
 		}
-	
+
 		RequestDispatcher rd = request.getRequestDispatcher("community_detail.jsp");
 		rd.forward(request, response);
 	}
