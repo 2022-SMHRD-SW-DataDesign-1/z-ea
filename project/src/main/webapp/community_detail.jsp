@@ -28,8 +28,6 @@
 <link rel="stylesheet" href="assets/css/animate.css">
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-<!-- Load css styles -->
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 </head>
 <body>
 	<%
@@ -211,20 +209,20 @@
 									src="./file/<%=dto.getBoard_file()%>" alt="Adena icons pack" />
 								<!-- 	<figcaption class="mask"> -->
 								<!-- 	</figcaption> -->
-								<div>
+								<div style="padding: 20px; margin-top: 50px; font-size: 20px;">
 									<%=dto.getBoard_content()%>
 								</div>
 							</div>
 							<!-- 커뮤니티 상세내용 -->
 							<%-- <h5 id="board_num"><%=dtso.getBoard_num()%></h5> --%>
-							<h5 style="margin: 10px; padding: 10px;">
+							<h5 style="margin: 10px; padding: 5px;">
 								작성자 :<%=dto.getMb_email()%></h5>
 
 
-							<h5 style="margin: 10px; padding: 10px;">
+							<h5 style="margin: 10px; padding: 5px;">
 								카테고리 :<%=dto.getBoard_category()%></h5>
 
-							<h5 style="margin: 10px; padding: 10px;">
+							<h5 style="margin: 10px; padding: 5px;">
 								게시날짜 :<%=dto.getBoard_date()%></h5>
 
 							<br>
@@ -239,9 +237,9 @@
 									<div>
 										<%=info.getMb_email()%></div>
 									<textarea type="text" name="comment_content" id="content"
-										style="resize: none; width: 1050px; height: 300px;"></textarea>
+										style="resize: none; width: 1000px; height: 150px;"></textarea>
 									<input type="submit" value="댓글작성" onclick="commentShow()"
-										style="margin-left: 90%; width: 110px; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none;">
+										style="margin-left: 85%; width: 110px; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none;">
 								</form>
 							</div>
 							<%

@@ -245,7 +245,7 @@
 							<div class="row">
 								<div class="col-lg-6">
 									<div class="image">
-										<img src="assets/camping/333_1.jpg" alt=""
+										<img src="assets/camping/<%=333-i %>_1.jpg" alt=""
 											style="width: 246px; height: 328px;">
 									</div>
 								</div>

@@ -28,13 +28,6 @@
 <link rel="stylesheet" href="assets/css/animate.css">
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-<!--
-
-TemplateMo 580 Woox Travel
-
-https://templatemo.com/tm-580-woox-travel
-
--->
 </head>
 
 <body>
@@ -111,7 +104,8 @@ https://templatemo.com/tm-580-woox-travel
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2><%=name%>수정</h2>
+					<h2><%=name%>수정
+					</h2>
 					<div class="main-button">
 						<a href="comment_review.jsp">BACK</a>
 
@@ -129,16 +123,17 @@ https://templatemo.com/tm-580-woox-travel
 
 					<div class="row">
 
-						<h4><%=name %>수정</h4>
+						<h4><%=name%>수정
+						</h4>
 				</form>
 				<!-- 이름 -->
 				<form action="CommentUpdateService?num=<%=num%>" method="post"
 					style="margin-bottom: 40px;">
 					<div class="col-lg-6">
 						<fieldset>
-							<label for="Name" class="form-label"><%=name %> 내용</label><br> <input
-								type="text" name="comment_content" class="Name" placeholder="내용"
-								autocomplete="on" required>
+							<label for="Name" class="form-label"><%=name%> 내용</label><br>
+							<input type="text" name="comment_content" class="Name"
+								placeholder="내용" autocomplete="on" required>
 						</fieldset>
 					</div>
 
@@ -153,12 +148,16 @@ https://templatemo.com/tm-580-woox-travel
 	</div>
 
 
-	<%}else if(name.equals("리뷰")){%>
+	<%
+	} else if (name.equals("리뷰")) {
+	%>
 	<div class="second-page-heading" style="height: 100px;">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2><%=name %> 수정</h2>
+					<h2><%=name%>
+						수정
+					</h2>
 					<div class="main-button">
 						<a href="comment_review.jsp">BACK</a>
 
@@ -176,27 +175,27 @@ https://templatemo.com/tm-580-woox-travel
 
 					<div class="row">
 
-						<h4><%=name %>정보</h4>
+						<h4><%=name%>정보
+						</h4>
 				</form>
-				<form action="ReviewUpdateService?num=<%=num %>" method="post"
+				<form action="ReviewUpdateService?num=<%=num%>" method="post"
 					style="margin-bottom: 40px;">
 					<div class="col-lg-6">
 						<fieldset>
-							<label for="Name" class="form-label"><%=name %> 내용</label><br> <input
-								type="text" name="review_content" class="Name" placeholder="내용"
-								autocomplete="on" required>
+							<label for="Name" class="form-label"><%=name%> 내용</label><br>
+							<input type="text" name="review_content" class="Name"
+								placeholder="내용" autocomplete="on" required>
 						</fieldset>
 					</div>
 					<div class="col-lg-6">
 						<fieldset>
-							<label for="Number" class="form-label"><%=name %> 점수</label> <input
-								type="text" name="score" class="Number"
-								placeholder="점수">
+							<label for="Number" class="form-label"><%=name%> 점수</label> <input
+								type="text" name="score" class="Number" placeholder="점수">
 						</fieldset>
 					</div>
 					<div class="col-lg-12">
 						<fieldset>
-							<button type="submit" class="main-button"> Save</button>
+							<button type="submit" class="main-button">Save</button>
 						</fieldset>
 					</div>
 				</form>
@@ -204,12 +203,15 @@ https://templatemo.com/tm-580-woox-travel
 		</div>
 	</div>
 
-	<%}else if(name.equals("커뮤니티")){ %>
+	<%
+	} else if (name.equals("커뮤니티")) {
+	%>
 	<div class="second-page-heading" style="height: 100px;">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<h2><%=name%>수정</h2>
+					<h2><%=name%>수정
+					</h2>
 					<div class="main-button">
 						<a href="comment_review.jsp">BACK</a>
 
@@ -227,40 +229,41 @@ https://templatemo.com/tm-580-woox-travel
 
 					<div class="row">
 
-						<h4><%=name %>수정</h4>
+						<h4><%=name%>수정
+						</h4>
 				</form>
-				<form action="CommunityUpdateService?num=<%=num %>" method="post"
+				<form action="CommunityUpdateService?num=<%=num%>" method="post"
 					style="margin-bottom: 40px;" enctype="multipart/form-data">
 					<div class="col-lg-6">
 						<fieldset>
-							<label for="Name" class="form-label"><%=name%> 제목</label><br> <input
-								type="text" name="board_title" class="Name" placeholder="제목"
-								autocomplete="on" required>
+							<label for="Name" class="form-label"><%=name%> 제목</label><br>
+							<input type="text" name="board_title" class="Name"
+								placeholder="제목" autocomplete="on" required>
 						</fieldset>
 					</div>
 					<div class="col-lg-6">
 						<fieldset>
-							<label for="Name" class="form-label"><%=name%> 내용</label><br> <input
-								type="text" name="board_content" class="Name" placeholder="내용"
-								autocomplete="on" required>
+							<label for="Name" class="form-label"><%=name%> 내용</label><br>
+							<input type="text" name="board_content" class="Name"
+								placeholder="내용" autocomplete="on" required>
 						</fieldset>
 					</div>
 					<div class="col-lg-6">
 						<fieldset>
-							<label for="Name" class="form-label"><%=name%> 첨부파일</label><br> <input
-								type="file" name="board_file" class="Name" placeholder="파일"
-								autocomplete="on" required>
+							<label for="Name" class="form-label"><%=name%> 첨부파일</label><br>
+							<input type="file" name="board_file" class="Name"
+								placeholder="파일" autocomplete="on" required>
 						</fieldset>
 					</div>
 					<div class="col-lg-6">
 						<fieldset>
-							<label for="Number" class="form-label"><%=name %> 카테고리</label> <select
+							<label for="Number" class="form-label"><%=name%> 카테고리</label> <select
 								name="board_category" class="name">
-									<option value="#바다">바다</option>
-									<option value="#산">산</option>
-									<option value="#뷰">뷰</option>
-									<option value="#감성">감성</option>
-								</select>
+								<option value="#바다">바다</option>
+								<option value="#산">산</option>
+								<option value="#뷰">뷰</option>
+								<option value="#감성">감성</option>
+							</select>
 						</fieldset>
 					</div>
 					<div class="col-lg-12">
@@ -272,7 +275,9 @@ https://templatemo.com/tm-580-woox-travel
 			</div>
 		</div>
 	</div>
-	<%} %>
+	<%
+	}
+	%>
 	<!-- 모달 -->
 	<div class="modalPopup" style="display: none;">
 		<div class="ModalBack" onclick
@@ -380,36 +385,36 @@ https://templatemo.com/tm-580-woox-travel
 	<script src="assets/js/custom.js"></script>
 
 	<script>
-			$(".option").click(function() {
-				$(".option").removeClass("active");
-				$(this).addClass("active");
-			});
+		$(".option").click(function() {
+			$(".option").removeClass("active");
+			$(this).addClass("active");
+		});
 
-			function show() {
-				console.log("외않되");
-				let modal = document.querySelector(".modalPopup");
-				let modalBtn = document.querySelector(".modalBtn");
-				let mainCaption = document.querySelector(".main-caption")
-				let dark = document.querySelector(".controls")
+		function show() {
+			console.log("외않되");
+			let modal = document.querySelector(".modalPopup");
+			let modalBtn = document.querySelector(".modalBtn");
+			let mainCaption = document.querySelector(".main-caption")
+			let dark = document.querySelector(".controls")
 
-				console.log("실행도미");
-				if (modal.style.opacity == "0") {
-					mainCaption.style.opacity = "0";
-					dark.style.opacity = "0"
-					modal.style.opacity = "1";
-					modal.style.display = "block"
-					modalBtn.textContent = "닫기"
-				}
-
-				else {
-					dark.style.opacity = "1";
-					mainCaption.style.opacity = "1";
-					modal.style.opacity = "0";
-					modal.style.display = "none";
-					modalBtn.textContent = "로그인";
-				}
+			console.log("실행도미");
+			if (modal.style.opacity == "0") {
+				mainCaption.style.opacity = "0";
+				dark.style.opacity = "0"
+				modal.style.opacity = "1";
+				modal.style.display = "block"
+				modalBtn.textContent = "닫기"
 			}
-		</script>
+
+			else {
+				dark.style.opacity = "1";
+				mainCaption.style.opacity = "1";
+				modal.style.opacity = "0";
+				modal.style.display = "none";
+				modalBtn.textContent = "로그인";
+			}
+		}
+	</script>
 </body>
 
 </html>

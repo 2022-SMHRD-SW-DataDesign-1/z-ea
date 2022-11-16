@@ -36,14 +36,6 @@
 	href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
 <link rel="stylesheet" href="assets/css/about.css">
-<!--
-
-TemplateMo 580 Woox Travel
-
-https://templatemo.com/tm-580-woox-travel
-
--->
-<!-- item_detail page -->
 </head>
 
 <body>

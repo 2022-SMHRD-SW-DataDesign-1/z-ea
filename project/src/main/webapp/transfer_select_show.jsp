@@ -30,10 +30,7 @@
 <link rel="stylesheet" href="assets/css/animate.css">
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-<!--
-TemplateMo 580 Woox Travel
-https://templatemo.com/tm-580-woox-travel
--->
+
 <style>
 .table {
 	width: 750px;
@@ -126,6 +123,7 @@ img {
 	</div>
 	<!-- ***** Preloader End ***** -->
 	<!-- ***** Header Area Start ***** -->
+	<!-- ***** Header Area Start ***** -->
 	<header class="header-area header-sticky">
 		<div class="container">
 			<div class="row">
@@ -138,15 +136,31 @@ img {
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
-							<li><a href="index.jsp">홈</a></li>
-							<li><a href="about.jsp">테마</a></li>
+							<li><a href="index.jsp" class="active">홈</a></li>
+							<li><a href="about.jsp">글램핑&카라반</a></li>
 							<li><a href="reservation.jsp">예약</a></li>
-							<li><a href="transfer.jsp" class="active">양도</a></li>
+							<li><a href="transfer.jsp">양도</a></li>
 							<li><a href="community.jsp">커뮤니티</a></li>
+							<%
+							if (info == null) {
+							%>
 							<li>
 								<button class="modalBtn" onclick="show()"
 									style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">로그인</button>
 							</li>
+
+							<%
+							} else {
+							%>
+							<li><a href="MyPage.jsp" class="modalBtn"
+								style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">마이페이지</a>
+							</li>
+							<li><a href="LogoutService" class="modalBtn"
+								style="background-color: #6A5ACD; padding: 8px 14px; border: none; color: #fff;">로그아웃</a>
+							</li>
+							<%
+							}
+							%>
 						</ul>
 						<a class='menu-trigger'> <span>Menu</span>
 						</a>
@@ -348,20 +362,6 @@ img {
 										style="border: solid #dedede; border-width: 1px 0 0; width: 1000px;">
 								</div>
 
-								<%-- <div class="col-lg-6" style="padding: 10px; margin-left: 20px;">
-									<fieldset>
-										<div style="float: left;">
-											<label for="name" class="form-label"
-												style="font-size: 20px; font-weight: bold;">제한인원</label>
-										</div>
-										<div style="margin-left: 30%;">
-											<p style="font-size: 20px; color: #4b4b4b;"><%=new RoomDAO().transfer_num_room_show(transfer_num).getPeople_limit()%></p>
-										</div>
-									</fieldset>
-									<hr
-										style="border: solid #dedede; border-width: 1px 0 0; width: 1000px;">
-								</div>
- --%>
 								<div class="col-lg-6" style="padding: 10px; margin-left: 20px;">
 									<fieldset>
 										<div style="float: left;">
@@ -393,14 +393,7 @@ img {
 										style="border: solid #dedede; border-width: 1px 0 0; width: 1000px;">
 								</div>
 
-								<%-- <div class="col-lg-6" style="padding: 10px; margin-left:
-								20px;"> <fieldset> <div style="float: left;"> <label for="name"
-								class="form-label" style="font-size: 20px; font-weight:
-								bold;">방이름</label> </div> <div style="margin-left: 30%;"> <p
-								style="font-size: 20px; color: #4b4b4b;"><%=new
-								RoomDAO().transfer_num_room_show(transfer_num).getRoom_num()%></p>
-								</div> </fieldset> <hr style="border: solid #dedede;
-								border-width: 1px 0 0; width: 1000px;"> </div> --%>
+
 
 								</table>
 								<div class="noti" style="width: 80%; color: #000;">

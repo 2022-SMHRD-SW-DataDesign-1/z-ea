@@ -230,7 +230,8 @@
 		</div>
 	</div>
 
-	<div class="visit-country" style="margin-bottom: -50px;">
+	<div class="visit-country"
+		style="margin-top: -50px; margin-bottom: 100px;">
 		<div class="container" style="padding: 20px;">
 			<section id="portfolio" class="darker">
 				<div class="container">
@@ -238,8 +239,10 @@
 					<%ArrayList<BoardDTO> list = new BoardDAO().selectBoard();%>
 
 					<div class="row">
-						<%for (int i = 0; i < list.size(); i++) {
-						System.out.print(list.get(i).getBoard_file());%>
+						<%
+						for (int i = 0; i < list.size(); i++) {
+							System.out.print(list.get(i).getBoard_file());
+						%>
 						<figure class="portfolio-item col-md-4 col-sm-6"
 							style="padding: 5px;">
 							<a

@@ -284,54 +284,69 @@
 						</form>
 					</div>
 				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<p>
+						Copyright © 2022 <a href="#">ze:a</a> Company. All rights
+						reserved.
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 
 
 
-				<!-- Scripts -->
-				<!-- Bootstrap core JavaScript -->
-				<script src="vendor/jquery/jquery.min.js"></script>
-				<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!-- Scripts -->
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-				<script src="assets/js/isotope.min.js"></script>
-				<script src="assets/js/owl-carousel.js"></script>
-				<script src="assets/js/wow.js"></script>
-				<script src="assets/js/tabs.js"></script>
-				<script src="assets/js/popup.js"></script>
-				<script src="assets/js/custom.js"></script>
+	<script src="assets/js/isotope.min.js"></script>
+	<script src="assets/js/owl-carousel.js"></script>
+	<script src="assets/js/wow.js"></script>
+	<script src="assets/js/tabs.js"></script>
+	<script src="assets/js/popup.js"></script>
+	<script src="assets/js/custom.js"></script>
 
-				<script>
-					$(".option").click(function() {
-						$(".option").removeClass("active");
-						$(this).addClass("active");
-					});
+	<script>
+		$(".option").click(function() {
+			$(".option").removeClass("active");
+			$(this).addClass("active");
+		});
 
-					function show() {
-						console.log("외않되");
-						let modal = document.querySelector(".modalPopup");
-						let modalBtn = document.querySelector(".modalBtn");
-						let mainCaption = document
-								.querySelector(".main-caption")
-						let dark = document.querySelector(".controls")
+		function show() {
+			console.log("외않되");
+			let modal = document.querySelector(".modalPopup");
+			let modalBtn = document.querySelector(".modalBtn");
+			let mainCaption = document.querySelector(".main-caption")
+			let dark = document.querySelector(".controls")
 
-						console.log("실행도미");
-						if (modal.style.opacity == "0") {
-							mainCaption.style.opacity = "0";
-							dark.style.opacity = "0"
-							modal.style.opacity = "1";
-							modal.style.display = "block"
-							modalBtn.textContent = "닫기"
-						}
+			console.log("실행도미");
+			if (modal.style.opacity == "0") {
+				mainCaption.style.opacity = "0";
+				dark.style.opacity = "0"
+				modal.style.opacity = "1";
+				modal.style.display = "block"
+				modalBtn.textContent = "닫기"
+			}
 
-						else {
-							dark.style.opacity = "1";
-							mainCaption.style.opacity = "1";
-							modal.style.opacity = "0";
-							modal.style.display = "none";
-							modalBtn.textContent = "로그인";
-						}
-					}
-				</script>
+			else {
+				dark.style.opacity = "1";
+				mainCaption.style.opacity = "1";
+				modal.style.opacity = "0";
+				modal.style.display = "none";
+				modalBtn.textContent = "로그인";
+			}
+		}
+	</script>
 </body>
 
 </html>

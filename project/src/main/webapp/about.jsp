@@ -191,10 +191,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
-						<h4>내 여행관리는 여기에서</h4>
-						<h2>My Page</h2>
+						<h2>글램핑 & 카라반</h2>
 						<div class="main-button">
-							<p>내 여행일정 관리부터 소통까지 !</p>
 						</div>
 					</div>
 				</div>

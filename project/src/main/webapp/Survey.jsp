@@ -245,7 +245,7 @@
 				tipdata += data[5][i];
 			}
 			//send Ajax request to your web server
-			if (confirm("제출 ㄱ?"))
+			if (confirm("제출하시겠습니까?"))
 			// if문 열어
 			{
 				$.ajax({

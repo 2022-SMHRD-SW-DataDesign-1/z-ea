@@ -28,7 +28,6 @@
 	href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
 
-<title>Insert title here</title>
 </head>
 <body>
 	<%

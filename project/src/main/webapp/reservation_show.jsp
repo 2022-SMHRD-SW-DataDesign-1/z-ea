@@ -35,13 +35,6 @@
 <link rel="stylesheet" href="assets/css/animate.css">
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-<!--
-
-TemplateMo 580 Woox Travel
-
-https://templatemo.com/tm-580-woox-travel
-
--->
 </head>
 
 <body>
@@ -113,7 +106,7 @@ https://templatemo.com/tm-580-woox-travel
 				<div class="col-lg-12">
 					<h2>예약 정보 조회</h2>
 					<div class="main-button">
-						<a href="community.jsp"
+						<a href="MyPage.jsp"
 							style="width: 110px; border-radius: 15px; color: white; font-size: 18px; font-weight: bold; background-color: #6A5ACD; padding: 12px; border: none;">BACK</a>
 
 					</div>

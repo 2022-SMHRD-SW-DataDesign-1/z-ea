@@ -31,13 +31,6 @@
 <link rel="stylesheet" href="assets/css/animate.css">
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-<!--
-
-TemplateMo 580 Woox Travel
-
-https://templatemo.com/tm-580-woox-travel
-
--->
 </head>
 
 <body>
@@ -197,71 +190,63 @@ https://templatemo.com/tm-580-woox-travel
 	</div>
 
 	<div class="dark">
-		<!-- ***** Main Banner Area Start ***** -->
-		<div class="about-main-content">
+		<div class="second-page-heading">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
-						<div class="content"></div>
+						<h2>글램핑 & 카라반</h2>
+						<div class="main-button"></div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- ***** Main Banner Area End ***** -->
+	</div>
+	<!-- ***** Main Banner Area End ***** -->
 
-		<!-- 모달 -->
-		<%
-		ItemDAO dao = new ItemDAO();
-		ArrayList<ItemDTO> item_list = new ArrayList<ItemDTO>();
-		item_list = (ArrayList) request.getAttribute("item_list");
-		%>
-		<div class="cities-town"
-			style="display: inline-block; width: 80%; margin-left: 15%;">
-			<div class="container">
-				<div class="row" style="text-align: center;">
-					<div class="slider-content">
+	<!-- 모달 -->
+	<%
+	ItemDAO dao = new ItemDAO();
+	ArrayList<ItemDTO> item_list = new ArrayList<ItemDTO>();
+	item_list = (ArrayList) request.getAttribute("item_list");
+	%>
+	<div class="cities-town"
+		style="display: inline-block; width: 80%; margin-left: 15%;">
+		<div class="container">
+			<div class="row" style="text-align: center;">
+				<div class="slider-content">
 
-						<div class="row" style="display: block;">
+					<div class="row" style="display: block;">
 
-							<h1 style="margin-bottom: 25px;">검색 결과</h1>
-							<h3><%=item_list.size()%>건이 검색되었습니다.
-							</h3>
-
-
-							<hr />
-
-							<div>
-								<div
-									style="margin-top: 5%; width: 100%; display: inline-block; padding: 10px 5px 10px 5px;">
-
-									<%
-									for (int i = 0; i < item_list.size(); i++) {
-									%>
-
-									<a class="item_list"
-										href="ShowService?num=<%=item_list.get(i).getNum()%>"
-										style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox;">
-										<img src="assets/images/offers-01.jpg" alt=""
-										style="width: 200px; height: 200px;">
-										<div style="text-align: left; padding-left: 20px;">
-											<p><%=item_list.get(i).getName()%></p>
-											<p><%=item_list.get(i).getDesc()%></p>
-										</div>
-									</a>
-									<%
-									}
-									%>
+						<h1 style="margin-bottom: 25px;">검색 결과</h1>
+						<h3><%=item_list.size()%>건이 검색되었습니다.
+						</h3>
 
 
+						<hr />
 
+						<div>
+							<div
+								style="margin-top: 5%; width: 100%; display: inline-block; padding: 10px 5px 10px 5px;">
 
+								<%
+								for (int i = 0; i < item_list.size(); i++) {
+								%>
 
+								<a class="item_list"
+									href="ShowService?num=<%=item_list.get(i).getNum()%>"
+									style="display: inline-block; width: 250px; height: 350px; text-align: center; padding: 5px; display: flexbox;">
+									<img src="assets/camping/<%=i + 340%>_1.jpg" alt=""
+									style="width: 200px; height: 200px;">
+									<div style="text-align: left; padding-left: 20px;">
+										<p><%=item_list.get(i).getName()%></p>
+									</div>
+								</a>
+								<%
+								}
+								%>
 
+								<div style="width: 100%"></div>
 
-
-									<div style="width: 100%"></div>
-
-								</div>
 							</div>
 						</div>
 					</div>
@@ -269,21 +254,18 @@ https://templatemo.com/tm-580-woox-travel
 			</div>
 		</div>
 	</div>
+	</div>
 
 	<footer>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<p>
-						Copyright Â© 2036 <a href="#">WoOx Travel</a> Company. All rights
-						reserved. <br>Design: <a href="https://templatemo.com"
-							target="_blank" title="free CSS templates">TemplateMo</a>
-						Distribution: <a href="https://themewagon.com target="_blank" >ThemeWagon</a>
+						Copyright © 2022 <a href="#">ze:a</a> Company. All rights
+						reserved.
 					</p>
 				</div>
 			</div>
-
-
 		</div>
 	</footer>
 
