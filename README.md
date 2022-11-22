@@ -83,6 +83,7 @@
 <br>
 
 ## 📌 ER다이어그램
+![erd](https://user-images.githubusercontent.com/112164441/203246874-e6074b1d-7e68-457e-b9d8-8a13d8be7c7e.png)
 
 <br>
 
