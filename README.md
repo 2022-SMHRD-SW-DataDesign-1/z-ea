@@ -88,7 +88,11 @@
 <br>
 
 ## 🖥 화면 구성
+### 메인화면
+<img src="https://user-images.githubusercontent.com/76809668/203255286-c3dadd7c-84f0-4fc8-9855-ca83b142bc13.png" width="300" height="200"/>
 
+### 로그인/회원가입
+<img src="https://user-images.githubusercontent.com/76809668/203255492-4b60d62c-d542-42a3-bf34-cef3cdfdf214.png" width="200" height="300"/>
 <br>
 
 ## 👨‍👩‍👦‍👦 팀원 역할
