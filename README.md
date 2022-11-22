@@ -112,7 +112,7 @@
     <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
     <td align="center"><a href="https://github.com/99wise" target='_blank'>github</a></td>
     <td align="center"><a href="https://github.com/han-dae" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/jungjunsuck" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/jungjunsuk" target='_blank'>github</a></td>
     <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
   </tr>
 </table>
