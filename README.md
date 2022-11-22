@@ -1,5 +1,5 @@
 # :Tucson ( 팀명 : ZE:A )
-![image1](https://user-images.githubusercontent.com/76809668/203181586-712a0385-0326-4fba-94d5-87e4ba66d0b8.png)
+<img src="https://user-images.githubusercontent.com/76809668/203181586-712a0385-0326-4fba-94d5-87e4ba66d0b8.png" width="600" height="400"/>
 
 ## 서비스 소개
 * 서비스명 : 사용자 맞춤 글램핑 예약서비스
@@ -70,12 +70,12 @@
 <br>
 
 ## ⚙ 시스템 아키텍처(구조)
-![image2](https://user-images.githubusercontent.com/76809668/203182260-2167ea47-cd04-4435-9ebe-563a88e1853f.png)
+<img src="https://user-images.githubusercontent.com/76809668/203182260-2167ea47-cd04-4435-9ebe-563a88e1853f.png" width="700" height="250"/>
 <br>
 
 
 ## 📌 유스케이스
-![image3](https://user-images.githubusercontent.com/76809668/203182706-60fb7292-7311-4eed-809f-f7c2f8526cc3.png)
+<img src="https://user-images.githubusercontent.com/76809668/203182706-60fb7292-7311-4eed-809f-f7c2f8526cc3.png" width="700" height="350"/>
 <br>
 
 ## 📌 서비스 흐름도
@@ -91,7 +91,7 @@
 <br>
 
 ## 👨‍👩‍👦‍👦 팀원 역할
-<table>
+<table height="300">
   <tr>
     <td align="center"><img src="https://user-images.githubusercontent.com/76809668/203226659-e62041d3-9921-4a6f-99a6-d79e9b09baf0.png" width="100" height="100"/></td>
     <td align="center"><img src="https://user-images.githubusercontent.com/76809668/203226690-599d086f-4d2a-44be-bcf0-6dd3778ed91a.png" width="100" height="100"/></td>
