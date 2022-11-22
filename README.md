@@ -88,11 +88,16 @@
 ## 👨‍👩‍👦‍👦 팀원 역할
 <table>
   <tr>
-    <td align="center"><img src="" width="100" height="100"/></td>
-    <td align="center"><img src="" width="100" height="100"/></td>
-    <td align="center"><img src="" width="100" height="100"/></td>
-    <td align="center"><img src="" width="100" height="100"/></td>
-    <td align="center"><img src="" width="100" height="100"/></td>
+    <td align="center"><img src="![희경](https://user-images.githubusercontent.com/76809668/203226659-e62041d3-9921-4a6f-99a6-d79e9b09baf0.png)
+" width="100" height="100"/></td>
+    <td align="center"><img src="![주희](https://user-images.githubusercontent.com/76809668/203226690-599d086f-4d2a-44be-bcf0-6dd3778ed91a.png)
+" width="100" height="100"/></td>
+    <td align="center"><img src="![대찬](https://user-images.githubusercontent.com/76809668/203226732-ba16c49a-af86-4573-9e46-d7b504bfc541.png)
+" width="100" height="100"/></td>
+    <td align="center"><img src="![준석](https://user-images.githubusercontent.com/76809668/203226768-d6876ed4-be99-4be2-96a2-06e253ba90e1.png)
+"width="100" height="100"/></td>
+    <td align="center"><img src="![창국](https://user-images.githubusercontent.com/76809668/203226783-4f3b3762-ba89-425f-8852-fa462f443422.png)
+" width="100" height="100"/></td>
   </tr>
   <tr>
     <td align="center"><strong>정희경</strong></td>
