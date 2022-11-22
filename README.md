@@ -102,11 +102,11 @@
     <td align="center"><strong>서창국</strong></td>
   </tr>
   <tr>
-    <td align="center"><b>Frontend</b></td>
-    <td align="center"><b>Frontend</b></td>
-    <td align="center"><b>Backend</b></td>
-    <td align="center"><b></b></td>
-    <td align="center"><b>Backend</b></td>
+    <td align="center"><b>Frontend, Data Analysis/Modeling, Backend</b></td>
+    <td align="center"><b>Frontend, Data Analysis/Modeling, Backend</b></td>
+    <td align="center"><b>Frontend, Data Analysis/Modeling, Backend</b></td>
+    <td align="center"><b>Frontend, Data Analysis/Modeling, Backend</b></td>
+    <td align="center"><b>Frontend, Data Analysis/Modeling, Backend</b></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/huigyeongjeong" target='_blank'>github</a></td>
