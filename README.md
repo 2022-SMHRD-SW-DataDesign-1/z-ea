@@ -102,7 +102,7 @@
     <td align="center"><strong>서창국</strong></td>
   </tr>
   <tr>
-    <td align="center"><b>Frontend, Data Analysis/Modeling, Backend</b></td>
+    <td align="center"><b>Frontend <br> Data Analysis/Modeling, Backend</b></td>
     <td align="center"><b>Frontend, Data Analysis/Modeling, Backend</b></td>
     <td align="center"><b>Frontend, Data Analysis/Modeling, Backend</b></td>
     <td align="center"><b>Frontend, Data Analysis/Modeling, Backend</b></td>
