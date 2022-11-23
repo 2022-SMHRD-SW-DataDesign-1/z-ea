@@ -1,5 +1,5 @@
 # :Tucson ( 팀명 : ZE:A )
-<img src="https://user-images.githubusercontent.com/76809668/203181586-712a0385-0326-4fba-94d5-87e4ba66d0b8.png" width="600" height="400"/>
+<img src="https://user-images.githubusercontent.com/76809668/203181586-712a0385-0326-4fba-94d5-87e4ba66d0b8.png" width="550" height="350"/>
 
 ## 서비스 소개
 * 서비스명 : 사용자 맞춤 글램핑 예약서비스
@@ -70,7 +70,7 @@
 <br>
 
 ## ⚙ 시스템 아키텍처(구조)
-<img src="https://user-images.githubusercontent.com/76809668/203182260-2167ea47-cd04-4435-9ebe-563a88e1853f.png" width="700" height="250"/>
+<img src="https://user-images.githubusercontent.com/76809668/203182260-2167ea47-cd04-4435-9ebe-563a88e1853f.png" width="600" height="200"/>
 <br>
 
 
