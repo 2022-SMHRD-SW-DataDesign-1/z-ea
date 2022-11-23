@@ -79,6 +79,7 @@
 <br>
 
 ## 📌 서비스 흐름도
+<img src = "https://user-images.githubusercontent.com/74732317/203479362-6eb9a871-bfdb-4c9c-ac08-64c9c319732a.jpg" />
 
 <br>
 
