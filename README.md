@@ -92,8 +92,85 @@
 ### 메인화면
 <img src="https://user-images.githubusercontent.com/76809668/203255286-c3dadd7c-84f0-4fc8-9855-ca83b142bc13.png" width="300" height="200"/>
 
+### 장소추천
+<img src="https://user-images.githubusercontent.com/76809668/203747921-0094f039-e938-4c93-a04f-992c142b4955.png" width="300" height="200"/>
+
 ### 로그인/회원가입
-<img src="https://user-images.githubusercontent.com/76809668/203255492-4b60d62c-d542-42a3-bf34-cef3cdfdf214.png" width="200" height="300"/>
+<img src="https://user-images.githubusercontent.com/76809668/203738311-a4e4aece-9154-4d04-a2ae-cefe861e3ef1.png" width="300" height="200"/>
+
+### 글램핑 & 카라반
+
+#### 장소
+<img src="https://user-images.githubusercontent.com/76809668/203740518-4a8e7461-bf7b-4042-b4bc-a16eaad6dca8.png" width="300" height="200"/>
+
+#### 카테고리
+<img src="https://user-images.githubusercontent.com/76809668/203739990-71a3abcc-97dc-420e-a9ce-b4eddf362a76.png" width="300" height="200"/>
+
+#### 검색결과
+<img src="https://user-images.githubusercontent.com/76809668/203740733-11981959-a609-44c7-9d36-25f15b36ffeb.png" width="300" height="200"/>
+
+#### 장소전체
+<img src="https://user-images.githubusercontent.com/76809668/203744205-006666bc-d1ac-46ad-9f38-e9d6127132e1.png" width="300" height="200"/>
+
+<img src="https://user-images.githubusercontent.com/76809668/203744268-d18b2925-551d-4404-a0ec-4274eb65355d.png" width="300" height="200"/>
+
+<img src="https://user-images.githubusercontent.com/76809668/203746543-32aa570e-82ab-470f-b1ff-3eb02a78a8bd.png)
+" width="300" height="200"/>
+
+
+### 예약
+
+#### 장소예약
+<img src="https://user-images.githubusercontent.com/76809668/203744341-2bbceb87-497d-418f-9dbf-c0827978be0c.png" width="300" height="200"/>
+
+#### 예약하기
+<img src="https://user-images.githubusercontent.com/76809668/203741373-9d562666-29dd-496d-9efb-21127229b2ac.png" width="300" height="200"/>
+
+
+### 양도
+
+#### 양도하기
+<img src="https://user-images.githubusercontent.com/76809668/203742349-c0b76441-028a-40cf-bb24-f2dd23b245b6.png" width="300" height="200"/>
+
+#### 양도리스트
+<img src="https://user-images.githubusercontent.com/76809668/203742463-c60e33bc-a381-41d3-b3f1-267a58c09ea8.png" width="300" height="200"/>
+
+#### 양도받기
+<img src="https://user-images.githubusercontent.com/76809668/203744268-d18b2925-551d-4404-a0ec-4274eb65355d.png" width="300" height="200"/>
+
+### 커뮤니티
+
+#### 커뮤니티작성
+<img src="https://user-images.githubusercontent.com/76809668/203745078-60b39f17-211c-4741-b28b-4dd3cd0019b0.png" width="300" height="200"/>
+
+#### 커뮤니티리스트
+<img src="https://user-images.githubusercontent.com/76809668/203745216-2e48f74b-2fed-4609-a06e-3affad7fbdd0.png" width="300" height="200"/>
+
+#### 커뮤니티내용
+<img src="https://user-images.githubusercontent.com/76809668/203745335-d2154418-0fc4-4b29-b9b3-67ca83a422c2.png" width="300" height="200"/>
+
+### 마이페이지
+<img src="https://user-images.githubusercontent.com/76809668/203745488-5b805046-6840-4413-9b81-e24ab9ee33d9.png" width="300" height="200"/>
+
+#### 회원정보수정
+<img src="https://user-images.githubusercontent.com/76809668/203745586-35bcb45e-f309-42a0-b83a-54e993adec0b.png" width="300" height="200"/>
+
+#### 예약정보 조회
+<img src="https://user-images.githubusercontent.com/76809668/203745674-50423e05-a4aa-4202-b7ae-4833dcc6c9fe.png" width="300" height="200"/>
+
+#### 댓글/게시글/리뷰 조회
+<img src="https://user-images.githubusercontent.com/76809668/203745785-b1e7040e-2ccc-47e8-9970-eee46dd434b9.png" width="300" height="200"/>
+
+### 설문조사
+<img src="https://user-images.githubusercontent.com/76809668/203746014-b8601727-7247-41a8-b49e-69173cab6b14.png" width="300" height="200"/>
+<img src="https://user-images.githubusercontent.com/76809668/203747477-045bd233-0b49-4885-95b7-1c54f871814a.png" width="300" height="200"/>
+<img src="https://user-images.githubusercontent.com/76809668/203747559-29442037-81d0-41db-b7ba-e4a93fbac458.png"
+width="300" height="200"/>
+<img src="https://user-images.githubusercontent.com/76809668/203747691-ee5e89d1-edb7-443c-9393-3d6995d8e7de.png" width="300" height="200"/>
+<img src="https://user-images.githubusercontent.com/76809668/203747724-f0792995-b757-4efb-9e35-4cfa8ce83626.png" width="300" height="200"/>
+<img src="https://user-images.githubusercontent.com/76809668/203747733-ef85aaf3-a573-45d0-8b25-3627efd87968.png" width="300" height="200"/>
+<img src="https://user-images.githubusercontent.com/76809668/203747756-52d39005-ce4d-4cfc-8271-cb66ef8dea42.png" width="300" height="200"/>
+
 <br>
 
 ## 👨‍👩‍👦‍👦 팀원 역할
@@ -131,24 +208,22 @@
 <br>
 
 ## 🤾‍♂️ 트러블슈팅
-개념: 문제 해결을 위해 문제의 원인을 논리적이고 체계적으로 찾는 일이며 제품이나 프로세스의 운영을 재개<br>
+개념: 문제 해결을 위해 문제의 원인을 논리적이고 체계적으로 찾는 일이며 제품이나 프로세스의 운영을 재개
 프로젝트 진행하는 동안 발생했던 이슈 중 가장 기억에 남았던 문제와 해결 프로세스 나열(2~5가지 정도)
   
 * 문제1  - 데이터 베이스 수집 및 전처리 <br>
- 문제점 설명 및 해결방안 : 558곳의 캠핑장의 데이터를 수집함. 
- 그래서 사용자 맞춤 추천, 해시태그 기능을 구현하기위해 크롤링 이외에도 리뷰,위치 등을 기반으로 수동라벨링을 거침.<br>
- 그러다 보니 사용자맞춤데이터 양이 많아 불필요한 정보까지 수집되어 필요한 정보만 수집하고 하나하나 필터링하여 전처리함.
+ 문제점 설명 및 해결방안 : 558곳의 캠핑장의 데이터를 수집함. 그래서 사용자 맞춤 추천, 해시태그 기능을 구현하기위해 크롤링 이외에도 리뷰,위치 등을 기반으로 수동라벨링을 거침.
+ 그러다 보니 사용자맞춤데이터 양이 많아 불 필요한 정보까지 수집됨. 그래서 필요한 정보만 수집하고 하나하나 라벨링해 전처리함.
  
  
 
 * 문제2 -예약 서비스  <br>
- 문제점 설명 및 해결방안 : 
- 문제점 : 비동기 날짜 선택 및 확인 그래서 달력을 직접 만들어 체크인, 체크아웃 날짜 선택하여 예약의 가능 여부를 확인 -> 날짜 별 방 정보를 통하여 예약이 가능하다면 예약하기 서비스를 지원.
+ 문제점 설명 및 해결방안 : 비동기 날짜 선택 및 확인 그래서 달력을 직접 만들어 체크인, 체크아웃 날짜 선택하여 예약의 가능 여부를 확인 -> 날짜 별 방 정보를 통하여 예약이 가능하다면 예약하기 서비스를 지원
  
 
  
 * 문제3 - 설문조사 기능  <br>
- 문제점 설명 및 해결방안 : 설문조사가 끝난후 설문조사의 대한 값을 서비스로 값이 안넘어가짐 js 파일의 값을 데이터베이스로 바로 넘어가게하는 과정에서 어려움을 겪음. <br>
+ 문제점 설명 및 해결방안 : 설문조사가 끝난후 설문조사의 대한 값을 서비스로 값이 안넘어가짐 js 파일의 값을 데이터베이스로 바로 넘어가게하는 과정에서 어려움을 겪음. 
  그래서 ajax를 이용해 딕셔너리로 묶어 값을 파라미터값으로 받아서 해결됨
 
 * 문제4 - 사용자 맞춤 추천 기능(카테고리)  <br>
