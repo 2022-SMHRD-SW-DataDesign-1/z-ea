@@ -114,8 +114,7 @@
 
 <img src="https://user-images.githubusercontent.com/76809668/203744268-d18b2925-551d-4404-a0ec-4274eb65355d.png" width="300" height="200"/>
 
-<img src="https://user-images.githubusercontent.com/76809668/203746543-32aa570e-82ab-470f-b1ff-3eb02a78a8bd.png)
-" width="300" height="200"/>
+<img src="https://user-images.githubusercontent.com/76809668/203746543-32aa570e-82ab-470f-b1ff-3eb02a78a8bd.png" width="300" height="200"/>
 
 
 ### 예약
