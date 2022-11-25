@@ -1,7 +1,7 @@
 <div>
-<div>
-       <img src ="https://user-images.githubusercontent.com/112524959/203925299-4502e885-167e-4d57-9d48-e515ccf81560.png" / >
+<img src ="https://user-images.githubusercontent.com/112524959/203925299-4502e885-167e-4d57-9d48-e515ccf81560.png" / >
 <img src="https://user-images.githubusercontent.com/76809668/203181586-712a0385-0326-4fba-94d5-87e4ba66d0b8.png" width="550" height="350"/>
+</div>
 
 ## 서비스 소개
 * 서비스명 : 사용자 맞춤 글램핑 예약서비스
