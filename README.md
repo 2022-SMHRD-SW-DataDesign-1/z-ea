@@ -128,48 +128,75 @@
 
 
 ### 양도
+<table>
+    <tr>
+        <td>양도 리스트</td>
+        <td>양도하기</td>
+        <td>양도받기</td>
+    </tr>
+    <tr>
+        <td><img src="https://user-images.githubusercontent.com/76809668/203742463-c60e33bc-a381-41d3-b3f1-267a58c09ea8.png" width="300" height="200"/></td>
+        <td><img src="https://user-images.githubusercontent.com/76809668/203742349-c0b76441-028a-40cf-bb24-f2dd23b245b6.png" width="300" height="200"/></td>
+        <td><img src="https://user-images.githubusercontent.com/112524959/203907973-cfd2fa89-7cdf-4db8-b5b5-59a3e18b759b.png" width="300" height="200"/></td>
+    </tr>
 
-#### 양도하기
-<img src="https://user-images.githubusercontent.com/76809668/203742349-c0b76441-028a-40cf-bb24-f2dd23b245b6.png" width="300" height="200"/>
-
-#### 양도리스트
-<img src="https://user-images.githubusercontent.com/76809668/203742463-c60e33bc-a381-41d3-b3f1-267a58c09ea8.png" width="300" height="200"/>
-
-#### 양도받기
-<img src="https://user-images.githubusercontent.com/76809668/203744268-d18b2925-551d-4404-a0ec-4274eb65355d.png" width="300" height="200"/>
+</table>
 
 ### 커뮤니티
-
-#### 커뮤니티작성
-<img src="https://user-images.githubusercontent.com/76809668/203745078-60b39f17-211c-4741-b28b-4dd3cd0019b0.png" width="300" height="200"/>
-
-#### 커뮤니티리스트
-<img src="https://user-images.githubusercontent.com/76809668/203745216-2e48f74b-2fed-4609-a06e-3affad7fbdd0.png" width="300" height="200"/>
-
-#### 커뮤니티내용
-<img src="https://user-images.githubusercontent.com/76809668/203745335-d2154418-0fc4-4b29-b9b3-67ca83a422c2.png" width="300" height="200"/>
+<table>
+    <tr>
+        <td>커뮤니티 리스트</td>
+        <td>커뮤니티 작성</td>
+        <td>커뮤니티 내용</td>
+    </tr>
+    <tr>
+        <td><img src="https://user-images.githubusercontent.com/76809668/203745216-2e48f74b-2fed-4609-a06e-3affad7fbdd0.png" width="300" height="200"/></td>
+        <td><img src="https://user-images.githubusercontent.com/76809668/203745078-60b39f17-211c-4741-b28b-4dd3cd0019b0.png" width="300" height="200"/></td>
+        <td><img src="https://user-images.githubusercontent.com/76809668/203745335-d2154418-0fc4-4b29-b9b3-67ca83a422c2.png" width="300" height="200"/></td>
+    </tr>
+</table>
 
 ### 마이페이지
-<img src="https://user-images.githubusercontent.com/76809668/203745488-5b805046-6840-4413-9b81-e24ab9ee33d9.png" width="300" height="200"/>
-
-#### 회원정보수정
-<img src="https://user-images.githubusercontent.com/76809668/203745586-35bcb45e-f309-42a0-b83a-54e993adec0b.png" width="300" height="200"/>
-
-#### 예약정보 조회
-<img src="https://user-images.githubusercontent.com/76809668/203745674-50423e05-a4aa-4202-b7ae-4833dcc6c9fe.png" width="300" height="200"/>
-
-#### 댓글/게시글/리뷰 조회
-<img src="https://user-images.githubusercontent.com/76809668/203745785-b1e7040e-2ccc-47e8-9970-eee46dd434b9.png" width="300" height="200"/>
+<table>
+    <tr>
+        <td> 마이페이지 </td>
+        <td> 회원정보 수정 </td>
+        <td> 예약정보 조회 </td>
+        <td> 댓글/게시글/리뷰 조회 </td>
+    </tr>
+    <tr>
+        <td><img src="https://user-images.githubusercontent.com/76809668/203745488-5b805046-6840-4413-9b81-e24ab9ee33d9.png" width="300" height="200"/></td>
+        <td><img src="https://user-images.githubusercontent.com/76809668/203745586-35bcb45e-f309-42a0-b83a-54e993adec0b.png" width="300" height="200"/></td>
+        <td><img src="https://user-images.githubusercontent.com/76809668/203745674-50423e05-a4aa-4202-b7ae-4833dcc6c9fe.png" width="300" height="200"/></td>
+        <td><img src="https://user-images.githubusercontent.com/76809668/203745785-b1e7040e-2ccc-47e8-9970-eee46dd434b9.png" width="300" height="200"/></td>
+    </tr>
+</table>
 
 ### 설문조사
-<img src="https://user-images.githubusercontent.com/76809668/203746014-b8601727-7247-41a8-b49e-69173cab6b14.png" width="300" height="200"/>
-<img src="https://user-images.githubusercontent.com/76809668/203747477-045bd233-0b49-4885-95b7-1c54f871814a.png" width="300" height="200"/>
-<img src="https://user-images.githubusercontent.com/76809668/203747559-29442037-81d0-41db-b7ba-e4a93fbac458.png"
-width="300" height="200"/>
-<img src="https://user-images.githubusercontent.com/76809668/203747691-ee5e89d1-edb7-443c-9393-3d6995d8e7de.png" width="300" height="200"/>
-<img src="https://user-images.githubusercontent.com/76809668/203747724-f0792995-b757-4efb-9e35-4cfa8ce83626.png" width="300" height="200"/>
-<img src="https://user-images.githubusercontent.com/76809668/203747733-ef85aaf3-a573-45d0-8b25-3627efd87968.png" width="300" height="200"/>
-<img src="https://user-images.githubusercontent.com/76809668/203747756-52d39005-ce4d-4cfc-8271-cb66ef8dea42.png" width="300" height="200"/>
+<table>
+    <tr>
+        <td>나이</td>
+        <td>뷰</td>
+        <td>유형</td>
+        <td>동행자</td>
+    </tr>
+    <tr>
+        <td><img src="https://user-images.githubusercontent.com/76809668/203746014-b8601727-7247-41a8-b49e-69173cab6b14.png" width="300" height="200"/></td>
+        <td><img src="https://user-images.githubusercontent.com/76809668/203747477-045bd233-0b49-4885-95b7-1c54f871814a.png" width="300" height="200"/></td>
+        <td><img src="https://user-images.githubusercontent.com/76809668/203747559-29442037-81d0-41db-b7ba-e4a93fbac458.png" width="300" height="200"/></td>
+        <td><img src="https://user-images.githubusercontent.com/76809668/203747691-ee5e89d1-edb7-443c-9393-3d6995d8e7de.png" width="300" height="200"/></td>
+    </tr>
+    <tr>
+        <td>테마</td>
+        <td>팁</td>
+        <td>계절</td>
+    </tr>
+    <tr>
+        <td><img src="https://user-images.githubusercontent.com/76809668/203747724-f0792995-b757-4efb-9e35-4cfa8ce83626.png" width="300" height="200"/></td>
+        <td><img src="https://user-images.githubusercontent.com/76809668/203747733-ef85aaf3-a573-45d0-8b25-3627efd87968.png" width="300" height="200"/></td>
+        <td><img src="https://user-images.githubusercontent.com/76809668/203747756-52d39005-ce4d-4cfc-8271-cb66ef8dea42.png" width="300" height="200"/></td>
+    </tr>
+</table>
 
 <br>
 
