@@ -121,7 +121,7 @@
     </tr>
     <tr>
         <td><img src="https://user-images.githubusercontent.com/76809668/203744205-006666bc-d1ac-46ad-9f38-e9d6127132e1.png" width="300" height="200"/></td>
-        <td><img src="https://user-images.githubusercontent.com/76809668/203744268-d18b2925-551d-4404-a0ec-4274eb65355d.png" width="300" height="200"/></td>
+        <td><img src="https://user-images.githubusercontent.com/112524959/203911027-fbb85eff-ff3e-47db-8f59-ce165395b3e9.png" width="300" height="200"/></td>
         <td><img src="https://user-images.githubusercontent.com/112524959/203909941-bd67b692-6a57-4677-90c9-50f43a365eaf.png" width="300" height="200"/></td>
     </tr>
 </table>
