@@ -1,4 +1,4 @@
-# :Tucson ( 팀명 : ZE:A )
+# Tucson ( 팀명 : ZE:A )
 <img src="https://user-images.githubusercontent.com/76809668/203181586-712a0385-0326-4fba-94d5-87e4ba66d0b8.png" width="550" height="350"/>
 
 ## 서비스 소개
