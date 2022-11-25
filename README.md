@@ -109,14 +109,14 @@
     <tr>
         <td><img src="https://user-images.githubusercontent.com/76809668/203740518-4a8e7461-bf7b-4042-b4bc-a16eaad6dca8.png" width="300" height="200"/></td>
         <td><img src="https://user-images.githubusercontent.com/76809668/203739990-71a3abcc-97dc-420e-a9ce-b4eddf362a76.png" width="300" height="200"/></td>
-        <td><img src="https://user-images.githubusercontent.com/76809668/203740733-11981959-a609-44c7-9d36-25f15b36ffeb.png" width="300" height="200"/></td>
+        <td><img src="https://user-images.githubusercontent.com/112524959/203912294-86320bfd-555a-47b3-a754-8cccfe2a6448.png" width="300" height="200"/></td>
     </tr>
 </table>
 
 <table>
     <tr>장소 상세
-        <td>전체페이지</td>
-        <td></td>
+        <td>전체</td>
+        <td>장소 설명</td>
         <td>여행후기</td>
     </tr>
     <tr>
