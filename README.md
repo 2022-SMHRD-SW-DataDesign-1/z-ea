@@ -204,11 +204,11 @@ width="300" height="200"/>
     <td align="center"><a href="https://github.com/seochangguk" target='_blank'>github</a></td>
   </tr>
   <tr>
-  <td align="center">각자 한일에 대해서</td>
-  <td align="center">쓰는 것.</td>
-  <td align="center">내가 써줄게.</td>
-  <td align="center"></td>
-  <td align="center"></td>
+  <td align="center">정희경 : 프로젝트 일정 관리, 데이터 베이스 설계, 데이터 전처리(라벨링, 필터링), 마이 페이지 제작, 전 페이지 ui/ux 설계, 설문조사 페이지 제작(SurveyJS), 사용자 추천 기능  </td>
+  <td align="center">김주희 : 데이터 베이스 설계, 메인페이지 설계 및 제작, 데이터 크롤링, 예약 디테일 페이지 제작, 양도 페이지 제작, 상품 디테일 페이지 제작, 예약 기능,  사용자 추천 기능, 오류 수정</td>
+  <td align="center">한대찬 : 프로젝트 일정 관리, 페이지 ui/ux 설계, 데이터 베이스 설계, 예약 기능, 리뷰 기능, 좋아요 기능, 댓글 기능, 검색 엔진 제작, 상품 필터링 기능(동기, 비동기), 페이지네이션, 로그인/회원가입 모달, 오류 수정 </td>
+  <td align="center">정준석 : 로고 제작, 양도 디테일 페이지 제작, 데이터 전처리</td>
+  <td align="center">서창국 : 프로젝트 환경설정(Mybatis, Maven...), 카카오맵 api, 양도기능, 회원관리 기능(로그인, 회원가입), 개인정보/예약정보/리뷰 수정 및 삭제, 커뮤니티 게시글 기능, 오류 수정  </td>
   </tr>
 </table>
 
