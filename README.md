@@ -100,32 +100,46 @@
 <img src="https://user-images.githubusercontent.com/76809668/203738311-a4e4aece-9154-4d04-a2ae-cefe861e3ef1.png" width="300" height="200"/>
 
 ### 글램핑 & 카라반
+<table>
+    <tr> 장소
+        <td> 장소 리스트 </td>
+        <td> 카테고리 </td>
+        <td> 검색결과 </td>
+    </tr>
+    <tr>
+        <td><img src="https://user-images.githubusercontent.com/76809668/203740518-4a8e7461-bf7b-4042-b4bc-a16eaad6dca8.png" width="300" height="200"/></td>
+        <td><img src="https://user-images.githubusercontent.com/76809668/203739990-71a3abcc-97dc-420e-a9ce-b4eddf362a76.png" width="300" height="200"/></td>
+        <td><img src="https://user-images.githubusercontent.com/76809668/203740733-11981959-a609-44c7-9d36-25f15b36ffeb.png" width="300" height="200"/></td>
+    </tr>
+</table>
 
-#### 장소
-<img src="https://user-images.githubusercontent.com/76809668/203740518-4a8e7461-bf7b-4042-b4bc-a16eaad6dca8.png" width="300" height="200"/>
+<table>
+    <tr>장소 상세
+        <td>전체페이지</td>
+        <td></td>
+        <td>여행후기</td>
+    </tr>
+    <tr>
+        <td><img src="https://user-images.githubusercontent.com/76809668/203744205-006666bc-d1ac-46ad-9f38-e9d6127132e1.png" width="300" height="200"/></td>
+        <td><img src="https://user-images.githubusercontent.com/76809668/203744268-d18b2925-551d-4404-a0ec-4274eb65355d.png" width="300" height="200"/></td>
+        <td><img src="https://user-images.githubusercontent.com/112524959/203909941-bd67b692-6a57-4677-90c9-50f43a365eaf.png" width="300" height="200"/></td>
+    </tr>
+</table>
+      
 
-#### 카테고리
-<img src="https://user-images.githubusercontent.com/76809668/203739990-71a3abcc-97dc-420e-a9ce-b4eddf362a76.png" width="300" height="200"/>
-
-#### 검색결과
-<img src="https://user-images.githubusercontent.com/76809668/203740733-11981959-a609-44c7-9d36-25f15b36ffeb.png" width="300" height="200"/>
-
-#### 장소전체
-<img src="https://user-images.githubusercontent.com/76809668/203744205-006666bc-d1ac-46ad-9f38-e9d6127132e1.png" width="300" height="200"/>
-
-<img src="https://user-images.githubusercontent.com/76809668/203744268-d18b2925-551d-4404-a0ec-4274eb65355d.png" width="300" height="200"/>
-
-<img src="https://user-images.githubusercontent.com/76809668/203746543-32aa570e-82ab-470f-b1ff-3eb02a78a8bd.png" width="300" height="200"/>
 
 
 ### 예약
-
-#### 장소예약
-<img src="https://user-images.githubusercontent.com/76809668/203744341-2bbceb87-497d-418f-9dbf-c0827978be0c.png" width="300" height="200"/>
-
-#### 예약하기
-<img src="https://user-images.githubusercontent.com/76809668/203741373-9d562666-29dd-496d-9efb-21127229b2ac.png" width="300" height="200"/>
-
+<table>
+    <tr>
+        <td>장소 예약</td>
+        <td>예약</td>
+    </tr>
+    <tr>
+        <td><img src="https://user-images.githubusercontent.com/76809668/203744341-2bbceb87-497d-418f-9dbf-c0827978be0c.png" width="300" height="200"/></td>
+        <td><img src="https://user-images.githubusercontent.com/76809668/203741373-9d562666-29dd-496d-9efb-21127229b2ac.png" width="300" height="200"/></td>
+    </tr>
+</table>
 
 ### 양도
 <table>
